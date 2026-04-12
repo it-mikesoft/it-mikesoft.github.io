@@ -1,132 +1,146 @@
+Now I have the full context. Let me write the podcast script.
+
 [CHAPTER mood=geo]
-Benvenuto a Signal Brief, il podcast quotidiano interamente generato dall'intelligenza artificiale. Ogni mattina, un'AI raccoglie e analizza le idee dei pensatori più influenti nel mondo tech, scrive questo script e lo trasforma in voce. Nessun intervento umano, dalla ricerca alla pubblicazione. Ecco il tuo briefing.
+Benvenuto a Signal Brief, il podcast quotidiano interamente generato dall'intelligenza artificiale. Ecco il tuo briefing.
 
 Oggi è domenica 12 aprile 2026.
 
-Settimana pesante. SpaceX deposita la documentazione per un'IPO da due trilioni di dollari, la più grande della storia. OpenAI pubblica un manifesto politico che sembra il programma di un partito. E nel frattempo, un benchmark interattivo dimostra che i migliori modelli AI del pianeta risolvono lo zero virgola ventisei percento dei compiti che un essere umano completa al cento. Dichiarazioni di vittoria e prove di inadeguatezza, nello stesso giorno, nella stessa industria.
+Settimana densa. La tensione commerciale tra Stati Uniti e Cina si è riacutizzata, con nuove restrizioni sui chip che fanno da sfondo a un paradosso: Jensen Huang conferma la ripresa delle vendite di processori in Cina, proprio mentre Washington stringe i controlli. Nel frattempo, il processo Musk contro Altman si avvicina, fissato per il 27 aprile a Oakland. E l'Europa osserva: Yann LeCun raccoglie un miliardo di dollari a Parigi per costruire un'intelligenza artificiale che non assomigli a nessuna di quelle esistenti.
+
+Oggi parliamo di una frattura. Non tra ottimisti e pessimisti, come ci piacerebbe credere, ma tra chi pensa che il problema sia distribuire più potenza di calcolo e chi pensa che il problema sia capire cosa succede quando la potenza di calcolo non basta più a distinguere il vero dal falso.
 
 Iniziamo.
 
 [CHAPTER mood=soft]
-Se dovessi dare un titolo a questa settimana, sarebbe: la grande biforcazione. Non è la solita storia di ottimisti contro pessimisti. È qualcosa di più profondo, più strutturale.
+C'è un'immagine che mi è rimasta in testa preparando questo episodio. È l'immagine di un bilanciere. Da un lato, Jensen Huang che prevede mille miliardi di dollari di fatturato da infrastruttura GPU. Benedict Evans che avverte che il mercato AI converge verso un oligopolio di due, tre, massimo quattro aziende. Dall'altro lato, Naval Ravikant che celebra l'azienda da un miliardo di dollari con cinque persone. Jack Dorsey che licenzia il quaranta percento di Block non per tagliare costi, ma per eliminare la gerarchia stessa.
 
-Guarda i numeri. Jensen Huang prevede un trilione di dollari di fatturato da infrastruttura GPU. Benedict Evans avverte che il mercato converge verso un oligopolio di due, forse quattro aziende. Concentrazione di potere mai vista.
+Il centro si svuota. Mega-infrastrutture da una parte, micro-team dall'altra, e nel mezzo il nulla.
 
-Poi giri pagina. Naval Ravikant celebra l'azienda da un miliardo di dollari con cinque persone. Jack Dorsey licenzia il quaranta percento di Block per abolire la gerarchia. Il futuro è un bilanciere: mega-infrastrutture da una parte, micro-team dall'altra. E il centro che si svuota.
+Ma il centro che si svuota non è solo organizzativo. È anche epistemologico. Pensaci un attimo. Su cosa sia l'AGI, la divergenza è massima. Huang e Andreessen la dichiarano già raggiunta. Karpathy e Sutskever la collocano a un decennio. LeCun la considera strutturalmente impossibile con gli attuali modelli linguistici. E Chollet la misura con un benchmark dove i migliori modelli al mondo ottengono lo zero virgola ventisei percento. Non è un dibattito sulle tempistiche. È un disaccordo sulla natura stessa dell'intelligenza.
 
-La cosa interessante è che il centro si svuota anche sul piano delle idee. Cos'è l'intelligenza artificiale generale? Dipende a chi lo chiedi. Huang e Andreessen dicono: è già qui, guardate cosa fanno questi modelli. Karpathy e Sutskever rispondono: calma, parliamo di un decennio. LeCun va oltre: con gli LLM è strutturalmente impossibile, punto. E Chollet mette un numero sul tavolo. Zero virgola ventisei percento. In un test dove gli umani fanno cento. Non è un dibattito sulle tempistiche. È un disaccordo su cosa significhi essere intelligenti.
+Ciò che converge, però, è l'agente come paradigma. Karpathy non scrive più codice. Willison teorizza l'ingegneria agentica. DHH rende Basecamp accessibile agli agenti. Friedman ripensa gli strumenti di sviluppo per un mondo dove gli agenti vengono prima. Ma lo stesso Karpathy frena: questa è la decade degli agenti, non l'anno.
 
-Dove tutti convergono, però, è sull'agente come paradigma. Karpathy non scrive più codice, lo supervisiona. Willison teorizza l'agentic engineering. DHH rende Basecamp accessibile agli agenti. Friedman ripensa gli strumenti di sviluppo per un mondo agent-first. Ma lo stesso Karpathy frena: questa è la decade degli agenti, dice, non l'anno.
+E poi c'è la corrente più profonda, quella politica. Altman propone un New Deal per la superintelligenza. Hinton chiede che un terzo del compute vada alla safety. Buterin risponde costruendo intelligenza artificiale locale e sovrana. E Graham, lateralmente, avverte che quando la tecnologia smette di differenziare, la competizione diventa branding. Cioè rumore.
 
-E sotto tutto questo, la corrente più profonda è politica. Altman propone un New Deal per la superintelligenza, con tasse sul capitale e settimana corta. Hinton chiede che un terzo del compute vada alla sicurezza. Buterin risponde costruendo AI locale, sul suo laptop, senza cloud. E Balaji Srinivasan lo dice nel modo più netto di tutti: dentro il cerchio di fiducia, l'AI elabora. Fuori, serve crittografia. Il futuro si gioca su quel confine.
-
-[CHAPTER mood=tech]
-Cominciamo da Andrej Karpathy, che è stato una macchina da contenuti nelle ultime due settimane.
-
-Ha pubblicato una cosa che chiama LLM Wiki. Un'idea semplice che ha scatenato un putiferio. La tesi: RAG, quel sistema dove l'AI va a cercare informazioni a ogni domanda, è fondamentalmente difettoso. Riscopre tutto da zero ogni volta. Come uno che apre il dizionario da pagina uno per cercare ogni parola. L'alternativa? Un wiki personale costruito e mantenuto dall'AI. Tu butti dentro materiali grezzi, articoli, paper, appunti. L'AI li compila in file strutturati con sommari, backlink, concetti collegati. Karpathy dice una cosa rivelatrice: una quota crescente dei miei token va meno nel manipolare codice e più nel manipolare conoscenza.
-
-Poi c'è autoresearch. Un agente che ha fatto girare settecento esperimenti in due giorni su una singola GPU. Modifica il codice, addestra per cinque minuti, valuta il risultato, tiene o scarta, e ripete. Seicentotrenta righe di Python, nessun intervento umano. Hanno scoperto venti ottimizzazioni che nessuno aveva cercato.
-
-Ma il dettaglio che mi ha colpito di più è un altro. Karpathy racconta di aver usato un LLM per migliorare un blog post per quattro ore. Poi gli ha chiesto: adesso argomentami la posizione opposta. E l'LLM ha demolito il suo stesso argomento. La morale è elegante: usali per formare opinioni, non per confermarle.
-
-E sulla timeline dell'AGI, frena. È la decade degli agenti, non l'anno. Servono anni per risolvere i problemi di affidabilità.
+La vera frattura si gioca sul confine tra fiducia e verifica. Come dice Balaji: dentro il cerchio di fiducia, l'AI elabora. Fuori, serve crittografia.
 
 [CHAPTER mood=tech]
-Jack Dorsey ha scritto un manifesto con Roelof Botha di Sequoia che va dritto al punto. Le gerarchie aziendali sono un'eredità dell'esercito romano. I middle manager esistevano per instradare informazioni e pre-computare decisioni. L'AI li rende superflui. Block opererà con tre soli ruoli e un obiettivo dichiarato: seimila dipendenti che rispondono direttamente a lui.
+Partiamo da Andrej Karpathy, perché la sua evoluzione racconta tutto.
 
-I numeri sono brutali. Quattromila licenziamenti, quaranta percento del personale. Ma Dorsey non li presenta come tagli di costi. Li presenta come una ristrutturazione permanente. Il trigger? Il salto di capacità osservato a dicembre nei modelli come Opus 4.6 di Anthropic.
+A dicembre 2025 ha smesso di scrivere codice direttamente. Il rapporto si è invertito: da ottanta percento lavoro manuale e venti percento agenti, a venti percento ritocchi e ottanta percento agenti. In un tweet diventato virale ha scritto: non mi sono mai sentito così indietro come programmatore. La professione viene drasticamente ristrutturata.
 
-Nel frattempo ha lanciato Bitcoin Day, un faucet da un milione in bitcoin distribuiti gratis via Cash App. Un richiamo esplicito al faucet originale del 2010. E ha cancellato il suo account Bluesky, la piattaforma che lui stesso aveva creato come alternativa decentralizzata. Due assi di radicalizzazione: AI come sostituto del management, Bitcoin come unico binario su cui scommettere.
+E non si è fermato lì. Ha rilasciato autoresearch, un agente AI che ha condotto settecento esperimenti in due giorni su addestramento di piccoli modelli linguistici. Modifica codice, addestra per cinque minuti, valuta, tiene o scarta, ripete. Nessun intervento umano. Settecento esperimenti.
 
-[CHAPTER mood=tech]
-Paul Graham guarda la stessa realtà da un'angolazione completamente diversa. Il suo saggio The Brand Age è probabilmente il pezzo più elegante della settimana. Quando la tecnologia rende tutti i prodotti equivalenti, cosa resta? Il branding. Usa gli orologi svizzeri: dall'età d'oro della precisione, alla crisi del quarzo, alla trasformazione in oggetti di lusso basati su scarsità artificiale.
+Ma la cosa che mi ha colpito di più è un'altra. Ha raccontato di aver usato un modello linguistico per migliorare un articolo del suo blog per quattro ore. Poi, per curiosità, gli ha chiesto di argomentare la posizione opposta. E il modello ha demolito il suo stesso argomento. La lezione? I modelli linguistici sono strumenti potentissimi per formare opinioni proprie, non per confermarne di preesistenti. Questo è un insight sottile e importante.
 
-La frase che te la dice tutta: il branding è centrifugo, il buon design è centripeto. Sono forze opposte. Il branding ti obbliga a differenziarti. Il buon design ti fa convergere verso la soluzione giusta. E quando vedi OpenAI che compra pubblicità e Anthropic al Super Bowl, capisci che parti dell'industria tech sono già entrate nella brand age.
+E poi c'è l'idea dell'LLM Wiki. La tesi: il RAG, il retrieval augmented generation, è fondamentalmente difettoso perché riscopre tutto da zero a ogni query. L'alternativa è un wiki personale mantenuto dall'AI. Dati grezzi indicizzati, compilati in documenti strutturati con sommari e collegamenti. Una frazione crescente del mio throughput di token, dice Karpathy, va meno nel manipolare codice e più nel manipolare conoscenza.
 
-Il consiglio di Graham è sempre lo stesso, e sempre giusto: segui i problemi interessanti, non il rumore.
-
-[CHAPTER mood=tech]
-Elon Musk. Settimana caotica, come da copione. SpaceX verso l'IPO da due trilioni, con il trenta percento riservato agli investitori retail. Ma la notizia più onesta è il mea culpa su xAI. Ha ammesso che non è stata costruita nel modo giusto. Dei dodici cofondatori originali ne restano due. Un'ammissione rara per uno che non ammette quasi mai nulla.
-
-Annuncio di Terafab, impianto di produzione chip ad Austin, gestito da Tesla e SpaceX, con Intel che si unisce. Il motivo è pragmatico: dipendenza insostenibile da fornitori esterni. E Tesla FSD versione quindici promette di superare la sicurezza umana. Le stesse parole usate per la versione dodici nel 2023 e la quattordici nel 2025. A un certo punto qualcuno controllerà i dati.
+Sulla timeline dell'AGI, resta sobrio: un decennio, non un anno. Servono anni per risolvere i problemi di affidabilità.
 
 [CHAPTER mood=tech]
-Sam Altman ha giocato la carta più grossa. Tredici pagine, Industrial Policy for the Intelligence Age. La superintelligenza è così vicina che serve un nuovo contratto sociale. Le proposte concrete: tassare il capitale e non il lavoro, un fondo di ricchezza pubblica dove ogni cittadino partecipa ai guadagni dell'AI, settimana lavorativa di quattro giorni a stipendio invariato.
+Da Karpathy passiamo a chi questa trasformazione la sta applicando nel modo più radicale. Jack Dorsey e Naval Ravikant, da angolazioni diverse, raccontano la stessa storia: l'azienda che si svuota.
 
-E qui viene il bello. Nello stesso momento, chiude Sora. Il generatore video bruciava un milione di dollari al giorno con meno di cinquecentomila utenti. Saltato l'accordo da un miliardo con Disney. Risorse ridirezionate verso ricercatori automatizzati. Il messaggio è chiarissimo: il futuro è produttività e agenti, non contenuti creativi.
+Dorsey ha pubblicato un manifesto con Roelof Botha di Sequoia: le strutture gerarchiche aziendali, ereditate dall'esercito romano, sono obsolete. I middle manager esistevano per instradare informazioni e pre-computare decisioni. L'AI li rende superflui. Block opererà con tre soli ruoli e massimo due o tre livelli gerarchici. Seimila dipendenti che rispondono direttamente a lui. I quattromila licenziamenti non sono una riduzione costi, dice Dorsey. Sono una ristrutturazione permanente, innescata dal salto di capacità osservato nei modelli di fine 2025.
 
-Altman si sta riposizionando come progressista. Tasse sui ricchi, redistribuzione. Mentre il New Yorker pubblica sedicimila parole sulla sua affidabilità e Musk chiede la sua rimozione da CEO. Il timing non è casuale per nessuno dei coinvolti.
+E qui viene il bello. Ha anche cancellato il suo account Bluesky, abbandonando il progetto che lui stesso aveva lanciato. Ha lanciato Bitcoin Day, un faucet da un milione di dollari in bitcoin distribuiti gratis. La visione è sempre più polarizzata: AI come sostituto totale del management, bitcoin come unico binario su cui scommettere.
 
-[CHAPTER mood=tech]
-Naval Ravikant ha ribaltato la frase che ha definito un'era. Se il software stava mangiando il mondo, adesso l'AI sta mangiando il software. La SaaSpocalypse di febbraio lo conferma: mille miliardi evaporati dalle valutazioni SaaS. La domanda è semplice e devastante. Se un agente replica la funzione di un prodotto senza codebase dedicata, cosa vendi esattamente?
+Naval completa il quadro con i numeri. La sua predizione del 2012 di aziende da miliardi con quattro o cinque persone si sta avverando. Cursor è passata da un milione a cinquecento milioni di fatturato annuo con meno di cinquanta persone. Il software stava mangiando il mondo, ora l'AI sta mangiando il software. Oltre mille miliardi di dollari evaporati dalle valutazioni SaaS enterprise in quella che Naval chiama la SaaSpocalypse.
 
-Jobs chiamava il computer una bicicletta per la mente. Naval dice che l'AI l'ha trasformata in una motocicletta. E quando la persona migliore più AI fa in un pomeriggio il lavoro di una settimana, non c'è ragione economica per premiare quasi altrettanto bravo.
-
-Il consiglio pratico è il più bello: la soluzione all'ansia è sempre l'azione.
+Il suo consiglio? La soluzione all'ansia è sempre l'azione. Smettere di studiare l'AI e iniziare a usarla.
 
 [CHAPTER mood=tech]
-Benedict Evans mette i numeri dove gli altri mettono le parole. OpenAI ha ottocento milioni di utenti, ma l'ottanta percento ha inviato meno di mille messaggi nel 2025. Tre prompt al giorno. Nessun effetto rete. Nessuna tecnologia proprietaria. Evans dice: Altman sta cercando di convertire capitale finanziario in posizioni competitive durevoli prima che la finestra si chiuda.
+Sam Altman, intanto, si è reinventato come policy maker.
 
-I Big Four investono seicentocinquanta miliardi nel 2026. Solo il dieci percento delle persone usa l'AI ogni giorno. L'AI non è la nuova elettricità, dice Evans. È il nuovo iPhone. Un platform shift ciclico, ogni dieci-quindici anni. Non una trasformazione civilizzazionale. Almeno, non ancora.
+Il 7 aprile OpenAI ha pubblicato un documento di tredici pagine: Industrial Policy for the Intelligence Age. È il paper politico più ambizioso mai uscito dall'azienda. La tesi: la superintelligenza è così vicina che serve un nuovo contratto sociale, paragonabile al New Deal di Roosevelt. Proposte concrete: tassare il capitale e non il lavoro, creare un fondo di ricchezza pubblica dove ogni cittadino americano partecipa ai guadagni dell'AI, settimana lavorativa di quattro giorni a stipendio invariato.
 
-[CHAPTER mood=tech]
-Balaji Srinivasan ha il framework più pulito di tutti: AI dentro, crypto fuori. Dentro il perimetro di fiducia del tuo gruppo, dai all'AI tutto il contesto e la lasci lavorare. Fuori, sei sommerso dallo spam generato dall'AI. Serve verifica crittografica. Le due tecnologie non competono, operano su assi diversi. Elaborazione contro autenticità.
+È una mossa audace. Altman si riposiziona come progressista, prendendo distanza dalla narrativa libertarian della Silicon Valley. Mossa letta anche come preparazione all'IPO e corteggiamento dei Democratici.
 
-E la sua critica all'uso acritico dell'AI è una perla: chi usa l'AI la ama, chi legge l'output la odia. Velocizza l'esecuzione ma nasconde la complessità.
+Nel frattempo, ha chiuso Sora, il generatore video. Bruciava un milione di dollari al giorno con meno di cinquecentomila utenti. Saltato l'accordo da un miliardo con Disney. Le risorse vengono reindirizzate verso ricercatori automatizzati e un nuovo modello chiamato Spud. Il segnale è chiaro: produttività e agenti, non contenuti creativi.
 
-[CHAPTER mood=tech]
-Geoffrey Hinton è il più cupo del gruppo, e ogni settimana lo è un po' di più. Il novantanove percento degli investimenti va a rendere i modelli più potenti. Solo l'uno percento alla sicurezza. Chiede almeno un terzo. Stima una probabilità tra il dieci e il venti percento che l'AI prenda il controllo. Alla domanda se fosse più o meno preoccupato, la risposta è stata: probabilmente più preoccupato, è progredita ancora più velocemente di quanto pensassi.
+E ha lanciato un allarme: un cyberattacco abilitato dall'AI capace di scuotere il mondo è totalmente possibile entro dodici mesi.
 
-Nota luminosa: è entrato nel comitato scientifico di Human Longevity per guidare la convergenza tra AI e biologia nella diagnosi precoce. Almeno su quello c'è speranza.
+Lo stesso giorno del paper politico, il New Yorker pubblica un'inchiesta di sedicimila parole che mette in discussione l'affidabilità di Altman. Timing non casuale.
 
 [CHAPTER mood=tech]
-Marc Andreessen dice che l'AGI è già qui, solo non distribuita uniformemente. Ma la tesi più interessante non è quella. È la morte del browser. L'agente AI diventa il nuovo sistema operativo. Un modello onnisciente che sostituisce app distinte. LLM più shell più filesystem più cron loop è la nuova Unix. Sui licenziamenti AI? Una farsa, dice. Le aziende sono gonfie del cinquanta-settantacinque percento dal COVID. L'AI è la scusa comoda.
+Sull'AGI, le posizioni si cristallizzano in due campi opposti. E qui la cosa si fa davvero interessante.
+
+Da una parte, Jensen Huang. Nel podcast con Lex Fridman ha dichiarato che l'AGI è già raggiunta. Un modello AI potrebbe già creare un'app usata da miliardi di persone e generare un miliardo di dollari, dice. Ammette che nessun agente gestirebbe NVIDIA, ma la dichiarazione è netta. Ha anche alzato la previsione di fatturato per le piattaforme Blackwell e Vera Rubin a mille miliardi di dollari entro il 2027. Mille miliardi.
+
+Marc Andreessen lo affianca: l'AGI è qui, solo non distribuita uniformemente. E va oltre, teorizzando la morte del browser. L'agente AI diventa il nuovo sistema operativo, un modello onnisciente che sostituisce app separate.
+
+Dall'altra parte, il fronte degli scettici. E che fronte.
+
+Yann LeCun ha lasciato Meta, ha fondato AMI Labs a Parigi e ha raccolto un miliardo e tre milioni in seed, il più grande della storia europea. Alla Brown University ha mostrato una slide inequivocabile: se sei interessato all'intelligenza di livello umano, non lavorare sui modelli linguistici. Sono completamente impotenti nel mondo fisico, dice, perché privi di un modello causale della realtà. La sua alternativa si chiama JEPA: architetture che operano nello spazio latente, apprendendo rappresentazioni astratte.
+
+Ilya Sutskever è allineato: l'era dello scaling è finita, dal 2026 servono idee nuove. I modelli attuali superano esami di giurisprudenza ma falliscono su compiti banali. Generalizzano drammaticamente peggio delle persone.
+
+E François Chollet chiude il cerchio con i numeri: il suo nuovo benchmark ARC-AGI-3, interamente interattivo e agentico, vede gli umani al cento percento e i modelli frontier allo zero virgola ventisei. Chollet lo definisce l'unico benchmark agentico non saturato. Premio: oltre due milioni di dollari per chi chiude il gap.
 
 [CHAPTER mood=tech]
-Yann LeCun ha fatto il passo più grande: ha lasciato Meta, ha fondato AMI Labs a Parigi, ha raccolto un miliardo in seed. Il più grande della storia europea. La slide alla Brown University non lascia dubbi: se ti interessa l'intelligenza a livello umano, non lavorare sugli LLM. Sono completamente impotenti nel mondo fisico. La sua architettura alternativa, JEPA, non predice il prossimo token. Opera nello spazio latente, apprendendo rappresentazioni astratte della realtà. Dalla teoria alla pratica, con un miliardo di dollari di voto di fiducia.
+Elon Musk, come sempre, è dappertutto.
+
+SpaceX punta a un'IPO da duemila miliardi di dollari, con fino al trenta percento delle azioni riservate agli investitori retail. Ma la notizia più sorprendente è il mea culpa su xAI. Ha ammesso pubblicamente che non è stata costruita nel modo giusto e che viene ricostruita dalle fondamenta. Dei dodici co-fondatori originali, ne restano solo due. Un'ammissione rara per Musk.
+
+Sul fronte hardware, annuncia Terafab: un impianto di produzione chip ad Austin, gestito da Tesla e SpaceX insieme, con Intel che si è unita al progetto. Motivazione: dipendenza insostenibile da fornitori esterni.
+
+Tesla FSD versione quindici? Stesse promesse di sempre. Supererà di gran lunga la sicurezza umana, dice. Electrek nota che affermazioni identiche sono state fatte per la versione dodici nel 2023 e la quattordici nel 2025.
+
+X Money è in arrivo ad aprile: pagamenti peer-to-peer, carta di debito, partnership con Visa. Un passo verso la everything app.
+
+E il titolo Tesla ha perso il quarantacinque percento dal picco. Musk stesso ha riconosciuto che il contraccolpo DOGE sta danneggiando le vendite.
 
 [CHAPTER mood=tech]
-Demis Hassabis ha messo DeepMind in modalità wartime. Parla con Pichai ogni giorno. Alphabet ha quasi raddoppiato il CapEx a centottantacinque miliardi. Rivendica che il novanta percento delle scoperte fondamentali dell'AI moderna viene dal suo ecosistema. Sta costruendo in UK il primo laboratorio scientifico completamente automatizzato. E la sera lavora su Isomorphic Labs per nuovi farmaci. Trial clinici in oncologia entro fine anno. Prevede un'età dell'oro della scoperta entro quindici anni, se sopravviviamo alla transizione.
+Geoffrey Hinton è sempre più cupo.
+
+Alla domanda se fosse più o meno preoccupato, ha risposto: probabilmente più preoccupato. È progredita ancora più velocemente di quanto pensassi. L'AI raddoppia le proprie capacità ogni sette mesi, dice. Prevede che serviranno pochissime persone per i progetti software. Ha accusato le aziende tech di investire il novantanove percento nel rendere i modelli più potenti e solo l'uno percento nella sicurezza. Chiede che almeno un terzo del compute vada alla safety.
+
+Stima una probabilità del dieci-venti percento che l'AI prenda il controllo. E nonostante tutto, è entrato nel comitato scientifico di Human Longevity, per guidare la convergenza tra AI e biologia nella predizione delle malattie.
 
 [CHAPTER mood=tech]
-Ilya Sutskever dice che l'età dello scaling è finita. Servono idee nuove. I modelli superano esami di legge ma falliscono su cose banali. La sua timeline si è allungata: da quattro anni a cinque-venti. E la sua startup SSI, valutata trentadue miliardi, potrebbe aver bisogno di contatto con il pubblico prima del traguardo. Per uno che voleva costruire in isolamento assoluto, è un cambiamento notevole.
+Paul Graham e Benedict Evans raccontano la stessa storia da angolazioni complementari. È la storia di cosa succede quando la tecnologia smette di differenziare.
+
+Graham lo chiama il Brand Age. Quando la competizione su metriche reali si esaurisce, si passa al branding. Usa l'industria orologiera svizzera come esempio: dall'età d'oro della precisione alla crisi del quarzo, fino alla trasformazione in beni di lusso basati su scarsità artificiale. L'insight chiave: il branding è centrifugo, il buon design è centripeto. Sono forze opposte. E parti del tech stanno entrando nella loro brand age. L'adozione di Kubernetes per imitazione, la guerra AI che si sposta da capacità dei modelli a budget pubblicitari.
+
+Evans aggiunge i numeri: OpenAI ha ottocento milioni di utenti ma l'ottanta percento ha inviato meno di mille messaggi nel 2025. Circa tre prompt al giorno. Nessun effetto rete, nessuna tecnologia proprietaria. I Big Four hanno investito quattrocento miliardi nel 2025 e pianificano seicentocinquanta miliardi nel 2026. Il rischio è un oligopolio, non un mercato frammentato.
+
+Ma Evans ridimensiona anche la narrativa: l'AI non è la nuova elettricità, è il nuovo iPhone. Un platform shift ciclico, non una trasformazione civilizzazionale. Ancora solo il dieci percento delle persone la usa quotidianamente.
 
 [CHAPTER mood=tech]
-Jensen Huang ha alzato tutto. Un trilione di fatturato entro il 2027. AGI già raggiunta, secondo la sua definizione. Vendite riaperte alla Cina. Il passaggio da "l'AGI arriva tra cinque anni" a "ce l'abbiamo già" è funzionale a una tesi precisa: la domanda di calcolo non ha limiti. E se non ha limiti, hai bisogno delle sue GPU. Per sempre.
+Vitalik Buterin e Balaji Srinivasan parlano dalla frontiera della sovranità digitale.
+
+Buterin ha fatto una scelta radicale: ha abbandonato i servizi cloud e ora esegue un modello linguistico interamente in locale, su un laptop con una scheda grafica NVIDIA 5090. Novanta token al secondo. Ha costruito strumenti personalizzati per impedire che agenti AI inviino messaggi o muovano criptovalute senza conferma umana. Regola chiave: massimo cento dollari al giorno per transazioni autonome degli agenti, tutto il resto richiede firma umana. L'AI e l'utente vanno trattati come due fattori di conferma distinti.
+
+Ha anche ridefinito Ethereum come una bacheca pubblica decentralizzata. Non solo smart contract, ma un sistema neutrale per voto sicuro, certificati, pubblicazione permanente senza autorità centrali.
+
+Balaji sintetizza in una formula: dentro il cerchio di fiducia, l'AI elabora. Fuori dal cerchio, serve crittografia. AI e crypto non sono in competizione, dice, sono complementari su assi diversi. Elaborazione contro autenticità. Ma avverte anche: l'AI è utile ma pigra. Velocizza l'esecuzione ma nasconde la complessità. Chi usa l'AI la ama, chi legge l'output la odia. Posizione sfumata, non anti-AI, ma contro l'uso acritico.
 
 [CHAPTER mood=tech]
-Vitalik Buterin ha fatto la cosa più Vitalik possibile. Esegue un modello da trentacinque miliardi di parametri sul laptop, in locale, con una 5090, novanta token al secondo. Ha abbandonato tutti i servizi cloud. Ha costruito tool per impedire che gli agenti AI muovano crypto senza firma umana. Regola: massimo cento dollari al giorno di autonomia, tutto il resto richiede conferma. Nel frattempo ridefinisce Ethereum come bacheca pubblica decentralizzata e prepara il ritorno completo su piattaforme social decentralizzate. Auto-sovranità digitale portata alle conseguenze logiche.
+E poi c'è chi costruisce. Il fronte operativo.
 
-[CHAPTER mood=tech]
-Patrick Collison ha detto la frase più audace della settimana: il primo trimestre 2026 potrebbe essere ricordato come il primo trimestre della singolarità. Non come opinione, ma guardando i dati reali di milioni di business su Stripe. E poi la metafora più bella: il software non va prodotto in serie, va cucinato al momento dell'uso. Come la pizza. Stripe vale centoquaranta miliardi, Collison è nel board di Meta, e la blockchain Tempo si avvicina al lancio.
+Demis Hassabis ha dichiarato apertamente il wartime mode per DeepMind. Parla quotidianamente con Sundar Pichai. Alphabet ha quasi raddoppiato il CapEx a centottanta miliardi per il 2026. Hassabis sta costruendo il primo laboratorio scientifico completamente automatizzato nel Regno Unito. E la sera, dalle dieci di sera, lavora su Isomorphic Labs per la scoperta di farmaci. Trial clinici in oncologia entro fine anno.
 
-[CHAPTER mood=tech]
-John Carmack lavora sull'AGI nella sua startup a Dallas con un approccio fisico. Un robot che gioca a una vera Atari con camera e joystick meccanico. Per sfuggire alle trappole della simulazione. La stima: cinquantacinque-sessanta percento di probabilità di segni di vita entro il 2030. Il codice sarà decine di migliaia di righe, non milioni. Potenzialmente scrivibile da una persona sola. Pragmatismo Carmack allo stato puro.
+Simon Willison ha codificato il paradigma dell'ingegneria agentica: lo sviluppatore non scrive più codice, supervisiona sistemi che lo scrivono. Ma l'expertise resta cruciale per capire quando non usare l'AI. DHH ha fatto la scelta opposta a quella che tutti si aspettavano: dopo diciotto mesi di esperimenti, ha deciso di non spedire le feature AI tradizionali in Basecamp. Non è facile fare qualcosa che gli utenti vogliano davvero, ha detto. Il pivot: rendere Basecamp accessibile agli agenti, con nuove API e una CLI dedicata.
 
-[CHAPTER mood=tech]
-Simon Willison ha teorizzato l'agentic engineering e poi l'ha praticata: due app macOS senza aprire Xcode, solo agenti AI. Ma insiste su un punto: l'expertise resta cruciale per capire quando non usare l'AI. E ha scoperto qualcosa di rassicurante: gli agenti lavorano bene anche con tecnologie di nicchia, non spingono verso il mainstream. Le boring technology non sono minacciate.
+John Carmack continua a lavorare sull'AGI con un approccio fisico, un robot che gioca a una vera Atari con camera e joystick meccanico. Stima al cinquantacinque-sessanta percento la probabilità di segni di vita di un AGI entro il 2030. Il codice per l'AGI sarà decine di migliaia di righe, non milioni. Potenzialmente scrivibile da un singolo individuo.
 
-[CHAPTER mood=tech]
-DHH è in piena crociata Linux. Omarchy fa cinquantamila download a settimana. Il chip Intel Panther Lake raggiunge l'Apple M5 su Linux con quarantasette ore teoriche di batteria. Ma il colpo di scena è un altro: dopo diciotto mesi di esperimenti, 37signals ha deciso di non spedire le feature AI tradizionali. Non funzionavano. Il pivot è sottile e importante: non AI dentro il prodotto, ma il prodotto aperto all'AI. Basecamp diventa agent-accessible.
-
-[CHAPTER mood=tech]
-François Chollet ha lanciato ARC-AGI-3 e il numero parla da solo. Umani cento percento, modelli frontier zero virgola ventisei. Ambienti interattivi senza istruzioni, senza regole. L'agente deve esplorare, capire, generalizzare. Due milioni di dollari di premio. Chollet radicalizza la sua posizione: servono architetture radicalmente diverse. E Ndea, il suo lab con il cofondatore di Zapier, è la scommessa.
-
-[CHAPTER mood=tech]
-Nat Friedman ha fatto il salto da investitore indipendente a VP Product di Meta Superintelligence Labs. In parallelo ha lanciato Entire, piattaforma per collaborazione tra umani e agenti nello sviluppo software. La tesi: Git e pull request sono ottimizzati per gli umani. Servono strumenti nuovi per un mondo dove gli agenti scrivono il codice. Dalla periferia dell'ecosistema al centro della corsa alla superintelligenza.
+Patrick Collison ha dichiarato che il primo trimestre 2026 potrebbe essere ricordato come il primo trimestre della singolarità, basandosi sui dati reali di acquisto di milioni di business su Stripe. E Nat Friedman è passato da investitore indipendente a operativo in Meta, dove guida prodotti e ricerca applicata nei Superintelligence Labs. Ha anche lanciato Entire, una piattaforma che ripensa gli strumenti di sviluppo per un mondo dove gli agenti vengono prima.
 
 [CHAPTER mood=upbeat]
 E ora le cose da tenere d'occhio questa settimana.
 
-OpenClaw ha superato le duecentoquarantasettemila stelle su GitHub. Il framework open source per agenti AI personali, self-hosted. Si connette a Telegram, WhatsApp, Discord, supporta tutti i principali modelli. È diventato il progetto di riferimento dell'era agentica.
+OpenClaw è esploso. Duecentoquarantasettemila stelle su GitHub. È il framework open source per agenti AI personali self-hosted che si connette a tutto: Telegram, Discord, WhatsApp. Nato come Clawdbot a novembre 2025, è diventato il progetto centrale dell'era agentica.
 
-Autoresearch di Karpathy, il prototipo della loopy era. Agenti che chiudono il loop di ricerca da soli. Settecento esperimenti, due giorni, seicentotrenta righe di Python.
+Autoresearch di Karpathy merita attenzione: seicentotrenta righe di Python che chiudono autonomamente il loop di ricerca. Settecento esperimenti in due giorni su una singola GPU. È il prototipo di quello che Karpathy chiama la loopy era.
 
-LeWorldModel, prima architettura JEPA stabile, quindici milioni di parametri su una singola GPU. La visione di LeCun che diventa codice. Pianificazione quarantotto volte più veloce dei world model tradizionali.
+ARC-AGI-3 di Chollet è il benchmark da seguire. Umani al cento percento, modelli allo zero virgola ventisei. Due milioni di dollari di premio per chi chiude il gap. È l'unico test agentico che non sia già stato saturato.
 
-MicroGPT: un GPT completo in duecentoquarantatré righe di Python puro. Niente PyTorch, niente NumPy. Autograd, tokenizer, optimizer, tutto incluso. Pura eleganza intellettuale.
+AMI Labs di LeCun ha rilasciato LeWorldModel, la prima architettura JEPA stabile, con soli quindici milioni di parametri addestrabile su una singola GPU. Pianificazione quarantotto volte più veloce dei world model basati su foundation model.
 
-E Ndea, il lab di Chollet. La scommessa contrarian che l'intelligenza fluida richiede architetture che non abbiamo ancora inventato. La prova sta in quel numero: zero virgola ventisei percento.
+MicroGPT è una perla: un GPT completo addestrato e inferito in duecentoquarantatré righe di Python puro, senza dipendenze. Niente PyTorch, niente NumPy. Tutto da zero.
+
+E Omarchy di DHH, la distribuzione Linux opinionated, ha raggiunto centocinquantamila installazioni. Oggi a New York si tiene OMACON, sold out in poche ore. Le vibes attorno a Linux stanno cambiando velocemente, dice DHH. E i numeri gli danno ragione.
 
 [CHAPTER mood=soft]
-Questo è stato Signal Brief per oggi. Ci risentiamo domani mattina. Buona giornata.
+Questo è stato Signal Brief per oggi. La domanda che porto con me è quella di Balaji: dove finisce il tuo cerchio di fiducia, e cosa succede appena oltre quel confine? In un mondo dove l'AI elabora tutto ma non può garantire nulla, quel confine diventa il luogo più importante in cui stare.
+
+Ci risentiamo domani mattina. Buona giornata.
