@@ -185,6 +185,37 @@
             line-height: 1.7;
         }
         .script-chapter p:last-child { margin-bottom: 0; }
+        .script-fonti {
+            margin-top: 1rem;
+            padding: 0.75rem 1rem;
+            background: #faf8f4;
+            border: 1px dashed #e2ddd6;
+            border-radius: 4px;
+            font-size: 0.82rem;
+        }
+        .script-fonti .label {
+            font-family: 'IBM Plex Mono', ui-monospace, monospace;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #9ca3af;
+            margin-bottom: 0.4rem;
+        }
+        .script-fonti ul { list-style: none; }
+        .script-fonti li {
+            margin-bottom: 0.25rem;
+            padding-left: 0.9rem;
+            position: relative;
+            line-height: 1.5;
+        }
+        .script-fonti li:last-child { margin-bottom: 0; }
+        .script-fonti li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #9ca3af;
+        }
+        .script-fonti a { word-break: break-word; }
 
         /* Synthesis panel */
         .synthesis-body p { margin-bottom: 0.9rem; font-size: 1rem; line-height: 1.7; }
@@ -333,6 +364,8 @@
             .diff-item .who { color: #737373; }
             .thinker-fonti h3 { color: #f5f5f5; }
             .intro-blurb { color: #9ca3af; }
+            .script-fonti { background: #2a2823; border-color: #3a352d; }
+            .script-fonti .label { color: #737373; }
         }
     </style>
 </head>
@@ -552,7 +585,7 @@
         }
         app.appendChild(tabsEl);
 
-        panels.testo = buildScriptPanel(script);
+        panels.testo = buildScriptPanel(script, fonti);
         panels.sintesi = buildSynthesisPanel(synthesis);
         panels.comparazione = buildDiffPanel(diff);
         panels.fonti = buildFontiPanel(fonti);
@@ -563,7 +596,25 @@
         panels.testo.classList.add("active");
     }
 
-    function buildScriptPanel(script) {
+    // Build a small "Fonti citate" box to append at the end of a chapter.
+    // Used inside script chapters so the reader can follow links to the original
+    // articles without jumping to the Fonti tab.
+    function buildInlineFonti(thinker) {
+        if (!thinker || !thinker.sources || thinker.sources.length === 0) return null;
+        const box = el("div", { class: "script-fonti" }, [
+            el("div", { class: "label" }, `Fonti · ${thinker.name}`),
+        ]);
+        const ul = el("ul");
+        for (const s of thinker.sources) {
+            ul.appendChild(el("li", {}, [
+                el("a", { href: s.url, target: "_blank", rel: "noopener" }, s.title || s.url),
+            ]));
+        }
+        box.appendChild(ul);
+        return box;
+    }
+
+    function buildScriptPanel(script, fonti) {
         const panel = el("div", { class: "panel" });
         if (!script) {
             panel.appendChild(el("div", { class: "state-note" }, "Testo non disponibile."));
@@ -580,6 +631,16 @@
             panel.appendChild(chap);
             return panel;
         }
+        // fonti is in episode order: the N-th mood=tech chapter maps to fonti[N].
+        // Any chapter whose first ~220 chars actually name-match a specific thinker
+        // overrides the positional mapping (defensive against mood ordering drift).
+        const fontiByName = {};
+        for (const f of (fonti || [])) {
+            const last = f.name.split(" ").slice(-1)[0].toLowerCase();
+            fontiByName[f.name.toLowerCase()] = f;
+            if (last.length >= 4) fontiByName[last] = f;
+        }
+        let techIdx = 0;
         for (let i = 1; i < parts.length - 1; i += 2) {
             const mood = parts[i];
             const body = parts[i + 1].trim();
@@ -587,6 +648,18 @@
             const chap = el("div", { class: `script-chapter mood-${mood}` });
             for (const para of body.split(/\n{2,}/)) {
                 if (para.trim()) chap.appendChild(el("p", { html: inline(para.trim()) }));
+            }
+            if (mood === "tech") {
+                // Try name match first (more accurate), fall back to positional.
+                let thinker = null;
+                const head = body.slice(0, 260).toLowerCase();
+                for (const k in fontiByName) {
+                    if (head.indexOf(k) !== -1) { thinker = fontiByName[k]; break; }
+                }
+                if (!thinker && fonti && fonti[techIdx]) thinker = fonti[techIdx];
+                const fontiBox = buildInlineFonti(thinker);
+                if (fontiBox) chap.appendChild(fontiBox);
+                techIdx++;
             }
             panel.appendChild(chap);
         }
