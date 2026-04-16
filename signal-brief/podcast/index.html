@@ -614,7 +614,7 @@
         }
         app.appendChild(tabsEl);
 
-        panels.testo = buildScriptPanel(script, fonti);
+        panels.testo = buildScriptPanel(script, fonti, meta.projects || []);
         panels.sintesi = buildSynthesisPanel(synthesis);
         panels.comparazione = buildDiffPanel(diff);
         panels.fonti = buildFontiPanel(fonti);
@@ -643,7 +643,31 @@
         return box;
     }
 
-    function buildScriptPanel(script, fonti) {
+    // Build a "Progetti citati" box for the upbeat chapter. Matches project
+    // names found in the chapter body against the episode's projects list and
+    // renders each as a clickable link with its description.
+    function buildInlineProjects(projects, chapterBody) {
+        if (!projects || projects.length === 0) return null;
+        const bodyLower = chapterBody.toLowerCase();
+        const matched = projects.filter(p =>
+            p.name && p.url && bodyLower.includes(p.name.toLowerCase())
+        );
+        if (matched.length === 0) return null;
+        const box = el("div", { class: "script-fonti" }, [
+            el("div", { class: "label" }, `Progetti citati · ${matched.length}`),
+        ]);
+        const ul = el("ul");
+        for (const p of matched) {
+            ul.appendChild(el("li", {}, [
+                el("a", { href: p.url, target: "_blank", rel: "noopener" }, p.name),
+                p.description ? document.createTextNode(` — ${p.description}`) : null,
+            ].filter(Boolean)));
+        }
+        box.appendChild(ul);
+        return box;
+    }
+
+    function buildScriptPanel(script, fonti, projects) {
         const panel = el("div", { class: "panel" });
         if (!script) {
             panel.appendChild(el("div", { class: "state-note" }, "Testo non disponibile."));
@@ -652,7 +676,6 @@
         const re = /\[CHAPTER\s+mood=(\w+)\]\s*\n/g;
         const parts = script.split(re);
         if (parts.length < 3) {
-            // No [CHAPTER] markers — render whole thing as one flat block
             const chap = el("div", { class: "script-chapter mood-soft" });
             for (const para of script.split(/\n{2,}/)) {
                 if (para.trim()) chap.appendChild(el("p", { html: inline(para.trim()) }));
@@ -661,8 +684,6 @@
             return panel;
         }
         // fonti is in episode order: the N-th mood=tech chapter maps to fonti[N].
-        // Any chapter whose first ~220 chars actually name-match a specific thinker
-        // overrides the positional mapping (defensive against mood ordering drift).
         const fontiByName = {};
         for (const f of (fonti || [])) {
             const last = f.name.split(" ").slice(-1)[0].toLowerCase();
@@ -679,7 +700,6 @@
                 if (para.trim()) chap.appendChild(el("p", { html: inline(para.trim()) }));
             }
             if (mood === "tech") {
-                // Try name match first (more accurate), fall back to positional.
                 let thinker = null;
                 const head = body.slice(0, 260).toLowerCase();
                 for (const k in fontiByName) {
@@ -689,6 +709,10 @@
                 const fontiBox = buildInlineFonti(thinker);
                 if (fontiBox) chap.appendChild(fontiBox);
                 techIdx++;
+            }
+            if (mood === "upbeat") {
+                const projBox = buildInlineProjects(projects, body);
+                if (projBox) chap.appendChild(projBox);
             }
             panel.appendChild(chap);
         }
