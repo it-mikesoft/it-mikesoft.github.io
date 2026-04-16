@@ -1,52 +1,49 @@
 # Musica Podcast — Prompt per Suno.com
 
-Sottofondo per episodi da ~20 minuti. Due famiglie di stili disponibili per ogni mood:
-- **Stile A — Energetico**: techno, IDM, synthwave, broadcast. Più elettronico e ritmato.
-- **Stile B — Soft/Narrativo**: acustico, ambient, jazz. Caldo, contemplativo, mai urgente.
+Sottofondo per episodi da ~20 minuti. Due famiglie di stili per ogni mood:
+- **Stile A — Energetico**: elettronico, ritmato, techno/IDM/synthwave.
+- **Stile B — Soft/Narrativo**: acustico, ambient, jazz. Caldo e contemplativo.
 
-Lo script `generate-podcast.sh` ruota tra TUTTE le varianti (`bg-tech.mp3`, `bg-tech1.mp3`, ...) indipendentemente dallo stile, quindi puoi mescolare A e B nella stessa pool.
+Lo script ruota TUTTE le varianti (`bg-tech.mp3`, `bg-tech1.mp3`, ...) — puoi mescolare A e B.
 
-## Regole generali
+## Come generare su Suno
 
-1. **Più varianti per ogni mood** — lo script ruota automaticamente.
-2. Ogni traccia almeno **2 minuti** (Custom Mode) con sezioni interne.
-3. Tutte **strumentali**, nessuna voce.
-4. Volume in produzione: -22dB sotto la voce (`musicVolume: 0.08`).
-
-## Workflow Suno
-
-- **Custom Mode** → "Instrumental" ON.
-- **Style**: copia il blocco STYLE.
-- **Lyrics/Description**: copia il blocco STRUCTURE.
-- Genera 2-3 varianti per stile, scegli le migliori, rinomina.
+1. **Simple mode** → attiva **Instrumental**
+2. Copia il blocco **SONG DESCRIPTION** qui sotto nel campo descrizione (~1000 char max)
+3. Genera 2-3 varianti, scegli la migliore, rinomina come indicato
+4. Salva in `public/podcast/music/`
 
 ---
 
-# INTRO — sigla iniziale (15 secondi)
+# INTRO (15 secondi)
 
 ### intro — stile A "cinematic tech"
-**STYLE:** cinematic tech podcast intro, hybrid orchestral electronic, rising synth arpeggios over pulsing 4-on-the-floor sub bass, glitchy percussion fills, bright filtered saw lead, confident futuristic news-broadcast vibe, BPM 124, analog warmth, side-chain pumping, builds tension then resolves on a clean stinger, mastered loud, no vocals
-
-**STRUCTURE:** 0-4s ambient pad swell with reversed cymbal, 4-10s arpeggio enters and builds with rising filter sweep and snare roll, 10-13s drop with full kick-bass-arpeggio combo, 13-15s clean tonic stinger with reverb tail, instrumental only
+**SONG DESCRIPTION:**
+```
+Cinematic tech podcast intro, 15 seconds. Hybrid orchestral electronic, rising synth arpeggios over pulsing sub bass, glitchy percussion fills, bright filtered saw lead, futuristic news-broadcast vibe, BPM 124, analog warmth. 0-4s ambient pad swell with reversed cymbal, 4-10s arpeggio builds with filter sweep and snare roll, 10-13s drop with full kick-bass-arpeggio, 13-15s clean stinger with reverb tail. Instrumental only, mastered loud.
+```
 
 ### intro — stile B "libro che si apre"
-**STYLE:** warm acoustic podcast intro, gentle nylon guitar arpeggio, soft felt piano chord, subtle string swell, intimate studio recording feel, like opening a favourite book, BPM 80, Nils Frahm meets Khruangbin, analog tape warmth, no drums no percussion, no vocals, no tension
-
-**STRUCTURE:** 0-5s solo nylon guitar arpeggio with room reverb, 5-10s felt piano joins with a simple chord progression, 10-13s strings swell gently underneath, 13-15s everything resolves on a warm tonic with long reverb tail, instrumental only
+**SONG DESCRIPTION:**
+```
+Warm acoustic podcast intro, 15 seconds. Gentle nylon guitar arpeggio, soft felt piano chord, subtle string swell, intimate studio feel, like opening a favourite book. BPM 80, Nils Frahm meets Khruangbin, analog tape warmth. 0-5s solo nylon guitar with room reverb, 5-10s felt piano joins, 10-13s strings swell gently, 13-15s warm tonic resolve with long reverb tail. No drums, no percussion, no tension. Instrumental only.
+```
 
 ---
 
-# OUTRO — chiusura (20 secondi)
+# OUTRO (20 secondi)
 
 ### outro — stile A "emotional ambient"
-**STYLE:** emotional ambient outro, warm felt piano with tape hiss, lush analog string section, soft Rhodes electric piano, slow swelling pads, hopeful melancholic resolution, sparse soft kick at half time, BPM 70, vinyl crackle texture, cinematic Olafur Arnalds meets Nils Frahm, gentle reverb tail, no vocals
-
-**STRUCTURE:** 0-6s solo felt piano motif with rubato, 6-12s strings enter and harmonize underneath, 12-18s Rhodes layer adds counter-melody, 18-20s long fadeout with reverb tail, instrumental only
+**SONG DESCRIPTION:**
+```
+Emotional ambient podcast outro, 20 seconds. Warm felt piano with tape hiss, lush analog strings, soft Rhodes, slow swelling pads, hopeful melancholic resolution, sparse soft kick at half time. BPM 70, vinyl crackle, Olafur Arnalds meets Nils Frahm. 0-6s solo felt piano motif, 6-12s strings harmonize underneath, 12-18s Rhodes counter-melody, 18-20s long fadeout with reverb tail. Instrumental only.
+```
 
 ### outro — stile B "giornata che finisce"
-**STYLE:** intimate ambient piano outro, solo felt piano, gentle tape hiss, distant field recordings of birds or rain, sense of a day ending peacefully, Ryuichi Sakamoto meets Hania Rani, rubato timing, BPM free, fading to silence, no drums no beats, no vocals
-
-**STRUCTURE:** 0-8s solo felt piano playing a simple descending motif with rubato, 8-14s distant field recording enters softly underneath, 14-18s piano plays last note and holds, 18-20s fadeout to silence with tape hiss, instrumental only
+**SONG DESCRIPTION:**
+```
+Intimate ambient piano outro, 20 seconds. Solo felt piano, gentle tape hiss, distant field recordings of birds or rain, a day ending peacefully. Ryuichi Sakamoto meets Hania Rani, rubato timing, BPM free. 0-8s solo piano descending motif with rubato, 8-14s field recording enters softly, 14-18s piano holds last note, 18-20s fadeout to silence with tape hiss. No drums, no beats. Instrumental only.
+```
 
 ---
 
@@ -54,37 +51,43 @@ Lo script `generate-podcast.sh` ruota tra TUTTE le varianti (`bg-tech.mp3`, `bg-
 
 ## Stile A — Energetico
 
-### bg-tech — "minimal techno"
-**STYLE:** minimal techno podcast bed, deep dub-techno chord stabs, soft kick on 4, ride cymbal shimmer, modular synth bleeps, restrained and hypnotic, evolving filter movement, warm sub bass, BPM 118, Berlin Panorama Bar after-hours mood, instrumental, loopable
+### "minimal techno"
+**SONG DESCRIPTION:**
+```
+Minimal techno podcast bed, 3 minutes loopable. Deep dub-techno chord stabs, soft kick on 4, ride cymbal shimmer, modular synth bleeps, restrained hypnotic, evolving filter movement, warm sub bass. BPM 118, Berlin after-hours mood. Sparse intro with chords and pad, soft kick enters at 30s, modular arpeggio at 60s, breakdown at 90s, full mix returns at 120s, gradual fade. No drops louder than -8dB. Instrumental only.
+```
 
-**STRUCTURE:** 0-30s sparse intro with chord stabs and pad only, 30-60s soft kick enters with hi-hats, 60-90s modular bleep arpeggio layer joins, 90-120s breakdown removes kick, 120-150s full mix returns, 150-180s gradual fadeout, no drops or breaks louder than -8dB, no vocals
+### "ambient idm"
+**SONG DESCRIPTION:**
+```
+Ambient IDM beat science, 3 minutes loopable. Glitchy chopped percussion, granular synth textures, melodic bell tones, deep warm sub bass, intricate hi-hat patterns. Boards of Canada meets Jon Hopkins, dusty analog warmth, BPM 96, cerebral. Atmospheric pad and bell intro, glitch beat enters at 20s, granular texture at 50s, strips back to bells at 80s, full beat returns at 110s, slow fade. Instrumental only.
+```
 
-### bg-tech — "ambient idm"
-**STYLE:** ambient IDM beat science, glitchy chopped percussion, granular synth textures, melodic bell tones, deep warm sub bass, intricate hi-hat patterns, Boards of Canada meets Jon Hopkins, dusty analog warmth, BPM 96, cerebral and forward-looking, instrumental, loopable
-
-**STRUCTURE:** 0-20s atmospheric pad and bell intro, 20-50s glitch beat enters with sub bass, 50-80s granular texture layer, 80-110s rhythm strips back to just bells and pad, 110-140s full beat returns with new bell counter-melody, 140-180s slow fade, no vocals
-
-### bg-tech — "synthwave / cyberpunk"
-**STYLE:** dark synthwave cyberpunk underscore, gated reverb snare, analog Juno pads, FM bass, distant arpeggio, neon Tokyo night vibe, restrained no shred guitar, slow burn tension, BPM 100, Blade Runner 2049 meets Com Truise, instrumental, loopable
-
-**STRUCTURE:** 0-25s pad and arp build, 25-60s gated snare and FM bass enter, 60-90s lead pluck melody on top, 90-120s breakdown to pad only with rain ambience, 120-150s rebuild with full kit, 150-180s fade, no vocals
+### "synthwave / cyberpunk"
+**SONG DESCRIPTION:**
+```
+Dark synthwave cyberpunk underscore, 3 minutes loopable. Gated reverb snare, analog Juno pads, FM bass, distant arpeggio, neon Tokyo night vibe, restrained, slow burn tension. BPM 100, Blade Runner 2049 meets Com Truise. Pad and arp build, gated snare enters at 25s, lead pluck melody at 55s, breakdown to pad with rain at 90s, rebuild at 120s, fade. Instrumental only.
+```
 
 ## Stile B — Soft/Narrativo
 
-### bg-tech — "studio notturno"
-**STYLE:** warm ambient study music, soft Rhodes electric piano chords, gentle tape saturation, distant upright bass plucking occasional low notes, no drums, subtle analog synth pad, late night quiet room, Nils Frahm meets Bill Evans, BPM 72, intimate and reflective, no tension no urgency, instrumental, loopable
+### "studio notturno"
+**SONG DESCRIPTION:**
+```
+Warm ambient study music, 3 minutes loopable. Soft Rhodes electric piano chords, gentle tape saturation, distant upright bass plucking occasional low notes, subtle analog synth pad. Late night quiet room, Nils Frahm meets Bill Evans, BPM 72, intimate and reflective. Solo Rhodes with tape hiss, bass enters at 30s, pad joins at 60s, Rhodes changes voicing at 90s, bass and pad return at 120s, fade to Rhodes alone. No drums, no tension. Instrumental only.
+```
 
-**STRUCTURE:** 0-30s solo Rhodes chords with tape hiss, 30-60s upright bass enters with sparse low notes, 60-90s analog pad layer joins very softly, 90-120s Rhodes plays a different voicing as a breath, 120-150s bass and pad return, 150-180s gradual fade to Rhodes alone, no vocals
+### "passeggiata mattutina"
+**SONG DESCRIPTION:**
+```
+Gentle acoustic fingerpicking guitar, 3 minutes loopable. Light brushed snare with broom stick, warm upright bass. Sunday morning walk, folk meets jazz trio, Khruangbin acoustic meets Iron and Wine, BPM 82, sun through trees. Solo fingerpicking pattern, brushed snare and bass enter at 25s, guitar varies at 55s, breakdown to guitar and bass at 85s, full trio returns at 115s, slow fade. No electronic sounds, no synths, no urgency. Instrumental only.
+```
 
-### bg-tech — "passeggiata mattutina"
-**STYLE:** gentle acoustic fingerpicking guitar, light brushed snare with broom stick, warm upright bass, Sunday morning walk feeling, folk meets jazz trio, Khruangbin acoustic side meets Iron and Wine, BPM 82, sun through trees not neon lights, no electronic sounds, no synths, no urgency, instrumental, loopable
-
-**STRUCTURE:** 0-25s solo fingerpicking guitar pattern, 25-55s brushed snare and bass enter gently, 55-85s guitar varies the picking pattern slightly, 85-115s breakdown to guitar and bass only, 115-145s full trio returns with a warmer feel, 145-180s slow fade, no vocals
-
-### bg-tech — "pioggia leggera"
-**STYLE:** ambient piano with rain field recording, soft felt piano playing slow minimal chords, light rain and distant thunder recorded from a window, occasional low cello drone, contemplative melancholic but warm, Ólafur Arnalds meets Ludovico Einaudi, BPM 66, no drums no beats, no tension, instrumental, loopable
-
-**STRUCTURE:** 0-30s rain ambience with single piano note, 30-60s piano plays gentle chord progression, 60-90s cello drone enters very low, 90-120s piano rests and only rain and cello remain, 120-150s piano returns with a new motif, 150-180s slow fade to rain only, no vocals
+### "pioggia leggera"
+**SONG DESCRIPTION:**
+```
+Ambient piano with rain field recording, 3 minutes loopable. Soft felt piano playing slow minimal chords, light rain and distant thunder from a window, occasional low cello drone. Contemplative, warm, Olafur Arnalds meets Einaudi, BPM 66. Rain ambience with single piano note, chord progression at 30s, cello drone at 60s, piano rests at 90s leaving rain and cello, piano returns at 120s, fade to rain only. No drums, no beats. Instrumental only.
+```
 
 ---
 
@@ -92,27 +95,31 @@ Lo script `generate-podcast.sh` ruota tra TUTTE le varianti (`bg-tech.mp3`, `bg-
 
 ## Stile A — Energetico
 
-### bg-geo — "documentary tension"
-**STYLE:** cinematic documentary score, deep cello drone, low brass swells, sparse felt piano notes, distant timpani hits, subtle granular texture, news investigation gravitas, slow building tension without resolving, BPM 70, Hans Zimmer meets Trent Reznor, no vocals, loopable
+### "documentary tension"
+**SONG DESCRIPTION:**
+```
+Cinematic documentary score, 3 minutes loopable. Deep cello drone, low brass swells, sparse felt piano notes, distant timpani, subtle granular texture, news investigation gravitas, slow building tension without resolving. BPM 70, Hans Zimmer meets Trent Reznor. Solo cello drone, brass enters at 20s, timpani at 50s, strings tension chord at 80s, breakdown at 110s, slow rebuild. No climax. Instrumental only.
+```
 
-**STRUCTURE:** 0-20s solo cello drone, 20-50s brass swell enters with felt piano accents, 50-80s timpani pulse joins distantly, 80-110s strings harmonize tension chord, 110-140s breakdown to drone only, 140-180s slow rebuild, no climax
-
-### bg-geo — "geopolitical broadcast"
-**STYLE:** modern news broadcast underscore, pulsing analog synth bass, sparse marimba accents, urgent muted strings, ticking clock percussion, Reuters and AP wire room atmosphere, restrained urgency, BPM 90, no vocals, loopable
-
-**STRUCTURE:** 0-20s ticking clock and pad intro, 20-50s synth bass pulse enters, 50-80s marimba motif on top, 80-110s muted string layer, 110-140s strip down to clock and bass, 140-180s gradual fade, no vocals
+### "geopolitical broadcast"
+**SONG DESCRIPTION:**
+```
+Modern news broadcast underscore, 3 minutes loopable. Pulsing analog synth bass, sparse marimba accents, urgent muted strings, ticking clock percussion, wire room atmosphere, restrained urgency. BPM 90. Ticking clock and pad intro, synth bass at 20s, marimba at 50s, muted strings at 80s, strip to clock and bass at 110s, gradual fade. Instrumental only.
+```
 
 ## Stile B — Soft/Narrativo
 
-### bg-geo — "orizzonte aperto"
-**STYLE:** wide ambient landscape, gentle analog synth pad, distant acoustic guitar harmonics, subtle field recordings of wind or sea, spacious reverb, sense of standing on a hilltop looking at the world, Brian Eno Ambient 1 meets Sigur Rós, BPM 60, no drums no percussion, no tension, pastoral and curious, instrumental, loopable
+### "orizzonte aperto"
+**SONG DESCRIPTION:**
+```
+Wide ambient landscape, 3 minutes loopable. Gentle analog synth pad, distant acoustic guitar harmonics, subtle field recordings of wind or sea, spacious reverb. Standing on a hilltop looking at the world, Brian Eno Ambient 1 meets Sigur Ros, BPM 60, pastoral and curious. Pad swell with wind, guitar harmonics at 30s, pad shifts chord at 60s, guitar rests at 90s, both return at 120s, fade to wind. No drums, no tension. Instrumental only.
+```
 
-**STRUCTURE:** 0-30s analog pad swell with wind field recording, 30-60s distant guitar harmonics enter, 60-90s pad shifts chord slowly, 90-120s guitar rests and wind fills the space, 120-150s pad and guitar return together, 150-180s slow fade to wind, no vocals
-
-### bg-geo — "caffè del mattino"
-**STYLE:** warm lo-fi jazz morning, soft muted trumpet playing long notes, gentle Rhodes chords, barely audible brushed cymbal, coffee shop field recording at very low volume, Chet Baker meets Nujabes morning side, BPM 70, intimate and relaxed, no urgency, no tension, instrumental, loopable
-
-**STRUCTURE:** 0-20s Rhodes chord with coffee shop ambience barely audible, 20-50s muted trumpet enters with a long warm note, 50-80s trumpet plays a simple phrase, 80-110s trumpet rests and Rhodes plays alone, 110-140s trumpet returns with variation, 140-180s fade, no vocals
+### "caffè del mattino"
+**SONG DESCRIPTION:**
+```
+Warm lo-fi jazz morning, 3 minutes loopable. Soft muted trumpet playing long notes, gentle Rhodes chords, barely audible brushed cymbal, coffee shop field recording at very low volume. Chet Baker meets Nujabes, BPM 70, intimate and relaxed. Rhodes chord with faint coffee shop ambience, muted trumpet enters at 20s, simple phrase at 50s, trumpet rests at 80s, returns at 110s, fade. No urgency. Instrumental only.
+```
 
 ---
 
@@ -120,27 +127,31 @@ Lo script `generate-podcast.sh` ruota tra TUTTE le varianti (`bg-tech.mp3`, `bg-
 
 ## Stile A — Energetico
 
-### bg-soft — "introspective rhodes"
-**STYLE:** warm jazz Rhodes piano introspection, soft brushed drum loop, upright bass walking sparingly, vinyl crackle, lo-fi tape saturation, Nujabes meets Bill Evans, contemplative late-night studio vibe, BPM 78, no vocals, loopable
+### "introspective rhodes"
+**SONG DESCRIPTION:**
+```
+Warm jazz Rhodes piano introspection, 3 minutes loopable. Soft brushed drum loop, upright bass walking sparingly, vinyl crackle, lo-fi tape saturation. Nujabes meets Bill Evans, contemplative late-night studio, BPM 78. Solo Rhodes chords, upright bass at 25s, brushed drums at 60s, breakdown to Rhodes with vinyl at 90s, full trio returns at 120s, fade. Instrumental only.
+```
 
-**STRUCTURE:** 0-25s solo Rhodes chord progression, 25-60s upright bass enters walking, 60-90s brushed drums join softly, 90-120s breakdown to Rhodes only with vinyl crackle, 120-150s full trio returns, 150-180s fade
-
-### bg-soft — "neoclassical ambient"
-**STYLE:** neoclassical ambient piano with field recordings, soft felted piano, distant cello pad, subtle rain ambience, tape hiss warmth, contemplative reflective mood, Olafur Arnalds and Hania Rani influence, BPM 65, no vocals, loopable
-
-**STRUCTURE:** 0-30s solo piano motif with rain ambience, 30-60s cello pad enters underneath, 60-90s second piano counter-melody, 90-120s breakdown to ambience only, 120-150s rebuild with both piano layers, 150-180s slow fade
+### "neoclassical ambient"
+**SONG DESCRIPTION:**
+```
+Neoclassical ambient piano with field recordings, 3 minutes loopable. Soft felted piano, distant cello pad, subtle rain ambience, tape hiss warmth. Olafur Arnalds and Hania Rani, contemplative reflective, BPM 65. Solo piano motif with rain, cello enters at 30s, second piano counter-melody at 60s, breakdown to ambience at 90s, rebuild at 120s, slow fade. Instrumental only.
+```
 
 ## Stile B — Soft/Narrativo
 
-### bg-soft — "biblioteca la sera"
-**STYLE:** solo felt piano, very soft and slow, intimate close-mic recording, gentle tape hiss and vinyl texture, sense of reading in a quiet library at dusk, Hania Rani meets Erik Satie Gymnopédies, BPM 58, rubato feel, no drums no bass no other instruments, the simplest warmest thing, instrumental, loopable
+### "biblioteca la sera"
+**SONG DESCRIPTION:**
+```
+Solo felt piano, very soft and slow, 3 minutes loopable. Intimate close-mic recording, gentle tape hiss and vinyl texture, reading in a quiet library at dusk. Hania Rani meets Erik Satie Gymnopedie, BPM 58, rubato feel. Simple three-note motif, develops at 40s, pause to tape hiss at 80s, motif returns transposed at 120s, fade with sustain pedal. No drums, no bass, no other instruments. Instrumental only.
+```
 
-**STRUCTURE:** 0-40s solo piano playing a simple three-note motif, 40-80s motif develops with one additional note, 80-120s pause to just tape hiss, 120-160s piano returns with the original motif transposed, 160-180s fade with long sustain pedal, no vocals
-
-### bg-soft — "finestra aperta"
-**STYLE:** ambient strings and field recordings, solo violin playing very long sustained notes, distant birdsong field recording, gentle analog pad, sense of an open window in spring, Max Richter Sleep meets Jóhann Jóhannsson, BPM free, no drums no rhythm no beats, just breath and strings, instrumental, loopable
-
-**STRUCTURE:** 0-30s birdsong field recording alone, 30-60s violin enters with a single sustained note, 60-90s analog pad joins underneath, 90-120s violin shifts to a second note, 120-150s pad swells and violin holds, 150-180s everything fades to birdsong, no vocals
+### "finestra aperta"
+**SONG DESCRIPTION:**
+```
+Ambient strings and field recordings, 3 minutes loopable. Solo violin playing very long sustained notes, distant birdsong, gentle analog pad. Open window in spring, Max Richter meets Johann Johannsson, BPM free. Birdsong alone, violin enters at 30s, pad joins at 60s, violin shifts note at 90s, pad swells at 120s, fade to birdsong. No drums, no rhythm, no beats. Instrumental only.
+```
 
 ---
 
@@ -148,36 +159,39 @@ Lo script `generate-podcast.sh` ruota tra TUTTE le varianti (`bg-tech.mp3`, `bg-
 
 ## Stile A — Energetico
 
-### bg-upbeat — "tech startup energy"
-**STYLE:** uplifting electronic pop instrumental, plucky synth arpeggio, snappy clap percussion, warm bass, claps on 2 and 4, optimistic major key, modern indie electronica, ODESZA meets Tycho, BPM 112, no vocals, loopable
+### "tech startup energy"
+**SONG DESCRIPTION:**
+```
+Uplifting electronic pop instrumental, 3 minutes loopable. Plucky synth arpeggio, snappy clap percussion, warm bass, claps on 2 and 4, optimistic major key, modern indie electronica. ODESZA meets Tycho, BPM 112. Arpeggio and pluck intro, clap and bass at 25s, lead synth melody at 55s, breakdown at 85s, full mix with countermelody at 115s, fade. Instrumental only.
+```
 
-**STRUCTURE:** 0-25s arpeggio and pluck intro, 25-55s clap and bass enter, 55-85s lead synth melody on top, 85-115s breakdown to arp only with reverb wash, 115-145s full mix with new layered countermelody, 145-180s fade
-
-### bg-upbeat — "future garage"
-**STYLE:** future garage podcast bed, syncopated 2-step shuffle drums, warm sub bass, chopped vocal-like pad textures (no real vocals), bright filter sweeps, optimistic forward momentum, Bonobo meets Mount Kimbie, BPM 130, no vocals, loopable
-
-**STRUCTURE:** 0-25s shuffle drums and sub bass intro, 25-55s pad layer enters, 55-85s filter sweep build with extra percussion, 85-115s breakdown to pad only, 115-145s drums return with new bass riff, 145-180s fade
+### "future garage"
+**SONG DESCRIPTION:**
+```
+Future garage podcast bed, 3 minutes loopable. Syncopated 2-step shuffle drums, warm sub bass, chopped vocal-like pad textures (no real vocals), bright filter sweeps, optimistic forward momentum. Bonobo meets Mount Kimbie, BPM 130. Shuffle drums and sub bass intro, pad at 25s, filter sweep at 55s, breakdown at 85s, drums return with new bass riff at 115s, fade. Instrumental only.
+```
 
 ## Stile B — Soft/Narrativo
 
-### bg-upbeat — "pomeriggio in giardino"
-**STYLE:** gentle bossa nova, soft nylon guitar, light shaker percussion, warm upright bass, major key, quiet Saturday afternoon in a garden, Antônio Carlos Jobim meets Khruangbin, BPM 86, relaxed and optimistic without excitement, no electronic sounds, no synths, instrumental, loopable
+### "pomeriggio in giardino"
+**SONG DESCRIPTION:**
+```
+Gentle bossa nova, 3 minutes loopable. Soft nylon guitar, light shaker percussion, warm upright bass, major key. Quiet Saturday afternoon in a garden, Jobim meets Khruangbin, BPM 86, relaxed and optimistic without excitement. Solo nylon guitar bossa pattern, shaker and bass at 25s, gentle melody at 55s, breakdown at 85s, bass returns at 115s, fade. No electronic sounds, no synths. Instrumental only.
+```
 
-**STRUCTURE:** 0-25s solo nylon guitar bossa pattern, 25-55s shaker and bass enter, 55-85s guitar plays a gentle melody on top, 85-115s breakdown to guitar and shaker, 115-145s bass returns and guitar plays closing phrase, 145-180s fade, no vocals
-
-### bg-upbeat — "workshop del pomeriggio"
-**STYLE:** warm marimba and acoustic guitar, gentle marimba playing a simple optimistic melody, acoustic guitar comping softly, subtle tambourine, craft workshop feeling, positive but calm, Penguin Cafe Orchestra meets Beirut acoustic side, BPM 92, handmade not machine-made, no electronic production, no synths, instrumental, loopable
-
-**STRUCTURE:** 0-25s marimba plays melody alone, 25-55s guitar enters comping, 55-85s tambourine joins lightly, 85-115s marimba rests and guitar plays alone, 115-145s marimba returns with variation, 145-180s fade, no vocals
+### "workshop del pomeriggio"
+**SONG DESCRIPTION:**
+```
+Warm marimba and acoustic guitar, 3 minutes loopable. Gentle marimba playing simple optimistic melody, acoustic guitar comping softly, subtle tambourine. Craft workshop feeling, Penguin Cafe Orchestra meets Beirut, BPM 92, handmade not machine-made. Marimba alone, guitar at 25s, tambourine at 55s, marimba rests at 85s, returns at 115s, fade. No electronic production, no synths. Instrumental only.
+```
 
 ---
 
 ## Note pratiche
 
-- **Lunghezza minima**: 2 minuti. Tracce più lunghe = meno loop udibili.
-- **Volume**: in `data/podcast-config.json` regola `musicVolume` (default 0.08 = -22dB sotto la voce).
-- **Quanti file generare**: 2-3 varianti per stile × mood bastano.
-- **Test rapido**: `npm run podcast` e ascolta.
-- **Mood mapping**: lo script assegna i mood ai capitoli via `[CHAPTER mood=tech|geo|soft|upbeat]`.
-- **Naming**: `bg-tech.mp3`, `bg-tech1.mp3`, `bg-tech2.mp3`, ... — il file senza numero è la variante "0". Lo script raccoglie tutto.
-- **Mix & match**: puoi avere bg-tech.mp3 (minimal techno) e bg-tech1.mp3 (studio notturno) nella stessa pool. La rotazione li alterna tra i capitoli.
+- **Lunghezza minima**: 2 minuti. Tracce più lunghe = meno loop.
+- **Volume**: `musicVolume: 0.08` in `data/podcast-config.json` (= -22dB sotto la voce).
+- **Naming**: `bg-tech.mp3`, `bg-tech1.mp3`, ... — il file senza numero è variante "0".
+- **Mix & match**: puoi avere bg-tech.mp3 (minimal techno) e bg-tech1.mp3 (studio notturno) nella stessa pool.
+- **Test**: `npm run podcast` e ascolta.
+- **Mood mapping**: `[CHAPTER mood=tech|geo|soft|upbeat]`.
