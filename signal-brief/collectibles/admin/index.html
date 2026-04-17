@@ -201,6 +201,7 @@
         // Tabs
         const tabDefs = [
             { key: 'thinkers', label: 'Thinkers' },
+            { key: 'llm', label: 'LLM Interactions' },
             { key: 'branding', label: 'Branding' },
             { key: 'prompts', label: 'Prompts' },
             { key: 'logs', label: 'Log' },
@@ -240,6 +241,9 @@
             panels.thinkers.appendChild(el('div', {}, `Errore: ${e.message}`));
         }
 
+        // LLM interactions panel
+        panels.llm = await buildLlmPanel(themeName);
+
         // Branding panel
         panels.branding = await buildConfigEditor(themeName, 'branding.json');
 
@@ -270,6 +274,62 @@
         panels.thinkers.classList.add('active');
 
         app.appendChild(panel);
+    }
+
+    async function buildLlmPanel(themeName) {
+        const panel = el('div', { class: 'dpanel' });
+        try {
+            const res = await fetch(`${API}/themes/${themeName}/llm-log`);
+            const entries = res.ok ? await res.json() : [];
+            if (entries.length === 0) {
+                panel.appendChild(el('div', { style: 'color:#888;font-size:0.85rem;padding:1rem' },
+                    'Nessuna interazione LLM registrata per questo tema. Esegui un scan per iniziare.'));
+                return panel;
+            }
+            // Summary stats
+            const total = entries.length;
+            const ok = entries.filter(e => e.status === 'ok').length;
+            const errors = total - ok;
+            const totalDur = entries.reduce((s, e) => s + (e.durationMs || 0), 0);
+            panel.appendChild(el('div', { style: 'font-size:0.78rem;color:#888;margin-bottom:12px;font-family:IBM Plex Mono,monospace' },
+                `${total} chiamate · ${ok} ok · ${errors} errori · ${Math.round(totalDur/1000)}s totali`));
+
+            // Table
+            const table = document.createElement('table');
+            table.style.cssText = 'width:100%;border-collapse:collapse;font-size:0.75rem;font-family:IBM Plex Mono,monospace';
+            const thead = el('tr', {}, [
+                el('th', { style: 'text-align:left;padding:6px 8px;border-bottom:1px solid #333;color:#888' }, 'Ora'),
+                el('th', { style: 'text-align:left;padding:6px 8px;border-bottom:1px solid #333;color:#888' }, 'Azione'),
+                el('th', { style: 'text-align:left;padding:6px 8px;border-bottom:1px solid #333;color:#888' }, 'Label'),
+                el('th', { style: 'text-align:right;padding:6px 8px;border-bottom:1px solid #333;color:#888' }, 'Prompt'),
+                el('th', { style: 'text-align:right;padding:6px 8px;border-bottom:1px solid #333;color:#888' }, 'Risposta'),
+                el('th', { style: 'text-align:right;padding:6px 8px;border-bottom:1px solid #333;color:#888' }, 'Durata'),
+                el('th', { style: 'text-align:center;padding:6px 8px;border-bottom:1px solid #333;color:#888' }, 'Stato'),
+            ]);
+            table.appendChild(thead);
+
+            // Show most recent first
+            for (const e of [...entries].reverse().slice(0, 100)) {
+                const statusColor = e.status === 'ok' ? '#86efac' : '#fca5a5';
+                const row = el('tr', { style: 'border-bottom:1px solid #1a1a1a', title: e.error || '' }, [
+                    el('td', { style: 'padding:4px 8px;color:#888' }, (e.ts || '').slice(11, 19)),
+                    el('td', { style: 'padding:4px 8px' }, e.action || ''),
+                    el('td', { style: 'padding:4px 8px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap' }, e.label || ''),
+                    el('td', { style: 'padding:4px 8px;text-align:right;color:#888' }, e.promptLen ? `${e.promptLen}c` : ''),
+                    el('td', { style: 'padding:4px 8px;text-align:right;color:#888' }, e.responseLen ? `${e.responseLen}c` : ''),
+                    el('td', { style: 'padding:4px 8px;text-align:right' }, e.durationMs ? `${(e.durationMs/1000).toFixed(1)}s` : ''),
+                    el('td', { style: `padding:4px 8px;text-align:center;color:${statusColor}` }, e.status === 'ok' ? '✓' : '✗'),
+                ]);
+                table.appendChild(row);
+            }
+
+            const wrapper = el('div', { style: 'max-height:400px;overflow-y:auto' });
+            wrapper.appendChild(table);
+            panel.appendChild(wrapper);
+        } catch (e) {
+            panel.appendChild(el('div', {}, `Errore: ${e.message}`));
+        }
+        return panel;
     }
 
     async function buildConfigEditor(themeName, filename) {
