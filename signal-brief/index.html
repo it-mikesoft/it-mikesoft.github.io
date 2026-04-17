@@ -39,6 +39,23 @@
             font-family: 'IBM Plex Mono', monospace;
             font-size: 0.72rem; color: #9ca3af;
         }
+        .ep-row {
+            display: flex; align-items: center; gap: 0.6rem;
+            margin-top: 0.65rem; padding-top: 0.6rem; border-top: 1px solid #f0ede8;
+        }
+        .play-btn {
+            width: 28px; height: 28px; border-radius: 50%;
+            border: 1px solid #d1d5db; background: #fff; color: #374151;
+            font-size: 11px; cursor: pointer; display: flex;
+            align-items: center; justify-content: center; flex-shrink: 0;
+            transition: background 0.12s, color 0.12s;
+        }
+        .play-btn:hover { background: #2563eb; color: #fff; border-color: #2563eb; }
+        .play-btn.playing { background: #2563eb; color: #fff; border-color: #2563eb; }
+        .ep-title {
+            font-size: 0.78rem; color: #374151;
+            overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+        }
         footer {
             margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e2ddd6;
             text-align: center; color: #9ca3af; font-size: 0.78rem;
@@ -51,8 +68,41 @@
             .card .tagline { color: #9ca3af; }
             header .sub { color: #9ca3af; }
             footer { border-top-color: #3a352d; }
+            .ep-row { border-top-color: #3a352d; }
+            .play-btn { background: #333; color: #e5e5e5; border-color: #555; }
+            .play-btn:hover, .play-btn.playing { background: #60a5fa; color: #111; border-color: #60a5fa; }
+            .ep-title { color: #d4d4d4; }
         }
     </style>
+    <script>
+        let currentAudio = null;
+        let currentBtn = null;
+        function togglePlay(btn, url) {
+            if (currentAudio && currentBtn === btn) {
+                currentAudio.pause();
+                currentAudio = null;
+                btn.textContent = '▶';
+                btn.classList.remove('playing');
+                currentBtn = null;
+                return;
+            }
+            if (currentAudio) {
+                currentAudio.pause();
+                if (currentBtn) { currentBtn.textContent = '▶'; currentBtn.classList.remove('playing'); }
+            }
+            currentAudio = new Audio(url);
+            currentBtn = btn;
+            btn.textContent = '⏸';
+            btn.classList.add('playing');
+            currentAudio.play();
+            currentAudio.onended = () => {
+                btn.textContent = '▶';
+                btn.classList.remove('playing');
+                currentAudio = null;
+                currentBtn = null;
+            };
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -64,32 +114,62 @@
     <a href="/signal-brief/ai/" class="card" style="border-left: 4px solid #2563eb">
       <h2>Signal.Brief</h2>
       <div class="tagline">Intelligence Dashboard · AI-Powered</div>
-      <div class="meta">23 thinker attivi</div>
+      <div class="meta">23 thinker</div>
+      
+      <div class="ep-row">
+        <button class="play-btn" onclick="event.preventDefault(); event.stopPropagation(); togglePlay(this, '/signal-brief/ai/podcast/episodes/2026-04-17.mp3')" title="Ascolta">▶</button>
+        <span class="ep-title">1704 · Chi tiene il timone dell'AI</span>
+      </div>
     </a>
     <a href="/signal-brief/collectibles/" class="card" style="border-left: 4px solid #b45309">
       <h2>Signal.Collectibles</h2>
       <div class="tagline">Collectibles & Art Investment Intelligence · AI-Powered</div>
-      <div class="meta">12 thinker attivi</div>
+      <div class="meta">12 thinker</div>
+      
+      <div class="ep-row">
+        <button class="play-btn" onclick="event.preventDefault(); event.stopPropagation(); togglePlay(this, '/signal-brief/collectibles/podcast/episodes/2026-04-17.mp3')" title="Ascolta">▶</button>
+        <span class="ep-title">1704 · Chi tiene il timone dell'AI</span>
+      </div>
     </a>
     <a href="/signal-brief/finanza/" class="card" style="border-left: 4px solid #059669">
       <h2>Signal.Finance</h2>
       <div class="tagline">Investment Intelligence · AI-Powered</div>
-      <div class="meta">12 thinker attivi</div>
+      <div class="meta">12 thinker</div>
+      
+      <div class="ep-row">
+        <button class="play-btn" onclick="event.preventDefault(); event.stopPropagation(); togglePlay(this, '/signal-brief/finanza/podcast/episodes/2026-04-17.mp3')" title="Ascolta">▶</button>
+        <span class="ep-title">1704 · Chi tiene il timone dell'AI</span>
+      </div>
     </a>
     <a href="/signal-brief/moda/" class="card" style="border-left: 4px solid #be185d">
       <h2>Signal.Moda</h2>
       <div class="tagline">Fashion Intelligence · AI-Powered</div>
-      <div class="meta">12 thinker attivi</div>
+      <div class="meta">12 thinker</div>
+      
+      <div class="ep-row">
+        <button class="play-btn" onclick="event.preventDefault(); event.stopPropagation(); togglePlay(this, '/signal-brief/moda/podcast/episodes/2026-04-17.mp3')" title="Ascolta">▶</button>
+        <span class="ep-title">1704 · Chi tiene il timone dell'AI</span>
+      </div>
     </a>
     <a href="/signal-brief/travel/" class="card" style="border-left: 4px solid #0d9488">
       <h2>Signal.Travel</h2>
       <div class="tagline">Travel Intelligence · AI-Powered</div>
-      <div class="meta">12 thinker attivi</div>
+      <div class="meta">12 thinker</div>
+      
+      <div class="ep-row">
+        <button class="play-btn" onclick="event.preventDefault(); event.stopPropagation(); togglePlay(this, '/signal-brief/travel/podcast/episodes/2026-04-17.mp3')" title="Ascolta">▶</button>
+        <span class="ep-title">1704 · Chi tiene il timone dell'AI</span>
+      </div>
     </a>
     <a href="/signal-brief/vino/" class="card" style="border-left: 4px solid #881337">
       <h2>Signal.Vino</h2>
       <div class="tagline">Wine Intelligence · AI-Powered</div>
-      <div class="meta">12 thinker attivi</div>
+      <div class="meta">12 thinker</div>
+      
+      <div class="ep-row">
+        <button class="play-btn" onclick="event.preventDefault(); event.stopPropagation(); togglePlay(this, '/signal-brief/vino/podcast/episodes/2026-04-17.mp3')" title="Ascolta">▶</button>
+        <span class="ep-title">1704 · Chi tiene il timone dell'AI</span>
+      </div>
     </a>
     </div>
     <footer>
