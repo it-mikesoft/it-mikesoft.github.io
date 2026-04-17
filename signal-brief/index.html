@@ -1,13 +1,99 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="it">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Signal.Brief — Intelligence Dashboard</title>
-    <link rel="icon" type="image/svg+xml" href="/signal-brief/ai/favicon.svg" />
-    <script type="module" crossorigin src="/signal-brief/ai/assets/index-BgEfXdCJ.js"></script>
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signal Brief — Portale</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #faf8f4; color: #1a1a1a; padding: 3rem 1.5rem;
+            max-width: 720px; margin: 0 auto; line-height: 1.6;
+        }
+        header { margin-bottom: 2.5rem; text-align: center; }
+        header h1 {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 2rem; font-weight: 600; letter-spacing: -0.01em;
+        }
+        header h1 span { color: #f59e0b; }
+        header .sub {
+            color: #6b7280; font-size: 0.85rem; margin-top: 0.5rem;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+        .cards { display: grid; gap: 1rem; margin-top: 2rem; }
+        .card {
+            display: block; padding: 1.25rem 1.5rem; background: #fff;
+            border: 1px solid #e2ddd6; border-radius: 8px;
+            text-decoration: none; color: inherit;
+            transition: transform 0.12s, box-shadow 0.12s;
+        }
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            text-decoration: none;
+        }
+        .card h2 { font-size: 1.15rem; margin-bottom: 0.2rem; }
+        .card .tagline { font-size: 0.85rem; color: #6b7280; margin-bottom: 0.5rem; }
+        .card .meta {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.72rem; color: #9ca3af;
+        }
+        footer {
+            margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e2ddd6;
+            text-align: center; color: #9ca3af; font-size: 0.78rem;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+        @media (prefers-color-scheme: dark) {
+            body { background: #1f1d18; color: #e5e5e5; }
+            .card { background: #2a2823; border-color: #3a352d; }
+            .card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+            .card .tagline { color: #9ca3af; }
+            header .sub { color: #9ca3af; }
+            footer { border-top-color: #3a352d; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Signal<span>.</span>Brief</h1>
+        <div class="sub">Intelligence Dashboard · 6 temi disponibili</div>
+    </header>
+    <div class="cards">
+        
+    <a href="/signal-brief/ai/" class="card" style="border-left: 4px solid #2563eb">
+      <h2>Signal.Brief</h2>
+      <div class="tagline">Intelligence Dashboard · AI-Powered</div>
+      <div class="meta">23 thinker attivi</div>
+    </a>
+    <a href="/signal-brief/collectibles/" class="card" style="border-left: 4px solid #b45309">
+      <h2>Signal.Collectibles</h2>
+      <div class="tagline">Collectibles & Art Investment Intelligence · AI-Powered</div>
+      <div class="meta">12 thinker attivi</div>
+    </a>
+    <a href="/signal-brief/finanza/" class="card" style="border-left: 4px solid #059669">
+      <h2>Signal.Finance</h2>
+      <div class="tagline">Investment Intelligence · AI-Powered</div>
+      <div class="meta">12 thinker attivi</div>
+    </a>
+    <a href="/signal-brief/moda/" class="card" style="border-left: 4px solid #be185d">
+      <h2>Signal.Moda</h2>
+      <div class="tagline">Fashion Intelligence · AI-Powered</div>
+      <div class="meta">12 thinker attivi</div>
+    </a>
+    <a href="/signal-brief/travel/" class="card" style="border-left: 4px solid #0d9488">
+      <h2>Signal.Travel</h2>
+      <div class="tagline">Travel Intelligence · AI-Powered</div>
+      <div class="meta">12 thinker attivi</div>
+    </a>
+    <a href="/signal-brief/vino/" class="card" style="border-left: 4px solid #881337">
+      <h2>Signal.Vino</h2>
+      <div class="tagline">Wine Intelligence · AI-Powered</div>
+      <div class="meta">12 thinker attivi</div>
+    </a>
+    </div>
+    <footer>
+        100% AI-generated · MikeSoft · 2026
+    </footer>
+</body>
 </html>
