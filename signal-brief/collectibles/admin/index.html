@@ -180,6 +180,41 @@
 
         // Actions
         const resultDiv = el('div', { class: 'action-result' });
+        // Load podcast config for enable/disable + duration controls
+        let podcastEnabled = false;
+        let podcastMinutes = 5;
+        try {
+            const pcRes = await fetch(`${API}/themes/${themeName}/config/podcast-config.json`);
+            if (pcRes.ok) {
+                const pc = await pcRes.json();
+                podcastEnabled = pc.podcastEnabled || false;
+                podcastMinutes = pc.podcastTargetMinutes || 5;
+            }
+        } catch {}
+
+        const podcastStatusEl = el('span', {
+            style: `font-size:0.75rem;font-family:IBM Plex Mono,monospace;padding:3px 8px;border-radius:4px;` +
+                   `background:${podcastEnabled ? '#052e16' : '#1a1a1a'};color:${podcastEnabled ? '#86efac' : '#888'};border:1px solid ${podcastEnabled ? '#16a34a44' : '#333'}`
+        }, podcastEnabled ? `Podcast ON · ${podcastMinutes}min` : 'Podcast OFF');
+
+        const togglePodcast = async () => {
+            podcastEnabled = !podcastEnabled;
+            const pcRes = await fetch(`${API}/themes/${themeName}/config/podcast-config.json`);
+            const pc = pcRes.ok ? await pcRes.json() : {};
+            pc.podcastEnabled = podcastEnabled;
+            await fetch(`${API}/themes/${themeName}/config/podcast-config.json`, { method: 'PUT', body: JSON.stringify(pc, null, 2) });
+            loadThemes();
+        };
+        const changeDuration = async (newMin) => {
+            podcastMinutes = newMin;
+            const pcRes = await fetch(`${API}/themes/${themeName}/config/podcast-config.json`);
+            const pc = pcRes.ok ? await pcRes.json() : {};
+            pc.podcastTargetMinutes = newMin;
+            await fetch(`${API}/themes/${themeName}/config/podcast-config.json`, { method: 'PUT', body: JSON.stringify(pc, null, 2) });
+            resultDiv.textContent = `Durata podcast impostata a ${newMin} minuti ✓`;
+            setTimeout(() => resultDiv.textContent = '', 3000);
+        };
+
         const actionRow = el('div', { class: 'action-row' }, [
             el('button', { class: 'btn btn-primary', onclick: async () => {
                 resultDiv.textContent = 'Scan avviato...';
@@ -193,6 +228,17 @@
                 const d = await r.json();
                 resultDiv.textContent = `Podcast avviato (PID ${d.pid}). Controlla i log.`;
             }}, 'Genera podcast'),
+            el('button', { class: `btn ${podcastEnabled ? '' : 'btn-primary'}`, onclick: togglePodcast },
+                podcastEnabled ? 'Disattiva podcast' : 'Attiva podcast'),
+            el('select', {
+                class: 'btn',
+                style: 'padding:4px 8px',
+                onchange: (e) => changeDuration(parseInt(e.target.value)),
+                html: [5, 10, 15, 20, 25, 30].map(m =>
+                    `<option value="${m}" ${m === podcastMinutes ? 'selected' : ''}>${m} min</option>`
+                ).join('')
+            }),
+            podcastStatusEl,
             el('button', { class: 'btn', onclick: () => loadThemes() }, '↻ Aggiorna'),
         ]);
         panel.appendChild(actionRow);
