@@ -1,0 +1,98 @@
+[TITLE] Scalare o capire
+[DESCRIPTION] Un miliardo di dollari contro la strada dei grandi modelli, un benchmark che nessuno passa, Nvidia ridefinita come utility dell'energia. Il paradigma dell'AI si incrina dall'interno.
+
+
+[CHAPTER mood=geo]
+
+Il nove marzo di quest'anno, a Parigi, Yann LeCun annuncia di aver raccolto un miliardo di dollari al primo giro. Il seed più grande nella storia europea. I soldi non servono a costruire un chatbot migliore — servono, testuale, a costruire un'alternativa al chatbot. Siamo al diciotto aprile, e questo è Signal Brief. Cominciamo da lì, da un gesto preciso di un uomo che ha passato trent'anni dentro la ricerca sul deep learning e adesso scommette contro la strada che i suoi colleghi stanno percorrendo.
+
+
+[CHAPTER mood=soft]
+
+Un miliardo di dollari, nel mondo attuale dell'intelligenza artificiale, dice qualcosa di preciso. Non dice "ci crediamo più di altri". Quel livello di credito OpenAI e Anthropic lo raccolgono ogni pochi mesi. Un miliardo a LeCun, che di mestiere fa il dissidente rispetto alla linea dominante, dice una cosa diversa: adesso anche il mercato sta scommettendo che potrebbe esserci ragione nell'obiezione.
+
+L'obiezione è semplice, se la spogliamo del linguaggio tecnico. I modelli linguistici di oggi — ChatGPT, Claude, Gemini, tutti — lavorano bene sulle parole e sulle immagini. Ma appena si esce dal testo e si entra nel mondo fisico, dove le cose hanno peso, attriti, conseguenze, si bloccano. LeCun lo ha detto in una lezione a Brown University il primo aprile con una parola che non si usa in accademia: dead end. Vicolo cieco. I cento e passa miliardi investiti su questa strada, testuale, complete BS.
+
+La cosa strana è che non è solo. Negli stessi giorni Ilya Sutskever, uno dei fondatori di OpenAI poi uscito per fondare Safe Superintelligence, dice a Dwarkesh Patel che l'Age of Scaling è finita e comincia l'Age of Research. In altre parole: il trucco che ha funzionato per sei anni — modelli più grandi, più dati, più calcolo — sta dando ritorni sempre più piccoli. Il collo di bottiglia non è più il calcolo. Sono le idee. Qualche giorno prima, al quartier generale di Y Combinator, François Chollet presenta un test nuovo, ARC-AGI-3. Ambienti interattivi, l'agente deve esplorare, capire le regole, vincere. Gli umani prendono il cento per cento. I modelli di frontiera lo zero virgola cinquantuno. Poco dopo, John Carmack — l'uomo che ha scritto Doom e Quake — mette su GitHub un banco di prova: un Atari 2600 vero, una telecamera che guarda lo schermo, un robottino che muove il joystick. Il punto non è battere un record. Il punto è dimostrare che quando l'intelligenza deve fare i conti col mondo fisico — ritardi, rumore, cose che si rompono — la simulazione smette di valere.
+
+Presi insieme, questi gesti fanno qualcosa. Per anni la critica allo scaling è stata roba da scienziati scettici, isolati, che scrivevano articoli che pochi leggevano. In aprile 2026 è diventata un fronte coordinato, con capitale proprio e prove empiriche. È successa una cosa simile all'inizio del Novecento, quando la fisica classica cominciò a scricchiolare su fenomeni specifici — la radiazione del corpo nero, lo spettro dell'idrogeno — e una generazione intera di fisici si trovò a dire: non è che dobbiamo migliorare il modello, ci serve un altro modello. Ci vollero vent'anni e arrivò la meccanica quantistica. È presto per dire la stessa cosa sull'AI. Ma la forma della discussione ha preso quella piega.
+
+Dall'altra parte, chi pensa che scalare ancora sia l'unica via sensata non arretra di un centimetro. Sam Altman ha dichiarato un target di duecentocinquanta gigawatt per OpenAI. Duecentocinquanta reattori nucleari di potenza. Jensen Huang, alla stessa ora, spiega a Dwarkesh che Nvidia non è più una società di chip: è una fabbrica che trasforma elettroni in token. La frase è perfetta perché ridefinisce il gioco. Non stiamo più parlando di software. Stiamo parlando di un'utility energetica.
+
+E qui si apre un filo gemello. Se l'intelligenza artificiale diventa una commodity — una cosa che chiunque può ottenere, e a prezzi che scendono — il valore si sposta altrove. Paul Graham a fine marzo pubblica un saggio breve che chiama "The Brand Age": quando la tecnica converge, quando le differenze sostanziali tra i prodotti spariscono, l'unico differenziatore rimasto è il brand. Patrick Collison dice che il software prodotto in serie è morto. Benedict Evans smonta la difensibilità di OpenAI come se fosse Netscape nel 1995. Sono tre voci diverse che arrivano allo stesso posto: la guerra non si vince più sul modello, si vince sul dove-ti-metti rispetto al modello.
+
+Stanno tutti arrivando alla stessa casa da strade diverse.
+
+
+[CHAPTER mood=tech]
+
+Vale la pena stare un attimo su LeCun, perché la sua storia dice qualcosa del momento che stiamo vivendo. Ha sessantacinque anni, è francese, è uno dei tre che nel 2018 ha preso il Turing Award — il Nobel dell'informatica — insieme a Hinton e Bengio per aver fondato il deep learning moderno. È stato capo scientifico di Meta per dodici anni. Quando LeCun dice una cosa sull'AI, la dice da dentro la stanza.
+
+A gennaio di quest'anno lascia Meta. Il motivo che ha raccontato è brutale nella sua semplicità: Zuckerberg ha scommesso tutto sull'intelligenza generativa, sulla strada dei grandi modelli linguistici, e a LeCun non andava. "Non si dice a un ricercatore come me cosa fare". Esce, e pochi mesi dopo annuncia AMI Labs — Advanced Machine Intelligence — con un miliardo di seed, valutazione pre-money tre miliardi e mezzo. È il seed più grande della storia europea. I nomi dietro sono pesanti: fondi americani, fondi arabi, qualche grande famiglia francese.
+
+La tesi architetturale, in parole povere, è questa. I modelli linguistici imparano prevedendo la parola dopo. Funziona bene per il testo. Non funziona per il mondo. Se voglio un agente che sappia che se sposto un bicchiere dal tavolo cade per terra, un modello di parole non basta. Serve quello che LeCun chiama world model — un modello del mondo — addestrato non su testi ma su video, suoni, dati sensoriali, scienza. Un sistema che prima di muoversi prevede le conseguenze del proprio movimento. È il lavoro che chiama V-JEPA, che stava già portando avanti dentro Meta.
+
+C'è una cosa che mi sembra interessante, ed è il ribaltamento dell'argomento sulla sicurezza. Per anni l'industria ha parlato di sicurezza come guardrail, filtri, rifiuti: cose che impediscono al modello di dire cose pericolose. LeCun rovescia la logica. Il problema della sicurezza, dice, è che gli agenti agiscono senza poter prevedere l'esito. Questo è pericoloso a prescindere dalla buona volontà. Un sistema che invece di filtrare le risposte sa immaginare le conseguenze è strutturalmente più sicuro — non per ideologia, per ingegneria.
+
+Il dodici aprile, su X, commenta la polemica attorno all'ultimo modello di Anthropic con una battuta che vale più di molti paper: mythos drama, dice, è BS da auto-illusione. Cioè: smettiamola di parlare di intelligenze che sviluppano personalità, teniamoci alla fisica del problema. È LeCun al cento per cento: contro la mistica, per l'ingegneria.
+
+
+[CHAPTER mood=tech]
+
+Il venticinque marzo, al quartier generale di Y Combinator a San Francisco, François Chollet si siede con Sam Altman per una chiacchierata serale davanti a un pubblico di fondatori. È un momento insolito. Chollet è uno degli scettici storici dello scaling — lo dice da quando gli altri ci scrivevano sopra paper celebrativi. Altman è l'uomo che più di tutti ha incarnato quella strada. In apparenza è una serata rilassata. In realtà è uno scontro educato.
+
+Chollet annuncia ARC-AGI-3, terza generazione del benchmark che ha costruito per misurare intelligenza invece di conoscenza. La differenza è importante. Un modello linguistico oggi sa moltissime cose — ha letto praticamente tutto ciò che è stato scritto in digitale. Ma sapere non è capire. ARC-AGI-3 mette l'agente in ambienti interattivi senza istruzioni: deve esplorare, inferire le regole, trovare obiettivi e raggiungerli. Centinaia di giochi mai visti prima. Un umano normale, davanti a uno di questi ambienti, arriva al cento per cento. I modelli di frontiera — Gemini, GPT, Claude, i migliori sul mercato — prendono lo zero virgola cinquantuno. Il premio per chi li migliora è sopra i due milioni di dollari.
+
+È una cifra — quello zero virgola cinquantuno — che va presa sul serio. Per anni gli annunci dell'industria sono stati "abbiamo superato il novanta per cento su questo benchmark, l'ottantacinque su quello". Sembrava questione di mesi prima che arrivasse l'intelligenza generale. ARC-AGI-3 è una doccia fredda empirica. Sui compiti che richiedono capacità di ragionare davvero su qualcosa di nuovo, i modelli non ci sono neanche vicini.
+
+Chollet non si ferma alla critica. Lavora a una società che si chiama Ndea, dove prova a costruire una strada diversa. L'idea è che l'intelligenza non sia solo riconoscere schemi dentro tantissimi dati, ma saper comporre piccoli programmi su misura per un problema che non hai mai visto prima. È una vecchia tradizione dell'AI simbolica, quella degli anni Ottanta, che Chollet pensa vada sposata con le reti neurali di oggi. Il futuro del machine learning, secondo lui, sarà simbolico e compatto. Non un gigante da trillion di parametri. Qualcosa di molto più vicino a come ragionano gli umani.
+
+La cosa che mi sembra notevole, ascoltando la serata, è il cambio di umore. Due anni fa Chollet era un cane sciolto che diceva cose impopolari. Oggi parla da dentro una comunità che sta lentamente riorganizzandosi intorno alle sue tesi. Quando un benchmark che avevi progettato come provocazione diventa la prova che l'industria ha sbagliato strada, qualcosa si è rotto.
+
+
+[CHAPTER mood=tech]
+
+Torniamo un attimo sul filo. Da una parte, in queste settimane di aprile, si sta formando un fronte che dice: la strada dei grandi modelli linguistici è un vicolo cieco, abbiamo le prove, ci sono le alternative. Dall'altra parte c'è chi risponde raddoppiando la scommessa. E questa seconda parte passa quasi tutta per una persona sola.
+
+Jensen Huang è il CEO di Nvidia, l'azienda che produce i chip su cui gira praticamente tutta l'AI del pianeta. Quindici aprile, podcast di Dwarkesh Patel, Huang scandisce una formula che userà ripetutamente nei giorni successivi: electrons in, tokens out. Metti dentro elettroni, esce intelligenza. Nvidia non è più una società di chip. È un'utility che converte energia in pensiero artificiale.
+
+Detta così sembra una metafora. Non lo è. Le cosiddette AI factory — le fabbriche di calcolo che costruiscono giganti come xAI, OpenAI, Google — consumano tanta elettricità quanto una piccola città. Huang lo rivendica: è esattamente quello il punto. L'AI non è software, è infrastruttura industriale. E come ogni infrastruttura industriale, il collo di bottiglia non è il codice. Sono le centrali, gli elettricisti, gli idraulici. L'energia.
+
+In parallelo Sam Altman ha dichiarato un target di duecentocinquanta gigawatt per OpenAI. Duecentocinquanta reattori nucleari. Se lo scaling è un vicolo cieco — direbbe LeCun — Altman sta comprando tempo con l'elettricità. Ed è coerente con la sua filosofia: se i ritorni della scala calano, compensiamo con più scala. In un certo senso è la stessa logica che negli anni Venti del Novecento ha portato le fabbriche dal vapore all'elettricità. Non è che il vapore avesse smesso di funzionare. È che l'elettricità permetteva di superare certi limiti fisici del vapore. Huang e Altman scommettono che un altro salto di infrastruttura energetica comprerà un altro salto di intelligenza.
+
+Huang prende posizione anche sulla Cina. Metà aprile, contro i controlli all'esportazione: "non siamo uranio arricchito, sono chip". Strappa all'amministrazione Trump il via libera a vendere gli H200 in Cina, con il venticinque per cento del fatturato che torna al governo come condizione. È un'altra cosa che cambia la forma dell'industria: Nvidia non è più soltanto una società, è un pezzo di politica estera americana.
+
+E poi, a margine, la battuta che forse dice di più: "la gente confonde il proprio lavoro con gli strumenti che usa". L'esempio è la radiologia. Più AI c'è, più radiologi servono. Anti-doomer per scelta, per stile, per convenienza.
+
+
+[CHAPTER mood=tech]
+
+C'è un'ultima voce in questo coro, ed è forse quella che dice la cosa più inquietante. Vitalik Buterin, il fondatore di Ethereum, ha trentun anni e passa la vita a pensare al rapporto tra tecnologia e potere. Il due aprile pubblica sul suo sito un testo che si intitola qualcosa come "Il mio setup di AI auto-sovrano, locale, privato, sicuro".
+
+Non è un saggio filosofico. È un tutorial. Buterin racconta in dettaglio come ha smesso di usare ChatGPT e gli altri servizi in cloud, perché a suo avviso sono incompatibili con la privacy. Ha comprato un laptop con una scheda grafica Nvidia 5090 e fa girare un modello cinese open — Qwen 3.5, trentacinque miliardi di parametri — sulla propria macchina. Novanta token al secondo. Non chiama nessun server. Non manda niente a nessuno.
+
+La ragione non è paranoia. È un calcolo. Buterin stima che circa il quindici per cento delle estensioni e delle competenze che si danno oggi agli agenti AI contenga istruzioni malevole — piccoli attacchi nascosti dentro il testo. Ogni processo di modello locale lui lo fa girare dentro una gabbietta software che si chiama bubblewrap, con accesso al filesystem controllato a mano. Per le azioni importanti — mandare un messaggio su Signal, un email, firmare qualcosa — ha scritto un piccolo programma che richiede due fattori indipendenti: umano più modello. Se uno dei due sbaglia, l'azione si ferma. Non dare mai a un agente accesso libero al tuo wallet, scrive.
+
+È qui che si vede il filo di lunga durata. Balaji Srinivasan, a febbraio, aveva riassunto la stessa preoccupazione con uno slogan: not your keys, not your bots. Se le chiavi crittografiche dei tuoi agenti AI le tiene OpenAI, i bot non sono tuoi. È la versione aggiornata di un dibattito vecchio almeno quarant'anni, da quando i cypherpunk degli anni Novanta dicevano che la privacy su Internet sarebbe stata una battaglia politica, non tecnica. Oggi Buterin e Balaji dicono la stessa cosa spostata di un livello: nell'era dei bot autonomi, chi ha le chiavi comanda.
+
+La cosa che mi colpisce, leggendo Buterin, è quanto sia concreto. Non scrive manifesti. Scrive file di configurazione. Dice: ecco la mia scheda grafica, ecco il mio modello, ecco lo script che controlla i messaggi. La sovranità, nella sua versione, non è una bandiera. È una pratica settimanale, noiosa, verificabile. Anche in questo c'è un pezzo di Ottocento: le prime forme di autonomia operaia nascevano così, una lega alla volta, una cassa mutua alla volta.
+
+
+[CHAPTER mood=upbeat]
+
+Progetti da osservare. Cinque cose uscite in queste settimane che raccontano bene il filo della giornata.
+
+ARC-AGI-3 l'abbiamo già nominato. Non un modello, un test. Centinaia di ambienti interattivi dove l'agente deve capire da solo le regole e vincere. Umani al cento per cento, modelli di oggi allo zero virgola cinquantuno. È l'equivalente, per l'AI, di un esame di maturità che tutti davano per scontato e che invece quasi nessuno passa. Premio sopra i due milioni.
+
+Physical Atari è il progetto di John Carmack. Un Atari 2600 vero collegato a una telecamera e a un robottino che muove il joystick. L'agente deve giocare nel mondo reale, coi ritardi e il rumore del mondo reale. È la dimostrazione fisica che quando un algoritmo esce dalla simulazione, quasi tutto quello che funzionava smette di funzionare. Una cosa semplice che cambia la conversazione.
+
+MemPalace è un sistema di memoria per i modelli linguistici pensato come un palazzo della memoria — ali, corridoi, stanze. Gira offline, parte con centosettanta token di contesto, tocca il novantasei per cento di accuratezza. Quarantatremila stelle su GitHub in tre giorni. È la risposta locale alle memorie persistenti in cloud di cui parlava Altman. Memoria, sì, ma a casa propria.
+
+OpenClaw è il progetto che sta crescendo più rapidamente nella storia di GitHub: trecentocinquantasettemila stelle. Assistente AI che gira interamente sui propri dispositivi — shell, browser, file, casa. Nvidia sopra ci ha costruito NemoClaw, la versione con le chiusure a chiave per le aziende. Jensen Huang l'ha chiamato il sistema operativo dell'era agentica.
+
+Omarchy, per chiudere. Distribuzione Linux di DHH, l'uomo di Ruby on Rails: Arch più Hyprland, centocinquantamila installazioni in un mese, prima conferenza sold out in poche ore. Sarebbe solo una curiosità, se non fosse che DHH la vende come la casa del programmatore che vuole tornare a controllare i propri strumenti. Sovranità del desktop tradotta in download.
+
+
+[CHAPTER mood=soft]
+
+Il filo di queste settimane è abbastanza chiaro, se ci fermiamo un momento. Una parte del mondo dell'AI si chiede se la strada presa sei anni fa sia davvero quella giusta. Un'altra parte risponde mettendo sul tavolo duecentocinquanta gigawatt. Una terza, silenziosa, si costruisce un laptop con dentro il proprio modello e aspetta di vedere. È stato Signal Brief. Alla prossima.
