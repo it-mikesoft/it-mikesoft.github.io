@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signal Admin — Dashboard Management</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #111; color: #e5e5e5; padding: 2rem; max-width: 960px; margin: 0 auto;
+            line-height: 1.6;
+        }
+        a { color: #60a5fa; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        header { margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid #333; }
+        header h1 { font-size: 1.5rem; font-weight: 600; }
+        header .sub { color: #888; font-size: 0.85rem; font-family: 'IBM Plex Mono', monospace; }
+        .error-banner {
+            background: #450a0a; border: 1px solid #dc2626; border-radius: 6px;
+            padding: 16px; margin-bottom: 1.5rem; font-size: 0.9rem; color: #fca5a5;
+        }
+        .themes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+        .theme-card {
+            background: #1a1a1a; border: 1px solid #333; border-radius: 8px;
+            padding: 1.25rem; cursor: pointer; transition: border-color 0.15s;
+        }
+        .theme-card:hover { border-color: #555; }
+        .theme-card.selected { border-color: #60a5fa; background: #1e293b; }
+        .theme-card h2 { font-size: 1.1rem; margin-bottom: 0.25rem; }
+        .theme-card .tagline { font-size: 0.78rem; color: #888; margin-bottom: 0.75rem; }
+        .theme-card .stats {
+            font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; color: #9ca3af;
+            display: flex; gap: 1rem; flex-wrap: wrap;
+        }
+        .stat-val { color: #e5e5e5; font-weight: 500; }
+
+        .detail-panel { background: #1a1a1a; border: 1px solid #333; border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; }
+        .detail-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+        .detail-header h2 { font-size: 1.2rem; }
+        .detail-tabs { display: flex; gap: 0.25rem; border-bottom: 1px solid #333; margin-bottom: 1rem; }
+        .dtab {
+            font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;
+            text-transform: uppercase; letter-spacing: 0.08em;
+            padding: 0.5rem 1rem; background: none; border: none;
+            border-bottom: 2px solid transparent; color: #888; cursor: pointer;
+        }
+        .dtab:hover { color: #ccc; }
+        .dtab.active { color: #60a5fa; border-bottom-color: #60a5fa; }
+        .dpanel { display: none; }
+        .dpanel.active { display: block; }
+
+        .btn {
+            font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem;
+            padding: 0.4rem 1rem; border-radius: 4px; border: 1px solid #444;
+            background: #262626; color: #e5e5e5; cursor: pointer;
+        }
+        .btn:hover { background: #333; border-color: #555; }
+        .btn-primary { background: #1d4ed8; border-color: #2563eb; color: #fff; }
+        .btn-primary:hover { background: #2563eb; }
+        .btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+        .thinker-list { list-style: none; }
+        .thinker-item {
+            display: flex; align-items: center; gap: 0.75rem;
+            padding: 0.6rem 0; border-bottom: 1px solid #262626; font-size: 0.88rem;
+        }
+        .thinker-item:last-child { border-bottom: none; }
+        .thinker-active { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+        .thinker-active.on { background: #22c55e; }
+        .thinker-active.off { background: #666; }
+        .thinker-name { font-weight: 500; }
+        .thinker-domain { color: #888; font-size: 0.78rem; }
+        .thinker-desc { color: #666; font-size: 0.75rem; font-style: italic; }
+
+        .log-box {
+            background: #0f0f0f; border: 1px solid #262626; border-radius: 4px;
+            padding: 12px; font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;
+            color: #a3a3a3; max-height: 400px; overflow-y: auto; white-space: pre-wrap;
+            word-break: break-word; line-height: 1.5;
+        }
+        .log-err { color: #fca5a5; }
+        .log-ok { color: #86efac; }
+        .log-event { color: #9ca3af; }
+
+        .config-editor {
+            width: 100%; min-height: 300px; background: #0f0f0f; border: 1px solid #333;
+            border-radius: 4px; padding: 12px; font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.78rem; color: #e5e5e5; resize: vertical;
+        }
+        .action-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+        .action-result {
+            font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;
+            color: #86efac; margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Signal Admin</h1>
+        <div class="sub">Dashboard Management · localhost only</div>
+    </header>
+    <div id="app"></div>
+
+<script>
+(function() {
+    const API = '/admin/api';
+    const app = document.getElementById('app');
+    let selectedTheme = null;
+    let themes = [];
+
+    function el(tag, props, children) {
+        const e = document.createElement(tag);
+        for (const k in (props || {})) {
+            if (k === 'class') e.className = props[k];
+            else if (k === 'html') e.innerHTML = props[k];
+            else if (k.startsWith('on')) e.addEventListener(k.slice(2).toLowerCase(), props[k]);
+            else e.setAttribute(k, props[k]);
+        }
+        for (const c of [].concat(children || [])) {
+            if (c == null) continue;
+            e.appendChild(typeof c === 'string' ? document.createTextNode(c) : c);
+        }
+        return e;
+    }
+
+    function formatTime(ms) {
+        if (!ms) return 'mai';
+        const d = new Date(ms);
+        return d.toLocaleString('it-IT', { dateStyle: 'short', timeStyle: 'short' });
+    }
+
+    async function loadThemes() {
+        try {
+            const res = await fetch(`${API}/themes`);
+            if (!res.ok) throw new Error(`${res.status}`);
+            themes = await res.json();
+            render();
+        } catch (e) {
+            app.innerHTML = '';
+            app.appendChild(el('div', { class: 'error-banner' },
+                `Impossibile caricare i temi. L'admin funziona solo col dev server locale (npm run dev). Errore: ${e.message}`
+            ));
+        }
+    }
+
+    function render() {
+        app.innerHTML = '';
+
+        // Theme cards
+        const grid = el('div', { class: 'themes-grid' });
+        for (const t of themes) {
+            const card = el('div', {
+                class: `theme-card ${selectedTheme === t.name ? 'selected' : ''}`,
+                onclick: () => { selectedTheme = t.name; render(); }
+            }, [
+                el('h2', {}, t.displayName),
+                el('div', { class: 'tagline' }, t.tagline),
+                el('div', { class: 'stats' }, [
+                    el('span', {}, [`Thinker: `, el('span', { class: 'stat-val' }, String(t.thinkerCount))]),
+                    el('span', {}, [`Episodi: `, el('span', { class: 'stat-val' }, String(t.episodeCount))]),
+                    el('span', {}, [`Ultimo scan: `, el('span', { class: 'stat-val' }, formatTime(t.lastScan))]),
+                ]),
+            ]);
+            grid.appendChild(card);
+        }
+        app.appendChild(grid);
+
+        // Detail panel
+        if (selectedTheme) renderDetail(selectedTheme);
+    }
+
+    async function renderDetail(themeName) {
+        const panel = el('div', { class: 'detail-panel' });
+
+        const header = el('div', { class: 'detail-header' }, [
+            el('h2', {}, `Tema: ${themeName}`),
+        ]);
+        panel.appendChild(header);
+
+        // Actions
+        const resultDiv = el('div', { class: 'action-result' });
+        // Load podcast config for enable/disable + duration controls
+        let podcastEnabled = false;
+        let podcastMinutes = 5;
+        try {
+            const pcRes = await fetch(`${API}/themes/${themeName}/config/podcast-config.json`);
+            if (pcRes.ok) {
+                const pc = await pcRes.json();
+                podcastEnabled = pc.podcastEnabled || false;
+                podcastMinutes = pc.podcastTargetMinutes || 5;
+            }
+        } catch {}
+
+        const podcastStatusEl = el('span', {
+            style: `font-size:0.75rem;font-family:IBM Plex Mono,monospace;padding:3px 8px;border-radius:4px;` +
+                   `background:${podcastEnabled ? '#052e16' : '#1a1a1a'};color:${podcastEnabled ? '#86efac' : '#888'};border:1px solid ${podcastEnabled ? '#16a34a44' : '#333'}`
+        }, podcastEnabled ? `Podcast ON · ${podcastMinutes}min` : 'Podcast OFF');
+
+        const togglePodcast = async () => {
+            podcastEnabled = !podcastEnabled;
+            const pcRes = await fetch(`${API}/themes/${themeName}/config/podcast-config.json`);
+            const pc = pcRes.ok ? await pcRes.json() : {};
+            pc.podcastEnabled = podcastEnabled;
+            await fetch(`${API}/themes/${themeName}/config/podcast-config.json`, { method: 'PUT', body: JSON.stringify(pc, null, 2) });
+            loadThemes();
+        };
+        const changeDuration = async (newMin) => {
+            podcastMinutes = newMin;
+            const pcRes = await fetch(`${API}/themes/${themeName}/config/podcast-config.json`);
+            const pc = pcRes.ok ? await pcRes.json() : {};
+            pc.podcastTargetMinutes = newMin;
+            await fetch(`${API}/themes/${themeName}/config/podcast-config.json`, { method: 'PUT', body: JSON.stringify(pc, null, 2) });
+            resultDiv.textContent = `Durata podcast impostata a ${newMin} minuti ✓`;
+            setTimeout(() => resultDiv.textContent = '', 3000);
+        };
+
+        const actionRow = el('div', { class: 'action-row' }, [
+            el('button', { class: 'btn btn-primary', onclick: async () => {
+                resultDiv.textContent = 'Scan avviato...';
+                const r = await fetch(`${API}/themes/${themeName}/scan`, { method: 'POST' });
+                const d = await r.json();
+                resultDiv.textContent = `Scan avviato (PID ${d.pid}). Controlla i log.`;
+            }}, 'Scan ora'),
+            el('button', { class: 'btn btn-primary', onclick: async () => {
+                resultDiv.textContent = 'Podcast avviato...';
+                const r = await fetch(`${API}/themes/${themeName}/podcast`, { method: 'POST' });
+                const d = await r.json();
+                resultDiv.textContent = `Podcast avviato (PID ${d.pid}). Controlla i log.`;
+            }}, 'Genera podcast'),
+            el('button', { class: `btn ${podcastEnabled ? '' : 'btn-primary'}`, onclick: togglePodcast },
+                podcastEnabled ? 'Disattiva podcast' : 'Attiva podcast'),
+            el('select', {
+                class: 'btn',
+                style: 'padding:4px 8px',
+                onchange: (e) => changeDuration(parseInt(e.target.value)),
+                html: [5, 10, 15, 20, 25, 30].map(m =>
+                    `<option value="${m}" ${m === podcastMinutes ? 'selected' : ''}>${m} min</option>`
+                ).join('')
+            }),
+            podcastStatusEl,
+            el('button', { class: 'btn', onclick: () => loadThemes() }, '↻ Aggiorna'),
+        ]);
+        panel.appendChild(actionRow);
+        panel.appendChild(resultDiv);
+
+        // Tabs
+        const tabDefs = [
+            { key: 'thinkers', label: 'Thinkers' },
+            { key: 'llm', label: 'LLM Interactions' },
+            { key: 'branding', label: 'Branding' },
+            { key: 'prompts', label: 'Prompts' },
+            { key: 'logs', label: 'Log' },
+        ];
+        const tabsEl = el('div', { class: 'detail-tabs' });
+        const panels = {};
+        for (const t of tabDefs) {
+            const btn = el('button', { class: 'dtab', onclick: () => {
+                for (const k in panels) panels[k].classList.remove('active');
+                tabsEl.querySelectorAll('.dtab').forEach(x => x.classList.remove('active'));
+                btn.classList.add('active');
+                panels[t.key].classList.add('active');
+            }}, t.label);
+            tabsEl.appendChild(btn);
+        }
+        panel.appendChild(tabsEl);
+
+        // Thinkers panel
+        panels.thinkers = el('div', { class: 'dpanel' });
+        try {
+            const res = await fetch(`${API}/themes/${themeName}/thinkers`);
+            const thinkers = await res.json();
+            const list = el('ul', { class: 'thinker-list' });
+            for (const t of thinkers) {
+                list.appendChild(el('li', { class: 'thinker-item' }, [
+                    el('div', { class: `thinker-active ${t.active !== false ? 'on' : 'off'}` }),
+                    el('div', {}, [
+                        el('span', { class: 'thinker-name' }, t.name),
+                        el('span', { class: 'thinker-domain' }, ` · ${t.domain || ''}`),
+                        t.fontiOnly ? el('span', { class: 'thinker-domain' }, ' (solo fonti)') : null,
+                        t.desc ? el('div', { class: 'thinker-desc' }, t.desc) : null,
+                    ].filter(Boolean)),
+                ]));
+            }
+            panels.thinkers.appendChild(list);
+        } catch (e) {
+            panels.thinkers.appendChild(el('div', {}, `Errore: ${e.message}`));
+        }
+
+        // LLM interactions panel
+        panels.llm = await buildLlmPanel(themeName);
+
+        // Branding panel
+        panels.branding = await buildConfigEditor(themeName, 'branding.json');
+
+        // Prompts panel
+        panels.prompts = await buildConfigEditor(themeName, 'prompts/podcast.txt');
+
+        // Log panel
+        panels.logs = el('div', { class: 'dpanel' });
+        try {
+            const [scanRes, launchdRes] = await Promise.all([
+                fetch('/logs/auto-scan.log', { cache: 'no-cache' }),
+                fetch('/logs/launchd-out.log', { cache: 'no-cache' }),
+            ]);
+            const scanLog = scanRes.ok ? await scanRes.text() : '';
+            const launchdLog = launchdRes.ok ? await launchdRes.text() : '';
+            panels.logs.appendChild(el('div', { style: 'margin-bottom:8px;font-size:0.75rem;color:#888' }, 'auto-scan.log'));
+            panels.logs.appendChild(renderLog(scanLog));
+            panels.logs.appendChild(el('div', { style: 'margin:12px 0 8px;font-size:0.75rem;color:#888' }, 'launchd-out.log'));
+            panels.logs.appendChild(renderLog(launchdLog));
+        } catch (e) {
+            panels.logs.appendChild(el('div', {}, `Errore: ${e.message}`));
+        }
+
+        for (const k in panels) panel.appendChild(panels[k]);
+
+        // Activate first tab
+        tabsEl.querySelector('.dtab').classList.add('active');
+        panels.thinkers.classList.add('active');
+
+        app.appendChild(panel);
+    }
+
+    async function buildLlmPanel(themeName) {
+        const panel = el('div', { class: 'dpanel' });
+        try {
+            const res = await fetch(`${API}/themes/${themeName}/llm-log`);
+            const entries = res.ok ? await res.json() : [];
+            if (entries.length === 0) {
+                panel.appendChild(el('div', { style: 'color:#888;font-size:0.85rem;padding:1rem' },
+                    'Nessuna interazione LLM registrata per questo tema. Esegui un scan per iniziare.'));
+                return panel;
+            }
+            // Summary stats
+            const total = entries.length;
+            const ok = entries.filter(e => e.status === 'ok').length;
+            const errors = total - ok;
+            const totalDur = entries.reduce((s, e) => s + (e.durationMs || 0), 0);
+            panel.appendChild(el('div', { style: 'font-size:0.78rem;color:#888;margin-bottom:12px;font-family:IBM Plex Mono,monospace' },
+                `${total} chiamate · ${ok} ok · ${errors} errori · ${Math.round(totalDur/1000)}s totali`));
+
+            // Table
+            const table = document.createElement('table');
+            table.style.cssText = 'width:100%;border-collapse:collapse;font-size:0.75rem;font-family:IBM Plex Mono,monospace';
+            const thead = el('tr', {}, [
+                el('th', { style: 'text-align:left;padding:6px 8px;border-bottom:1px solid #333;color:#888' }, 'Ora'),
+                el('th', { style: 'text-align:left;padding:6px 8px;border-bottom:1px solid #333;color:#888' }, 'Azione'),
+                el('th', { style: 'text-align:left;padding:6px 8px;border-bottom:1px solid #333;color:#888' }, 'Label'),
+                el('th', { style: 'text-align:right;padding:6px 8px;border-bottom:1px solid #333;color:#888' }, 'Prompt'),
+                el('th', { style: 'text-align:right;padding:6px 8px;border-bottom:1px solid #333;color:#888' }, 'Risposta'),
+                el('th', { style: 'text-align:right;padding:6px 8px;border-bottom:1px solid #333;color:#888' }, 'Durata'),
+                el('th', { style: 'text-align:center;padding:6px 8px;border-bottom:1px solid #333;color:#888' }, 'Stato'),
+            ]);
+            table.appendChild(thead);
+
+            // Show most recent first
+            for (const e of [...entries].reverse().slice(0, 100)) {
+                const statusColor = e.status === 'ok' ? '#86efac' : '#fca5a5';
+                const row = el('tr', { style: 'border-bottom:1px solid #1a1a1a', title: e.error || '' }, [
+                    el('td', { style: 'padding:4px 8px;color:#888' }, (e.ts || '').slice(11, 19)),
+                    el('td', { style: 'padding:4px 8px' }, e.action || ''),
+                    el('td', { style: 'padding:4px 8px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap' }, e.label || ''),
+                    el('td', { style: 'padding:4px 8px;text-align:right;color:#888' }, e.promptLen ? `${e.promptLen}c` : ''),
+                    el('td', { style: 'padding:4px 8px;text-align:right;color:#888' }, e.responseLen ? `${e.responseLen}c` : ''),
+                    el('td', { style: 'padding:4px 8px;text-align:right' }, e.durationMs ? `${(e.durationMs/1000).toFixed(1)}s` : ''),
+                    el('td', { style: `padding:4px 8px;text-align:center;color:${statusColor}` }, e.status === 'ok' ? '✓' : '✗'),
+                ]);
+                table.appendChild(row);
+            }
+
+            const wrapper = el('div', { style: 'max-height:400px;overflow-y:auto' });
+            wrapper.appendChild(table);
+            panel.appendChild(wrapper);
+        } catch (e) {
+            panel.appendChild(el('div', {}, `Errore: ${e.message}`));
+        }
+        return panel;
+    }
+
+    async function buildConfigEditor(themeName, filename) {
+        const panel = el('div', { class: 'dpanel' });
+        try {
+            const res = await fetch(`${API}/themes/${themeName}/config/${filename}`);
+            const content = res.ok ? await res.text() : '';
+            const textarea = el('textarea', { class: 'config-editor' });
+            textarea.value = content;
+            const saveBtn = el('button', { class: 'btn btn-primary', onclick: async () => {
+                await fetch(`${API}/themes/${themeName}/config/${filename}`, {
+                    method: 'PUT',
+                    body: textarea.value,
+                });
+                saveResult.textContent = `Salvato ${filename} ✓`;
+                setTimeout(() => saveResult.textContent = '', 3000);
+            }}, `Salva ${filename}`);
+            const saveResult = el('div', { class: 'action-result' });
+            panel.appendChild(el('div', { style: 'margin-bottom:8px;font-size:0.75rem;color:#888' }, filename));
+            panel.appendChild(textarea);
+            panel.appendChild(el('div', { style: 'margin-top:8px;display:flex;gap:8px;align-items:center' }, [saveBtn, saveResult]));
+        } catch (e) {
+            panel.appendChild(el('div', {}, `Errore: ${e.message}`));
+        }
+        return panel;
+    }
+
+    function renderLog(content) {
+        const box = el('div', { class: 'log-box' });
+        if (!content) { box.textContent = 'Nessun log.'; return box; }
+        for (const line of content.split('\n')) {
+            const span = document.createElement('span');
+            span.style.display = 'block';
+            if (/error|errore|traceback|abort|fail|timed out/i.test(line)) span.className = 'log-err';
+            else if (/✓|ok|done|complete|ready/i.test(line)) span.className = 'log-ok';
+            else if (/^\[/.test(line)) span.className = 'log-event';
+            span.textContent = line || ' ';
+            box.appendChild(span);
+        }
+        return box;
+    }
+
+    loadThemes();
+})();
+</script>
+</body>
+</html>
