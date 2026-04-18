@@ -64,7 +64,17 @@ SEGNALI:
 SYNTHESIS:
 {synthesis}
 
-Cerca i vini, le cantine, le piattaforme, le app, i libri e le risorse piu rilevanti ed emergenti legati ai temi trattati sopra.
+Cerca i progetti, le cantine, le piattaforme, le app e le iniziative più rilevanti ed emergenti nel mondo del vino, legati ai temi trattati sopra.
+
+TIPOLOGIE DA CERCARE (non solo vini, ma l'ecosistema intorno):
+- Cantine e produttori innovativi citati dai thinker
+- App e piattaforme (Vivino, CellarTracker, RawWine, ecc.)
+- Progetti open source per enologia, analisi del terroir, viticoltura di precisione
+- Iniziative di agricoltura biodinamica o rigenerativa per la vigna
+- Database di vitigni autoctoni, mappe interattive del terroir
+- Marketplace per vino naturale o piccoli produttori
+- Festival, fiere o eventi significativi
+- Libri o pubblicazioni recenti citate dai thinker
 
 REGOLE:
 1. Includi tutti i vini/cantine/risorse citati direttamente nei segnali sopra (con citedBy valorizzato).
