@@ -173,8 +173,16 @@
     async function renderDetail(themeName) {
         const panel = el('div', { class: 'detail-panel' });
 
+        // Read siteUrl for the "open dashboard" link
+        let dashUrl = `/${themeName}/`;
+        try {
+            const br = await fetch(`${API}/themes/${themeName}/config/branding.json`);
+            if (br.ok) { const b = await br.json(); dashUrl = b.siteUrl || dashUrl; }
+        } catch {}
+
         const header = el('div', { class: 'detail-header' }, [
             el('h2', {}, `Tema: ${themeName}`),
+            el('a', { href: dashUrl, target: '_blank', style: 'font-size:0.78rem;color:#60a5fa' }, 'Apri dashboard ↗'),
         ]);
         panel.appendChild(header);
 
