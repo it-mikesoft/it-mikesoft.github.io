@@ -1,0 +1,111 @@
+[TITLE] La faglia sotto il consenso
+
+[DESCRIPTION] Il mercato investe miliardi su architetture che i ricercatori più lucidi considerano vicoli ciechi. Tre crepe che corrono sotto la superficie del consenso AI.
+
+[CHAPTER mood=geo]
+
+Il ventitré aprile, Signal Brief.
+
+A fine marzo, François Chollet ha presentato un test alla sede di Y Combinator a San Francisco. Ambienti inventati, senza regole scritte, senza obiettivi dichiarati. Gli umani: cento percento. I migliori modelli di frontiera del mondo: zero virgola tre percento. Non è un errore. È un risultato. E mentre quei numeri venivano mostrati su quel palco, l'industria stava investendo miliardi su esattamente quei modelli.
+
+
+[CHAPTER mood=soft]
+
+Teniamo quella scena come punto di partenza. Uno schermo, un punteggio quasi a zero — non perché il modello sia rotto, ma perché quello che il test chiede, costruire da solo una mappa di regole che non ha mai visto, è esattamente il punto su cui i modelli di linguaggio continuano a fallire.
+
+Nello stesso mese, da tre direzioni diverse, arrivava la stessa diagnosi. Ilya Sutskever, che ha scritto buona parte delle fondamenta del deep learning moderno, dice in un'intervista che lo scaling continuerà a produrre miglioramenti, ma che qualcosa di importante continuerà a mancare. Non dice che i modelli smettono di migliorare. Dice che migliorare non basterà. Yann LeCun, alla Lemley Lecture di Brown University, è più diretto: se ti interessa l'intelligenza al livello degli esseri umani, non lavorare sui modelli di linguaggio. Chollet lo mostra con un numero. Sutskever lo enuncia con precisione. LeCun lo trasforma in un invito. Tre persone che raramente si citano a vicenda. Stesso paziente. Tre diagnosi indipendenti.
+
+Eppure il mercato corre nella direzione opposta. Jensen Huang costruisce infrastruttura colossale. I fondi versano miliardi su quelle architetture. La dissonanza è strutturale: non è che i ricercatori hanno torto e il mercato ragione, o viceversa. È che operano su orizzonti diversi, e per ora i due mondi non si parlano.
+
+È una dinamica che abbiamo già visto. Quando le ferrovie esplodevano nell'Ottocento, gli investitori costruivano binari verso città che non esistevano ancora. Il business della costruzione funzionava lo stesso. La domanda di dove andavano i binari è diventata urgente solo dopo. Non è detto che sia la stessa storia. È detto che assomiglia.
+
+Sotto questa prima crepa ce n'è una seconda. Demis Hassabis, da Londra, dice esplicitamente che l'AI non può venire da venti miglia quadrate degli Stati Uniti. Segnala un rischio concreto: se i sistemi che orienteranno decisioni in sanità, economia, sicurezza sono costruiti e controllati da pochi attori in un'area ristretta del pianeta, il problema non è di mercato. È di chi decide come funziona il mondo. Nello stesso periodo Vitalik Buterin pubblica un post tecnico in cui racconta di aver abbandonato i modelli cloud e di girare tutto su un laptop, con un sistema che richiede la sua approvazione esplicita per ogni azione dell'agente. DHH esce dal cloud con la sua azienda, da quattro milioni di spesa annua ad uno. La direzione è la stessa: portare il controllo più vicino a chi usa.
+
+E poi c'è la terza crepa, quella più visibile a chi fa prodotto ogni giorno. DHH ammette che negli ultimi diciotto mesi ha fatto esperimenti AI su Basecamp. Zero funzionalità arrivate in produzione. Simon Willison distingue tra chi costruisce codice veloce per sé, senza preoccuparsi di mantenerlo, e chi usa l'AI come ingegnere, con la responsabilità di spedire qualcosa che funziona nel tempo. John Carmack dice che il vero valore dell'AI nel codice non è la velocità di generazione: è la possibilità di rendere i codebase più belli. La generazione veloce è la promessa. Il mantenimento è il problema che nessuno sta ancora risolvendo.
+
+Tre crepe. Stesso edificio.
+
+
+[CHAPTER mood=tech]
+
+François Chollet lavora da anni su una domanda precisa: i modelli di intelligenza artificiale ragionano, o riconoscono pattern? La distinzione sembra sottile. Le implicazioni sono enormi. Fino a fine 2024 lavorava a Google. Poi ha lasciato per co-fondare una startup focalizzata su quello che considera l'approccio giusto verso un'intelligenza più reale.
+
+Il 25 marzo ha presentato ARC-AGI-3 alla sede di Y Combinator, in una conversazione con Sam Altman — il CEO di OpenAI, che costruisce esattamente il tipo di modelli che Chollet considera insufficienti. Il benchmark è la terza versione di un test che ha costruito anni fa. Il principio: mostrare all'agente un ambiente che non ha mai visto, senza regole scritte, senza obiettivi dichiarati. L'agente deve esplorare, capire come funziona, generalizzare tra situazioni diverse. Come farebbe qualsiasi persona di fronte a un gioco che non conosce.
+
+Il risultato è quello che abbiamo citato in apertura: umani al cento percento, migliori modelli di frontiera a zero virgola tre. Non è un miglioramento minore rispetto all'anno precedente. È un buco.
+
+Chollet spiega il perché con una distinzione netta. C'è un tipo di intelligenza che funziona riconoscendo somiglianze: hai visto abbastanza esempi simili, e generalizzi da lì. I modelli di linguaggio sono straordinari in questo. C'è poi un secondo tipo: costruire un modello del mondo da zero, in tempo reale, su qualcosa che non hai mai incontrato. Qui i modelli falliscono quasi completamente.
+
+Quello che rende il suo argomento difficile da ignorare è che i punteggi su ARC non si muovono con la scala. Si aggiungono miliardi di parametri, terabyte di dati, compute enormi. Il punteggio resta lì. È il dato che smentisce empiricamente la tesi che più scala porta più intelligenza — almeno nel senso che interessa a Chollet.
+
+La sua startup lavora su program synthesis, un approccio che punta sul ragionamento con regole esplicite invece che sul matching statistico. Non ha ancora la soluzione. Ma la forza della sua posizione è che non fa previsioni: mostra uno schermo con zero virgola tre e lascia che parli da solo. In una settimana in cui tutti i grandi laboratori annunciano il prossimo modello più grande, è un atto di sobrietà raro.
+
+
+[CHAPTER mood=tech]
+
+Jensen Huang ha costruito NVIDIA fino a farne l'azienda di chip più importante del mondo. Quasi tutto quello che oggi si chiama AI gira su hardware che ha progettato e venduto. Ha un interesse concreto, evidente, nel far credere che la direzione attuale dell'AI sia quella giusta. Questo non lo rende automaticamente sbagliato. Lo rende interessante da ascoltare con attenzione.
+
+Questa settimana ha ripetuto in più contesti — a Fortune, a Stanford — lo stesso argomento. L'AI non toglie lavori: chi usa l'AI supera chi non la usa. Il problema non è lo strumento, è la scelta di non adottarlo. È un frame pulito, comunicabile, e non falso. Le persone che usano l'AI bene oggi finiscono più lavoro di chi non la usa. Questo è reale.
+
+C'è però un dettaglio nelle sue interviste che suona diverso dal solito ottimismo. Quando descrive gli agenti AI dice che non vi sostituiscono. Vi microgestiscono. Vi chiedono cose in continuazione. Vi rendono più impegnati di quanto siate mai stati. È una descrizione onesta, e suona quasi come un avvertimento in mezzo a un discorso di promozione.
+
+Il punto di attrito con Chollet, Sutskever e LeCun è diretto. Loro dicono che lo scaling attuale non porta verso intelligenza vera. Huang costruisce l'infrastruttura per quello scaling. Non è una contraddizione irrisolvibile — l'infrastruttura serve anche a modelli che amplificano senza ragionare davvero. Ma è una scelta su quale orizzonte conta di più.
+
+Nell'Ottocento i costruttori di ferrovie guadagnavano bene indipendentemente dalla destinazione finale dei treni. Per un lungo periodo questo ha funzionato. Poi la rete si è consolidata, i margini si sono compressi, e la domanda di dove andavano i treni è diventata quella che contava davvero. Non è detto che sia la stessa storia. È detto che la forma assomiglia.
+
+Huang è il portavoce del livello infrastrutturale — il più costoso, il più visibile, il più urgente nel breve termine. Chollet è il portavoce della domanda di dove si sta andando. I due possono coesistere a lungo. Ma prima o poi uno dei due ha torto su quello che conta di più.
+
+
+Ricapitoliamo un attimo dove siamo. C'è chi misura che i modelli attuali non ragionano su problemi nuovi. C'è chi costruisce la più grande infrastruttura per quei modelli. E poi ci sono le persone che cercano di far girare tutto questo in produzione, ogni giorno. La loro esperienza racconta una terza storia.
+
+
+[CHAPTER mood=tech]
+
+David Heinemeier Hansson — DHH per quasi tutti — ha creato Ruby on Rails vent'anni fa. È il progetto che ha permesso a una generazione di sviluppatori di costruire applicazioni web senza ripartire da zero ogni volta. È anche il fondatore di 37signals, la società dietro Basecamp e Hey. In un settore che cambia posizione in funzione del ciclo di notizie, DHH tende a dire quello che pensa anche quando non conviene.
+
+Questa settimana ha scritto qualcosa di raro nel dibattito attuale sull'AI. Diciotto mesi di esperimenti con i modelli di linguaggio su Basecamp. Zero funzionalità arrivate in produzione. Non è un fallimento tecnico — i modelli generano codice. È un fallimento di qualità finale. Non è facile fare qualcosa di buono e ben accolto dagli utenti, scrive. Frase breve. Pesa molto.
+
+È un'ammissione che la narrativa dominante fatica a fare. Il consenso del momento dice che l'AI accelera tutto, che generare codice veloce è il nuovo standard, che chi non usa l'AI nel ciclo di sviluppo è rimasto indietro. DHH dice: abbiamo provato seriamente, e per ora non abbiamo niente da spedire.
+
+Simon Willison, in parallelo, ha pubblicato una distinzione che vale la pena tenere a mente. Vibe coding: costruisci veloce, per uso personale, non ti preoccupi di mantenere niente. È una categoria legittima. Vibe engineering: usi l'AI come professionista, scrivi codice che altri dovranno leggere, modificare, correggere tra sei mesi. Qui la responsabilità non è negoziabile. Non è una questione di velocità. È una questione di responsabilità verso chi verrà dopo.
+
+DHH si è distinto questa settimana anche su un altro fronte. Ha organizzato a New York un evento — Omacon — attorno a Linux e al desktop personalizzabile. Centotrenta persone riunite attorno all'idea che il computer possa essere un ambiente malleabile, non solo uno strumento produttivo. La distribuzione Linux che ha costruito, Omarchy, ha cinquantamila download a settimana. Trentamila persone su Discord. È un numero inaspettato per un progetto che parla di configurazione del desktop.
+
+Messo insieme, DHH è una voce che punta nella direzione del controllo — sul codice che spedisci, sulla macchina che usi, sull'infrastruttura che paghi. Non è nostalgia. È una posizione precisa su dove deve stare il potere quando gli strumenti di lavoro tendono a concentrarsi in poche mani.
+
+
+[CHAPTER mood=tech]
+
+Demis Hassabis guida DeepMind da Londra. Ha costruito AlphaFold — il sistema che ha risolto il problema del ripiegamento delle proteine che la biologia cercava da cinquant'anni — e continua a indicare la scienza come la missione primaria di quello che fa. Non tende all'allarmismo. Quando parla con un tono più acuto del solito, vale la pena fermarsi.
+
+Questa settimana ha rilasciato due interviste in cui ha detto una cosa precisa: ChatGPT ha deviato il campo. Non lo dice come critica a OpenAI in quanto tale, ma come diagnosi del momento. Il viral moment di novembre 2022 — quando il chatbot è diventato mainstream nel giro di settimane — ha trascinato l'intera industria in una gara commerciale guidata dal prodotto, trimestre dopo trimestre, con meno spazio per la ricerca aperta, meno spazio per la sicurezza, meno spazio per chiedersi dove si va.
+
+È un'osservazione che pochi nel settore si permettono di fare esplicitamente. Hassabis la fa da dentro il sistema, non dall'esterno.
+
+Ha anche detto qualcosa che si sente raramente: l'AI non può venire da venti miglia quadrate degli Stati Uniti. Lo dice stando a Londra, consapevolmente, come scelta identitaria oltre che logistica. La concentrazione geografica del controllo sull'AI è un rischio sistemico: se i sistemi che orientano decisioni in sanità, economia, sicurezza sono costruiti e controllati da pochi attori in un'area ristretta del pianeta, la questione non è di diversità culturale dei prodotti. È di chi decide come funziona il mondo.
+
+Vale la pena collegarlo a quello che Vitalik Buterin ha scritto all'inizio di aprile. Buterin ha pubblicato il suo setup tecnico per usare l'AI in modo sicuro: un modello che gira su laptop, un sistema che isola gli agenti, uno schema di autorizzazione in cui deve approvare esplicitamente ogni azione. Il principio sottostante è lo stesso: portare il controllo sull'AI più vicino a chi la usa, più lontano da chi gestisce i datacenter.
+
+Due persone che vengono da mondi molto diversi — il laboratorio di ricerca più ambizioso del mondo, il fondatore di una blockchain — che puntano nella stessa direzione. Quando succede, vale la pena prenderlo sul serio.
+
+
+[CHAPTER mood=upbeat]
+
+Qualche progetto da tenere d'occhio, in relazione a quello di cui abbiamo parlato.
+
+ARC-AGI è il benchmark di Chollet. È aperto, disponibile a chiunque voglia testare un modello. La competizione ARC Prize 2026 ha due milioni di dollari in palio. Il punteggio più alto finora è sotto mezzo percento. È lo specchio oggettivo di tutto quello di cui abbiamo parlato oggi: uno strumento che misura la distanza tra ciò che i modelli fanno bene e ciò che ancora non riescono a fare.
+
+Llama.cpp è il motore che permette di far girare modelli di linguaggio su hardware normale — un laptop, un desktop. È il cuore dello stack che Buterin usa per la sua AI locale, ed è lo standard di fatto per chiunque voglia intelligenza artificiale senza affidarsi a un servizio cloud. Ogni volta che si parla di controllo locale, questo progetto è nella lista degli ingredienti.
+
+Omarchy è la distribuzione Linux di DHH — un sistema operativo costruito per chi viene da macOS o Windows e vuole un desktop malleabile e veloce. Cinquantamila download a settimana. È un segnale che il pendolo dell'attenzione consumer verso Linux si sta muovendo, lentamente ma in modo misurabile.
+
+LLM CLI è lo strumento da riga di comando di Simon Willison per interagire con modelli locali e in cloud. Serve a costruire script, fare ricerche strutturate, capire cosa fa un modello senza aprire un'interfaccia grafica. È il pivot del workflow di chi vuole fare ingegneria con l'AI invece di fare solo chat. Due aggiornamenti questa settimana.
+
+Nanochat è un progetto di Andrej Karpathy: una pipeline minimale per addestrare un modello partendo da zero, in poche ore, su hardware da laboratorio. Non è per uso produttivo. È un documento vivente che mostra quanto è diventato semplice — e quindi alla portata di molti — costruire un modello funzionante da soli.
+
+
+[CHAPTER mood=soft]
+
+Torniamo allo schermo di fine marzo con quello zero virgola tre. Tre persone indipendenti, storie diverse, stessa diagnosi. Il mercato corre nella direzione che quelle tre persone indicano come sbagliata. Chi ha ragione lo dirà il prossimo benchmark che nessuno riesce ancora a battere.
+
+È stato Signal Brief. Alla prossima.
