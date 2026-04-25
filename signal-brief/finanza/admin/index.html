@@ -173,12 +173,14 @@
     async function renderDetail(themeName) {
         const panel = el('div', { class: 'detail-panel' });
 
-        // Read siteUrl for the "open dashboard" link
+        // Dashboard link: local path in dev/LAN, siteUrl only when served from github.io
         let dashUrl = `/${themeName}/`;
-        try {
-            const br = await fetch(`${API}/themes/${themeName}/config/branding.json`);
-            if (br.ok) { const b = await br.json(); dashUrl = b.siteUrl || dashUrl; }
-        } catch {}
+        if (location.hostname.endsWith('github.io')) {
+            try {
+                const br = await fetch(`${API}/themes/${themeName}/config/branding.json`);
+                if (br.ok) { const b = await br.json(); dashUrl = b.siteUrl || dashUrl; }
+            } catch {}
+        }
 
         const header = el('div', { class: 'detail-header' }, [
             el('h2', {}, `Tema: ${themeName}`),

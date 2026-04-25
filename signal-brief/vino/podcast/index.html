@@ -385,18 +385,29 @@
     </style>
 </head>
 <body>
-    <div class="nav"><a href="../">← Signal.Brief dashboard</a></div>
+    <div class="nav"><a id="back-link" href="../">← Signal.Brief dashboard</a></div>
 
     <div id="app">
         <div class="state-note">Caricamento…</div>
     </div>
 
     <footer>
-        <p>Signal Brief · briefing quotidiano tech/AI generato automaticamente · <a href="feed.xml">feed RSS</a></p>
+        <p>Signal Brief · briefing quotidiano tech/AI generato automaticamente · <a id="feed-link" href="feed.xml">feed RSS</a></p>
     </footer>
 
 <script>
 (function () {
+    // Read ?theme= so this single archive page can render any theme's episodes
+    // when the dev server routes /podcast/episodes/* per-theme.
+    const _theme = new URLSearchParams(location.search).get("theme") || "";
+    const THEME_Q = _theme ? `?theme=${encodeURIComponent(_theme)}` : "";
+    if (_theme) {
+        const back = document.getElementById("back-link");
+        if (back) back.href = `../${_theme}/`;
+        const feed = document.getElementById("feed-link");
+        if (feed) feed.href = `feed.xml${THEME_Q}`;
+    }
+
     // Sidecars live as siblings in episodes/: .mp3 .txt .json .synthesis.md .diff.json .fonti.json
     const EPISODES_BASE = "./episodes";
 
@@ -490,25 +501,51 @@
         }
     }
 
+    // Fetch theme branding so the archive header reflects the current theme
+    // (logo, tagline, description). Falls back to generic text if the endpoint
+    // isn't available (e.g. production static hosting).
+    async function fetchBranding() {
+        try {
+            const r = await fetch(`./branding.json${THEME_Q}`, { cache: "no-cache" });
+            if (r.ok) return await r.json();
+        } catch {}
+        return {};
+    }
+
     // ── List view ────────────────────────────────────────────────────────
     async function renderList() {
-        const res = await fetch(`${EPISODES_BASE}/index.json`, { cache: "no-cache" });
+        const [branding, res] = await Promise.all([
+            fetchBranding(),
+            fetch(`${EPISODES_BASE}/index.json${THEME_Q}`, { cache: "no-cache" }),
+        ]);
         if (!res.ok) throw new Error(`index.json: ${res.status}`);
         const data = await res.json();
         const episodes = data.episodes || [];
 
+        // Also update page title
+        if (branding.name) document.title = `${branding.name} — Archivio puntate`;
+
         app.innerHTML = "";
+
+        const logo = el("div", { class: "logo" });
+        logo.innerHTML = branding.nameHtml || "Signal<span>.</span>Brief";
+        const taglineText = branding.tagline
+            ? `Archivio puntate · ${branding.tagline}`
+            : "Archivio puntate · Intelligence Dashboard";
         app.appendChild(el("header", {}, [
-            el("div", { class: "logo" }, [document.createTextNode("Signal"), el("span", {}, "."), document.createTextNode("Brief")]),
-            el("div", { class: "tagline" }, "Archivio puntate · Intelligence Dashboard"),
+            logo,
+            el("div", { class: "tagline" }, taglineText),
         ]));
 
-        app.appendChild(el("p", { class: "intro-blurb" },
-            "Briefing quotidiano tech/AI. Ogni episodio ruota intorno a ciò che è cambiato dal giorno precedente — emergenti, tensioni, fratture — argomentato attraverso 5 o 6 pensatori. Testo completo, sintesi della giornata, comparazione concetti e link alle fonti per ogni episodio."
-        ));
+        const intro = branding.aboutDescription
+            || "Briefing quotidiano tech/AI. Ogni episodio ruota intorno a ciò che è cambiato dal giorno precedente — emergenti, tensioni, fratture — argomentato attraverso 5 o 6 pensatori.";
+        app.appendChild(el("p", { class: "intro-blurb" }, intro));
 
         if (episodes.length === 0) {
-            app.appendChild(el("div", { class: "state-note" }, "Nessun episodio disponibile."));
+            const msg = branding.podcastEnabled === false
+                ? `${branding.name || "Questo tema"} non genera podcast automatici.`
+                : "Nessun episodio disponibile.";
+            app.appendChild(el("div", { class: "state-note" }, msg));
             return;
         }
 
@@ -544,11 +581,11 @@
         // Fetch every sidecar in parallel; tolerate missing optional ones so older
         // episodes without the sidecar layout still render what they can.
         const [meta, script, synthesis, diff, fonti] = await Promise.all([
-            fetch(`${base}.json`).then(r => r.ok ? r.json() : null),
-            fetch(`${base}.txt`).then(r => r.ok ? r.text() : ""),
-            fetch(`${base}.synthesis.md`).then(r => r.ok ? r.text() : ""),
-            fetch(`${base}.diff.json`).then(r => r.ok ? r.json() : null),
-            fetch(`${base}.fonti.json`).then(r => r.ok ? r.json() : []),
+            fetch(`${base}.json${THEME_Q}`).then(r => r.ok ? r.json() : null),
+            fetch(`${base}.txt${THEME_Q}`).then(r => r.ok ? r.text() : ""),
+            fetch(`${base}.synthesis.md${THEME_Q}`).then(r => r.ok ? r.text() : ""),
+            fetch(`${base}.diff.json${THEME_Q}`).then(r => r.ok ? r.json() : null),
+            fetch(`${base}.fonti.json${THEME_Q}`).then(r => r.ok ? r.json() : []),
         ]);
 
         if (!meta) {
@@ -588,7 +625,7 @@
 
         // Audio player
         const audio = el("audio", { controls: "", preload: "metadata" });
-        audio.src = `./${meta.mp3_url}`;
+        audio.src = `./${meta.mp3_url}${THEME_Q}`;
         app.appendChild(audio);
 
         // Tabs
