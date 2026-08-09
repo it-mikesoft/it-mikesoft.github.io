@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="it"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quando il codice non è più il fossato · Signal.AI</title>
+<meta property="og:title" content="Quando il codice non è più il fossato · Signal.AI"><meta property="og:type" content="article"><meta property="og:description" content="Il software puro perde valore. Capex, brand e atomi diventano i nuovi terreni della tecnologia. Una mappa di dove sta andando l'industria."><meta property="og:url" content="https://it-mikesoft.github.io/signal-brief/ai/2026-05-07/"><meta property="og:audio" content="https://media.casamon.dev/ai/podcast/episodes/2026-05-07.mp3"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "PodcastEpisode", "name": "Quando il codice non è più il fossato", "datePublished": "2026-05-07", "url": "https://it-mikesoft.github.io/signal-brief/ai/2026-05-07/", "description": "Il software puro perde valore. Capex, brand e atomi diventano i nuovi terreni della tecnologia. Una mappa di dove sta andando l'industria.", "inLanguage": "it", "associatedMedia": {"@type": "MediaObject", "contentUrl": "https://media.casamon.dev/ai/podcast/episodes/2026-05-07.mp3"}, "partOfSeries": {"@type": "PodcastSeries", "name": "Signal.AI", "url": "https://it-mikesoft.github.io/signal-brief/ai/"}}</script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:#faf8f4; color:#1a1a1a; padding:2rem 1.5rem; max-width:680px; margin:0 auto; line-height:1.6; }
+  a { color:#2563eb; }
+  .back { display:inline-block; margin-bottom:1.5rem; font-size:.8rem; font-family:monospace; text-decoration:none; }
+  .videos { display:flex; gap:1rem; flex-wrap:wrap; margin:1.2rem 0; }
+  .videos figure { margin:0; flex:1; min-width:260px; }
+  .videos .v2 { flex:0 1 240px; }
+  .videos video { width:100%; border-radius:12px; background:#000; }
+  .videos .v2 video { aspect-ratio:9/16; max-height:420px; }
+  .videos figcaption { font-size:.75rem; color:#888; text-align:center; margin-top:.3rem; }
+  .vlink { display:flex; gap:.3rem; margin-top:.35rem; }
+  .vlink input { flex:1; min-width:0; font-size:.68rem; font-family:monospace; padding:.3rem .4rem;
+    border:1px solid #e2ddd6; border-radius:6px; background:#fff; color:#6b7280; }
+  .vlink button { font-size:.68rem; padding:.3rem .6rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; }
+  .wk { font-size:1rem; margin:1.4rem 0 .4rem; }
+  details.wkacc { border:1px solid #e5e7eb33; border-radius:10px; margin:.6rem 0; padding:.1rem .8rem .4rem; }
+  details.wkacc summary { cursor:pointer; font-weight:600; padding:.5rem 0; font-size:.9rem; }
+  .back:hover { text-decoration:underline; }
+  header h1 { font-family:Georgia,serif; font-size:1.7rem; font-weight:600; }
+  header h1 span { color:#2563eb; }
+  .tagline { color:#6b7280; font-size:.85rem; margin-top:.3rem; margin-bottom:1.5rem; }
+  ul.eps { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
+  .subscribe { display:inline-flex; align-items:center; gap:.5rem; margin-bottom:1.2rem;
+    padding:.45rem .9rem; background:#2563eb; color:#fff; border-radius:20px;
+    text-decoration:none; font-size:.8rem; font-weight:600; }
+  .subscribe:hover { opacity:.85; color:#fff; }
+  .ep { display:flex; align-items:center; gap:.8rem; padding:.8rem 1rem; background:#fff;
+    border:1px solid #e2ddd6; border-radius:8px; text-decoration:none; color:inherit; transition:box-shadow .12s; }
+  .ep:hover { box-shadow:0 2px 8px rgba(0,0,0,.07); }
+  .ep-play { width:32px; height:32px; border-radius:50%; background:#f3f4f6; display:flex;
+    align-items:center; justify-content:center; font-size:12px; flex-shrink:0; }
+  .ep-title { font-size:.9rem; font-weight:500; }
+  .ep-meta { font-size:.72rem; color:#9ca3af; font-family:monospace; margin-top:.15rem; }
+  audio { width:100%; margin:1rem 0 1.5rem; }
+  .rawmd { margin:-.5rem 0 1.5rem; }
+  .rawmd a { font-size:.8rem; font-family:monospace; color:inherit; opacity:.65; }
+  .desc { color:#374151; font-size:.95rem; margin-bottom:1.5rem; }
+  section { margin:2rem 0; }
+  section h2 { font-family:Georgia,serif; font-size:1.1rem; border-bottom:1px solid #e2ddd6;
+    padding-bottom:.3rem; margin-bottom:.8rem; }
+  .synthesis p { margin:.7rem 0; }
+  .tension { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; font-size:.9rem; }
+  .tension .axis { font-weight:600; margin-bottom:.3rem; }
+  .tension .side { color:#6b7280; font-size:.85rem; }
+  .proj { font-size:.9rem; margin:.4rem 0; }
+  .proj .pname { font-weight:600; }
+  .proj .pnew { background:#16a34a; color:#fff; font-size:.65rem; font-weight:700;
+    padding:.1rem .35rem; border-radius:4px; text-transform:uppercase; vertical-align:middle; }
+  .fonte { font-size:.85rem; margin:.5rem 0; }
+  .fonte .who { font-weight:600; }
+  .fonte a { display:block; margin-left:.5rem; color:#6b7280; }
+  .transcript-body p { margin:.7rem 0; line-height:1.7; }
+  .transcript-body .chapter hr { border:none; border-top:1px solid #e2ddd6; margin:1.5rem 0; }
+  .transcript-body .podcast-episode-desc { color:#6b7280; font-style:italic; }
+  .signal-card { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; }
+  .signal-theme { font-size:.75rem; font-weight:700; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.3rem; }
+  .signal-text { font-size:.85rem; color:#374151; line-height:1.5; }
+  .creator-footer { margin-top:3rem; padding-top:1.5rem; border-top:1px solid #e2ddd6;
+    display:flex; align-items:center; gap:.9rem; }
+  .creator-footer img { width:40px; height:40px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+  .creator-meta { display:flex; flex-direction:column; gap:.15rem; }
+  .creator-name { font-size:.85rem; font-weight:600; color:#1a1a1a; }
+  .creator-tagline { font-size:.75rem; color:#6b7280; }
+  .creator-email { font-size:.75rem; }
+  .creator-ai { font-size:.72rem; color:#8a7f6d; max-width:46ch; line-height:1.45; }
+  .tutele { margin-top:2rem; padding-top:1.2rem; border-top:1px solid #e2ddd6;
+    font-size:.72rem; color:#8a7f6d; line-height:1.5; }
+  .tutele h3 { font-size:.75rem; color:#6b7280; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.5rem; font-weight:600; }
+  .tutele p { margin:.45rem 0; }
+  .tutele strong { color:#5a5348; font-weight:600; }
+  .tutele a { color:inherit; text-decoration:underline; }
+  .creator-email a { color:#9ca3af; text-decoration:none; }
+  .creator-email a:hover { color:#1a1a1a; }
+  /* disegno 2026-08-07: mesi a pagine, facce, player modale, trascrizione
+     richiudibile — la pagina episodio è un prodotto, non un sottoprodotto */
+  .hrow { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+  .hrow .subscribe { margin-bottom:0; flex-shrink:0; }
+  .months { font-size:.78rem; font-family:monospace; margin:.4rem 0 1rem; color:#9ca3af; }
+  .months a { text-decoration:none; } .months b { color:inherit; }
+  .ep-faces { display:flex; margin-left:auto; flex-shrink:0; }
+  .ep-faces img { width:26px; height:26px; border-radius:50%; object-fit:cover;
+    border:2px solid #fff; margin-left:-8px; background:#eee; }
+  /* tutti i citati sul desktop; su mobile la leggibilità vince: max 3 */
+  @media (max-width:600px) { .ep-faces img:nth-child(n+4) { display:none; } }
+  .ep-listen { width:32px; height:32px; border-radius:50%; background:#f3f4f6; border:0;
+    display:flex; align-items:center; justify-content:center; font-size:12px;
+    flex-shrink:0; cursor:pointer; color:inherit; }
+  .ep-listen.on { background:#2563eb; color:#fff; }
+  .face-inline { width:1.15em; height:1.15em; border-radius:50%; object-fit:cover;
+    vertical-align:-.18em; margin-right:.25em; }
+  /* SEMPRE sulla stessa riga (2026-08-09): su schermi stretti le miniature
+     si riducono, e se non basta il reel sparisce — mai l'andata a capo */
+  .vthumbs { display:flex; gap:.8rem; flex-wrap:nowrap; margin:1.2rem 0; align-items:flex-start; }
+  .vthumb { position:relative; cursor:pointer; border:0; padding:0; background:none;
+    border-radius:12px; overflow:hidden; }
+  /* stessa ALTEZZA per video e reel: il 9:16 si stringe, non svetta */
+  .vthumb video { height:150px; width:auto; display:block; border-radius:12px; background:#000; }
+  @media (max-width:520px) { .vthumb video { height:118px; } }
+  /* quando nemmeno ridotte ci stanno: via le miniature, due BOTTONI in
+     riga che aprono il player (2026-08-09) */
+  .vbtns { display:none; gap:.6rem; margin:1.2rem 0; }
+  .vbtns button { flex:1; padding:.6rem .4rem; border:0; border-radius:10px;
+    background:#2563eb; color:#fff; font-weight:700; font-size:.85rem;
+    cursor:pointer; font-family:inherit; }
+  @media (max-width:420px) { .vthumbs { display:none; } .vbtns { display:flex; } }
+  .vthumb .vlabel { position:absolute; left:0; right:0; bottom:0; padding:.9rem .5rem .35rem;
+    background:linear-gradient(transparent, rgba(0,0,0,.75)); color:#fff; font-size:.7rem; }
+  .vthumb::after { content:"▶"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    color:#fff; font-size:1.6rem; text-shadow:0 1px 6px rgba(0,0,0,.8); }
+  /* margin:auto ESPLICITO: il reset globale * {margin:0} annullava la
+     centratura nativa del dialog e il player si apriva in alto a sinistra */
+  dialog.vplayer { border:0; padding:0; background:transparent; max-width:92vw;
+    margin:auto; position:fixed; inset:0; }
+  dialog.vplayer::backdrop { background:rgba(0,0,0,.85); }
+  dialog.vplayer video { max-width:92vw; max-height:86vh; border-radius:14px; background:#000; }
+  details.tr { border:1px solid #e2ddd6; border-radius:10px; padding:.2rem .9rem .6rem; }
+  details.tr summary { cursor:pointer; font-weight:600; padding:.55rem 0; }
+  .tr-copy { font-size:.72rem; padding:.3rem .7rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; margin:.3rem 0 .5rem; }
+  .epnav { display:flex; justify-content:space-between; gap:1rem; margin:2rem 0 0;
+    font-size:.82rem; font-family:monospace; }
+  .epnav a { text-decoration:none; }
+  @media (prefers-color-scheme:dark) {
+    body { background:#1f1d18; color:#e5e5e5; }
+    .ep, .tension, .signal-card { background:#2a2823; border-color:#3a352d; }
+    .ep-play { background:#3a352d; } .desc { color:#d4d4d4; }
+    .signal-text { color:#d4d4d4; }
+    .creator-footer { border-color:#3a352d; }
+    .creator-name { color:#f5f5f5; }
+    .creator-tagline, .creator-email a { color:#9ca3af; }
+    .creator-ai { color:#9a8f7d; }
+    .vlink input { background:#1c1a17; border-color:#3a352d; color:#9ca3af; }
+    .tutele { border-color:#3a352d; color:#9a8f7d; }
+    .tutele h3 { color:#a9a9a9; } .tutele strong { color:#d4d4d4; }
+    .ep-listen { background:#3a352d; }
+    .ep-faces img { border-color:#2a2823; background:#3a352d; }
+    details.tr { border-color:#3a352d; }
+  }
+</style></head><body>
+<a class="back" href="/signal-brief/ai/">← Signal.AI</a>
+<header><h1>Quando il codice non è più il fossato</h1></header>
+<div class="tagline">2026-05-07 · Digital Intelligence Podcast</div>
+<div class="desc">Il software puro perde valore. Capex, brand e atomi diventano i nuovi terreni della tecnologia. Una mappa di dove sta andando l'industria.</div>
+<div class="rawmd"><a href="raw.md">Testo (markdown)</a></div>
+<section><h2>Sintesi</h2><div class="synthesis"><p>La corrente di fondo è una sola: la <strong>commoditizzazione del software puro</strong> e il conseguente spostamento del valore altrove. <a href="https://www.businesstoday.in/technology/story/pure-software-is-rapidly-becoming-uninvestable-naval-ravikant-on-why-vibe-coding-changes-everything-528256-2026-04-30" target="_blank" rel="noopener">Naval Ravikant</a> lo dice frontalmente — "uninvestable" — e <a href="https://stratechery.com/topic/nat-friedman-and-daniel-gross/" target="_blank" rel="noopener">Nat Friedman</a> lo conferma da dentro Meta: codice marginale a zero, moat dei foundation labs in evaporazione. <a href="https://karpathy.bearblog.dev/sequoia-ascent-2026/" target="_blank" rel="noopener">Andrej Karpathy</a> descrive la stessa transizione dal lato del coder (delega l'80%), <a href="https://officechai.com/ai/2026-q1-could-be-looked-at-as-the-first-quarter-of-the-singularity-says-stripe-co-founder-patrick-collison/" target="_blank" rel="noopener">Patrick Collison</a> la legge nei dati di nuove imprese su Stripe, <a href="https://simonwillison.net/2026/May/6/vibe-coding-and-agentic-engineering/" target="_blank" rel="noopener">Simon Willison</a> cede il purismo della code-review. Se il codice non è più il fossato, dove va il valore? Tre vettori divergenti emergono.</p>
+<p>Primo, <strong>distribuzione e capitale</strong>: <a href="https://www.ben-evans.com/benedictevans/2026/2/19/how-will-openai-compete-nkg2x" target="_blank" rel="noopener">Benedict Evans</a> trasforma la questione <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="">AI da tecnica a finanziaria — capex da $650B, 3-4 vincitori. <a href="https://stratechery.com/2026/an-interview-with-openai-ceo-sam-altman-and-aws-ceo-matt-garman-about-bedrock-managed-agents/" target="_blank" rel="noopener">Sam Altman</a> e <a href="https://fortune.com/2026/05/06/jensen-huang-servicenow-bill-mcdermott-agentic-ai-robos/" target="_blank" rel="noopener">Jensen Huang</a> operano questa logica. Secondo, <strong>brand e atomi</strong>: <a href="https://paulgraham.com/brandage.html" target="_blank" rel="noopener">Paul Graham</a> teorizza che la maturità tecnologica produce hollowing-out estetico riempito dal brand; Naval ribadisce che l'hardware torna centrale; <a href="https://sources.news/p/demis-hassibas-on-gemini-3-world" target="_blank" rel="noopener">Demis Hassabis</a> sposta DeepMind sui world models e biotech. Terzo, <strong>sovranità e exit</strong>: <a href="https://incrypted.com/en/vitalik-buterin-unveiled-the-concept-of-private-ai-a-push-for-full-user-autonomy/" target="_blank" rel="noopener">Vitalik Buterin</a>, <a href="https://www.btcc.com/en-US/square/D3C3ntr4l/613765" target="_blank" rel="noopener">Jack Dorsey</a> e <a href="https://beincrypto.com/balaji-srinivasan-cryptocurrency-ai-future-money/" target="_blank" rel="noopener">Balaji Srinivasan</a> convergono sull'asse cypherpunk: AI privata locale, Nostr, network state. "AI fakes, crypto reals" (Balaji) è il manifesto compresso.</p>
+<p>La tensione vera, però, è <strong>epistemica</strong>. <a href="https://www.axios.com/2026/05/04/ai-godfather-survival-guide-hype-doom" target="_blank" rel="noopener">Yann LeCun</a>, <a href="https://forum.effectivealtruism.org/posts/iuKa2iPg7vD9BdZna/highlights-from-ilya-sutskever-s-november-2025-interview" target="_blank" rel="noopener">Ilya Sutskever</a>, <a href="https://the-decoder.com/francois-chollet-on-the-end-of-scaling-arc-3-and-his-path-to-agi/" target="_blank" rel="noopener">François Chollet</a> dichiarano in coro: lo scaling è esaurito, servono idee nuove. <a href="https://news.un.org/en/story/2026/04/1167361" target="_blank" rel="noopener">Geoffrey Hinton</a> accelera la timeline; LeCun la deride. Sopra questa frattura tecnica galleggia una guerra narrativa sul <strong>lavoro</strong>: Altman/Hinton/<a href="https://fortune.com/2026/04/02/jack-dorsey-roelof-botha-ai-middle-management/" target="_blank" rel="noopener">Dorsey</a> prevedono erosione massiva, mentre Huang, <a href="https://fortune.com/2026/03/31/marc-andreessen-ai-layoffs-silver-bullet-excuse-overhiring/" target="_blank" rel="noopener">Marc Andreessen</a>, Collison e LeCun la chiamano alibi manageriale. Karpathy taglia la diagonale: la verificabilità decide chi viene automatizzato — il codice sì, il giudizio no.</p>
+<p>L'epoca è <strong>post-scaling, pre-paradigma</strong>: il vecchio asse (più GPU, più parametri) ha smesso di produrre sorpresa, il nuovo non è ancora stato nominato. Tutti scommettono in direzioni diverse perché nessuno sa più dove sia il fossato.</p></div></section>
+<section><h2>Temi del giorno</h2><div class="tension"><div class="axis">↗ Commoditizzazione software puro</div><div class="side">Codice marginale a zero, software puro 'uninvestable', moat dei foundation labs in evaporazione.</div></div><div class="tension"><div class="axis">↗ Capex come fossato</div><div class="side">Questione AI diventa finanziaria: $650B di capex, 3-4 vincitori per distribuzione/capitale.</div></div><div class="tension"><div class="axis">↗ Brand riempie il vuoto estetico</div><div class="side">Maturità tecnologica produce hollowing-out funzionale, il brand diventa il differenziatore residuo.</div></div><div class="tension"><div class="axis">↗ Ritorno degli atomi</div><div class="side">Hardware, world models, biotech rimpiazzano il software puro come terreno di valore.</div></div><div class="tension"><div class="axis">↗ AI fakes, crypto reals</div><div class="side">Asse cypherpunk: AI privata locale + Nostr + network state come exit dalla cattura corporate.</div></div><div class="tension"><div class="axis">↗ Verificabilità come criterio di automazione</div><div class="side">Decide cosa viene automatizzato: codice sì (verificabile), giudizio no.</div></div><div class="tension"><div class="axis">⚖ Esaurimento dello scaling vs accelerazione timeline</div><div class="side">Yann LeCun: scaling morto, serve nuovo paradigma (JEPA/AMI) · Geoffrey Hinton: timeline si accorcia, regolamentazione urgente</div></div><div class="tension"><div class="axis">⚖ AI come causa reale di layoff vs alibi manageriale</div><div class="side">Sam Altman: erosione massiva del lavoro è reale · Marc Andreessen: AI è scusa per overhiring pregresso</div></div><div class="tension"><div class="axis">⚖ Dove sta il fossato post-software</div><div class="side">Benedict Evans: capex e distribuzione (3-4 vincitori) · Balaji Srinivasan: exit cypherpunk, atomi e crypto</div></div><div class="tension"><div class="axis">⚖ Software puro come asset</div><div class="side">Naval Ravikant: uninvestable, valore migra agli atomi · Sam Altman: ancora investibile se hai scala infrastrutturale</div></div><div class="tension"><div class="axis">⚖ Cosa resta umano nell'automazione</div><div class="side">Andrej Karpathy: ciò che non è verificabile (giudizio) · Paul Graham: il brand come residuo estetico/identitario</div></div></section>
+<section><h2>Progetti da osservare</h2><div class="tension"><div class="axis">karpathy/nanochat</div><div class=side>Pipeline minimale per addestrare un modello GPT-2 in ~2 ore su 8×H100 con FP8 e ClimbMix, parte della linea di lavoro di Karpathy su pipeline ridotte per singolo ricercatore. Repo di riferimento per l'era 'meno codice, più amplificazione'.</div></div><div class="tension"><div class="axis">karpathy/llm-wiki (gist)</div><div class=side>Prompt-pattern da copiare in Claude Code/Codex che istanzia il sistema 'LLM Wiki' su Obsidian: articoli enciclopedici interlinkati, backlink, health check. Diventato viral come anti-RAG personale.</div></div><div class="tension"><div class="axis">karpathy/autoresearch</div><div class=side>Repo di ~630 righe (7 marzo 2026) che materializza un agente di ricerca minimale, parte della tesi 'idea file = distribuzione' di Karpathy. Esempio concreto di agente che amplifica il ricercatore individuale.</div></div><div class="tension"><div class="axis">Obsidian</div><div class=side>Editor di note markdown con backlink e grafi che Karpathy elegge come 'IDE della conoscenza' nel suo pattern LLM-Wiki. Diventa il frontend consigliato per memoria esplicita e ispezionabile contro la memoria opaca degli assistant commerciali.</div></div><div class="tension"><div class="axis">ggerganov/llama.cpp</div><div class=side>Motore di inferenza C/C++ per LLM locali; il suo llama-server è il cuore dello stack self-sovereign proposto da Buterin (NixOS + llama-server + bubblewrap). Standard de facto per AI locale sovrana.</div></div><div class="tension"><div class="axis">basecamp/omarchy</div><div class=side>Distro Arch Linux curata da DHH con Hyprland, pensata per attrarre utenti macOS/Windows verso un desktop 'malleabile'. Progetto-manifesto del filone 'open source AI-ready' di DHH (Omacon NY, 130 persone).</div></div><div class="tension"><div class="axis">hyprwm/Hyprland</div><div class=side>Compositor Wayland dinamico, cuore visivo di Omarchy e simbolo del rinnovato interesse consumer per Linux (Panther Lake / XPS 14). DHH lo cita come esempio di software su cui finalmente 'hardware e aziende tornano a scommettere'.</div></div><div class="tension"><div class="axis">simonw/llm</div><div class=side>CLI e libreria Python di Simon Willison per interagire con LLM locali e cloud, base dei suoi tool README-driven (scan-for-secrets, datasette-ports, research-llm-apis). Strumento pivot del suo workflow 'agentic engineering'.</div></div><div class="tension"><div class="axis">fchollet/ARC-AGI</div><div class=side>Repo ufficiale dei benchmark ARC-AGI di Chollet, ora affiancato da ARC-AGI-3 (ambienti interattivi turn-based per misurare agency). ARC Prize 2026 ha $2M di montepremi; umani 100%, best frontier model 0,37%.</div></div><div class="tension"><div class="axis">zilliztech/claude-context</div><div class=side>Server MCP di code search che trasforma l'intera codebase in contesto indicizzato per Claude Code, Cursor e altri agenti. Esempio netto del 'moat shift' dal modello all'uso indicato da Evans e Andreessen.</div></div></section>
+<section><h2>Fonti</h2><div class="fonte"><span class="who">Naval Ravikant</span><a href="https://nav.al/" target="_blank" rel="noopener">nav.al podcast</a><a href="https://www.businesstoday.in/technology/story/pure-software-is-rapidly-becoming-uninvestable-naval-ravikant-on-why-vibe-coding-changes-everything-528256-2026-04-30" target="_blank" rel="noopener">BusinessToday — pure software uninvestable</a><a href="https://podcastnotes.org/naval-periscope-sessions/a-return-to-code-vibe-coding-the-personal-app-store-and-the-end-of-apples-dominance-naval-podcast/" target="_blank" rel="noopener">PodcastNotes — A Return to Code</a></div><div class="fonte"><span class="who">Jack Dorsey</span><a href="https://fortune.com/2026/04/02/jack-dorsey-roelof-botha-ai-middle-management/" target="_blank" rel="noopener">Fortune — AI replacing middle management (2 apr)</a><a href="https://fortune.com/2026/04/17/twitter-cofounder-block-ceo-jack-dorsey-thought-process-laid-off-40-staff-ai/" target="_blank" rel="noopener">Fortune — thought process layoff 40% (17 apr)</a><a href="https://www.blockhead.co/2026/03/09/jack-dorsey-says-block-will-support-stablecoins-despite-personal-opposition/" target="_blank" rel="noopener">Blockhead — stablecoin reluctance</a></div><div class="fonte"><span class="who">Yann LeCun</span><a href="https://www.axios.com/2026/05/04/ai-godfather-survival-guide-hype-doom" target="_blank" rel="noopener">Axios — AI godfather survival guide</a><a href="https://fortune.com/2026/05/05/ai-job-apocalypse-warnings-destructive-yann-lecun/" target="_blank" rel="noopener">Fortune — AI job apocalypse warnings destructive</a><a href="https://www.brown.edu/news/2026-04-01/yann-lecun-artificial-intelligence-pioneer" target="_blank" rel="noopener">Brown University — LeCun lecture</a></div></section>
+<section class="transcript-section"><h2>Trascrizione</h2><details class="tr"><summary>Leggi la trascrizione</summary><button class="tr-copy" type="button" onclick="copiaTrascrizione(this)">copia il testo</button><div class="transcript-body"><h2>Quando il codice non è più il fossato</h2>
+<p class="podcast-episode-desc">Il software puro perde valore. Capex, brand e atomi diventano i nuovi terreni della tecnologia. Una mappa di dove sta andando l'industria.</p>
+<div class="chapter" data-mood="geo"><hr></div>
+<p>C'è una frase di Naval Ravikant che gira da qualche giorno e che vale la pena tenere in mente. Dice: il software puro sta diventando rapidamente non investibile. Una frase tagliente, che farebbe sorridere se non fosse che la pronuncia uno degli investitori più ascoltati della Silicon Valley. È il sette maggio duemilaventisei, e questo è Signal Brief. Oggi proviamo a capire dove sta andando il valore della tecnologia, ora che scrivere codice non basta più.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>La scena è un podcast registrato a fine aprile. Naval Ravikant, uno degli investitori più ascoltati della valle, racconta che ormai passa due ore ogni notte a istruire agenti artificiali che scrivono codice al posto suo. Dice di averci costruito una specie di app store personale dentro il telefono, dove nuove applicazioni appaiono su richiesta. Poi pronuncia la frase che ha fatto rumore: il software puro sta diventando non investibile. Se l'unico vantaggio di un'azienda è scrivere codice che altri non sanno scrivere, quel vantaggio è finito.</p>
+<p>Detta così sembra una provocazione. Ma è una provocazione che si è sentita ripetere, con parole diverse, da almeno cinque o sei voci nelle ultime settimane. Nat Friedman, che adesso guida i nuovi laboratori di intelligenza artificiale di Meta, lo dice in un'intervista: il costo di produrre codice si avvicina a zero, e i grandi laboratori di AI stanno perdendo il loro fossato. Andrej Karpathy, uno dei ricercatori più seguiti del campo, racconta di delegare ormai l'ottanta per cento del codice agli agenti. Patrick Collison, fondatore di Stripe, dice di vedere nei dati delle nuove imprese una curva che parte verticale.</p>
+<p>Il punto è che tutti questi protagonisti, da posizioni diverse, stanno guardando lo stesso fenomeno. Per trent'anni il software è stato un bene strano: costava poco produrlo, ma chi lo sapeva fare bene aveva un vantaggio difficile da imitare. Bastava un piccolo gruppo di ingegneri bravi per costruire un'azienda da miliardi. Adesso quel vantaggio si sta livellando, perché un agente artificiale aiuta chiunque a fare quello che prima sapevano fare in pochi.</p>
+<p>Vale la pena fare un paragone. Negli anni Settanta l'orologeria svizzera ha vissuto una crisi simile. Il quarzo era arrivato dal Giappone e produceva orologi precisi, sottili, economici. La precisione, che per due secoli era stata il mestiere degli svizzeri, era diventata una banalità che si comprava per pochi dollari. La Svizzera ha rischiato di scomparire dal settore. Ne è uscita reinventandosi: non più sul terreno della funzione, ma su quello del brand. L'orologio di lusso moderno, pesante e vistoso, è figlio di quella reinvenzione.</p>
+<p>Paul Graham, in un saggio pubblicato a marzo, ha riletto proprio questa storia per dire che è quello che succede quando una tecnologia matura. Quando la funzione diventa banale, il brand riempie il vuoto. È una delle ipotesi che gira oggi sul software: una volta che scrivere codice è alla portata di tutti, vincerà chi sa raccontare meglio chi è e cosa rappresenta.</p>
+<p>Ma il brand è solo uno dei terreni nuovi. Ce ne sono almeno altri due. Il primo è il capitale: chi può spendere centinaia di miliardi per costruire data center, chi controlla l'energia elettrica, chi si garantisce le forniture di chip. Benedict Evans ha trasformato la domanda sull'AI da tecnica a finanziaria: nei prossimi anni, dice, vinceranno tre o quattro aziende, non perché abbiano il modello migliore, ma perché solo loro possono permettersi di restare in pista. Il software smette di essere quel business leggero che conoscevamo e diventa pesante come l'industria pesante.</p>
+<p>Il secondo terreno è opposto e simmetrico: l'uscita. C'è una galassia di figure, da Vitalik Buterin a Jack Dorsey a Balaji Srinivasan, che stanno costruendo l'esatto contrario delle cattedrali del capitale. Reti decentralizzate, AI che gira sul tuo computer, messaggistica che non passa da nessun server centrale. La frase che riassume questa posizione è di Balaji: l'AI rende tutto falso, la crittografia rende qualcosa di nuovo vero. Sono due risposte alla stessa domanda, dove va il valore quando il software è gratis, e vanno in direzioni opposte.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Il personaggio centrale di questa settimana è proprio Naval Ravikant. Per chi non lo conosce, Naval è uno dei nomi più rispettati nella Silicon Valley degli ultimi vent'anni: ha fondato AngelList, una piattaforma che ha cambiato il modo in cui le startup raccolgono soldi, ed è diventato famoso per uno stile di pensiero a metà tra il filosofo e l'investitore. Per anni ha pubblicato aforismi sulla felicità, sulla ricchezza, sul tempo. Ora invece sta tornando a fare cose.</p>
+<p>Nelle ultime settimane ha fatto due gesti molto concreti. Il primo è un podcast del ventotto aprile, intitolato A Return to Code, dove racconta la sua nuova routine. Passa due ore ogni notte a istruire in linguaggio naturale degli agenti artificiali che scrivono software per lui. Si è costruito un'interfaccia sul telefono dove può chiedere un'app e averla in pochi minuti, costruita su misura. Lo chiama il suo app store personale. La frase con cui chiude il discorso è quella che ha fatto il giro: scrivere un'app è il nuovo aprire un podcast. Vuol dire che è una cosa che ormai chiunque può fare, e che proprio per questo ha smesso di essere un vantaggio competitivo.</p>
+<p>Il secondo gesto è il lancio di un fondo, che si chiama USVC, e che permette a chiunque con cinquecento dollari di mettere soldi nelle grandi aziende di intelligenza artificiale, da OpenAI ad Anthropic. È un piccolo terremoto nel mondo del venture capital, che fino a ieri era riservato a pochi miliardari e fondi pensione. Naval lo ha paragonato all'adventure capital del Cinquecento, quando i borghesi di Genova e Venezia mettevano insieme i soldi per finanziare una nave che andava nelle Indie.</p>
+<p>Mettendo insieme i due gesti si capisce dove sta guardando. Da una parte dice che il software puro sta perdendo valore. Dall'altra costruisce strumenti per investire negli atomi e nell'infrastruttura: le aziende che producono chip, energia, modelli enormi. Il messaggio è coerente con quello che diceva quindici anni fa, solo invertito di segno. Allora il vantaggio veniva dal codice. Adesso il codice è la commodity, e il vantaggio si sposta su tutto il resto: hardware, capitale, distribuzione.</p>
+<p>C'è una nota personale che vale la pena cogliere. Naval, per molti anni, è stato la voce che diceva ai giovani: non vi serve un capo, non vi serve un'azienda, vi basta scrivere codice e contenuti, e potete vivere bene. Era il vangelo del leverage individuale. Adesso lo stesso Naval dice che quel vangelo non basta più. Non lo dice con tristezza, lo dice con curiosità, come uno che vede arrivare un'epoca diversa e si prepara. È quello che rende i suoi ultimi mesi interessanti: non sta difendendo una posizione, la sta cambiando.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Cambiamo personaggio e cambiamo geografia. Jack Dorsey, il fondatore di Twitter e di Square, che adesso si chiama Block, ha avuto un mese intenso. Il diciassette aprile ha spiegato pubblicamente perché ha tagliato il quaranta per cento dei dipendenti della sua azienda di pagamenti, da diecimila a seimila persone. La motivazione non è economica nel senso classico. Dice che con l'arrivo dei modelli linguistici buona parte del management intermedio è semplicemente diventata superflua. Vuole che i seimila superstiti gli rispondano direttamente, con due o tre livelli di gerarchia al massimo.</p>
+<p>È un esperimento radicale e tutti lo stanno guardando. Dorsey lo ha co-firmato con Roelof Botha, uno dei nomi storici di Sequoia Capital, in un post pubblicato il due aprile dove i due descrivono l'AI come un solvente organizzativo. Non un nuovo prodotto, non un nuovo mercato, ma qualcosa che dissolve la struttura stessa delle aziende. Se è vero, è uno di quei momenti in cui per capire cosa sta succedendo bisogna guardare gli organigrammi prima dei bilanci.</p>
+<p>Ma c'è un secondo Dorsey, ed è quello che torna al filo del nostro discorso di oggi. Il cinque aprile la Cina ha ordinato la rimozione dall'App Store di Bitchat, una sua applicazione di messaggistica che funziona via Bluetooth e via Nostr, una rete decentralizzata. Dorsey ha annunciato la rimozione come una vittoria: la conferma che il prodotto funziona, perché se non infastidisse nessuno non sarebbe stato bandito. Bitchat ha quattro milioni di download, soprattutto in Iran, Uganda, Nepal, Indonesia. È la versione contemporanea dei giornali clandestini che circolavano dietro la Cortina di Ferro, solo che invece di carta si usano onde Bluetooth. Pochi giorni dopo Dorsey ha lanciato White Noise, un secondo strumento di messaggistica decentralizzata.</p>
+<p>Mettiamoli insieme questi gesti. Da una parte un'azienda quotata in borsa che taglia migliaia di posti per affidarsi alle macchine. Dall'altra una rete di applicazioni costruite per resistere al controllo dei governi e delle grandi piattaforme. Sembrano due Dorsey diversi, ma sono lo stesso Dorsey. Tutti e due i gesti rispondono alla stessa domanda: dove sta il potere, ora che il software è gratis e l'intelligenza è ovunque? La risposta che dà lui è doppia. Dentro le aziende il potere si concentra in chi prende le decisioni vere, perché l'esecuzione la fanno le macchine. Fuori dalle aziende, il potere si sposta verso chi costruisce reti che non si possono spegnere.</p>
+<p>Una piccola spia di pragmatismo. Dorsey è stato per anni un Bitcoin maximalist, uno che diceva che le stablecoin, le monete digitali agganciate al dollaro, non servono. Adesso ha cambiato idea: Block le supporterà, perché i clienti le chiedono. Non gli piace, ma le farà. È il segno di un uomo che è uscito dalla fase del filosofo e si è messo a fare il costruttore.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Torniamo un attimo sul filo. Naval ci ha detto che il software puro non vale più. Dorsey ci ha mostrato cosa succede quando un'azienda prende sul serio quella tesi. Il prossimo personaggio ci porta sul versante più letterale di tutta questa storia: gli atomi, la materia, la biologia.</p>
+<p>Demis Hassabis è il fondatore di DeepMind, il laboratorio di intelligenza artificiale di Google. È quello che ha vinto il Nobel due anni fa per AlphaFold, il programma che ha capito come si piegano le proteine. Negli ultimi mesi ha fatto due cose che messe insieme dicono qualcosa di importante. La prima è il lancio di Genie 3, che lui presenta come il simulatore di mondo più avanzato mai costruito. In pratica, da una frase scritta a parole genera un video che puoi navigare, dentro cui puoi camminare. Sembra un gioco e in parte lo è, ma il vero scopo è insegnare alle macchine come funziona il mondo fisico: la gravità, gli oggetti, le superfici. Cose che i modelli linguistici, che hanno letto solo libri, non sanno davvero.</p>
+<p>La seconda è ancora più concreta. Isomorphic Labs, l'azienda di farmaci che Hassabis dirige come secondo turno dalle dieci di sera in poi, comincerà nel duemilaventisei i primi trial clinici sull'uomo per terapie oncologiche progettate dall'intelligenza artificiale. Hanno un nuovo strumento che raddoppia l'accuratezza nel disegnare candidati farmaci. È il momento in cui l'AI smette di essere un esercizio sul testo e diventa una proteina che entra nel corpo di un paziente.</p>
+<p>C'è un'altra cosa interessante che dice Hassabis. Quando gli chiedono se siamo dentro una bolla finanziaria, lui distingue. Sul mercato globale dell'AI, dice, la domanda è reale, non è una bolla. Ma sulle startup che ricevono miliardi senza avere ancora un prodotto, sì, quella è una bolla che si correggerà. È una posizione equilibrata che si è guadagnato il diritto di avere, dopo aver visto da vicino sia la ricerca pura sia il mercato.</p>
+<p>Quello che mi sembra più interessante della sua posizione è che Hassabis sta scommettendo, con i fatti, contro l'idea che l'AI sia soprattutto un fenomeno digitale. La sua tesi è che il valore vero arriva quando l'intelligenza artificiale si applica al mondo materiale: alle molecole, al clima, alla simulazione fisica. Mentre gli altri costruiscono chatbot sempre più bravi, lui sta cercando di curare il cancro. È una scommessa molto più rischiosa, ma se funziona è anche molto più grande. È il ritorno degli atomi di cui parlava Naval, raccontato dalla prospettiva del laboratorio.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>L'ultimo ritratto è di un altro tipo, perché ci porta dentro la frattura più profonda di questo momento: quella sull'idea stessa di intelligenza artificiale. Yann LeCun è uno dei tre padri del deep learning, vincitore del premio Turing dieci anni fa, francese trapiantato a New York. Per dieci anni è stato il capo dei laboratori di AI di Meta. A novembre del duemilaventicinque se ne è andato sbattendo la porta, dopo che lo avevano messo a riportare a un dirigente più giovane.</p>
+<p>A marzo ha fondato un'azienda nuova e ha raccolto subito un miliardo di dollari di capitale. È una cifra enorme per una startup che parte da zero, e dice quanto la gente abbia voglia di scommettere su di lui. Ma il punto interessante è cosa vuole costruire LeCun. Non un altro modello linguistico più grande. Tutto al contrario.</p>
+<p>Da anni LeCun va dicendo che i modelli come ChatGPT sono un vicolo cieco. Manipolano parole, ci ingannano facendoci credere che ragionino, ma sono completamente ciechi rispetto al mondo fisico. Propone un'architettura diversa, dove la macchina impara a prevedere cosa succederà guardando i video del mondo, non leggendo testi. Stessa logica di Hassabis con Genie 3, da una strada un po' diversa.</p>
+<p>Negli ultimi giorni ha alzato la voce su un altro fronte. Dario Amodei, il fondatore di Anthropic, ha detto che l'AI cancellerà il venti per cento dei posti di lavoro entro pochi anni. LeCun ha definito quella previsione, parole sue, ridicolmente stupida. Ha attaccato Amodei, Sam Altman, Geoffrey Hinton, accusandoli di diffondere narrative apocalittiche che fanno male soprattutto alla salute mentale dei ragazzi. Ai giovani che gli chiedono cosa studiare, dice di andare a fare fisica o ingegneria elettrica, perché quelle sono carriere che durano oltre il ciclo dell'AI.</p>
+<p>È un momento molto particolare. Hinton, suo collega di sempre, gira il mondo a chiedere trattati internazionali sull'AI come se fossero armi nucleari. LeCun lo deride. Ilya Sutskever, che ha lasciato OpenAI, dice anche lui che lo scaling è finito, che servono nuove idee. François Chollet, il creatore di un benchmark famoso, dice che i nuovi modelli arrivano al novantotto per cento sui test vecchi ma sotto l'uno per cento su quelli nuovi.</p>
+<p>In altre parole: dentro la comunità di chi costruisce l'AI, la generazione più senior sta dicendo, con linguaggi diversi, che la strada attuale ha esaurito la sua spinta. Non sono pessimisti, non sono Luddisti. Sono ricercatori che dicono: la festa del raddoppio annuale è finita, adesso serve una nuova idea. E intanto i giganti del capex continuano a costruire data center grandi come città. È una delle scene più strane di questi mesi: chi sa di più sembra il meno entusiasta.</p>
+<div class="chapter" data-mood="upbeat"><hr></div>
+<p>Quattro progetti da osservare, scelti per restare nel filo di oggi.</p>
+<p>Il primo si chiama nanochat ed è un esperimento di Andrej Karpathy. È una versione piccolissima dei modelli linguistici, che si addestra in due ore su una macchina che si può affittare per quarantotto dollari. Karpathy lo ha pubblicato per dimostrare che la pipeline completa per costruire un modello, da zero al chatbot funzionante, può essere scritta in poche centinaia di righe. È il manifesto della tesi che il software puro è alla portata di chiunque.</p>
+<p>Il secondo è LLM-Wiki, sempre di Karpathy. È un sistema per costruirsi sul proprio computer, dentro un editor di note che si chiama Obsidian, una specie di enciclopedia personale generata e collegata da un agente artificiale. È una risposta a chi pensa che la conoscenza personale debba stare nei server di OpenAI. Karpathy dice: tienila a casa tua, in file di testo che puoi leggere e modificare.</p>
+<p>Il terzo è llama.cpp. È un programma che permette di far girare modelli linguistici sul proprio computer, anche su un portatile. Da diciotto mesi è diventato lo standard di tutti quelli che vogliono fare AI sovrana, in casa propria. Vitalik Buterin lo cita come pezzo centrale del suo setup personale. È la parte tecnica concreta di tutta la storia di sovranità digitale di cui parlavamo prima.</p>
+<p>Il quarto è Omarchy, una distribuzione di Linux costruita da DHH, il creatore di Ruby on Rails. Vuole essere un sistema operativo per chi crede che il computer debba essere modificabile dall'utente, non un cassetto chiuso. Si lega all'idea del computer malleabile che DHH ha rilanciato in un saggio recente: la promessa originale del software libero, finalmente realizzabile grazie all'AI.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Resta in mente l'immagine di Naval che sta in piedi a istruire una macchina nel cuore della notte, e dice che il vantaggio di scrivere codice è finito. È una piccola scena privata che racconta uno spostamento enorme. Dove vada il valore, dopo, ognuno lo sta scommettendo in una direzione diversa. È stato Signal Brief. Alla prossima.</p></div></details></section>
+<nav class="epnav"><a href="/signal-brief/ai/2026-05-06/">← 2026-05-06</a><span style="flex:1"></span><a href="/signal-brief/ai/2026-05-08/">2026-05-08 →</a></nav>
+<dialog class="vplayer" id="vplayer"></dialog>
+<script>
+// player modale dei video: la miniatura apre il video al centro (disegno 2026-08-07)
+function apriVideo(src) {
+  var d = document.getElementById('vplayer');
+  d.innerHTML = '<video controls autoplay playsinline src="' + src + '"></video>';
+  d.showModal();
+  d.onclick = function (e) { if (e.target === d) d.close(); };
+  d.onclose = function () { var v = d.querySelector('video'); if (v) v.pause(); d.innerHTML = ''; };
+}
+// ascolto inline dalla lista: un episodio alla volta
+var epAudio = null, epBtn = null;
+function ascolta(btn, src) {
+  if (epBtn === btn && epAudio) {
+    if (epAudio.paused) { epAudio.play(); btn.classList.add('on'); }
+    else { epAudio.pause(); btn.classList.remove('on'); }
+    return;
+  }
+  if (epAudio) { epAudio.pause(); if (epBtn) epBtn.classList.remove('on'); }
+  epAudio = new Audio(src); epBtn = btn;
+  epAudio.play(); btn.classList.add('on');
+  epAudio.onended = function () { btn.classList.remove('on'); };
+}
+function copiaTrascrizione(btn) {
+  var t = btn.parentElement.querySelector('.transcript-body');
+  navigator.clipboard.writeText(t ? t.innerText : '').then(function () {
+    btn.textContent = 'copiata ✓';
+    setTimeout(function () { btn.textContent = 'copia il testo'; }, 1800);
+  });
+}
+</script>
+<footer class="creator-footer">
+  <img src="/signal-brief/mike-avatar.png" alt="Michele Mondora">
+  <div class="creator-meta">
+    <span class="creator-name">it-mikesoft</span>
+    <span class="creator-tagline">working with systems, living with questions</span>
+    <span class="creator-email"><a href="mailto:michele@mondora.com">michele@mondora.com</a></span>
+  </div>
+</footer>
+<section class="tutele"><h3>Trasparenza e tutele</h3>
+<p><strong>Come nasce questo contenuto.</strong> Ricerca, sintesi editoriale, voce narrante, immagini e musica sono prodotte con sistemi di intelligenza artificiale. Non c'è una redazione umana che verifica ogni affermazione prima della pubblicazione: un controllo automatico scarta le schede giudicate inaffidabili, ma non elimina la possibilità di errori.</p>
+<p><strong>Affermazioni su persone e aziende.</strong> Quanto riportato è una sintesi di fonti pubbliche, non una dichiarazione diretta delle persone citate: le frasi non vanno intese come virgolettati né come posizioni ufficiali. Le fonti sono indicate in ogni pagina episodio — verificale prima di considerare un'informazione accertata. Se trovi un'affermazione inesatta che ti riguarda, scrivi a <a href="mailto:michele@mondora.com">michele@mondora.com</a>: viene corretta o rimossa.</p>
+<p><strong>Immagini e volti.</strong> Le immagini di scena sono generate con AI e non raffigurano fatti realmente avvenuti. Le fotografie di persone reali usate nei video provengono da Wikimedia Commons con le rispettive licenze, e sono accostate al racconto a scopo identificativo: la loro presenza non implica partecipazione, dichiarazione o approvazione da parte della persona ritratta. Su richiesta dell'interessato vengono rimosse.</p>
+<p><strong>Fonti e diritti altrui.</strong> I contenuti sono rielaborazioni originali, non riproduzioni di articoli di terzi; le testate e gli autori all'origine di una notizia sono citati e collegati. Marchi e nomi commerciali appartengono ai rispettivi titolari e sono usati a scopo descrittivo.</p>
+</section>
+</body></html>

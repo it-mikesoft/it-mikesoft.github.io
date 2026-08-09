@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="it"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L'anno in cui lo scaling è finito · Signal.AI</title>
+<meta property="og:title" content="L'anno in cui lo scaling è finito · Signal.AI"><meta property="og:type" content="article"><meta property="og:description" content="Il 2026 segna una rottura: la corsa alla potenza di calcolo cede il passo alle idee, mentre si decide chi controllerà davvero l'intelligenza artificiale."><meta property="og:url" content="https://it-mikesoft.github.io/signal-brief/ai/2026-06-21/"><meta property="og:audio" content="https://media.casamon.dev/ai/podcast/episodes/2026-06-21.mp3"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "PodcastEpisode", "name": "L'anno in cui lo scaling è finito", "datePublished": "2026-06-21", "url": "https://it-mikesoft.github.io/signal-brief/ai/2026-06-21/", "description": "Il 2026 segna una rottura: la corsa alla potenza di calcolo cede il passo alle idee, mentre si decide chi controllerà davvero l'intelligenza artificiale.", "inLanguage": "it", "associatedMedia": {"@type": "MediaObject", "contentUrl": "https://media.casamon.dev/ai/podcast/episodes/2026-06-21.mp3"}, "partOfSeries": {"@type": "PodcastSeries", "name": "Signal.AI", "url": "https://it-mikesoft.github.io/signal-brief/ai/"}}</script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:#faf8f4; color:#1a1a1a; padding:2rem 1.5rem; max-width:680px; margin:0 auto; line-height:1.6; }
+  a { color:#2563eb; }
+  .back { display:inline-block; margin-bottom:1.5rem; font-size:.8rem; font-family:monospace; text-decoration:none; }
+  .videos { display:flex; gap:1rem; flex-wrap:wrap; margin:1.2rem 0; }
+  .videos figure { margin:0; flex:1; min-width:260px; }
+  .videos .v2 { flex:0 1 240px; }
+  .videos video { width:100%; border-radius:12px; background:#000; }
+  .videos .v2 video { aspect-ratio:9/16; max-height:420px; }
+  .videos figcaption { font-size:.75rem; color:#888; text-align:center; margin-top:.3rem; }
+  .vlink { display:flex; gap:.3rem; margin-top:.35rem; }
+  .vlink input { flex:1; min-width:0; font-size:.68rem; font-family:monospace; padding:.3rem .4rem;
+    border:1px solid #e2ddd6; border-radius:6px; background:#fff; color:#6b7280; }
+  .vlink button { font-size:.68rem; padding:.3rem .6rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; }
+  .wk { font-size:1rem; margin:1.4rem 0 .4rem; }
+  details.wkacc { border:1px solid #e5e7eb33; border-radius:10px; margin:.6rem 0; padding:.1rem .8rem .4rem; }
+  details.wkacc summary { cursor:pointer; font-weight:600; padding:.5rem 0; font-size:.9rem; }
+  .back:hover { text-decoration:underline; }
+  header h1 { font-family:Georgia,serif; font-size:1.7rem; font-weight:600; }
+  header h1 span { color:#2563eb; }
+  .tagline { color:#6b7280; font-size:.85rem; margin-top:.3rem; margin-bottom:1.5rem; }
+  ul.eps { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
+  .subscribe { display:inline-flex; align-items:center; gap:.5rem; margin-bottom:1.2rem;
+    padding:.45rem .9rem; background:#2563eb; color:#fff; border-radius:20px;
+    text-decoration:none; font-size:.8rem; font-weight:600; }
+  .subscribe:hover { opacity:.85; color:#fff; }
+  .ep { display:flex; align-items:center; gap:.8rem; padding:.8rem 1rem; background:#fff;
+    border:1px solid #e2ddd6; border-radius:8px; text-decoration:none; color:inherit; transition:box-shadow .12s; }
+  .ep:hover { box-shadow:0 2px 8px rgba(0,0,0,.07); }
+  .ep-play { width:32px; height:32px; border-radius:50%; background:#f3f4f6; display:flex;
+    align-items:center; justify-content:center; font-size:12px; flex-shrink:0; }
+  .ep-title { font-size:.9rem; font-weight:500; }
+  .ep-meta { font-size:.72rem; color:#9ca3af; font-family:monospace; margin-top:.15rem; }
+  audio { width:100%; margin:1rem 0 1.5rem; }
+  .rawmd { margin:-.5rem 0 1.5rem; }
+  .rawmd a { font-size:.8rem; font-family:monospace; color:inherit; opacity:.65; }
+  .desc { color:#374151; font-size:.95rem; margin-bottom:1.5rem; }
+  section { margin:2rem 0; }
+  section h2 { font-family:Georgia,serif; font-size:1.1rem; border-bottom:1px solid #e2ddd6;
+    padding-bottom:.3rem; margin-bottom:.8rem; }
+  .synthesis p { margin:.7rem 0; }
+  .tension { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; font-size:.9rem; }
+  .tension .axis { font-weight:600; margin-bottom:.3rem; }
+  .tension .side { color:#6b7280; font-size:.85rem; }
+  .proj { font-size:.9rem; margin:.4rem 0; }
+  .proj .pname { font-weight:600; }
+  .proj .pnew { background:#16a34a; color:#fff; font-size:.65rem; font-weight:700;
+    padding:.1rem .35rem; border-radius:4px; text-transform:uppercase; vertical-align:middle; }
+  .fonte { font-size:.85rem; margin:.5rem 0; }
+  .fonte .who { font-weight:600; }
+  .fonte a { display:block; margin-left:.5rem; color:#6b7280; }
+  .transcript-body p { margin:.7rem 0; line-height:1.7; }
+  .transcript-body .chapter hr { border:none; border-top:1px solid #e2ddd6; margin:1.5rem 0; }
+  .transcript-body .podcast-episode-desc { color:#6b7280; font-style:italic; }
+  .signal-card { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; }
+  .signal-theme { font-size:.75rem; font-weight:700; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.3rem; }
+  .signal-text { font-size:.85rem; color:#374151; line-height:1.5; }
+  .creator-footer { margin-top:3rem; padding-top:1.5rem; border-top:1px solid #e2ddd6;
+    display:flex; align-items:center; gap:.9rem; }
+  .creator-footer img { width:40px; height:40px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+  .creator-meta { display:flex; flex-direction:column; gap:.15rem; }
+  .creator-name { font-size:.85rem; font-weight:600; color:#1a1a1a; }
+  .creator-tagline { font-size:.75rem; color:#6b7280; }
+  .creator-email { font-size:.75rem; }
+  .creator-ai { font-size:.72rem; color:#8a7f6d; max-width:46ch; line-height:1.45; }
+  .tutele { margin-top:2rem; padding-top:1.2rem; border-top:1px solid #e2ddd6;
+    font-size:.72rem; color:#8a7f6d; line-height:1.5; }
+  .tutele h3 { font-size:.75rem; color:#6b7280; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.5rem; font-weight:600; }
+  .tutele p { margin:.45rem 0; }
+  .tutele strong { color:#5a5348; font-weight:600; }
+  .tutele a { color:inherit; text-decoration:underline; }
+  .creator-email a { color:#9ca3af; text-decoration:none; }
+  .creator-email a:hover { color:#1a1a1a; }
+  /* disegno 2026-08-07: mesi a pagine, facce, player modale, trascrizione
+     richiudibile — la pagina episodio è un prodotto, non un sottoprodotto */
+  .hrow { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+  .hrow .subscribe { margin-bottom:0; flex-shrink:0; }
+  .months { font-size:.78rem; font-family:monospace; margin:.4rem 0 1rem; color:#9ca3af; }
+  .months a { text-decoration:none; } .months b { color:inherit; }
+  .ep-faces { display:flex; margin-left:auto; flex-shrink:0; }
+  .ep-faces img { width:26px; height:26px; border-radius:50%; object-fit:cover;
+    border:2px solid #fff; margin-left:-8px; background:#eee; }
+  /* tutti i citati sul desktop; su mobile la leggibilità vince: max 3 */
+  @media (max-width:600px) { .ep-faces img:nth-child(n+4) { display:none; } }
+  .ep-listen { width:32px; height:32px; border-radius:50%; background:#f3f4f6; border:0;
+    display:flex; align-items:center; justify-content:center; font-size:12px;
+    flex-shrink:0; cursor:pointer; color:inherit; }
+  .ep-listen.on { background:#2563eb; color:#fff; }
+  .face-inline { width:1.15em; height:1.15em; border-radius:50%; object-fit:cover;
+    vertical-align:-.18em; margin-right:.25em; }
+  /* SEMPRE sulla stessa riga (2026-08-09): su schermi stretti le miniature
+     si riducono, e se non basta il reel sparisce — mai l'andata a capo */
+  .vthumbs { display:flex; gap:.8rem; flex-wrap:nowrap; margin:1.2rem 0; align-items:flex-start; }
+  .vthumb { position:relative; cursor:pointer; border:0; padding:0; background:none;
+    border-radius:12px; overflow:hidden; }
+  /* stessa ALTEZZA per video e reel: il 9:16 si stringe, non svetta */
+  .vthumb video { height:150px; width:auto; display:block; border-radius:12px; background:#000; }
+  @media (max-width:520px) { .vthumb video { height:118px; } }
+  /* quando nemmeno ridotte ci stanno: via le miniature, due BOTTONI in
+     riga che aprono il player (2026-08-09) */
+  .vbtns { display:none; gap:.6rem; margin:1.2rem 0; }
+  .vbtns button { flex:1; padding:.6rem .4rem; border:0; border-radius:10px;
+    background:#2563eb; color:#fff; font-weight:700; font-size:.85rem;
+    cursor:pointer; font-family:inherit; }
+  @media (max-width:420px) { .vthumbs { display:none; } .vbtns { display:flex; } }
+  .vthumb .vlabel { position:absolute; left:0; right:0; bottom:0; padding:.9rem .5rem .35rem;
+    background:linear-gradient(transparent, rgba(0,0,0,.75)); color:#fff; font-size:.7rem; }
+  .vthumb::after { content:"▶"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    color:#fff; font-size:1.6rem; text-shadow:0 1px 6px rgba(0,0,0,.8); }
+  /* margin:auto ESPLICITO: il reset globale * {margin:0} annullava la
+     centratura nativa del dialog e il player si apriva in alto a sinistra */
+  dialog.vplayer { border:0; padding:0; background:transparent; max-width:92vw;
+    margin:auto; position:fixed; inset:0; }
+  dialog.vplayer::backdrop { background:rgba(0,0,0,.85); }
+  dialog.vplayer video { max-width:92vw; max-height:86vh; border-radius:14px; background:#000; }
+  details.tr { border:1px solid #e2ddd6; border-radius:10px; padding:.2rem .9rem .6rem; }
+  details.tr summary { cursor:pointer; font-weight:600; padding:.55rem 0; }
+  .tr-copy { font-size:.72rem; padding:.3rem .7rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; margin:.3rem 0 .5rem; }
+  .epnav { display:flex; justify-content:space-between; gap:1rem; margin:2rem 0 0;
+    font-size:.82rem; font-family:monospace; }
+  .epnav a { text-decoration:none; }
+  @media (prefers-color-scheme:dark) {
+    body { background:#1f1d18; color:#e5e5e5; }
+    .ep, .tension, .signal-card { background:#2a2823; border-color:#3a352d; }
+    .ep-play { background:#3a352d; } .desc { color:#d4d4d4; }
+    .signal-text { color:#d4d4d4; }
+    .creator-footer { border-color:#3a352d; }
+    .creator-name { color:#f5f5f5; }
+    .creator-tagline, .creator-email a { color:#9ca3af; }
+    .creator-ai { color:#9a8f7d; }
+    .vlink input { background:#1c1a17; border-color:#3a352d; color:#9ca3af; }
+    .tutele { border-color:#3a352d; color:#9a8f7d; }
+    .tutele h3 { color:#a9a9a9; } .tutele strong { color:#d4d4d4; }
+    .ep-listen { background:#3a352d; }
+    .ep-faces img { border-color:#2a2823; background:#3a352d; }
+    details.tr { border-color:#3a352d; }
+  }
+</style></head><body>
+<a class="back" href="/signal-brief/ai/">← Signal.AI</a>
+<header><h1>L'anno in cui lo scaling è finito</h1></header>
+<div class="tagline">2026-06-21 · Digital Intelligence Podcast</div>
+<div class="desc">Il 2026 segna una rottura: la corsa alla potenza di calcolo cede il passo alle idee, mentre si decide chi controllerà davvero l'intelligenza artificiale.</div>
+<div class="rawmd"><a href="raw.md">Testo (markdown)</a></div>
+<section><h2>Sintesi</h2><div class="synthesis"><p>C'è un momento di rottura che attraversa quasi tutte queste voci: il 2025-2026 come <strong>inflection point</strong>. Ma la convergenza è solo apparente, perché ciascuno lo nomina su un asse diverso. Per <a href="https://www.dwarkesh.com/p/ilya-sutskever-2" target="_blank" rel="noopener">Ilya Sutskever</a> finisce "l'era dello scaling": il collo di bottiglia torna a essere l'idea, non la GPU. <a href="https://www.startuphub.ai/ai-news/ai-figures/2026/figure-yann-lecun-llm-position-evolution-2026-06-16" target="_blank" rel="noopener">Yann LeCun</a> capitalizza la stessa diagnosi con un miliardo di dollari — gli LLM sono retrieval, non ragionamento. E persino <a href="https://karpathy.bearblog.dev/sequoia-ascent-2026/" target="_blank" rel="noopener">Andrej Karpathy</a>, tornato alla ricerca fondamentale in Anthropic, ridisegna il confine: i LLM dominano solo ciò che è <em>verificabile</em>. La corrente di fondo è un riflusso dall'hype produttivo verso la ricerca fondamentale — chi ha cavalcato lo scaling ora dichiara che lo scaling non basta più.</p>
+<p>La frattura più netta è sul <strong>lavoro</strong>. <a href="https://qz.com/the-godfather-of-ai-says-the-job-wipeout-is-just-beginning" target="_blank" rel="noopener">Geoffrey Hinton</a> vede la sostituzione già in corso; <a href="https://fortune.com/article/why-microsoft-ai-chief-mustafa-suleyman-predicts-ai-automation-18-months/" target="_blank" rel="noopener">Mustafa Suleyman</a> la dà a 18 mesi. All'estremo opposto <a href="https://finance.yahoo.com/sectors/technology/articles/jensen-huang-says-ceos-imagination-183000742.html" target="_blank" rel="noopener">Jensen Huang</a> chiama "fuori immaginazione" chi taglia, e <a href="https://www.metaintro.com/blog/yann-lecun-ai-jobs-college-advice-2026" target="_blank" rel="noopener">LeCun</a> smentisce le stime catastrofiste. Nel mezzo, due ritrattazioni rivelatrici: <a href="https://fortune.com/2026/05/26/sam-altman-dario-amodei-walking-back-ai-jobs-apocalypse-prophecies-ipo/" target="_blank" rel="noopener">Dario Amodei</a> e Altman ammorbidiscono le profezie del 2024. E sopra tutti, <a href="https://www.ben-evans.com/benedictevans/2026/5/24/predicting-ai-job-exposure" target="_blank" rel="noopener">Benedict Evans</a> smonta l'intera querelle: prevedere l'esposizione è <em>impossibile</em>. Lo scetticismo si sposta dentro l'hype, non contro.</p>
+<p>La tensione strutturale è <strong>concentrazione vs. policentrismo</strong>. Altman trasforma OpenAI in campione nazionale americano allineato a Washington; Suleyman vuole Microsoft tra i "top-4". Sul fronte opposto, <a href="https://www.theblock.co/post/386043/vitalik-buterin-declares-2026-the-year-ethereum-reverses-backsliding-of-self-sovereignty-and-trustlessness" target="_blank" rel="noopener">Vitalik Buterin</a>, <a href="https://balajis.com/" target="_blank" rel="noopener">Balaji</a> e <a href="https://sequoiacap.com/podcast/jack-dorsey-every-company-can-now-be-a-mini-agi/" target="_blank" rel="noopener">Jack Dorsey</a> spingono verso decentralizzazione, sovranità, "mini-AGI" lean. Curioso eco organizzativo: sia Dorsey sia <a href="https://fortune.com/2026/06/18/anthropic-ceo-dario-amodei-one-direct-report-unconventional-management-structure-start-up-success/" target="_blank" rel="noopener">Amodei</a> smontano il middle management — l'<img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="">AI come solvente gerarchico.</p>
+<p>La corrente di fondo: l'AI ha smesso di essere promessa ed è diventata <em>terreno politico</em>. Hinton e Altman parlano di geopolitica della scienza; il dibattito tecnico è ormai una lotta su chi controlla l'infrastruttura cognitiva. La fede comune nell'accelerazione nasconde un disaccordo radicale su chi la possiederà.</p></div></section>
+<section><h2>Temi del giorno</h2><div class="tension"><div class="axis">↗ 2025-2026 come inflection point</div><div class="side">Quasi tutte le voci nominano una rottura epocale, ma ciascuno su un asse diverso (scaling, ragionamento, verificabilità).</div></div><div class="tension"><div class="axis">↗ Fine dell'era dello scaling</div><div class="side">Il collo di bottiglia torna a essere l'idea e non la GPU; riflusso dall'hype produttivo alla ricerca fondamentale.</div></div><div class="tension"><div class="axis">↗ LLM come retrieval, non ragionamento</div><div class="side">Gli LLM dominano solo ciò che è verificabile; la diagnosi viene capitalizzata con investimenti miliardari.</div></div><div class="tension"><div class="axis">↗ Impossibilità di prevedere l'esposizione del lavoro</div><div class="side">L'intera querelle sulla sostituzione del lavoro è insolubile: prevedere l'esposizione è impossibile.</div></div><div class="tension"><div class="axis">↗ AI come solvente gerarchico</div><div class="side">L'AI smonta il middle management, eco organizzativo che attraversa figure opposte.</div></div><div class="tension"><div class="axis">↗ AI come terreno politico</div><div class="side">L'AI ha smesso di essere promessa: il dibattito tecnico è una lotta su chi controlla l'infrastruttura cognitiva.</div></div><div class="tension"><div class="axis">⚖ Tempistica e realtà della sostituzione del lavoro da AI</div><div class="side">Geoffrey Hinton: sostituzione già in corso · Mustafa Suleyman: piena automazione entro 18 mesi · Jensen Huang: chi taglia è 'fuori immaginazione' · Yann LeCun: smentisce le stime catastrofiste</div></div><div class="tension"><div class="axis">⚖ Concentrazione vs. policentrismo del potere AI</div><div class="side">Sam Altman: OpenAI come campione nazionale allineato a Washington · Mustafa Suleyman: Microsoft tra i top-4 · Vitalik Buterin: decentralizzazione e sovranità · Jack Dorsey: 'mini-AGI' lean</div></div><div class="tension"><div class="axis">⚖ Tenuta delle profezie apocalittiche del 2024</div><div class="side">Dario Amodei: ritratta e ammorbidisce le profezie · Sam Altman: ammorbidisce le previsioni · Benedict Evans: la previsione stessa è impossibile</div></div></section>
+<section><h2>Progetti da osservare</h2><div class="tension"><div class="axis">karpathy/nanochat</div><div class=side>Pipeline minimale per addestrare un modello GPT-2 in ~2 ore su 8×H100 con FP8 e ClimbMix, parte della linea di lavoro di Karpathy su pipeline ridotte per singolo ricercatore. Repo di riferimento per l'era 'meno codice, più amplificazione'.</div></div><div class="tension"><div class="axis">karpathy/llm-wiki (gist)</div><div class=side>Prompt-pattern da copiare in Claude Code/Codex che istanzia il sistema 'LLM Wiki' su Obsidian: articoli enciclopedici interlinkati, backlink, health check. Diventato viral come anti-RAG personale.</div></div><div class="tension"><div class="axis">karpathy/autoresearch</div><div class=side>Repo di ~630 righe (7 marzo 2026) che materializza un agente di ricerca minimale, parte della tesi 'idea file = distribuzione' di Karpathy. Esempio concreto di agente che amplifica il ricercatore individuale.</div></div><div class="tension"><div class="axis">Obsidian</div><div class=side>Editor di note markdown con backlink e grafi che Karpathy elegge come 'IDE della conoscenza' nel suo pattern LLM-Wiki. Diventa il frontend consigliato per memoria esplicita e ispezionabile contro la memoria opaca degli assistant commerciali.</div></div><div class="tension"><div class="axis">ggerganov/llama.cpp</div><div class=side>Motore di inferenza C/C++ per LLM locali; il suo llama-server è il cuore dello stack self-sovereign proposto da Buterin (NixOS + llama-server + bubblewrap). Standard de facto per AI locale sovrana.</div></div><div class="tension"><div class="axis">basecamp/omarchy</div><div class=side>Distro Arch Linux curata da DHH con Hyprland, pensata per attrarre utenti macOS/Windows verso un desktop 'malleabile'. Progetto-manifesto del filone 'open source AI-ready' di DHH (Omacon NY, 130 persone).</div></div><div class="tension"><div class="axis">hyprwm/Hyprland</div><div class=side>Compositor Wayland dinamico, cuore visivo di Omarchy e simbolo del rinnovato interesse consumer per Linux (Panther Lake / XPS 14). DHH lo cita come esempio di software su cui finalmente 'hardware e aziende tornano a scommettere'.</div></div><div class="tension"><div class="axis">simonw/llm</div><div class=side>CLI e libreria Python di Simon Willison per interagire con LLM locali e cloud, base dei suoi tool README-driven (scan-for-secrets, datasette-ports, research-llm-apis). Strumento pivot del suo workflow 'agentic engineering'.</div></div><div class="tension"><div class="axis">fchollet/ARC-AGI</div><div class=side>Repo ufficiale dei benchmark ARC-AGI di Chollet, ora affiancato da ARC-AGI-3 (ambienti interattivi turn-based per misurare agency). ARC Prize 2026 ha $2M di montepremi; umani 100%, best frontier model 0,37%.</div></div><div class="tension"><div class="axis">zilliztech/claude-context</div><div class=side>Server MCP di code search che trasforma l'intera codebase in contesto indicizzato per Claude Code, Cursor e altri agenti. Esempio netto del 'moat shift' dal modello all'uso indicato da Evans e Andreessen.</div></div></section>
+<section><h2>Fonti</h2><div class="fonte"><span class="who">Ilya Sutskever</span><a href="https://brief.bismarckanalysis.com/p/ai-2026-ilya-sutskever-and-the-end" target="_blank" rel="noopener">AI 2026: Ilya Sutskever and the End of the Age of Scaling</a><a href="https://www.calcalistech.com/ctechnews/article/h1fudk7z11x" target="_blank" rel="noopener">Ilya Sutskever: AI's bottleneck is ideas, not compute</a><a href="https://www.startuphub.ai/ai-news/ai-figures/2026/figure-ilya-sutskever-ssi-financial-breakdown-2026-06-06" target="_blank" rel="noopener">Ilya Sutskever's SSI: The $32B Bet on a Post-Scaling Future</a></div><div class="fonte"><span class="who">Yann LeCun</span><a href="https://www.startuphub.ai/ai-news/ai-figures/2026/figure-yann-lecun-llm-position-evolution-2026-06-16" target="_blank" rel="noopener">Yann LeCun Left Meta to Put $1.03B Behind His LLM Critique</a><a href="https://www.thedeepview.com/articles/yann-lecun-proposes-a-new-alternative-to-agi" target="_blank" rel="noopener">Yann LeCun proposes a new alternative to AGI</a><a href="https://www.metaintro.com/blog/yann-lecun-ai-jobs-college-advice-2026" target="_blank" rel="noopener">Yann LeCun Calls 20% AI Job Loss Claim...</a></div><div class="fonte"><span class="who">Andrej Karpathy</span><a href="https://karpathy.bearblog.dev/sequoia-ascent-2026/" target="_blank" rel="noopener">suo blog</a><a href="https://www.startuphub.ai/ai-news/ai-figures/2026/figure-andrej-karpathy-software-thesis-evolution-2026-06-17" target="_blank" rel="noopener">Software 2.0 → 3.0 evolution — StartupHub.ai</a><a href="https://rollingout.com/2026/05/19/ai-leader-andrej-karpathy-join-anthropic/" target="_blank" rel="noopener">Karpathy joins Anthropic — Rolling Out</a></div><div class="fonte"><span class="who">Dario Amodei</span><a href="https://darioamodei.com/post/policy-on-the-ai-exponential" target="_blank" rel="noopener">Policy on the AI Exponential — darioamodei.com</a><a href="https://www.axios.com/2026/06/10/anthropic-ceo-government-block-dangerous-ai" target="_blank" rel="noopener">Axios — Government should block dangerous AI</a><a href="https://fortune.com/2026/06/18/anthropic-ceo-dario-amodei-one-direct-report-unconventional-management-structure-start-up-success/" target="_blank" rel="noopener">Fortune — Amodei management structure</a></div></section>
+<section class="transcript-section"><h2>Trascrizione</h2><details class="tr"><summary>Leggi la trascrizione</summary><button class="tr-copy" type="button" onclick="copiaTrascrizione(this)">copia il testo</button><div class="transcript-body"><h2>L'anno in cui lo scaling è finito</h2>
+<p class="podcast-episode-desc">Il 2026 segna una rottura: la corsa alla potenza di calcolo cede il passo alle idee, mentre si decide chi controllerà davvero l'intelligenza artificiale.</p>
+<div class="chapter" data-mood="geo"><hr></div>
+<p>Da quasi vent'anni la storia dell'intelligenza artificiale era una storia di taglie: più dati, più schede grafiche, modelli più grandi. Chi aveva i capannoni di calcolo più grossi vinceva. In questi giorni quella storia si è incrinata da più parti contemporaneamente. È il 21 giugno, e questo è Signal Brief. Le voci che per anni hanno spinto sull'acceleratore della potenza adesso dicono, quasi all'unisono, che la potenza da sola non basta più. La scena si apre a San Francisco, in una sala dove un ricercatore tornato sui suoi passi prova a spiegare perché.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>A metà giugno, davanti a una platea di investitori a un evento di Sequoia, Andrej Karpathy ha provato a mettere ordine. Karpathy è uno di quelli che il software lo ha visto cambiare pelle due volte. Ha disegnato uno schema semplice. Prima scrivevamo il codice a mano, riga per riga. Poi abbiamo cominciato ad addestrare reti neurali invece di programmarle. Adesso, ha detto, siamo alla terza fase: parliamo ai modelli a parole, e loro fanno il lavoro. Ma con una condizione precisa. I modelli sono bravissimi in tutto ciò che si può verificare — la matematica, il codice, la logica — e restano fragili in tutto il resto.</p>
+<p>È una frase che sembra tecnica e invece traccia un confine politico. Perché nello stesso periodo, da un palco diverso, Ilya Sutskever ha detto una cosa che rima. Per anni la regola era una sola: fai il modello più grande e andrà meglio. Sutskever adesso divide la storia recente in tre tempi — gli anni della ricerca, gli anni dello scaling, e da quest'anno di nuovo la ricerca. Tradotto: il problema non è più procurarsi altre schede grafiche, è avere un'idea nuova. Il collo di bottiglia è tornato a essere la testa, non la fabbrica.</p>
+<p>Conviene fermarsi su questo, perché è successo qualcosa di simile altre volte. Quando le fabbriche passarono dal vapore all'elettricità, per un po' nessuno seppe cosa farsene davvero: misero il motore elettrico dove prima c'era quello a vapore, e basta. I guadagni veri arrivarono solo quando qualcuno ripensò la fabbrica da capo. Lo scaling è stato il vapore di questi anni: ha portato lontano, e adesso che tutti ce l'hanno non basta più a distinguersi.</p>
+<p>Yann LeCun ha preso la stessa diagnosi e ci ha costruito sopra un'azienda. Sostiene da tempo che questi modelli non ragionano: ripescano. Sono magazzini di informazioni molto sofisticati, ma senza un'immagine del mondo dentro. E mentre molti lo dicevano a parole, lui ha lasciato Meta dopo dodici anni e ha raccolto oltre un miliardo di dollari per costruire qualcosa di diverso. La diagnosi sullo scaling, insomma, non è un dibattito da seminario: ci si mettono sopra miliardi.</p>
+<p>C'è poi il fronte più caldo, quello del lavoro, e qui le voci si scontrano. Geoffrey Hinton ripete che la sostituzione non è una minaccia futura, è già cominciata, dai call center in su. Mustafa Suleyman mette una data: diciotto mesi, e gran parte dei mestieri d'ufficio sarà alla portata di una macchina. All'estremo opposto Jensen Huang dà degli sprovveduti a chi licenzia per via dell'AI, e LeCun liquida come esagerate le stime di posti persi. Nel mezzo, due dietrofront che dicono molto: sia Dario Amodei sia Sam Altman, che nel 2024 avevano dipinto scenari quasi apocalittici, adesso abbassano i toni.</p>
+<p>E sopra tutti, Benedict Evans fa l'osservazione più scomoda. Smettiamola di fingere di sapere quali lavori saranno colpiti, dice: prevederlo è semplicemente impossibile. Non perché l'AI sia innocua, ma perché ci sono troppe cose che non possiamo sapere in anticipo. È uno scetticismo che non viene da chi è contro l'AI: viene da dentro. La giornata, allora, tiene insieme due cose. Tutti credono nell'accelerazione. Quasi nessuno è d'accordo su chi la guiderà, e dove ci porterà.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Ilya Sutskever è uno dei nomi che hanno costruito l'AI moderna: era nel gruppo che nel 2012 fece partire tutta questa ondata, ed è stato per anni il cervello scientifico di OpenAI. Poi se n'è andato, e ha fondato una società con un nome che è già un programma: Safe Superintelligence, superintelligenza sicura.</p>
+<p>In queste settimane è tornato a ripetere, con più insistenza di prima, una tesi che suona quasi eretica per il settore: il pre-addestramento dei modelli, così come lo abbiamo conosciuto, è finito. Per anni la ricetta è stata semplice e brutale: più dati e più calcolo, e i modelli miglioravano da soli. Quella stagione, dice Sutskever, ha aspirato tutta l'aria della stanza. Tutti facevano la stessa cosa, perché la stessa cosa funzionava. Il risultato è che la ricerca si è omologata.</p>
+<p>La sua diagnosi è che il vantaggio non è più nei muscoli, ma nelle idee. Chi eccelle adesso non è chi mette in fila più schede grafiche, ma chi trova un'intuizione che gli altri non hanno. È un capovolgimento: per un decennio il calcolo è stato la cosa scarsa e preziosa, e adesso torna a esserlo il pensiero.</p>
+<p>Intanto la sua azienda fa una scommessa che nel clima attuale è quasi provocatoria. Niente prodotti intermedi, niente app da lanciare per fare cassa. Un solo obiettivo dichiarato: arrivare alla superintelligenza sicura, e nient'altro fino ad allora. Una valutazione da trentadue miliardi di dollari poggia su questa promessa e su nessun fatturato. Negli ultimi mesi ha aggiunto un accento nuovo: un'AI legata in modo solido al rispetto della vita che sente, con un rilascio graduale come regola, non come gentilezza.</p>
+<p>C'è qualcosa di antico in questa postura. Ricorda gli scienziati che si chiudono in laboratorio per anni mentre fuori tutti corrono a vendere, convinti che la scoperta vera arrivi dal silenzio e non dalla fretta. Nel pieno di un'industria che misura tutto a trimestri, Sutskever dice di voler aspettare. Che sia coraggio o azzardo lo diranno i fatti — ma è la dichiarazione più netta che il vento stia cambiando.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Per dodici anni Yann LeCun è stato la voce scientifica di Meta sull'intelligenza artificiale, e una delle persone che hanno inventato le reti neurali come le usiamo oggi. A novembre ha fatto una cosa che pochi si aspettavano: ha lasciato. E in queste settimane ha chiuso il più grande primo finanziamento mai raccolto in Europa per una società del genere — oltre un miliardo di dollari.</p>
+<p>La tesi che porta con sé la ripete da anni, ma adesso ha i soldi per dimostrarla. I modelli linguistici di oggi, dice, non ragionano: sono sistemi che recuperano informazioni già viste. Bravissimi a richiamare, incapaci di immaginare. Manca loro la cosa che ogni bambino ha: un modello di come funziona il mondo, la capacità di prevedere cosa succede se spingi un bicchiere oltre il bordo del tavolo. Senza quello, sostiene, non si arriva da nessuna parte vicino a un'intelligenza vera, per quante schede grafiche si accumulino.</p>
+<p>Al posto della corsa all'AGI propone un'altra parola e un'altra strada. Non un'intelligenza generale astratta, ma una capace di adattarsi in fretta a compiti nuovi. E un'architettura diversa che, invece di indovinare la parola o il pixel successivo, prova a ragionare su una rappresentazione più astratta della scena — più vicina a come pianifichiamo noi, che non pensiamo per singole parole ma per intenzioni.</p>
+<p>Sul lavoro, LeCun fa il guastafeste. Le stime che parlano di un quinto dei posti spazzati via dall'AI? Esagerazioni. Resta ottimista sul fatto che questi strumenti accelereranno la scienza — la scoperta di farmaci, la fisica, la biologia — ma rifiuta lo scenario della sostituzione di massa imminente.</p>
+<p>È una posizione che lo mette contro quasi tutti i suoi pari: contro chi vede l'AGI dietro l'angolo, contro chi annuncia disoccupazione di massa. La storia della tecnologia è piena di momenti così, in cui la maggioranza correva in una direzione e qualcuno si fermava a dire che stavano scavando nel posto sbagliato. A volte aveva torto. A volte, come chi previde che internet avrebbe contato più del fax, aveva semplicemente guardato più lontano. Con LeCun, per ora, sappiamo solo che ha scommesso un miliardo sulla seconda ipotesi.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Andrej Karpathy è uno di quei tecnici che il grande pubblico non conosce ma che dentro il settore pesano molto: ha guidato l'AI di Tesla, è stato tra i primi a OpenAI, e ha un dono raro per spiegare cose complicate con parole semplici. Lo abbiamo già incontrato all'inizio, con il suo schema sul software in tre fasi. Conviene tornarci, perché attorno a lui è successo qualcosa che racconta bene l'aria che tira.</p>
+<p>A maggio ha annunciato dove sarebbe andato a lavorare: Anthropic, una delle aziende di punta del settore. Ma il ruolo è la parte interessante. Non un prodotto, non un'app: un gruppo dedicato alla ricerca di base sul modo in cui i modelli vengono addestrati da zero. L'idea, quasi ricorsiva, è usare l'AI stessa per accelerare la ricerca sull'AI. Dopo aver avuto una sua startup, torna nel laboratorio. È lo stesso movimento che vediamo in Sutskever: gente che aveva cavalcato l'onda del prodotto e adesso torna alle domande di fondo.</p>
+<p>C'è poi un dettaglio concreto che racconta il momento meglio di mille previsioni. Karpathy indica la fine del 2025 come il punto in cui gli assistenti che scrivono codice da soli sono passati da curiosità a strumenti affidabili. La sua prova non è un grafico: è che non ricorda più l'ultima volta che ha dovuto correggere a mano il codice che la macchina gli ha generato. È il genere di cambiamento che non fa rumore ma sposta le abitudini di milioni di persone, come quando il navigatore satellitare ha smesso di sbagliare strada e a un certo punto abbiamo smesso di portarci dietro le mappe.</p>
+<p>Il filo che lega tutto è quella parola: verificabile. Dove esiste una risposta giusta controllabile — il codice gira o non gira, il conto torna o non torna — la macchina vola. Dove la verità è sfumata, sfuma anche lei. È un confine onesto, ed è il motivo per cui le stesse aziende che hanno promesso macchine onniscienti adesso investono miliardi proprio lì, sul territorio sicuro del verificabile, lasciando il resto a domani.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Ricapitoliamo un attimo dove siamo, perché in auto è facile perdere il filo. Tre cose si muovono insieme oggi: l'idea che la corsa alla potenza pura sia finita, lo scontro su quanti posti di lavoro l'AI si porterà via, e una terza, più sottile, che riguarda il potere dentro le aziende. È qui che entra Jack Dorsey.</p>
+<p>Dorsey lo ricordiamo come il fondatore di Twitter. Quella vita è alle spalle: oggi guida Block, la società dietro i pagamenti di Square, e l'ha trasformata in qualcosa di molto diverso. Dopo aver tagliato circa il quaranta per cento del personale, la sta ricostruendo come una macchina concentrata su una cosa sola, il Bitcoin. Meno prodotti, meno dispersione: un'azienda da seimila persone che vuole muoversi come se ne avesse cinquanta.</p>
+<p>Il pezzo più interessante è come immagina di organizzarla. Dorsey vuole smontare i livelli intermedi — i capi dei capi — e portare la gerarchia a due, tre gradini al massimo, con il caso ideale in cui tutti rispondono direttamente a lui. Restano solo due figure: chi costruisce, e poco sopra chi coordina. Il manager classico, quello che non costruisce e non vende ma sta in mezzo a far girare le informazioni, sparisce.</p>
+<p>E qui l'AI fa la sua parte, ma non quella che ci si aspetta. Per Dorsey la macchina non decide: porta a chi decide un contesto più ricco, più in fretta. Se l'informazione arriva già masticata a chi deve scegliere, lo strato di persone che prima serviva a farla passare su e giù diventa superfluo. Da qui la sua frase: ogni azienda può diventare una piccola AGI.</p>
+<p>Il punto interessante è che non è solo. Anche Dario Amodei, da Anthropic, sta sperimentando strutture con pochissimi livelli e moltissime persone che gli riferiscono direttamente. Due figure agli antipodi che arrivano alla stessa intuizione: l'AI è un solvente che scioglie il management di mezzo. È successo altre volte con la tecnologia — la posta elettronica eliminò eserciti di segretarie, il foglio di calcolo interi reparti di contabili. Stavolta tocca a chi sta nel mezzo a coordinare. Una rivoluzione silenziosa, che non fa notizia quanto i robot, ma cambia la forma stessa del lavoro.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>L'ultimo ritratto è quello di Dario Amodei, che guida Anthropic ed è forse la figura che meglio incarna il dietrofront di questi mesi. Nel 2024 era tra le voci più cupe: scenari di disoccupazione di massa, avvertimenti netti sul giro di pochi anni. A giugno ha pubblicato il testo più denso e meditato che abbia mai scritto sul rapporto tra AI e politica, e il tono è cambiato.</p>
+<p>Sul lavoro ammette ancora che lo scossone sarà grande, forse più grande e più duraturo di quelli passati. Ma adesso, invece di limitarsi ad allarmare, propone rimedi concreti: una sorta di assicurazione sullo stipendio, incentivi per chi si riqualifica, dati seri su quanti licenziamenti dipendano davvero dall'AI, e perfino l'apertura all'idea di un reddito di base. Nel frattempo, racconta Fortune, ha definito stupido sostituire i dipendenti più giovani con le macchine — un capovolgimento pratico rispetto ai suoi stessi discorsi sull'automazione.</p>
+<p>Sulla regolazione la posizione è altrettanto interessante, perché non è nessuna delle due cose che ci si aspetta. Non vuole il liberi tutti, ma nemmeno la mano pesante dello Stato che blocca ogni cosa. Propone un modello preso in prestito dall'aviazione o dai farmaci: controlli obbligatori fatti da terzi sui modelli più potenti, e il potere per il governo di fermare un rilascio giudicato pericoloso. Test prima del decollo, come per un aereo nuovo.</p>
+<p>C'è qualcosa di rivelatore in questo ammorbidirsi. Amodei non è il solo: anche Sam Altman ha smussato le previsioni più estreme di un paio d'anni fa. Sono le stesse persone che ci avevano spaventato, e che adesso, con i modelli veri tra le mani, parlano in modo più cauto. Non perché il problema sia sparito, ma perché da vicino le cose appaiono sempre più complicate e meno cinematografiche di come si annunciavano da lontano.</p>
+<p>È un movimento che abbiamo già visto con ogni grande tecnologia. La prima reazione è apocalittica o utopica, sempre estrema. Poi arriva la fase noiosa e adulta, fatta di regole, assicurazioni, commissioni di controllo. È meno spettacolare, ma di solito è il segno che una cosa sta diventando seria sul serio.</p>
+<div class="chapter" data-mood="upbeat"><hr></div>
+<p>Chiudiamo con qualche progetto da tenere d'occhio, e non a caso parlano la stessa lingua dei discorsi di oggi. Tornano tutti dalle settimane scorse, segno che la corrente è di fondo, non una moda di giornata.</p>
+<p>nanochat, di Karpathy, continua a crescere: è un modo per costruirti da zero un piccolo modello di conversazione, capirne le viscere invece di affittarlo da qualcuno. Vicino c'è autoresearch, sempre suo, che prova a far fare alla macchina pezzi del lavoro del ricercatore — esattamente quell'uso dell'AI per accelerare l'AI di cui parlava entrando in Anthropic.</p>
+<p>Poi llama.cpp, ancora in salita: serve a far girare i modelli sul tuo computer, senza data center, senza affitti mensili. È il contraltare concreto alle fabbriche di calcolo grandi come città — da una parte chi costruisce capannoni, dall'altra chi fa stare tutto su un portatile. Sul fronte della sovranità è la stessa spinta di cui parlano Buterin e Dorsey.</p>
+<p>C'è claude-context, che aiuta questi assistenti a tenere a mente progetti grandi senza perdersi. E infine ARC-AGI, la collezione di test ideata da François Chollet per misurare se una macchina ragiona davvero o sta solo ripescando. È curioso vederlo ancora in cima alle classifiche: è proprio il banco di prova di quel confine — il verificabile, il ragionamento vero — attorno a cui ruota tutta la giornata.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Resta l'immagine di Sutskever che dice di voler aspettare, mentre tutti corrono. Per anni la domanda era chi avrebbe costruito la macchina più grande. Adesso è chi avrà l'idea giusta, e chi la possiederà. La potenza si è fatta abbondante; tornano scarse le due cose di sempre, il pensiero e il controllo. È stato Signal Brief. Alla prossima.</p></div></details></section>
+<nav class="epnav"><a href="/signal-brief/ai/2026-06-20/">← 2026-06-20</a><span style="flex:1"></span><a href="/signal-brief/ai/2026-06-22/">2026-06-22 →</a></nav>
+<dialog class="vplayer" id="vplayer"></dialog>
+<script>
+// player modale dei video: la miniatura apre il video al centro (disegno 2026-08-07)
+function apriVideo(src) {
+  var d = document.getElementById('vplayer');
+  d.innerHTML = '<video controls autoplay playsinline src="' + src + '"></video>';
+  d.showModal();
+  d.onclick = function (e) { if (e.target === d) d.close(); };
+  d.onclose = function () { var v = d.querySelector('video'); if (v) v.pause(); d.innerHTML = ''; };
+}
+// ascolto inline dalla lista: un episodio alla volta
+var epAudio = null, epBtn = null;
+function ascolta(btn, src) {
+  if (epBtn === btn && epAudio) {
+    if (epAudio.paused) { epAudio.play(); btn.classList.add('on'); }
+    else { epAudio.pause(); btn.classList.remove('on'); }
+    return;
+  }
+  if (epAudio) { epAudio.pause(); if (epBtn) epBtn.classList.remove('on'); }
+  epAudio = new Audio(src); epBtn = btn;
+  epAudio.play(); btn.classList.add('on');
+  epAudio.onended = function () { btn.classList.remove('on'); };
+}
+function copiaTrascrizione(btn) {
+  var t = btn.parentElement.querySelector('.transcript-body');
+  navigator.clipboard.writeText(t ? t.innerText : '').then(function () {
+    btn.textContent = 'copiata ✓';
+    setTimeout(function () { btn.textContent = 'copia il testo'; }, 1800);
+  });
+}
+</script>
+<footer class="creator-footer">
+  <img src="/signal-brief/mike-avatar.png" alt="Michele Mondora">
+  <div class="creator-meta">
+    <span class="creator-name">it-mikesoft</span>
+    <span class="creator-tagline">working with systems, living with questions</span>
+    <span class="creator-email"><a href="mailto:michele@mondora.com">michele@mondora.com</a></span>
+  </div>
+</footer>
+<section class="tutele"><h3>Trasparenza e tutele</h3>
+<p><strong>Come nasce questo contenuto.</strong> Ricerca, sintesi editoriale, voce narrante, immagini e musica sono prodotte con sistemi di intelligenza artificiale. Non c'è una redazione umana che verifica ogni affermazione prima della pubblicazione: un controllo automatico scarta le schede giudicate inaffidabili, ma non elimina la possibilità di errori.</p>
+<p><strong>Affermazioni su persone e aziende.</strong> Quanto riportato è una sintesi di fonti pubbliche, non una dichiarazione diretta delle persone citate: le frasi non vanno intese come virgolettati né come posizioni ufficiali. Le fonti sono indicate in ogni pagina episodio — verificale prima di considerare un'informazione accertata. Se trovi un'affermazione inesatta che ti riguarda, scrivi a <a href="mailto:michele@mondora.com">michele@mondora.com</a>: viene corretta o rimossa.</p>
+<p><strong>Immagini e volti.</strong> Le immagini di scena sono generate con AI e non raffigurano fatti realmente avvenuti. Le fotografie di persone reali usate nei video provengono da Wikimedia Commons con le rispettive licenze, e sono accostate al racconto a scopo identificativo: la loro presenza non implica partecipazione, dichiarazione o approvazione da parte della persona ritratta. Su richiesta dell'interessato vengono rimosse.</p>
+<p><strong>Fonti e diritti altrui.</strong> I contenuti sono rielaborazioni originali, non riproduzioni di articoli di terzi; le testate e gli autori all'origine di una notizia sono citati e collegati. Marchi e nomi commerciali appartengono ai rispettivi titolari e sono usati a scopo descrittivo.</p>
+</section>
+</body></html>

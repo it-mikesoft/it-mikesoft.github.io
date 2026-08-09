@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="it"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Il bivio dei modelli linguistici · Signal.AI · Esteso</title>
+<meta property="og:title" content="Il bivio dei modelli linguistici · Signal.AI · Esteso"><meta property="og:type" content="article"><meta property="og:description" content="La vera frattura dell'AI non è più velocità contro prudenza, ma chi crede che questi modelli portino a un'intelligenza vera e chi li ritiene un vicolo cieco."><meta property="og:url" content="https://it-mikesoft.github.io/signal-brief/ai-esteso/2026-07-05/"><meta property="og:audio" content="https://media.casamon.dev/ai-esteso/podcast/episodes/2026-07-05.mp3"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "PodcastEpisode", "name": "Il bivio dei modelli linguistici", "datePublished": "2026-07-05", "url": "https://it-mikesoft.github.io/signal-brief/ai-esteso/2026-07-05/", "description": "La vera frattura dell'AI non è più velocità contro prudenza, ma chi crede che questi modelli portino a un'intelligenza vera e chi li ritiene un vicolo cieco.", "inLanguage": "it", "associatedMedia": {"@type": "MediaObject", "contentUrl": "https://media.casamon.dev/ai-esteso/podcast/episodes/2026-07-05.mp3"}, "partOfSeries": {"@type": "PodcastSeries", "name": "Signal.AI · Esteso", "url": "https://it-mikesoft.github.io/signal-brief/ai-esteso/"}}</script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:#faf8f4; color:#1a1a1a; padding:2rem 1.5rem; max-width:680px; margin:0 auto; line-height:1.6; }
+  a { color:#7c3aed; }
+  .back { display:inline-block; margin-bottom:1.5rem; font-size:.8rem; font-family:monospace; text-decoration:none; }
+  .videos { display:flex; gap:1rem; flex-wrap:wrap; margin:1.2rem 0; }
+  .videos figure { margin:0; flex:1; min-width:260px; }
+  .videos .v2 { flex:0 1 240px; }
+  .videos video { width:100%; border-radius:12px; background:#000; }
+  .videos .v2 video { aspect-ratio:9/16; max-height:420px; }
+  .videos figcaption { font-size:.75rem; color:#888; text-align:center; margin-top:.3rem; }
+  .vlink { display:flex; gap:.3rem; margin-top:.35rem; }
+  .vlink input { flex:1; min-width:0; font-size:.68rem; font-family:monospace; padding:.3rem .4rem;
+    border:1px solid #e2ddd6; border-radius:6px; background:#fff; color:#6b7280; }
+  .vlink button { font-size:.68rem; padding:.3rem .6rem; border:0; border-radius:6px;
+    background:#7c3aed; color:#fff; cursor:pointer; font-weight:600; }
+  .wk { font-size:1rem; margin:1.4rem 0 .4rem; }
+  details.wkacc { border:1px solid #e5e7eb33; border-radius:10px; margin:.6rem 0; padding:.1rem .8rem .4rem; }
+  details.wkacc summary { cursor:pointer; font-weight:600; padding:.5rem 0; font-size:.9rem; }
+  .back:hover { text-decoration:underline; }
+  header h1 { font-family:Georgia,serif; font-size:1.7rem; font-weight:600; }
+  header h1 span { color:#7c3aed; }
+  .tagline { color:#6b7280; font-size:.85rem; margin-top:.3rem; margin-bottom:1.5rem; }
+  ul.eps { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
+  .subscribe { display:inline-flex; align-items:center; gap:.5rem; margin-bottom:1.2rem;
+    padding:.45rem .9rem; background:#7c3aed; color:#fff; border-radius:20px;
+    text-decoration:none; font-size:.8rem; font-weight:600; }
+  .subscribe:hover { opacity:.85; color:#fff; }
+  .ep { display:flex; align-items:center; gap:.8rem; padding:.8rem 1rem; background:#fff;
+    border:1px solid #e2ddd6; border-radius:8px; text-decoration:none; color:inherit; transition:box-shadow .12s; }
+  .ep:hover { box-shadow:0 2px 8px rgba(0,0,0,.07); }
+  .ep-play { width:32px; height:32px; border-radius:50%; background:#f3f4f6; display:flex;
+    align-items:center; justify-content:center; font-size:12px; flex-shrink:0; }
+  .ep-title { font-size:.9rem; font-weight:500; }
+  .ep-meta { font-size:.72rem; color:#9ca3af; font-family:monospace; margin-top:.15rem; }
+  audio { width:100%; margin:1rem 0 1.5rem; }
+  .rawmd { margin:-.5rem 0 1.5rem; }
+  .rawmd a { font-size:.8rem; font-family:monospace; color:inherit; opacity:.65; }
+  .desc { color:#374151; font-size:.95rem; margin-bottom:1.5rem; }
+  section { margin:2rem 0; }
+  section h2 { font-family:Georgia,serif; font-size:1.1rem; border-bottom:1px solid #e2ddd6;
+    padding-bottom:.3rem; margin-bottom:.8rem; }
+  .synthesis p { margin:.7rem 0; }
+  .tension { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #7c3aed;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; font-size:.9rem; }
+  .tension .axis { font-weight:600; margin-bottom:.3rem; }
+  .tension .side { color:#6b7280; font-size:.85rem; }
+  .proj { font-size:.9rem; margin:.4rem 0; }
+  .proj .pname { font-weight:600; }
+  .proj .pnew { background:#16a34a; color:#fff; font-size:.65rem; font-weight:700;
+    padding:.1rem .35rem; border-radius:4px; text-transform:uppercase; vertical-align:middle; }
+  .fonte { font-size:.85rem; margin:.5rem 0; }
+  .fonte .who { font-weight:600; }
+  .fonte a { display:block; margin-left:.5rem; color:#6b7280; }
+  .transcript-body p { margin:.7rem 0; line-height:1.7; }
+  .transcript-body .chapter hr { border:none; border-top:1px solid #e2ddd6; margin:1.5rem 0; }
+  .transcript-body .podcast-episode-desc { color:#6b7280; font-style:italic; }
+  .signal-card { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #7c3aed;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; }
+  .signal-theme { font-size:.75rem; font-weight:700; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.3rem; }
+  .signal-text { font-size:.85rem; color:#374151; line-height:1.5; }
+  .creator-footer { margin-top:3rem; padding-top:1.5rem; border-top:1px solid #e2ddd6;
+    display:flex; align-items:center; gap:.9rem; }
+  .creator-footer img { width:40px; height:40px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+  .creator-meta { display:flex; flex-direction:column; gap:.15rem; }
+  .creator-name { font-size:.85rem; font-weight:600; color:#1a1a1a; }
+  .creator-tagline { font-size:.75rem; color:#6b7280; }
+  .creator-email { font-size:.75rem; }
+  .creator-ai { font-size:.72rem; color:#8a7f6d; max-width:46ch; line-height:1.45; }
+  .tutele { margin-top:2rem; padding-top:1.2rem; border-top:1px solid #e2ddd6;
+    font-size:.72rem; color:#8a7f6d; line-height:1.5; }
+  .tutele h3 { font-size:.75rem; color:#6b7280; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.5rem; font-weight:600; }
+  .tutele p { margin:.45rem 0; }
+  .tutele strong { color:#5a5348; font-weight:600; }
+  .tutele a { color:inherit; text-decoration:underline; }
+  .creator-email a { color:#9ca3af; text-decoration:none; }
+  .creator-email a:hover { color:#1a1a1a; }
+  /* disegno 2026-08-07: mesi a pagine, facce, player modale, trascrizione
+     richiudibile — la pagina episodio è un prodotto, non un sottoprodotto */
+  .hrow { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+  .hrow .subscribe { margin-bottom:0; flex-shrink:0; }
+  .months { font-size:.78rem; font-family:monospace; margin:.4rem 0 1rem; color:#9ca3af; }
+  .months a { text-decoration:none; } .months b { color:inherit; }
+  .ep-faces { display:flex; margin-left:auto; flex-shrink:0; }
+  .ep-faces img { width:26px; height:26px; border-radius:50%; object-fit:cover;
+    border:2px solid #fff; margin-left:-8px; background:#eee; }
+  /* tutti i citati sul desktop; su mobile la leggibilità vince: max 3 */
+  @media (max-width:600px) { .ep-faces img:nth-child(n+4) { display:none; } }
+  .ep-listen { width:32px; height:32px; border-radius:50%; background:#f3f4f6; border:0;
+    display:flex; align-items:center; justify-content:center; font-size:12px;
+    flex-shrink:0; cursor:pointer; color:inherit; }
+  .ep-listen.on { background:#7c3aed; color:#fff; }
+  .face-inline { width:1.15em; height:1.15em; border-radius:50%; object-fit:cover;
+    vertical-align:-.18em; margin-right:.25em; }
+  /* SEMPRE sulla stessa riga (2026-08-09): su schermi stretti le miniature
+     si riducono, e se non basta il reel sparisce — mai l'andata a capo */
+  .vthumbs { display:flex; gap:.8rem; flex-wrap:nowrap; margin:1.2rem 0; align-items:flex-start; }
+  .vthumb { position:relative; cursor:pointer; border:0; padding:0; background:none;
+    border-radius:12px; overflow:hidden; }
+  /* stessa ALTEZZA per video e reel: il 9:16 si stringe, non svetta */
+  .vthumb video { height:150px; width:auto; display:block; border-radius:12px; background:#000; }
+  @media (max-width:520px) { .vthumb video { height:118px; } }
+  /* quando nemmeno ridotte ci stanno: via le miniature, due BOTTONI in
+     riga che aprono il player (2026-08-09) */
+  .vbtns { display:none; gap:.6rem; margin:1.2rem 0; }
+  .vbtns button { flex:1; padding:.6rem .4rem; border:0; border-radius:10px;
+    background:#7c3aed; color:#fff; font-weight:700; font-size:.85rem;
+    cursor:pointer; font-family:inherit; }
+  @media (max-width:420px) { .vthumbs { display:none; } .vbtns { display:flex; } }
+  .vthumb .vlabel { position:absolute; left:0; right:0; bottom:0; padding:.9rem .5rem .35rem;
+    background:linear-gradient(transparent, rgba(0,0,0,.75)); color:#fff; font-size:.7rem; }
+  .vthumb::after { content:"▶"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    color:#fff; font-size:1.6rem; text-shadow:0 1px 6px rgba(0,0,0,.8); }
+  /* margin:auto ESPLICITO: il reset globale * {margin:0} annullava la
+     centratura nativa del dialog e il player si apriva in alto a sinistra */
+  dialog.vplayer { border:0; padding:0; background:transparent; max-width:92vw;
+    margin:auto; position:fixed; inset:0; }
+  dialog.vplayer::backdrop { background:rgba(0,0,0,.85); }
+  dialog.vplayer video { max-width:92vw; max-height:86vh; border-radius:14px; background:#000; }
+  details.tr { border:1px solid #e2ddd6; border-radius:10px; padding:.2rem .9rem .6rem; }
+  details.tr summary { cursor:pointer; font-weight:600; padding:.55rem 0; }
+  .tr-copy { font-size:.72rem; padding:.3rem .7rem; border:0; border-radius:6px;
+    background:#7c3aed; color:#fff; cursor:pointer; font-weight:600; margin:.3rem 0 .5rem; }
+  .epnav { display:flex; justify-content:space-between; gap:1rem; margin:2rem 0 0;
+    font-size:.82rem; font-family:monospace; }
+  .epnav a { text-decoration:none; }
+  @media (prefers-color-scheme:dark) {
+    body { background:#1f1d18; color:#e5e5e5; }
+    .ep, .tension, .signal-card { background:#2a2823; border-color:#3a352d; }
+    .ep-play { background:#3a352d; } .desc { color:#d4d4d4; }
+    .signal-text { color:#d4d4d4; }
+    .creator-footer { border-color:#3a352d; }
+    .creator-name { color:#f5f5f5; }
+    .creator-tagline, .creator-email a { color:#9ca3af; }
+    .creator-ai { color:#9a8f7d; }
+    .vlink input { background:#1c1a17; border-color:#3a352d; color:#9ca3af; }
+    .tutele { border-color:#3a352d; color:#9a8f7d; }
+    .tutele h3 { color:#a9a9a9; } .tutele strong { color:#d4d4d4; }
+    .ep-listen { background:#3a352d; }
+    .ep-faces img { border-color:#2a2823; background:#3a352d; }
+    details.tr { border-color:#3a352d; }
+  }
+</style></head><body>
+<a class="back" href="/signal-brief/ai-esteso/">← Signal.AI · Esteso</a>
+<header><h1>Il bivio dei modelli linguistici</h1></header>
+<div class="tagline">2026-07-05 · Digital Intelligence Podcast</div>
+<div class="desc">La vera frattura dell'AI non è più velocità contro prudenza, ma chi crede che questi modelli portino a un'intelligenza vera e chi li ritiene un vicolo cieco.</div>
+<div class="rawmd"><a href="raw.md">Testo (markdown)</a></div>
+<section><h2>Sintesi</h2><div class="synthesis"><p>Il campo si spacca su un asse che non è safety vs. capability, ma <strong>epistemico</strong>: chi crede che l'attuale traiettoria dei LLM porti all'intelligenza generale, e chi no.</p>
+<p>Sul fronte accelerazionista, il consenso pratico è già oltre il dibattito: <a href="https://thenextweb.com/news/openai-brockman-80-percent-code-ai-productivity-claim" target="_blank" rel="noopener">Greg Brockman dice che l'80% del codice OpenAI è scritto da AI</a>, <a href="https://x.com/tobi/status/1909251946235437514" target="_blank" rel="noopener">Tobi Lütke ha reso l'<img class="face-inline" loading="lazy" src="/signal-brief/ai-esteso/avatars/ai.png" alt="">AI un criterio di valutazione delle performance</a>, <a href="https://block.xyz/inside/from-hierarchy-to-intelligence" target="_blank" rel="noopener">Jack Dorsey ha tagliato 4.000 posti sostituendoli con modelli embedded</a>. Il segnale non è speculativo: è già nel bilancio delle aziende. <a href="https://stratechery.com/2026/agents-over-bubbles/" target="_blank" rel="noopener">Ben Thompson chiama questo il terzo paradigma — gli agenti — e lo considera la giustificazione definitiva del capex AI</a>.</p>
+<p>Ma proprio quando il consenso si consolida intorno ai "LLM + agenti = futuro", emergono le crepe architetturali. <a href="https://www.hpcwire.com/aiwire/2026/03/11/yann-lecuns-ami-secures-1b-seed-to-develop-ai-world-models/" target="_blank" rel="noopener">Yann LeCun raccoglie 1 miliardo per dimostrare che i modelli linguistici sono un vicolo cieco</a>, <a href="https://www.fastcompany.com/91516330/francois-chollet-ai-benchmark" target="_blank" rel="noopener">François Chollet costruisce benchmark apposta per esporre i loro limiti di generalizzazione</a>, <a href="https://drfeifei.substack.com/p/a-functional-taxonomy-of-world-models" target="_blank" rel="noopener">Fei-Fei Li ridefinisce il problema come "intelligenza spaziale"</a>. Non sono voci marginali: sono le persone che sanno come funzionano i modelli dall'interno.</p>
+<p>La tensione governance è invece più teatrale che reale. <a href="https://darioamodei.com/post/policy-on-the-ai-exponential" target="_blank" rel="noopener">Dario Amodei chiede regolazione obbligatoria dei modelli frontier</a>, <a href="https://fortune.com/2026/06/01/godfather-of-ai-geoffrey-hinton-beings-smarter-than-us/" target="_blank" rel="noopener">Geoffrey Hinton stima 10-20% di probabilità che l'AI prenda il controllo</a>, <a href="https://www.weforum.org/videos/experts-explain-what-is-ai-computer-scientist-stuart-russell-wef/" target="_blank" rel="noopener">Stuart Russell chiede una pausa</a> — ma i capitali continuano a muoversi nella direzione opposta. Il safety discourse è reale; il suo potere di frenata, no.</p>
+<p>La corrente di fondo più significativa è questa: il baricentro si sta spostando dalla <strong>competenza tecnica</strong> al <strong>giudizio</strong>. <a href="https://karpathy.bearblog.dev/sequoia-ascent-2026/" target="_blank" rel="noopener">Andrej Karpathy chiama "Software 3.0" il momento in cui la scarsità passa dalla scrittura di codice alla valutazione degli output</a>. <a href="https://www.sahmcapital.com/news/content/chamath-palihapitiya-says-companies-are-overspending-on-ai-as-cheaper-models-rapidly-close-the-gap-burning-through-massive-budgets-2026-06-07" target="_blank" rel="noopener">Chamath Palihapitiya dice che le aziende bruciano budget sui modelli sbagliati per mancanza di criterio</a>. Il vantaggio competitivo si sposta da chi costruisce i modelli a chi sa usarli — e quella è una redistribuzione del potere molto più radicale di quanto appaia.</p></div></section>
+<section><h2>Temi del giorno</h2><div class="tension"><div class="axis">↗ Asse epistemico come discrimine principale</div><div class="side">La frattura centrale non è più safety vs. capability ma chi crede che i LLM portino all'AGI e chi ritiene siano un vicolo cieco architetturale.</div></div><div class="tension"><div class="axis">↗ Accelerazionismo già nei bilanci aziendali</div><div class="side">Il dibattito speculativo è superato: 80% del codice AI-written, tagli occupazionali reali, AI come criterio di performance — il segnale è già nei conti economici, non nelle previsioni.</div></div><div class="tension"><div class="axis">↗ Giudizio come nuova scarsità competitiva</div><div class="side">Il vantaggio competitivo si sposta dalla costruzione dei modelli alla capacità di valutarne gli output — una redistribuzione del potere più radicale dell'automazione stessa.</div></div><div class="tension"><div class="axis">↗ Governance come teatro senza potere frenante</div><div class="side">Il safety discourse è reale come discorso ma i capitali continuano nella direzione opposta: la sua capacità di frenata effettiva è esplicitamente deflazionata a zero.</div></div><div class="tension"><div class="axis">↗ Crepe architetturali nel paradigma LLM</div><div class="side">Non voci marginali ma ricercatori interni denunciano i limiti strutturali dei LLM — generalizzazione, benchmark, intelligenza spaziale — come argomenti contro la traiettoria dominante.</div></div><div class="tension"><div class="axis">↗ Sovraspesa per deficit di criterio valutativo</div><div class="side">Le aziende bruciano budget sui modelli sbagliati non per dolo ma per assenza di giudizio selettivo — il costo dell'incompetenza valutativa è già misurabile.</div></div><div class="tension"><div class="axis">⚖ I LLM portano all'AGI vs. i LLM sono un vicolo cieco architetturale</div><div class="side">Greg Brockman: l'80% del codice OpenAI già AI-written — la traiettoria è confermata dalla pratica quotidiana · Yann LeCun: i modelli linguistici non bastano senza world models sensoriali — serve un'architettura radicalmente diversa</div></div><div class="tension"><div class="axis">⚖ Safety discourse come forza reale vs. narrativa senza impatto sul capitale</div><div class="side">Dario Amodei: oversight obbligatoria stile FAA è necessaria e realizzabile prima del punto critico · Stuart Russell: chiede una pausa — ma i miliardi continuano a muoversi nella direzione opposta indipendentemente</div></div><div class="tension"><div class="axis">⚖ Chi costruisce i modelli vs. chi li sa valutare come nuovo locus del vantaggio competitivo</div><div class="side">Chamath Palihapitiya: le aziende bruciano budget per deficit di criterio valutativo — il problema è già nel bilancio · Andrej Karpathy: Software 3.0 — la scarsità si è spostata dalla scrittura alla valutazione degli output</div></div><div class="tension"><div class="axis">⚖ Impatto AI già operativo vs. ancora da negoziare</div><div class="side">Jack Dorsey: 4.000 posti tagliati e sostituiti da modelli embedded — la redistribuzione è già nei fatti · Stuart Russell: la portata del cambiamento richiede una pausa deliberata — il rischio non è ancora metabolizzato dalla pratica</div></div></section>
+<section class="transcript-section"><h2>Trascrizione</h2><details class="tr"><summary>Leggi la trascrizione</summary><button class="tr-copy" type="button" onclick="copiaTrascrizione(this)">copia il testo</button><div class="transcript-body"><h2>Il bivio dei modelli linguistici</h2>
+<p class="podcast-episode-desc">La vera frattura dell'AI non è più velocità contro prudenza, ma chi crede che questi modelli portino a un'intelligenza vera e chi li ritiene un vicolo cieco.</p>
+<div class="chapter" data-mood="geo"><hr></div>
+<p>C'è un momento, in ogni tecnologia, in cui smette di essere una promessa e comincia a comparire nei conti. Non nei convegni, non nei manifesti: nei bilanci, nei licenziamenti, nelle righe di codice che nessun essere umano ha scritto. È il punto in cui siamo arrivati con l'intelligenza artificiale, e questo è Signal Brief del cinque luglio. Oggi il campo si spacca, ma non lungo la linea che ci aspettavamo. Non è più chi vuole correre contro chi vuole frenare. È qualcosa di più profondo, e comincia da una frase detta quasi di sfuggita da un ingegnere di OpenAI.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>La frase è di Greg Brockman, uno dei fondatori di OpenAI, e suona così: l'ottanta per cento del codice che scriviamo lo scrive ormai l'intelligenza artificiale. Non un obiettivo, non una proiezione per il prossimo decennio. Un dato di oggi, riferito alla sua stessa azienda, quella che ha costruito i modelli di cui tutti parlano.</p>
+<p>È una di quelle affermazioni che spostano il terreno sotto i piedi. Perché fino a poco tempo fa la discussione sull'AI era una discussione su cosa sarebbe potuto succedere. Adesso Brockman ci dice che è già successo, e che lo si vede nei numeri. Nello stesso periodo Tobi Lütke, il fondatore di Shopify, ha comunicato ai suoi che saper usare l'AI sarebbe diventato un criterio per valutare le prestazioni di ciascuno. E Jack Dorsey, dall'altra parte della Silicon Valley, ha tagliato quattromila posti di lavoro sostituendoli con modelli integrati nei processi dell'azienda. Tre gesti diversi, un'unica direzione: l'AI non è più un argomento da tavola rotonda, è una voce di bilancio.</p>
+<p>Ma qui accade la cosa più curiosa. Proprio mentre il consenso si stringe intorno all'idea che questi modelli linguistici siano la strada maestra verso un'intelligenza generale, dall'interno arrivano le prime crepe. E non da qualche scettico di provincia: da persone che quei modelli li hanno costruiti con le loro mani. Yann LeCun, uno dei padri delle reti neurali moderne, ha appena raccolto un miliardo di dollari per dimostrare esattamente il contrario — che i modelli che imparano solo dalle parole sono un vicolo cieco, e che serve un'architettura diversa, capace di capire il mondo fisico. François Chollet costruisce test apposta per mostrare dove questi sistemi inciampano. Fei-Fei Li parla di "intelligenza spaziale", di macchine che devono capire lo spazio prima che il linguaggio.</p>
+<p>È la vera faglia di oggi, e non passa dove pensavamo. Non divide chi vuole la sicurezza da chi vuole la potenza. Divide chi crede che l'attuale traiettoria porti a un'intelligenza vera e chi è convinto che sia una salita che a un certo punto si appiattisce. Una questione di fede, prima ancora che di ingegneria.</p>
+<p>Ci somiglia molto a quello che accadde con le prime automobili. Per anni sono state costruite come carrozze a cui si toglieva il cavallo e si metteva un motore: stessa forma, stessa logica, solo una fonte di energia diversa. Ci volle una generazione per capire che l'automobile chiedeva un'idea completamente nuova di strada, di città, di velocità. Oggi c'è chi guarda i modelli linguistici e vede la carrozza col motore: un miglioramento straordinario, ma dentro una forma vecchia.</p>
+<p>E mentre i costruttori litigano sul futuro, il presente ha già scelto la sua scarsità. Andrej Karpathy la chiama con una formula semplice: il valore non sta più nello scrivere, sta nel saper giudicare. Costruire modelli lo sanno fare in tanti. Capire quale output è buono e quale è spazzatura, quello sì che è diventato raro. La partita, in silenzio, si è spostata da chi fabbrica a chi valuta.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Cominciamo da Greg Brockman, perché è lui che ha acceso la miccia. Brockman è il presidente e cofondatore di OpenAI, uno di quelli che nel laboratorio ci lavorano davvero, non uno che parla di AI dai palchi. Ed è per questo che la sua uscita pesa.</p>
+<p>Il gesto è di quelli piccoli che dicono cose grandi: in un'intervista lascia cadere il numero, ottanta per cento del codice scritto dall'AI, come si menziona il tempo che fa. Nessuna enfasi, nessun annuncio solenne. È proprio la naturalezza a colpire. Per anni abbiamo sentito dire che l'AI avrebbe cambiato il lavoro del programmatore, sempre al futuro, sempre con quel tono da profezia. Brockman lo dice al presente, e lo dice di casa sua.</p>
+<p>Qui il collegamento con il filo di oggi diventa nitido. Brockman è la voce più pura del fronte che potremmo chiamare degli acceleratori: quelli per cui la direzione è ormai confermata dalla pratica quotidiana, non dalle previsioni. Il ragionamento è disarmante nella sua semplicità. Se già oggi la macchina scrive la maggior parte del codice che serve a costruire la macchina stessa, allora siamo dentro un circolo che si autoalimenta, e ogni discussione su dove stiamo andando è superata dai fatti.</p>
+<p>C'è però un dettaglio che merita attenzione. Un conto è dire che l'AI scrive l'ottanta per cento del codice. Un altro è dire che quel codice sia buono, che risolva i problemi giusti, che non introduca errori che qualcuno dovrà poi scovare. E qui, curiosamente, la voce trionfante di Brockman finisce per confermare, senza volerlo, la tesi opposta. Perché se la scrittura è ormai a buon mercato, il collo di bottiglia si sposta altrove: sul giudizio, sulla capacità di dire "questo va bene, questo no". Lo stesso punto su cui insiste Karpathy, che incontreremo tra poco.</p>
+<p>Viene in mente il passaggio dalla scrittura a mano alla stampa a caratteri mobili. Gutenberg non ha reso i libri migliori: li ha resi tanti. E il problema, da quel momento, non è più stato produrre pagine, ma decidere quali valessero la pena di essere lette. La stampa non ha eliminato il bisogno di editori — lo ha reso più importante. L'ottanta per cento di Brockman racconta forse la stessa storia: quando produrre costa poco, il potere passa a chi sa scegliere.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Dall'altra parte del bivio c'è Yann LeCun, ed è una posizione che sorprende. Perché LeCun non è un outsider: è uno dei tre ricercatori che negli anni Ottanta e Novanta hanno tenuto in vita le reti neurali quando quasi nessuno ci credeva, e ha guidato per anni la ricerca sull'AI in una delle più grandi aziende del mondo. Se qualcuno può dire "conosco questi modelli dall'interno", è lui.</p>
+<p>E proprio lui, in queste settimane, ha compiuto un gesto che vale più di mille interviste: ha raccolto un miliardo di dollari per una nuova impresa costruita su una scommessa contraria. La sua tesi è netta. I modelli che imparano solo dal linguaggio, per quanto potenti, restano ciechi rispetto al mondo. Un bambino capisce la gravità molto prima di saper parlare; questi sistemi, invece, sanno descrivere la gravità ma non l'hanno mai vista cadere. LeCun vuole costruire quelli che chiama "world models", modelli che imparino dal mondo fisico come impara un animale, con gli occhi e con il corpo, prima che con le parole.</p>
+<p>Il collegamento con la giornata di oggi è diretto, e per questo prezioso. LeCun non è un critico esterno che chiede di rallentare per paura. È un tecnico che dice: state salendo la montagna sbagliata. Non è una questione di sicurezza, è una questione di architettura. E quando a dirlo è chi ha disegnato una parte di quella montagna, la cosa pesa in modo diverso.</p>
+<p>Mette una nota di prudenza sull'entusiasmo di Brockman. Da un lato l'ottanta per cento del codice scritto dalla macchina; dall'altro uno dei padri fondatori che raccoglie un miliardo per dire che la macchina, così com'è, non arriverà mai dove tutti sperano. Le due cose convivono nello stesso momento, e questo è il ritratto più onesto di dove siamo: un campo che accelera e dubita di sé nello stesso respiro.</p>
+<p>Ripenso a quello che successe con l'intelligenza artificiale simbolica degli anni Ottanta, quella fatta di regole scritte a mano. Sembrava la strada, ci si investirono fortune, e poi si scoprì che c'era un muro. LeCun quel muro l'ha visto una volta. Forse è per questo che oggi è il più attento a cercarne un altro.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Torniamo un attimo sul filo di oggi, perché è facile perdersi tra le voci. Da una parte chi dice che la corsa è già vinta e si vede nei conti. Dall'altra chi, pur avendo costruito i motori di questa corsa, avverte che stiamo correndo verso un muro. E in mezzo, quasi inosservato, un terzo discorso: quello di chi dice che il vero potere non sta più nel costruire, ma nel giudicare. Ed è qui che entra Andrej Karpathy.</p>
+<p>Karpathy è uno dei divulgatori più ascoltati di questo mondo. Ha lavorato agli albori di OpenAI, ha guidato l'intelligenza artificiale delle auto di Tesla, e ha il dono raro di spiegare cose difficili con parole semplici. Quando parla, la Silicon Valley prende appunti.</p>
+<p>In un intervento a un incontro organizzato da un grande fondo di investimento, Karpathy ha proposto una formula destinata a restare: "Software 3.0". L'idea è che stiamo attraversando la terza grande era del modo in cui diciamo alle macchine cosa fare. Prima scrivevamo istruzioni riga per riga. Poi abbiamo insegnato alle macchine a imparare dai dati. Adesso entriamo in una fase in cui la macchina genera, e il compito dell'uomo diventa un altro: valutare. Dire se quello che è stato prodotto serve oppure no.</p>
+<p>Il collegamento con la giornata è il cuore stesso dell'episodio. Karpathy mette a fuoco la scarsità nuova. Per decenni il talento raro era saper scrivere codice, saper costruire. Adesso che la costruzione costa poco — l'ottanta per cento di Brockman ce lo ricorda — il talento raro diventa il criterio, il gusto, la capacità di distinguere. È uno spostamento silenzioso, ma sposta il potere più di quanto sposti l'automazione stessa.</p>
+<p>E qui nasce un pensiero che mi accompagna. Abbiamo passato vent'anni a dire ai ragazzi "imparate a programmare". Forse il consiglio per i prossimi vent'anni è diverso, e più antico: imparate a giudicare. Perché una macchina che scrive mille soluzioni è utile solo a chi sa riconoscere quella giusta. È lo stesso motivo per cui, nell'epoca in cui chiunque può scattare mille fotografie, il valore è tornato tutto nell'occhio di chi sa quale tenere.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Se Karpathy racconta questa scarsità dalla cattedra, Chamath Palihapitiya la racconta dal portafoglio. Chamath è un investitore, uno di quelli che parlano molto e non hanno paura di dire numeri scomodi. Ex dirigente di Facebook nei primi anni, oggi mette soldi in decine di aziende, e per questo ha una visuale privilegiata su come quei soldi vengono bruciati.</p>
+<p>La sua osservazione recente è quasi brutale nella sua concretezza: le aziende stanno spendendo troppo in AI, e la stanno spendendo male. Comprano i modelli più costosi, i più grandi, quando modelli più piccoli e più economici colmano il divario a una velocità impressionante. Il risultato è che si divorano budget enormi non perché la tecnologia sia cara, ma perché manca il criterio per scegliere quale usare.</p>
+<p>Il collegamento con Karpathy è così stretto da sembrare la stessa frase detta in due lingue diverse. Karpathy dice: la scarsità è il giudizio. Chamath aggiunge: e la mancanza di giudizio si vede già nei conti, sotto forma di soldi sprecati. Non è più una teoria elegante da conferenza. È una riga rossa nei bilanci. Chi non sa valutare i modelli, paga. E paga tanto.</p>
+<p>La cosa più interessante, per me, è che questo capovolge una convinzione radicata. Ci eravamo abituati all'idea che nell'AI vincesse chi aveva il modello più potente, la fabbrica di calcolo più grande. Chamath ci dice che non è più così, o non solo. Puoi avere accesso ai modelli migliori del mondo e perdere lo stesso, se non sai quale scegliere per quale problema.</p>
+<p>Ricorda molto i primi anni dell'elettricità nelle fabbriche. All'inizio le aziende compravano il motore più grande e lo attaccavano dove prima c'era la macchina a vapore, senza cambiare nulla. Non guadagnavano quasi niente. I veri vantaggi arrivarono solo quando qualcuno capì come ripensare l'intera fabbrica intorno all'elettricità. Il motore da solo non bastava: serviva il giudizio su come usarlo. Oggi il motore è l'AI, e siamo ancora nella fase in cui molti lo attaccano al posto sbagliato.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>L'ultimo ritratto è quello di Jack Dorsey, e serve a portare tutto il discorso dove fa più male: sulle persone. Dorsey è il fondatore di Twitter, quello che oggi si chiama X, e guida Block, l'azienda dei pagamenti digitali. È una figura particolare, metà imprenditore e metà predicatore di un certo minimalismo tecnologico.</p>
+<p>Il suo gesto di queste settimane non ha nulla di teorico: ha tagliato quattromila posti di lavoro, e ha spiegato che il lavoro di molte di quelle persone viene ora svolto da modelli di AI integrati nei processi dell'azienda. Non una sperimentazione, non un progetto pilota. Una decisione già presa, già eseguita, già nei numeri del personale.</p>
+<p>Il collegamento con la giornata è il più concreto di tutti, e chiude il cerchio aperto da Brockman. Se l'ottanta per cento del codice scritto dalla macchina era il segnale nella produzione, i quattromila posti di Dorsey sono lo stesso segnale nella vita delle persone. La redistribuzione di cui parliamo tutto l'episodio smette di essere un concetto e diventa una lettera di licenziamento. Non è più negoziabile, non è più "vedremo": è successo.</p>
+<p>E mette una luce dura su tutta l'altra metà del discorso, quella della prudenza. Perché nello stesso momento in cui Dorsey firma quei tagli, Dario Amodei chiede regole obbligatorie sui modelli più potenti, Geoffrey Hinton stima una probabilità a due cifre che le cose possano sfuggirci di mano, Stuart Russell chiede addirittura una pausa. Voci autorevoli, argomenti seri. Ma i quattromila posti sono già stati tagliati. Il denaro si è già mosso. Il discorso sulla sicurezza è reale come discorso; la sua capacità di frenare davvero, per ora, è vicina allo zero.</p>
+<p>Ed è forse questo il pensiero più scomodo della giornata. Non che manchino le voci sagge. Ne abbiamo tante, e ottime. È che sembrano parlare in una stanza mentre le decisioni vengono prese in un'altra. Come i moralisti che nell'Ottocento scrivevano contro le fabbriche mentre le fabbriche, intanto, riempivano le città. Avevano ragione su molte cose. Non hanno fermato niente.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Resta un'immagine, alla fine di questa giornata. Un ingegnere che dice "ormai scrive tutto la macchina", e nella stessa settimana uno dei padri di quella macchina che raccoglie un miliardo per dire che è la strada sbagliata. Non serve scegliere chi ha ragione. Serve accorgersi che il potere, mentre discutono, si è già spostato: da chi costruisce a chi sa giudicare. E il giudizio, quello, nessuna macchina ce lo ha ancora tolto. È stato Signal Brief. Alla prossima.</p></div></details></section>
+<nav class="epnav"><a href="/signal-brief/ai-esteso/2026-06-21/">← 2026-06-21</a><span style="flex:1"></span><a href="/signal-brief/ai-esteso/2026-07-06/">2026-07-06 →</a></nav>
+<dialog class="vplayer" id="vplayer"></dialog>
+<script>
+// player modale dei video: la miniatura apre il video al centro (disegno 2026-08-07)
+function apriVideo(src) {
+  var d = document.getElementById('vplayer');
+  d.innerHTML = '<video controls autoplay playsinline src="' + src + '"></video>';
+  d.showModal();
+  d.onclick = function (e) { if (e.target === d) d.close(); };
+  d.onclose = function () { var v = d.querySelector('video'); if (v) v.pause(); d.innerHTML = ''; };
+}
+// ascolto inline dalla lista: un episodio alla volta
+var epAudio = null, epBtn = null;
+function ascolta(btn, src) {
+  if (epBtn === btn && epAudio) {
+    if (epAudio.paused) { epAudio.play(); btn.classList.add('on'); }
+    else { epAudio.pause(); btn.classList.remove('on'); }
+    return;
+  }
+  if (epAudio) { epAudio.pause(); if (epBtn) epBtn.classList.remove('on'); }
+  epAudio = new Audio(src); epBtn = btn;
+  epAudio.play(); btn.classList.add('on');
+  epAudio.onended = function () { btn.classList.remove('on'); };
+}
+function copiaTrascrizione(btn) {
+  var t = btn.parentElement.querySelector('.transcript-body');
+  navigator.clipboard.writeText(t ? t.innerText : '').then(function () {
+    btn.textContent = 'copiata ✓';
+    setTimeout(function () { btn.textContent = 'copia il testo'; }, 1800);
+  });
+}
+</script>
+<footer class="creator-footer">
+  <img src="/signal-brief/mike-avatar.png" alt="Michele Mondora">
+  <div class="creator-meta">
+    <span class="creator-name">it-mikesoft</span>
+    <span class="creator-tagline">working with systems, living with questions</span>
+    <span class="creator-email"><a href="mailto:michele@mondora.com">michele@mondora.com</a></span>
+  </div>
+</footer>
+<section class="tutele"><h3>Trasparenza e tutele</h3>
+<p><strong>Come nasce questo contenuto.</strong> Ricerca, sintesi editoriale, voce narrante, immagini e musica sono prodotte con sistemi di intelligenza artificiale. Non c'è una redazione umana che verifica ogni affermazione prima della pubblicazione: un controllo automatico scarta le schede giudicate inaffidabili, ma non elimina la possibilità di errori.</p>
+<p><strong>Affermazioni su persone e aziende.</strong> Quanto riportato è una sintesi di fonti pubbliche, non una dichiarazione diretta delle persone citate: le frasi non vanno intese come virgolettati né come posizioni ufficiali. Le fonti sono indicate in ogni pagina episodio — verificale prima di considerare un'informazione accertata. Se trovi un'affermazione inesatta che ti riguarda, scrivi a <a href="mailto:michele@mondora.com">michele@mondora.com</a>: viene corretta o rimossa.</p>
+<p><strong>Immagini e volti.</strong> Le immagini di scena sono generate con AI e non raffigurano fatti realmente avvenuti. Le fotografie di persone reali usate nei video provengono da Wikimedia Commons con le rispettive licenze, e sono accostate al racconto a scopo identificativo: la loro presenza non implica partecipazione, dichiarazione o approvazione da parte della persona ritratta. Su richiesta dell'interessato vengono rimosse.</p>
+<p><strong>Fonti e diritti altrui.</strong> I contenuti sono rielaborazioni originali, non riproduzioni di articoli di terzi; le testate e gli autori all'origine di una notizia sono citati e collegati. Marchi e nomi commerciali appartengono ai rispettivi titolari e sono usati a scopo descrittivo.</p>
+</section>
+</body></html>

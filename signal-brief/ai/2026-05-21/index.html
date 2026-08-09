@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="it"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La battaglia per lo stack · Signal.AI</title>
+<meta property="og:title" content="La battaglia per lo stack · Signal.AI"><meta property="og:type" content="article"><meta property="og:description" content="Maggio 2026: la corsa all'intelligenza artificiale smette di essere una gara di modelli e diventa una guerra per chi controlla l'infrastruttura. Musk, Balaji, Collison."><meta property="og:url" content="https://it-mikesoft.github.io/signal-brief/ai/2026-05-21/"><meta property="og:audio" content="https://media.casamon.dev/ai/podcast/episodes/2026-05-21.mp3"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "PodcastEpisode", "name": "La battaglia per lo stack", "datePublished": "2026-05-21", "url": "https://it-mikesoft.github.io/signal-brief/ai/2026-05-21/", "description": "Maggio 2026: la corsa all'intelligenza artificiale smette di essere una gara di modelli e diventa una guerra per chi controlla l'infrastruttura. Musk, Balaji, Collison.", "inLanguage": "it", "associatedMedia": {"@type": "MediaObject", "contentUrl": "https://media.casamon.dev/ai/podcast/episodes/2026-05-21.mp3"}, "partOfSeries": {"@type": "PodcastSeries", "name": "Signal.AI", "url": "https://it-mikesoft.github.io/signal-brief/ai/"}}</script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:#faf8f4; color:#1a1a1a; padding:2rem 1.5rem; max-width:680px; margin:0 auto; line-height:1.6; }
+  a { color:#2563eb; }
+  .back { display:inline-block; margin-bottom:1.5rem; font-size:.8rem; font-family:monospace; text-decoration:none; }
+  .videos { display:flex; gap:1rem; flex-wrap:wrap; margin:1.2rem 0; }
+  .videos figure { margin:0; flex:1; min-width:260px; }
+  .videos .v2 { flex:0 1 240px; }
+  .videos video { width:100%; border-radius:12px; background:#000; }
+  .videos .v2 video { aspect-ratio:9/16; max-height:420px; }
+  .videos figcaption { font-size:.75rem; color:#888; text-align:center; margin-top:.3rem; }
+  .vlink { display:flex; gap:.3rem; margin-top:.35rem; }
+  .vlink input { flex:1; min-width:0; font-size:.68rem; font-family:monospace; padding:.3rem .4rem;
+    border:1px solid #e2ddd6; border-radius:6px; background:#fff; color:#6b7280; }
+  .vlink button { font-size:.68rem; padding:.3rem .6rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; }
+  .wk { font-size:1rem; margin:1.4rem 0 .4rem; }
+  details.wkacc { border:1px solid #e5e7eb33; border-radius:10px; margin:.6rem 0; padding:.1rem .8rem .4rem; }
+  details.wkacc summary { cursor:pointer; font-weight:600; padding:.5rem 0; font-size:.9rem; }
+  .back:hover { text-decoration:underline; }
+  header h1 { font-family:Georgia,serif; font-size:1.7rem; font-weight:600; }
+  header h1 span { color:#2563eb; }
+  .tagline { color:#6b7280; font-size:.85rem; margin-top:.3rem; margin-bottom:1.5rem; }
+  ul.eps { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
+  .subscribe { display:inline-flex; align-items:center; gap:.5rem; margin-bottom:1.2rem;
+    padding:.45rem .9rem; background:#2563eb; color:#fff; border-radius:20px;
+    text-decoration:none; font-size:.8rem; font-weight:600; }
+  .subscribe:hover { opacity:.85; color:#fff; }
+  .ep { display:flex; align-items:center; gap:.8rem; padding:.8rem 1rem; background:#fff;
+    border:1px solid #e2ddd6; border-radius:8px; text-decoration:none; color:inherit; transition:box-shadow .12s; }
+  .ep:hover { box-shadow:0 2px 8px rgba(0,0,0,.07); }
+  .ep-play { width:32px; height:32px; border-radius:50%; background:#f3f4f6; display:flex;
+    align-items:center; justify-content:center; font-size:12px; flex-shrink:0; }
+  .ep-title { font-size:.9rem; font-weight:500; }
+  .ep-meta { font-size:.72rem; color:#9ca3af; font-family:monospace; margin-top:.15rem; }
+  audio { width:100%; margin:1rem 0 1.5rem; }
+  .rawmd { margin:-.5rem 0 1.5rem; }
+  .rawmd a { font-size:.8rem; font-family:monospace; color:inherit; opacity:.65; }
+  .desc { color:#374151; font-size:.95rem; margin-bottom:1.5rem; }
+  section { margin:2rem 0; }
+  section h2 { font-family:Georgia,serif; font-size:1.1rem; border-bottom:1px solid #e2ddd6;
+    padding-bottom:.3rem; margin-bottom:.8rem; }
+  .synthesis p { margin:.7rem 0; }
+  .tension { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; font-size:.9rem; }
+  .tension .axis { font-weight:600; margin-bottom:.3rem; }
+  .tension .side { color:#6b7280; font-size:.85rem; }
+  .proj { font-size:.9rem; margin:.4rem 0; }
+  .proj .pname { font-weight:600; }
+  .proj .pnew { background:#16a34a; color:#fff; font-size:.65rem; font-weight:700;
+    padding:.1rem .35rem; border-radius:4px; text-transform:uppercase; vertical-align:middle; }
+  .fonte { font-size:.85rem; margin:.5rem 0; }
+  .fonte .who { font-weight:600; }
+  .fonte a { display:block; margin-left:.5rem; color:#6b7280; }
+  .transcript-body p { margin:.7rem 0; line-height:1.7; }
+  .transcript-body .chapter hr { border:none; border-top:1px solid #e2ddd6; margin:1.5rem 0; }
+  .transcript-body .podcast-episode-desc { color:#6b7280; font-style:italic; }
+  .signal-card { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; }
+  .signal-theme { font-size:.75rem; font-weight:700; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.3rem; }
+  .signal-text { font-size:.85rem; color:#374151; line-height:1.5; }
+  .creator-footer { margin-top:3rem; padding-top:1.5rem; border-top:1px solid #e2ddd6;
+    display:flex; align-items:center; gap:.9rem; }
+  .creator-footer img { width:40px; height:40px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+  .creator-meta { display:flex; flex-direction:column; gap:.15rem; }
+  .creator-name { font-size:.85rem; font-weight:600; color:#1a1a1a; }
+  .creator-tagline { font-size:.75rem; color:#6b7280; }
+  .creator-email { font-size:.75rem; }
+  .creator-ai { font-size:.72rem; color:#8a7f6d; max-width:46ch; line-height:1.45; }
+  .tutele { margin-top:2rem; padding-top:1.2rem; border-top:1px solid #e2ddd6;
+    font-size:.72rem; color:#8a7f6d; line-height:1.5; }
+  .tutele h3 { font-size:.75rem; color:#6b7280; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.5rem; font-weight:600; }
+  .tutele p { margin:.45rem 0; }
+  .tutele strong { color:#5a5348; font-weight:600; }
+  .tutele a { color:inherit; text-decoration:underline; }
+  .creator-email a { color:#9ca3af; text-decoration:none; }
+  .creator-email a:hover { color:#1a1a1a; }
+  /* disegno 2026-08-07: mesi a pagine, facce, player modale, trascrizione
+     richiudibile — la pagina episodio è un prodotto, non un sottoprodotto */
+  .hrow { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+  .hrow .subscribe { margin-bottom:0; flex-shrink:0; }
+  .months { font-size:.78rem; font-family:monospace; margin:.4rem 0 1rem; color:#9ca3af; }
+  .months a { text-decoration:none; } .months b { color:inherit; }
+  .ep-faces { display:flex; margin-left:auto; flex-shrink:0; }
+  .ep-faces img { width:26px; height:26px; border-radius:50%; object-fit:cover;
+    border:2px solid #fff; margin-left:-8px; background:#eee; }
+  /* tutti i citati sul desktop; su mobile la leggibilità vince: max 3 */
+  @media (max-width:600px) { .ep-faces img:nth-child(n+4) { display:none; } }
+  .ep-listen { width:32px; height:32px; border-radius:50%; background:#f3f4f6; border:0;
+    display:flex; align-items:center; justify-content:center; font-size:12px;
+    flex-shrink:0; cursor:pointer; color:inherit; }
+  .ep-listen.on { background:#2563eb; color:#fff; }
+  .face-inline { width:1.15em; height:1.15em; border-radius:50%; object-fit:cover;
+    vertical-align:-.18em; margin-right:.25em; }
+  /* SEMPRE sulla stessa riga (2026-08-09): su schermi stretti le miniature
+     si riducono, e se non basta il reel sparisce — mai l'andata a capo */
+  .vthumbs { display:flex; gap:.8rem; flex-wrap:nowrap; margin:1.2rem 0; align-items:flex-start; }
+  .vthumb { position:relative; cursor:pointer; border:0; padding:0; background:none;
+    border-radius:12px; overflow:hidden; }
+  /* stessa ALTEZZA per video e reel: il 9:16 si stringe, non svetta */
+  .vthumb video { height:150px; width:auto; display:block; border-radius:12px; background:#000; }
+  @media (max-width:520px) { .vthumb video { height:118px; } }
+  /* quando nemmeno ridotte ci stanno: via le miniature, due BOTTONI in
+     riga che aprono il player (2026-08-09) */
+  .vbtns { display:none; gap:.6rem; margin:1.2rem 0; }
+  .vbtns button { flex:1; padding:.6rem .4rem; border:0; border-radius:10px;
+    background:#2563eb; color:#fff; font-weight:700; font-size:.85rem;
+    cursor:pointer; font-family:inherit; }
+  @media (max-width:420px) { .vthumbs { display:none; } .vbtns { display:flex; } }
+  .vthumb .vlabel { position:absolute; left:0; right:0; bottom:0; padding:.9rem .5rem .35rem;
+    background:linear-gradient(transparent, rgba(0,0,0,.75)); color:#fff; font-size:.7rem; }
+  .vthumb::after { content:"▶"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    color:#fff; font-size:1.6rem; text-shadow:0 1px 6px rgba(0,0,0,.8); }
+  /* margin:auto ESPLICITO: il reset globale * {margin:0} annullava la
+     centratura nativa del dialog e il player si apriva in alto a sinistra */
+  dialog.vplayer { border:0; padding:0; background:transparent; max-width:92vw;
+    margin:auto; position:fixed; inset:0; }
+  dialog.vplayer::backdrop { background:rgba(0,0,0,.85); }
+  dialog.vplayer video { max-width:92vw; max-height:86vh; border-radius:14px; background:#000; }
+  details.tr { border:1px solid #e2ddd6; border-radius:10px; padding:.2rem .9rem .6rem; }
+  details.tr summary { cursor:pointer; font-weight:600; padding:.55rem 0; }
+  .tr-copy { font-size:.72rem; padding:.3rem .7rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; margin:.3rem 0 .5rem; }
+  .epnav { display:flex; justify-content:space-between; gap:1rem; margin:2rem 0 0;
+    font-size:.82rem; font-family:monospace; }
+  .epnav a { text-decoration:none; }
+  @media (prefers-color-scheme:dark) {
+    body { background:#1f1d18; color:#e5e5e5; }
+    .ep, .tension, .signal-card { background:#2a2823; border-color:#3a352d; }
+    .ep-play { background:#3a352d; } .desc { color:#d4d4d4; }
+    .signal-text { color:#d4d4d4; }
+    .creator-footer { border-color:#3a352d; }
+    .creator-name { color:#f5f5f5; }
+    .creator-tagline, .creator-email a { color:#9ca3af; }
+    .creator-ai { color:#9a8f7d; }
+    .vlink input { background:#1c1a17; border-color:#3a352d; color:#9ca3af; }
+    .tutele { border-color:#3a352d; color:#9a8f7d; }
+    .tutele h3 { color:#a9a9a9; } .tutele strong { color:#d4d4d4; }
+    .ep-listen { background:#3a352d; }
+    .ep-faces img { border-color:#2a2823; background:#3a352d; }
+    details.tr { border-color:#3a352d; }
+  }
+</style></head><body>
+<a class="back" href="/signal-brief/ai/">← Signal.AI</a>
+<header><h1>La battaglia per lo stack</h1></header>
+<div class="tagline">2026-05-21 · Digital Intelligence Podcast</div>
+<div class="desc">Maggio 2026: la corsa all'intelligenza artificiale smette di essere una gara di modelli e diventa una guerra per chi controlla l'infrastruttura. Musk, Balaji, Collison.</div>
+<div class="rawmd"><a href="raw.md">Testo (markdown)</a></div>
+<section><h2>Sintesi</h2><div class="synthesis"><h2>Convergenze maggio 2026: la battaglia non è sui modelli, è sull'infrastruttura</h2>
+<p>Trama nascosta sotto il rumore: <strong>fine era scaling puro, inizio era orchestrazione + geopolitica</strong>.</p>
+<p><a href="https://brief.bismarckanalysis.com/p/ai-2026-ilya-sutskever-and-the-end" target="_blank" rel="noopener">Ilya Sutskever</a> dichiara ufficialmente fine dell'age of scaling. Dati pre-training finiscono, rendimenti decrescenti. Stesso messaggio da <a href="https://fortune.com/2026/05/05/ai-job-apocalypse-warnings-destructive-yann-lecun/" target="_blank" rel="noopener">Yann LeCun</a>: LLM "completamente indifesi," serve architettura nuova (JEPA, world models). <a href="https://www.theneuron.ai/explainer-articles/the-clock-is-ticking-ai-skepticfrancois-chollet-slashes-agi-timeline-to-5-years-unveils-new-benchmark-to-prove-it" target="_blank" rel="noopener">François Chollet</a> quantifica: modelli attuali memorizzano, non ragionano. Su problemi nuovi crollano.</p>
+<p>Divergenza interessante: <a href="https://a16z.com/podcast/marc-andreessens-2026-outlook-ai-timelines-us-vs-china-and-the-price-of-ai/" target="_blank" rel="noopener">Marc Andreessen</a> rimane golden-age optimist. Programmatori 10-20x più produttivi. Creazione posti nuovo. Tesi contrapposta a <a href="https://fortune.com/2025/12/28/geoffrey-godfather-of-ai-2026-prediction-human-worker-replacement/" target="_blank" rel="noopener">Geoffrey Hinton</a> che prevede disruption white-collar massiccia. Non è disaccordo su tecnologia—è su redistribuzione valore.</p>
+<p><strong>Punto critico che nessuno nomina esplicitamente:</strong> se scaling finisce, collo di bottiglia non è innovazione modelli ma infrastruttura che li corre. <a href="https://techcrunch.com/2026/05/20/jensen-huang-says-hes-found-a-brand-new-200b-market-for-nvidia/" target="_blank" rel="noopener">Jensen Huang</a> quantifica $1T demand cumulativa Blackwell/Rubin. <a href="https://fortune.com/2026/05/07/stripe/" target="_blank" rel="noopener">Patrick Collison</a> identifica crisi token theft: frodi devastano economics <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="">AI startup. Infrastructure broken, modelli perfetti irrilevanti.</p>
+<p>Qui emerge <strong>battaglia vera</strong>: chi controlla stack verticale infrastruttura?</p>
+<p><a href="https://www.cnbc.com/2026/05/20/spacex-ipo-live-updates.html" target="_blank" rel="noopener">Elon Musk</a> consolida SpaceX+Tesla+xAI+Terafab (chip fabbrica). Stack integrato, non composabile.</p>
+<p><a href="https://bitcoinethereumnews.com/bitcoin/balaji-srinivasan-how-bitcoin-and-ai-will-forge-the-future-of-verifiable-reality-and-social-technology/" target="_blank" rel="noopener">Balaji Srinivasan</a> vs questa concentrazione propone Network State: decentralized AI, sovereign compute.</p>
+<p><a href="https://www.coindesk.com/tech/2026/05/18/vitalik-buterin-says-ai-formal-verification-could-actually-make-crypto-much-more-secure" target="_blank" rel="noopener">Vitalik Buterin</a> aggiunge: privacy + verifica formale = recupero trustlessness.</p>
+<p><strong>Tensione di fondo:</strong> geopolitica AI non è USA vs Cina su modelli. È chi corre l'infrastruttura che serve AGI—e se sarà centralizzata (Musk, Nvidia) o distribuita (cripto, decentralized compute).</p>
+<p>Singularità timing (<a href="https://officechai.com/ai/2026-q1-could-be-looked-at-as-the-first-quarter-of-the-singularity-says-stripe-co-founder-patrick-collison/" target="_blank" rel="noopener">Collison</a>, <a href="https://www.elegantsoftwaresolutions.com/blog/sam-altman-2026-playbook-enterprise-superintelligence-political-risk" target="_blank" rel="noopener">Altman</a>) rimane credibile. Ma forma—agenti orchestrati, non LLM scaled. E controllo infrastruttura = potere geopolitico reale.</p></div></section>
+<section><h2>Temi del giorno</h2><div class="tension"><div class="axis">↗ Geopolitica dell'infrastruttura AI</div><div class="side">Da problema tecnico (energy, cooling) a battaglia di controllo verticale tra modelli centralizzati e decentralizzati</div></div><div class="tension"><div class="axis">↗ Integrazione verticale del stack AI</div><div class="side">Musk consolida SpaceX+Tesla+xAI+Terafab come modello di controllo end-to-end vs composizione aperta</div></div><div class="tension"><div class="axis">↗ Token theft come killer blocker economico</div><div class="side">Collison identifica crisi di frodi (1 in 6 signups) che rende inviabile l'economia delle startup AI indipendenti</div></div><div class="tension"><div class="axis">↗ Q1 2026 come inflection point singularità</div><div class="side">Timing specifico diventa elemento di convergenza credibile tra Collison, Altman, Sutskever</div></div><div class="tension"><div class="axis">↗ Decentralized compute come alternativa</div><div class="side">Balaji propone Network State e sovereign compute come contromossa a concentrazione Nvidia+Musk</div></div><div class="tension"><div class="axis">↗ Formal verification come fondamento trustlessness</div><div class="side">Vitalik collega privacy + verifica formale a recupero di fiducia nella geopolitica AI decentralizzata</div></div><div class="tension"><div class="axis">⚖ Benefici economici vs redistribuzione valore in era agenti + infrastruttura</div><div class="side">Marc Andreessen: produttività 10-20× programmatori, creazione posti nuovo, golden age · Geoffrey Hinton: disruption white-collar massiccia, obsolescenza umana accelerata</div></div><div class="tension"><div class="axis">⚖ Modello di controllo infrastrutturale: centralizzato vs decentralizzato</div><div class="side">Elon Musk: integrazione verticale totale (SpaceX+Tesla+xAI+Terafab), moat strutturale · Balaji Srinivasan: Network State decentralizzato, sovereign compute, anti-concentrazione</div></div><div class="tension"><div class="axis">⚖ Chi vince nella geopolitica AI: hardware/infrastruttura vs governance</div><div class="side">Jensen Huang/Nvidia: $1T cumulative demand, collo di bottiglia energetico · Vitalik Buterin: formal verification + privacy = trustlessness, crittografia come soluzione</div></div><div class="tension"><div class="axis">⚖ Quando e come manifesta l'intelligenza: timing AGI vs forma architetturale</div><div class="side">Patrick Collison/Sam Altman: Q1 2026 inflection point singularity, already happening · John Carmack: scetticismo su timeline, embodied RL più credibile di agenti puri</div></div><div class="tension"><div class="axis">⚖ Infrastruttura come fattore abilitante vs killer blocker</div><div class="side">Elon Musk: integrazione verticale solve scaling, inference diventa dominante · Patrick Collison: token theft + frodi rompono economia, infrastruttura di sicurezza assente</div></div></section>
+<section><h2>Progetti da osservare</h2><div class="tension"><div class="axis">karpathy/nanochat</div><div class=side>Pipeline minimale per addestrare un modello GPT-2 in ~2 ore su 8×H100 con FP8 e ClimbMix, parte della linea di lavoro di Karpathy su pipeline ridotte per singolo ricercatore. Repo di riferimento per l'era 'meno codice, più amplificazione'.</div></div><div class="tension"><div class="axis">karpathy/llm-wiki (gist)</div><div class=side>Prompt-pattern da copiare in Claude Code/Codex che istanzia il sistema 'LLM Wiki' su Obsidian: articoli enciclopedici interlinkati, backlink, health check. Diventato viral come anti-RAG personale.</div></div><div class="tension"><div class="axis">karpathy/autoresearch</div><div class=side>Repo di ~630 righe (7 marzo 2026) che materializza un agente di ricerca minimale, parte della tesi 'idea file = distribuzione' di Karpathy. Esempio concreto di agente che amplifica il ricercatore individuale.</div></div><div class="tension"><div class="axis">Obsidian</div><div class=side>Editor di note markdown con backlink e grafi che Karpathy elegge come 'IDE della conoscenza' nel suo pattern LLM-Wiki. Diventa il frontend consigliato per memoria esplicita e ispezionabile contro la memoria opaca degli assistant commerciali.</div></div><div class="tension"><div class="axis">ggerganov/llama.cpp</div><div class=side>Motore di inferenza C/C++ per LLM locali; il suo llama-server è il cuore dello stack self-sovereign proposto da Buterin (NixOS + llama-server + bubblewrap). Standard de facto per AI locale sovrana.</div></div><div class="tension"><div class="axis">basecamp/omarchy</div><div class=side>Distro Arch Linux curata da DHH con Hyprland, pensata per attrarre utenti macOS/Windows verso un desktop 'malleabile'. Progetto-manifesto del filone 'open source AI-ready' di DHH (Omacon NY, 130 persone).</div></div><div class="tension"><div class="axis">hyprwm/Hyprland</div><div class=side>Compositor Wayland dinamico, cuore visivo di Omarchy e simbolo del rinnovato interesse consumer per Linux (Panther Lake / XPS 14). DHH lo cita come esempio di software su cui finalmente 'hardware e aziende tornano a scommettere'.</div></div><div class="tension"><div class="axis">simonw/llm</div><div class=side>CLI e libreria Python di Simon Willison per interagire con LLM locali e cloud, base dei suoi tool README-driven (scan-for-secrets, datasette-ports, research-llm-apis). Strumento pivot del suo workflow 'agentic engineering'.</div></div><div class="tension"><div class="axis">fchollet/ARC-AGI</div><div class=side>Repo ufficiale dei benchmark ARC-AGI di Chollet, ora affiancato da ARC-AGI-3 (ambienti interattivi turn-based per misurare agency). ARC Prize 2026 ha $2M di montepremi; umani 100%, best frontier model 0,37%.</div></div><div class="tension"><div class="axis">zilliztech/claude-context</div><div class=side>Server MCP di code search che trasforma l'intera codebase in contesto indicizzato per Claude Code, Cursor e altri agenti. Esempio netto del 'moat shift' dal modello all'uso indicato da Evans e Andreessen.</div></div></section>
+<section><h2>Fonti</h2><div class="fonte"><span class="who">Elon Musk</span><a href="https://www.cnbc.com/2026/05/20/spacex-ipo-live-updates.html" target="_blank" rel="noopener">SpaceX IPO plans</a><a href="https://www.aol.com/news/suicidal-empathy-philosophy-promoted-elon-173434243.html" target="_blank" rel="noopener">Suicidal empathy philosophy</a><a href="https://www.cnbc.com/2026/05/06/elon-musks-spacex-chip-fab-in-texas-to-cost-up-to-119-billion.html" target="_blank" rel="noopener">Terafab chip project</a></div><div class="fonte"><span class="who">Balaji Srinivasan</span><a href="https://www.bitget.com/academy/balaji-srinivasan-net-worth-investment-profile-2026-india-global-tech" target="_blank" rel="noopener">Balaji Srinivasan Net Worth 2026</a><a href="https://www.bitget.com/academy/what-are-the-main-milestones-in-balaji-srinivasan-career-comprehensive-2026-guide-india" target="_blank" rel="noopener">Network State and Crypto Integration</a><a href="https://bitcoinethereumnews.com/bitcoin/balaji-srinivasan-how-bitcoin-and-ai-will-forge-the-future-of-verifiable-reality-and-social-technology/" target="_blank" rel="noopener">AI and Crypto as Complementary Forces</a></div><div class="fonte"><span class="who">Patrick Collison</span><a href="https://fortune.com/2026/05/07/stripe/" target="_blank" rel="noopener">Stripe CEO token theft crisis, Fortune maggio 2026</a><a href="https://officechai.com/ai/2026-q1-could-be-looked-at-as-the-first-quarter-of-the-singularity-says-stripe-co-founder-patrick-collison/" target="_blank" rel="noopener">Q1 2026 singularità, OfficeChaiAI</a><a href="https://blockchain.news/flashnews/stripe-s-patrick-collison-signals-2026-ai-driven-hiring-surge" target="_blank" rel="noopener">Stripe Patrick Collison AI hiring surge, Blockchain News</a></div><div class="fonte"><span class="who">Andrej Karpathy</span><a href="https://www.axios.com/2026/05/19/anthropic-openai-karpathy-andrej-claude" target="_blank" rel="noopener">Axios: OpenAI co-founder Andrej Karpathy joins Anthropic</a><a href="https://techcrunch.com/2026/05/19/openai-co-founder-andrej-karpathy-joins-anthropics-pre-training-team/" target="_blank" rel="noopener">TechCrunch: OpenAI co-founder Andrej Karpathy joins Anthropic's pre-training team</a></div></section>
+<section class="transcript-section"><h2>Trascrizione</h2><details class="tr"><summary>Leggi la trascrizione</summary><button class="tr-copy" type="button" onclick="copiaTrascrizione(this)">copia il testo</button><div class="transcript-body"><h2>La battaglia per lo stack</h2>
+<p class="podcast-episode-desc">Maggio 2026: la corsa all'intelligenza artificiale smette di essere una gara di modelli e diventa una guerra per chi controlla l'infrastruttura. Musk, Balaji, Collison.</p>
+<div class="chapter" data-mood="geo"><hr></div>
+<p>Stamattina, a Boca Chica, Starship V3 ha lasciato la rampa. Qualche ora prima, a San Francisco, i banchieri stavano già firmando le carte per la quotazione in borsa di SpaceX. E mentre succedevano queste due cose, in un ufficio di Dublino Patrick Collison spiegava perché una startup di intelligenza artificiale su sei nasce già infettata dalle frodi. Tre scene nello stesso giorno, tre angoli della stessa storia. È il 21 maggio 2026, qui è Signal Brief, e quella storia parla di chi sta provando a possedere l'infrastruttura su cui correrà tutto il resto.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Per anni la conversazione attorno all'intelligenza artificiale ha avuto la forma di una gara fra modelli. Chi addestra il più grande, chi prende i benchmark più alti, chi annuncia per primo l'agente che ragiona meglio. Era una corsa elegante, un po' come la rivalità fra case automobilistiche per il motore più potente, e per un certo tempo è stata anche la cosa più interessante da guardare.</p>
+<p>Poi, nell'arco di poche settimane, qualcosa si è spostato.</p>
+<p>I modelli, semplicemente, hanno smesso di essere il punto. Lo dice apertamente Ilya Sutskever in un'intervista lunga di maggio: l'era dello scaling è finita, i dati di addestramento sono finiti, i rendimenti decrescenti sono diventati visibili a tutti. Lo conferma Yann LeCun con parole più ruvide: i grandi modelli linguistici, dice, sono completamente indifesi davanti al mondo fisico. E François Chollet, da quel critico paziente che è da sempre, mostra il dato che tutti aspettavano: sui problemi davvero nuovi i modelli attuali crollano, perché non ragionano, ricordano.</p>
+<p>Quando il prodotto smette di migliorare, l'attenzione si sposta. Non sui prossimi prodotti, ma su chi possiede la fabbrica.</p>
+<p>È più o meno quello che successe un secolo fa, quando le grandi industrie americane smisero di competere sui macchinari che producevano e cominciarono a litigare per chi controllava le centrali elettriche che li alimentavano. La storia ha la stessa forma: quando una tecnologia diventa pervasiva, smette di essere un prodotto e diventa un'infrastruttura, e da lì in poi tutta la politica si sposta sui binari, sui cavi, sulle dighe.</p>
+<p>Adesso i binari e le dighe si chiamano data center, fabbriche di chip, reti di calcolo distribuito.</p>
+<p>E qui i protagonisti cambiano. Il personaggio del momento non è più chi rilascia un nuovo modello, è chi sta costruendo lo stack che lo farà girare. Da una parte c'è Elon Musk, che in questi giorni ha annunciato la quotazione di SpaceX e nello stesso movimento ha consolidato un'unica architettura industriale che mette insieme razzi, auto, modelli di intelligenza artificiale e una fabbrica di chip da centodiciannove miliardi di dollari in Texas. Lui lo chiama integrazione verticale, e il punto è semplice: voglio possedere ogni strato, dall'energia al cervello.</p>
+<p>Dall'altra parte c'è Balaji Srinivasan, che dice esattamente l'opposto. Se uno solo possiede lo stack, è finita. La risposta è il calcolo decentralizzato, una rete di nodi sovrani, governi piccoli che diventano partner di comunità on-chain. Lui lo chiama Network State, e in questi mesi ha cominciato davvero a stipulare accordi con Kazakistan, Bhutan, El Salvador, Singapore. Non è più teoria di un libro: è una contromossa concreta.</p>
+<p>Fra questi due poli si muove tutto il resto. Jensen Huang annuncia mille miliardi di dollari di domanda cumulativa per i suoi chip e racconta che il futuro è fatto di fabbriche che producono token ventiquattro ore al giorno. Vitalik Buterin risponde con una proposta che fino a poco fa sembrava di nicchia: combinare verifica matematica e intelligenza artificiale per rendere la cifratura più sicura, non meno. E poi c'è Patrick Collison, che ricorda una cosa scomoda: questa infrastruttura, oggi, è già rotta. Una nuova iscrizione su sei nelle startup di intelligenza artificiale è una frode, qualcuno che ruba token per farci girare i propri calcoli. Le startup non riescono più a offrire prove gratuite. La macchina perde olio prima ancora di partire.</p>
+<p>Sono tre i fili che tessono questa giornata, e conviene tenerli a mente per il resto dell'episodio. Il primo è che la battaglia si è spostata dai modelli all'infrastruttura. Il secondo è che dentro questo spostamento ci sono due visioni opposte di come dovrebbe essere l'infrastruttura: una concentrata, una distribuita. Il terzo è che mentre si discute di scenari maestosi, l'economia reale dell'intelligenza artificiale ha un problema banale e urgente: non si fida di se stessa.</p>
+<p>Da qui partono i ritratti.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Cominciamo da Musk, perché è la scena più rumorosa.</p>
+<p>Non serve presentarlo. Quello che serve è capire cosa ha fatto questa settimana, perché è insolito anche per lui. Il 20 maggio Starship V3 è partito da Boca Chica per la sua missione più ambiziosa, e nelle stesse ore i documenti della quotazione in borsa di SpaceX sono diventati pubblici. Musk manterrà l'ottantacinque per cento del potere di voto. Ma la cosa più interessante è nascosta nei fogli accessori: dentro le filiali emergono trasferimenti incrociati per oltre mezzo miliardo di dollari fra Tesla, xAI e SpaceX. Sono aziende formalmente separate, ma il denaro circola fra loro come dentro una stessa famiglia.</p>
+<p>Nello stesso periodo Musk ha annunciato Terafab, una fabbrica di chip in Texas da centodiciannove miliardi. E xAI, ufficialmente, si scioglie dentro SpaceX. Diventa SpaceXAI. Non c'è più un'azienda di intelligenza artificiale separata, c'è un solo organismo industriale che fa razzi, satelliti, auto elettriche, chip, modelli linguistici.</p>
+<p>Quello che sta provando a costruire Musk somiglia molto a quello che era General Motors negli anni Trenta, quando aveva al suo interno le miniere di ferro, le fonderie, le acciaierie, le linee di assemblaggio e perfino le compagnie di trasporto. Un sistema chiuso, dove ogni pezzo serve agli altri pezzi e nessun pezzo dipende da qualcuno fuori. È un modello industriale che storicamente vince quando la tecnologia smette di evolversi velocemente e diventa una commodity. Cioè proprio adesso.</p>
+<p>La tesi sottostante è esplicita: se la frontiera dei modelli si appiattisce, vince chi controlla la catena di produzione che li fa girare. E in più, dice Musk, vince chi può permettersi di pensare in decenni e non in trimestri. La sua nuova compensazione, duecento milioni di azioni Tesla, scatta solo se SpaceX raggiunge sette miliardi e mezzo di valore e una colonia permanente di un milione di persone su Marte. Sono obiettivi che hanno senso solo dentro la sua testa, e proprio per questo gli permettono di sganciare le decisioni di oggi dalla logica trimestrale di chiunque altro.</p>
+<p>Mi sembra che la cosa importante non sia se Musk arriverà davvero su Marte o se Terafab consegnerà chip in tempo. È che nel discorso pubblico sull'intelligenza artificiale è entrato un attore che non gioca al gioco degli altri. Tutti gli altri stanno facendo modelli e cercando clienti enterprise. Lui sta provando a comprare il terreno sotto la partita. Se ci riesce, la prossima conversazione sull'intelligenza artificiale sarà molto diversa da quella di oggi. Se non ci riesce, anche fallendo lascerà un'impronta enorme su come il resto dell'industria pensa al proprio stack.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Sull'altro versante della stessa battaglia c'è Balaji Srinivasan, e vale la pena raccontarlo bene perché spesso viene messo in caricatura.</p>
+<p>Balaji è un ex chief technology officer di Coinbase, un investitore, un autore. Quello che fa adesso, dal suo ufficio non meglio precisato fra Singapore e Dubai, è qualcosa di molto strano e molto serio insieme: sta provando a costruire stati. Non metaforicamente. Stati piccoli, distribuiti, fatti di comunità on-chain che firmano accordi diplomatici con governi reali. Lo chiama Network State, e in queste settimane il progetto ha smesso di sembrare un libro e ha cominciato a sembrare una mossa geopolitica.</p>
+<p>Negli ultimi mesi ha siglato o avviato accordi con governi diversissimi, dal Kazakistan al Bhutan, da Palau a El Salvador, parti del Regno Unito, lo stato malese di Johor. La forma giuridica che emerge si chiama Solana Economic Zone, una specie di zona franca digitale dove la cittadinanza non è solo passaporto ma anche identità crittografica. È una visione di mondo dove l'unità politica non è più il paese di mille anni fa ma la comunità di interesse di duecentomila persone, ovunque si trovino.</p>
+<p>A questa tesi si lega la sua posizione sull'intelligenza artificiale. Balaji vede intelligenza artificiale e crittografia come forze opposte e complementari. L'intelligenza artificiale produce abbondanza infinita: qualsiasi contenuto, qualsiasi pezzo di codice, qualsiasi testo. La crittografia produce scarsità verificabile: quella chiave privata è tua e di nessun altro, quella firma è autentica e nessuno la può rifare. Senza la seconda, dice, la prima ci affoga. Senza scarsità non c'è proprietà, e senza proprietà non c'è libertà.</p>
+<p>Per questo investe in tre direzioni precise: intelligenza artificiale decentralizzata, longevità, social network resistenti alla censura. Tre puntate diverse sulla stessa scommessa: il potere è troppo concentrato, e i prossimi quindici anni saranno una corsa per ridistribuirlo.</p>
+<p>Ricapitoliamo un attimo dove siamo. Da una parte Musk costruisce uno stack tutto in casa, in cui ogni pezzo dipende dagli altri e il proprietario è uno solo. Dall'altra Balaji prova a costruire mille stack piccoli, ciascuno sovrano, capaci di parlarsi senza dover passare per un centro. Sono due idee molto vecchie travestite da idee nuove. È la stessa scelta che si fece negli anni Settanta fra mainframe centrali e personal computer. È la stessa scelta che si fece negli anni Duemila fra cloud chiuso e web aperto. Stavolta, sull'intelligenza artificiale, il gioco è molto più grosso.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>A questo punto entra in scena Patrick Collison, che è un personaggio diverso dagli altri due. Non ha visioni messianiche, non costruisce stati, non lancia razzi. Gestisce Stripe, una delle infrastrutture di pagamento più usate al mondo, e per questa ragione vede una cosa che gli altri non vedono: vede i numeri veri.</p>
+<p>In un'intervista lunga apparsa su Fortune all'inizio di maggio, Collison dice due cose insieme, e suonano stonate solo se non le ascolti bene.</p>
+<p>La prima è che, secondo i dati di transazione che passano dai server di Stripe, il primo trimestre 2026 potrebbe essere ricordato fra dieci anni come il vero primo trimestre della singolarità. Non perché un modello abbia fatto qualcosa di magico. Perché si è visto, nei pattern di acquisto di milioni di piccole imprese, un cambio di pendenza. Le aziende nuove nascono più in fretta, gli agenti automatici comprano cose per conto degli umani, e dentro Stripe si vede materialmente un'economia che si riconfigura.</p>
+<p>La seconda cosa è meno epica e più scomoda. Sempre dai server di Stripe, Collison vede che una nuova iscrizione su sei in una startup di intelligenza artificiale è una frode. Qualcuno crea account falsi con carte rubate per pagarsi il calcolo gratis nelle prove. Il problema è diventato così grosso che molte startup hanno smesso di offrire periodi di prova: l'economia non regge.</p>
+<p>Sono due immagini che vanno tenute insieme. Da un lato un'epoca che inizia, dall'altro un'infrastruttura economica che, su un livello banale, si sta sfaldando. Collison aggiunge anche che Stripe sta assumendo come mai prima, e che l'intelligenza artificiale non sta riducendo l'organico ma ne sta cambiando la forma. Paragona l'effetto sull'azienda a quello dei farmaci tipo Ozempic sul corpo: non ti riducono, ti ricompongono.</p>
+<p>Mi sembra che la voce di Collison sia importante perché è una voce di mezzo. Non è ottimista come Marc Andreessen, che parla di età dell'oro e di programmatori dieci volte più produttivi. Non è apocalittica come Geoffrey Hinton, che pochi mesi fa ha riproposto lo scenario di una disoccupazione di massa fra impiegati e quadri. Collison vede i due fenomeni insieme, e ricorda una cosa che spesso si dimentica nelle discussioni alte: prima delle grandi questioni filosofiche, ci sono le frizioni piccole. Il furto di token, in fondo, è una storia molto antica. È la stessa storia per cui nell'Ottocento le ferrovie americane dovettero inventare le polizie ferroviarie. Quando la nuova infrastruttura comincia ad attirare valore, comincia anche ad attirare ladri.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Quarto ritratto, più breve, e di tutt'altra natura. Il 19 maggio Andrej Karpathy ha annunciato di aver lasciato OpenAI ed essersi unito al team di pre-training di Anthropic. Lavorerà sotto Nick Joseph.</p>
+<p>Detta così, sembra una notizia di gossip aziendale. È molto di più.</p>
+<p>Karpathy è probabilmente la persona che più di chiunque altro ha insegnato al pubblico interessato come funzionano davvero i grandi modelli. Le sue lezioni online, la sua serie di piccoli progetti pubblici, il suo stile di scrittura asciutto. È uno che spiega. Per anni la sua identità pubblica era stata quella di un divulgatore impegnato a smontare il magico in algoritmico.</p>
+<p>In maggio cambia tutto. Non solo cambia datore di lavoro, ma cambia anche il modo in cui parla del proprio mestiere. Parla apertamente di vibe coding, di una specie di euforia sperimentale, di lavoro compulsivo sui modelli di frontiera. Dice che lo sviluppo dell'intelligenza artificiale è entrato in una fase in cui l'intuizione conta più del rigore. E dice, questa è la cosa più interessante, che vuole usare i modelli di Anthropic per migliorare l'addestramento dei modelli di Anthropic. Una specie di serpente che si morde la coda, ma con dentro un'idea seria: il pre-training non è risolto, e per risolverlo non bastano più i ricercatori, servono ricercatori potenziati dai modelli che stanno cercando di costruire.</p>
+<p>Si lega bene al filo della giornata. Mentre Musk integra verticalmente l'hardware e Balaji distribuisce orizzontalmente il calcolo, Karpathy lavora a un livello ancora diverso: dentro il software che genera il software. È come se ogni piano della casa avesse il suo conflitto in corso. Karpathy è andato a vivere al piano dove si decide come si fanno i mattoni.</p>
+<p>Vale la pena notare una cosa, e poi chiudo. Per anni il talento si misurava in chi prendeva i migliori dottorati. Adesso il talento si misura in chi accetta di sospendere per qualche anno la propria identità pubblica e immergersi in problemi senza spiegarli a nessuno. È un ritorno a una vecchia idea di laboratorio. È anche, in piccolo, un segnale di come stanno cambiando le carriere migliori del settore.</p>
+<div class="chapter" data-mood="upbeat"><hr></div>
+<p>Qualche progetto su cui tenere un occhio in questi giorni, perché ognuno racconta in piccolo qualcosa di quello che abbiamo detto in grande.</p>
+<p>Il primo si chiama nanochat, è di Karpathy, e fa una cosa apparentemente folle: addestra un piccolo modello in stile GPT-2 in circa due ore su otto schede grafiche. È un progetto minuscolo, e il punto non è il modello in sé. Il punto è la dimostrazione: un singolo ricercatore può fare oggi quello che cinque anni fa richiedeva un'organizzazione. È il manifesto della fase meno codice, più amplificazione.</p>
+<p>Il secondo è llama.cpp, di Georgi Gerganov. Un motore che permette di far girare modelli grandi sul proprio computer di casa. Sembra una nota da geek, ma è la pietra angolare dello stack sovrano che gente come Buterin sta proponendo. Vuoi un'intelligenza artificiale che gira solo sul tuo laptop e non manda dati a nessuno? Sotto, da qualche parte, c'è llama.cpp.</p>
+<p>Il terzo si chiama Omarchy, ed è una distribuzione Linux costruita da DHH, il creatore di Ruby on Rails. È un sistema operativo curato come un oggetto di design, pensato per attirare chi è stufo di macOS e Windows. È il segno di un sentimento che torna: la voglia di possedere davvero la propria macchina, di poterla modificare. Intelligenza artificiale come strumento di personalizzazione, non di standardizzazione.</p>
+<p>Il quarto è ARC-AGI, il test di François Chollet per misurare se un modello ragiona davvero. Quest'anno è arrivato alla terza versione, con un montepremi di due milioni di dollari. Gli umani lo passano al cento per cento. Il miglior modello di frontiera, allo zero virgola trentasette. È un termometro semplice e crudele.</p>
+<p>L'ultimo è autoresearch, sempre di Karpathy. Seicentotrenta righe di codice che fanno girare un mini-agente di ricerca. Una giornata di lavoro per un singolo programmatore. Una direzione intera per l'industria.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Forse l'immagine da portarsi via è quella delle prime ferrovie americane, che cominciarono come gare di velocità fra locomotive e finirono come guerre per il possesso delle stazioni. La storia dell'intelligenza artificiale è già a quel secondo capitolo, solo che quasi nessuno se n'è accorto. È stato Signal Brief. Alla prossima.</p></div></details></section>
+<nav class="epnav"><a href="/signal-brief/ai/2026-05-20/">← 2026-05-20</a><span style="flex:1"></span><a href="/signal-brief/ai/2026-05-22/">2026-05-22 →</a></nav>
+<dialog class="vplayer" id="vplayer"></dialog>
+<script>
+// player modale dei video: la miniatura apre il video al centro (disegno 2026-08-07)
+function apriVideo(src) {
+  var d = document.getElementById('vplayer');
+  d.innerHTML = '<video controls autoplay playsinline src="' + src + '"></video>';
+  d.showModal();
+  d.onclick = function (e) { if (e.target === d) d.close(); };
+  d.onclose = function () { var v = d.querySelector('video'); if (v) v.pause(); d.innerHTML = ''; };
+}
+// ascolto inline dalla lista: un episodio alla volta
+var epAudio = null, epBtn = null;
+function ascolta(btn, src) {
+  if (epBtn === btn && epAudio) {
+    if (epAudio.paused) { epAudio.play(); btn.classList.add('on'); }
+    else { epAudio.pause(); btn.classList.remove('on'); }
+    return;
+  }
+  if (epAudio) { epAudio.pause(); if (epBtn) epBtn.classList.remove('on'); }
+  epAudio = new Audio(src); epBtn = btn;
+  epAudio.play(); btn.classList.add('on');
+  epAudio.onended = function () { btn.classList.remove('on'); };
+}
+function copiaTrascrizione(btn) {
+  var t = btn.parentElement.querySelector('.transcript-body');
+  navigator.clipboard.writeText(t ? t.innerText : '').then(function () {
+    btn.textContent = 'copiata ✓';
+    setTimeout(function () { btn.textContent = 'copia il testo'; }, 1800);
+  });
+}
+</script>
+<footer class="creator-footer">
+  <img src="/signal-brief/mike-avatar.png" alt="Michele Mondora">
+  <div class="creator-meta">
+    <span class="creator-name">it-mikesoft</span>
+    <span class="creator-tagline">working with systems, living with questions</span>
+    <span class="creator-email"><a href="mailto:michele@mondora.com">michele@mondora.com</a></span>
+  </div>
+</footer>
+<section class="tutele"><h3>Trasparenza e tutele</h3>
+<p><strong>Come nasce questo contenuto.</strong> Ricerca, sintesi editoriale, voce narrante, immagini e musica sono prodotte con sistemi di intelligenza artificiale. Non c'è una redazione umana che verifica ogni affermazione prima della pubblicazione: un controllo automatico scarta le schede giudicate inaffidabili, ma non elimina la possibilità di errori.</p>
+<p><strong>Affermazioni su persone e aziende.</strong> Quanto riportato è una sintesi di fonti pubbliche, non una dichiarazione diretta delle persone citate: le frasi non vanno intese come virgolettati né come posizioni ufficiali. Le fonti sono indicate in ogni pagina episodio — verificale prima di considerare un'informazione accertata. Se trovi un'affermazione inesatta che ti riguarda, scrivi a <a href="mailto:michele@mondora.com">michele@mondora.com</a>: viene corretta o rimossa.</p>
+<p><strong>Immagini e volti.</strong> Le immagini di scena sono generate con AI e non raffigurano fatti realmente avvenuti. Le fotografie di persone reali usate nei video provengono da Wikimedia Commons con le rispettive licenze, e sono accostate al racconto a scopo identificativo: la loro presenza non implica partecipazione, dichiarazione o approvazione da parte della persona ritratta. Su richiesta dell'interessato vengono rimosse.</p>
+<p><strong>Fonti e diritti altrui.</strong> I contenuti sono rielaborazioni originali, non riproduzioni di articoli di terzi; le testate e gli autori all'origine di una notizia sono citati e collegati. Marchi e nomi commerciali appartengono ai rispettivi titolari e sono usati a scopo descrittivo.</p>
+</section>
+</body></html>

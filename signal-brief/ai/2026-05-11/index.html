@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="it"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Il programmatore che non scrive più · Signal.AI</title>
+<meta property="og:title" content="Il programmatore che non scrive più · Signal.AI"><meta property="og:type" content="article"><meta property="og:description" content="Karpathy delega l'80% del codice agli agenti, Naval dice che il software puro non è più investibile, i lab cercano idee nuove. Dove va il valore: atomi, brand o sovranità."><meta property="og:url" content="https://it-mikesoft.github.io/signal-brief/ai/2026-05-11/"><meta property="og:audio" content="https://media.casamon.dev/ai/podcast/episodes/2026-05-11.mp3"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "PodcastEpisode", "name": "Il programmatore che non scrive più", "datePublished": "2026-05-11", "url": "https://it-mikesoft.github.io/signal-brief/ai/2026-05-11/", "description": "Karpathy delega l'80% del codice agli agenti, Naval dice che il software puro non è più investibile, i lab cercano idee nuove. Dove va il valore: atomi, brand o sovranità.", "inLanguage": "it", "associatedMedia": {"@type": "MediaObject", "contentUrl": "https://media.casamon.dev/ai/podcast/episodes/2026-05-11.mp3"}, "partOfSeries": {"@type": "PodcastSeries", "name": "Signal.AI", "url": "https://it-mikesoft.github.io/signal-brief/ai/"}}</script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:#faf8f4; color:#1a1a1a; padding:2rem 1.5rem; max-width:680px; margin:0 auto; line-height:1.6; }
+  a { color:#2563eb; }
+  .back { display:inline-block; margin-bottom:1.5rem; font-size:.8rem; font-family:monospace; text-decoration:none; }
+  .videos { display:flex; gap:1rem; flex-wrap:wrap; margin:1.2rem 0; }
+  .videos figure { margin:0; flex:1; min-width:260px; }
+  .videos .v2 { flex:0 1 240px; }
+  .videos video { width:100%; border-radius:12px; background:#000; }
+  .videos .v2 video { aspect-ratio:9/16; max-height:420px; }
+  .videos figcaption { font-size:.75rem; color:#888; text-align:center; margin-top:.3rem; }
+  .vlink { display:flex; gap:.3rem; margin-top:.35rem; }
+  .vlink input { flex:1; min-width:0; font-size:.68rem; font-family:monospace; padding:.3rem .4rem;
+    border:1px solid #e2ddd6; border-radius:6px; background:#fff; color:#6b7280; }
+  .vlink button { font-size:.68rem; padding:.3rem .6rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; }
+  .wk { font-size:1rem; margin:1.4rem 0 .4rem; }
+  details.wkacc { border:1px solid #e5e7eb33; border-radius:10px; margin:.6rem 0; padding:.1rem .8rem .4rem; }
+  details.wkacc summary { cursor:pointer; font-weight:600; padding:.5rem 0; font-size:.9rem; }
+  .back:hover { text-decoration:underline; }
+  header h1 { font-family:Georgia,serif; font-size:1.7rem; font-weight:600; }
+  header h1 span { color:#2563eb; }
+  .tagline { color:#6b7280; font-size:.85rem; margin-top:.3rem; margin-bottom:1.5rem; }
+  ul.eps { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
+  .subscribe { display:inline-flex; align-items:center; gap:.5rem; margin-bottom:1.2rem;
+    padding:.45rem .9rem; background:#2563eb; color:#fff; border-radius:20px;
+    text-decoration:none; font-size:.8rem; font-weight:600; }
+  .subscribe:hover { opacity:.85; color:#fff; }
+  .ep { display:flex; align-items:center; gap:.8rem; padding:.8rem 1rem; background:#fff;
+    border:1px solid #e2ddd6; border-radius:8px; text-decoration:none; color:inherit; transition:box-shadow .12s; }
+  .ep:hover { box-shadow:0 2px 8px rgba(0,0,0,.07); }
+  .ep-play { width:32px; height:32px; border-radius:50%; background:#f3f4f6; display:flex;
+    align-items:center; justify-content:center; font-size:12px; flex-shrink:0; }
+  .ep-title { font-size:.9rem; font-weight:500; }
+  .ep-meta { font-size:.72rem; color:#9ca3af; font-family:monospace; margin-top:.15rem; }
+  audio { width:100%; margin:1rem 0 1.5rem; }
+  .rawmd { margin:-.5rem 0 1.5rem; }
+  .rawmd a { font-size:.8rem; font-family:monospace; color:inherit; opacity:.65; }
+  .desc { color:#374151; font-size:.95rem; margin-bottom:1.5rem; }
+  section { margin:2rem 0; }
+  section h2 { font-family:Georgia,serif; font-size:1.1rem; border-bottom:1px solid #e2ddd6;
+    padding-bottom:.3rem; margin-bottom:.8rem; }
+  .synthesis p { margin:.7rem 0; }
+  .tension { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; font-size:.9rem; }
+  .tension .axis { font-weight:600; margin-bottom:.3rem; }
+  .tension .side { color:#6b7280; font-size:.85rem; }
+  .proj { font-size:.9rem; margin:.4rem 0; }
+  .proj .pname { font-weight:600; }
+  .proj .pnew { background:#16a34a; color:#fff; font-size:.65rem; font-weight:700;
+    padding:.1rem .35rem; border-radius:4px; text-transform:uppercase; vertical-align:middle; }
+  .fonte { font-size:.85rem; margin:.5rem 0; }
+  .fonte .who { font-weight:600; }
+  .fonte a { display:block; margin-left:.5rem; color:#6b7280; }
+  .transcript-body p { margin:.7rem 0; line-height:1.7; }
+  .transcript-body .chapter hr { border:none; border-top:1px solid #e2ddd6; margin:1.5rem 0; }
+  .transcript-body .podcast-episode-desc { color:#6b7280; font-style:italic; }
+  .signal-card { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; }
+  .signal-theme { font-size:.75rem; font-weight:700; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.3rem; }
+  .signal-text { font-size:.85rem; color:#374151; line-height:1.5; }
+  .creator-footer { margin-top:3rem; padding-top:1.5rem; border-top:1px solid #e2ddd6;
+    display:flex; align-items:center; gap:.9rem; }
+  .creator-footer img { width:40px; height:40px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+  .creator-meta { display:flex; flex-direction:column; gap:.15rem; }
+  .creator-name { font-size:.85rem; font-weight:600; color:#1a1a1a; }
+  .creator-tagline { font-size:.75rem; color:#6b7280; }
+  .creator-email { font-size:.75rem; }
+  .creator-ai { font-size:.72rem; color:#8a7f6d; max-width:46ch; line-height:1.45; }
+  .tutele { margin-top:2rem; padding-top:1.2rem; border-top:1px solid #e2ddd6;
+    font-size:.72rem; color:#8a7f6d; line-height:1.5; }
+  .tutele h3 { font-size:.75rem; color:#6b7280; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.5rem; font-weight:600; }
+  .tutele p { margin:.45rem 0; }
+  .tutele strong { color:#5a5348; font-weight:600; }
+  .tutele a { color:inherit; text-decoration:underline; }
+  .creator-email a { color:#9ca3af; text-decoration:none; }
+  .creator-email a:hover { color:#1a1a1a; }
+  /* disegno 2026-08-07: mesi a pagine, facce, player modale, trascrizione
+     richiudibile — la pagina episodio è un prodotto, non un sottoprodotto */
+  .hrow { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+  .hrow .subscribe { margin-bottom:0; flex-shrink:0; }
+  .months { font-size:.78rem; font-family:monospace; margin:.4rem 0 1rem; color:#9ca3af; }
+  .months a { text-decoration:none; } .months b { color:inherit; }
+  .ep-faces { display:flex; margin-left:auto; flex-shrink:0; }
+  .ep-faces img { width:26px; height:26px; border-radius:50%; object-fit:cover;
+    border:2px solid #fff; margin-left:-8px; background:#eee; }
+  /* tutti i citati sul desktop; su mobile la leggibilità vince: max 3 */
+  @media (max-width:600px) { .ep-faces img:nth-child(n+4) { display:none; } }
+  .ep-listen { width:32px; height:32px; border-radius:50%; background:#f3f4f6; border:0;
+    display:flex; align-items:center; justify-content:center; font-size:12px;
+    flex-shrink:0; cursor:pointer; color:inherit; }
+  .ep-listen.on { background:#2563eb; color:#fff; }
+  .face-inline { width:1.15em; height:1.15em; border-radius:50%; object-fit:cover;
+    vertical-align:-.18em; margin-right:.25em; }
+  /* SEMPRE sulla stessa riga (2026-08-09): su schermi stretti le miniature
+     si riducono, e se non basta il reel sparisce — mai l'andata a capo */
+  .vthumbs { display:flex; gap:.8rem; flex-wrap:nowrap; margin:1.2rem 0; align-items:flex-start; }
+  .vthumb { position:relative; cursor:pointer; border:0; padding:0; background:none;
+    border-radius:12px; overflow:hidden; }
+  /* stessa ALTEZZA per video e reel: il 9:16 si stringe, non svetta */
+  .vthumb video { height:150px; width:auto; display:block; border-radius:12px; background:#000; }
+  @media (max-width:520px) { .vthumb video { height:118px; } }
+  /* quando nemmeno ridotte ci stanno: via le miniature, due BOTTONI in
+     riga che aprono il player (2026-08-09) */
+  .vbtns { display:none; gap:.6rem; margin:1.2rem 0; }
+  .vbtns button { flex:1; padding:.6rem .4rem; border:0; border-radius:10px;
+    background:#2563eb; color:#fff; font-weight:700; font-size:.85rem;
+    cursor:pointer; font-family:inherit; }
+  @media (max-width:420px) { .vthumbs { display:none; } .vbtns { display:flex; } }
+  .vthumb .vlabel { position:absolute; left:0; right:0; bottom:0; padding:.9rem .5rem .35rem;
+    background:linear-gradient(transparent, rgba(0,0,0,.75)); color:#fff; font-size:.7rem; }
+  .vthumb::after { content:"▶"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    color:#fff; font-size:1.6rem; text-shadow:0 1px 6px rgba(0,0,0,.8); }
+  /* margin:auto ESPLICITO: il reset globale * {margin:0} annullava la
+     centratura nativa del dialog e il player si apriva in alto a sinistra */
+  dialog.vplayer { border:0; padding:0; background:transparent; max-width:92vw;
+    margin:auto; position:fixed; inset:0; }
+  dialog.vplayer::backdrop { background:rgba(0,0,0,.85); }
+  dialog.vplayer video { max-width:92vw; max-height:86vh; border-radius:14px; background:#000; }
+  details.tr { border:1px solid #e2ddd6; border-radius:10px; padding:.2rem .9rem .6rem; }
+  details.tr summary { cursor:pointer; font-weight:600; padding:.55rem 0; }
+  .tr-copy { font-size:.72rem; padding:.3rem .7rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; margin:.3rem 0 .5rem; }
+  .epnav { display:flex; justify-content:space-between; gap:1rem; margin:2rem 0 0;
+    font-size:.82rem; font-family:monospace; }
+  .epnav a { text-decoration:none; }
+  @media (prefers-color-scheme:dark) {
+    body { background:#1f1d18; color:#e5e5e5; }
+    .ep, .tension, .signal-card { background:#2a2823; border-color:#3a352d; }
+    .ep-play { background:#3a352d; } .desc { color:#d4d4d4; }
+    .signal-text { color:#d4d4d4; }
+    .creator-footer { border-color:#3a352d; }
+    .creator-name { color:#f5f5f5; }
+    .creator-tagline, .creator-email a { color:#9ca3af; }
+    .creator-ai { color:#9a8f7d; }
+    .vlink input { background:#1c1a17; border-color:#3a352d; color:#9ca3af; }
+    .tutele { border-color:#3a352d; color:#9a8f7d; }
+    .tutele h3 { color:#a9a9a9; } .tutele strong { color:#d4d4d4; }
+    .ep-listen { background:#3a352d; }
+    .ep-faces img { border-color:#2a2823; background:#3a352d; }
+    details.tr { border-color:#3a352d; }
+  }
+</style></head><body>
+<a class="back" href="/signal-brief/ai/">← Signal.AI</a>
+<header><h1>Il programmatore che non scrive più</h1></header>
+<div class="tagline">2026-05-11 · Digital Intelligence Podcast</div>
+<div class="desc">Karpathy delega l'80% del codice agli agenti, Naval dice che il software puro non è più investibile, i lab cercano idee nuove. Dove va il valore: atomi, brand o sovranità.</div>
+<div class="rawmd"><a href="raw.md">Testo (markdown)</a></div>
+<section><h2>Sintesi</h2><div class="synthesis"><p>Il filo più forte è un'<strong>inversione di workflow</strong> che attraversa pensatori distanti: <a href="https://karpathy.bearblog.dev/sequoia-ascent-2026/" target="_blank" rel="noopener">Andrej Karpathy passa da 80% codice manuale a 80% delegato</a>, <a href="https://newsletter.pragmaticengineer.com/p/dhhs-new-way-of-writing-code" target="_blank" rel="noopener">DHH gira tmux con due agenti in parallelo</a>, <a href="https://simonwillison.net/2026/May/6/vibe-coding-and-agentic-engineering/" target="_blank" rel="noopener">Simon Willison osserva la fusione vibe-coding ↔ agentic engineering</a>, <a href="https://nodemerge.com/blog/sam-altman-patrick-collison-stripe-conversation-2026" target="_blank" rel="noopener">Patrick Collison demo'a un agente che legge planning doc, apre PR, fa deploy</a>. Il programmatore non scrive: progetta spec, revisiona diff. Sintomo superficiale.</p>
+<p>Sotto, <strong>crisi del valore del software puro</strong>. <a href="https://www.businesstoday.in/technology/story/pure-software-is-rapidly-becoming-uninvestable-naval-ravikant-on-why-vibe-coding-changes-everything-528256-2026-04-30" target="_blank" rel="noopener">Naval Ravikant netto — "pure software is rapidly becoming uninvestable"</a>; Karpathy porta MenuGen come caso dove il software tradizionale è superfluo. Se chiunque rigenera codice in un pomeriggio, dove migra il valore? Tre risposte divergenti. <strong>Atomi</strong>: <a href="https://www.brown.edu/news/2026-04-01/yann-lecun-artificial-intelligence-pioneer" target="_blank" rel="noopener">Yann LeCun ("LLM completely helpless in the physical world")</a>, <a href="https://x.com/ID_AA_Carmack" target="_blank" rel="noopener">John Carmack con telecamere su CRT reali</a>, <a href="https://www.sahmcapital.com/news/content/jack-dorsey-teases-see-all-the-bits-as-blocks-self-custody-bitcoin-wallet-gets-this-upgrade-2026-04-28" target="_blank" rel="noopener">Jack Dorsey con Bitkey hardware</a>, <a href="https://www.eweek.com/news/nvidia-inference-ai-economy-agents-gtc-2026/" target="_blank" rel="noopener">Jensen Huang che ribattezza Nvidia "physical <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="">AI factory"</a>. <strong>Brand</strong>: <a href="https://paulgraham.com/brand.html" target="_blank" rel="noopener">Paul Graham in "The Brand Age"</a> offre la cornice — quando la tecnologia commoditizza la funzione, il brand riempie il vuoto — che <a href="https://www.ben-evans.com/benedictevans/category/Artificial+Intelligence" target="_blank" rel="noopener">Benedict Evans applica spietatamente a OpenAI</a>. <strong>Sovranità</strong>: <a href="https://www.theblock.co/post/387804/vitalik-buterin-commits-roughly-45-million-in-eth-to-open-source-security-and-privacy-projects" target="_blank" rel="noopener">Vitalik Buterin pubblica il proprio setup LLM locale e finanzia $45M in privacy tools</a>; <a href="https://balajis.com/" target="_blank" rel="noopener">Balaji Srinivasan rilancia il network state come exit</a>.</p>
+<p>Parallela, <strong>crisi di metodo nei lab</strong>. <a href="https://www.dwarkesh.com/p/ilya-sutskever-2" target="_blank" rel="noopener">Ilya Sutskever dichiara finita l'era dello scaling</a>, <a href="https://ndea.com/about.html" target="_blank" rel="noopener">François Chollet rilancia program synthesis con Ndea</a>, <a href="https://letsdatascience.com/news/demis-hassibas-predicts-agi-by-2030-endorses-distillation-6fd2d70c" target="_blank" rel="noopener">Demis Hassabis ammette serve "1-2 big ideas"</a>. Persino chi cavalcò lo scaling ora lo deprezza.</p>
+<p>Frattura più acuta sui lavori: <a href="https://fortune.com/2025/12/28/geoffrey-hinton-godfather-of-ai-2026-prediction-human-worker-replacement/" target="_blank" rel="noopener">Geoffrey Hinton predice "jobless boom" 2026</a> e <a href="https://fortune.com/2026/04/02/jack-dorsey-roelof-botha-ai-middle-management/" target="_blank" rel="noopener">Jack Dorsey azzera il middle management</a>, mentre <a href="https://fortune.com/2026/05/05/ai-job-apocalypse-warnings-destructive-yann-lecun/" target="_blank" rel="noopener">Yann LeCun bolla la narrativa apocalisse come "destructive"</a> e <a href="https://a16z.com/the-ai-job-apocalypse-is-a-complete-fantasy/" target="_blank" rel="noopener">Marc Andreessen amplifica il contro-saggio a16z</a>.</p>
+<p>Tensione di fondo: l'AI ha funzionato abbastanza da commoditizzare la propria output-zone — codice, testo, immagini — <em>prima</em> di raggiungere AGI. Il capitale cerca rifugio in atomi, brand o sovranità mentre i lab realizzano che la strada non era quella. È il momento in cui <a href="https://blog.samaltman.com/2279512" target="_blank" rel="noopener">Sam Altman ammette "I am a flawed person"</a> e <a href="https://x.com/karpathy/status/2004607146781278521" target="_blank" rel="noopener">Andrej Karpathy confessa "never felt this behind"</a>: autocritica come segnale di transizione di fase, non di crisi personale. Era post-scaling cerca nuovo terreno solido.</p></div></section>
+<section><h2>Temi del giorno</h2><div class="tension"><div class="axis">↗ Inversione di workflow del programmatore</div><div class="side">Sviluppatori passano da scrivere codice a progettare spec e revisionare diff prodotti da agenti.</div></div><div class="tension"><div class="axis">↗ Autocritica pubblica dei leader</div><div class="side">Figure di vertice ammettono limiti personali come segnale di transizione di fase, non crisi individuale.</div></div><div class="tension"><div class="axis">↗ Physical AI come categoria industriale</div><div class="side">Nvidia si ribattezza fabbrica di AI fisica, atomi tornano centrali nel posizionamento dei vendor.</div></div><div class="tension"><div class="axis">↗ Network state come exit strategy</div><div class="side">Sovranità non solo crittografica ma territoriale, rilancio esplicito di uscita dai sistemi esistenti.</div></div><div class="tension"><div class="axis">↗ Lab post-scaling cercano big ideas</div><div class="side">Anche chi cavalcò lo scaling ora deprezza, esplicita ricerca di 1-2 svolte concettuali nuove.</div></div><div class="tension"><div class="axis">↗ Hardware self-custody come prodotto</div><div class="side">Bitkey hardware wallet come materializzazione fisica della sovranità digitale.</div></div><div class="tension"><div class="axis">⚖ Destinazione del capitale post-software</div><div class="side">Jensen Huang: atomi e physical AI · Paul Graham: brand come moat · Balaji Srinivasan: sovranità e network state</div></div><div class="tension"><div class="axis">⚖ Apocalisse del lavoro</div><div class="side">Geoffrey Hinton: jobless boom 2026 · Yann LeCun: narrativa destructive e interessata · Marc Andreessen: contro-saggio a16z, fantasia completa</div></div><div class="tension"><div class="axis">⚖ Direzione della ricerca AI</div><div class="side">Ilya Sutskever: era scaling finita · Demis Hassabis: servono 1-2 big ideas · François Chollet: program synthesis con Ndea</div></div><div class="tension"><div class="axis">⚖ Ruolo del programmatore</div><div class="side">Andrej Karpathy: 80% delegato ad agenti · DHH: tmux con agenti paralleli · Patrick Collison: agente legge spec e fa deploy</div></div><div class="tension"><div class="axis">⚖ Risposta alla commoditizzazione</div><div class="side">Yann LeCun: fuga negli atomi e mondo fisico · Vitalik Buterin: sovranità crittografica e privacy · Benedict Evans: distribuzione e brand</div></div></section>
+<section><h2>Progetti da osservare</h2><div class="tension"><div class="axis">karpathy/nanochat</div><div class=side>Pipeline minimale per addestrare un modello GPT-2 in ~2 ore su 8×H100 con FP8 e ClimbMix, parte della linea di lavoro di Karpathy su pipeline ridotte per singolo ricercatore. Repo di riferimento per l'era 'meno codice, più amplificazione'.</div></div><div class="tension"><div class="axis">karpathy/llm-wiki (gist)</div><div class=side>Prompt-pattern da copiare in Claude Code/Codex che istanzia il sistema 'LLM Wiki' su Obsidian: articoli enciclopedici interlinkati, backlink, health check. Diventato viral come anti-RAG personale.</div></div><div class="tension"><div class="axis">karpathy/autoresearch</div><div class=side>Repo di ~630 righe (7 marzo 2026) che materializza un agente di ricerca minimale, parte della tesi 'idea file = distribuzione' di Karpathy. Esempio concreto di agente che amplifica il ricercatore individuale.</div></div><div class="tension"><div class="axis">Obsidian</div><div class=side>Editor di note markdown con backlink e grafi che Karpathy elegge come 'IDE della conoscenza' nel suo pattern LLM-Wiki. Diventa il frontend consigliato per memoria esplicita e ispezionabile contro la memoria opaca degli assistant commerciali.</div></div><div class="tension"><div class="axis">ggerganov/llama.cpp</div><div class=side>Motore di inferenza C/C++ per LLM locali; il suo llama-server è il cuore dello stack self-sovereign proposto da Buterin (NixOS + llama-server + bubblewrap). Standard de facto per AI locale sovrana.</div></div><div class="tension"><div class="axis">basecamp/omarchy</div><div class=side>Distro Arch Linux curata da DHH con Hyprland, pensata per attrarre utenti macOS/Windows verso un desktop 'malleabile'. Progetto-manifesto del filone 'open source AI-ready' di DHH (Omacon NY, 130 persone).</div></div><div class="tension"><div class="axis">hyprwm/Hyprland</div><div class=side>Compositor Wayland dinamico, cuore visivo di Omarchy e simbolo del rinnovato interesse consumer per Linux (Panther Lake / XPS 14). DHH lo cita come esempio di software su cui finalmente 'hardware e aziende tornano a scommettere'.</div></div><div class="tension"><div class="axis">simonw/llm</div><div class=side>CLI e libreria Python di Simon Willison per interagire con LLM locali e cloud, base dei suoi tool README-driven (scan-for-secrets, datasette-ports, research-llm-apis). Strumento pivot del suo workflow 'agentic engineering'.</div></div><div class="tension"><div class="axis">fchollet/ARC-AGI</div><div class=side>Repo ufficiale dei benchmark ARC-AGI di Chollet, ora affiancato da ARC-AGI-3 (ambienti interattivi turn-based per misurare agency). ARC Prize 2026 ha $2M di montepremi; umani 100%, best frontier model 0,37%.</div></div><div class="tension"><div class="axis">zilliztech/claude-context</div><div class=side>Server MCP di code search che trasforma l'intera codebase in contesto indicizzato per Claude Code, Cursor e altri agenti. Esempio netto del 'moat shift' dal modello all'uso indicato da Evans e Andreessen.</div></div></section>
+<section><h2>Fonti</h2><div class="fonte"><span class="who">Andrej Karpathy</span><a href="https://karpathy.bearblog.dev/sequoia-ascent-2026/" target="_blank" rel="noopener">Sequoia Ascent 2026 summary (Karpathy blog)</a><a href="https://medium.com/neuralnotions/andrej-karpathy-stopped-using-ai-to-write-code-hes-using-it-to-build-a-second-brain-instead-cddceadc5df5" target="_blank" rel="noopener">Karpathy stopped using AI to write code — second brain</a><a href="https://x.com/karpathy/status/2004607146781278521" target="_blank" rel="noopener">Karpathy: "never felt this behind as a programmer" (X)</a></div><div class="fonte"><span class="who">DHH</span><a href="https://world.hey.com/dhh" target="_blank" rel="noopener">world.hey.com/dhh</a><a href="https://newsletter.pragmaticengineer.com/p/dhhs-new-way-of-writing-code" target="_blank" rel="noopener">DHH's new way of writing code — Pragmatic Engineer</a><a href="https://www.teamday.ai/ai/dhh-agent-first-coding-pragmatic-engineer" target="_blank" rel="noopener">DHH Goes Agent-First — TeamDay summary</a></div><div class="fonte"><span class="who">Ilya Sutskever</span><a href="https://www.dwarkesh.com/p/ilya-sutskever-2" target="_blank" rel="noopener">Dwarkesh interview transcript</a><a href="https://x.com/ilyasut/status/2027486969174102261" target="_blank" rel="noopener">Tweet Anthropic/OpenAI feb 2026</a><a href="https://www.calcalistech.com/ctechnews/article/h1fudk7z11x" target="_blank" rel="noopener">Ctech: ideas not compute</a></div><div class="fonte"><span class="who">Vitalik Buterin</span><a href="https://vitalik.eth.limo/" target="_blank" rel="noopener">vitalik.eth.limo — blog</a><a href="https://www.theblock.co/post/387804/vitalik-buterin-commits-roughly-45-million-in-eth-to-open-source-security-and-privacy-projects" target="_blank" rel="noopener">$45M ETH a privacy/security — The Block</a><a href="https://www.theblock.co/post/386043/vitalik-buterin-declares-2026-the-year-ethereum-reverses-backsliding-of-self-sovereignty-and-trustlessness" target="_blank" rel="noopener">Decentralization 2026 — The Block</a></div></section>
+<section class="transcript-section"><h2>Trascrizione</h2><details class="tr"><summary>Leggi la trascrizione</summary><button class="tr-copy" type="button" onclick="copiaTrascrizione(this)">copia il testo</button><div class="transcript-body"><h2>Il programmatore che non scrive più</h2>
+<p class="podcast-episode-desc">Karpathy delega l'80% del codice agli agenti, Naval dice che il software puro non è più investibile, i lab cercano idee nuove. Dove va il valore: atomi, brand o sovranità.</p>
+<div class="chapter" data-mood="geo"><hr></div>
+<p>Andrej Karpathy, uno dei nomi più rispettati nella ricerca AI, ha raccontato a Sequoia di aver smesso di scrivere codice. Non del tutto: ne scrive ancora un quinto. Il resto lo delega ad agenti, e poi rivede. Pochi giorni fa ha scritto online una frase che ha fatto il giro: non si è mai sentito così indietro come programmatore. Questa è Signal Brief, è lunedì 11 maggio. Oggi parliamo di un mestiere che si sta riscrivendo, e di cosa succede al valore del software quando il software lo fa l'AI.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Immagina lo schermo di David Heinemeier Hansson, l'inventore di Ruby on Rails, una persona che ha vissuto vent'anni davanti a un editor. Sullo schermo, oggi, gira una cosa che si chiama tmux, una specie di griglia con due finestre aperte in parallelo. In una finestra c'è un modello veloce, in un'altra un modello più lento ma più potente. Lui non scrive codice, gli dice cosa vuole. Aspetta. Poi rivede quello che gli arriva, lo accetta o lo rifiuta, raffina.</p>
+<p>La stessa scena, con varianti, la stanno raccontando in molti. Karpathy, da Sequoia, dice che ormai delega ad agenti circa l'ottanta per cento del codice. Simon Willison, in un suo post dell'altro giorno, osserva che i due modi di lavorare con l'AI che fino a poco fa teneva separati — quello rilassato in cui ti fidi del modello, e quello disciplinato in cui tratti l'agente come un junior da supervisionare — si stanno fondendo. Patrick Collison, dal palco di Stripe a fine aprile, mostra un agente che legge il documento di pianificazione, apre il pull request, fa il deploy. Il programmatore non scrive: progetta le specifiche, rivede i risultati.</p>
+<p>Mi sembra che la cosa più interessante non sia il gesto in sé, ma cosa ricorda. È già successo. Nelle tipografie di un secolo fa il compositore prendeva i caratteri di piombo uno per uno, li allineava a mano, costruiva la pagina lettera per lettera. Poi è arrivata la linotype, una macchina che fondeva intere righe in una volta sola, e il mestiere è cambiato di un paio di piani in alto: il compositore non maneggiava più i caratteri, dirigeva la macchina. Settant'anni dopo è arrivato il desktop publishing, e di nuovo, salto in alto. Il mestiere non è sparito, è diventato meno manuale e più di giudizio. È esattamente quello che sta succedendo adesso ai programmatori.</p>
+<p>Solo che sotto c'è qualcosa di più grosso. Naval Ravikant, qualche giorno fa, l'ha detto secco: il software puro sta rapidamente diventando una cosa in cui non vale la pena investire. Karpathy fa lo stesso ragionamento con un esempio concreto, un'app che si chiama MenuGen: prima l'avresti costruita come prodotto, oggi un modello esegue direttamente la trasformazione, e il software in mezzo serve a poco. Se chiunque può rigenerare un codice base in un pomeriggio, dove va a finire il valore?</p>
+<p>Le risposte che si sentono in giro sono tre, ed è qui che il discorso si apre. La prima è: il valore va negli atomi. Yann LeCun lo dice ad alta voce — i modelli linguistici nel mondo fisico sono completamente persi — e ha appena fondato una sua azienda per costruire modelli che capiscano la realtà. Jensen Huang ribattezza Nvidia una fabbrica di AI fisica. La seconda risposta è: il valore va nel brand. Paul Graham, nel suo saggio recente, dice che quando la tecnologia commoditizza la funzione il brand riempie il vuoto, e fa l'esempio degli orologi svizzeri dopo l'arrivo del quarzo. La terza risposta è: il valore va nella sovranità. Vitalik Buterin pubblica il suo setup di AI privata, in locale, e mette quarantacinque milioni di dollari personali in strumenti di privacy. Balaji Srinivasan rilancia il suo vecchio progetto del network state come via di uscita.</p>
+<p>E intanto, nei laboratori che hanno costruito l'AI di oggi, c'è una specie di crisi del metodo. Ilya Sutskever dichiara finita l'era dello scaling. Demis Hassabis, alla Y Combinator di fine aprile, ammette che servono una o due grosse idee nuove. Persino chi sullo scaling aveva scommesso tutto, adesso lo deprezza. È questo il filo di oggi: non solo cambia il mestiere del programmatore, cambia anche la mappa di dove sta andando il valore.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Andrej Karpathy, di lui abbiamo già parlato all'inizio, è uno dei ricercatori che ha contribuito a costruire l'AI moderna — primi tempi a OpenAI, poi alla guida del progetto autopilot di Tesla, ora indipendente, prolifico, ascoltato. Quando lui racconta come lavora, lo prendono come termometro.</p>
+<p>Questa primavera ha fatto due cose che messe insieme dicono parecchio. La prima: a Sequoia, davanti alla platea della loro AI Ascent, ha raccontato di aver invertito il rapporto con il codice. Fino a un anno fa scriveva a mano circa l'ottanta per cento delle righe e usava l'AI come aiuto. Oggi è il contrario: scrive a mano un quinto, delega il resto. La seconda cosa l'ha scritta su X qualche giorno fa, ed è la frase che ha fatto rumore: non si è mai sentito così indietro come programmatore. Il mestiere, dice, è stato rifattorizzato in modo drammatico, e i pezzi che lui mette ancora a mano sono sempre più sparsi.</p>
+<p>Vale la pena raccontare un'altra cosa che fa, perché è bellissima e racconta più di tante teorie. Da un po' Karpathy ha smesso di usare gli LLM principalmente per scrivere codice. Li usa per costruire quello che lui chiama un secondo cervello. Prende materiale grezzo — appunti, paper, trascrizioni — lo butta in una cartella e chiede al modello di costruirci sopra una specie di enciclopedia personale, con voci interconnesse, link, ricerche incrociate. Ne ha una con cento articoli e quattrocentomila parole su un singolo argomento. La memoria diventa esplicita, ispezionabile, sua. Non è dentro un chatbot di qualcun altro, è in una cartella che apre con un editor di note.</p>
+<p>Questo gesto è coerente con il resto della sua riflessione. Karpathy parla di Software 3.0: prima si scriveva codice esplicito, poi sono arrivate le reti neurali addestrate, adesso il livello programmabile è il prompt, il contesto. L'LLM è una specie di interprete che gira sopra al testo che gli dai. E nel suo modo di lavorare si vede una distinzione che lui stesso ha codificato: il vibe coding alza il pavimento, permette a chiunque di costruire; l'ingegneria con gli agenti alza il soffitto, permette di andare più in alto, ma chiede in cambio progettazione, supervisione, ispezione. Non puoi esternalizzare la comprensione, dice. Bella frase.</p>
+<p>C'è una sfumatura che vale la pena notare. Quel mai così indietro non è una crisi personale, è un sintomo di transizione. Quando un mestiere si riconfigura, anche chi è bravissimo deve riposizionarsi. Karpathy non lamenta, descrive. È la stessa cosa che si è sentita raccontare ai tipografi quando arrivò la linotype, agli archivisti quando arrivò il computer, ai grafici quando arrivò Photoshop. Solo che adesso il ciclo è molto più rapido.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>David Heinemeier Hansson è di quelli che hanno avuto la faccia tosta di dire no all'AI a lungo. Per anni è stato pubblicamente scettico verso il completamento automatico, quella cosa che ti suggerisce le righe mentre scrivi. Diceva che ti distrae più di quanto ti aiuti. Lo diceva forte, e lo diceva da uno che il software lo scrive davvero, l'inventore del framework Ruby on Rails, fondatore della società Basecamp.</p>
+<p>A inizio aprile, in un'intervista al Pragmatic Engineer, ha raccontato di aver cambiato idea. Non sull'AI come autocomplete, su quella resta diffidente. Ha cambiato idea sull'AI come collega. Ha descritto il suo nuovo setup, ed è esattamente quella scena con cui abbiamo aperto: terminale aperto, due agenti che girano in parallelo, uno veloce per le cose semplici, uno lento e potente per le cose grosse. Lui non scrive il codice, gli dice cosa vuole. La soglia, dice, è stata raggiunta quando ha cominciato a ricevere output che poteva integrare nel progetto senza grosse modifiche. Prima quella soglia non c'era. Adesso sì.</p>
+<p>Coerentemente con il personaggio, DHH non si è fermato lì. A metà aprile ha scritto un pezzo intitolato il computer malleabile. Tesi: l'AI sta finalmente realizzando il sogno originale dell'open source, che era poter modificare il software che usi. Non più solo modificarlo se sei un programmatore, ma modificarlo come se parlassi a qualcuno. Versioni su misura delle app, fatte per uso personale, in casa.</p>
+<p>In parallelo, sta spingendo Linux desktop. Ha una distribuzione che si chiama Omarchy, ha riunito a fine aprile a New York centotrenta persone in una conferenza dal nome volutamente strano, Omacon. Sembrano cose scollegate — agenti AI, distribuzione Linux, raduni informali — e invece sono lo stesso filo: prendere in mano il proprio computer, di nuovo. Costruirsi le cose, non comprare le cose.</p>
+<p>Il pezzo più interessante della sua posizione, per il filo di oggi, è quello che torna sul Ruby on Rails. DHH sostiene che Rails sta vivendo una rinascita proprio adesso, non a dispetto degli LLM, ma grazie a loro. Perché è un framework leggibile, ordinato, con test integrati che gli agenti usano per verificarsi da soli. Detto in altri termini: un framework progettato vent'anni fa per i programmatori umani si rivela, per caso, ben progettato anche per i programmatori non umani. È uno di quei piccoli ribaltamenti che fanno sorridere.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Spostiamoci dentro i laboratori, dove di mestiere si costruisce questa AI. È qui che si sente, in modo meno spettacolare, un'altra crisi: quella del metodo.</p>
+<p>Ilya Sutskever è il ricercatore che ha contribuito più di chiunque altro a convincere il mondo che bastasse fare modelli sempre più grandi per arrivare a una vera intelligenza. Era la tesi dello scaling: più dati, più calcolo, più parametri, e la qualità sale. Lui era a OpenAI quando questa convinzione ha portato a GPT-3, GPT-4. Negli ultimi anni ha lasciato OpenAI, ha fondato una sua azienda, Safe Superintelligence, ha raccolto miliardi senza ancora un prodotto. E qualche mese fa, in una lunga conversazione, ha detto una cosa che pesa: l'era dello scaling è finita. Adesso comincia l'era della ricerca. Il problema non è più trovare più calcolo, è trovare idee nuove. I modelli generalizzano peggio degli umani, falliscono in modi strani, vincono esami da dottorato e poi sbagliano cose banali.</p>
+<p>Sulla stessa linea Demis Hassabis, che guida DeepMind, dentro Google. Fine aprile, sul podcast Y Combinator, parla del suo orizzonte: arrivare a una vera intelligenza artificiale entro la fine del decennio. Ma servono una o due grosse idee nuove. Non basta scalare quello che abbiamo. In un'altra intervista dice una frase ancora più diretta: dimentichiamoci della guerra dei chatbot. La direzione vera, secondo lui, è costruire modelli che capiscano causa ed effetto, oggetti, fisica del mondo. Non solo predire la prossima parola.</p>
+<p>E poi François Chollet, francese, ricercatore già a Google, oggi a capo di una sua azienda che si chiama Ndea. Chollet ha passato anni a costruire un test — si chiama ARC — pensato per misurare se un'AI capisce davvero o se è solo bravissima a riconoscere pattern. I modelli di oggi sotto a quel test arrancano. La sua scommessa, con Ndea, è ibrida: tenere le reti neurali come intuizione, ma affiancarle a programmi simbolici, leggibili, che generalizzano in modo diverso.</p>
+<p>Tre persone diverse, tre strade diverse, una stessa diagnosi. L'AI ha imparato a parlare benissimo, ma il salto successivo non viene dalla stessa formula che l'ha portata fin qui.</p>
+<p>Ricapitoliamo un attimo il filo di oggi. Il programmatore si sta spostando dallo scrivere al supervisionare. Il valore del software puro si sta erodendo. I laboratori che hanno costruito l'AI di oggi ammettono che servono idee nuove. È una di quelle settimane in cui sembra che tante cose si stiano muovendo dentro la stessa frizione.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Vitalik Buterin, l'inventore di Ethereum, una persona che da anni si muove dentro un mondo molto specifico — quello delle blockchain, della crittografia — ha pubblicato a inizio aprile un post in cui descrive il suo setup di AI personale. Non interessante per i dettagli tecnici, ma per cosa significa il gesto. Tutto in locale, niente cloud, controllo totale dei dati. Spiega come fa girare modelli sul suo computer, senza passare da nessuna azienda terza.</p>
+<p>Poco prima aveva spostato dell'altro Ether — la criptovaluta di Ethereum — per un equivalente di circa quarantacinque milioni di dollari, dal suo portafoglio personale, verso progetti open source di privacy e sicurezza. Soldi suoi, non della fondazione che gestisce Ethereum. È una distinzione che lui stesso sottolinea: la fondazione sta tirando la cinghia, lui non aspetta, finanzia direttamente strumenti di crittografia, hardware sicuro, comunicazione cifrata.</p>
+<p>Nello stesso periodo ha annunciato di aver migrato i suoi social su una piattaforma decentralizzata, una di quelle che permette di leggere e scrivere su più reti diverse senza appoggiarsi a un'unica azienda. Tutte le sue letture, dice, da ora passano da lì. Anche in questo caso il messaggio è coerente: uscire dai posti dove qualcun altro decide cosa vedi.</p>
+<p>Tutto questo è dentro una cornice che lui stesso ha annunciato per il 2026: l'anno della riconquista. Ammette pubblicamente che Ethereum, nell'ultimo decennio, ha perso qualcosa sul piano della decentralizzazione vera. Si è fatto comodo, si è centralizzato in punti che non doveva centralizzare. Vuole correggere il tiro.</p>
+<p>Per il filo di oggi, Buterin è uno dei rappresentanti più nitidi della terza risposta alla domanda dove va il valore. Non gli atomi di LeCun, non il brand di Graham, ma la sovranità. Il controllo personale di tutto lo stack, dalla rete al modello fino al portafoglio. È una posizione che fino a pochi anni fa sembrava una bandiera ideologica, e adesso sta diventando una posizione operativa: il setup tecnico del weekend, non più il manifesto.</p>
+<p>Balaji Srinivasan, su un'altra frequenza ma stessa stazione, continua a tirare avanti la sua idea del network state: comunità che escono dai sistemi esistenti e ne costruiscono di propri. Nel suo podcast settimanale, di recente, parla di crittografia come difesa contro l'AI, di identità verificabili per gli agenti, di denaro pensato per le macchine. Vale la pena tenerli insieme — Buterin e Balaji — perché stanno descrivendo, ognuno a modo suo, la stessa porta di uscita dal mondo in cui tutto passa per un grosso fornitore centralizzato.</p>
+<div class="chapter" data-mood="upbeat"><hr></div>
+<p>Progetti da osservare, in coda alla puntata, e tutti parlano con il filo di oggi.</p>
+<p>Il primo è nanochat, di Karpathy. Una pipeline minimale per addestrare da zero un modello di linguaggio piccolo in un paio d'ore, su otto schede grafiche di fascia alta. Non è pensato per competere con i giganti, è pensato per restituire al singolo ricercatore la possibilità di toccare un modello con mano. È il manifesto applicato della sua tesi: meno codice scritto, più amplificazione individuale.</p>
+<p>Il secondo è autoresearch, sempre di Karpathy. Circa seicento righe in tutto: un agente di ricerca minimale, fatto in casa. Serve a dimostrare che non servono megastrutture per costruire un assistente che ti aiuta a esplorare un campo. Il singolo che amplifica sé stesso — è lo stesso filo del secondo cervello su Obsidian che dicevamo prima.</p>
+<p>Poi llama.cpp, di Georgi Gerganov. Un motore di inferenza scritto in C che ti permette di far girare modelli grossi sul tuo computer di casa. Sembra una cosa tecnica, ma è il pezzo centrale dello stack di AI locale che Buterin ha pubblicato. Tradotto: se vuoi davvero la sovranità di cui parlavamo, llama.cpp è il pezzo da cui parti.</p>
+<p>Quarto, Omarchy, la distribuzione Linux che DHH cura insieme alla sua comunità. Pensata per attirare chi viene da macOS o Windows verso un desktop più malleabile. Non è solo un sistema operativo, è il segno di un risveglio del Linux consumer che pochi avrebbero scommesso di vedere.</p>
+<p>Quinto, claude-context, un componente che indicizza tutta una base di codice e la rende interrogabile dagli agenti. Un piccolo esempio concreto di dove si sposta il valore: non più nel codice in sé, ma nel modo in cui un agente lo capisce.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Mi resta in testa quella riga di Karpathy — mai sentito così indietro come programmatore. La dice una delle persone più avanti che esistano. È il tipo di frase che, se la sai leggere, non è una resa, è un termometro. Quando anche chi sta davanti dice di sentirsi spostato, vuol dire che il terreno si sta muovendo per tutti. È stato Signal Brief. Alla prossima.</p></div></details></section>
+<nav class="epnav"><a href="/signal-brief/ai/2026-05-10/">← 2026-05-10</a><span style="flex:1"></span><a href="/signal-brief/ai/2026-05-13/">2026-05-13 →</a></nav>
+<dialog class="vplayer" id="vplayer"></dialog>
+<script>
+// player modale dei video: la miniatura apre il video al centro (disegno 2026-08-07)
+function apriVideo(src) {
+  var d = document.getElementById('vplayer');
+  d.innerHTML = '<video controls autoplay playsinline src="' + src + '"></video>';
+  d.showModal();
+  d.onclick = function (e) { if (e.target === d) d.close(); };
+  d.onclose = function () { var v = d.querySelector('video'); if (v) v.pause(); d.innerHTML = ''; };
+}
+// ascolto inline dalla lista: un episodio alla volta
+var epAudio = null, epBtn = null;
+function ascolta(btn, src) {
+  if (epBtn === btn && epAudio) {
+    if (epAudio.paused) { epAudio.play(); btn.classList.add('on'); }
+    else { epAudio.pause(); btn.classList.remove('on'); }
+    return;
+  }
+  if (epAudio) { epAudio.pause(); if (epBtn) epBtn.classList.remove('on'); }
+  epAudio = new Audio(src); epBtn = btn;
+  epAudio.play(); btn.classList.add('on');
+  epAudio.onended = function () { btn.classList.remove('on'); };
+}
+function copiaTrascrizione(btn) {
+  var t = btn.parentElement.querySelector('.transcript-body');
+  navigator.clipboard.writeText(t ? t.innerText : '').then(function () {
+    btn.textContent = 'copiata ✓';
+    setTimeout(function () { btn.textContent = 'copia il testo'; }, 1800);
+  });
+}
+</script>
+<footer class="creator-footer">
+  <img src="/signal-brief/mike-avatar.png" alt="Michele Mondora">
+  <div class="creator-meta">
+    <span class="creator-name">it-mikesoft</span>
+    <span class="creator-tagline">working with systems, living with questions</span>
+    <span class="creator-email"><a href="mailto:michele@mondora.com">michele@mondora.com</a></span>
+  </div>
+</footer>
+<section class="tutele"><h3>Trasparenza e tutele</h3>
+<p><strong>Come nasce questo contenuto.</strong> Ricerca, sintesi editoriale, voce narrante, immagini e musica sono prodotte con sistemi di intelligenza artificiale. Non c'è una redazione umana che verifica ogni affermazione prima della pubblicazione: un controllo automatico scarta le schede giudicate inaffidabili, ma non elimina la possibilità di errori.</p>
+<p><strong>Affermazioni su persone e aziende.</strong> Quanto riportato è una sintesi di fonti pubbliche, non una dichiarazione diretta delle persone citate: le frasi non vanno intese come virgolettati né come posizioni ufficiali. Le fonti sono indicate in ogni pagina episodio — verificale prima di considerare un'informazione accertata. Se trovi un'affermazione inesatta che ti riguarda, scrivi a <a href="mailto:michele@mondora.com">michele@mondora.com</a>: viene corretta o rimossa.</p>
+<p><strong>Immagini e volti.</strong> Le immagini di scena sono generate con AI e non raffigurano fatti realmente avvenuti. Le fotografie di persone reali usate nei video provengono da Wikimedia Commons con le rispettive licenze, e sono accostate al racconto a scopo identificativo: la loro presenza non implica partecipazione, dichiarazione o approvazione da parte della persona ritratta. Su richiesta dell'interessato vengono rimosse.</p>
+<p><strong>Fonti e diritti altrui.</strong> I contenuti sono rielaborazioni originali, non riproduzioni di articoli di terzi; le testate e gli autori all'origine di una notizia sono citati e collegati. Marchi e nomi commerciali appartengono ai rispettivi titolari e sono usati a scopo descrittivo.</p>
+</section>
+</body></html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="it"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Il muro dello scaling e la prova fisica · Signal.AI</title>
+<meta property="og:title" content="Il muro dello scaling e la prova fisica · Signal.AI"><meta property="og:type" content="article"><meta property="og:description" content="Sutskever dichiara finita un'era, Carmack mette un robot davanti a un televisore, Naval predica lo spreco di token. Stessa domanda: cosa conta come intelligenza."><meta property="og:url" content="https://it-mikesoft.github.io/signal-brief/ai/2026-06-10/"><meta property="og:audio" content="https://media.casamon.dev/ai/podcast/episodes/2026-06-10.mp3"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "PodcastEpisode", "name": "Il muro dello scaling e la prova fisica", "datePublished": "2026-06-10", "url": "https://it-mikesoft.github.io/signal-brief/ai/2026-06-10/", "description": "Sutskever dichiara finita un'era, Carmack mette un robot davanti a un televisore, Naval predica lo spreco di token. Stessa domanda: cosa conta come intelligenza.", "inLanguage": "it", "associatedMedia": {"@type": "MediaObject", "contentUrl": "https://media.casamon.dev/ai/podcast/episodes/2026-06-10.mp3"}, "partOfSeries": {"@type": "PodcastSeries", "name": "Signal.AI", "url": "https://it-mikesoft.github.io/signal-brief/ai/"}}</script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:#faf8f4; color:#1a1a1a; padding:2rem 1.5rem; max-width:680px; margin:0 auto; line-height:1.6; }
+  a { color:#2563eb; }
+  .back { display:inline-block; margin-bottom:1.5rem; font-size:.8rem; font-family:monospace; text-decoration:none; }
+  .videos { display:flex; gap:1rem; flex-wrap:wrap; margin:1.2rem 0; }
+  .videos figure { margin:0; flex:1; min-width:260px; }
+  .videos .v2 { flex:0 1 240px; }
+  .videos video { width:100%; border-radius:12px; background:#000; }
+  .videos .v2 video { aspect-ratio:9/16; max-height:420px; }
+  .videos figcaption { font-size:.75rem; color:#888; text-align:center; margin-top:.3rem; }
+  .vlink { display:flex; gap:.3rem; margin-top:.35rem; }
+  .vlink input { flex:1; min-width:0; font-size:.68rem; font-family:monospace; padding:.3rem .4rem;
+    border:1px solid #e2ddd6; border-radius:6px; background:#fff; color:#6b7280; }
+  .vlink button { font-size:.68rem; padding:.3rem .6rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; }
+  .wk { font-size:1rem; margin:1.4rem 0 .4rem; }
+  details.wkacc { border:1px solid #e5e7eb33; border-radius:10px; margin:.6rem 0; padding:.1rem .8rem .4rem; }
+  details.wkacc summary { cursor:pointer; font-weight:600; padding:.5rem 0; font-size:.9rem; }
+  .back:hover { text-decoration:underline; }
+  header h1 { font-family:Georgia,serif; font-size:1.7rem; font-weight:600; }
+  header h1 span { color:#2563eb; }
+  .tagline { color:#6b7280; font-size:.85rem; margin-top:.3rem; margin-bottom:1.5rem; }
+  ul.eps { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
+  .subscribe { display:inline-flex; align-items:center; gap:.5rem; margin-bottom:1.2rem;
+    padding:.45rem .9rem; background:#2563eb; color:#fff; border-radius:20px;
+    text-decoration:none; font-size:.8rem; font-weight:600; }
+  .subscribe:hover { opacity:.85; color:#fff; }
+  .ep { display:flex; align-items:center; gap:.8rem; padding:.8rem 1rem; background:#fff;
+    border:1px solid #e2ddd6; border-radius:8px; text-decoration:none; color:inherit; transition:box-shadow .12s; }
+  .ep:hover { box-shadow:0 2px 8px rgba(0,0,0,.07); }
+  .ep-play { width:32px; height:32px; border-radius:50%; background:#f3f4f6; display:flex;
+    align-items:center; justify-content:center; font-size:12px; flex-shrink:0; }
+  .ep-title { font-size:.9rem; font-weight:500; }
+  .ep-meta { font-size:.72rem; color:#9ca3af; font-family:monospace; margin-top:.15rem; }
+  audio { width:100%; margin:1rem 0 1.5rem; }
+  .rawmd { margin:-.5rem 0 1.5rem; }
+  .rawmd a { font-size:.8rem; font-family:monospace; color:inherit; opacity:.65; }
+  .desc { color:#374151; font-size:.95rem; margin-bottom:1.5rem; }
+  section { margin:2rem 0; }
+  section h2 { font-family:Georgia,serif; font-size:1.1rem; border-bottom:1px solid #e2ddd6;
+    padding-bottom:.3rem; margin-bottom:.8rem; }
+  .synthesis p { margin:.7rem 0; }
+  .tension { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; font-size:.9rem; }
+  .tension .axis { font-weight:600; margin-bottom:.3rem; }
+  .tension .side { color:#6b7280; font-size:.85rem; }
+  .proj { font-size:.9rem; margin:.4rem 0; }
+  .proj .pname { font-weight:600; }
+  .proj .pnew { background:#16a34a; color:#fff; font-size:.65rem; font-weight:700;
+    padding:.1rem .35rem; border-radius:4px; text-transform:uppercase; vertical-align:middle; }
+  .fonte { font-size:.85rem; margin:.5rem 0; }
+  .fonte .who { font-weight:600; }
+  .fonte a { display:block; margin-left:.5rem; color:#6b7280; }
+  .transcript-body p { margin:.7rem 0; line-height:1.7; }
+  .transcript-body .chapter hr { border:none; border-top:1px solid #e2ddd6; margin:1.5rem 0; }
+  .transcript-body .podcast-episode-desc { color:#6b7280; font-style:italic; }
+  .signal-card { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; }
+  .signal-theme { font-size:.75rem; font-weight:700; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.3rem; }
+  .signal-text { font-size:.85rem; color:#374151; line-height:1.5; }
+  .creator-footer { margin-top:3rem; padding-top:1.5rem; border-top:1px solid #e2ddd6;
+    display:flex; align-items:center; gap:.9rem; }
+  .creator-footer img { width:40px; height:40px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+  .creator-meta { display:flex; flex-direction:column; gap:.15rem; }
+  .creator-name { font-size:.85rem; font-weight:600; color:#1a1a1a; }
+  .creator-tagline { font-size:.75rem; color:#6b7280; }
+  .creator-email { font-size:.75rem; }
+  .creator-ai { font-size:.72rem; color:#8a7f6d; max-width:46ch; line-height:1.45; }
+  .tutele { margin-top:2rem; padding-top:1.2rem; border-top:1px solid #e2ddd6;
+    font-size:.72rem; color:#8a7f6d; line-height:1.5; }
+  .tutele h3 { font-size:.75rem; color:#6b7280; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.5rem; font-weight:600; }
+  .tutele p { margin:.45rem 0; }
+  .tutele strong { color:#5a5348; font-weight:600; }
+  .tutele a { color:inherit; text-decoration:underline; }
+  .creator-email a { color:#9ca3af; text-decoration:none; }
+  .creator-email a:hover { color:#1a1a1a; }
+  /* disegno 2026-08-07: mesi a pagine, facce, player modale, trascrizione
+     richiudibile — la pagina episodio è un prodotto, non un sottoprodotto */
+  .hrow { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+  .hrow .subscribe { margin-bottom:0; flex-shrink:0; }
+  .months { font-size:.78rem; font-family:monospace; margin:.4rem 0 1rem; color:#9ca3af; }
+  .months a { text-decoration:none; } .months b { color:inherit; }
+  .ep-faces { display:flex; margin-left:auto; flex-shrink:0; }
+  .ep-faces img { width:26px; height:26px; border-radius:50%; object-fit:cover;
+    border:2px solid #fff; margin-left:-8px; background:#eee; }
+  /* tutti i citati sul desktop; su mobile la leggibilità vince: max 3 */
+  @media (max-width:600px) { .ep-faces img:nth-child(n+4) { display:none; } }
+  .ep-listen { width:32px; height:32px; border-radius:50%; background:#f3f4f6; border:0;
+    display:flex; align-items:center; justify-content:center; font-size:12px;
+    flex-shrink:0; cursor:pointer; color:inherit; }
+  .ep-listen.on { background:#2563eb; color:#fff; }
+  .face-inline { width:1.15em; height:1.15em; border-radius:50%; object-fit:cover;
+    vertical-align:-.18em; margin-right:.25em; }
+  /* SEMPRE sulla stessa riga (2026-08-09): su schermi stretti le miniature
+     si riducono, e se non basta il reel sparisce — mai l'andata a capo */
+  .vthumbs { display:flex; gap:.8rem; flex-wrap:nowrap; margin:1.2rem 0; align-items:flex-start; }
+  .vthumb { position:relative; cursor:pointer; border:0; padding:0; background:none;
+    border-radius:12px; overflow:hidden; }
+  /* stessa ALTEZZA per video e reel: il 9:16 si stringe, non svetta */
+  .vthumb video { height:150px; width:auto; display:block; border-radius:12px; background:#000; }
+  @media (max-width:520px) { .vthumb video { height:118px; } }
+  /* quando nemmeno ridotte ci stanno: via le miniature, due BOTTONI in
+     riga che aprono il player (2026-08-09) */
+  .vbtns { display:none; gap:.6rem; margin:1.2rem 0; }
+  .vbtns button { flex:1; padding:.6rem .4rem; border:0; border-radius:10px;
+    background:#2563eb; color:#fff; font-weight:700; font-size:.85rem;
+    cursor:pointer; font-family:inherit; }
+  @media (max-width:420px) { .vthumbs { display:none; } .vbtns { display:flex; } }
+  .vthumb .vlabel { position:absolute; left:0; right:0; bottom:0; padding:.9rem .5rem .35rem;
+    background:linear-gradient(transparent, rgba(0,0,0,.75)); color:#fff; font-size:.7rem; }
+  .vthumb::after { content:"▶"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    color:#fff; font-size:1.6rem; text-shadow:0 1px 6px rgba(0,0,0,.8); }
+  /* margin:auto ESPLICITO: il reset globale * {margin:0} annullava la
+     centratura nativa del dialog e il player si apriva in alto a sinistra */
+  dialog.vplayer { border:0; padding:0; background:transparent; max-width:92vw;
+    margin:auto; position:fixed; inset:0; }
+  dialog.vplayer::backdrop { background:rgba(0,0,0,.85); }
+  dialog.vplayer video { max-width:92vw; max-height:86vh; border-radius:14px; background:#000; }
+  details.tr { border:1px solid #e2ddd6; border-radius:10px; padding:.2rem .9rem .6rem; }
+  details.tr summary { cursor:pointer; font-weight:600; padding:.55rem 0; }
+  .tr-copy { font-size:.72rem; padding:.3rem .7rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; margin:.3rem 0 .5rem; }
+  .epnav { display:flex; justify-content:space-between; gap:1rem; margin:2rem 0 0;
+    font-size:.82rem; font-family:monospace; }
+  .epnav a { text-decoration:none; }
+  @media (prefers-color-scheme:dark) {
+    body { background:#1f1d18; color:#e5e5e5; }
+    .ep, .tension, .signal-card { background:#2a2823; border-color:#3a352d; }
+    .ep-play { background:#3a352d; } .desc { color:#d4d4d4; }
+    .signal-text { color:#d4d4d4; }
+    .creator-footer { border-color:#3a352d; }
+    .creator-name { color:#f5f5f5; }
+    .creator-tagline, .creator-email a { color:#9ca3af; }
+    .creator-ai { color:#9a8f7d; }
+    .vlink input { background:#1c1a17; border-color:#3a352d; color:#9ca3af; }
+    .tutele { border-color:#3a352d; color:#9a8f7d; }
+    .tutele h3 { color:#a9a9a9; } .tutele strong { color:#d4d4d4; }
+    .ep-listen { background:#3a352d; }
+    .ep-faces img { border-color:#2a2823; background:#3a352d; }
+    details.tr { border-color:#3a352d; }
+  }
+</style></head><body>
+<a class="back" href="/signal-brief/ai/">← Signal.AI</a>
+<header><h1>Il muro dello scaling e la prova fisica</h1></header>
+<div class="tagline">2026-06-10 · Digital Intelligence Podcast</div>
+<div class="desc">Sutskever dichiara finita un'era, Carmack mette un robot davanti a un televisore, Naval predica lo spreco di token. Stessa domanda: cosa conta come intelligenza.</div>
+<div class="rawmd"><a href="raw.md">Testo (markdown)</a></div>
+<section><h2>Sintesi</h2><div class="synthesis"><p>La frattura più profonda che emerge da questo insieme di voci non è quella tra ottimisti e pessimisti sull'<img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="">AI — è tra chi pensa che il paradigma attuale <em>arrivi</em> all'AGI e chi pensa che debba essere <em>sostituito</em>.</p>
+<p>Da un lato, <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/demis-hassabis.jpg" alt="">Demis Hassabis comprime la finestra al <a href="https://www.axios.com/2026/05/26/deepmind-ceo-demis-hassabis" target="_blank" rel="noopener">2029–2030</a>, <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/sam-altman.jpg" alt="">Sam Altman dichiara l'<a href="https://blog.samaltman.com/the-gentle-singularity" target="_blank" rel="noopener">event horizon già attraversato</a>, <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/marc-andreessen.jpg" alt="">Marc Andreessen proclama l'<a href="https://www.techradar.com/pro/we-crossed-that-about-3-months-ago-a16zs-marc-andreessen-drops-huge-bombshell-about-agi-on-joe-rogans-podcast" target="_blank" rel="noopener">AGI arrivata tre mesi fa</a>. Dall'altro, <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/yann-lecun.jpg" alt="">Yann LeCun costruisce <a href="https://www.technologyreview.com/2026/01/22/1131661/yann-lecuns-new-venture-ami-labs/" target="_blank" rel="noopener">AMI Labs su JEPA</a>, <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/ilya-sutskever.jpg" alt="">Ilya Sutskever dichiara <a href="https://the-decoder.com/ilya-sutskever-says-a-new-learning-paradigm-is-necessary-and-is-already-chasing-it/" target="_blank" rel="noopener">lo scaling esaurito</a>, <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt="">François Chollet porta ARC-AGI-3 a <a href="https://arcprize.org/blog/arc-agi-3-launch" target="_blank" rel="noopener">&lt;1% per i modelli frontier</a> e <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/john-carmack.jpg" alt="">John Carmack testa robot su televisori fisici come <em>reality check</em> contro le pretese di prossimità. Questa non è disputa su tempi: è disputa su <em>cosa conta come intelligenza</em>.</p>
+<p>Trasversalmente, emerge un tema strutturale: il software diventa infrastruttura continua, non artefatto discreto. <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="">Andrej Karpathy teorizza il <a href="https://karpathy.bearblog.dev/sequoia-ascent-2026/" target="_blank" rel="noopener">context window come leva sull'interprete</a>, <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt="">Jensen Huang dice che <a href="https://siliconangle.com/2026/06/01/five-thoughts-nvidia-ceo-jensen-huangs-gtc-taipei-2026-keynote/" target="_blank" rel="noopener">ogni token è un'unità di ricavo</a>, Naval formalizza il <a href="https://nav.al/tokens" target="_blank" rel="noopener">tokenmaxxing come filosofia operativa</a>. Perfino <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/dhh.png" alt="">DHH — ex scettico — <a href="https://world.hey.com/dhh/promoting-ai-agents-3ee04945" target="_blank" rel="noopener">adotta agenti autonomi</a> pur rifiutando l'hype.</p>
+<p>La tensione di fondo è tra <em>concentrazione</em> e <em>distribuzione</em> del potere che questa infrastruttura genera. <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="">Jack Dorsey smonta la gerarchia aziendale per costruire un'<a href="https://block.xyz/inside/from-hierarchy-to-intelligence" target="_blank" rel="noopener">azienda-intelligenza</a>, <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/vitalik-buterin.jpg" alt="">Vitalik Buterin restringe la Ethereum Foundation a <a href="https://www.coindesk.com/web3/2026/05/25/buterin-says-ethereum-foundation-will-shrink-sell-less-eth-and-focus-on-crops" target="_blank" rel="noopener">cinque principi difensivi</a>, <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/balaji-srinivasan.jpg" alt="">Balaji Srinivasan <a href="https://balajis.com/p/network-school" target="_blank" rel="noopener">costruisce un'isola</a>. Da parte opposta, Andreessen finanzia <a href="https://www.goloudnow.com/podcasts/the-a16z-show-381/marc-andreessens-2026-outlook-ai-timelines-us-vs-china-and-the-price-of-ai-567070" target="_blank" rel="noopener">20.000 GPU per il suo portfolio</a>, NVIDIA integra tutto lo stack fino alla rete elettrica.</p>
+<p>Geoffrey Hinton sintetizza il paradosso: non ci preoccupiamo abbastanza di <a href="https://fortune.com/2026/06/01/godfather-of-ai-geoffrey-hinton-beings-smarter-than-us/" target="_blank" rel="noopener"><em>che tipo di esseri</em> stiamo creando</a>. La corsa è accelerata; la domanda su dove porta, aperta.</p></div></section>
+<section><h2>Temi del giorno</h2><div class="tension"><div class="axis">↗ Scaling esaurito come tesi tecnica</div><div class="side">Non solo architetture alternative, ma diagnosi esplicita che il paradigma LLM-scaling ha raggiunto un limite strutturale insuperabile.</div></div><div class="tension"><div class="axis">↗ Token come unità economica fondamentale</div><div class="side">Il software evolve in infrastruttura continua dove ogni token è ricavo, leva cognitiva o filosofia operativa esplicita.</div></div><div class="tension"><div class="axis">↗ Grounding fisico come criterio epistemico</div><div class="side">Testare su oggetti fisici reali diventa misura di credibilità contro le pretese di prossimità all'AGI.</div></div><div class="tension"><div class="axis">↗ Adozione nonostante l'anti-hype</div><div class="side">Anche i critici dell'hype AI adottano agenti autonomi, segnalando un'inflazione verso il mainstream oltre la nicchia techno-ottimista.</div></div><div class="tension"><div class="axis">⚖ Paradigma LLM sufficiente vs. da sostituire per arrivare all'AGI</div><div class="side">Demis Hassabis: comprime la finestra AGI al 2029–2030 con il paradigma attuale · Yann LeCun: costruisce AMI Labs su JEPA perché gli LLM non raggiungeranno mai l'AGI</div></div><div class="tension"><div class="axis">⚖ Concentrazione vs. distribuzione dell'infrastruttura AI</div><div class="side">Marc Andreessen: 20.000 GPU per il portfolio, stack integrato verticalmente fino all'energia · Vitalik Buterin: cinque principi difensivi per impedire la cattura istituzionale</div></div><div class="tension"><div class="axis">⚖ Prossimità all'AGI come fatto vs. come illusione misurabile</div><div class="side">Sam Altman: event horizon già attraversato, la singolarità è gentile · John Carmack: reality check fisico su hardware reale, non siamo sull'orlo</div></div><div class="tension"><div class="axis">⚖ Token come leva cognitiva vs. come riduzione dell'intelligenza</div><div class="side">Naval Ravikant: tokenmaxxing come filosofia operativa sistematica · François Chollet: i modelli frontier segnano meno dell'1% su ARC-AGI-3, i token non catturano l'intelligenza</div></div></section>
+<section><h2>Progetti da osservare</h2><div class="tension"><div class="axis">karpathy/nanochat</div><div class=side>Pipeline minimale per addestrare un modello GPT-2 in ~2 ore su 8×H100 con FP8 e ClimbMix, parte della linea di lavoro di Karpathy su pipeline ridotte per singolo ricercatore. Repo di riferimento per l'era 'meno codice, più amplificazione'.</div></div><div class="tension"><div class="axis">karpathy/llm-wiki (gist)</div><div class=side>Prompt-pattern da copiare in Claude Code/Codex che istanzia il sistema 'LLM Wiki' su Obsidian: articoli enciclopedici interlinkati, backlink, health check. Diventato viral come anti-RAG personale.</div></div><div class="tension"><div class="axis">karpathy/autoresearch</div><div class=side>Repo di ~630 righe (7 marzo 2026) che materializza un agente di ricerca minimale, parte della tesi 'idea file = distribuzione' di Karpathy. Esempio concreto di agente che amplifica il ricercatore individuale.</div></div><div class="tension"><div class="axis">Obsidian</div><div class=side>Editor di note markdown con backlink e grafi che Karpathy elegge come 'IDE della conoscenza' nel suo pattern LLM-Wiki. Diventa il frontend consigliato per memoria esplicita e ispezionabile contro la memoria opaca degli assistant commerciali.</div></div><div class="tension"><div class="axis">ggerganov/llama.cpp</div><div class=side>Motore di inferenza C/C++ per LLM locali; il suo llama-server è il cuore dello stack self-sovereign proposto da Buterin (NixOS + llama-server + bubblewrap). Standard de facto per AI locale sovrana.</div></div><div class="tension"><div class="axis">basecamp/omarchy</div><div class=side>Distro Arch Linux curata da DHH con Hyprland, pensata per attrarre utenti macOS/Windows verso un desktop 'malleabile'. Progetto-manifesto del filone 'open source AI-ready' di DHH (Omacon NY, 130 persone).</div></div><div class="tension"><div class="axis">hyprwm/Hyprland</div><div class=side>Compositor Wayland dinamico, cuore visivo di Omarchy e simbolo del rinnovato interesse consumer per Linux (Panther Lake / XPS 14). DHH lo cita come esempio di software su cui finalmente 'hardware e aziende tornano a scommettere'.</div></div><div class="tension"><div class="axis">simonw/llm</div><div class=side>CLI e libreria Python di Simon Willison per interagire con LLM locali e cloud, base dei suoi tool README-driven (scan-for-secrets, datasette-ports, research-llm-apis). Strumento pivot del suo workflow 'agentic engineering'.</div></div><div class="tension"><div class="axis">fchollet/ARC-AGI</div><div class=side>Repo ufficiale dei benchmark ARC-AGI di Chollet, ora affiancato da ARC-AGI-3 (ambienti interattivi turn-based per misurare agency). ARC Prize 2026 ha $2M di montepremi; umani 100%, best frontier model 0,37%.</div></div><div class="tension"><div class="axis">zilliztech/claude-context</div><div class=side>Server MCP di code search che trasforma l'intera codebase in contesto indicizzato per Claude Code, Cursor e altri agenti. Esempio netto del 'moat shift' dal modello all'uso indicato da Evans e Andreessen.</div></div></section>
+<section><h2>Fonti</h2><div class="fonte"><span class="who">Ilya Sutskever</span><a href="https://the-decoder.com/ilya-sutskever-says-a-new-learning-paradigm-is-necessary-and-is-already-chasing-it/" target="_blank" rel="noopener">Sutskever: new learning paradigm — The Decoder</a><a href="https://www.dwarkesh.com/p/ilya-sutskever-2" target="_blank" rel="noopener">Dwarkesh Patel interview — Age of Research</a><a href="https://www.startuphub.ai/ai-news/ai-figures/2026/figure-ilya-sutskever-ssi-financial-breakdown-2026-06-06" target="_blank" rel="noopener">SSI $32B valuation breakdown — StartupHub.ai</a></div><div class="fonte"><span class="who">DHH</span><a href="https://world.hey.com/dhh/promoting-ai-agents-3ee04945" target="_blank" rel="noopener">Promoting AI agents</a><a href="https://world.hey.com/dhh/let-the-agents-democratize-open-source" target="_blank" rel="noopener">Let the agents democratize open source</a><a href="https://world.hey.com/dhh/basecamp-five-8fcfd2ef" target="_blank" rel="noopener">Basecamp Five</a></div><div class="fonte"><span class="who">Naval Ravikant</span><a href="https://nav.al/tokens" target="_blank" rel="noopener">nav.al/tokens</a><a href="https://podcasts.apple.com/us/podcast/naval/id1454097755" target="_blank" rel="noopener">Naval Podcast su Apple Podcasts</a><a href="https://bravenewcoin.com/insights/navals-usvc-opens-private-ai-to-retail-and-quietly-tests-the-tokenization-thesis" target="_blank" rel="noopener">USVC Opens to Retail — Brave New Coin</a></div></section>
+<section class="transcript-section"><h2>Trascrizione</h2><details class="tr"><summary>Leggi la trascrizione</summary><button class="tr-copy" type="button" onclick="copiaTrascrizione(this)">copia il testo</button><div class="transcript-body"><h2>Il muro dello scaling e la prova fisica</h2>
+<p class="podcast-episode-desc">Sutskever dichiara finita un'era, Carmack mette un robot davanti a un televisore, Naval predica lo spreco di token. Stessa domanda: cosa conta come intelligenza.</p>
+<div class="chapter" data-mood="geo"><hr></div>
+<p>In un capannone in Texas, un robot fissa un televisore acceso. Davanti allo schermo c'è un joystick di plastica, manovrato da un braccio meccanico. Sta imparando a giocare ad Atari, senza barare, senza accedere alla memoria della console. È un esperimento di John Carmack, e questa settimana il video del suo intervento è tornato a circolare. È uno dei tanti modi, nel giugno 2026, in cui qualcuno cerca di rispondere alla stessa domanda: cosa significa davvero intelligenza. Questo è Signal Brief, 10 giugno.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Il robot di Carmack non è una performance. È un'argomentazione fisica. Carmack dice da anni che siamo lontani dall'intelligenza artificiale generale molto più di quanto i comunicati stampa vogliano farci credere. Per dimostrarlo ha scelto la strada più scomoda: non scrivere un altro paper, non lanciare un altro benchmark, ma costruire un agente che debba imparare nel mondo vero, con le latenze del mondo vero, davanti a uno schermo come faremmo noi.</p>
+<p>E questa scena, piccola e quasi artigianale, è una mappa del momento.</p>
+<p>Perché nella stessa settimana, dall'altra parte degli Stati Uniti, Ilya Sutskever — uno degli ingegneri che ha letteralmente costruito GPT-3 e GPT-4 — ha detto qualcosa che fino a un anno fa avrebbe fatto rumore solo nei circoli più tecnici, e che oggi viene ripetuto come una sentenza di fine epoca. L'epoca dello scaling, ha detto Sutskever, è finita. Aggiungere computer, dati e parametri non ci porta più dove vogliamo andare. Bisogna inventare un altro paradigma, e lui dichiara di averlo già intravisto, anche se non dice ancora quale. Lo dice il padre della scuola che ha vinto per cinque anni di fila. Si autorevoca in pubblico.</p>
+<p>Sul fronte opposto, François Chollet pubblica i numeri che danno corpo a questa intuizione. Su ARC-AGI-3, il suo nuovo banco di prova, gli esseri umani arrivano al cento per cento. I modelli più avanzati del mondo, quelli di OpenAI e Anthropic, restano sotto l'uno per cento. Spendendo, per ogni singolo compito, fino a novemila dollari di calcolo. È un'asimmetria che racconta meglio di mille tesi cosa intende Sutskever quando dice che lo scaling non basta più.</p>
+<p>Torna il tema, già osservato ieri, della frattura tra chi pensa che basti spingere ancora e chi pensa che vada cambiata strada. Ma oggi la frattura si è fatta più nitida. Non è più solo Yann LeCun a dirlo, dalle stanze di AMI Labs e dei suoi paper sulla pianificazione. Adesso è una coalizione: LeCun, Sutskever, Chollet, Carmack. Quattro tradizioni diverse che convergono sulla stessa diagnosi.</p>
+<p>Mentre succede tutto questo, in una valle parallela ma collegata, sta succedendo l'opposto. Jensen Huang, sul palco del GTC a Taipei, ripete una formula quaranta volte di fila: ogni token è un'unità di ricavo. Naval Ravikant pubblica un piccolo manifesto operativo dove insegna a sprecare token apposta — buttare gli stessi problemi su Claude, Codex e Gemini in parallelo, perché un'ora di tempo umano costa più di un milione di token. Andrej Karpathy, che pochi giorni fa è passato in Anthropic per stare al fronte della ricerca, racconta che la finestra di contesto è diventata la vera leva del software moderno.</p>
+<p>C'è dunque una contraddizione apparente, e vale la pena tenerla in mente. Da una parte si dice: lo scaling è finito, i modelli non scalano più verso l'intelligenza. Dall'altra si dice: ogni token è oro, costruite la vostra vita attorno al loro consumo. Le due cose convivono perché parlano di livelli diversi. Sotto, l'architettura non basta più per fare il passo successivo. Sopra, gli strumenti che abbiamo già sono buoni abbastanza da diventare un'infrastruttura. È un po' come l'elettricità all'inizio del Novecento: nessuno sapeva ancora come migliorarne la produzione in modo radicale, ma intanto già la si tirava dentro le fabbriche come ricavo. La rivoluzione tecnica e la rivoluzione economica viaggiano su binari paralleli, a velocità diverse.</p>
+<p>E proprio in mezzo, c'è la novità più curiosa della settimana: anche chi ha sempre criticato l'entusiasmo intorno all'AI inizia a usarla seriamente.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Ilya Sutskever non parla quasi mai in pubblico. È noto per essere uno degli ingegneri più riservati di questa generazione, e per aver firmato — in coda ai team di OpenAI — la maggior parte dei salti di paradigma dell'ultimo decennio nei modelli linguistici. Dopo essere uscito da OpenAI nel 2024 ha fondato Safe Superintelligence, una società che oggi vale trentadue miliardi di dollari e non ha ancora rilasciato un solo prodotto. Vive di pura promessa.</p>
+<p>Questa settimana ha rilasciato una lunga intervista al podcast di Dwarkesh Patel, e ha detto qualcosa che assomiglia a un piccolo terremoto. Ha diviso la storia recente dell'AI in tre fasi: la ricerca, dal 2012 al 2020; lo scaling, dal 2020 al 2025; e una nuova ricerca, che starebbe iniziando proprio adesso. La tesi è che aggiungere ancora computer, ancora dati, ancora parametri non produce più i salti di intelligenza che produceva fino a un anno fa. Bisogna inventare un altro modo di apprendere.</p>
+<p>Sutskever ha anche suggerito dove guarderebbe lui: gli esseri umani imparano poco perché portano dentro una funzione di valore che le emozioni regolano in tempo reale. Pazienti con lesioni alle aree cerebrali delle emozioni, dice, perdono perfino la capacità di decidere — un fatto neurologico che troviamo in qualunque manuale. La sua scommessa è che il prossimo paradigma debba incorporare qualcosa di simile.</p>
+<p>Quello che colpisce non è la tesi in sé. È chi la pronuncia. Sutskever è l'ingegnere che ha letteralmente disegnato la rincorsa allo scaling che ha dato GPT-3 e GPT-4. Quando un autore del paradigma dichiara che il paradigma si è esaurito, è un evento da segnare. Non capita spesso che chi ha vinto una scommessa si tolga il cappello e dica: adesso bisogna fare altro.</p>
+<p>Naturalmente non lo dice da solo. La voce di Sutskever si aggiunge a quella di Chollet, che produce numeri impietosi su ARC-AGI-3, e a quella di LeCun, che da Parigi continua a sostenere che gli LLM non porteranno mai all'AGI e ha appena pubblicato due paper che rafforzano la sua scommessa su un'altra architettura. La novità del giugno 2026 è che questa posizione, fino a poco fa minoritaria, è diventata una coalizione. Anche se ciascuno propone una via diversa per uscirne, sono tutti d'accordo che la via attuale è chiusa.</p>
+<p>Dall'altra parte ci sono ancora Sam Altman, che continua a dire che il punto di non ritorno è alle nostre spalle, e Demis Hassabis, che ha stretto la finestra al 2029-2030 ma sempre dentro il paradigma attuale. La frattura, già osservata ieri, oggi diventa più dura. Non è più una sfumatura. È un conflitto tecnico aperto.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>David Heinemeier Hansson, in arte DHH, è uno dei programmatori più riconoscibili degli ultimi vent'anni. Ha inventato Ruby on Rails, il framework su cui per anni si è costruita mezza Internet. È anche, da sempre, uno scettico dichiarato delle mode tecnologiche. Per anni ha rifiutato i grandi data center e ha riportato la sua azienda, Basecamp, sui propri server. Per mesi ha attaccato l'idea di scrivere codice con un'AI come una scorciatoia per programmatori mediocri.</p>
+<p>E questa settimana ha pubblicato un post intitolato semplicemente Promoting AI agents, dove racconta che ha cambiato idea. Non sull'enfasi — quella continua a giudicarla gonfiata — ma sulla pratica. DHH ora lavora con due agenti in parallelo, dentro una finestra di terminale, uno veloce per le esplorazioni e uno più profondo per le architetture. Li tratta come colleghi un po' acerbi: gli affida correzioni di bug, funzionalità nuove, piccoli esperimenti. Continua a leggere ogni riga di codice prima che entri in produzione. Ma li ha promossi, esplicitamente, da strumenti sperimentali a parte della squadra.</p>
+<p>In un altro post di pochi giorni dopo, fa un'osservazione che a me sembra una delle più interessanti della stagione. Il software libero, ha scritto in sostanza, ha sempre proclamato il diritto di modificare il codice. Ma quel diritto era teorico per la stragrande maggioranza delle persone, perché modificare il codice richiede competenze che pochissimi hanno. Gli agenti AI, dice DHH, possono finalmente colmare quel divario. Non sono solo un acceleratore per gli ingegneri. Sono una promessa di democratizzazione vera che il software libero ha portato in tasca per trent'anni senza poterla mantenere.</p>
+<p>È un cambio di tono importante. Quando uno degli scettici più radicali smette di essere scettico, succede qualcosa che vale la pena registrare. Non è una conversione: DHH continua a lanciare Basecamp 5 senza pulsantini magici di intelligenza artificiale, a passare i computer aziendali da Mac a Linux, a difendere una certa idea di controllo sullo stack tecnologico. Ma la sua adozione degli agenti dice che la cosa è uscita dal cerchio degli entusiasti.</p>
+<p>Vale la pena tenere insieme questa scena con quella di Jensen Huang che parla di token come unità di ricavo. Da una parte un grande investitore dichiara che ogni token vale soldi. Dall'altra un programmatore artigiano dichiara che vale anche fatica risparmiata. È lo stesso movimento, raccontato da due lati diversi della stessa infrastruttura. E quando le due narrazioni si incontrano nel mezzo, di solito significa che la cosa sta per diventare normale. Non bella, non brutta — normale. Come l'email negli anni Novanta. Come i grandi data center quindici anni fa.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Naval Ravikant è uno di quei personaggi che hanno costruito una buona parte della loro reputazione su frasi brevi. Co-fondatore di AngelList, investitore in centinaia di startup, e da anni autore di una specie di filosofia spicciola del successo personale che gli ha portato milioni di lettori. È noto per gli aforismi, e per qualcuno è solo quello.</p>
+<p>Negli ultimi due mesi però ha cambiato modo di parlare. Ha smesso di pubblicare massime e ha pubblicato podcast operativi. Tra fine maggio e l'inizio di giugno ha rilasciato una serie in quattro puntate con tre founder considerati di frontiera — Guillermo Rauch di Vercel, Blake Scholl di Boom, Max Hodak di Science Corp. Il titolo della serie suona così: Fabbriche di software e tokenmaxxing. Non è marketing, è una piccola dottrina.</p>
+<p>L'idea centrale è semplice e provocatoria. Quando ti trovi davanti a un problema, scrive Naval in un post di poche righe sul suo sito, lancia in parallelo tre o quattro modelli diversi sulla stessa cosa. Più volte. Spreca token con consapevolezza, perché un essere umano per fare le stesse esplorazioni ci impiegherebbe tre giorni e costerebbe mille volte di più. È il principio inverso a quello che ci hanno insegnato per cinquant'anni di informatica, dove i cicli di calcolo erano la risorsa scarsa e l'attenzione dell'utente era abbondante. Adesso vale il contrario.</p>
+<p>La parola che usa — tokenmaxxing — è brutta, ma il concetto è semplice. Significa organizzare il proprio lavoro intorno al consumo di token come una volta si organizzava intorno alle ore-uomo. Non è uno slogan da venture capital. È un cambio di unità di misura.</p>
+<p>E qui torna il filo di oggi. Mentre Sutskever e Chollet dicono che lo scaling come ricerca di intelligenza è finito, Naval dice che lo scaling come pratica quotidiana è appena cominciato. Sono due verità che convivono. La frontiera scientifica si è fermata, la frontiera economica accelera. È quasi la stessa cosa che successe negli anni Ottanta con i transistor: la fisica del silicio aveva ancora vent'anni di crescita davanti, ma il vero spostamento fu che i computer entrarono nelle scrivanie. La ricerca pura e l'adozione di massa raramente camminano allo stesso passo.</p>
+<p>Naval, in parallelo, ha lanciato anche un piccolo fondo: USVC, un veicolo che permette di investire in OpenAI, Anthropic e xAI con cinquecento dollari, senza essere accreditato. È un'altra applicazione dello stesso principio: portare nel quotidiano quello che fino a ieri era riservato. Token al posto delle ore, micro-quote al posto del fondo chiuso. Il pattern è lo stesso, e dice qualcosa di chiaro su dove sta scivolando il baricentro.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Torniamo un attimo sul filo, perché in macchina è facile perderlo. Stiamo raccontando una settimana in cui due movimenti opposti si rincorrono: una coalizione di ingegneri che dice che il modo in cui costruiamo l'intelligenza artificiale ha raggiunto un soffitto, e una coalizione di operatori che dice che proprio quello che abbiamo già è il nuovo motore dell'economia. Le due cose non si contraddicono — convivono. Adesso torniamo al capannone in Texas, perché l'immagine merita di essere svolta.</p>
+<p>John Carmack è il programmatore che ha scritto Doom e Quake, ha co-fondato Oculus, e ha venduto la realtà virtuale a Facebook prima che diventasse Meta. Da qualche anno ha lasciato il visore e ha fondato Keen Technologies, dove lavora apertamente su un'idea sola: capire come gli esseri umani imparano, e cercare di riprodurlo dentro una macchina.</p>
+<p>L'esperimento dell'Atari fisico fa parte di questa scommessa. Carmack non vuole un sistema che riceva pixel digitali puliti da un emulatore. Vuole un sistema che debba decodificare un televisore reale, con la sua luce ambientale, i suoi tempi di reazione, il suo joystick fatto di plastica e metallo. È un anti-benchmark, costruito esattamente nella direzione opposta al modo in cui di solito si misura il progresso dell'AI.</p>
+<p>Il suo intervento di Upper Bound, registrato qualche mese fa, è uscito in video questa settimana e ha generato lunghe discussioni nelle bacheche tecniche. Carmack ci propone un suo metro di giudizio per l'AGI, e vale la pena tenerlo a mente. Un agente, dice, dovrebbe imparare un gioco nuovo alla velocità con cui lo imparerebbe un essere umano, senza accedere alla memoria del computer; dovrebbe saper spiegare quello che ha imparato a un altro agente; e dovrebbe riuscire a competere in un gioco multigiocatore complesso a forza di pratica, non a forza di simulazioni infinite. Sono tre criteri terreni, quasi artigianali. Nessuno dei sistemi attuali, dice Carmack, si avvicina anche solo lontanamente.</p>
+<p>Lo dice una persona che lavora dentro un progetto AGI. Non è uno scettico esterno. È un costruttore che, mentre costruisce, dice ad alta voce che la promessa di prossimità all'AGI è esagerata. Quando lo dice Carmack, fa più rumore di quando lo dicono molti altri, perché Carmack è un ingegnere che dimostra le sue tesi con le mani.</p>
+<p>Mi colpisce una cosa, e vale la pena dirla. Tutte le grandi storie tecnologiche del passato hanno avuto un momento in cui qualcuno è tornato indietro alla realtà fisica per riportare la conversazione coi piedi per terra. Quando la teoria del volo era piena di calcoli astratti, ci sono voluti i fratelli Wright a Kitty Hawk per dire facciamolo davvero, con stoffa e legno. Quando la fissione era una promessa teorica, c'è voluto Enrico Fermi sotto le tribune dell'università di Chicago a far funzionare la prima pila atomica. Oggi il robot di Carmack, davanti al suo televisore, gioca un ruolo simile. Non chiude il dibattito. Lo riporta in terra.</p>
+<div class="chapter" data-mood="upbeat"><hr></div>
+<p>Chiudiamo con qualche progetto che continua a crescere in queste settimane, e che si lega bene a quello che ci siamo detti.</p>
+<p>Nanochat di Andrej Karpathy resta tra i più seguiti. È un piccolo modello linguistico didattico, scritto in pochi file leggibili, pensato per imparare come funziona davvero un sistema generativo senza dover entrare nelle architetture sterminate delle grandi aziende. È coerente con la sua intenzione, dichiarata da anni, di democratizzare la comprensione di questa tecnologia.</p>
+<p>Llama.cpp, il progetto di Georgi Gerganov che fa girare modelli di linguaggio anche su un computer portatile, continua la sua corsa. È uno dei pochi pezzi di software che rende concreta l'idea, oggi un po' utopica, che non tutto debba passare dai data center delle solite cinque aziende.</p>
+<p>Omarchy, la distribuzione Linux su cui DHH sta spostando le sue macchine, è in crescita. Insieme a Hyprland, l'ambiente grafico su cui si appoggia, racconta un piccolo movimento di sviluppatori che cerca di riprendersi il controllo del proprio computer, contro la deriva di sistemi sempre più chiusi.</p>
+<p>LLM di Simon Willison resta uno strumento di nicchia ma molto amato: una riga di comando da cui parlare a tutti i modelli, intercambiabili come prese elettriche. Un'idea piccola e profonda allo stesso tempo.</p>
+<p>E ARC-AGI di François Chollet, di cui abbiamo parlato a lungo, continua a essere il banco di prova dove i modelli più forti del mondo si schiantano. È il termometro più onesto che abbiamo, in una stagione in cui i termometri tendono a essere truccati al rialzo.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Torno con la mente al capannone in Texas, al robot che fissa il televisore. Mentre la conversazione corre veloce dietro a previsioni miliardarie e timeline di tre anni, là dentro qualcuno è seduto davanti a uno schermo e prova a costruire una macchina che impari come un bambino. È un'immagine che vale la pena tenere. È stato Signal Brief. Alla prossima.</p></div></details></section>
+<nav class="epnav"><a href="/signal-brief/ai/2026-06-09/">← 2026-06-09</a><span style="flex:1"></span><a href="/signal-brief/ai/2026-06-11/">2026-06-11 →</a></nav>
+<dialog class="vplayer" id="vplayer"></dialog>
+<script>
+// player modale dei video: la miniatura apre il video al centro (disegno 2026-08-07)
+function apriVideo(src) {
+  var d = document.getElementById('vplayer');
+  d.innerHTML = '<video controls autoplay playsinline src="' + src + '"></video>';
+  d.showModal();
+  d.onclick = function (e) { if (e.target === d) d.close(); };
+  d.onclose = function () { var v = d.querySelector('video'); if (v) v.pause(); d.innerHTML = ''; };
+}
+// ascolto inline dalla lista: un episodio alla volta
+var epAudio = null, epBtn = null;
+function ascolta(btn, src) {
+  if (epBtn === btn && epAudio) {
+    if (epAudio.paused) { epAudio.play(); btn.classList.add('on'); }
+    else { epAudio.pause(); btn.classList.remove('on'); }
+    return;
+  }
+  if (epAudio) { epAudio.pause(); if (epBtn) epBtn.classList.remove('on'); }
+  epAudio = new Audio(src); epBtn = btn;
+  epAudio.play(); btn.classList.add('on');
+  epAudio.onended = function () { btn.classList.remove('on'); };
+}
+function copiaTrascrizione(btn) {
+  var t = btn.parentElement.querySelector('.transcript-body');
+  navigator.clipboard.writeText(t ? t.innerText : '').then(function () {
+    btn.textContent = 'copiata ✓';
+    setTimeout(function () { btn.textContent = 'copia il testo'; }, 1800);
+  });
+}
+</script>
+<footer class="creator-footer">
+  <img src="/signal-brief/mike-avatar.png" alt="Michele Mondora">
+  <div class="creator-meta">
+    <span class="creator-name">it-mikesoft</span>
+    <span class="creator-tagline">working with systems, living with questions</span>
+    <span class="creator-email"><a href="mailto:michele@mondora.com">michele@mondora.com</a></span>
+  </div>
+</footer>
+<section class="tutele"><h3>Trasparenza e tutele</h3>
+<p><strong>Come nasce questo contenuto.</strong> Ricerca, sintesi editoriale, voce narrante, immagini e musica sono prodotte con sistemi di intelligenza artificiale. Non c'è una redazione umana che verifica ogni affermazione prima della pubblicazione: un controllo automatico scarta le schede giudicate inaffidabili, ma non elimina la possibilità di errori.</p>
+<p><strong>Affermazioni su persone e aziende.</strong> Quanto riportato è una sintesi di fonti pubbliche, non una dichiarazione diretta delle persone citate: le frasi non vanno intese come virgolettati né come posizioni ufficiali. Le fonti sono indicate in ogni pagina episodio — verificale prima di considerare un'informazione accertata. Se trovi un'affermazione inesatta che ti riguarda, scrivi a <a href="mailto:michele@mondora.com">michele@mondora.com</a>: viene corretta o rimossa.</p>
+<p><strong>Immagini e volti.</strong> Le immagini di scena sono generate con AI e non raffigurano fatti realmente avvenuti. Le fotografie di persone reali usate nei video provengono da Wikimedia Commons con le rispettive licenze, e sono accostate al racconto a scopo identificativo: la loro presenza non implica partecipazione, dichiarazione o approvazione da parte della persona ritratta. Su richiesta dell'interessato vengono rimosse.</p>
+<p><strong>Fonti e diritti altrui.</strong> I contenuti sono rielaborazioni originali, non riproduzioni di articoli di terzi; le testate e gli autori all'origine di una notizia sono citati e collegati. Marchi e nomi commerciali appartengono ai rispettivi titolari e sono usati a scopo descrittivo.</p>
+</section>
+</body></html>

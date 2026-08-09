@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="it"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quando gli agenti diventano infrastruttura · Signal.AI</title>
+<meta property="og:title" content="Quando gli agenti diventano infrastruttura · Signal.AI"><meta property="og:type" content="article"><meta property="og:description" content="Maggio 2026: gli agenti AI smettono di essere una funzione e iniziano a riconfigurare lavoro, ricerca e management. Intanto si apre una faglia su cosa significhi davvero intelligenza."><meta property="og:url" content="https://it-mikesoft.github.io/signal-brief/ai/2026-05-26/"><meta property="og:audio" content="https://media.casamon.dev/ai/podcast/episodes/2026-05-26.mp3"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "PodcastEpisode", "name": "Quando gli agenti diventano infrastruttura", "datePublished": "2026-05-26", "url": "https://it-mikesoft.github.io/signal-brief/ai/2026-05-26/", "description": "Maggio 2026: gli agenti AI smettono di essere una funzione e iniziano a riconfigurare lavoro, ricerca e management. Intanto si apre una faglia su cosa significhi davvero intelligenza.", "inLanguage": "it", "associatedMedia": {"@type": "MediaObject", "contentUrl": "https://media.casamon.dev/ai/podcast/episodes/2026-05-26.mp3"}, "partOfSeries": {"@type": "PodcastSeries", "name": "Signal.AI", "url": "https://it-mikesoft.github.io/signal-brief/ai/"}}</script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:#faf8f4; color:#1a1a1a; padding:2rem 1.5rem; max-width:680px; margin:0 auto; line-height:1.6; }
+  a { color:#2563eb; }
+  .back { display:inline-block; margin-bottom:1.5rem; font-size:.8rem; font-family:monospace; text-decoration:none; }
+  .videos { display:flex; gap:1rem; flex-wrap:wrap; margin:1.2rem 0; }
+  .videos figure { margin:0; flex:1; min-width:260px; }
+  .videos .v2 { flex:0 1 240px; }
+  .videos video { width:100%; border-radius:12px; background:#000; }
+  .videos .v2 video { aspect-ratio:9/16; max-height:420px; }
+  .videos figcaption { font-size:.75rem; color:#888; text-align:center; margin-top:.3rem; }
+  .vlink { display:flex; gap:.3rem; margin-top:.35rem; }
+  .vlink input { flex:1; min-width:0; font-size:.68rem; font-family:monospace; padding:.3rem .4rem;
+    border:1px solid #e2ddd6; border-radius:6px; background:#fff; color:#6b7280; }
+  .vlink button { font-size:.68rem; padding:.3rem .6rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; }
+  .wk { font-size:1rem; margin:1.4rem 0 .4rem; }
+  details.wkacc { border:1px solid #e5e7eb33; border-radius:10px; margin:.6rem 0; padding:.1rem .8rem .4rem; }
+  details.wkacc summary { cursor:pointer; font-weight:600; padding:.5rem 0; font-size:.9rem; }
+  .back:hover { text-decoration:underline; }
+  header h1 { font-family:Georgia,serif; font-size:1.7rem; font-weight:600; }
+  header h1 span { color:#2563eb; }
+  .tagline { color:#6b7280; font-size:.85rem; margin-top:.3rem; margin-bottom:1.5rem; }
+  ul.eps { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
+  .subscribe { display:inline-flex; align-items:center; gap:.5rem; margin-bottom:1.2rem;
+    padding:.45rem .9rem; background:#2563eb; color:#fff; border-radius:20px;
+    text-decoration:none; font-size:.8rem; font-weight:600; }
+  .subscribe:hover { opacity:.85; color:#fff; }
+  .ep { display:flex; align-items:center; gap:.8rem; padding:.8rem 1rem; background:#fff;
+    border:1px solid #e2ddd6; border-radius:8px; text-decoration:none; color:inherit; transition:box-shadow .12s; }
+  .ep:hover { box-shadow:0 2px 8px rgba(0,0,0,.07); }
+  .ep-play { width:32px; height:32px; border-radius:50%; background:#f3f4f6; display:flex;
+    align-items:center; justify-content:center; font-size:12px; flex-shrink:0; }
+  .ep-title { font-size:.9rem; font-weight:500; }
+  .ep-meta { font-size:.72rem; color:#9ca3af; font-family:monospace; margin-top:.15rem; }
+  audio { width:100%; margin:1rem 0 1.5rem; }
+  .rawmd { margin:-.5rem 0 1.5rem; }
+  .rawmd a { font-size:.8rem; font-family:monospace; color:inherit; opacity:.65; }
+  .desc { color:#374151; font-size:.95rem; margin-bottom:1.5rem; }
+  section { margin:2rem 0; }
+  section h2 { font-family:Georgia,serif; font-size:1.1rem; border-bottom:1px solid #e2ddd6;
+    padding-bottom:.3rem; margin-bottom:.8rem; }
+  .synthesis p { margin:.7rem 0; }
+  .tension { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; font-size:.9rem; }
+  .tension .axis { font-weight:600; margin-bottom:.3rem; }
+  .tension .side { color:#6b7280; font-size:.85rem; }
+  .proj { font-size:.9rem; margin:.4rem 0; }
+  .proj .pname { font-weight:600; }
+  .proj .pnew { background:#16a34a; color:#fff; font-size:.65rem; font-weight:700;
+    padding:.1rem .35rem; border-radius:4px; text-transform:uppercase; vertical-align:middle; }
+  .fonte { font-size:.85rem; margin:.5rem 0; }
+  .fonte .who { font-weight:600; }
+  .fonte a { display:block; margin-left:.5rem; color:#6b7280; }
+  .transcript-body p { margin:.7rem 0; line-height:1.7; }
+  .transcript-body .chapter hr { border:none; border-top:1px solid #e2ddd6; margin:1.5rem 0; }
+  .transcript-body .podcast-episode-desc { color:#6b7280; font-style:italic; }
+  .signal-card { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; }
+  .signal-theme { font-size:.75rem; font-weight:700; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.3rem; }
+  .signal-text { font-size:.85rem; color:#374151; line-height:1.5; }
+  .creator-footer { margin-top:3rem; padding-top:1.5rem; border-top:1px solid #e2ddd6;
+    display:flex; align-items:center; gap:.9rem; }
+  .creator-footer img { width:40px; height:40px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+  .creator-meta { display:flex; flex-direction:column; gap:.15rem; }
+  .creator-name { font-size:.85rem; font-weight:600; color:#1a1a1a; }
+  .creator-tagline { font-size:.75rem; color:#6b7280; }
+  .creator-email { font-size:.75rem; }
+  .creator-ai { font-size:.72rem; color:#8a7f6d; max-width:46ch; line-height:1.45; }
+  .tutele { margin-top:2rem; padding-top:1.2rem; border-top:1px solid #e2ddd6;
+    font-size:.72rem; color:#8a7f6d; line-height:1.5; }
+  .tutele h3 { font-size:.75rem; color:#6b7280; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.5rem; font-weight:600; }
+  .tutele p { margin:.45rem 0; }
+  .tutele strong { color:#5a5348; font-weight:600; }
+  .tutele a { color:inherit; text-decoration:underline; }
+  .creator-email a { color:#9ca3af; text-decoration:none; }
+  .creator-email a:hover { color:#1a1a1a; }
+  /* disegno 2026-08-07: mesi a pagine, facce, player modale, trascrizione
+     richiudibile — la pagina episodio è un prodotto, non un sottoprodotto */
+  .hrow { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+  .hrow .subscribe { margin-bottom:0; flex-shrink:0; }
+  .months { font-size:.78rem; font-family:monospace; margin:.4rem 0 1rem; color:#9ca3af; }
+  .months a { text-decoration:none; } .months b { color:inherit; }
+  .ep-faces { display:flex; margin-left:auto; flex-shrink:0; }
+  .ep-faces img { width:26px; height:26px; border-radius:50%; object-fit:cover;
+    border:2px solid #fff; margin-left:-8px; background:#eee; }
+  /* tutti i citati sul desktop; su mobile la leggibilità vince: max 3 */
+  @media (max-width:600px) { .ep-faces img:nth-child(n+4) { display:none; } }
+  .ep-listen { width:32px; height:32px; border-radius:50%; background:#f3f4f6; border:0;
+    display:flex; align-items:center; justify-content:center; font-size:12px;
+    flex-shrink:0; cursor:pointer; color:inherit; }
+  .ep-listen.on { background:#2563eb; color:#fff; }
+  .face-inline { width:1.15em; height:1.15em; border-radius:50%; object-fit:cover;
+    vertical-align:-.18em; margin-right:.25em; }
+  /* SEMPRE sulla stessa riga (2026-08-09): su schermi stretti le miniature
+     si riducono, e se non basta il reel sparisce — mai l'andata a capo */
+  .vthumbs { display:flex; gap:.8rem; flex-wrap:nowrap; margin:1.2rem 0; align-items:flex-start; }
+  .vthumb { position:relative; cursor:pointer; border:0; padding:0; background:none;
+    border-radius:12px; overflow:hidden; }
+  /* stessa ALTEZZA per video e reel: il 9:16 si stringe, non svetta */
+  .vthumb video { height:150px; width:auto; display:block; border-radius:12px; background:#000; }
+  @media (max-width:520px) { .vthumb video { height:118px; } }
+  /* quando nemmeno ridotte ci stanno: via le miniature, due BOTTONI in
+     riga che aprono il player (2026-08-09) */
+  .vbtns { display:none; gap:.6rem; margin:1.2rem 0; }
+  .vbtns button { flex:1; padding:.6rem .4rem; border:0; border-radius:10px;
+    background:#2563eb; color:#fff; font-weight:700; font-size:.85rem;
+    cursor:pointer; font-family:inherit; }
+  @media (max-width:420px) { .vthumbs { display:none; } .vbtns { display:flex; } }
+  .vthumb .vlabel { position:absolute; left:0; right:0; bottom:0; padding:.9rem .5rem .35rem;
+    background:linear-gradient(transparent, rgba(0,0,0,.75)); color:#fff; font-size:.7rem; }
+  .vthumb::after { content:"▶"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    color:#fff; font-size:1.6rem; text-shadow:0 1px 6px rgba(0,0,0,.8); }
+  /* margin:auto ESPLICITO: il reset globale * {margin:0} annullava la
+     centratura nativa del dialog e il player si apriva in alto a sinistra */
+  dialog.vplayer { border:0; padding:0; background:transparent; max-width:92vw;
+    margin:auto; position:fixed; inset:0; }
+  dialog.vplayer::backdrop { background:rgba(0,0,0,.85); }
+  dialog.vplayer video { max-width:92vw; max-height:86vh; border-radius:14px; background:#000; }
+  details.tr { border:1px solid #e2ddd6; border-radius:10px; padding:.2rem .9rem .6rem; }
+  details.tr summary { cursor:pointer; font-weight:600; padding:.55rem 0; }
+  .tr-copy { font-size:.72rem; padding:.3rem .7rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; margin:.3rem 0 .5rem; }
+  .epnav { display:flex; justify-content:space-between; gap:1rem; margin:2rem 0 0;
+    font-size:.82rem; font-family:monospace; }
+  .epnav a { text-decoration:none; }
+  @media (prefers-color-scheme:dark) {
+    body { background:#1f1d18; color:#e5e5e5; }
+    .ep, .tension, .signal-card { background:#2a2823; border-color:#3a352d; }
+    .ep-play { background:#3a352d; } .desc { color:#d4d4d4; }
+    .signal-text { color:#d4d4d4; }
+    .creator-footer { border-color:#3a352d; }
+    .creator-name { color:#f5f5f5; }
+    .creator-tagline, .creator-email a { color:#9ca3af; }
+    .creator-ai { color:#9a8f7d; }
+    .vlink input { background:#1c1a17; border-color:#3a352d; color:#9ca3af; }
+    .tutele { border-color:#3a352d; color:#9a8f7d; }
+    .tutele h3 { color:#a9a9a9; } .tutele strong { color:#d4d4d4; }
+    .ep-listen { background:#3a352d; }
+    .ep-faces img { border-color:#2a2823; background:#3a352d; }
+    details.tr { border-color:#3a352d; }
+  }
+</style></head><body>
+<a class="back" href="/signal-brief/ai/">← Signal.AI</a>
+<header><h1>Quando gli agenti diventano infrastruttura</h1></header>
+<div class="tagline">2026-05-26 · Digital Intelligence Podcast</div>
+<div class="desc">Maggio 2026: gli agenti AI smettono di essere una funzione e iniziano a riconfigurare lavoro, ricerca e management. Intanto si apre una faglia su cosa significhi davvero intelligenza.</div>
+<div class="rawmd"><a href="raw.md">Testo (markdown)</a></div>
+<section><h2>Sintesi</h2><div class="synthesis"><h2>Maggio 2026: Convergenze e faglie nel pensiero tech</h2>
+<p>Tre temi trasversali emergono non come opinioni isolate ma come <strong>correnti strutturali in collisione</strong>.</p>
+<h3>Autonomy come infrastruttura</h3>
+<p><a href="https://medium.com/@trilogicalshelp/andrej-karpathy-coined-it-last-year-vibe-coding-the-practice-of-surrendering-your-keyboard-to-an-ai-and-just-describing-what-you-want-no-architecture-doc-no-boilerplate-no-googling-semicolons-just-vibes-and-somehow-it-ships" target="_blank" rel="noopener">Karpathy's vibe coding</a>, <a href="https://fortune.com/2026/04/02/jack-dorsey-roelof-botha-ai-management/" target="_blank" rel="noopener">Dorsey's <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="">AI middle management replacement</a>, <a href="https://www.cnbc.com/2026/05/21/cnbc-excerpts-nvidia-ceo-jensen-huang-speaks-with-cnbcs-sara-eisen-following-release-of-nvidias-q1-results-.html" target="_blank" rel="noopener">Huang's agentic AI "parabolic demand"</a>, <a href="https://nodemerge.com/blog/sam-altman-patrick-collison-stripe-conversation-2026" target="_blank" rel="noopener">Collison's agentic commerce</a> non divergono: convergono su invariante. Agenti autonomi non sono feature ma paradigma nuovo. Management layer, development workflow, commerce mechanics, pre-training stesso—tutto subisce inversione. Non è hype unidirezionale; è riconfigurazione infrastrutturale. Eccezione: <a href="https://simonwillison.net/2026/May/6/vibe-coding-and-agentic-engineering/" target="_blank" rel="noopener">Willison critica pragmaticamente</a> quando sostenibilità operazionale cede a cleverness tecnica.</p>
+<h3>La fagliazione: scaling vs. fondamenti</h3>
+<p>Faglia più profonda attraversa tutto maggio. <a href="https://a16z.com/podcast/marc-andreessens-2026-outlook-ai-timelines-us-vs-china-and-the-price-of-ai/" target="_blank" rel="noopener">Altman, Huang, Andreessen</a> predicano continuità—scaling produce singularity. Parallelo: <a href="https://fchollet.substack.com/" target="_blank" rel="noopener">Chollet, LeCun</a>, <a href="https://dallasinnovates.com/john-carmacks-keen-technologies-partners-to-accelerate-development-of-artificial-general-intelligence/" target="_blank" rel="noopener">Carmack</a>, persino <a href="https://brief.bismarckanalysis.com/p/ai-2026-ilya-sutskever-and-the-end" target="_blank" rel="noopener">Sutskever</a> dicono fine era scaling. Non timeline ma fisica strutturale. <a href="https://www.humanoidsdaily.com/news/yann-lecun-predicts-paradigm-shift-in-robotics-by-2027-dismisses-llms-as-intrinsically-unsafe" target="_blank" rel="noopener">LeCun condanna autoregressionepura</a>, propone <a href="https://www.franksworld.com/2026/05/06/yann-lecuns-paradigm-shift-a-billion-dollar-bet-on-jepa-and-ais-future/" target="_blank" rel="noopener">architetture JEPA e world models</a>. <a href="https://arcprize.org/" target="_blank" rel="noopener">Chollet misura su ARC benchmark rigoroso</a>, non prompt tricks. Non è disaccordo su fattezze—è divergenza su che cosa conta.</p>
+<h3>Controllo e agency</h3>
+<p>Terzo strato: <a href="https://sive.rs/book/NetworkState" target="_blank" rel="noopener">Balaji via network state e crypto</a>, <a href="https://www.coindesk.com/web3/2026/05/25/buterin-says-ethereum-foundation-will-shrink-sell-less-eth-and-focus-on-crops" target="_blank" rel="noopener">Vitalik su cypherpunk purism</a>, <a href="https://x.com/theallinpod/status/1890610936769360052" target="_blank" rel="noopener">Ravikant su concentrazione monopoly</a>, <a href="https://thehill.com/policy/technology/5664662-ai-risks-hinton-warns/" target="_blank" rel="noopener">Hinton su deception risk</a> concordano implicitamente: chi governa intelligenza governa futuro. <a href="https://www.techpolicy.press/openais-new-industrial-policy-for-the-intelligence-age-is-a-policymercial/" target="_blank" rel="noopener">Altman's policy documents</a>, <a href="https://www.coindesk.com/tech/2026/04/01/jack-dorsey-says-ai-should-replace-corporate-hierarchy-after-block-cuts-4-000-jobs/" target="_blank" rel="noopener">Dorsey's lean+AI restructure</a>, <a href="https://startupnews.fyi/2026/02/11/former-github-ceo-60m-seed-devtools/" target="_blank" rel="noopener">Friedman's Entire platform</a> sono mosse per coltivare agency nel cambio. Non è caos—è competizione di controllo strutturale su infrastruttura.</p>
+<p>Maggio 2026: non consensus. Correnti parallele, non convergenti.</p></div></section>
+<section><h2>Temi del giorno</h2><div class="tension"><div class="axis">↗ Autonomy come invariante infrastrutturale</div><div class="side">Non più feature bensì riconfigurazione di management layer, workflow dev, commerce e pre-training stesso. Sposta il paradigma da 'gli agenti funzionano' a 'gli agenti ridefiniscono il sistema'.</div></div><div class="tension"><div class="axis">↗ JEPA e world models come ipotesi strutturale alternativa</div><div class="side">LeCun specifica architettura concorrente (non solo generica 'frattura su post-scaling'). Rappresenta commitment miliardario su paradigma non-LLM.</div></div><div class="tension"><div class="axis">↗ ARC benchmark come metrica di verità</div><div class="side">Chollet misura rigorosamente su benchmark, non prompt tricks. Divide metodologie: capability measures vs fundamental rigor.</div></div><div class="tension"><div class="axis">↗ Mosse di controllo geopolitico strutturale</div><div class="side">Altman (policy), Dorsey (lean+AI), Friedman (Entire platform) non sono opinioni ma riposizionamenti di chi governa infrastruttura intelligenza.</div></div><div class="tension"><div class="axis">↗ Pragma della sostenibilità operazionale vs vibe coding</div><div class="side">Willison critica quando cleverness tecnica cede a problemi di delivery reale. Introduce frizione interna al campo agentic.</div></div><div class="tension"><div class="axis">⚖ Continuità vs rottura paradigmatica nel scaling</div><div class="side">Altman/Huang/Andreessen: scaling produce singularity, continuità esponenziale · Chollet/LeCun/Carmack/Sutskever: era scaling è finita, discontinuità strutturale richiesta</div></div><div class="tension"><div class="axis">⚖ Autoregression pura vs alternative architectures</div><div class="side">Sostenitori LLM classic: continuare il paradigma attuale · LeCun/Chollet: JEPA, world models, reasoning, autoregression è intrinsecamente unsafe</div></div><div class="tension"><div class="axis">⚖ Centralizzazione del controllo vs decentralizzazione</div><div class="side">Altman (industrial policy): concentrazione capex, policy framework centralizzato · Balaji/Vitalik: network state, crypto purism, distribuzione authority</div></div><div class="tension"><div class="axis">⚖ Vibe coding pragmatism vs operational sustainability</div><div class="side">Karpathy/Dorsey: agenti/vibe = accelerazione delivery, risconfigura workflow · Willison: pragmatismo costruttivo, quando cleverness cede a problemi reali di maintenance</div></div><div class="tension"><div class="axis">⚖ Metodologia: capability measures vs benchmark rigoroso</div><div class="side">Campo agentic mainstream: eval via prompt, scaling metrics, deployment speed · Chollet/LeCun: ARC, fondamenti teorici, misura di transferability reale</div></div></section>
+<section><h2>Progetti da osservare</h2><div class="tension"><div class="axis">karpathy/nanochat</div><div class=side>Pipeline minimale per addestrare un modello GPT-2 in ~2 ore su 8×H100 con FP8 e ClimbMix, parte della linea di lavoro di Karpathy su pipeline ridotte per singolo ricercatore. Repo di riferimento per l'era 'meno codice, più amplificazione'.</div></div><div class="tension"><div class="axis">karpathy/llm-wiki (gist)</div><div class=side>Prompt-pattern da copiare in Claude Code/Codex che istanzia il sistema 'LLM Wiki' su Obsidian: articoli enciclopedici interlinkati, backlink, health check. Diventato viral come anti-RAG personale.</div></div><div class="tension"><div class="axis">karpathy/autoresearch</div><div class=side>Repo di ~630 righe (7 marzo 2026) che materializza un agente di ricerca minimale, parte della tesi 'idea file = distribuzione' di Karpathy. Esempio concreto di agente che amplifica il ricercatore individuale.</div></div><div class="tension"><div class="axis">Obsidian</div><div class=side>Editor di note markdown con backlink e grafi che Karpathy elegge come 'IDE della conoscenza' nel suo pattern LLM-Wiki. Diventa il frontend consigliato per memoria esplicita e ispezionabile contro la memoria opaca degli assistant commerciali.</div></div><div class="tension"><div class="axis">ggerganov/llama.cpp</div><div class=side>Motore di inferenza C/C++ per LLM locali; il suo llama-server è il cuore dello stack self-sovereign proposto da Buterin (NixOS + llama-server + bubblewrap). Standard de facto per AI locale sovrana.</div></div><div class="tension"><div class="axis">basecamp/omarchy</div><div class=side>Distro Arch Linux curata da DHH con Hyprland, pensata per attrarre utenti macOS/Windows verso un desktop 'malleabile'. Progetto-manifesto del filone 'open source AI-ready' di DHH (Omacon NY, 130 persone).</div></div><div class="tension"><div class="axis">hyprwm/Hyprland</div><div class=side>Compositor Wayland dinamico, cuore visivo di Omarchy e simbolo del rinnovato interesse consumer per Linux (Panther Lake / XPS 14). DHH lo cita come esempio di software su cui finalmente 'hardware e aziende tornano a scommettere'.</div></div><div class="tension"><div class="axis">simonw/llm</div><div class=side>CLI e libreria Python di Simon Willison per interagire con LLM locali e cloud, base dei suoi tool README-driven (scan-for-secrets, datasette-ports, research-llm-apis). Strumento pivot del suo workflow 'agentic engineering'.</div></div><div class="tension"><div class="axis">fchollet/ARC-AGI</div><div class=side>Repo ufficiale dei benchmark ARC-AGI di Chollet, ora affiancato da ARC-AGI-3 (ambienti interattivi turn-based per misurare agency). ARC Prize 2026 ha $2M di montepremi; umani 100%, best frontier model 0,37%.</div></div><div class="tension"><div class="axis">zilliztech/claude-context</div><div class=side>Server MCP di code search che trasforma l'intera codebase in contesto indicizzato per Claude Code, Cursor e altri agenti. Esempio netto del 'moat shift' dal modello all'uso indicato da Evans e Andreessen.</div></div></section>
+<section><h2>Fonti</h2><div class="fonte"><span class="who">Andrej Karpathy</span><a href="https://techcrunch.com/2026/05/19/openai-co-founder-andrej-karpathy-joins-anthropics-pre-training-team/" target="_blank" rel="noopener">TechCrunch: Karpathy joins Anthropic</a><a href="https://fortune.com/2026/05/19/who-is-andrej-karpathy-vibe-coding-anthropic-openai-rubiks-cube/" target="_blank" rel="noopener">Fortune: Karpathy defects to Anthropic</a><a href="https://medium.com/@trilogicalshelp/andrej-karpathy-coined-it-last-year-vibe-coding-the-practice-of-surrendering-your-keyboard-to-an-ai-and-just-describing-what-you-want-no-architecture-doc-no-boilerplate-no-googling-semicolons-just-vibes-and-somehow-it-ships" target="_blank" rel="noopener">Medium: Vibe Coding explained</a></div><div class="fonte"><span class="who">Jack Dorsey</span><a href="https://fortune.com/2026/04/02/jack-dorsey-roelof-botha-ai-middle-management/" target="_blank" rel="noopener">Jack Dorsey and Roelof Botha AI management</a><a href="https://www.coindesk.com/tech/2026/04/01/jack-dorsey-says-ai-should-replace-corporate-hierarchy-after-block-cuts-4-000-jobs/" target="_blank" rel="noopener">Block cuts 4,000 jobs AI restructuring</a><a href="https://incrypted.com/en/jack-dorseys-block-announced-improvements-to-its-bitcoin-ecosystem/" target="_blank" rel="noopener">Dorsey's Bitcoin ecosystem improvements</a></div><div class="fonte"><span class="who">Yann LeCun</span><a href="https://www.startuphub.ai/ai-news/artificial-intelligence/2026/yann-lecun-pushes-ai-beyond-language-models" target="_blank" rel="noopener">Yann LeCun Pushes AI Beyond Language Models</a><a href="https://www.franksworld.com/2026/05/06/yann-lecuns-paradigm-shift-a-billion-dollar-bet-on-jepa-and-ais-future/" target="_blank" rel="noopener">Yann LeCun's Paradigm Shift: A Billion-Dollar Bet on JEPA</a><a href="https://www.axios.com/2026/05/04/ai-godfather-survival-guide-hype-doom" target="_blank" rel="noopener">AI godfather Yann LeCun's advice on college, work and breaking through AI hype</a></div><div class="fonte"><span class="who">François Chollet</span><a href="https://arcprize.org/" target="_blank" rel="noopener">ARC Prize</a><a href="https://fchollet.substack.com/" target="_blank" rel="noopener">Sparks in the Wind Substack</a><a href="https://x.com/fchollet/status/2053169711341551936" target="_blank" rel="noopener">X post su agency</a></div></section>
+<section class="transcript-section"><h2>Trascrizione</h2><details class="tr"><summary>Leggi la trascrizione</summary><button class="tr-copy" type="button" onclick="copiaTrascrizione(this)">copia il testo</button><div class="transcript-body"><h2>Quando gli agenti diventano infrastruttura</h2>
+<p class="podcast-episode-desc">Maggio 2026: gli agenti AI smettono di essere una funzione e iniziano a riconfigurare lavoro, ricerca e management. Intanto si apre una faglia su cosa significhi davvero intelligenza.</p>
+<div class="chapter" data-mood="geo"><hr></div>
+<p>Il 19 maggio Andrej Karpathy, uno dei nomi più riconoscibili del mondo dell'intelligenza artificiale, ha annunciato di aver lasciato OpenAI per unirsi ad Anthropic. Non è una mossa qualunque. Karpathy va a lavorare in un team che userà l'AI per costruire altra AI: modelli che addestrano modelli. È un piccolo gesto, in fondo. Un cambio di indirizzo email. Ma dice molto su dove sta andando questa fase. È Signal Brief, è il 26 maggio 2026, e oggi proviamo a guardare quel gesto da vicino, perché dietro c'è una storia più larga.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Fino a un anno fa, quando si parlava di agenti AI si parlava di una funzione. Una di quelle cose che un'azienda aggiunge al suo prodotto per stare al passo. Adesso non più. Adesso gli agenti stanno diventando il modo in cui le cose funzionano sotto. Ed è un passaggio che vale la pena raccontare per intero.</p>
+<p>Prendiamo tre scene di questo mese, apparentemente lontane fra loro. La prima l'abbiamo già accennata: Karpathy che va in Anthropic per usare Claude — il loro modello — come collaboratore nella costruzione del modello successivo. La seconda: Jack Dorsey, l'uomo che ha fondato Twitter e oggi guida Block, taglia quattromila dipendenti e dichiara che il middle management — quello strato di manager intermedi che ogni azienda ha — verrà sostituito da agenti AI. La terza: Jensen Huang, il capo di Nvidia, dice agli investitori che la domanda di chip per l'AI è "parabolica" — sale come un razzo — perché finalmente gli agenti fanno "lavoro produttivo e di valore".</p>
+<p>Tre uomini, tre settori diversi, una sola direzione. L'agente autonomo non è più una funzione che si aggiunge: è il pezzo che riscrive il sistema attorno a sé. Cambia chi addestra i modelli, cambia chi gestisce le persone in un'azienda, cambia perfino il modo in cui si compra e si vende online.</p>
+<p>Per capire la dimensione del passaggio, mi viene in mente un paragone storico. All'inizio del Novecento, quando l'elettricità ha sostituito il vapore nelle fabbriche, per dieci o quindici anni si è pensato che fosse soltanto un modo più pulito di far girare le stesse macchine. Stessa cinghia, stesso albero motore, solo un motore elettrico al posto della caldaia. Poi qualcuno si è accorto che con l'elettricità si poteva mettere un motore piccolo dentro ogni singola macchina. La fabbrica si è riorganizzata da capo. Reparti diversi, layout diverso, ritmi diversi. La vera trasformazione non era nel motore, era nel fatto che si poteva ripensare tutto.</p>
+<p>Con gli agenti AI siamo lì. Per due anni li abbiamo usati come motori più puliti per le stesse macchine. Adesso si comincia a ridisegnare la fabbrica.</p>
+<p>Ma proprio mentre questa direzione si fa nitida, si apre una crepa importante. Da una parte ci sono quelli che pensano che basti continuare così: più dati, più calcolo, più scala, e si arriva a un'intelligenza generale. Sam Altman di OpenAI la pensa così, Marc Andreessen pure, e così Huang. Dall'altra parte, una fila di pensatori che fino a poco fa erano nel cuore del consenso oggi dice il contrario: l'era della scala è finita. Yann LeCun, capo della ricerca AI di Meta. François Chollet, l'inventore dei benchmark più temuti del settore. Ilya Sutskever, che era il cervello tecnico di OpenAI. John Carmack, leggenda della programmazione. Tutti dicono, con sfumature diverse, che fare i modelli più grandi non basta più. Serve un'altra strada.</p>
+<p>Sono due famiglie di idee che si guardano in cagnesco. Non si tratta di prevedere quando arriverà la cosiddetta superintelligenza. Si tratta di capire se la strada attuale ci sta portando da qualche parte o se abbiamo bisogno di voltare. E intanto, sullo sfondo, una terza voce — Simon Willison, uno degli ingegneri più ascoltati del mondo open source — alza la mano e dice una cosa scomoda a entrambe le parti. Attenzione, perché molto del codice che gli agenti scrivono oggi funziona, sì, ma non è sostenibile da mantenere domani. Il giocattolo è brillante, l'officina rischia di diventare ingovernabile.</p>
+<p>Tre fili, una stessa giornata. Cominciamo a tirarli uno per uno.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Andrej Karpathy è uno di quei nomi che pesano. Era con OpenAI dall'inizio, poi è stato il responsabile dell'intelligenza artificiale di Tesla, ha pubblicato corsi gratuiti che mezzo mondo ha guardato, e ha la rara capacità di spiegare cose complesse facendole sembrare semplici. Quando uno così cambia squadra, la notizia non è la squadra: è dove pensa che stia andando il gioco.</p>
+<p>Il 19 maggio Karpathy ha annunciato di aver lasciato OpenAI per Anthropic. La frase che ha usato è interessante: "i prossimi anni della frontiera dei modelli linguistici saranno particolarmente formativi". Va a costruire un team che ha un compito molto specifico: usare Claude — il modello di Anthropic — per accelerare la ricerca sui modelli futuri. Modelli che insegnano ad altri modelli. È un'inversione rispetto a come si è sempre lavorato in questo campo: prima erano i ricercatori a scrivere il codice, poi venivano i modelli; adesso i modelli scrivono parti del lavoro che produce i modelli successivi.</p>
+<p>Karpathy nel frattempo continua a raccontare un'idea che ha lanciato un anno fa e che è esplosa: la chiama "vibe coding". L'idea è semplice da spiegare, anche se il nome suona strano. Tu descrivi a parole quello che vuoi e lasci che il computer scriva il codice. Niente schemi, niente architettura disegnata prima. Solo l'intenzione e una conversazione. A dicembre, Karpathy ha confessato che ormai l'ottanta per cento del suo codice non lo scrive lui: lo scrivono i sistemi. Il dizionario Collins, che ogni anno sceglie la parola dell'anno, ha incoronato vibe coding parola del 2025. In Italia non se ne è parlato molto. Negli Stati Uniti, secondo le ultime rilevazioni, novantadue ingegneri su cento la praticano in qualche misura.</p>
+<p>Karpathy chiama questa fase Software 3.0. Una fase in cui non si scrive più il codice riga per riga, ma si guidano sistemi intelligenti che lo generano e lo affinano. Lui dice che non è esternalizzazione: è delega. È una distinzione importante. Quando esternalizzi non sai come si arriva al risultato. Quando deleghi resti dentro il processo, ma a un altro livello.</p>
+<p>Quello che mi sembra interessante è il segnale che la sua mossa manda all'industria. Anthropic punta su una scommessa precisa: contro chi spende di più in calcolo, noi spendiamo meglio in ricerca. E lo facciamo usando la nostra stessa AI come amplificatore. Se questa scommessa funziona, vuol dire che la prossima fase dell'intelligenza artificiale non si vince con il chip più grande, ma con il modo migliore di farsi aiutare dalla macchina per pensare. Karpathy è arrivato lì. È un voto che vale, perché lui era nel posto dove il chip più grande era la religione ufficiale.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>L'altra scena di questo mese arriva da un mondo che con l'intelligenza artificiale c'entra solo a tratti: i pagamenti. Jack Dorsey, il fondatore di Twitter, oggi guida Block — l'azienda dietro Cash App e i terminali di pagamento Square. A febbraio Block ha tagliato quattromila dipendenti, passando da diecimila a seimila persone. A maggio, Dorsey ha messo nero su bianco il perché.</p>
+<p>In una conversazione con Roelof Botha, uno dei più rispettati investitori della Silicon Valley, Dorsey ha spiegato la sua idea con una franchezza che fa rumore. Il middle management — quel pezzo di azienda che traduce gli ordini di chi sta in cima ai bisogni di chi sta sotto — è un mestiere che fanno meglio gli agenti AI. La sua tesi: dentro Block c'è un sistema interno, lo chiamano Goose, che oggi genera circa il novanta per cento del codice che parte. Goose gestisce anche pezzi grandi del supporto clienti. E nel frattempo aggrega in tempo reale tutto quello che succede in azienda — decisioni, metriche, conversazioni — in quello che Dorsey chiama un "modello del mondo". Una specie di mappa vivente di cosa sta facendo l'azienda, momento per momento. Quella mappa, dice, fa il lavoro che un tempo facevano i manager intermedi: portare il contesto da uno strato all'altro.</p>
+<p>L'obiettivo dichiarato è arrivare a fine anno con due o tre livelli gerarchici al massimo, e con due milioni di dollari di profitto lordo per dipendente. Numeri da startup, in un'azienda che è quotata in borsa da anni. La borsa ha applaudito: il titolo è salito di oltre il venti per cento.</p>
+<p>Dorsey è uno che ha già fatto rivoluzioni difficili. Twitter, all'inizio, era un'altra invenzione apparentemente folle. E come Karpathy, anche lui sta dicendo qualcosa di più grande del singolo annuncio. Sta dicendo che il modo in cui le aziende si organizzano da centocinquant'anni — la piramide con i capi che riportano ad altri capi — è un'invenzione del passato, fatta quando l'informazione viaggiava lenta e qualcuno doveva pettinarla strada facendo. Adesso che l'informazione viaggia in tempo reale e c'è una macchina che la digerisce, quel pezzo intermedio si può saltare.</p>
+<p>Mi viene da pensare alle fabbriche fordiste. Per cinquant'anni ci abbiamo costruito sopra un sistema di management che sembrava la natura delle cose. Poi è cambiato il modo di produrre, e quel sistema è diventato un peso. Dorsey sta dicendo che siamo a quel punto. La cosa interessante è che lo sta dicendo provandolo su sé stesso, con quattromila persone licenziate in mezzo. Non è un'opinione, è un esperimento in corso.</p>
+<p>Ricapitoliamo un attimo. Karpathy va a usare l'AI per costruire AI. Dorsey la usa per togliere uno strato dell'azienda. Sono mosse molto diverse, ma la direzione è la stessa: l'agente non è più un assistente, è un pezzo dell'impalcatura. E proprio quando questa idea sembra prendere quota in tutto il settore, c'è chi si mette di traverso e dice: aspettate, forse stiamo costruendo nella direzione sbagliata.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Yann LeCun è uno dei tre uomini a cui hanno dato insieme il premio Turing per l'intelligenza artificiale moderna. Capo della ricerca AI di Meta, francese, sessantacinque anni, gira il mondo dicendo cose che la maggior parte dei suoi colleghi non vuole sentire. Da mesi ripete che i modelli linguistici come ChatGPT, per quanto bravi, sono un vicolo cieco. Le sue parole esatte: "dead end".</p>
+<p>A maggio ha portato la sua tesi a un livello nuovo. Ha presentato i risultati di un'architettura diversa, che chiama JEPA. Non importa cosa vuol dire la sigla. Importa cosa fa: invece di prevedere la parola successiva — che è quello che fa ChatGPT, una parola dopo l'altra — JEPA cerca di costruire una specie di modello mentale del mondo. Non genera, capisce. Predice cosa succederà se un robot allunga il braccio, non quale parola viene dopo la parola "allunga".</p>
+<p>LeCun ci ha messo dietro più di un miliardo di dollari. La sua nuova società, AMI Labs, ha raccolto a marzo poco più di un miliardo di dollari di finanziamento, su una valutazione di tre miliardi e mezzo. È una scommessa pesante. E pochi giorni fa ha pubblicato un risultato che ha fatto rumore: la sua architettura, addestrata su sessantadue ore di video non etichettato, riesce a controllare un robot in ambienti mai visti con un tasso di successo dell'ottanta per cento. I sistemi concorrenti, in condizioni analoghe, si fermano al quindici.</p>
+<p>LeCun fa anche un'altra cosa interessante. Mentre tutti dicono "i nostri sistemi diventano sempre più sicuri grazie ai filtri", lui dice il contrario: i modelli che prevedono parole sono intrinsecamente insicuri per come sono fatti, perché non sanno cosa stanno dicendo. I filtri vengono dopo. JEPA, dice lui, mette la sicurezza nell'architettura stessa: il sistema non può fare certe cose perché non sa come fare a farle.</p>
+<p>Il punto qui non è chi ha ragione. È che c'è una persona molto importante, finanziata da molti soldi, che sta facendo una scommessa diversa. Mi ricorda la stagione in cui Toyota negli anni Settanta diceva che la produzione di massa all'americana non era l'unico modo. Per anni è stata vista come una stranezza giapponese. Poi è diventata lo standard del mondo. Non sappiamo se LeCun avrà ragione, ma sappiamo che oggi è uno dei pochi a costruire qualcosa di concettualmente diverso, e che ha le risorse per portarlo avanti per qualche anno. Vale la pena tenerlo d'occhio. Una sola voce dissenziente con un miliardo dietro può cambiare l'inerzia di un settore intero.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Il quarto personaggio della giornata è François Chollet, un altro francese, ricercatore con un passato in Google, oggi indipendente. Chollet ha una posizione strana nel mondo dell'AI: è quello che inventa i test, e quei test sono diventati famosi perché i modelli più costosi del mondo li falliscono.</p>
+<p>Il suo test si chiama ARC. Sono piccoli puzzle visivi, semplici per un bambino di cinque anni, dove il sistema deve capire una regola da pochi esempi e applicarla a un esempio nuovo. I bambini umani risolvono questi puzzle al cento per cento. I migliori modelli al mondo, fino a poco fa, si fermavano a una frazione percentuale.</p>
+<p>A maggio Chollet ha lanciato la terza versione di ARC, con due milioni di dollari di premio per chi riesce a battere certi punteggi. È un piccolo gesto e un grande messaggio. Mentre l'industria intera parla di test dove i modelli prendono il novantasette per cento e si pubblicano grafici che mostrano linee in salita, Chollet costruisce un test su cui le linee restano dove sono. Il punto, per lui, è che l'intelligenza non è una scala da quanti chili sollevi. È un rapporto: quanto riesci a fare con quanto poco hai imparato prima. È la differenza tra ricordare e capire.</p>
+<p>La sua frase chiave di questo mese, in un'intervista, è anche un'osservazione politica. Dice che il discorso dominante sull'AI è diventato fatalistico: "la tecnologia va in questa direzione e non possiamo farci niente". Lui rifiuta questa rassegnazione. Dice che è una formula comoda per chi ci guadagna. E osserva che l'AI, oggi, amplifica le distanze: chi è capace di usarla diventa più capace, chi non lo è perde anche quel poco che aveva.</p>
+<p>Chollet sta anche fondando una nuova società, Ndea, che lavora su sistemi capaci di creare astrazioni da soli. Non è facile da spiegare. La cosa importante è che è la stessa scommessa di LeCun da un altro angolo: l'idea che la strada di oggi non porti fino in fondo, e che valga la pena cercarne un'altra. Quando vedi due ricercatori così, con storie e metodi diversi, arrivare alla stessa conclusione, di solito succede qualcosa.</p>
+<div class="chapter" data-mood="upbeat"><hr></div>
+<p>Qualche progetto da osservare in questi giorni, perché aiuta a vedere come queste idee si traducono in cose vere.</p>
+<p>Il primo è nanochat, di Andrej Karpathy. È una pipeline minima per addestrare un modellino di linguaggio in poche ore, su otto schede grafiche. Non è una cosa da industria, è una cosa da singolo ricercatore. È il manifesto del passaggio che stiamo raccontando: meno codice, più intelligenza che amplifica chi lavora da solo.</p>
+<p>Il secondo è llama.cpp, sviluppato da un programmatore bulgaro chiamato Georgi Gerganov. Permette di far girare un modello di linguaggio interamente sul proprio computer, senza mandare niente a nessuna nuvola. È diventato lo standard di chi crede che l'AI debba restare in casa propria. Vitalik Buterin, che molti conoscono per Ethereum, ne ha fatto la pietra angolare del suo stack personale.</p>
+<p>Il terzo è ARC-AGI, la raccolta ufficiale dei test di Chollet di cui abbiamo appena parlato. Adesso ci sono anche ambienti interattivi: il modello non risponde a un puzzle statico, deve giocare a un piccolo gioco e adattarsi. Gli umani arrivano al cento per cento. Il miglior modello del mondo, allo zero virgola trentasette.</p>
+<p>Il quarto si chiama claude-context. È un piccolo strumento che permette a un agente AI di usare un'intera base di codice come memoria di lavoro. Ne parlano molto Benedict Evans e Marc Andreessen come esempio del cambio di valore: non vale più tanto il modello, vale chi sa farlo lavorare bene dentro un contesto reale.</p>
+<p>E infine Omarchy, la distribuzione Linux preparata da David Heinemeier Hansson, l'inventore di Ruby on Rails. È un sistema operativo pensato per chi vuole un computer modificabile, lontano dalla logica di macOS o Windows. È piccolo, è una scommessa di nicchia, ma racconta la stessa cosa degli altri quattro: c'è una voglia diffusa di riprendere in mano gli strumenti, non solo di consumarli.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Resta in testa, di questa giornata, l'immagine di una fabbrica all'inizio del Novecento che butta via le cinghie del vapore e scopre, qualche anno dopo, che il punto non era cambiare motore: era ripensare il reparto. Adesso tocca a noi capire dove va il reparto. È stato Signal Brief. Alla prossima.</p></div></details></section>
+<nav class="epnav"><a href="/signal-brief/ai/2026-05-25/">← 2026-05-25</a><span style="flex:1"></span><a href="/signal-brief/ai/2026-05-27/">2026-05-27 →</a></nav>
+<dialog class="vplayer" id="vplayer"></dialog>
+<script>
+// player modale dei video: la miniatura apre il video al centro (disegno 2026-08-07)
+function apriVideo(src) {
+  var d = document.getElementById('vplayer');
+  d.innerHTML = '<video controls autoplay playsinline src="' + src + '"></video>';
+  d.showModal();
+  d.onclick = function (e) { if (e.target === d) d.close(); };
+  d.onclose = function () { var v = d.querySelector('video'); if (v) v.pause(); d.innerHTML = ''; };
+}
+// ascolto inline dalla lista: un episodio alla volta
+var epAudio = null, epBtn = null;
+function ascolta(btn, src) {
+  if (epBtn === btn && epAudio) {
+    if (epAudio.paused) { epAudio.play(); btn.classList.add('on'); }
+    else { epAudio.pause(); btn.classList.remove('on'); }
+    return;
+  }
+  if (epAudio) { epAudio.pause(); if (epBtn) epBtn.classList.remove('on'); }
+  epAudio = new Audio(src); epBtn = btn;
+  epAudio.play(); btn.classList.add('on');
+  epAudio.onended = function () { btn.classList.remove('on'); };
+}
+function copiaTrascrizione(btn) {
+  var t = btn.parentElement.querySelector('.transcript-body');
+  navigator.clipboard.writeText(t ? t.innerText : '').then(function () {
+    btn.textContent = 'copiata ✓';
+    setTimeout(function () { btn.textContent = 'copia il testo'; }, 1800);
+  });
+}
+</script>
+<footer class="creator-footer">
+  <img src="/signal-brief/mike-avatar.png" alt="Michele Mondora">
+  <div class="creator-meta">
+    <span class="creator-name">it-mikesoft</span>
+    <span class="creator-tagline">working with systems, living with questions</span>
+    <span class="creator-email"><a href="mailto:michele@mondora.com">michele@mondora.com</a></span>
+  </div>
+</footer>
+<section class="tutele"><h3>Trasparenza e tutele</h3>
+<p><strong>Come nasce questo contenuto.</strong> Ricerca, sintesi editoriale, voce narrante, immagini e musica sono prodotte con sistemi di intelligenza artificiale. Non c'è una redazione umana che verifica ogni affermazione prima della pubblicazione: un controllo automatico scarta le schede giudicate inaffidabili, ma non elimina la possibilità di errori.</p>
+<p><strong>Affermazioni su persone e aziende.</strong> Quanto riportato è una sintesi di fonti pubbliche, non una dichiarazione diretta delle persone citate: le frasi non vanno intese come virgolettati né come posizioni ufficiali. Le fonti sono indicate in ogni pagina episodio — verificale prima di considerare un'informazione accertata. Se trovi un'affermazione inesatta che ti riguarda, scrivi a <a href="mailto:michele@mondora.com">michele@mondora.com</a>: viene corretta o rimossa.</p>
+<p><strong>Immagini e volti.</strong> Le immagini di scena sono generate con AI e non raffigurano fatti realmente avvenuti. Le fotografie di persone reali usate nei video provengono da Wikimedia Commons con le rispettive licenze, e sono accostate al racconto a scopo identificativo: la loro presenza non implica partecipazione, dichiarazione o approvazione da parte della persona ritratta. Su richiesta dell'interessato vengono rimosse.</p>
+<p><strong>Fonti e diritti altrui.</strong> I contenuti sono rielaborazioni originali, non riproduzioni di articoli di terzi; le testate e gli autori all'origine di una notizia sono citati e collegati. Marchi e nomi commerciali appartengono ai rispettivi titolari e sono usati a scopo descrittivo.</p>
+</section>
+</body></html>

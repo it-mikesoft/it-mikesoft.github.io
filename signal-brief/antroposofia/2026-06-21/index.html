@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="it"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Il codice sorgente di Steiner · Signal.Antroposofia</title>
+<meta property="og:title" content="Il codice sorgente di Steiner · Signal.Antroposofia"><meta property="og:type" content="article"><meta property="og:description" content="Una sola grammatica spirituale attraversa medicina, scuola, agricoltura e denaro. E una frattura interna: la crisi come risveglio, o come alibi?"><meta property="og:url" content="https://it-mikesoft.github.io/signal-brief/antroposofia/2026-06-21/"><meta property="og:audio" content="https://media.casamon.dev/antroposofia/podcast/episodes/2026-06-21.mp3"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "PodcastEpisode", "name": "Il codice sorgente di Steiner", "datePublished": "2026-06-21", "url": "https://it-mikesoft.github.io/signal-brief/antroposofia/2026-06-21/", "description": "Una sola grammatica spirituale attraversa medicina, scuola, agricoltura e denaro. E una frattura interna: la crisi come risveglio, o come alibi?", "inLanguage": "it", "associatedMedia": {"@type": "MediaObject", "contentUrl": "https://media.casamon.dev/antroposofia/podcast/episodes/2026-06-21.mp3"}, "partOfSeries": {"@type": "PodcastSeries", "name": "Signal.Antroposofia", "url": "https://it-mikesoft.github.io/signal-brief/antroposofia/"}}</script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:#faf8f4; color:#1a1a1a; padding:2rem 1.5rem; max-width:680px; margin:0 auto; line-height:1.6; }
+  a { color:#6d28d9; }
+  .back { display:inline-block; margin-bottom:1.5rem; font-size:.8rem; font-family:monospace; text-decoration:none; }
+  .videos { display:flex; gap:1rem; flex-wrap:wrap; margin:1.2rem 0; }
+  .videos figure { margin:0; flex:1; min-width:260px; }
+  .videos .v2 { flex:0 1 240px; }
+  .videos video { width:100%; border-radius:12px; background:#000; }
+  .videos .v2 video { aspect-ratio:9/16; max-height:420px; }
+  .videos figcaption { font-size:.75rem; color:#888; text-align:center; margin-top:.3rem; }
+  .vlink { display:flex; gap:.3rem; margin-top:.35rem; }
+  .vlink input { flex:1; min-width:0; font-size:.68rem; font-family:monospace; padding:.3rem .4rem;
+    border:1px solid #e2ddd6; border-radius:6px; background:#fff; color:#6b7280; }
+  .vlink button { font-size:.68rem; padding:.3rem .6rem; border:0; border-radius:6px;
+    background:#6d28d9; color:#fff; cursor:pointer; font-weight:600; }
+  .wk { font-size:1rem; margin:1.4rem 0 .4rem; }
+  details.wkacc { border:1px solid #e5e7eb33; border-radius:10px; margin:.6rem 0; padding:.1rem .8rem .4rem; }
+  details.wkacc summary { cursor:pointer; font-weight:600; padding:.5rem 0; font-size:.9rem; }
+  .back:hover { text-decoration:underline; }
+  header h1 { font-family:Georgia,serif; font-size:1.7rem; font-weight:600; }
+  header h1 span { color:#6d28d9; }
+  .tagline { color:#6b7280; font-size:.85rem; margin-top:.3rem; margin-bottom:1.5rem; }
+  ul.eps { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
+  .subscribe { display:inline-flex; align-items:center; gap:.5rem; margin-bottom:1.2rem;
+    padding:.45rem .9rem; background:#6d28d9; color:#fff; border-radius:20px;
+    text-decoration:none; font-size:.8rem; font-weight:600; }
+  .subscribe:hover { opacity:.85; color:#fff; }
+  .ep { display:flex; align-items:center; gap:.8rem; padding:.8rem 1rem; background:#fff;
+    border:1px solid #e2ddd6; border-radius:8px; text-decoration:none; color:inherit; transition:box-shadow .12s; }
+  .ep:hover { box-shadow:0 2px 8px rgba(0,0,0,.07); }
+  .ep-play { width:32px; height:32px; border-radius:50%; background:#f3f4f6; display:flex;
+    align-items:center; justify-content:center; font-size:12px; flex-shrink:0; }
+  .ep-title { font-size:.9rem; font-weight:500; }
+  .ep-meta { font-size:.72rem; color:#9ca3af; font-family:monospace; margin-top:.15rem; }
+  audio { width:100%; margin:1rem 0 1.5rem; }
+  .rawmd { margin:-.5rem 0 1.5rem; }
+  .rawmd a { font-size:.8rem; font-family:monospace; color:inherit; opacity:.65; }
+  .desc { color:#374151; font-size:.95rem; margin-bottom:1.5rem; }
+  section { margin:2rem 0; }
+  section h2 { font-family:Georgia,serif; font-size:1.1rem; border-bottom:1px solid #e2ddd6;
+    padding-bottom:.3rem; margin-bottom:.8rem; }
+  .synthesis p { margin:.7rem 0; }
+  .tension { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #6d28d9;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; font-size:.9rem; }
+  .tension .axis { font-weight:600; margin-bottom:.3rem; }
+  .tension .side { color:#6b7280; font-size:.85rem; }
+  .proj { font-size:.9rem; margin:.4rem 0; }
+  .proj .pname { font-weight:600; }
+  .proj .pnew { background:#16a34a; color:#fff; font-size:.65rem; font-weight:700;
+    padding:.1rem .35rem; border-radius:4px; text-transform:uppercase; vertical-align:middle; }
+  .fonte { font-size:.85rem; margin:.5rem 0; }
+  .fonte .who { font-weight:600; }
+  .fonte a { display:block; margin-left:.5rem; color:#6b7280; }
+  .transcript-body p { margin:.7rem 0; line-height:1.7; }
+  .transcript-body .chapter hr { border:none; border-top:1px solid #e2ddd6; margin:1.5rem 0; }
+  .transcript-body .podcast-episode-desc { color:#6b7280; font-style:italic; }
+  .signal-card { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #6d28d9;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; }
+  .signal-theme { font-size:.75rem; font-weight:700; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.3rem; }
+  .signal-text { font-size:.85rem; color:#374151; line-height:1.5; }
+  .creator-footer { margin-top:3rem; padding-top:1.5rem; border-top:1px solid #e2ddd6;
+    display:flex; align-items:center; gap:.9rem; }
+  .creator-footer img { width:40px; height:40px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+  .creator-meta { display:flex; flex-direction:column; gap:.15rem; }
+  .creator-name { font-size:.85rem; font-weight:600; color:#1a1a1a; }
+  .creator-tagline { font-size:.75rem; color:#6b7280; }
+  .creator-email { font-size:.75rem; }
+  .creator-ai { font-size:.72rem; color:#8a7f6d; max-width:46ch; line-height:1.45; }
+  .tutele { margin-top:2rem; padding-top:1.2rem; border-top:1px solid #e2ddd6;
+    font-size:.72rem; color:#8a7f6d; line-height:1.5; }
+  .tutele h3 { font-size:.75rem; color:#6b7280; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.5rem; font-weight:600; }
+  .tutele p { margin:.45rem 0; }
+  .tutele strong { color:#5a5348; font-weight:600; }
+  .tutele a { color:inherit; text-decoration:underline; }
+  .creator-email a { color:#9ca3af; text-decoration:none; }
+  .creator-email a:hover { color:#1a1a1a; }
+  /* disegno 2026-08-07: mesi a pagine, facce, player modale, trascrizione
+     richiudibile — la pagina episodio è un prodotto, non un sottoprodotto */
+  .hrow { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+  .hrow .subscribe { margin-bottom:0; flex-shrink:0; }
+  .months { font-size:.78rem; font-family:monospace; margin:.4rem 0 1rem; color:#9ca3af; }
+  .months a { text-decoration:none; } .months b { color:inherit; }
+  .ep-faces { display:flex; margin-left:auto; flex-shrink:0; }
+  .ep-faces img { width:26px; height:26px; border-radius:50%; object-fit:cover;
+    border:2px solid #fff; margin-left:-8px; background:#eee; }
+  /* tutti i citati sul desktop; su mobile la leggibilità vince: max 3 */
+  @media (max-width:600px) { .ep-faces img:nth-child(n+4) { display:none; } }
+  .ep-listen { width:32px; height:32px; border-radius:50%; background:#f3f4f6; border:0;
+    display:flex; align-items:center; justify-content:center; font-size:12px;
+    flex-shrink:0; cursor:pointer; color:inherit; }
+  .ep-listen.on { background:#6d28d9; color:#fff; }
+  .face-inline { width:1.15em; height:1.15em; border-radius:50%; object-fit:cover;
+    vertical-align:-.18em; margin-right:.25em; }
+  /* SEMPRE sulla stessa riga (2026-08-09): su schermi stretti le miniature
+     si riducono, e se non basta il reel sparisce — mai l'andata a capo */
+  .vthumbs { display:flex; gap:.8rem; flex-wrap:nowrap; margin:1.2rem 0; align-items:flex-start; }
+  .vthumb { position:relative; cursor:pointer; border:0; padding:0; background:none;
+    border-radius:12px; overflow:hidden; }
+  /* stessa ALTEZZA per video e reel: il 9:16 si stringe, non svetta */
+  .vthumb video { height:150px; width:auto; display:block; border-radius:12px; background:#000; }
+  @media (max-width:520px) { .vthumb video { height:118px; } }
+  /* quando nemmeno ridotte ci stanno: via le miniature, due BOTTONI in
+     riga che aprono il player (2026-08-09) */
+  .vbtns { display:none; gap:.6rem; margin:1.2rem 0; }
+  .vbtns button { flex:1; padding:.6rem .4rem; border:0; border-radius:10px;
+    background:#6d28d9; color:#fff; font-weight:700; font-size:.85rem;
+    cursor:pointer; font-family:inherit; }
+  @media (max-width:420px) { .vthumbs { display:none; } .vbtns { display:flex; } }
+  .vthumb .vlabel { position:absolute; left:0; right:0; bottom:0; padding:.9rem .5rem .35rem;
+    background:linear-gradient(transparent, rgba(0,0,0,.75)); color:#fff; font-size:.7rem; }
+  .vthumb::after { content:"▶"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    color:#fff; font-size:1.6rem; text-shadow:0 1px 6px rgba(0,0,0,.8); }
+  /* margin:auto ESPLICITO: il reset globale * {margin:0} annullava la
+     centratura nativa del dialog e il player si apriva in alto a sinistra */
+  dialog.vplayer { border:0; padding:0; background:transparent; max-width:92vw;
+    margin:auto; position:fixed; inset:0; }
+  dialog.vplayer::backdrop { background:rgba(0,0,0,.85); }
+  dialog.vplayer video { max-width:92vw; max-height:86vh; border-radius:14px; background:#000; }
+  details.tr { border:1px solid #e2ddd6; border-radius:10px; padding:.2rem .9rem .6rem; }
+  details.tr summary { cursor:pointer; font-weight:600; padding:.55rem 0; }
+  .tr-copy { font-size:.72rem; padding:.3rem .7rem; border:0; border-radius:6px;
+    background:#6d28d9; color:#fff; cursor:pointer; font-weight:600; margin:.3rem 0 .5rem; }
+  .epnav { display:flex; justify-content:space-between; gap:1rem; margin:2rem 0 0;
+    font-size:.82rem; font-family:monospace; }
+  .epnav a { text-decoration:none; }
+  @media (prefers-color-scheme:dark) {
+    body { background:#1f1d18; color:#e5e5e5; }
+    .ep, .tension, .signal-card { background:#2a2823; border-color:#3a352d; }
+    .ep-play { background:#3a352d; } .desc { color:#d4d4d4; }
+    .signal-text { color:#d4d4d4; }
+    .creator-footer { border-color:#3a352d; }
+    .creator-name { color:#f5f5f5; }
+    .creator-tagline, .creator-email a { color:#9ca3af; }
+    .creator-ai { color:#9a8f7d; }
+    .vlink input { background:#1c1a17; border-color:#3a352d; color:#9ca3af; }
+    .tutele { border-color:#3a352d; color:#9a8f7d; }
+    .tutele h3 { color:#a9a9a9; } .tutele strong { color:#d4d4d4; }
+    .ep-listen { background:#3a352d; }
+    .ep-faces img { border-color:#2a2823; background:#3a352d; }
+    details.tr { border-color:#3a352d; }
+  }
+</style></head><body>
+<a class="back" href="/signal-brief/antroposofia/">← Signal.Antroposofia</a>
+<header><h1>Il codice sorgente di Steiner</h1></header>
+<div class="tagline">2026-06-21 · Digital Intelligence Podcast</div>
+<div class="desc">Una sola grammatica spirituale attraversa medicina, scuola, agricoltura e denaro. E una frattura interna: la crisi come risveglio, o come alibi?</div>
+<audio controls preload="none" src="https://media.casamon.dev/antroposofia/podcast/episodes/2026-06-21.mp3"></audio>
+<div class="rawmd"><a href="raw.md">Testo (markdown)</a></div>
+<section><h2>Sintesi</h2><div class="synthesis"><p>Il filo che lega tutte queste voci è un'unica mossa epistemica: estendere il paradigma scientifico anziché rifiutarlo. <a href="https://www.swissinfo.ch/spa/sociedad/medicina-antropos%c3%b3fica-de-suiza-al-mundo/7151574" target="_blank" rel="noopener">Michaela Glöckler</a> lo dice della medicina — integrazione, non alternativa — e la stessa grammatica riappare in <a href="https://www.idealwine.net/nicolas-joly-et-la-biodynamie-un-temoignage-intime-et-authentique/" target="_blank" rel="noopener">Nicolas Joly</a>, per cui la biodinamica è «evoluzione logica» e non dottrina. La convergenza più forte è strutturale: la tripartizione steineriana pensiero/sentimento/volontà organizza domini lontanissimi. Diventa Open Mind/Heart/Will in <a href="https://en.wikipedia.org/wiki/Otto_Scharmer" target="_blank" rel="noopener">Otto Scharmer</a>, tripartizione sociale economica in <a href="https://www.christopherhoughtonbudd.com/" target="_blank" rel="noopener">Christopher Houghton Budd</a>, essere umano triplice nella pedagogia di <a href="https://www.antioch.edu/faculty/torin-finser/" target="_blank" rel="noopener">Torin Finser</a>. Un solo codice sorgente, molte applicazioni.</p>
+<p>Sul piano dei contenuti emerge un secondo tema condiviso: la crisi — climatica, medica, alimentare — letta come <em>apertura spirituale</em>, non solo problema tecnico. <a href="https://podcasts.apple.com/us/podcast/anthroposophy-to-the-point/id1634641322" target="_blank" rel="noopener">Lin Bautze</a> la chiama <em>Prüfung</em> evolutiva; Glöckler vede nella malattia occasione di autoconoscenza; Scharmer àncora la trasformazione sistemica all'asse coscienza-azione.</p>
+<p>Ma qui si apre la divergenza decisiva, ed è la più rivelatrice. <a href="https://podcasts.apple.com/us/podcast/anthroposophy-to-the-point/id1634641322" target="_blank" rel="noopener">Lin Bautze</a> diagnostica uno <em>scetticismo climatico interno</em> al movimento: molti antroposofi trattano la crisi con distacco. Il quadro spirituale che dovrebbe mobilitare può anestetizzare — se tutto è prova evolutiva dell'io, l'urgenza materiale si dissolve. È la tensione spirituale/materiale al suo punto più acuto.</p>
+<p>Stessa frattura sull'asse individuo/comunità. La tradizione preme verso l'autoformazione dell'io — il percorso quinquennale di Glöckler, lo sviluppo interiore dell'insegnante in Finser, il formatore-come-stella-polare di <a href="https://demeter.net/" target="_blank" rel="noopener">Demeter International</a>. Eppure la spinta più viva del 2026 è collettiva e conflittuale: Demeter a <a href="https://demeter.net/biofach-2026/" target="_blank" rel="noopener">Strasburgo</a> contro le NGT, <a href="https://commonthread.antioch.edu/beyond-100-a-return-to-the-social-justice-roots-of-waldorf-education/" target="_blank" rel="noopener">Finser</a> che rivendica le radici di giustizia sociale del Waldorf contro la deriva elitaria. L'antroposofia applicata oscilla tra cura dell'io e militanza politica.</p>
+<p>Infine scienza vs goetheanismo: <a href="https://dasgoetheanum.com/en/love-is-always-practical/" target="_blank" rel="noopener">Constanza Kaliks</a> attacca il riduzionismo quantitativo, Budd vuole una «contabilità profonda» che misuri il valore spirituale. La posta è se l'osservazione qualitativa possa farsi metodo — o resti gesto interiore. La tradizione steineriana regge; la domanda aperta è se la cornice spirituale acceleri l'azione contemporanea o le faccia da alibi.</p></div></section>
+<section><h2>Fonti</h2><div class="fonte"><span class="who">Lin Bautze</span><a href="https://podcasts.apple.com/us/podcast/anthroposophy-to-the-point/id1634641322" target="_blank" rel="noopener">Anthroposophy to the Point Podcast – Apple Podcasts</a><a href="https://dasgoetheanum.com/en/steiners-vision-of-the-anthroposophical-society" target="_blank" rel="noopener">Das Goetheanum</a></div><div class="fonte"><span class="who">Torin Finser</span><a href="https://commonthread.antioch.edu/beyond-100-a-return-to-the-social-justice-roots-of-waldorf-education/" target="_blank" rel="noopener">Beyond 100: A return to the social justice roots of Waldorf Education</a><a href="https://www.antioch.edu/faculty/torin-finser/" target="_blank" rel="noopener">Torin Finser | Antioch University</a><a href="https://anthroposophy.org/inspire_events/building-bridges-to-waldorf-education-2026-2027/" target="_blank" rel="noopener">Building Bridges to Waldorf Education 2026-2027 – Anthroposophical Society in America</a></div></section>
+<section class="transcript-section"><h2>Trascrizione</h2><details class="tr"><summary>Leggi la trascrizione</summary><button class="tr-copy" type="button" onclick="copiaTrascrizione(this)">copia il testo</button><div class="transcript-body"><h2>Il codice sorgente di Steiner</h2>
+<p class="podcast-episode-desc">Una sola grammatica spirituale attraversa medicina, scuola, agricoltura e denaro. E una frattura interna: la crisi come risveglio, o come alibi?</p>
+<div class="chapter" data-mood="geo"><hr></div>
+<p>Il ventuno giugno, e il movimento che cento anni fa nasceva da una manciata di conferenze di Rudolf Steiner si ritrova davanti a uno specchio. Demeter ha appena celebrato il centenario dell'agricoltura biodinamica; pochi giorni dopo, i suoi agricoltori marciavano a Strasburgo. Questa puntata di Signal Antroposofia muove da qui: una tradizione che festeggia la propria continuità mentre, al suo interno, una voce solleva la domanda più scomoda di tutte. È davvero pronta a rispondere alla crisi che dice di aver intuito per prima?</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Conviene osservare cosa fanno queste persone, prima di cosa dicono. Il sedici giugno, a Strasburgo, Demeter porta in piazza agricoltori, allevatori, distributori — quasi cento organizzazioni schierate contro le nuove tecniche genomiche che l'Unione vorrebbe deregolamentare. Il gesto è netto: nessun organismo geneticamente modificato di nuova generazione è compatibile con la certificazione, qualunque etichetta giuridica gli si voglia cucire addosso. Senza tracciabilità, dicono, la sovranità alimentare è una parola vuota.</p>
+<p>Torna qui il filo di ieri — la crisi come soglia, non come guasto tecnico — ma con un'inclinazione nuova. Ieri la lettura era spirituale; oggi diventa conflitto politico, manifestazioni, coalizioni. È lo stesso movimento che, secondo la cross-synthesis di queste voci, non rifiuta la scienza: la vuole estendere. Glöckler lo dice della medicina — integrazione, non alternativa. Joly lo ripete del vino — evoluzione logica, non dottrina. Una sola grammatica, applicata a domini lontanissimi: la tripartizione di Steiner, pensiero, sentimento, volontà, che riaffiora come testa-cuore-volontà in Scharmer, come economia associativa in Houghton Budd, come essere umano triplice nella pedagogia di Finser. Un solo codice sorgente, molte applicazioni.</p>
+<p>C'è un precedente storico che illumina la scena. Ogni movimento nato da una figura carismatica conosce, una o due generazioni dopo, lo stesso bivio: custodire la lettera o riaccendere lo spirito originario. Gli ordini religiosi medievali si spaccavano esattamente su questo — chi conservava la regola e chi tornava al fuoco del fondatore. La biodinamica al suo centenario vive lo stesso passaggio: cento anni la consacrano, e proprio la consacrazione rischia di trasformare una pratica vivente in liturgia.</p>
+<p>Ed è dentro questa frattura che si apre la divergenza più rivelatrice. Da una parte la tradizione spinge verso l'io: il percorso interiore del medico, dell'insegnante, del formatore come stella polare. Dall'altra, la spinta più viva del 2026 è collettiva e litigiosa — la piazza di Strasburgo, Finser che reclama le radici di giustizia sociale del Waldorf contro la deriva delle scuole d'élite. L'antroposofia applicata oscilla tra cura di sé e militanza. E qualcuno, all'interno, sospetta che la prima stia anestetizzando la seconda.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Quel qualcuno ha un nome: Lin Bautze, della Sezione Agricola del Goetheanum, a Dornach. Profilo pubblico rarefatto — un solo intervento davvero rintracciabile, un episodio del podcast della Sezione intitolato "Respirare con la crisi climatica" — eppure la diagnosi che vi consegna è la più affilata dell'intero movimento.</p>
+<p>Bautze nota una cosa che gli altri preferiscono non dire ad alta voce: dentro l'antroposofia esiste uno scetticismo climatico interno. Molti antroposofi trattano il riscaldamento globale con distacco, persino con rifiuto — e questo malgrado la biodinamica sia investita dal tema più di qualsiasi altra disciplina, perché lavora la terra, i ritmi, il suolo vivo. Il paradosso è quasi crudele. La tradizione che dovrebbe leggere la crisi con maggiore profondità è anche quella che rischia di sentirla meno.</p>
+<p>La sua proposta è leggere la crisi come Prüfung, una prova evolutiva: l'umanità deve sviluppare forze spirituali per affrontarla con consapevolezza. Bella formula. Ma è esattamente qui che si annida il pericolo, e Bautze ha l'onestà di lasciarlo intravedere. Se tutto è prova interiore dell'io, l'urgenza materiale si dissolve. La cornice che dovrebbe mobilitare può addormentare. Il quadro spirituale diventa, nel peggiore dei casi, un alibi raffinato per non agire.</p>
+<p>È la tensione spirituale-materiale portata al suo punto di massima tensione. E la cosa notevole è che a denunciarla non sia un critico esterno, ma una voce di casa. Le tradizioni si misurano anche così: dalla qualità del dissenso che sanno ospitare al proprio interno.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>L'altra frattura — io contro comunità — ha il volto di Torin Finser, alla Antioch University, anima del Center for Anthroposophy. La sua tesi è storica prima che pedagogica. La prima scuola Waldorf, ricorda Finser, nasce nel 1919 con un mandato sociale esplicito: accessibile a tutti, gratuita, affidata all'autonomia degli insegnanti. Era nata per gli operai di una fabbrica di sigarette, non per le famiglie agiate. La deriva verso la scuola privata a retta, sostiene, ha tradito quella vocazione di partenza.</p>
+<p>Il progetto che oggi anima il suo lavoro si chiama "Beyond 100", oltre il primo secolo. Chiede alle scuole Waldorf di affrontare le tensioni del presente — polarizzazione politica, razzismo strutturale, disuguaglianza — come compito spirituale e pedagogico insieme, non come distrazione dal vero lavoro interiore. Lo sviluppo dell'insegnante e la responsabilità verso il mondo non si separano. Quest'anno lo ha tradotto in gesti concreti: un programma di leadership con residenze a Los Angeles in marzo, e in aprile "Building Bridges", rivolto anche agli insegnanti delle scuole pubbliche e charter che si avvicinano al metodo.</p>
+<p>Anche qui un'eco lunga. La storia delle scuole è una storia di promesse democratiche che si restringono col tempo, di istituzioni nate per molti che finiscono per servire pochi. Finser fa ciò che fanno i riformatori veri: non inventa un futuro, riapre l'atto di nascita e chiede se gli si è rimasti fedeli. Per un movimento che cita Steiner come riformatore sociale, è la domanda giusta posta nel momento giusto.</p>
+<div class="chapter" data-mood="upbeat"><hr></div>
+<p>Qualche traccia da seguire nelle prossime settimane.</p>
+<p>La battaglia sulle nuove tecniche genomiche: dopo Strasburgo, il voto europeo dirà se l'etichettatura obbligatoria regge o cade. È il fronte dove l'antroposofia incontra la politica reale.</p>
+<p>Christopher Houghton Budd e la sua "contabilità profonda": l'idea di una ragioneria che renda visibili i flussi di valore spirituale e sociale che i bilanci ordinari ignorano. Provocazione affascinante — resta da vedere se diventa metodo o resta intuizione.</p>
+<p>Nicolas Joly, vigneron della Coulée de Serrant, e la sua formula contro ogni automatismo: la pratica quotidiana per comprendere il proprio luogo. Antidoto sobrio a chi confonde la biodinamica con un ricettario.</p>
+<p>Infine Constanza Kaliks, alla Sezione Pedagogica, che oppone al calcolo quantitativo dell'educazione una postura antica — la docta ignorantia di Cusano, il sapere di non sapere. Insegnare, dice citando Arendt, è un atto d'amore per il mondo.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Resta l'immagine di un movimento al proprio centenario, in piazza e davanti allo specchio insieme. La posta è una sola: se la cornice spirituale acceleri l'azione, o le faccia da alibi. Cento anni non bastano a decidere. Forse lo deciderà il prossimo.</p></div></details></section>
+<nav class="epnav"><a href="/signal-brief/antroposofia/2026-06-14/">← 2026-06-14</a><span style="flex:1"></span><a href="/signal-brief/antroposofia/2026-06-28/">2026-06-28 →</a></nav>
+<dialog class="vplayer" id="vplayer"></dialog>
+<script>
+// player modale dei video: la miniatura apre il video al centro (disegno 2026-08-07)
+function apriVideo(src) {
+  var d = document.getElementById('vplayer');
+  d.innerHTML = '<video controls autoplay playsinline src="' + src + '"></video>';
+  d.showModal();
+  d.onclick = function (e) { if (e.target === d) d.close(); };
+  d.onclose = function () { var v = d.querySelector('video'); if (v) v.pause(); d.innerHTML = ''; };
+}
+// ascolto inline dalla lista: un episodio alla volta
+var epAudio = null, epBtn = null;
+function ascolta(btn, src) {
+  if (epBtn === btn && epAudio) {
+    if (epAudio.paused) { epAudio.play(); btn.classList.add('on'); }
+    else { epAudio.pause(); btn.classList.remove('on'); }
+    return;
+  }
+  if (epAudio) { epAudio.pause(); if (epBtn) epBtn.classList.remove('on'); }
+  epAudio = new Audio(src); epBtn = btn;
+  epAudio.play(); btn.classList.add('on');
+  epAudio.onended = function () { btn.classList.remove('on'); };
+}
+function copiaTrascrizione(btn) {
+  var t = btn.parentElement.querySelector('.transcript-body');
+  navigator.clipboard.writeText(t ? t.innerText : '').then(function () {
+    btn.textContent = 'copiata ✓';
+    setTimeout(function () { btn.textContent = 'copia il testo'; }, 1800);
+  });
+}
+</script>
+<footer class="creator-footer">
+  <img src="/signal-brief/mike-avatar.png" alt="Michele Mondora">
+  <div class="creator-meta">
+    <span class="creator-name">it-mikesoft</span>
+    <span class="creator-tagline">working with systems, living with questions</span>
+    <span class="creator-email"><a href="mailto:michele@mondora.com">michele@mondora.com</a></span>
+  </div>
+</footer>
+<section class="tutele"><h3>Trasparenza e tutele</h3>
+<p><strong>Come nasce questo contenuto.</strong> Ricerca, sintesi editoriale, voce narrante, immagini e musica sono prodotte con sistemi di intelligenza artificiale. Non c'è una redazione umana che verifica ogni affermazione prima della pubblicazione: un controllo automatico scarta le schede giudicate inaffidabili, ma non elimina la possibilità di errori.</p>
+<p><strong>Affermazioni su persone e aziende.</strong> Quanto riportato è una sintesi di fonti pubbliche, non una dichiarazione diretta delle persone citate: le frasi non vanno intese come virgolettati né come posizioni ufficiali. Le fonti sono indicate in ogni pagina episodio — verificale prima di considerare un'informazione accertata. Se trovi un'affermazione inesatta che ti riguarda, scrivi a <a href="mailto:michele@mondora.com">michele@mondora.com</a>: viene corretta o rimossa.</p>
+<p><strong>Immagini e volti.</strong> Le immagini di scena sono generate con AI e non raffigurano fatti realmente avvenuti. Le fotografie di persone reali usate nei video provengono da Wikimedia Commons con le rispettive licenze, e sono accostate al racconto a scopo identificativo: la loro presenza non implica partecipazione, dichiarazione o approvazione da parte della persona ritratta. Su richiesta dell'interessato vengono rimosse.</p>
+<p><strong>Fonti e diritti altrui.</strong> I contenuti sono rielaborazioni originali, non riproduzioni di articoli di terzi; le testate e gli autori all'origine di una notizia sono citati e collegati. Marchi e nomi commerciali appartengono ai rispettivi titolari e sono usati a scopo descrittivo.</p>
+</section>
+</body></html>

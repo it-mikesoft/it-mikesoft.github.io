@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="it"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Il lavoro, la terza frattura · Signal.AI</title>
+<meta property="og:title" content="Il lavoro, la terza frattura · Signal.AI"><meta property="og:type" content="article"><meta property="og:description" content="Mentre lo scaling perde spinta e i laboratori rischiano di diventare una commodity, il vero campo di battaglia si sposta sul lavoro e su chi controlla ciò che funziona."><meta property="og:url" content="https://it-mikesoft.github.io/signal-brief/ai/2026-07-16/"><meta property="og:audio" content="https://media.casamon.dev/ai/podcast/episodes/2026-07-16.mp3"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "PodcastEpisode", "name": "Il lavoro, la terza frattura", "datePublished": "2026-07-16", "url": "https://it-mikesoft.github.io/signal-brief/ai/2026-07-16/", "description": "Mentre lo scaling perde spinta e i laboratori rischiano di diventare una commodity, il vero campo di battaglia si sposta sul lavoro e su chi controlla ciò che funziona.", "inLanguage": "it", "associatedMedia": {"@type": "MediaObject", "contentUrl": "https://media.casamon.dev/ai/podcast/episodes/2026-07-16.mp3"}, "partOfSeries": {"@type": "PodcastSeries", "name": "Signal.AI", "url": "https://it-mikesoft.github.io/signal-brief/ai/"}}</script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:#faf8f4; color:#1a1a1a; padding:2rem 1.5rem; max-width:680px; margin:0 auto; line-height:1.6; }
+  a { color:#2563eb; }
+  .back { display:inline-block; margin-bottom:1.5rem; font-size:.8rem; font-family:monospace; text-decoration:none; }
+  .videos { display:flex; gap:1rem; flex-wrap:wrap; margin:1.2rem 0; }
+  .videos figure { margin:0; flex:1; min-width:260px; }
+  .videos .v2 { flex:0 1 240px; }
+  .videos video { width:100%; border-radius:12px; background:#000; }
+  .videos .v2 video { aspect-ratio:9/16; max-height:420px; }
+  .videos figcaption { font-size:.75rem; color:#888; text-align:center; margin-top:.3rem; }
+  .vlink { display:flex; gap:.3rem; margin-top:.35rem; }
+  .vlink input { flex:1; min-width:0; font-size:.68rem; font-family:monospace; padding:.3rem .4rem;
+    border:1px solid #e2ddd6; border-radius:6px; background:#fff; color:#6b7280; }
+  .vlink button { font-size:.68rem; padding:.3rem .6rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; }
+  .wk { font-size:1rem; margin:1.4rem 0 .4rem; }
+  details.wkacc { border:1px solid #e5e7eb33; border-radius:10px; margin:.6rem 0; padding:.1rem .8rem .4rem; }
+  details.wkacc summary { cursor:pointer; font-weight:600; padding:.5rem 0; font-size:.9rem; }
+  .back:hover { text-decoration:underline; }
+  header h1 { font-family:Georgia,serif; font-size:1.7rem; font-weight:600; }
+  header h1 span { color:#2563eb; }
+  .tagline { color:#6b7280; font-size:.85rem; margin-top:.3rem; margin-bottom:1.5rem; }
+  ul.eps { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
+  .subscribe { display:inline-flex; align-items:center; gap:.5rem; margin-bottom:1.2rem;
+    padding:.45rem .9rem; background:#2563eb; color:#fff; border-radius:20px;
+    text-decoration:none; font-size:.8rem; font-weight:600; }
+  .subscribe:hover { opacity:.85; color:#fff; }
+  .ep { display:flex; align-items:center; gap:.8rem; padding:.8rem 1rem; background:#fff;
+    border:1px solid #e2ddd6; border-radius:8px; text-decoration:none; color:inherit; transition:box-shadow .12s; }
+  .ep:hover { box-shadow:0 2px 8px rgba(0,0,0,.07); }
+  .ep-play { width:32px; height:32px; border-radius:50%; background:#f3f4f6; display:flex;
+    align-items:center; justify-content:center; font-size:12px; flex-shrink:0; }
+  .ep-title { font-size:.9rem; font-weight:500; }
+  .ep-meta { font-size:.72rem; color:#9ca3af; font-family:monospace; margin-top:.15rem; }
+  audio { width:100%; margin:1rem 0 1.5rem; }
+  .rawmd { margin:-.5rem 0 1.5rem; }
+  .rawmd a { font-size:.8rem; font-family:monospace; color:inherit; opacity:.65; }
+  .desc { color:#374151; font-size:.95rem; margin-bottom:1.5rem; }
+  section { margin:2rem 0; }
+  section h2 { font-family:Georgia,serif; font-size:1.1rem; border-bottom:1px solid #e2ddd6;
+    padding-bottom:.3rem; margin-bottom:.8rem; }
+  .synthesis p { margin:.7rem 0; }
+  .tension { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; font-size:.9rem; }
+  .tension .axis { font-weight:600; margin-bottom:.3rem; }
+  .tension .side { color:#6b7280; font-size:.85rem; }
+  .proj { font-size:.9rem; margin:.4rem 0; }
+  .proj .pname { font-weight:600; }
+  .proj .pnew { background:#16a34a; color:#fff; font-size:.65rem; font-weight:700;
+    padding:.1rem .35rem; border-radius:4px; text-transform:uppercase; vertical-align:middle; }
+  .fonte { font-size:.85rem; margin:.5rem 0; }
+  .fonte .who { font-weight:600; }
+  .fonte a { display:block; margin-left:.5rem; color:#6b7280; }
+  .transcript-body p { margin:.7rem 0; line-height:1.7; }
+  .transcript-body .chapter hr { border:none; border-top:1px solid #e2ddd6; margin:1.5rem 0; }
+  .transcript-body .podcast-episode-desc { color:#6b7280; font-style:italic; }
+  .signal-card { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; }
+  .signal-theme { font-size:.75rem; font-weight:700; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.3rem; }
+  .signal-text { font-size:.85rem; color:#374151; line-height:1.5; }
+  .creator-footer { margin-top:3rem; padding-top:1.5rem; border-top:1px solid #e2ddd6;
+    display:flex; align-items:center; gap:.9rem; }
+  .creator-footer img { width:40px; height:40px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+  .creator-meta { display:flex; flex-direction:column; gap:.15rem; }
+  .creator-name { font-size:.85rem; font-weight:600; color:#1a1a1a; }
+  .creator-tagline { font-size:.75rem; color:#6b7280; }
+  .creator-email { font-size:.75rem; }
+  .creator-ai { font-size:.72rem; color:#8a7f6d; max-width:46ch; line-height:1.45; }
+  .tutele { margin-top:2rem; padding-top:1.2rem; border-top:1px solid #e2ddd6;
+    font-size:.72rem; color:#8a7f6d; line-height:1.5; }
+  .tutele h3 { font-size:.75rem; color:#6b7280; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.5rem; font-weight:600; }
+  .tutele p { margin:.45rem 0; }
+  .tutele strong { color:#5a5348; font-weight:600; }
+  .tutele a { color:inherit; text-decoration:underline; }
+  .creator-email a { color:#9ca3af; text-decoration:none; }
+  .creator-email a:hover { color:#1a1a1a; }
+  /* disegno 2026-08-07: mesi a pagine, facce, player modale, trascrizione
+     richiudibile — la pagina episodio è un prodotto, non un sottoprodotto */
+  .hrow { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+  .hrow .subscribe { margin-bottom:0; flex-shrink:0; }
+  .months { font-size:.78rem; font-family:monospace; margin:.4rem 0 1rem; color:#9ca3af; }
+  .months a { text-decoration:none; } .months b { color:inherit; }
+  .ep-faces { display:flex; margin-left:auto; flex-shrink:0; }
+  .ep-faces img { width:26px; height:26px; border-radius:50%; object-fit:cover;
+    border:2px solid #fff; margin-left:-8px; background:#eee; }
+  /* tutti i citati sul desktop; su mobile la leggibilità vince: max 3 */
+  @media (max-width:600px) { .ep-faces img:nth-child(n+4) { display:none; } }
+  .ep-listen { width:32px; height:32px; border-radius:50%; background:#f3f4f6; border:0;
+    display:flex; align-items:center; justify-content:center; font-size:12px;
+    flex-shrink:0; cursor:pointer; color:inherit; }
+  .ep-listen.on { background:#2563eb; color:#fff; }
+  .face-inline { width:1.15em; height:1.15em; border-radius:50%; object-fit:cover;
+    vertical-align:-.18em; margin-right:.25em; }
+  /* SEMPRE sulla stessa riga (2026-08-09): su schermi stretti le miniature
+     si riducono, e se non basta il reel sparisce — mai l'andata a capo */
+  .vthumbs { display:flex; gap:.8rem; flex-wrap:nowrap; margin:1.2rem 0; align-items:flex-start; }
+  .vthumb { position:relative; cursor:pointer; border:0; padding:0; background:none;
+    border-radius:12px; overflow:hidden; }
+  /* stessa ALTEZZA per video e reel: il 9:16 si stringe, non svetta */
+  .vthumb video { height:150px; width:auto; display:block; border-radius:12px; background:#000; }
+  @media (max-width:520px) { .vthumb video { height:118px; } }
+  /* quando nemmeno ridotte ci stanno: via le miniature, due BOTTONI in
+     riga che aprono il player (2026-08-09) */
+  .vbtns { display:none; gap:.6rem; margin:1.2rem 0; }
+  .vbtns button { flex:1; padding:.6rem .4rem; border:0; border-radius:10px;
+    background:#2563eb; color:#fff; font-weight:700; font-size:.85rem;
+    cursor:pointer; font-family:inherit; }
+  @media (max-width:420px) { .vthumbs { display:none; } .vbtns { display:flex; } }
+  .vthumb .vlabel { position:absolute; left:0; right:0; bottom:0; padding:.9rem .5rem .35rem;
+    background:linear-gradient(transparent, rgba(0,0,0,.75)); color:#fff; font-size:.7rem; }
+  .vthumb::after { content:"▶"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    color:#fff; font-size:1.6rem; text-shadow:0 1px 6px rgba(0,0,0,.8); }
+  /* margin:auto ESPLICITO: il reset globale * {margin:0} annullava la
+     centratura nativa del dialog e il player si apriva in alto a sinistra */
+  dialog.vplayer { border:0; padding:0; background:transparent; max-width:92vw;
+    margin:auto; position:fixed; inset:0; }
+  dialog.vplayer::backdrop { background:rgba(0,0,0,.85); }
+  dialog.vplayer video { max-width:92vw; max-height:86vh; border-radius:14px; background:#000; }
+  details.tr { border:1px solid #e2ddd6; border-radius:10px; padding:.2rem .9rem .6rem; }
+  details.tr summary { cursor:pointer; font-weight:600; padding:.55rem 0; }
+  .tr-copy { font-size:.72rem; padding:.3rem .7rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; margin:.3rem 0 .5rem; }
+  .epnav { display:flex; justify-content:space-between; gap:1rem; margin:2rem 0 0;
+    font-size:.82rem; font-family:monospace; }
+  .epnav a { text-decoration:none; }
+  @media (prefers-color-scheme:dark) {
+    body { background:#1f1d18; color:#e5e5e5; }
+    .ep, .tension, .signal-card { background:#2a2823; border-color:#3a352d; }
+    .ep-play { background:#3a352d; } .desc { color:#d4d4d4; }
+    .signal-text { color:#d4d4d4; }
+    .creator-footer { border-color:#3a352d; }
+    .creator-name { color:#f5f5f5; }
+    .creator-tagline, .creator-email a { color:#9ca3af; }
+    .creator-ai { color:#9a8f7d; }
+    .vlink input { background:#1c1a17; border-color:#3a352d; color:#9ca3af; }
+    .tutele { border-color:#3a352d; color:#9a8f7d; }
+    .tutele h3 { color:#a9a9a9; } .tutele strong { color:#d4d4d4; }
+    .ep-listen { background:#3a352d; }
+    .ep-faces img { border-color:#2a2823; background:#3a352d; }
+    details.tr { border-color:#3a352d; }
+  }
+</style></head><body>
+<a class="back" href="/signal-brief/ai/">← Signal.AI</a>
+<header><h1>Il lavoro, la terza frattura</h1></header>
+<div class="tagline">2026-07-16 · Digital Intelligence Podcast</div>
+<div class="desc">Mentre lo scaling perde spinta e i laboratori rischiano di diventare una commodity, il vero campo di battaglia si sposta sul lavoro e su chi controlla ciò che funziona.</div>
+<div class="rawmd"><a href="raw.md">Testo (markdown)</a></div>
+<section><h2>Sintesi</h2><div class="synthesis"><p>Un'inquadratura attraversa quasi tutte queste voci: il <strong>collo di bottiglia si è spostato</strong>. Non più <em>scrivere</em>, ma <em>comporre e verificare</em>. <a href="https://karpathy.bearblog.dev/sequoia-ascent-2026/" target="_blank" rel="noopener">Andrej Karpathy</a> lo dice del programmatore "rifattorizzato" — gli LLM automatizzano ciò che sai <em>verificare</em>, non ciò che sai specificare — e <a href="https://simonwillison.net/2026/Jul/" target="_blank" rel="noopener">Simon Willison</a> lo traduce in pratica economica ("understanding to participate"). <a href="https://finance.biggo.com/news/d73d015b06a18a8c" target="_blank" rel="noopener">Aravind Srinivas</a> ne fa metrica: la risorsa scarsa è <em>sapere cosa chiedere</em>.</p>
+<p>Sotto, una prima grande frattura teorica: <strong>lo scaling ha esaurito la spinta</strong>. <a href="https://www.calcalistech.com/ctechnews/article/h1fudk7z11x" target="_blank" rel="noopener">Ilya Sutskever</a> dichiara chiusa "l'età dello scaling" — il vincolo sono le idee, non il compute; <a href="https://www.startuphub.ai/ai-news/ai-research/2026/fran-ois-chollet-on-arc-agi-3-the-future-of-ai-reasoning" target="_blank" rel="noopener">François Chollet</a> eleva l'efficienza a metrica prima; <a href="https://thenextweb.com/news/yann-lecun-ami-world-models-raise-summit-llms" target="_blank" rel="noopener">Yann LeCun</a> e <a href="https://www.webpronews.com/john-carmacks-blunt-verdict-on-ai-progress-we-are-not-on-the-brink-of-agi/" target="_blank" rel="noopener">John Carmack</a> rifiutano la scala come via all'intelligenza. Contro di loro, l'ala accelerazionista di <a href="https://www.axios.com/2026/07/14/demis-hassabis-ai-regulation-google-deepmind" target="_blank" rel="noopener">Demis Hassabis</a> e <a href="https://fortune.com/article/why-microsoft-ai-chief-mustafa-suleyman-predicts-ai-automation-18-months/" target="_blank" rel="noopener">Mustafa Suleyman</a>: superintelligenza in 18 mesi.</p>
+<p>La seconda tensione è <strong>chi cattura il valore</strong>. <a href="https://www.ben-evans.com/newsletter" target="_blank" rel="noopener">Benedict Evans</a> prevede commoditizzazione dei lab; e proprio da lì nasce la risposta più interessante — la <strong>sovranità come antidoto</strong>. <a href="https://www.marktechpost.com/2026/07/11/mira-muratis-thinking-machines-lab-makes-the-technical-case-for-human-centered-ai-built-on-customizable-model-weights/" target="_blank" rel="noopener">Mira Murati</a> ("molte <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="">AI, non one-size-fits-all"), la Tapestry di LeCun, il <em>permissionless</em> di <a href="https://www.cointribune.com/en/bitcoin-jack-dorsey-reveals-his-strategy-to-counter-censorship/" target="_blank" rel="noopener">Jack Dorsey</a>, il <em>Personal-Private-Programmable</em> di <a href="https://www.youtube.com/watch?v=4VWD3Ot-su0" target="_blank" rel="noopener">Balaji Srinivasan</a> convergono su un unico riflesso: contro la concentrazione monolitica, decentralizzare modelli, dati, potere.</p>
+<p>La terza frattura è <strong>il lavoro</strong>, ed è la più aspra. <a href="https://darioamodei.com/essay/the-adolescence-of-technology" target="_blank" rel="noopener">Dario Amodei</a> (-50% entry-level white-collar) e <a href="https://jack-clark.net/" target="_blank" rel="noopener">Jack Clark</a> (Remote Labor Index dal 2,5% al 16,1%) leggono uno shock strutturale invisibile al PIL; all'opposto <a href="https://fortune.com/2026/07/02/sam-altman-new-world-order-ai-openai-google-anthropic/" target="_blank" rel="noopener">Sam Altman</a> ammette "net job-creating", <a href="https://www.lennysnewsletter.com/p/marc-andreessen-the-real-ai-boom" target="_blank" rel="noopener">Marc Andreessen</a> e <a href="https://retool.com/blog/stripe-ceo-ai-agents-and-the-future-of-software" target="_blank" rel="noopener">Patrick Collison</a> vedono amplificazione, non sostituzione.</p>
+<p>La corrente di fondo? Un <strong>passaggio dall'euforia della capacità all'ansia del coordinamento</strong>. Quasi tutti danno per acquisita la potenza tecnica; il campo di battaglia si è spostato alle <em>istituzioni</em> — governance (<a href="https://fortune.com/2026/06/01/godfather-of-ai-geoffrey-hinton-beings-smarter-than-us/" target="_blank" rel="noopener">Hinton</a>, Hassabis, Amodei), potere, sovranità. La domanda non è più <em>"funzionerà?"</em>, ma <em>"chi controlla ciò che funziona — e possiamo ancora misurarlo?"</em>.</p></div></section>
+<section><h2>Temi del giorno</h2><div class="tension"><div class="axis">↗ Il lavoro come terza frattura</div><div class="side">Il mercato del lavoro white-collar diventa un asse di conflitto autonomo, con metriche di sostituzione (Remote Labor Index) che il PIL non vede.</div></div><div class="tension"><div class="axis">↗ Commoditizzazione dei lab</div><div class="side">I frontier lab perdono margine e la vera domanda diventa chi cattura il valore a valle del modello.</div></div><div class="tension"><div class="axis">↗ Sapere cosa chiedere come risorsa scarsa</div><div class="side">La composizione della domanda — non solo la verifica dell'output — diventa il vero collo di bottiglia produttivo.</div></div><div class="tension"><div class="axis">↗ Pluralismo dei modelli</div><div class="side">Contro il modello unico, pesi personalizzabili e 'molte AI' come architettura alternativa alla concentrazione.</div></div><div class="tension"><div class="axis">↗ Dall'euforia della capacità all'ansia del coordinamento</div><div class="side">La potenza tecnica è data per acquisita e il campo di battaglia si sposta sulle istituzioni e sulla loro misurabilità.</div></div><div class="tension"><div class="axis">⚖ Lo scaling è la via all'intelligenza o è esaurito</div><div class="side">Ilya Sutskever: l'età dello scaling è chiusa, contano le idee · Demis Hassabis: superintelligenza imminente sulla traiettoria attuale</div></div><div class="tension"><div class="axis">⚖ L'AI distrugge o crea lavoro</div><div class="side">Dario Amodei: -50% di entry-level white-collar, shock strutturale · Sam Altman: nel complesso l'AI è net job-creating</div></div><div class="tension"><div class="axis">⚖ Concentrazione istituzionale contro sovranità decentralizzata</div><div class="side">Dario Amodei: governance e regolazione centralizzata · Balaji Srinivasan: modelli e potere personali, privati e programmabili</div></div><div class="tension"><div class="axis">⚖ Sostituzione contro amplificazione del lavoro umano</div><div class="side">Jack Clark: il Remote Labor Index sale dal 2,5% al 16,1% · Marc Andreessen: amplificazione delle capacità, non sostituzione</div></div></section>
+<section><h2>Progetti da osservare</h2><div class="tension"><div class="axis">karpathy/nanochat</div><div class=side>Pipeline minimale per addestrare un modello GPT-2 in ~2 ore su 8×H100 con FP8 e ClimbMix, parte della linea di lavoro di Karpathy su pipeline ridotte per singolo ricercatore. Repo di riferimento per l'era 'meno codice, più amplificazione'.</div></div><div class="tension"><div class="axis">karpathy/llm-wiki (gist)</div><div class=side>Prompt-pattern da copiare in Claude Code/Codex che istanzia il sistema 'LLM Wiki' su Obsidian: articoli enciclopedici interlinkati, backlink, health check. Diventato viral come anti-RAG personale.</div></div><div class="tension"><div class="axis">karpathy/autoresearch</div><div class=side>Repo di ~630 righe (7 marzo 2026) che materializza un agente di ricerca minimale, parte della tesi 'idea file = distribuzione' di Karpathy. Esempio concreto di agente che amplifica il ricercatore individuale.</div></div><div class="tension"><div class="axis">Obsidian</div><div class=side>Editor di note markdown con backlink e grafi che Karpathy elegge come 'IDE della conoscenza' nel suo pattern LLM-Wiki. Diventa il frontend consigliato per memoria esplicita e ispezionabile contro la memoria opaca degli assistant commerciali.</div></div><div class="tension"><div class="axis">ggerganov/llama.cpp</div><div class=side>Motore di inferenza C/C++ per LLM locali; il suo llama-server è il cuore dello stack self-sovereign proposto da Buterin (NixOS + llama-server + bubblewrap). Standard de facto per AI locale sovrana.</div></div><div class="tension"><div class="axis">basecamp/omarchy</div><div class=side>Distro Arch Linux curata da DHH con Hyprland, pensata per attrarre utenti macOS/Windows verso un desktop 'malleabile'. Progetto-manifesto del filone 'open source AI-ready' di DHH (Omacon NY, 130 persone).</div></div><div class="tension"><div class="axis">hyprwm/Hyprland</div><div class=side>Compositor Wayland dinamico, cuore visivo di Omarchy e simbolo del rinnovato interesse consumer per Linux (Panther Lake / XPS 14). DHH lo cita come esempio di software su cui finalmente 'hardware e aziende tornano a scommettere'.</div></div><div class="tension"><div class="axis">simonw/llm</div><div class=side>CLI e libreria Python di Simon Willison per interagire con LLM locali e cloud, base dei suoi tool README-driven (scan-for-secrets, datasette-ports, research-llm-apis). Strumento pivot del suo workflow 'agentic engineering'.</div></div><div class="tension"><div class="axis">fchollet/ARC-AGI</div><div class=side>Repo ufficiale dei benchmark ARC-AGI di Chollet, ora affiancato da ARC-AGI-3 (ambienti interattivi turn-based per misurare agency). ARC Prize 2026 ha $2M di montepremi; umani 100%, best frontier model 0,37%.</div></div><div class="tension"><div class="axis">zilliztech/claude-context</div><div class=side>Server MCP di code search che trasforma l'intera codebase in contesto indicizzato per Claude Code, Cursor e altri agenti. Esempio netto del 'moat shift' dal modello all'uso indicato da Evans e Andreessen.</div></div></section>
+<section><h2>Fonti</h2><div class="fonte"><span class="who">Jack Clark</span><a href="https://jack-clark.net/" target="_blank" rel="noopener">Import AI — jack-clark.net</a><a href="https://importai.substack.com/" target="_blank" rel="noopener">Import AI su Substack</a></div><div class="fonte"><span class="who">Dario Amodei</span><a href="https://darioamodei.com/essay/the-adolescence-of-technology" target="_blank" rel="noopener">The Adolescence of Technology</a><a href="https://darioamodei.com/post/policy-on-the-ai-exponential" target="_blank" rel="noopener">Policy on the AI Exponential</a><a href="https://www.axios.com/2026/01/26/anthropic-ai-dario-amodei-humanity" target="_blank" rel="noopener">Axios — "AI will test us as a species"</a></div><div class="fonte"><span class="who">Mira Murati</span><a href="https://techcrunch.com/2026/07/15/thinking-machines-amps-up-its-bet-against-one-size-fits-all-ai-with-its-first-open-model-inkling/" target="_blank" rel="noopener">TechCrunch — Inkling, la scommessa contro l'AI one-size-fits-all</a><a href="https://www.marktechpost.com/2026/07/11/mira-muratis-thinking-machines-lab-makes-the-technical-case-for-human-centered-ai-built-on-customizable-model-weights/" target="_blank" rel="noopener">MarkTechPost — la tesi human-centered sui pesi personalizzabili</a><a href="https://fortune.com/2026/07/15/what-is-mira-murati-thinking-machines-first-ai-model-inkling/" target="_blank" rel="noopener">Fortune — cos'è Inkling</a></div><div class="fonte"><span class="who">Andrej Karpathy</span><a href="https://karpathy.bearblog.dev/sequoia-ascent-2026/" target="_blank" rel="noopener">Karpathy blog — Sequoia Ascent 2026</a><a href="https://x.com/karpathy/status/2004607146781278521" target="_blank" rel="noopener">Post su X — "behind as a programmer"</a><a href="https://www.thevccorner.com/p/breaking-andrej-karpathy-joins-anthropic" target="_blank" rel="noopener">The VC Corner — Karpathy Joins Anthropic</a></div></section>
+<section class="transcript-section"><h2>Trascrizione</h2><details class="tr"><summary>Leggi la trascrizione</summary><button class="tr-copy" type="button" onclick="copiaTrascrizione(this)">copia il testo</button><div class="transcript-body"><h2>Il lavoro, la terza frattura</h2>
+<p class="podcast-episode-desc">Mentre lo scaling perde spinta e i laboratori rischiano di diventare una commodity, il vero campo di battaglia si sposta sul lavoro e su chi controlla ciò che funziona.</p>
+<div class="chapter" data-mood="geo"><hr></div>
+<p>C'è un numero che questa settimana ha attraversato i circoli tech americani senza fare rumore, e forse è proprio per questo che pesa. Un indice che misura quanto lavoro da ufficio le macchine sanno già svolgere da remoto. A ottobre segnava due e mezzo per cento. A luglio segna sedici. In nove mesi è cambiato tutto, e il prodotto interno lordo non se ne è accorto. È il 16 luglio, questo è Signal Brief, e la storia di oggi comincia da lì: dal momento in cui la conversazione sull'intelligenza artificiale ha smesso di parlare di capacità e ha iniziato a parlare di posti di lavoro.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Quel numero lo pubblica Jack Clark, che dell'azienda Anthropic è tra i fondatori e cura la parte politica. Lo chiama Remote Labor Index, e la sua tesi è semplice da dire e difficile da digerire: le macchine stanno allargando le cose che sanno fare economicamente più in fretta di quanto noi umani riusciamo a spostarci verso ciò che sappiamo fare meglio di loro. Non è un ciclo, dice Clark. Non è la solita crisi che passa. È qualcosa di strutturale, e il fatto che le statistiche ufficiali non lo vedano è il vero problema: un cambiamento che i governi non possono misurare è un cambiamento a cui non possono prepararsi.</p>
+<p>Nei giorni scorsi Dario Amodei, che guida quella stessa azienda, ha pubblicato un saggio lunghissimo, ventimila parole, intitolato L'adolescenza della tecnologia. Il passaggio che tutti hanno ripreso è una cifra: metà dei lavori d'ingresso negli uffici potrebbe sparire nel giro di uno o cinque anni. Non un settore, tutti insieme. Chi comincia oggi una carriera fatta di scrivere, analizzare, riassumere, si trova davanti una porta che si sta stringendo.</p>
+<p>E qui la storia si divide in due, perché non tutti la leggono così. Il 13 luglio Sam Altman, alla guida di OpenAI, ha detto una cosa che ha sorpreso lui per primo: finora l'intelligenza artificiale ha creato più lavoro di quanto ne abbia distrutto. Marc Andreessen va oltre e la considera una fortuna arrivata al momento giusto, mentre le popolazioni dei paesi ricchi invecchiano e la manodopera si assottiglia. Patrick Collison, che con Stripe vede passare i pagamenti reali di mezza economia digitale, dice che nel 2026 assumerà più che mai, proprio grazie a queste macchine. Le chiama, con una metafora curiosa, il farmaco dimagrante dell'efficienza: amplificano le persone, non le cancellano.</p>
+<p>Chi ha ragione non lo sappiamo ancora, e forse è il punto. Vale la pena guardare a come andò con l'elettricità nelle fabbriche, un secolo fa. Per anni le macchine elettriche non aumentarono la produttività, perché le officine erano ancora costruite intorno al vecchio albero a vapore che girava al centro. Il salto arrivò solo quando qualcuno ripensò l'intera fabbrica. Il lavoro non sparì: cambiò forma, e chi non seppe cambiare con lui rimase indietro. Oggi siamo in quella fase intermedia, con le macchine nuove installate dentro le abitudini vecchie, e nessuno che sappia ancora dire dove porterà.</p>
+<p>Sotto questa frattura sul lavoro se ne muove un'altra, più tecnica, di cui parliamo da giorni: l'idea che aggiungere sempre più potenza di calcolo ai modelli abbia smesso di dare i frutti di una volta. Quella tensione resta aperta, con Ilya Sutskever da una parte a dichiarare chiusa l'età della forza bruta, e i più impazienti dall'altra a giurare che la superintelligenza è dietro l'angolo. Ma la cosa più interessante di questa settimana è che il campo di battaglia si è spostato. Non ci si chiede più soltanto se questi sistemi funzionino. Si è dato per scontato che funzionino. La domanda nuova è un'altra: chi controlla ciò che funziona, e possiamo ancora misurarne l'effetto sul mondo.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Torniamo un momento su Jack Clark, perché il suo lavoro merita di essere raccontato per intero. Clark scrive ogni settimana una newsletter che si chiama Import AI, la leggono decine di migliaia di persone, ed è una delle finestre più oneste su cosa pensa davvero chi costruisce questi sistemi dall'interno.</p>
+<p>La sua osservazione di queste settimane parte da un dato interno all'azienda: le righe di codice approvate e messe in produzione sono aumentate di otto volte rispetto a pochi anni fa. Per Clark è la prova concreta che quel processo di cui si favoleggia da tempo, le macchine che aiutano a costruire macchine migliori, è già cominciato. Non nella versione da film, il sistema che progetta i propri successori. Ma nella versione modesta e reale: la produttività di chi lavora sull'intelligenza artificiale che accelera, e accelerando allarga la distanza.</p>
+<p>Da qui nasce la sua immagine più efficace, quella che chiama cecità statistica. La qualità di ciò che queste macchine producono, dice, è cresciuta di percentuali enormi in due anni. Eppure nel prodotto interno lordo non se ne vede traccia. È come se un intero pezzo di economia si muovesse sotto la superficie, invisibile agli strumenti con cui abbiamo sempre misurato la ricchezza di un paese. Clark cita il film Lo squalo: il pericolo c'è, si muove sotto il pelo dell'acqua, e nessuno sulla spiaggia lo vede finché non è troppo vicino.</p>
+<p>C'è un'altra sua intuizione che resta addosso. La chiama, con una battuta amara, il blocco automatico delle istituzioni. Le macchine ormai sanno svolgere anche i compiti fatti di parole e giudizio, quelli che si intrecciano con la burocrazia: compilare, contestare, ricorrere. Il che significa che un giorno non lontano i processi con cui uno Stato decide le sue regole potrebbero essere intasati da valanghe di richieste generate a macchina, più veloci di qualsiasi ufficio umano.</p>
+<p>Il collegamento col filo di oggi è diretto. Clark non parla da profeta dell'apocalisse né da ottimista di maniera. Parla da uno che ha in mano i dati e si accorge che gli strumenti per leggerli sono vecchi. La sua preoccupazione non è che le macchine diventino troppo potenti. È che diventino potenti in un modo che le nostre istituzioni non riescono nemmeno a vedere. Ed è una preoccupazione che assomiglia molto a quella che, un tempo, avevano gli statistici davanti al lavoro delle donne in casa: enorme, indispensabile, e per decenni semplicemente non contato.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Se Clark porta i numeri, Dario Amodei porta la cornice. Guida Anthropic, ed è una delle voci che più insistono su un punto: la potenza di questi sistemi è reale e sta arrivando in fretta, e proprio per questo va governata prima, non dopo.</p>
+<p>Il suo saggio di questi giorni, L'adolescenza della tecnologia, è un testo ambizioso. Amodei prova a mettere in fila i modi in cui le cose possono andare storte, e li ordina in cinque famiglie: sistemi che sfuggono di mano, uso a fini distruttivi, concentrazione di potere, sconquasso economico, e tutti gli effetti indiretti che ancora non sappiamo immaginare. L'immagine che usa è quella di un rito di passaggio, come l'adolescenza appunto: un momento che ci metterà alla prova come specie, e da cui non si torna indietro uguali a prima.</p>
+<p>La parte che ha fatto più discutere è quella sul lavoro, il cinquanta per cento di posti d'ingresso a rischio. Ma vale la pena notare dove Amodei va a parare. La sua risposta non è tecnica, è politica. Chiede regole, un organismo che tenga d'occhio i modelli più avanzati, e propone perfino che la sua stessa azienda finanzi i modi per gestire la perdita di posti di lavoro. È la posizione di chi costruisce l'oggetto pericoloso e chiede allo Stato di mettergli attorno una recinzione.</p>
+<p>Ricapitoliamo un attimo dove siamo, perché è facile perdere il filo tra tante voci. La storia di oggi ha un centro: il lavoro come nuova linea di frattura. Attorno a questo centro girano due domande. La prima è quanto in fretta le macchine sostituiranno le persone. La seconda, più profonda, è chi terrà in mano il timone di tutto questo. Amodei sta su un lato preciso: quello di chi vuole il timone in poche mani sorvegliate, uno Stato, un'autorità, un accordo tra grandi.</p>
+<p>Ed è esattamente qui che nasce la reazione opposta, la spinta che attraversa l'altra metà di queste voci. Perché a molti, quel timone in poche mani, fa più paura delle macchine stesse. Amodei parla di un possibile totalitarismo assistito dalle macchine, sorveglianza e propaganda che si saldano in una gabbia da cui non si esce. Il paradosso è che la sua cura per quel rischio, la concentrazione del controllo, è per altri esattamente la malattia. Su questa faglia si gioca la partita più interessante del momento.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Il 15 luglio quella partita ha avuto una mossa concreta. Mira Murati, che è stata a lungo il cervello tecnico di OpenAI e poi se n'è andata a fondare un laboratorio tutto suo, ha rotto un anno di silenzio e ha rilasciato il suo primo modello. Si chiama Inkling.</p>
+<p>I dettagli tecnici raccontano una scelta di campo. È un modello grande, ma costruito per accendersi solo in parte a ogni richiesta, così da costare meno. E soprattutto è aperto: chiunque può scaricarne i pesi, cioè il cuore addestrato del sistema, e adattarlo al proprio contesto. Murati lo dice senza giri di parole: Inkling non è il modello più potente sul mercato, e non vuole esserlo. La scommessa è un'altra, ottenere di più spendendo di meno, ritagliandolo su misura per chi lo usa.</p>
+<p>Per capire perché conta, bisogna tornare a un'idea che gira da qualche giorno: quella che i grandi laboratori rischiano di diventare una merce qualunque. La sintetizza bene Benedict Evans, che di mestiere osserva l'economia della tecnologia. In un suo scritto recente smonta l'idea che chi produce questi modelli manterrà a lungo il coltello dalla parte del manico. Oggi comandano perché la capacità è scarsa, dice. Ma quando smetterà di esserlo, cosa impedirà loro di finire come l'elettricità o la banda larga: infrastruttura preziosa, indispensabile, e a basso margine.</p>
+<p>Murati costruisce la sua azienda proprio dentro questa previsione. Se il modello puro diventa una merce, allora il valore si sposta altrove: nella possibilità di renderlo tuo. La sua bandiera, le molte intelligenze artificiali contro l'unica taglia buona per tutti, si tiene per mano con altre voci che dicono cose simili da direzioni diverse. Yann LeCun che costruisce modelli capaci di guardare il mondo invece di leggerlo soltanto. Balaji Srinivasan che immagina un'intelligenza personale, privata, riprogrammabile da chiunque. Jack Dorsey che ripete che la cosa speciale di certe tecnologie è che non chiedono il permesso a nessuno.</p>
+<p>È lo stesso movimento che vide nascere il personal computer dalle stanze chiuse dei grandi calcolatori. Per anni la potenza abitò dentro pochi armadi refrigerati, sorvegliati da tecnici in camice. Poi qualcuno decise che doveva stare su una scrivania, in casa, nelle mani di tutti. Murati e gli altri stanno provando a rifare quel gesto con l'intelligenza artificiale. Se ci riescano, è presto per dirlo. Ma la direzione è chiara.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Chiudo i ritratti con la storia più personale della settimana, quella di Andrej Karpathy. È uno dei nomi tecnici più rispettati del campo, uno che ha lavorato sulle auto che si guidano da sole e sui primi grandi modelli, e che negli ultimi tempi si era dedicato a insegnare. Questa settimana è tornato al cuore della macchina: è entrato in Anthropic, nel gruppo che addestra i modelli, con un obiettivo quasi vertiginoso, usare l'intelligenza artificiale per rendere migliore l'addestramento dell'intelligenza artificiale stessa.</p>
+<p>Ma la cosa che di lui ha girato di più non è l'annuncio del nuovo lavoro. È una confessione. In un post ha scritto di non essersi mai sentito così indietro come programmatore. Il suo mestiere, dice, viene rifatto da capo, e la parte scritta a mano da lui è sempre più sottile. Aggiunge che potrebbe essere dieci volte più efficace se solo sapesse orchestrare bene gli strumenti che già esistono. È un'ammissione onesta, e da una persona del suo livello colpisce due volte.</p>
+<p>Dentro quella frase c'è, per me, il filo più sottile e più importante di tutta la giornata. Karpathy lo aveva già detto in modo netto qualche mese fa: i computer di una volta automatizzavano ciò che sapevi scrivere con precisione, riga per riga. Questi nuovi sistemi automatizzano ciò che sai controllare. Il che sposta il lavoro, e lo sposta in un punto preciso. Non conta più tanto saper produrre. Conta saper chiedere la cosa giusta e riconoscere se la risposta è buona.</p>
+<p>È lo stesso pensiero che Aravind Srinivas, alla guida di Perplexity, ha trasformato in una regola secca: la risorsa scarsa, ormai, è sapere cosa chiedere. E Simon Willison, che di queste cose scrive con i piedi per terra, lo traduce in economia quotidiana, delegando i compiti semplici ai modelli economici e tenendo quelli costosi per il lavoro di giudizio.</p>
+<p>Se ci pensiamo, è lo stesso rovesciamento che portò la fotografia. Quando scattare divenne facile e gratis, il valore non fu più nel saper impressionare una pellicola. Fu nel sapere dove puntare l'obiettivo, cosa inquadrare, cosa lasciare fuori. L'abbondanza sposta sempre il pregio da chi esegue a chi decide. Karpathy, che di codice ne ha scritto quanto pochi al mondo, lo sta scoprendo su sé stesso. E lo racconta senza nascondersi, il che è forse la cosa più preziosa che un tecnico possa fare in un momento come questo.</p>
+<div class="chapter" data-mood="upbeat"><hr></div>
+<p>Qualche progetto da tenere d'occhio, tutti nomi che tornano a crescere di settimana in settimana, e che raccontano bene il filo di oggi.</p>
+<p>Nanochat, di Karpathy, in crescita costante: un modo per capire come funziona un piccolo modello linguistico costruendone uno da zero. Sempre suo, la sua wiki sui modelli linguistici, che continua a diffondersi come materiale per imparare.</p>
+<p>Llama punto cpp, sempre in salita: è il progetto che permette di far girare modelli seri sul proprio computer, senza data center, ed è il simbolo tecnico di tutta quella spinta a portarsi l'intelligenza artificiale in casa di cui parlavamo con Murati e LeCun.</p>
+<p>Il progetto di Simon Willison per dialogare con i modelli da riga di comando, anch'esso in crescita: piccolo, sobrio, pensato per chi vuole controllare la spesa e mescolare modelli diversi senza legarsi a nessuno.</p>
+<p>E ARC AGI, di François Chollet, che resta un riferimento: la raccolta di quei test dove ai modelli si chiede di ragionare davvero, e dove ancora oggi inciampano. È l'ancora dell'altra grande discussione di questi giorni, quella su cosa significhi essere intelligenti oltre il saper indovinare la parola successiva.</p>
+<p>Il filo che tiene insieme questi nomi è sempre lo stesso: strumenti piccoli, aperti, fatti per mettere la potenza nelle mani di chi vuole capirla, non solo comprarla.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Resta addosso quel numero dell'inizio, salito da due a sedici in nove mesi mentre le statistiche guardavano altrove. Forse la cosa che questa settimana ci lascia non è una risposta ma uno spostamento dello sguardo: abbiamo passato anni a chiederci se queste macchine avrebbero funzionato, e quasi senza accorgercene siamo arrivati alla domanda più difficile, chi terrà il timone di ciò che funziona. È stato Signal Brief. Alla prossima.</p></div></details></section>
+<nav class="epnav"><a href="/signal-brief/ai/2026-07-15/">← 2026-07-15</a><span style="flex:1"></span><a href="/signal-brief/ai/2026-07-17/">2026-07-17 →</a></nav>
+<dialog class="vplayer" id="vplayer"></dialog>
+<script>
+// player modale dei video: la miniatura apre il video al centro (disegno 2026-08-07)
+function apriVideo(src) {
+  var d = document.getElementById('vplayer');
+  d.innerHTML = '<video controls autoplay playsinline src="' + src + '"></video>';
+  d.showModal();
+  d.onclick = function (e) { if (e.target === d) d.close(); };
+  d.onclose = function () { var v = d.querySelector('video'); if (v) v.pause(); d.innerHTML = ''; };
+}
+// ascolto inline dalla lista: un episodio alla volta
+var epAudio = null, epBtn = null;
+function ascolta(btn, src) {
+  if (epBtn === btn && epAudio) {
+    if (epAudio.paused) { epAudio.play(); btn.classList.add('on'); }
+    else { epAudio.pause(); btn.classList.remove('on'); }
+    return;
+  }
+  if (epAudio) { epAudio.pause(); if (epBtn) epBtn.classList.remove('on'); }
+  epAudio = new Audio(src); epBtn = btn;
+  epAudio.play(); btn.classList.add('on');
+  epAudio.onended = function () { btn.classList.remove('on'); };
+}
+function copiaTrascrizione(btn) {
+  var t = btn.parentElement.querySelector('.transcript-body');
+  navigator.clipboard.writeText(t ? t.innerText : '').then(function () {
+    btn.textContent = 'copiata ✓';
+    setTimeout(function () { btn.textContent = 'copia il testo'; }, 1800);
+  });
+}
+</script>
+<footer class="creator-footer">
+  <img src="/signal-brief/mike-avatar.png" alt="Michele Mondora">
+  <div class="creator-meta">
+    <span class="creator-name">it-mikesoft</span>
+    <span class="creator-tagline">working with systems, living with questions</span>
+    <span class="creator-email"><a href="mailto:michele@mondora.com">michele@mondora.com</a></span>
+  </div>
+</footer>
+<section class="tutele"><h3>Trasparenza e tutele</h3>
+<p><strong>Come nasce questo contenuto.</strong> Ricerca, sintesi editoriale, voce narrante, immagini e musica sono prodotte con sistemi di intelligenza artificiale. Non c'è una redazione umana che verifica ogni affermazione prima della pubblicazione: un controllo automatico scarta le schede giudicate inaffidabili, ma non elimina la possibilità di errori.</p>
+<p><strong>Affermazioni su persone e aziende.</strong> Quanto riportato è una sintesi di fonti pubbliche, non una dichiarazione diretta delle persone citate: le frasi non vanno intese come virgolettati né come posizioni ufficiali. Le fonti sono indicate in ogni pagina episodio — verificale prima di considerare un'informazione accertata. Se trovi un'affermazione inesatta che ti riguarda, scrivi a <a href="mailto:michele@mondora.com">michele@mondora.com</a>: viene corretta o rimossa.</p>
+<p><strong>Immagini e volti.</strong> Le immagini di scena sono generate con AI e non raffigurano fatti realmente avvenuti. Le fotografie di persone reali usate nei video provengono da Wikimedia Commons con le rispettive licenze, e sono accostate al racconto a scopo identificativo: la loro presenza non implica partecipazione, dichiarazione o approvazione da parte della persona ritratta. Su richiesta dell'interessato vengono rimosse.</p>
+<p><strong>Fonti e diritti altrui.</strong> I contenuti sono rielaborazioni originali, non riproduzioni di articoli di terzi; le testate e gli autori all'origine di una notizia sono citati e collegati. Marchi e nomi commerciali appartengono ai rispettivi titolari e sono usati a scopo descrittivo.</p>
+</section>
+</body></html>

@@ -1,0 +1,71 @@
+# I costruttori smettono di festeggiare
+
+> Mentre Huang proclama l'era degli agenti, gli architetti dell'AI elencano cosa manca. E la vera partita si sposta dal modello al prodotto e al potere.
+
+---
+
+Giugno 2026 sta per chiudersi, ed è il momento in cui Signal Brief prova a guardare la fotografia intera. Se mettiamo in fila le voci di chi costruisce le macchine intelligenti, da Mountain View a Shenzhen, salta agli occhi una cosa che fino a pochi mesi fa sarebbe sembrata strana: i costruttori hanno smesso di festeggiare. Gli stessi ingegneri che hanno acceso il motore degli ultimi cinque anni adesso passano il tempo a indicarne i limiti. E sullo sfondo, una domanda diversa, più antica, è tornata a farsi sentire: non quanto sarà potente questa tecnologia, ma chi la terrà in mano.
+
+---
+
+All'inizio del mese, sul palco del GTC di Taipei, Jensen Huang ha pronunciato una di quelle frasi pensate per restare. L'AI agentica è arrivata, ha detto, l'AI utile è arrivata. Non più macchine che rispondono a una domanda, ma macchine che osservano, ragionano, decidono e agiscono. La platea applaudiva. Eppure, quasi nello stesso momento, in una lunga conversazione pubblicata online, Benedict Evans rispondeva a quell'entusiasmo con una frase molto più fredda: il vero collo di bottiglia non è la tecnologia, è il prodotto. Possiamo avere il motore più potente mai costruito, dice in sostanza, ma finché non capiamo dentro quale oggetto metterlo, e per fare cosa, resta un motore in officina.
+
+È un disaccordo che vale la pena tenere a mente, perché racconta dove si è spostata la partita. Per cinque anni la domanda è stata: riusciamo a costruire il motore? Adesso il motore c'è, e la domanda diventa noiosa e decisiva insieme — cosa ci facciamo. È successo lo stesso con l'elettricità nelle fabbriche. La dinamo era pronta da decenni, ma per anni gli stabilimenti continuarono a funzionare come ai tempi del vapore, con un grande albero centrale e le cinghie. Il salto di produttività arrivò solo quando qualcuno ripensò la fabbrica intorno al motore elettrico, mettendone uno piccolo a ogni macchina. Il collo di bottiglia non era la corrente. Era l'immaginazione.
+
+Sotto questa discussione, però, ne corre una più sorda. Perché mentre Huang celebra, gli architetti stessi hanno cominciato a elencare cosa manca. Demis Hassabis, che guida la ricerca AI di Google, ripete in queste settimane che siamo sulle pendici della singolarità, ai piedi della montagna — e subito dopo, invece di promettere la vetta, si mette a contare i buchi: capire come si comporta il mondo fisico, la memoria, la coerenza nel tempo, l'imparare strada facendo. Quattro mancanze precise. Continua così la frattura sullo scaling che attraversava già il racconto di ieri, ma con una novità: adesso a seppellire il vecchio paradigma non sono più solo i critici, sono anche i suoi fondatori.
+
+E poi c'è il terzo strato, quello che mi sembra il più interessante di tutti, perché non è più tecnico ma politico. Da una parte la paura della concentrazione: Naval Ravikant lo dice con parole nette, non teme l'AI, teme il piccolo gruppo di persone che la controllerà. Dall'altra, una paura speculare e opposta — quella del punto unico di rottura, del sistema che dipende da un solo padrone. È la spinta che porta Jack Dorsey a costruire app di messaggi che funzionano senza internet, passandosi i dati da telefono a telefono. Due timori che sembrano contraddirsi e invece convivono: alcuni temono che il potere si concentri, altri che il sistema sia troppo fragile per reggersi su pochi nodi. Sono le due facce della stessa moneta, ed è la moneta con cui si gioca adesso.
+
+---
+
+Cominciamo da Hassabis, perché il suo è il cambiamento più rivelatore. Per anni è stato la voce paziente e ottimista del settore: l'uomo di DeepMind che aveva piegato il problema delle proteine e che parlava dell'AI come del più grande acceleratore scientifico mai costruito, con un impatto dieci volte la rivoluzione industriale compresso in un decennio. Quel registro non è sparito. Tra Google I/O e le interviste di queste settimane ha addirittura anticipato leggermente la sua scommessa sull'intelligenza generale, aprendo al 2029, prima della solita data intorno al 2030.
+
+E qui sta la scena interessante. Perché lo stesso uomo che avvicina la data si è fatto, allo stesso tempo, molto più preciso su cosa ancora non funziona. Non parla più di aggiungere dati e potenza. Parla di quattro ostacoli concreti: i modelli non hanno una vera idea di come funziona il mondo fisico, dimenticano, si contraddicono, e non imparano davvero dall'esperienza mentre lavorano. È diventata una specie di lista della spesa che ripete a ogni occasione.
+
+Il punto è dove lo colloca questa lista. Sono quasi esattamente gli stessi buchi che Yann LeCun indica da anni, dall'altra parte della barricata, per sostenere che i modelli linguistici da soli non portano da nessuna parte. Vederli ora nella bocca di Hassabis significa che le due posizioni, un tempo lontane, si stanno avvicinando. L'accelerazionista e lo scettico stanno arrivando alla stessa casa da strade diverse.
+
+Mi sembra che questo dica qualcosa sul momento. Quando i critici di una tecnologia e i suoi campioni cominciano a fare la stessa diagnosi, di solito vuol dire che la fase facile è finita. Per cinque anni bastava costruire più grande e i risultati arrivavano da soli, prevedibili come un orario ferroviario. Adesso no. Adesso bisogna avere idee nuove, e nessuno sa ancora quali. È un passaggio che assomiglia a quando un'industria smette di crescere comprando macchinari più grossi e deve tornare in laboratorio. Meno trionfale, più onesto, e probabilmente più fecondo. Hassabis lo sta dicendo con il sorriso di chi pensa comunque di vincere — ma lo sta dicendo.
+
+---
+
+Naval Ravikant in queste settimane ha un tono diverso dal solito. Di solito è l'uomo delle massime sull'imprenditoria, quello che dice che oggi siamo tutti maghi capaci di evocare software dal nulla, che l'AI è un alleato e non una minaccia, che la domanda giusta non è se ti ruberà il lavoro ma cosa ci farai. Quel lato resta, e resta operativo: parla di fabbriche di software, di aziende intere mandate avanti da pochissime persone, di cosa convenga davvero automatizzare.
+
+Ma c'è una frase che ha ripetuto e che pesa più di tutte le altre. Non ho paura dell'AI, ha detto. Ho paura di cosa un piccolissimo gruppo di persone che controlla l'AI farà al resto di noi. È un'inversione interessante per uno come lui, che viene dal mondo libertario della Silicon Valley. La minaccia non è la macchina, è la mano sulla macchina. E la mano, secondo Naval, rischia di chiudersi proprio attraverso le regole: la regolamentazione scritta dai grandi per i grandi, che alza muri così alti da impedire a chiunque altro di entrare. Lui la chiama la corsa della regina rossa — corri sempre più forte solo per restare fermo, e intanto i piccoli restano indietro.
+
+Questo lo mette esattamente sull'asse politico di cui parlavamo. Da una parte Dario Amodei, che chiede regole vincolanti perché teme la macchina. Dall'altra Naval, che teme chi scriverà quelle regole. Non è la solita lite tra chi vuole frenare e chi vuole accelerare. È più sottile: entrambi hanno paura del potere, ma lo vedono accumularsi in posti opposti.
+
+C'è poi una corrente più malinconica nel suo discorso, e la condivide con Paul Graham, che proprio in questi giorni insiste sull'idea che scrivere sia un modo di pensare, e che delegare la scrittura a una macchina significhi rinunciare a pensare. Tutti e due, in fondo, stanno cercando la stessa cosa: quel che resta solo umano. Il giudizio che non si può appaltare. È il rovescio nostalgico di tutto l'entusiasmo — come succede sempre, quando una tecnologia diventa abbastanza potente da farci chiedere cosa ci renda ancora necessari.
+
+---
+
+Torniamo un attimo sul filo di oggi, perché è facile perdersi tra le voci. Tre cose si muovono insieme: il motore è pronto ma non sappiamo bene cosa costruirci sopra, i suoi stessi creatori ammettono cosa manca, e la domanda vera è diventata chi controlla tutto questo. Jack Dorsey sta tutto dentro l'ultima.
+
+L'ex capo di Twitter, oggi, fa una cosa molto concreta: costruisce app per parlarsi senza dipendere da nessuno. La prima si chiama Bitchat, e l'idea è quasi testarda nella sua semplicità. I messaggi viaggiano da telefono a telefono via Bluetooth, saltando da un dispositivo all'altro, senza passare da internet e senza finire in nessun database centrale. Vivono nella memoria del telefono e poi spariscono. Nelle ultime settimane Dorsey ha allargato il progetto: da semplice chat di prossimità a una rete di quartiere, con dentro anche i pagamenti in Bitcoin, firmati e passati di mano anche quando si è offline. La sua frase è far girare il quartiere su Bitcoin — piccole economie locali che non chiedono permesso a nessuno. Pochi giorni dopo ne ha annunciata una seconda, White Noise, costruita su un altro protocollo aperto.
+
+C'è anche una correzione onesta da fare, e l'hanno fatta gli utenti a lui: firmare una transazione offline si può, ma prima o poi, per renderla davvero valida, internet serve ancora. Non è quindi Bitcoin senza rete nel senso pieno. È una sfumatura, ma dice quanto sia difficile costruire davvero qualcosa che non dipenda da nessun punto centrale.
+
+Quello che rende Dorsey il personaggio giusto per oggi è il significato del gesto. Non sta costruendo questi strumenti per nostalgia tecnica. Li costruisce perché parte da una paura precisa: che tutto passi da pochi grandi snodi, e che chi controlla quegli snodi controlli le persone. È la stessa ansia di Naval, vista dall'altro lato. Naval teme che il potere si concentri. Dorsey costruisce attrezzi perché, se anche si concentrasse, ci sia un modo di parlarsi sotto il radar. Ricorda i radioamatori che si tenevano le loro frequenze, o la rete dei telefoni a manovella nelle campagne americane di un secolo fa, montati dai contadini fuori dal monopolio. Ogni volta che una tecnologia diventa troppo centrale, qualcuno comincia a costruire la via di fuga.
+
+---
+
+L'ultima voce è quella che tira la corda dalla parte opposta a Naval: Dario Amodei, che guida Anthropic. In queste settimane il suo testo più discusso è un saggio intitolato l'adolescenza della tecnologia. L'immagine è efficace e fa il lavoro che deve fare: l'AI come un adolescente, potente, sveglio, e però immaturo e pericoloso proprio perché non controlla ancora la propria forza.
+
+La cosa concreta, però, è il cambio di posizione. Fino all'anno scorso Amodei chiedeva soprattutto trasparenza: che i laboratori dicessero cosa stanno facendo, niente di più. Adesso dice apertamente che è il momento di andare oltre la trasparenza, verso regole vere e vincolanti. È un uomo che chiede di essere regolato — cosa che nella storia dell'industria non capita spesso, e quando capita di solito è perché chi è dentro vede qualcosa che da fuori non si vede ancora. Geoffrey Hinton, nelle stesse settimane, usa la sua metafora ormai famosa: l'AI è un'auto velocissima senza volante, e la regola deve essere quel volante. Persino Jensen Huang, che alla regolamentazione era allergico, ammette ora che qualche standard di sicurezza serve.
+
+Qui si chiude il cerchio della tensione di oggi. Amodei chiede regole perché teme la macchina. Naval teme proprio quelle regole, perché le vede come l'arma con cui i grandi terranno fuori tutti gli altri. Non hanno torto né l'uno né l'altro, ed è questo a rendere il momento difficile da decifrare. Mi sembra che assomigli ai primi anni dell'automobile, quando si discuteva se mettere un uomo con la bandiera rossa davanti a ogni macchina. Alcuni volevano frenare per salvare vite, altri sospettavano che le regole servissero solo a proteggere chi i cavalli li affittava ancora. Avevano ragione tutti, in parte. E ci vollero decenni per trovare un equilibrio che oggi diamo per scontato — i semafori, le patenti, le corsie. La cosa che resta da capire è quanto tempo, stavolta, ci concederà la velocità.
+
+---
+
+Qualche progetto da osservare, e quasi tutti raccontano la stessa storia di fondo: la voglia di tenere la potenza vicino a sé, sul proprio computer.
+
+Continua a crescere, settimana dopo settimana, l'intera costellazione di Andrej Karpathy — nanochat, la sua piccola enciclopedia sui modelli linguistici, e il progetto sulla ricerca automatica. Tendenza confermata anche per llama.cpp di Georgi Gerganov, il pezzo di software che permette di far girare modelli seri su una macchina normale, senza data center.
+
+Restano in tendenza Obsidian, lo strumento per prendere appunti che molti usano per costruirsi una memoria personale, e simonw/llm, la cassetta degli attrezzi di Simon Willison per parlare con i modelli dalla riga di comando. Tengono il passo anche due progetti che ridisegnano da zero il computer di chi ci lavora davvero, omarchy e Hyprland.
+
+Sul fronte della ricerca, è sempre presente ARC-AGI di François Chollet, il banco di prova che continua a mettere in difficoltà i modelli più avanzati, e claude-context, che aiuta gli assistenti a non perdere il filo dei progetti grandi. Restano in lista superpowers e GOModel.
+
+Se li guardate insieme, questi nomi disegnano il rovescio concreto del discorso politico di oggi. Mentre Dorsey costruisce reti che non dipendono da nessuno e Naval teme la mano sulla macchina, qui ci sono migliaia di persone che fanno la cosa più pratica possibile: si portano l'intelligenza artificiale in casa, sul proprio portatile, fuori dal controllo dei grandi. È lo stesso istinto che spinse, ai tempi, chi voleva un computer sulla scrivania invece che un terminale collegato al grande calcolatore dell'azienda. La storia, su questo, tende a ripetersi.
+
+---
+
+Resta l'immagine di Hassabis ai piedi della montagna che, invece di indicare la cima, conta i passaggi mancanti. Per cinque anni abbiamo creduto che bastasse salire più in fretta. Adesso anche chi costruisce le scarpe ammette che la strada non c'è ancora, e intanto, più in basso, si litiga su chi terrà la mappa. Forse è questo il segno che siamo diventati adulti rispetto a questa tecnologia: abbiamo smesso di chiederci quanto correrà, e cominciato a chiederci verso casa di chi. È stato Signal Brief. Alla prossima.

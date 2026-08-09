@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="it"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La memoria come nuovo collo di bottiglia · Signal.AI</title>
+<meta property="og:title" content="La memoria come nuovo collo di bottiglia · Signal.AI"><meta property="og:type" content="article"><meta property="og:description" content="Karpathy sposta il problema dal modello alla persistenza del contesto, Sutskever chiude l'era dello scaling incassando cinque miliardi, e il terreno legale sotto il lavoro si rivela revocabile."><meta property="og:url" content="https://it-mikesoft.github.io/signal-brief/ai/2026-08-08/"><meta property="og:audio" content="https://media.casamon.dev/ai/podcast/episodes/2026-08-08.mp3"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "PodcastEpisode", "name": "La memoria come nuovo collo di bottiglia", "datePublished": "2026-08-08", "url": "https://it-mikesoft.github.io/signal-brief/ai/2026-08-08/", "description": "Karpathy sposta il problema dal modello alla persistenza del contesto, Sutskever chiude l'era dello scaling incassando cinque miliardi, e il terreno legale sotto il lavoro si rivela revocabile.", "inLanguage": "it", "associatedMedia": {"@type": "MediaObject", "contentUrl": "https://media.casamon.dev/ai/podcast/episodes/2026-08-08.mp3"}, "partOfSeries": {"@type": "PodcastSeries", "name": "Signal.AI", "url": "https://it-mikesoft.github.io/signal-brief/ai/"}}</script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:#faf8f4; color:#1a1a1a; padding:2rem 1.5rem; max-width:680px; margin:0 auto; line-height:1.6; }
+  a { color:#2563eb; }
+  .back { display:inline-block; margin-bottom:1.5rem; font-size:.8rem; font-family:monospace; text-decoration:none; }
+  .videos { display:flex; gap:1rem; flex-wrap:wrap; margin:1.2rem 0; }
+  .videos figure { margin:0; flex:1; min-width:260px; }
+  .videos .v2 { flex:0 1 240px; }
+  .videos video { width:100%; border-radius:12px; background:#000; }
+  .videos .v2 video { aspect-ratio:9/16; max-height:420px; }
+  .videos figcaption { font-size:.75rem; color:#888; text-align:center; margin-top:.3rem; }
+  .vlink { display:flex; gap:.3rem; margin-top:.35rem; }
+  .vlink input { flex:1; min-width:0; font-size:.68rem; font-family:monospace; padding:.3rem .4rem;
+    border:1px solid #e2ddd6; border-radius:6px; background:#fff; color:#6b7280; }
+  .vlink button { font-size:.68rem; padding:.3rem .6rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; }
+  .wk { font-size:1rem; margin:1.4rem 0 .4rem; }
+  details.wkacc { border:1px solid #e5e7eb33; border-radius:10px; margin:.6rem 0; padding:.1rem .8rem .4rem; }
+  details.wkacc summary { cursor:pointer; font-weight:600; padding:.5rem 0; font-size:.9rem; }
+  .back:hover { text-decoration:underline; }
+  header h1 { font-family:Georgia,serif; font-size:1.7rem; font-weight:600; }
+  header h1 span { color:#2563eb; }
+  .tagline { color:#6b7280; font-size:.85rem; margin-top:.3rem; margin-bottom:1.5rem; }
+  ul.eps { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
+  .subscribe { display:inline-flex; align-items:center; gap:.5rem; margin-bottom:1.2rem;
+    padding:.45rem .9rem; background:#2563eb; color:#fff; border-radius:20px;
+    text-decoration:none; font-size:.8rem; font-weight:600; }
+  .subscribe:hover { opacity:.85; color:#fff; }
+  .ep { display:flex; align-items:center; gap:.8rem; padding:.8rem 1rem; background:#fff;
+    border:1px solid #e2ddd6; border-radius:8px; text-decoration:none; color:inherit; transition:box-shadow .12s; }
+  .ep:hover { box-shadow:0 2px 8px rgba(0,0,0,.07); }
+  .ep-play { width:32px; height:32px; border-radius:50%; background:#f3f4f6; display:flex;
+    align-items:center; justify-content:center; font-size:12px; flex-shrink:0; }
+  .ep-title { font-size:.9rem; font-weight:500; }
+  .ep-meta { font-size:.72rem; color:#9ca3af; font-family:monospace; margin-top:.15rem; }
+  audio { width:100%; margin:1rem 0 1.5rem; }
+  .rawmd { margin:-.5rem 0 1.5rem; }
+  .rawmd a { font-size:.8rem; font-family:monospace; color:inherit; opacity:.65; }
+  .desc { color:#374151; font-size:.95rem; margin-bottom:1.5rem; }
+  section { margin:2rem 0; }
+  section h2 { font-family:Georgia,serif; font-size:1.1rem; border-bottom:1px solid #e2ddd6;
+    padding-bottom:.3rem; margin-bottom:.8rem; }
+  .synthesis p { margin:.7rem 0; }
+  .tension { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; font-size:.9rem; }
+  .tension .axis { font-weight:600; margin-bottom:.3rem; }
+  .tension .side { color:#6b7280; font-size:.85rem; }
+  .proj { font-size:.9rem; margin:.4rem 0; }
+  .proj .pname { font-weight:600; }
+  .proj .pnew { background:#16a34a; color:#fff; font-size:.65rem; font-weight:700;
+    padding:.1rem .35rem; border-radius:4px; text-transform:uppercase; vertical-align:middle; }
+  .fonte { font-size:.85rem; margin:.5rem 0; }
+  .fonte .who { font-weight:600; }
+  .fonte a { display:block; margin-left:.5rem; color:#6b7280; }
+  .transcript-body p { margin:.7rem 0; line-height:1.7; }
+  .transcript-body .chapter hr { border:none; border-top:1px solid #e2ddd6; margin:1.5rem 0; }
+  .transcript-body .podcast-episode-desc { color:#6b7280; font-style:italic; }
+  .signal-card { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; }
+  .signal-theme { font-size:.75rem; font-weight:700; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.3rem; }
+  .signal-text { font-size:.85rem; color:#374151; line-height:1.5; }
+  .creator-footer { margin-top:3rem; padding-top:1.5rem; border-top:1px solid #e2ddd6;
+    display:flex; align-items:center; gap:.9rem; }
+  .creator-footer img { width:40px; height:40px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+  .creator-meta { display:flex; flex-direction:column; gap:.15rem; }
+  .creator-name { font-size:.85rem; font-weight:600; color:#1a1a1a; }
+  .creator-tagline { font-size:.75rem; color:#6b7280; }
+  .creator-email { font-size:.75rem; }
+  .creator-ai { font-size:.72rem; color:#8a7f6d; max-width:46ch; line-height:1.45; }
+  .tutele { margin-top:2rem; padding-top:1.2rem; border-top:1px solid #e2ddd6;
+    font-size:.72rem; color:#8a7f6d; line-height:1.5; }
+  .tutele h3 { font-size:.75rem; color:#6b7280; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.5rem; font-weight:600; }
+  .tutele p { margin:.45rem 0; }
+  .tutele strong { color:#5a5348; font-weight:600; }
+  .tutele a { color:inherit; text-decoration:underline; }
+  .creator-email a { color:#9ca3af; text-decoration:none; }
+  .creator-email a:hover { color:#1a1a1a; }
+  /* disegno 2026-08-07: mesi a pagine, facce, player modale, trascrizione
+     richiudibile — la pagina episodio è un prodotto, non un sottoprodotto */
+  .hrow { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+  .hrow .subscribe { margin-bottom:0; flex-shrink:0; }
+  .months { font-size:.78rem; font-family:monospace; margin:.4rem 0 1rem; color:#9ca3af; }
+  .months a { text-decoration:none; } .months b { color:inherit; }
+  .ep-faces { display:flex; margin-left:auto; flex-shrink:0; }
+  .ep-faces img { width:26px; height:26px; border-radius:50%; object-fit:cover;
+    border:2px solid #fff; margin-left:-8px; background:#eee; }
+  /* tutti i citati sul desktop; su mobile la leggibilità vince: max 3 */
+  @media (max-width:600px) { .ep-faces img:nth-child(n+4) { display:none; } }
+  .ep-listen { width:32px; height:32px; border-radius:50%; background:#f3f4f6; border:0;
+    display:flex; align-items:center; justify-content:center; font-size:12px;
+    flex-shrink:0; cursor:pointer; color:inherit; }
+  .ep-listen.on { background:#2563eb; color:#fff; }
+  .face-inline { width:1.15em; height:1.15em; border-radius:50%; object-fit:cover;
+    vertical-align:-.18em; margin-right:.25em; }
+  /* SEMPRE sulla stessa riga (2026-08-09): su schermi stretti le miniature
+     si riducono, e se non basta il reel sparisce — mai l'andata a capo */
+  .vthumbs { display:flex; gap:.8rem; flex-wrap:nowrap; margin:1.2rem 0; align-items:flex-start; }
+  .vthumb { position:relative; cursor:pointer; border:0; padding:0; background:none;
+    border-radius:12px; overflow:hidden; }
+  /* stessa ALTEZZA per video e reel: il 9:16 si stringe, non svetta */
+  .vthumb video { height:150px; width:auto; display:block; border-radius:12px; background:#000; }
+  @media (max-width:520px) { .vthumb video { height:118px; } }
+  /* quando nemmeno ridotte ci stanno: via le miniature, due BOTTONI in
+     riga che aprono il player (2026-08-09) */
+  .vbtns { display:none; gap:.6rem; margin:1.2rem 0; }
+  .vbtns button { flex:1; padding:.6rem .4rem; border:0; border-radius:10px;
+    background:#2563eb; color:#fff; font-weight:700; font-size:.85rem;
+    cursor:pointer; font-family:inherit; }
+  @media (max-width:420px) { .vthumbs { display:none; } .vbtns { display:flex; } }
+  .vthumb .vlabel { position:absolute; left:0; right:0; bottom:0; padding:.9rem .5rem .35rem;
+    background:linear-gradient(transparent, rgba(0,0,0,.75)); color:#fff; font-size:.7rem; }
+  .vthumb::after { content:"▶"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    color:#fff; font-size:1.6rem; text-shadow:0 1px 6px rgba(0,0,0,.8); }
+  /* margin:auto ESPLICITO: il reset globale * {margin:0} annullava la
+     centratura nativa del dialog e il player si apriva in alto a sinistra */
+  dialog.vplayer { border:0; padding:0; background:transparent; max-width:92vw;
+    margin:auto; position:fixed; inset:0; }
+  dialog.vplayer::backdrop { background:rgba(0,0,0,.85); }
+  dialog.vplayer video { max-width:92vw; max-height:86vh; border-radius:14px; background:#000; }
+  details.tr { border:1px solid #e2ddd6; border-radius:10px; padding:.2rem .9rem .6rem; }
+  details.tr summary { cursor:pointer; font-weight:600; padding:.55rem 0; }
+  .tr-copy { font-size:.72rem; padding:.3rem .7rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; margin:.3rem 0 .5rem; }
+  .epnav { display:flex; justify-content:space-between; gap:1rem; margin:2rem 0 0;
+    font-size:.82rem; font-family:monospace; }
+  .epnav a { text-decoration:none; }
+  @media (prefers-color-scheme:dark) {
+    body { background:#1f1d18; color:#e5e5e5; }
+    .ep, .tension, .signal-card { background:#2a2823; border-color:#3a352d; }
+    .ep-play { background:#3a352d; } .desc { color:#d4d4d4; }
+    .signal-text { color:#d4d4d4; }
+    .creator-footer { border-color:#3a352d; }
+    .creator-name { color:#f5f5f5; }
+    .creator-tagline, .creator-email a { color:#9ca3af; }
+    .creator-ai { color:#9a8f7d; }
+    .vlink input { background:#1c1a17; border-color:#3a352d; color:#9ca3af; }
+    .tutele { border-color:#3a352d; color:#9a8f7d; }
+    .tutele h3 { color:#a9a9a9; } .tutele strong { color:#d4d4d4; }
+    .ep-listen { background:#3a352d; }
+    .ep-faces img { border-color:#2a2823; background:#3a352d; }
+    details.tr { border-color:#3a352d; }
+  }
+</style></head><body>
+<a class="back" href="/signal-brief/ai/">← Signal.AI</a>
+<header><h1>La memoria come nuovo collo di bottiglia</h1></header>
+<div class="tagline">2026-08-08 · Digital Intelligence Podcast</div>
+<div class="desc">Karpathy sposta il problema dal modello alla persistenza del contesto, Sutskever chiude l'era dello scaling incassando cinque miliardi, e il terreno legale sotto il lavoro si rivela revocabile.</div>
+<audio controls preload="none" src="https://media.casamon.dev/ai/podcast/episodes/2026-08-08.mp3"></audio>
+<section class="vthumbs"><button class="vthumb video" type="button" onclick="apriVideo('https://media.casamon.dev/ai/video/2026-08-08-ai-video.mp4')"><video preload="metadata" muted playsinline src="https://media.casamon.dev/ai/video/2026-08-08-ai-video.mp4#t=1.5"></video><span class="vlabel">L'episodio in video · 2026-08-08</span></button><button class="vthumb short" type="button" onclick="apriVideo('https://media.casamon.dev/ai/video/2026-08-08-ai-short.mp4')"><video preload="metadata" muted playsinline src="https://media.casamon.dev/ai/video/2026-08-08-ai-short.mp4#t=1.5"></video><span class="vlabel">Il reel · 2026-08-08</span></button></section><section class="vbtns"><button type="button" onclick="apriVideo('https://media.casamon.dev/ai/video/2026-08-08-ai-video.mp4')">▶ Video</button><button type="button" onclick="apriVideo('https://media.casamon.dev/ai/video/2026-08-08-ai-short.mp4')">▶ Reel</button></section>
+<div class="rawmd"><a href="raw.md">Testo (markdown)</a></div>
+<section><h2>Sintesi</h2><div class="synthesis"><h2>Il modello non è più la variabile scarsa</h2>
+<p>Il dato trasversale non è una tesi condivisa ma un abbandono condiviso: quasi nessuno, in questo ciclo, parla ancora di capacità del modello. <strong>Andrej Karpathy</strong> sposta la leva sulla persistenza del contesto — un loop che gira 700 esperimenti li dimentica, un grafo li conserva — e propone il wiki come artefatto da coltivare. <strong>Benedict Evans</strong> arriva allo stesso vuoto dal lato del margine: se nulla è davvero differenziato, il collo di bottiglia è <a href="https://www.ben-evans.com/benedictevans/2026/7/9/ways-to-think-about-token-pricing" target="_blank" rel="noopener">system integration e workflow, non capability</a>. <strong>Jensen Huang</strong> lo dice in forma di hardware — "il modello è il cervello, l'harness è il corpo" — e <strong>Aravind Srinivas</strong> in forma antropologica: abbondanti le risposte, scarse le domande. <strong>Ilya Sutskever</strong> chiude il cerchio dichiarando finita l'età dello scaling e poi <a href="https://techcrunch.com/2026/07/27/ilya-sutskevers-safe-superintelligence-partners-with-nvidia-to-scale-its-ai-research/" target="_blank" rel="noopener">prendendo 5 miliardi da NVIDIA</a>: la contraddizione è il punto su cui verrà giudicato.</p>
+<p>Il disaccordo comincia esattamente lì. Cosa riempie il vuoto? Memoria (Karpathy), apprendimento continuo (<strong>Liang Wenfeng</strong>, <strong>John Carmack</strong>), agency misurabile (<strong>François Chollet</strong>), world model (<strong>Yann LeCun</strong>). Nessuna di queste risposte è compatibile con le altre, e tutte convivono sotto la stessa diagnosi.</p>
+<p>La seconda corrente è la fragilità del substrato. <strong>Balaji Srinivasan</strong> perde una licenza commerciale e <a href="https://fortune.com/2026/07/26/network-school-balaji-srinivasan-malaysia-johor-israel-kazakhstan/" target="_blank" rel="noopener">ricolloca in 24 ore</a>; <strong>Jack Dorsey</strong> pubblica l'ordine di takedown di Bitchat come contro-mossa; <strong>DHH</strong> esce da Apple; <strong>Andrew Ng</strong> — ed è il capovolgimento più interessante — arriva all'open-weight non per ideologia ma perché durante un incidente i modelli chiusi <em>si sono rifiutati di aiutare</em>. Il rifiuto come modalità di guasto. La <a href="https://genesisopenmodels.anl.gov/" target="_blank" rel="noopener">Genesis Open Models Initiative</a> del DOE mostra che l'argomento è già diventato politica industriale.</p>
+<p>Qui si apre la frattura vera. <strong>Demis Hassabis</strong> chiede un <a href="https://www.axios.com/2026/07/14/demis-hassabis-ai-regulation-google-deepmind" target="_blank" rel="noopener">watchdog globale entro fine anno</a>, <strong>Yoshua Bengio</strong> e <strong>Dario Amodei</strong> costruiscono l'architettura del contenimento — mentre l'altra metà del campo dimostra empiricamente che la giurisdizione è revocabile in un pomeriggio.</p>
+<p><strong>Geoffrey Hinton</strong> fornisce la chiave di lettura di tutto l'insieme: il problema non sono i cattivi attori, sono gli incentivi. Applicata alle voci qui sopra, l'osservazione è corrosiva. Huang ha bisogno che i token siano unità di ricavo; <strong>Alexandr Wang</strong> prezza al 25% per comprare dati; Evans non ha un lab da difendere. Le tesi sono buone. Sono anche, quasi tutte, il bilancio di chi le pronuncia.</p></div></section>
+<section><h2>Temi del giorno</h2><div class="tension"><div class="axis">↗ Persistenza del contesto come collo di bottiglia</div><div class="side">Il limite non è più la capability ma la memoria: un loop che gira 700 esperimenti li dimentica, mentre un grafo o un wiki li conserva come artefatto da coltivare.</div></div><div class="tension"><div class="axis">↗ L'harness conta più del modello</div><div class="side">Il valore si sposta dal cervello al corpo — integrazione di sistema, workflow, strumentazione attorno al modello.</div></div><div class="tension"><div class="axis">↗ Fine dell'età dello scaling</div><div class="side">Sutskever dichiara chiusa l'era del scaling e contemporaneamente incassa 5 miliardi da NVIDIA per scalare la ricerca, contraddizione che diventa il metro con cui verrà giudicato.</div></div><div class="tension"><div class="axis">↗ Fragilità del substrato e giurisdizione revocabile</div><div class="side">Licenze, app store e ordini di takedown mostrano che il terreno legale e infrastrutturale su cui poggia il lavoro può sparire in ventiquattr'ore.</div></div><div class="tension"><div class="axis">↗ Il rifiuto come modalità di guasto</div><div class="side">L'open-weight diventa scelta operativa e non ideologica quando, durante un incidente reale, i modelli chiusi si rifiutano di collaborare.</div></div><div class="tension"><div class="axis">↗ Scarsità delle domande, non delle risposte</div><div class="side">Con risposte abbondanti e a costo marginale quasi nullo, la risorsa scarsa diventa la capacità di formulare la domanda giusta.</div></div><div class="tension"><div class="axis">⚖ Cosa riempie il vuoto lasciato dalla capability satura — quattro risposte reciprocamente incompatibili sotto la stessa diagnosi</div><div class="side">Andrej Karpathy: memoria e persistenza del contesto · Liang Wenfeng: apprendimento continuo · François Chollet: agency misurabile · Yann LeCun: world model</div></div><div class="tension"><div class="axis">⚖ Contenimento istituzionale contro exit: si regola una frontiera o si sfugge alla giurisdizione</div><div class="side">Demis Hassabis: watchdog globale entro fine anno · Yoshua Bengio: architettura del contenimento · Balaji Srinivasan: ricollocazione in 24 ore, la giurisdizione è revocabile · Jack Dorsey: pubblicare il takedown come contro-mossa</div></div><div class="tension"><div class="axis">⚖ Chiuso contro aperto — e su quale argomento si fonda la scelta</div><div class="side">Andrew Ng: i modelli chiusi si sono rifiutati di aiutare durante un incidente, il rifiuto è un guasto · Genesis Open Models Initiative: l'apertura è già politica industriale del DOE</div></div><div class="tension"><div class="axis">⚖ Il modello è ancora il centro del valore, o è solo un componente</div><div class="side">Jensen Huang: il modello è il cervello, l'harness è il corpo · Benedict Evans: nulla è differenziato, conta system integration e workflow · Ilya Sutskever: l'età dello scaling è finita, ma prende 5 miliardi per scalare</div></div><div class="tension"><div class="axis">⚖ Le tesi valgono per il loro merito o per il bilancio di chi le pronuncia</div><div class="side">Geoffrey Hinton: il problema non sono i cattivi attori, sono gli incentivi · Jensen Huang: ha bisogno che i token siano unità di ricavo · Alexandr Wang: prezza al 25% per comprare dati · Benedict Evans: non ha un lab da difendere</div></div></section>
+<section><h2>Progetti da osservare</h2><div class="tension"><div class="axis"><span class="pnew">nuovo</span> prime-agent</div><div class=side>Harness RLM auto-migliorante per coding e task autonomi long-running: contesto come variabile, sub-agenti richiamabili come funzioni e messaggistica agent-to-agent persistente. Segna 95,5% su ARC-AGI-3, sopra la baseline umana esperta.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> TencentDB-Agent-Memory</div><div class=side>Memory hub di team che trasforma conversazioni, documenti e codice in quattro asset riutilizzabili: Chat Memory, Skill, LLM-Wiki e Code-Graph. È la tesi di Karpathy (grafo + wiki al posto del loop smemorato) messa in prodotto.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> agent-skills</div><div class=side>Libreria modulare di skill production-grade che codifica workflow, quality gate e criteri di uscita per agenti di coding, compatibile con oltre 70 client. È il lato pratico dell'agentic engineering: spec precise invece di prompt lore.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> @cloudflare/computer</div><div class=side>Runtime che dà a ogni agente un computer proprio: filesystem virtuale su SQLite dentro un Durable Object, shell, git, con orchestrazione dinamica fra isolate e container Linux. Early preview, non ancora per la produzione.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> Kimi K3</div><div class=side>MoE da 2,8T parametri (104B attivi) e contesto 1M rilasciato open-weight da Moonshot il 26 luglio 2026, il più grande modello a pesi aperti mai pubblicato. Costruito per sessioni lunghe su repo grandi e orchestrazione di tool da terminale.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> DeepSeek-V4-Flash-0731</div><div class=side>MoE da 284B (13B attivi), contesto 1M, licenza MIT: entra nella top-3 dei modelli open weights con indice 50, superando il flagship V4-Pro grazie al solo post-training. Prezzo API 0,14$ per milione di token in input.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> Inkling</div><div class=side>Primo modello aperto di Thinking Machines (15 luglio 2026, Apache 2.0): MoE multimodale da 975B parametri, 41B attivi, contesto 1M, input testo/immagine/audio. Pensato per essere eseguito e fine-tunato sui propri dati, contro la logica one-size-fits-all.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> Genesis Open Models Initiative</div><div class=side>Iniziativa del DOE guidata da Argonne per rilasciare modelli scientifici a pesi aperti e infrastruttura condivisa per la ricerca. È la prova che l'argomento open-weight è diventato politica industriale, non solo preferenza tecnica.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> bitchat</div><div class=side>Messaggistica peer-to-peer su mesh Bluetooth LE con trasporto Nostr opzionale: nessun account, nessun server, funziona sotto shutdown di rete. Il governo indiano ne ha ordinato il blocco su GitHub il 23-24 luglio 2026.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> llm (simonw)</div><div class=side>CLI e libreria Python per parlare con centinaia di modelli diversi; la 0.32 del 4 agosto 2026 aggiunge reasoning trace visibili, tool server-side, supporto OpenAI Responses e logging più intelligente. Rilascio definito dall'autore il più significativo dal lancio.</div></div></section>
+<section><h2>Fonti</h2><div class="fonte"><span class="who">Andrew Ng</span><a href="https://www.deeplearning.ai/the-batch/tag/letters/" target="_blank" rel="noopener">deeplearning.ai/the-batch/tag/letters</a></div><div class="fonte"><span class="who">Balaji Srinivasan</span><a href="https://fortune.com/2026/07/26/network-school-balaji-srinivasan-malaysia-johor-israel-kazakhstan/" target="_blank" rel="noopener">Booted from Malaysia, tech guru Balaji Srinivasan finds a new patron</a><a href="https://dnyuz.com/2026/07/26/booted-from-malaysia-tech-guru-balaji-srinivasan-finds-a-new-patron-for-his-nomad-commune-kazakhstan/" target="_blank" rel="noopener">dnyuz mirror</a></div><div class="fonte"><span class="who">Alexandr Wang</span><a href="https://forkast.news/metas-superintelligence-labs-ships-its-first-product-and-the-contributor-tier-is-the-real-strategy/" target="_blank" rel="noopener">Meta's Superintelligence Labs Ships Its First Product</a><a href="https://www.cnbc.com/2026/06/14/meta-hired-alexandr-wang-to-build-ai-its-zuckerbergs-job-to-sell-it.html" target="_blank" rel="noopener">Zuckerberg has to sell it</a><a href="https://www.cnbc.com/2026/04/08/meta-debuts-first-major-ai-model-since-14-billion-deal-to-bring-in-alexandr-wang.html" target="_blank" rel="noopener">Meta debuts new AI model</a></div></section>
+<section class="transcript-section"><h2>Trascrizione</h2><details class="tr"><summary>Leggi la trascrizione</summary><button class="tr-copy" type="button" onclick="copiaTrascrizione(this)">copia il testo</button><div class="transcript-body"><h2>La memoria come nuovo collo di bottiglia</h2>
+<p class="podcast-episode-desc">Karpathy sposta il problema dal modello alla persistenza del contesto, Sutskever chiude l'era dello scaling incassando cinque miliardi, e il terreno legale sotto il lavoro si rivela revocabile.</p>
+<div class="chapter" data-mood="geo"><hr></div>
+<p>C'è un momento, in ogni tecnologia, in cui smette di essere interessante la macchina e diventa interessante tutto quello che le sta intorno. È il punto in cui siamo adesso, e si vede da un dettaglio: in queste settimane quasi nessuno, fra le voci che seguiamo, parla più di quanto sono bravi i modelli.</p>
+<p>È l'8 agosto 2026, questo è Signal Brief.</p>
+<p>E la scena da cui conviene partire è un documento di dodici pagine, pubblicato cinque giorni fa, che racconta la storia di un programma che ha condotto settecento esperimenti e non ne ricordava nessuno.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Il documento si chiama Graph Engineering, porta la data del 3 agosto, e la critica che muove è di una semplicità disarmante. Un agente automatico — un programma che lavora da solo, prova, sbaglia, riprova — gira in un ciclo, esegue settecento esperimenti, e alla fine di quel ciclo non ha imparato niente. Non perché fosse stupido. Perché ogni volta ricominciava da capo. Le informazioni gli passavano davanti e poi svanivano.</p>
+<p>Andrej Karpathy, che di questi sistemi si occupa da anni, ha accompagnato quel documento con una proposta pratica e quasi artigianale: invece di far rileggere all'agente i documenti grezzi a ogni domanda, lasciate che si costruisca un wiki. File di testo collegati fra loro, che si accumulano nel tempo. Il contesto come una cosa da coltivare, non da ricomporre ogni mattina.</p>
+<p>Ieri avevamo lasciato Karpathy su un'altra tesi — questa generazione automatizza ciò che sappiamo verificare — che era una tesi sulla conoscenza. Adesso ne propone una diversa, e più concreta: il problema è la memoria. Non cosa il sistema sa fare, ma cosa riesce a tenere.</p>
+<p>Questo spostamento non riguarda solo lui. Benedict Evans ci arriva da tutt'altra strada, quella dei soldi. Nel suo pezzo del 9 luglio sui prezzi dei token — cioè su quanto costa far lavorare questi sistemi — la domanda che pone ai laboratori è scomoda: se nessuno ha davvero qualcosa di diverso dagli altri, cosa impedisce a tutto questo di diventare una merce a basso margine, come è successo a ogni strato infrastrutturale prima di questo? La sua risposta è che il collo di bottiglia si è spostato: non la capacità dei modelli, ma la capacità delle aziende di rimettere in fila i propri processi.</p>
+<p>Jensen Huang dice la stessa cosa con una metafora che è diventata la formula del momento: il modello è il cervello, l'harness è il corpo. Harness è la struttura che sta attorno al modello — gli strumenti che può chiamare, la memoria che gli tiene, il modo in cui osserva e pianifica. Il valore si sta spostando dal cervello al corpo.</p>
+<p>Vale la pena collegare questo a una storia più vecchia. Quando l'elettricità entrò nelle fabbriche, all'inizio non successe quasi niente. Le fabbriche erano state costruite attorno a un albero di trasmissione centrale mosso dal vapore: si tolse il vapore, si mise un motore elettrico, e la produttività rimase più o meno identica per vent'anni. Il salto arrivò quando qualcuno riprogettò l'edificio — un motore per macchina, i macchinari disposti secondo il flusso del lavoro e non secondo la meccanica dell'albero. Non era mancata la potenza. Era mancato il corpo attorno alla potenza.</p>
+<p>E poi c'è la contraddizione più elegante di questo ciclo. Ilya Sutskever dichiara chiusa l'età dello scaling — la fase in cui bastava fare i modelli più grandi — e sostiene che altri cento volte di calcolo daranno miglioramenti, non salti. Il 28 luglio annuncia una partnership con NVIDIA da circa cinque miliardi di dollari, con dieci volte il calcolo nei prossimi dodici mesi. La frase con cui la giustifica è: abbiamo ricerca degna di essere scalata. Non è un ritorno indietro, è l'ordine invertito — prima l'idea, poi la potenza. Ma resta il metro su cui verrà giudicato, e lo sa.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Andrew Ng insegna intelligenza artificiale da vent'anni ed è, tra le voci di questo settore, una delle meno inclini alle posizioni di principio. Per questo la sua svolta di queste settimane merita di essere raccontata per come è arrivata, non per quello che afferma.</p>
+<p>Ng si è schierato per i modelli a pesi aperti — quelli che si possono scaricare, ispezionare, far girare sulla propria macchina. Ma non ci è arrivato per convinzione politica. Ci è arrivato durante un incidente reale, mentre serviva aiuto. I modelli chiusi, quelli che vivono dietro l'interfaccia di un'azienda, si sono rifiutati di collaborare.</p>
+<p>Il rifiuto come guasto. È un'inversione notevole, perché sposta l'intera discussione su aperto contro chiuso da un terreno ideologico a un terreno di affidabilità. Non "l'apertura è un valore", ma "quando ho avuto bisogno, la cosa chiusa non ha funzionato". È lo stesso ragionamento che un ingegnere fa su un componente che si blocca sotto carico: non ti interessa la filosofia del fornitore, ti interessa che il pezzo tenga.</p>
+<p>E c'è un dettaglio che rende questa posizione meno solitaria di quanto sembri. Il Dipartimento dell'Energia americano ha avviato la Genesis Open Models Initiative, guidata dal laboratorio di Argonne, per rilasciare modelli scientifici a pesi aperti e infrastruttura condivisa per la ricerca. Non è un manifesto di programmatori: è politica industriale di uno Stato. L'apertura ha smesso di essere una preferenza tecnica ed è diventata una scelta di sistema, con dei fondi dietro.</p>
+<p>Quello che trovo più interessante è la simmetria con la storia della crittografia negli anni Novanta. Anche lì la discussione partì ideologica — libertà contro controllo — e si risolse per ragioni pratiche: gli algoritmi pubblici, esaminabili da chiunque, si rivelarono più solidi di quelli segreti, perché venivano rotti prima e riparati prima. La segretezza sembrava sicurezza e invece era fragilità.</p>
+<p>Resta però una domanda che il caso di Ng non chiude. Un modello che si rifiuta di aiutare durante un incidente non è per forza un modello mal progettato: potrebbe essere un modello progettato bene per un altro scenario, quello in cui qualcuno chiede aiuto per fare danni. Il confine fra prudenza e inutilità non è una riga netta, e chi lo traccia decide molto più di quanto sembri. Ng ha vissuto un caso in cui la prudenza era dalla parte sbagliata. Chi scrive quelle regole vive tutti gli altri casi insieme.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Balaji Srinivasan sostiene da anni una tesi che a molti suona astratta: la giurisdizione è un servizio. Lo Stato in cui vivi e lavori non è un destino, è un fornitore, e i fornitori si cambiano. In queste settimane quella tesi ha smesso di essere astratta, perché gli è capitata addosso.</p>
+<p>Il 21 luglio il consiglio comunale di Iskandar Puteri, in Malesia, ha revocato la licenza commerciale della Network School — la scuola che Srinivasan aveva costruito a Forest City, circa millecinquecento dollari al mese comprensivi di alloggio, pasti, palestra e laboratori. La revoca arriva dopo un'indagine su presunti ingressi di cittadini israeliani con secondo passaporto, indagine chiusa senza prove.</p>
+<p>Il 22 luglio — il giorno dopo — era in Asia Centrale a firmare un accordo quinquennale con il Ministero dell'Intelligenza Artificiale e dello Sviluppo Digitale del Kazakistan. Eventi, hackathon, la possibilità di una conferenza. Ventiquattro ore fra la revoca e l'accordo con un altro Stato.</p>
+<p>Si può leggere in due modi. Il primo: è la dimostrazione della tesi, eseguita in tempo record. Il secondo, meno lusinghiero: è la dimostrazione che il terreno sotto i piedi era sottile, e che si è salvato perché aveva già le valigie pronte. Le due letture non si escludono.</p>
+<p>La stessa dinamica, in forma diversa, tocca Jack Dorsey. Fra il 23 e il 24 luglio il governo indiano ha ordinato a GitHub di bloccare entro tre ore tre repository di Bitchat, l'app di messaggistica che Dorsey promuove. Lui non ha fatto ricorso: ha pubblicato l'ordine. La trasparenza come contro-mossa. E il motivo del blocco è tecnico, non politico: Bitchat funziona su una rete di dispositivi che si parlano direttamente via Bluetooth, senza server, il che rende l'intercettazione legale impossibile e la fa funzionare anche quando la rete è spenta. Era cresciuta a Delhi durante le proteste studentesche di luglio.</p>
+<p>David Heinemeier Hansson, sul suo fronte, ha lasciato Apple per macchine su cui gira Linux, con la sua distribuzione preinstallata dal produttore.</p>
+<p>Tre gesti diversi, una stessa scoperta: il terreno legale e infrastrutturale su cui poggia il lavoro può sparire in un pomeriggio. Non è una novità storica — chiedete ai tipografi olandesi del Seicento, che stampavano in Olanda i libri proibiti altrove. È una novità per una generazione cresciuta pensando che l'infrastruttura fosse neutra.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Torniamo un attimo sul filo di oggi, perché ci serve per capire la scena successiva. La diagnosi condivisa è che il modello non è più la variabile scarsa. Il disaccordo comincia sulla domanda: cosa la sostituisce. E oggi ci sono quattro risposte che non stanno insieme.</p>
+<p>Demis Hassabis, in questo quadro, ha fatto la mossa più istituzionale della sua carriera. Il 6 agosto ha annunciato di lasciare la gestione quotidiana di Google DeepMind per diventarne presidente e Chief Scientist di Alphabet. La motivazione dichiarata è concentrarsi sulla strategia di lungo periodo, sull'accelerazione delle scoperte scientifiche e su Isomorphic Labs, la sua società di scoperta farmacologica.</p>
+<p>Un passaggio da dirigente a scienziato-stratega, che di per sé sarebbe una notizia interna. Diventa interessante messo accanto a quello che ha pubblicato a luglio: un manifesto intitolato A Framework for Frontier AI and the Dawning of a New Age, in cui chiede un organismo di controllo globale a guida americana, con potere di esame sui modelli più avanzati, e — questa è la parte inconsueta — operativo entro fine anno. Non "servirebbe cooperazione internazionale", che è la formula con cui di solito queste richieste vengono depositate e dimenticate. Un organismo, un mandato, una scadenza.</p>
+<p>Sulla tempistica dell'intelligenza artificiale generale ripete la sua formula: siamo alle pendici della singolarità. Non ci siamo, ma la salita è già cambiata. Tre anni, dice. E continua a elencare cosa manca — ragionamento continuo, memoria, apprendimento persistente — come problemi aperti, non come dettagli da sistemare. Notate che la sua lista dei pezzi mancanti è, quasi parola per parola, la lista di Karpathy.</p>
+<p>Qui però si apre la frattura vera dell'episodio. Da una parte Hassabis chiede un guardiano globale entro dicembre, e Yoshua Bengio costruisce l'architettura tecnica del contenimento — un sistema non agentico, che modella il mondo e produce previsioni senza avere obiettivi propri, da usare come sorvegliante degli agenti. Dall'altra parte, nello stesso mese, Srinivasan cambia Stato in un giorno e Dorsey pubblica l'ordine di censura che lo riguarda.</p>
+<p>Due metà dello stesso campo che si muovono in direzioni opposte con la stessa urgenza. Una costruisce il recinto, l'altra dimostra empiricamente che il recinto ha una porta.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Alexandr Wang è passato in pochi anni dal vendere dati per addestrare modelli al dirigere i laboratori di superintelligenza di Meta. Ed è utile guardarlo perché fa la cosa più concreta di tutte: mette un prezzo.</p>
+<p>Il 5 agosto Meta ha spedito il suo primo prodotto commerciale, Muse Code, un agente che lavora da terminale. Wang lo descrive in termini deliberatamente operativi: lo installi con un comando e poi gli affidi compiti di ingegneria completi — pianificare le modifiche, scrivere il codice, verificare i risultati. Non "modello capace". Compito intero, dall'inizio alla fine.</p>
+<p>La parte interessante non è il prodotto, è il listino. C'è un livello di prezzo chiamato contributor, che Wang definisce un'opzione incredibilmente buona soprattutto dal punto di vista dei costi: circa il venticinque per cento di quello che chiedono OpenAI e Anthropic. In cambio, chi lo sceglie acconsente a far usare le proprie richieste e le risposte ricevute per addestrare i modelli di Meta.</p>
+<p>È la tesi che Wang aveva costruito con Scale AI, portata dentro Meta: i dati d'uso reali sono la valuta vera. Il prezzo non serve a fare margine, serve a comprare comportamento. Uno sconto del settantacinque per cento è il costo che Meta accetta di pagare per guardare come lavorano gli sviluppatori.</p>
+<p>Il precedente storico è quasi didattico. Nel primo Novecento, le compagnie che vendevano macchine per ufficio scoprirono che il valore non stava nella macchina ma nel contratto di assistenza — la macchina divenne un pretesto per entrare nell'ufficio. Qui la merce non è nemmeno il software: è la traccia di chi lo usa.</p>
+<p>Geoffrey Hinton ha fornito, in queste settimane, la chiave per leggere tutto l'insieme, e la applico volentieri anche a Wang. La sua tesi è che il problema non sono i cattivi attori, sono gli incentivi: nessuna azienda può rallentare da sola, perché ha un dovere verso i propri azionisti. Applicata a questo ciclo di voci, l'osservazione è corrosiva. Huang ha bisogno che ogni token generato sia un'unità di ricavo, e infatti sostiene che l'idea che l'AI riduca i posti di lavoro sia una totale sciocchezza. Wang prezza al venticinque per cento perché gli servono i dati. Evans può dire che nulla è differenziato perché non ha un laboratorio da difendere.</p>
+<p>Le tesi restano buone. Sono anche, quasi tutte, il bilancio di chi le pronuncia. E questo non le rende false — le rende leggibili.</p>
+<div class="chapter" data-mood="upbeat"><hr></div>
+<p>Progetti da osservare.</p>
+<p>Prime-agent è la sorpresa della settimana. È un'impalcatura che permette a un sistema di migliorarsi da solo mentre lavora su compiti lunghi: tratta il contesto come una cosa modificabile, richiama altri agenti come se fossero funzioni, e li fa parlare fra loro con messaggi che restano. Segna novantacinque e mezzo su ARC-AGI-3, il test in cui l'agente si trova dentro un piccolo videogioco e deve capire le regole in poche mosse. Sopra il livello degli umani esperti. È esattamente la tesi di Karpathy trasformata in codice funzionante.</p>
+<p>Agent-skills è il lato pratico della stessa idea: una libreria di competenze pronte, che descrive a un agente come si fa un lavoro, quali controlli di qualità superare e quando fermarsi. Specifiche precise invece di prompt tramandati per sentito dire. Funziona con oltre settanta programmi diversi.</p>
+<p>Computer, di Cloudflare, dà a ogni agente un computer suo — un disco, una shell, git — dentro uno spazio isolato che nasce e muore col compito. È in anteprima, non ancora per la produzione.</p>
+<p>Inkling è il primo modello aperto di Thinking Machines, uscito il 15 luglio con licenza libera: capisce testo, immagini e audio, ed è pensato per essere fatto girare e adattato sui propri dati, contro la logica della taglia unica.</p>
+<p>Genesis Open Models Initiative è quella del Dipartimento dell'Energia di cui parlavamo prima: l'apertura diventata politica industriale.</p>
+<p>E poi, con una riga sola: TencentDB-Agent-Memory continua a crescere. Kimi K3 continua a crescere. DeepSeek-V4-Flash-0731 continua a crescere. Bitchat continua a crescere. MirrorCode continua a crescere. OpenEnv continua a crescere.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Resta l'immagine di quel programma che ha fatto settecento esperimenti e non se ne ricordava nemmeno uno. Per anni abbiamo misurato queste macchine su quanto sapevano fare in un istante. Forse la domanda giusta è un'altra: cosa si portano dietro dall'istante precedente. Vale per i modelli, e viene il sospetto che valga anche per le istituzioni che stanno provando a regolarli.</p>
+<p>È stato Signal Brief. Alla prossima.</p></div></details></section>
+<nav class="epnav"><a href="/signal-brief/ai/2026-08-07/">← 2026-08-07</a><span style="flex:1"></span><a href="/signal-brief/ai/2026-08-09/">2026-08-09 →</a></nav>
+<dialog class="vplayer" id="vplayer"></dialog>
+<script>
+// player modale dei video: la miniatura apre il video al centro (disegno 2026-08-07)
+function apriVideo(src) {
+  var d = document.getElementById('vplayer');
+  d.innerHTML = '<video controls autoplay playsinline src="' + src + '"></video>';
+  d.showModal();
+  d.onclick = function (e) { if (e.target === d) d.close(); };
+  d.onclose = function () { var v = d.querySelector('video'); if (v) v.pause(); d.innerHTML = ''; };
+}
+// ascolto inline dalla lista: un episodio alla volta
+var epAudio = null, epBtn = null;
+function ascolta(btn, src) {
+  if (epBtn === btn && epAudio) {
+    if (epAudio.paused) { epAudio.play(); btn.classList.add('on'); }
+    else { epAudio.pause(); btn.classList.remove('on'); }
+    return;
+  }
+  if (epAudio) { epAudio.pause(); if (epBtn) epBtn.classList.remove('on'); }
+  epAudio = new Audio(src); epBtn = btn;
+  epAudio.play(); btn.classList.add('on');
+  epAudio.onended = function () { btn.classList.remove('on'); };
+}
+function copiaTrascrizione(btn) {
+  var t = btn.parentElement.querySelector('.transcript-body');
+  navigator.clipboard.writeText(t ? t.innerText : '').then(function () {
+    btn.textContent = 'copiata ✓';
+    setTimeout(function () { btn.textContent = 'copia il testo'; }, 1800);
+  });
+}
+</script>
+<footer class="creator-footer">
+  <img src="/signal-brief/mike-avatar.png" alt="Michele Mondora">
+  <div class="creator-meta">
+    <span class="creator-name">it-mikesoft</span>
+    <span class="creator-tagline">working with systems, living with questions</span>
+    <span class="creator-email"><a href="mailto:michele@mondora.com">michele@mondora.com</a></span>
+  </div>
+</footer>
+<section class="tutele"><h3>Trasparenza e tutele</h3>
+<p><strong>Come nasce questo contenuto.</strong> Ricerca, sintesi editoriale, voce narrante, immagini e musica sono prodotte con sistemi di intelligenza artificiale. Non c'è una redazione umana che verifica ogni affermazione prima della pubblicazione: un controllo automatico scarta le schede giudicate inaffidabili, ma non elimina la possibilità di errori.</p>
+<p><strong>Affermazioni su persone e aziende.</strong> Quanto riportato è una sintesi di fonti pubbliche, non una dichiarazione diretta delle persone citate: le frasi non vanno intese come virgolettati né come posizioni ufficiali. Le fonti sono indicate in ogni pagina episodio — verificale prima di considerare un'informazione accertata. Se trovi un'affermazione inesatta che ti riguarda, scrivi a <a href="mailto:michele@mondora.com">michele@mondora.com</a>: viene corretta o rimossa.</p>
+<p><strong>Immagini e volti.</strong> Le immagini di scena sono generate con AI e non raffigurano fatti realmente avvenuti. Le fotografie di persone reali usate nei video provengono da Wikimedia Commons con le rispettive licenze, e sono accostate al racconto a scopo identificativo: la loro presenza non implica partecipazione, dichiarazione o approvazione da parte della persona ritratta. Su richiesta dell'interessato vengono rimosse.</p>
+<p><strong>Fonti e diritti altrui.</strong> I contenuti sono rielaborazioni originali, non riproduzioni di articoli di terzi; le testate e gli autori all'origine di una notizia sono citati e collegati. Marchi e nomi commerciali appartengono ai rispettivi titolari e sono usati a scopo descrittivo.</p>
+</section>
+</body></html>

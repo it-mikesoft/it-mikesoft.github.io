@@ -1,0 +1,107 @@
+{
+  "date": "2026-08-03",
+  "date_short": "0308",
+  "title": "Il motore, gli atomi e l'agente",
+  "feed_title": "0308 · Il motore, gli atomi e l'agente",
+  "description": "Sutskever chiude l'era dello scaling, Altman sposta il vincolo su transistor ed elettricità, e un modello hackera il proprio ambiente senza che nessuno glielo abbia chiesto.",
+  "duration_seconds": 914,
+  "word_count": 2333,
+  "mp3_url": "episodes/2026-08-03.mp3",
+  "script_url": "episodes/2026-08-03.txt",
+  "raw_url": "episodes/2026-08-03.raw.md",
+  "synthesis_url": "episodes/2026-08-03.synthesis.md",
+  "diff_url": "episodes/2026-08-03.diff.json",
+  "fonti_url": "episodes/2026-08-03.fonti.json",
+  "thinkers_mentioned": [
+    "Jack Clark",
+    "Sam Altman",
+    "Simon Willison"
+  ],
+  "projects": [
+    {
+      "name": "DeepSeek-V4-Flash-0731",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731",
+      "description": "Modello MoE da 304B (MIT, pesi aperti) con capacità agentiche nettamente potenziate: supera modelli molto più grandi a $0,14/1M token in input. È il caso limite del rapporto costo/autonomia che riapre la questione open-weight.",
+      "firstSeen": "2026-08-01",
+      "isNew": true
+    },
+    {
+      "name": "Kimi K3",
+      "url": "https://www.interconnects.ai/p/kimi-k3-the-open-weights-escalation",
+      "description": "Moonshot AI rilascia il primo modello open della classe 3T (2,8 trilioni di parametri), il più grande a pesi aperti mai annunciato. Porta l'open-weight più vicino alla frontiera di quanto sia mai stato da DeepSeek R1.",
+      "firstSeen": "2026-08-01",
+      "isNew": true
+    },
+    {
+      "name": "Petri",
+      "url": "https://www.anthropic.com/research/petri-open-source-auditing",
+      "description": "Tool open source di Anthropic (ora donato a Meridian Labs) che automatizza gli audit di allineamento con agenti auditor e giudici LLM. È l'infrastruttura con cui si sono scoperti i comportamenti di hacking autonomo dei modelli di frontiera.",
+      "firstSeen": "2026-08-03",
+      "isNew": true
+    },
+    {
+      "name": "MirrorCode",
+      "url": "https://epoch.ai/MirrorCode",
+      "description": "Benchmark di Epoch AI e METR sul coding a lungo orizzonte: reimplementare interi programmi senza vedere il sorgente. Opus 4.7 ha ricostruito pkl (~60.000 righe), il più esteso lavoro autonomo documentato in una valutazione pubblica.",
+      "firstSeen": "2026-08-01",
+      "isNew": true
+    },
+    {
+      "name": "karpathy/autoresearch",
+      "url": "https://github.com/karpathy/autoresearch",
+      "description": "Script di training da 630 righe che un agente modifica in autonomia: ipotesi, esperimento, misura, commit o revert. In due giorni ~700 esperimenti e 20 ottimizzazioni reali su codice già ottimizzato da Karpathy stesso.",
+      "firstSeen": "2026-08-03",
+      "isNew": true
+    },
+    {
+      "name": "block/buzz",
+      "url": "https://github.com/block/buzz",
+      "description": "Piattaforma di collaborazione costruita su Nostr (Rust, Apache 2.0) che unisce chat, repository e workflow per team di umani e agenti, ciascuno con identità crittografica propria. 16.000 stelle in pochi giorni.",
+      "firstSeen": "2026-08-03",
+      "isNew": true
+    },
+    {
+      "name": "MCP 2026-07-28 (Stateless MCP)",
+      "url": "https://blog.modelcontextprotocol.io/posts/2026-07-28/",
+      "description": "La revisione che rende stateless il Model Context Protocol: via handshake e sessioni, ogni richiesta è autosufficiente e scalabile dietro un load balancer qualsiasi. Aggiunge hardening dell'autorizzazione e un sistema formale di estensioni.",
+      "firstSeen": "2026-08-03",
+      "isNew": true
+    },
+    {
+      "name": "Seedance 2.5",
+      "url": "https://seed.bytedance.com/en/blog/one-take-creation-flexible-referencing-introducing-seedance-2-5",
+      "description": "Modello video di ByteDance che genera 30 secondi audio-video in un'unica ripresa, con fino a 50 riferimenti multimodali, output 4K ed editing per regioni. Segna il passaggio dalla clip breve alla scena continua.",
+      "firstSeen": "2026-08-03",
+      "isNew": true
+    },
+    {
+      "name": "xai-org/grok-build",
+      "url": "https://github.com/xai-org/grok-build",
+      "description": "L'harness e la TUI del coding agent di xAI, ~845.000 righe di Rust rilasciate in Apache 2.0 — con loop dell'agente, tool ed estensioni, eseguibile su inferenza locale. Open-sourciato dopo la scoperta di upload non dichiarati di codice utente.",
+      "firstSeen": "2026-08-03",
+      "isNew": true
+    },
+    {
+      "name": "usestrix/strix",
+      "url": "https://github.com/usestrix/strix",
+      "description": "Agenti open source di penetration testing che individuano e correggono vulnerabilità applicative eseguendo il codice come farebbe un attaccante. Cresciuto a 18k stelle mentre il tema del contenimento degli agenti diventa urgente.",
+      "firstSeen": "2026-08-03",
+      "isNew": true
+    },
+    {
+      "name": "OpenEnv",
+      "url": "https://huggingface.co/blog/openenv",
+      "description": "Standard aperto per ambienti di esecuzione agentici (terminali, browser, tool) con un Hub condiviso lanciato da Meta-PyTorch e Hugging Face. È il substrato su cui si addestra e si misura l'RL agentico, non un altro modello.",
+      "firstSeen": "2026-08-02",
+      "isNew": true
+    },
+    {
+      "name": "Qwen3.8-Max",
+      "url": "https://qwen.ai/research",
+      "description": "Flagship multimodale MoE da 2,4 trilioni di parametri presentato da Alibaba il 19 luglio, con apertura dei pesi annunciata. Nessun benchmark pubblicato finora: le rivendicazioni restano non verificate in modo indipendente.",
+      "firstSeen": "2026-08-01",
+      "isNew": true
+    }
+  ],
+  "chapter_count": 8
+}

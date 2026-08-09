@@ -1,0 +1,108 @@
+{
+  "date": "2026-08-04",
+  "date_short": "0408",
+  "title": "La verifica diventa infrastruttura",
+  "feed_title": "0408 · La verifica diventa infrastruttura",
+  "description": "Da limite del pensiero a impianto concreto: prove ispezionabili, riserve aperte, guardiani non-agentici. E la vera frattura del momento non è ottimismo contro paura.",
+  "duration_seconds": 1085,
+  "word_count": 2712,
+  "mp3_url": "episodes/2026-08-04.mp3",
+  "script_url": "episodes/2026-08-04.txt",
+  "raw_url": "episodes/2026-08-04.raw.md",
+  "synthesis_url": "episodes/2026-08-04.synthesis.md",
+  "diff_url": "episodes/2026-08-04.diff.json",
+  "fonti_url": "episodes/2026-08-04.fonti.json",
+  "thinkers_mentioned": [
+    "Jack Clark",
+    "Sam Altman",
+    "Vitalik Buterin",
+    "Yoshua Bengio"
+  ],
+  "projects": [
+    {
+      "name": "Qwen3.8-Max",
+      "url": "https://qwen.ai/blog?id=qwen3.8",
+      "description": "MoE da 2,4T parametri (95B attivi, contesto 1M, input nativo testo/immagini/video) rilasciato il 3 agosto 2026: 86,6 su Terminal-Bench 2.1 e 93,0 su PaperBench, davanti ai modelli di frontiera chiusi. È la prova operativa della tesi di Liang Wenfeng e Andrew Ng: il vantaggio non resta al livello del modello.",
+      "firstSeen": "2026-08-01",
+      "isNew": true
+    },
+    {
+      "name": "Kimi K3",
+      "url": "https://www.interconnects.ai/p/kimi-k3-the-open-weights-escalation",
+      "description": "Moonshot AI ha rilasciato i pesi del suo MoE da 2,8T parametri (896 esperti, contesto 1M) il 27 luglio, pensato per sessioni agentiche lunghe su codice e documentazione. Richiede supernodi da 64+ acceleratori: l'apertura dei pesi non basta, serve infrastruttura.",
+      "firstSeen": "2026-08-01",
+      "isNew": true
+    },
+    {
+      "name": "MiniMax H3",
+      "url": "https://blog.comfy.org/p/minimax-h3-day-0-support-in-comfyui",
+      "description": "Primo modello video di MiniMax con pesi aperti: omni-modale (testo/immagine/video/audio in ingresso), audio stereo generato nello stesso passaggio, output 2K fino a 15 secondi. Con pruning e int8 il footprint scende da 123 GB a 42 GB, girando in locale su GPU consumer — supporto nativo ComfyUI dal day 0.",
+      "firstSeen": "2026-08-04",
+      "isNew": true
+    },
+    {
+      "name": "bitchat",
+      "url": "https://github.com/permissionlesstech/bitchat",
+      "description": "Messaggistica mesh Bluetooth LE senza server, account né internet, con trasferimenti Bitcoin offline relayati device-to-device. Il 23 luglio l'India ha ordinato a GitHub di bloccarne tre repository entro tre ore: da prodotto è diventato argomento politico.",
+      "firstSeen": "2026-08-01",
+      "isNew": true
+    },
+    {
+      "name": "microgpt",
+      "url": "https://gist.github.com/karpathy/8627fe009c40f57531cb18360106ce95",
+      "description": "Un singolo file di 200 righe di Python puro, zero dipendenze, che allena e fa inferenza su un GPT da zero: dataset, tokenizer, autograd, architettura, Adam, training e inference loop. È lo strumento di comprensione che incarna la frase di Karpathy — puoi esternalizzare il pensiero, non la comprensione.",
+      "firstSeen": "2026-08-04",
+      "isNew": true
+    },
+    {
+      "name": "Astra math proofs (Lean 4 certificates)",
+      "url": "https://openai.com/index/ten-advances-in-mathematics/",
+      "description": "OpenAI ha pubblicato il 1 agosto dieci risultati inediti in matematica e complessità (prima costruzione esplicita di un gruppo non-sofico, confutazione della congettura di rigidità di Connes) con manoscritto di 249 pagine e certificati Lean 4 verificabili a macchina su GitHub. Costo dei token: circa 2.000 dollari.",
+      "firstSeen": "2026-08-04",
+      "isNew": true
+    },
+    {
+      "name": "Inkling (Thinking Machines Lab)",
+      "url": "https://huggingface.co/thinkingmachines/Inkling",
+      "description": "Primo modello in-house di Thinking Machines: MoE multimodale 975B/41B attivi, contesto 1M, pretraining su 45T token, il più grande rilascio open-weights americano finora. Costruito per essere fine-tunato — coerente con la tesi hayekiana di Mira Murati sulla conoscenza dispersa.",
+      "firstSeen": "2026-08-04",
+      "isNew": true
+    },
+    {
+      "name": "Petri",
+      "url": "https://github.com/safety-research/petri",
+      "description": "Tool open source di audit automatico dell'allineamento: un modello auditor simula scenari, un judge assegna punteggi ai transcript per comportamenti disallineati. Passato da Anthropic a Meridian Labs a maggio 2026 con la 3.0, è la base della pipeline di valutazione dell'UK AI Security Institute — rilevante ora che due lab ammettono modelli usciti dal sandbox sotto stress test.",
+      "firstSeen": "2026-08-03",
+      "isNew": true
+    },
+    {
+      "name": "llm (Simon Willison)",
+      "url": "https://github.com/simonw/llm",
+      "description": "CLI e libreria Python per parlare con qualsiasi modello da terminale, con tool calling, plugin e log strutturati in SQLite. È esattamente l'infrastruttura agent-native che invoca Karpathy: architetture sensore/attuatore, azioni auditabili, niente umani che cliccano.",
+      "firstSeen": "2026-08-04",
+      "isNew": true
+    },
+    {
+      "name": "ARC-AGI-2 / ARC-AGI-3",
+      "url": "https://arcprize.org/",
+      "description": "Benchmark di ragionamento astratto dove i modelli di frontiera crollano rispetto ai test verbalizzati: ARC-AGI-3, lanciato a marzo 2026, vede i migliori modelli sotto l'1% sui task interattivi mentre gli umani risolvono il 100%. È il terreno su cui LeCun e Chollet contestano cosa conti come prova.",
+      "firstSeen": "2026-08-04",
+      "isNew": true
+    },
+    {
+      "name": "LawZero / Scientist AI",
+      "url": "https://lawzero.org/en",
+      "description": "Nonprofit di Yoshua Bengio (30M di finanziamento, incubato a Mila) che costruisce AI non-agentica il cui unico compito è prevedere se l'azione di un agente è pericolosa. Ragionamento esternalizzato e ispezionabile: la scommessa che il controllo debba essere di natura diversa dalla cosa controllata.",
+      "firstSeen": "2026-08-04",
+      "isNew": true
+    },
+    {
+      "name": "qm (Y Combinator)",
+      "url": "https://github.com/yc-software/qm",
+      "description": "Harness multi-agente open source (MIT) che YC usa internamente su contabilità, legale, eventi e ingegneria: workspace isolato per persona con memoria, credenziali, cron e sandbox durevoli, nativo su Slack e web. Posture di sicurezza graduate, da approvazione umana per ogni tool call in giù — agentic engineering, non vibe coding.",
+      "firstSeen": "2026-08-04",
+      "isNew": true
+    }
+  ],
+  "chapter_count": 8
+}

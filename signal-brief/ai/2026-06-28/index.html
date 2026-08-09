@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="it"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I costruttori smettono di festeggiare · Signal.AI</title>
+<meta property="og:title" content="I costruttori smettono di festeggiare · Signal.AI"><meta property="og:type" content="article"><meta property="og:description" content="Mentre Huang proclama l'era degli agenti, gli architetti dell'AI elencano cosa manca. E la vera partita si sposta dal modello al prodotto e al potere."><meta property="og:url" content="https://it-mikesoft.github.io/signal-brief/ai/2026-06-28/"><meta property="og:audio" content="https://media.casamon.dev/ai/podcast/episodes/2026-06-28.mp3"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "PodcastEpisode", "name": "I costruttori smettono di festeggiare", "datePublished": "2026-06-28", "url": "https://it-mikesoft.github.io/signal-brief/ai/2026-06-28/", "description": "Mentre Huang proclama l'era degli agenti, gli architetti dell'AI elencano cosa manca. E la vera partita si sposta dal modello al prodotto e al potere.", "inLanguage": "it", "associatedMedia": {"@type": "MediaObject", "contentUrl": "https://media.casamon.dev/ai/podcast/episodes/2026-06-28.mp3"}, "partOfSeries": {"@type": "PodcastSeries", "name": "Signal.AI", "url": "https://it-mikesoft.github.io/signal-brief/ai/"}}</script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:#faf8f4; color:#1a1a1a; padding:2rem 1.5rem; max-width:680px; margin:0 auto; line-height:1.6; }
+  a { color:#2563eb; }
+  .back { display:inline-block; margin-bottom:1.5rem; font-size:.8rem; font-family:monospace; text-decoration:none; }
+  .videos { display:flex; gap:1rem; flex-wrap:wrap; margin:1.2rem 0; }
+  .videos figure { margin:0; flex:1; min-width:260px; }
+  .videos .v2 { flex:0 1 240px; }
+  .videos video { width:100%; border-radius:12px; background:#000; }
+  .videos .v2 video { aspect-ratio:9/16; max-height:420px; }
+  .videos figcaption { font-size:.75rem; color:#888; text-align:center; margin-top:.3rem; }
+  .vlink { display:flex; gap:.3rem; margin-top:.35rem; }
+  .vlink input { flex:1; min-width:0; font-size:.68rem; font-family:monospace; padding:.3rem .4rem;
+    border:1px solid #e2ddd6; border-radius:6px; background:#fff; color:#6b7280; }
+  .vlink button { font-size:.68rem; padding:.3rem .6rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; }
+  .wk { font-size:1rem; margin:1.4rem 0 .4rem; }
+  details.wkacc { border:1px solid #e5e7eb33; border-radius:10px; margin:.6rem 0; padding:.1rem .8rem .4rem; }
+  details.wkacc summary { cursor:pointer; font-weight:600; padding:.5rem 0; font-size:.9rem; }
+  .back:hover { text-decoration:underline; }
+  header h1 { font-family:Georgia,serif; font-size:1.7rem; font-weight:600; }
+  header h1 span { color:#2563eb; }
+  .tagline { color:#6b7280; font-size:.85rem; margin-top:.3rem; margin-bottom:1.5rem; }
+  ul.eps { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
+  .subscribe { display:inline-flex; align-items:center; gap:.5rem; margin-bottom:1.2rem;
+    padding:.45rem .9rem; background:#2563eb; color:#fff; border-radius:20px;
+    text-decoration:none; font-size:.8rem; font-weight:600; }
+  .subscribe:hover { opacity:.85; color:#fff; }
+  .ep { display:flex; align-items:center; gap:.8rem; padding:.8rem 1rem; background:#fff;
+    border:1px solid #e2ddd6; border-radius:8px; text-decoration:none; color:inherit; transition:box-shadow .12s; }
+  .ep:hover { box-shadow:0 2px 8px rgba(0,0,0,.07); }
+  .ep-play { width:32px; height:32px; border-radius:50%; background:#f3f4f6; display:flex;
+    align-items:center; justify-content:center; font-size:12px; flex-shrink:0; }
+  .ep-title { font-size:.9rem; font-weight:500; }
+  .ep-meta { font-size:.72rem; color:#9ca3af; font-family:monospace; margin-top:.15rem; }
+  audio { width:100%; margin:1rem 0 1.5rem; }
+  .rawmd { margin:-.5rem 0 1.5rem; }
+  .rawmd a { font-size:.8rem; font-family:monospace; color:inherit; opacity:.65; }
+  .desc { color:#374151; font-size:.95rem; margin-bottom:1.5rem; }
+  section { margin:2rem 0; }
+  section h2 { font-family:Georgia,serif; font-size:1.1rem; border-bottom:1px solid #e2ddd6;
+    padding-bottom:.3rem; margin-bottom:.8rem; }
+  .synthesis p { margin:.7rem 0; }
+  .tension { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; font-size:.9rem; }
+  .tension .axis { font-weight:600; margin-bottom:.3rem; }
+  .tension .side { color:#6b7280; font-size:.85rem; }
+  .proj { font-size:.9rem; margin:.4rem 0; }
+  .proj .pname { font-weight:600; }
+  .proj .pnew { background:#16a34a; color:#fff; font-size:.65rem; font-weight:700;
+    padding:.1rem .35rem; border-radius:4px; text-transform:uppercase; vertical-align:middle; }
+  .fonte { font-size:.85rem; margin:.5rem 0; }
+  .fonte .who { font-weight:600; }
+  .fonte a { display:block; margin-left:.5rem; color:#6b7280; }
+  .transcript-body p { margin:.7rem 0; line-height:1.7; }
+  .transcript-body .chapter hr { border:none; border-top:1px solid #e2ddd6; margin:1.5rem 0; }
+  .transcript-body .podcast-episode-desc { color:#6b7280; font-style:italic; }
+  .signal-card { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; }
+  .signal-theme { font-size:.75rem; font-weight:700; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.3rem; }
+  .signal-text { font-size:.85rem; color:#374151; line-height:1.5; }
+  .creator-footer { margin-top:3rem; padding-top:1.5rem; border-top:1px solid #e2ddd6;
+    display:flex; align-items:center; gap:.9rem; }
+  .creator-footer img { width:40px; height:40px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+  .creator-meta { display:flex; flex-direction:column; gap:.15rem; }
+  .creator-name { font-size:.85rem; font-weight:600; color:#1a1a1a; }
+  .creator-tagline { font-size:.75rem; color:#6b7280; }
+  .creator-email { font-size:.75rem; }
+  .creator-ai { font-size:.72rem; color:#8a7f6d; max-width:46ch; line-height:1.45; }
+  .tutele { margin-top:2rem; padding-top:1.2rem; border-top:1px solid #e2ddd6;
+    font-size:.72rem; color:#8a7f6d; line-height:1.5; }
+  .tutele h3 { font-size:.75rem; color:#6b7280; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.5rem; font-weight:600; }
+  .tutele p { margin:.45rem 0; }
+  .tutele strong { color:#5a5348; font-weight:600; }
+  .tutele a { color:inherit; text-decoration:underline; }
+  .creator-email a { color:#9ca3af; text-decoration:none; }
+  .creator-email a:hover { color:#1a1a1a; }
+  /* disegno 2026-08-07: mesi a pagine, facce, player modale, trascrizione
+     richiudibile — la pagina episodio è un prodotto, non un sottoprodotto */
+  .hrow { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+  .hrow .subscribe { margin-bottom:0; flex-shrink:0; }
+  .months { font-size:.78rem; font-family:monospace; margin:.4rem 0 1rem; color:#9ca3af; }
+  .months a { text-decoration:none; } .months b { color:inherit; }
+  .ep-faces { display:flex; margin-left:auto; flex-shrink:0; }
+  .ep-faces img { width:26px; height:26px; border-radius:50%; object-fit:cover;
+    border:2px solid #fff; margin-left:-8px; background:#eee; }
+  /* tutti i citati sul desktop; su mobile la leggibilità vince: max 3 */
+  @media (max-width:600px) { .ep-faces img:nth-child(n+4) { display:none; } }
+  .ep-listen { width:32px; height:32px; border-radius:50%; background:#f3f4f6; border:0;
+    display:flex; align-items:center; justify-content:center; font-size:12px;
+    flex-shrink:0; cursor:pointer; color:inherit; }
+  .ep-listen.on { background:#2563eb; color:#fff; }
+  .face-inline { width:1.15em; height:1.15em; border-radius:50%; object-fit:cover;
+    vertical-align:-.18em; margin-right:.25em; }
+  /* SEMPRE sulla stessa riga (2026-08-09): su schermi stretti le miniature
+     si riducono, e se non basta il reel sparisce — mai l'andata a capo */
+  .vthumbs { display:flex; gap:.8rem; flex-wrap:nowrap; margin:1.2rem 0; align-items:flex-start; }
+  .vthumb { position:relative; cursor:pointer; border:0; padding:0; background:none;
+    border-radius:12px; overflow:hidden; }
+  /* stessa ALTEZZA per video e reel: il 9:16 si stringe, non svetta */
+  .vthumb video { height:150px; width:auto; display:block; border-radius:12px; background:#000; }
+  @media (max-width:520px) { .vthumb video { height:118px; } }
+  /* quando nemmeno ridotte ci stanno: via le miniature, due BOTTONI in
+     riga che aprono il player (2026-08-09) */
+  .vbtns { display:none; gap:.6rem; margin:1.2rem 0; }
+  .vbtns button { flex:1; padding:.6rem .4rem; border:0; border-radius:10px;
+    background:#2563eb; color:#fff; font-weight:700; font-size:.85rem;
+    cursor:pointer; font-family:inherit; }
+  @media (max-width:420px) { .vthumbs { display:none; } .vbtns { display:flex; } }
+  .vthumb .vlabel { position:absolute; left:0; right:0; bottom:0; padding:.9rem .5rem .35rem;
+    background:linear-gradient(transparent, rgba(0,0,0,.75)); color:#fff; font-size:.7rem; }
+  .vthumb::after { content:"▶"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    color:#fff; font-size:1.6rem; text-shadow:0 1px 6px rgba(0,0,0,.8); }
+  /* margin:auto ESPLICITO: il reset globale * {margin:0} annullava la
+     centratura nativa del dialog e il player si apriva in alto a sinistra */
+  dialog.vplayer { border:0; padding:0; background:transparent; max-width:92vw;
+    margin:auto; position:fixed; inset:0; }
+  dialog.vplayer::backdrop { background:rgba(0,0,0,.85); }
+  dialog.vplayer video { max-width:92vw; max-height:86vh; border-radius:14px; background:#000; }
+  details.tr { border:1px solid #e2ddd6; border-radius:10px; padding:.2rem .9rem .6rem; }
+  details.tr summary { cursor:pointer; font-weight:600; padding:.55rem 0; }
+  .tr-copy { font-size:.72rem; padding:.3rem .7rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; margin:.3rem 0 .5rem; }
+  .epnav { display:flex; justify-content:space-between; gap:1rem; margin:2rem 0 0;
+    font-size:.82rem; font-family:monospace; }
+  .epnav a { text-decoration:none; }
+  @media (prefers-color-scheme:dark) {
+    body { background:#1f1d18; color:#e5e5e5; }
+    .ep, .tension, .signal-card { background:#2a2823; border-color:#3a352d; }
+    .ep-play { background:#3a352d; } .desc { color:#d4d4d4; }
+    .signal-text { color:#d4d4d4; }
+    .creator-footer { border-color:#3a352d; }
+    .creator-name { color:#f5f5f5; }
+    .creator-tagline, .creator-email a { color:#9ca3af; }
+    .creator-ai { color:#9a8f7d; }
+    .vlink input { background:#1c1a17; border-color:#3a352d; color:#9ca3af; }
+    .tutele { border-color:#3a352d; color:#9a8f7d; }
+    .tutele h3 { color:#a9a9a9; } .tutele strong { color:#d4d4d4; }
+    .ep-listen { background:#3a352d; }
+    .ep-faces img { border-color:#2a2823; background:#3a352d; }
+    details.tr { border-color:#3a352d; }
+  }
+</style></head><body>
+<a class="back" href="/signal-brief/ai/">← Signal.AI</a>
+<header><h1>I costruttori smettono di festeggiare</h1></header>
+<div class="tagline">2026-06-28 · Digital Intelligence Podcast</div>
+<div class="desc">Mentre Huang proclama l'era degli agenti, gli architetti dell'AI elencano cosa manca. E la vera partita si sposta dal modello al prodotto e al potere.</div>
+<div class="rawmd"><a href="raw.md">Testo (markdown)</a></div>
+<section><h2>Sintesi</h2><div class="synthesis"><p>Attraversando queste venti voci nello stesso momento — giugno 2026 — emerge una corrente di fondo sorprendentemente coerente: <strong>la fine dell'innocenza dello scaling</strong>. Chi ha costruito quel paradigma ora lo seppellisce. <a href="https://www.dwarkesh.com/p/ilya-sutskever-2" target="_blank" rel="noopener">Ilya Sutskever</a> annuncia il ritorno all'"età della ricerca" perché il collo di bottiglia sono le idee, non il compute; <a href="https://arcprize.org/blog/arc-agi-3-launch" target="_blank" rel="noopener">François Chollet</a>, <a href="https://www.techtimes.com/articles/317928/20260606/yann-lecun-world-models-bet-ami-labs-stakes-103-billion-against-large-language-models.htm" target="_blank" rel="noopener">Yann LeCun</a> e <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/john-carmack.jpg" alt="">John Carmack convergono sullo stesso bersaglio — più dati non bastano — mentre persino <a href="https://www.axios.com/2026/05/26/deepmind-ceo-demis-hassabis" target="_blank" rel="noopener">Demis Hassabis</a> elenca i gap residui (world models, memoria, continual learning) che LeCun aveva fatto propri. È una rivolta degli architetti contro la propria opera.</p>
+<p>Il secondo asse è lo spostamento dal <em>modello</em> all'<em>agente integrato nel mondo</em>. <a href="https://www.benzinga.com/markets/tech/26/06/60091727/andrej-karpathy-says-ai-is-no-longer-a-chatbot-its-becoming-your-teammate" target="_blank" rel="noopener">Andrej Karpathy</a> ribattezza l'<img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="">AI "collega", <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt="">Jensen Huang proclama l'"era agentica", <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/nat-friedman.jpg" alt="">Nat Friedman e <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/aravind-srinivas.png" alt="">Aravind Srinivas costruiscono infrastrutture per agenti che committano e gestiscono aziende. Qui però la frattura più interessante: chi presidia il <em>layer applicativo</em> — <a href="https://stratechery.com/2026/an-interview-with-benedict-evans-about-ai-and-software/" target="_blank" rel="noopener">Benedict Evans</a> col suo "il collo di bottiglia è il prodotto" — raffredda l'euforia tecnica degli altri.</p>
+<p>La tensione vera, però, è politica. Da un lato i decentralizzatori: <a href="https://crypto.news/jack-dorseys-bitchat-neighborhood-bitcoin/" target="_blank" rel="noopener">Jack Dorsey</a>, Balaji, <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/vitalik-buterin.jpg" alt="">Vitalik Buterin e la spinta di Karpathy al local compute condividono un'ansia di <strong>sovranità individuale</strong> contro i single point of failure. Dall'altro, la paura speculare della <em>concentrazione</em>: <a href="https://thewizdomproject.com/naval-ravikant-ai" target="_blank" rel="noopener">Naval Ravikant</a> teme "il piccolo gruppo che controlla l'AI", <a href="https://jack-clark.net/" target="_blank" rel="noopener">Jack Clark</a> la superpersuasione come consolidamento del potere, <a href="https://www.scmp.com/tech/big-tech/article/3357525/how-deepseeks-landmark-funding-secures-liang-wenfengs-grip-chinas-ai-rivalry-heats" target="_blank" rel="noopener">Liang Wenfeng</a> blinda il proprio controllo persino mentre apre i pesi.</p>
+<p>Su questo si innesta la divergenza più netta del momento — la regolamentazione. <a href="https://darioamodei.com/post/policy-on-the-ai-exponential" target="_blank" rel="noopener">Dario Amodei</a> chiede regole vincolanti, Hinton il "volante", e perfino Jensen Huang ammette ora standard di sicurezza; di fronte, l'accelerazionismo di <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/marc-andreessen.jpg" alt="">Marc Andreessen e l'anti-regulatory-capture di Naval.</p>
+<p>La corrente sotterranea che unisce tutto è quasi malinconica: dopo l'ebbrezza dello scaling, queste menti cercano l'<strong>irriducibilmente umano</strong> — il giudizio incarnato di Naval, lo <a href="https://www.paulgraham.com/articles.html" target="_blank" rel="noopener">scrivere-come-pensare</a> di <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/paul-graham.png" alt="">Paul Graham. Non sappiamo ancora <em>come</em> fare la prossima AI; sappiamo già di doverne temere il padrone.</p></div></section>
+<section><h2>Temi del giorno</h2><div class="tension"><div class="axis">↗ Il prodotto come collo di bottiglia</div><div class="side">Dopo la maturità tecnica, il vero limite si sposta sul layer applicativo e sul design del prodotto, non sul modello.</div></div><div class="tension"><div class="axis">↗ Paura della concentrazione del potere</div><div class="side">Timore speculare alla sovranità: che un piccolo gruppo o la superpersuasione consolidino il controllo dell'AI.</div></div><div class="tension"><div class="axis">↗ Ricerca dell'irriducibilmente umano</div><div class="side">Una corrente malinconica cerca ciò che resta solo umano — il giudizio incarnato, lo scrivere-come-pensare.</div></div><div class="tension"><div class="axis">↗ I gap architetturali specifici</div><div class="side">Il dibattito si fa tecnico: world models, memoria e continual learning come ostacoli nominati esplicitamente.</div></div><div class="tension"><div class="axis">↗ Decentralizzazione come ansia di sistema</div><div class="side">Il local compute è incorniciato come difesa contro i single point of failure, non più solo emancipazione.</div></div><div class="tension"><div class="axis">⚖ Regolazione vincolante contro accelerazione senza freni</div><div class="side">Dario Amodei: regole vincolanti e 'volante' · Marc Andreessen: accelerazionismo e timore di regulatory capture</div></div><div class="tension"><div class="axis">⚖ Sovranità individuale contro concentrazione del potere</div><div class="side">Jack Dorsey: AI personale come difesa · Naval Ravikant: paura del piccolo gruppo che controlla l'AI</div></div><div class="tension"><div class="axis">⚖ Euforia agentica contro freno del prodotto</div><div class="side">Jensen Huang: l'era agentica è arrivata · Benedict Evans: il vero collo di bottiglia è il prodotto</div></div><div class="tension"><div class="axis">⚖ Architetti contro lo scaling vs ultimi accelerazionisti</div><div class="side">Ilya Sutskever: ritorno all'età della ricerca · Marc Andreessen: avanti tutta sulla traiettoria attuale</div></div></section>
+<section><h2>Progetti da osservare</h2><div class="tension"><div class="axis">karpathy/nanochat</div><div class=side>Pipeline minimale per addestrare un modello GPT-2 in ~2 ore su 8×H100 con FP8 e ClimbMix, parte della linea di lavoro di Karpathy su pipeline ridotte per singolo ricercatore. Repo di riferimento per l'era 'meno codice, più amplificazione'.</div></div><div class="tension"><div class="axis">karpathy/llm-wiki (gist)</div><div class=side>Prompt-pattern da copiare in Claude Code/Codex che istanzia il sistema 'LLM Wiki' su Obsidian: articoli enciclopedici interlinkati, backlink, health check. Diventato viral come anti-RAG personale.</div></div><div class="tension"><div class="axis">karpathy/autoresearch</div><div class=side>Repo di ~630 righe (7 marzo 2026) che materializza un agente di ricerca minimale, parte della tesi 'idea file = distribuzione' di Karpathy. Esempio concreto di agente che amplifica il ricercatore individuale.</div></div><div class="tension"><div class="axis">Obsidian</div><div class=side>Editor di note markdown con backlink e grafi che Karpathy elegge come 'IDE della conoscenza' nel suo pattern LLM-Wiki. Diventa il frontend consigliato per memoria esplicita e ispezionabile contro la memoria opaca degli assistant commerciali.</div></div><div class="tension"><div class="axis">ggerganov/llama.cpp</div><div class=side>Motore di inferenza C/C++ per LLM locali; il suo llama-server è il cuore dello stack self-sovereign proposto da Buterin (NixOS + llama-server + bubblewrap). Standard de facto per AI locale sovrana.</div></div><div class="tension"><div class="axis">basecamp/omarchy</div><div class=side>Distro Arch Linux curata da DHH con Hyprland, pensata per attrarre utenti macOS/Windows verso un desktop 'malleabile'. Progetto-manifesto del filone 'open source AI-ready' di DHH (Omacon NY, 130 persone).</div></div><div class="tension"><div class="axis">hyprwm/Hyprland</div><div class=side>Compositor Wayland dinamico, cuore visivo di Omarchy e simbolo del rinnovato interesse consumer per Linux (Panther Lake / XPS 14). DHH lo cita come esempio di software su cui finalmente 'hardware e aziende tornano a scommettere'.</div></div><div class="tension"><div class="axis">simonw/llm</div><div class=side>CLI e libreria Python di Simon Willison per interagire con LLM locali e cloud, base dei suoi tool README-driven (scan-for-secrets, datasette-ports, research-llm-apis). Strumento pivot del suo workflow 'agentic engineering'.</div></div><div class="tension"><div class="axis">fchollet/ARC-AGI</div><div class=side>Repo ufficiale dei benchmark ARC-AGI di Chollet, ora affiancato da ARC-AGI-3 (ambienti interattivi turn-based per misurare agency). ARC Prize 2026 ha $2M di montepremi; umani 100%, best frontier model 0,37%.</div></div><div class="tension"><div class="axis">zilliztech/claude-context</div><div class=side>Server MCP di code search che trasforma l'intera codebase in contesto indicizzato per Claude Code, Cursor e altri agenti. Esempio netto del 'moat shift' dal modello all'uso indicato da Evans e Andreessen.</div></div></section>
+<section><h2>Fonti</h2><div class="fonte"><span class="who">Demis Hassabis</span><a href="https://www.axios.com/2026/05/26/deepmind-ceo-demis-hassabis" target="_blank" rel="noopener">Axios — DeepMind CEO says we're close to AGI</a><a href="https://www.fastcompany.com/91544235/demis-hassabis-google-io-2026" target="_blank" rel="noopener">Fast Company — Hassabis at Google I/O 2026</a><a href="https://www.therundown.ai/p/exclusive-demis-hassabis-on-agi-curing-diseases-with-ai" target="_blank" rel="noopener">The Rundown — Exclusive: Hassabis on AGI &amp; curing diseases</a></div><div class="fonte"><span class="who">Naval Ravikant</span><a href="https://nav.al/" target="_blank" rel="noopener">nav.al</a><a href="https://x.com/theallinpod/status/1890610936769360052" target="_blank" rel="noopener">All-In Podcast su X — Naval su controllo AI (E215)</a><a href="https://thewizdomproject.com/naval-ravikant-ai" target="_blank" rel="noopener">Naval Ravikant on AI — "everyone is now a wizard"</a></div><div class="fonte"><span class="who">Dario Amodei</span><a href="https://darioamodei.com/essay/the-adolescence-of-technology" target="_blank" rel="noopener">The Adolescence of Technology</a><a href="https://darioamodei.com/post/policy-on-the-ai-exponential" target="_blank" rel="noopener">Policy on the AI Exponential</a><a href="https://www.cfr.org/event/ceo-speaker-series-dario-amodei-anthropic" target="_blank" rel="noopener">CEO Speaker Series, Council on Foreign Relations</a></div></section>
+<section class="transcript-section"><h2>Trascrizione</h2><details class="tr"><summary>Leggi la trascrizione</summary><button class="tr-copy" type="button" onclick="copiaTrascrizione(this)">copia il testo</button><div class="transcript-body"><h2>I costruttori smettono di festeggiare</h2>
+<p class="podcast-episode-desc">Mentre Huang proclama l'era degli agenti, gli architetti dell'AI elencano cosa manca. E la vera partita si sposta dal modello al prodotto e al potere.</p>
+<div class="chapter" data-mood="geo"><hr></div>
+<p>Giugno 2026 sta per chiudersi, ed è il momento in cui Signal Brief prova a guardare la fotografia intera. Se mettiamo in fila le voci di chi costruisce le macchine intelligenti, da Mountain View a Shenzhen, salta agli occhi una cosa che fino a pochi mesi fa sarebbe sembrata strana: i costruttori hanno smesso di festeggiare. Gli stessi ingegneri che hanno acceso il motore degli ultimi cinque anni adesso passano il tempo a indicarne i limiti. E sullo sfondo, una domanda diversa, più antica, è tornata a farsi sentire: non quanto sarà potente questa tecnologia, ma chi la terrà in mano.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>All'inizio del mese, sul palco del GTC di Taipei, Jensen Huang ha pronunciato una di quelle frasi pensate per restare. L'AI agentica è arrivata, ha detto, l'AI utile è arrivata. Non più macchine che rispondono a una domanda, ma macchine che osservano, ragionano, decidono e agiscono. La platea applaudiva. Eppure, quasi nello stesso momento, in una lunga conversazione pubblicata online, Benedict Evans rispondeva a quell'entusiasmo con una frase molto più fredda: il vero collo di bottiglia non è la tecnologia, è il prodotto. Possiamo avere il motore più potente mai costruito, dice in sostanza, ma finché non capiamo dentro quale oggetto metterlo, e per fare cosa, resta un motore in officina.</p>
+<p>È un disaccordo che vale la pena tenere a mente, perché racconta dove si è spostata la partita. Per cinque anni la domanda è stata: riusciamo a costruire il motore? Adesso il motore c'è, e la domanda diventa noiosa e decisiva insieme — cosa ci facciamo. È successo lo stesso con l'elettricità nelle fabbriche. La dinamo era pronta da decenni, ma per anni gli stabilimenti continuarono a funzionare come ai tempi del vapore, con un grande albero centrale e le cinghie. Il salto di produttività arrivò solo quando qualcuno ripensò la fabbrica intorno al motore elettrico, mettendone uno piccolo a ogni macchina. Il collo di bottiglia non era la corrente. Era l'immaginazione.</p>
+<p>Sotto questa discussione, però, ne corre una più sorda. Perché mentre Huang celebra, gli architetti stessi hanno cominciato a elencare cosa manca. Demis Hassabis, che guida la ricerca AI di Google, ripete in queste settimane che siamo sulle pendici della singolarità, ai piedi della montagna — e subito dopo, invece di promettere la vetta, si mette a contare i buchi: capire come si comporta il mondo fisico, la memoria, la coerenza nel tempo, l'imparare strada facendo. Quattro mancanze precise. Continua così la frattura sullo scaling che attraversava già il racconto di ieri, ma con una novità: adesso a seppellire il vecchio paradigma non sono più solo i critici, sono anche i suoi fondatori.</p>
+<p>E poi c'è il terzo strato, quello che mi sembra il più interessante di tutti, perché non è più tecnico ma politico. Da una parte la paura della concentrazione: Naval Ravikant lo dice con parole nette, non teme l'AI, teme il piccolo gruppo di persone che la controllerà. Dall'altra, una paura speculare e opposta — quella del punto unico di rottura, del sistema che dipende da un solo padrone. È la spinta che porta Jack Dorsey a costruire app di messaggi che funzionano senza internet, passandosi i dati da telefono a telefono. Due timori che sembrano contraddirsi e invece convivono: alcuni temono che il potere si concentri, altri che il sistema sia troppo fragile per reggersi su pochi nodi. Sono le due facce della stessa moneta, ed è la moneta con cui si gioca adesso.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Cominciamo da Hassabis, perché il suo è il cambiamento più rivelatore. Per anni è stato la voce paziente e ottimista del settore: l'uomo di DeepMind che aveva piegato il problema delle proteine e che parlava dell'AI come del più grande acceleratore scientifico mai costruito, con un impatto dieci volte la rivoluzione industriale compresso in un decennio. Quel registro non è sparito. Tra Google I/O e le interviste di queste settimane ha addirittura anticipato leggermente la sua scommessa sull'intelligenza generale, aprendo al 2029, prima della solita data intorno al 2030.</p>
+<p>E qui sta la scena interessante. Perché lo stesso uomo che avvicina la data si è fatto, allo stesso tempo, molto più preciso su cosa ancora non funziona. Non parla più di aggiungere dati e potenza. Parla di quattro ostacoli concreti: i modelli non hanno una vera idea di come funziona il mondo fisico, dimenticano, si contraddicono, e non imparano davvero dall'esperienza mentre lavorano. È diventata una specie di lista della spesa che ripete a ogni occasione.</p>
+<p>Il punto è dove lo colloca questa lista. Sono quasi esattamente gli stessi buchi che Yann LeCun indica da anni, dall'altra parte della barricata, per sostenere che i modelli linguistici da soli non portano da nessuna parte. Vederli ora nella bocca di Hassabis significa che le due posizioni, un tempo lontane, si stanno avvicinando. L'accelerazionista e lo scettico stanno arrivando alla stessa casa da strade diverse.</p>
+<p>Mi sembra che questo dica qualcosa sul momento. Quando i critici di una tecnologia e i suoi campioni cominciano a fare la stessa diagnosi, di solito vuol dire che la fase facile è finita. Per cinque anni bastava costruire più grande e i risultati arrivavano da soli, prevedibili come un orario ferroviario. Adesso no. Adesso bisogna avere idee nuove, e nessuno sa ancora quali. È un passaggio che assomiglia a quando un'industria smette di crescere comprando macchinari più grossi e deve tornare in laboratorio. Meno trionfale, più onesto, e probabilmente più fecondo. Hassabis lo sta dicendo con il sorriso di chi pensa comunque di vincere — ma lo sta dicendo.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Naval Ravikant in queste settimane ha un tono diverso dal solito. Di solito è l'uomo delle massime sull'imprenditoria, quello che dice che oggi siamo tutti maghi capaci di evocare software dal nulla, che l'AI è un alleato e non una minaccia, che la domanda giusta non è se ti ruberà il lavoro ma cosa ci farai. Quel lato resta, e resta operativo: parla di fabbriche di software, di aziende intere mandate avanti da pochissime persone, di cosa convenga davvero automatizzare.</p>
+<p>Ma c'è una frase che ha ripetuto e che pesa più di tutte le altre. Non ho paura dell'AI, ha detto. Ho paura di cosa un piccolissimo gruppo di persone che controlla l'AI farà al resto di noi. È un'inversione interessante per uno come lui, che viene dal mondo libertario della Silicon Valley. La minaccia non è la macchina, è la mano sulla macchina. E la mano, secondo Naval, rischia di chiudersi proprio attraverso le regole: la regolamentazione scritta dai grandi per i grandi, che alza muri così alti da impedire a chiunque altro di entrare. Lui la chiama la corsa della regina rossa — corri sempre più forte solo per restare fermo, e intanto i piccoli restano indietro.</p>
+<p>Questo lo mette esattamente sull'asse politico di cui parlavamo. Da una parte Dario Amodei, che chiede regole vincolanti perché teme la macchina. Dall'altra Naval, che teme chi scriverà quelle regole. Non è la solita lite tra chi vuole frenare e chi vuole accelerare. È più sottile: entrambi hanno paura del potere, ma lo vedono accumularsi in posti opposti.</p>
+<p>C'è poi una corrente più malinconica nel suo discorso, e la condivide con Paul Graham, che proprio in questi giorni insiste sull'idea che scrivere sia un modo di pensare, e che delegare la scrittura a una macchina significhi rinunciare a pensare. Tutti e due, in fondo, stanno cercando la stessa cosa: quel che resta solo umano. Il giudizio che non si può appaltare. È il rovescio nostalgico di tutto l'entusiasmo — come succede sempre, quando una tecnologia diventa abbastanza potente da farci chiedere cosa ci renda ancora necessari.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Torniamo un attimo sul filo di oggi, perché è facile perdersi tra le voci. Tre cose si muovono insieme: il motore è pronto ma non sappiamo bene cosa costruirci sopra, i suoi stessi creatori ammettono cosa manca, e la domanda vera è diventata chi controlla tutto questo. Jack Dorsey sta tutto dentro l'ultima.</p>
+<p>L'ex capo di Twitter, oggi, fa una cosa molto concreta: costruisce app per parlarsi senza dipendere da nessuno. La prima si chiama Bitchat, e l'idea è quasi testarda nella sua semplicità. I messaggi viaggiano da telefono a telefono via Bluetooth, saltando da un dispositivo all'altro, senza passare da internet e senza finire in nessun database centrale. Vivono nella memoria del telefono e poi spariscono. Nelle ultime settimane Dorsey ha allargato il progetto: da semplice chat di prossimità a una rete di quartiere, con dentro anche i pagamenti in Bitcoin, firmati e passati di mano anche quando si è offline. La sua frase è far girare il quartiere su Bitcoin — piccole economie locali che non chiedono permesso a nessuno. Pochi giorni dopo ne ha annunciata una seconda, White Noise, costruita su un altro protocollo aperto.</p>
+<p>C'è anche una correzione onesta da fare, e l'hanno fatta gli utenti a lui: firmare una transazione offline si può, ma prima o poi, per renderla davvero valida, internet serve ancora. Non è quindi Bitcoin senza rete nel senso pieno. È una sfumatura, ma dice quanto sia difficile costruire davvero qualcosa che non dipenda da nessun punto centrale.</p>
+<p>Quello che rende Dorsey il personaggio giusto per oggi è il significato del gesto. Non sta costruendo questi strumenti per nostalgia tecnica. Li costruisce perché parte da una paura precisa: che tutto passi da pochi grandi snodi, e che chi controlla quegli snodi controlli le persone. È la stessa ansia di Naval, vista dall'altro lato. Naval teme che il potere si concentri. Dorsey costruisce attrezzi perché, se anche si concentrasse, ci sia un modo di parlarsi sotto il radar. Ricorda i radioamatori che si tenevano le loro frequenze, o la rete dei telefoni a manovella nelle campagne americane di un secolo fa, montati dai contadini fuori dal monopolio. Ogni volta che una tecnologia diventa troppo centrale, qualcuno comincia a costruire la via di fuga.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>L'ultima voce è quella che tira la corda dalla parte opposta a Naval: Dario Amodei, che guida Anthropic. In queste settimane il suo testo più discusso è un saggio intitolato l'adolescenza della tecnologia. L'immagine è efficace e fa il lavoro che deve fare: l'AI come un adolescente, potente, sveglio, e però immaturo e pericoloso proprio perché non controlla ancora la propria forza.</p>
+<p>La cosa concreta, però, è il cambio di posizione. Fino all'anno scorso Amodei chiedeva soprattutto trasparenza: che i laboratori dicessero cosa stanno facendo, niente di più. Adesso dice apertamente che è il momento di andare oltre la trasparenza, verso regole vere e vincolanti. È un uomo che chiede di essere regolato — cosa che nella storia dell'industria non capita spesso, e quando capita di solito è perché chi è dentro vede qualcosa che da fuori non si vede ancora. Geoffrey Hinton, nelle stesse settimane, usa la sua metafora ormai famosa: l'AI è un'auto velocissima senza volante, e la regola deve essere quel volante. Persino Jensen Huang, che alla regolamentazione era allergico, ammette ora che qualche standard di sicurezza serve.</p>
+<p>Qui si chiude il cerchio della tensione di oggi. Amodei chiede regole perché teme la macchina. Naval teme proprio quelle regole, perché le vede come l'arma con cui i grandi terranno fuori tutti gli altri. Non hanno torto né l'uno né l'altro, ed è questo a rendere il momento difficile da decifrare. Mi sembra che assomigli ai primi anni dell'automobile, quando si discuteva se mettere un uomo con la bandiera rossa davanti a ogni macchina. Alcuni volevano frenare per salvare vite, altri sospettavano che le regole servissero solo a proteggere chi i cavalli li affittava ancora. Avevano ragione tutti, in parte. E ci vollero decenni per trovare un equilibrio che oggi diamo per scontato — i semafori, le patenti, le corsie. La cosa che resta da capire è quanto tempo, stavolta, ci concederà la velocità.</p>
+<div class="chapter" data-mood="upbeat"><hr></div>
+<p>Qualche progetto da osservare, e quasi tutti raccontano la stessa storia di fondo: la voglia di tenere la potenza vicino a sé, sul proprio computer.</p>
+<p>Continua a crescere, settimana dopo settimana, l'intera costellazione di Andrej Karpathy — nanochat, la sua piccola enciclopedia sui modelli linguistici, e il progetto sulla ricerca automatica. Tendenza confermata anche per llama.cpp di Georgi Gerganov, il pezzo di software che permette di far girare modelli seri su una macchina normale, senza data center.</p>
+<p>Restano in tendenza Obsidian, lo strumento per prendere appunti che molti usano per costruirsi una memoria personale, e simonw/llm, la cassetta degli attrezzi di Simon Willison per parlare con i modelli dalla riga di comando. Tengono il passo anche due progetti che ridisegnano da zero il computer di chi ci lavora davvero, omarchy e Hyprland.</p>
+<p>Sul fronte della ricerca, è sempre presente ARC-AGI di François Chollet, il banco di prova che continua a mettere in difficoltà i modelli più avanzati, e claude-context, che aiuta gli assistenti a non perdere il filo dei progetti grandi. Restano in lista superpowers e GOModel.</p>
+<p>Se li guardate insieme, questi nomi disegnano il rovescio concreto del discorso politico di oggi. Mentre Dorsey costruisce reti che non dipendono da nessuno e Naval teme la mano sulla macchina, qui ci sono migliaia di persone che fanno la cosa più pratica possibile: si portano l'intelligenza artificiale in casa, sul proprio portatile, fuori dal controllo dei grandi. È lo stesso istinto che spinse, ai tempi, chi voleva un computer sulla scrivania invece che un terminale collegato al grande calcolatore dell'azienda. La storia, su questo, tende a ripetersi.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Resta l'immagine di Hassabis ai piedi della montagna che, invece di indicare la cima, conta i passaggi mancanti. Per cinque anni abbiamo creduto che bastasse salire più in fretta. Adesso anche chi costruisce le scarpe ammette che la strada non c'è ancora, e intanto, più in basso, si litiga su chi terrà la mappa. Forse è questo il segno che siamo diventati adulti rispetto a questa tecnologia: abbiamo smesso di chiederci quanto correrà, e cominciato a chiederci verso casa di chi. È stato Signal Brief. Alla prossima.</p></div></details></section>
+<nav class="epnav"><a href="/signal-brief/ai/2026-06-27/">← 2026-06-27</a><span style="flex:1"></span><a href="/signal-brief/ai/2026-06-29/">2026-06-29 →</a></nav>
+<dialog class="vplayer" id="vplayer"></dialog>
+<script>
+// player modale dei video: la miniatura apre il video al centro (disegno 2026-08-07)
+function apriVideo(src) {
+  var d = document.getElementById('vplayer');
+  d.innerHTML = '<video controls autoplay playsinline src="' + src + '"></video>';
+  d.showModal();
+  d.onclick = function (e) { if (e.target === d) d.close(); };
+  d.onclose = function () { var v = d.querySelector('video'); if (v) v.pause(); d.innerHTML = ''; };
+}
+// ascolto inline dalla lista: un episodio alla volta
+var epAudio = null, epBtn = null;
+function ascolta(btn, src) {
+  if (epBtn === btn && epAudio) {
+    if (epAudio.paused) { epAudio.play(); btn.classList.add('on'); }
+    else { epAudio.pause(); btn.classList.remove('on'); }
+    return;
+  }
+  if (epAudio) { epAudio.pause(); if (epBtn) epBtn.classList.remove('on'); }
+  epAudio = new Audio(src); epBtn = btn;
+  epAudio.play(); btn.classList.add('on');
+  epAudio.onended = function () { btn.classList.remove('on'); };
+}
+function copiaTrascrizione(btn) {
+  var t = btn.parentElement.querySelector('.transcript-body');
+  navigator.clipboard.writeText(t ? t.innerText : '').then(function () {
+    btn.textContent = 'copiata ✓';
+    setTimeout(function () { btn.textContent = 'copia il testo'; }, 1800);
+  });
+}
+</script>
+<footer class="creator-footer">
+  <img src="/signal-brief/mike-avatar.png" alt="Michele Mondora">
+  <div class="creator-meta">
+    <span class="creator-name">it-mikesoft</span>
+    <span class="creator-tagline">working with systems, living with questions</span>
+    <span class="creator-email"><a href="mailto:michele@mondora.com">michele@mondora.com</a></span>
+  </div>
+</footer>
+<section class="tutele"><h3>Trasparenza e tutele</h3>
+<p><strong>Come nasce questo contenuto.</strong> Ricerca, sintesi editoriale, voce narrante, immagini e musica sono prodotte con sistemi di intelligenza artificiale. Non c'è una redazione umana che verifica ogni affermazione prima della pubblicazione: un controllo automatico scarta le schede giudicate inaffidabili, ma non elimina la possibilità di errori.</p>
+<p><strong>Affermazioni su persone e aziende.</strong> Quanto riportato è una sintesi di fonti pubbliche, non una dichiarazione diretta delle persone citate: le frasi non vanno intese come virgolettati né come posizioni ufficiali. Le fonti sono indicate in ogni pagina episodio — verificale prima di considerare un'informazione accertata. Se trovi un'affermazione inesatta che ti riguarda, scrivi a <a href="mailto:michele@mondora.com">michele@mondora.com</a>: viene corretta o rimossa.</p>
+<p><strong>Immagini e volti.</strong> Le immagini di scena sono generate con AI e non raffigurano fatti realmente avvenuti. Le fotografie di persone reali usate nei video provengono da Wikimedia Commons con le rispettive licenze, e sono accostate al racconto a scopo identificativo: la loro presenza non implica partecipazione, dichiarazione o approvazione da parte della persona ritratta. Su richiesta dell'interessato vengono rimosse.</p>
+<p><strong>Fonti e diritti altrui.</strong> I contenuti sono rielaborazioni originali, non riproduzioni di articoli di terzi; le testate e gli autori all'origine di una notizia sono citati e collegati. Marchi e nomi commerciali appartengono ai rispettivi titolari e sono usati a scopo descrittivo.</p>
+</section>
+</body></html>

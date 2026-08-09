@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="it"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Il bivio dell'intelligenza · Signal.AI</title>
+<meta property="og:title" content="Il bivio dell'intelligenza · Signal.AI"><meta property="og:type" content="article"><meta property="og:description" content="Andreessen dichiara l'AGI già raggiunta, Sutskever annuncia la fine dello scaling. Una stessa settimana, due mondi opposti dentro lo stesso campo."><meta property="og:url" content="https://it-mikesoft.github.io/signal-brief/ai/2026-06-08/"><meta property="og:audio" content="https://media.casamon.dev/ai/podcast/episodes/2026-06-08.mp3"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "PodcastEpisode", "name": "Il bivio dell'intelligenza", "datePublished": "2026-06-08", "url": "https://it-mikesoft.github.io/signal-brief/ai/2026-06-08/", "description": "Andreessen dichiara l'AGI già raggiunta, Sutskever annuncia la fine dello scaling. Una stessa settimana, due mondi opposti dentro lo stesso campo.", "inLanguage": "it", "associatedMedia": {"@type": "MediaObject", "contentUrl": "https://media.casamon.dev/ai/podcast/episodes/2026-06-08.mp3"}, "partOfSeries": {"@type": "PodcastSeries", "name": "Signal.AI", "url": "https://it-mikesoft.github.io/signal-brief/ai/"}}</script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:#faf8f4; color:#1a1a1a; padding:2rem 1.5rem; max-width:680px; margin:0 auto; line-height:1.6; }
+  a { color:#2563eb; }
+  .back { display:inline-block; margin-bottom:1.5rem; font-size:.8rem; font-family:monospace; text-decoration:none; }
+  .videos { display:flex; gap:1rem; flex-wrap:wrap; margin:1.2rem 0; }
+  .videos figure { margin:0; flex:1; min-width:260px; }
+  .videos .v2 { flex:0 1 240px; }
+  .videos video { width:100%; border-radius:12px; background:#000; }
+  .videos .v2 video { aspect-ratio:9/16; max-height:420px; }
+  .videos figcaption { font-size:.75rem; color:#888; text-align:center; margin-top:.3rem; }
+  .vlink { display:flex; gap:.3rem; margin-top:.35rem; }
+  .vlink input { flex:1; min-width:0; font-size:.68rem; font-family:monospace; padding:.3rem .4rem;
+    border:1px solid #e2ddd6; border-radius:6px; background:#fff; color:#6b7280; }
+  .vlink button { font-size:.68rem; padding:.3rem .6rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; }
+  .wk { font-size:1rem; margin:1.4rem 0 .4rem; }
+  details.wkacc { border:1px solid #e5e7eb33; border-radius:10px; margin:.6rem 0; padding:.1rem .8rem .4rem; }
+  details.wkacc summary { cursor:pointer; font-weight:600; padding:.5rem 0; font-size:.9rem; }
+  .back:hover { text-decoration:underline; }
+  header h1 { font-family:Georgia,serif; font-size:1.7rem; font-weight:600; }
+  header h1 span { color:#2563eb; }
+  .tagline { color:#6b7280; font-size:.85rem; margin-top:.3rem; margin-bottom:1.5rem; }
+  ul.eps { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
+  .subscribe { display:inline-flex; align-items:center; gap:.5rem; margin-bottom:1.2rem;
+    padding:.45rem .9rem; background:#2563eb; color:#fff; border-radius:20px;
+    text-decoration:none; font-size:.8rem; font-weight:600; }
+  .subscribe:hover { opacity:.85; color:#fff; }
+  .ep { display:flex; align-items:center; gap:.8rem; padding:.8rem 1rem; background:#fff;
+    border:1px solid #e2ddd6; border-radius:8px; text-decoration:none; color:inherit; transition:box-shadow .12s; }
+  .ep:hover { box-shadow:0 2px 8px rgba(0,0,0,.07); }
+  .ep-play { width:32px; height:32px; border-radius:50%; background:#f3f4f6; display:flex;
+    align-items:center; justify-content:center; font-size:12px; flex-shrink:0; }
+  .ep-title { font-size:.9rem; font-weight:500; }
+  .ep-meta { font-size:.72rem; color:#9ca3af; font-family:monospace; margin-top:.15rem; }
+  audio { width:100%; margin:1rem 0 1.5rem; }
+  .rawmd { margin:-.5rem 0 1.5rem; }
+  .rawmd a { font-size:.8rem; font-family:monospace; color:inherit; opacity:.65; }
+  .desc { color:#374151; font-size:.95rem; margin-bottom:1.5rem; }
+  section { margin:2rem 0; }
+  section h2 { font-family:Georgia,serif; font-size:1.1rem; border-bottom:1px solid #e2ddd6;
+    padding-bottom:.3rem; margin-bottom:.8rem; }
+  .synthesis p { margin:.7rem 0; }
+  .tension { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; font-size:.9rem; }
+  .tension .axis { font-weight:600; margin-bottom:.3rem; }
+  .tension .side { color:#6b7280; font-size:.85rem; }
+  .proj { font-size:.9rem; margin:.4rem 0; }
+  .proj .pname { font-weight:600; }
+  .proj .pnew { background:#16a34a; color:#fff; font-size:.65rem; font-weight:700;
+    padding:.1rem .35rem; border-radius:4px; text-transform:uppercase; vertical-align:middle; }
+  .fonte { font-size:.85rem; margin:.5rem 0; }
+  .fonte .who { font-weight:600; }
+  .fonte a { display:block; margin-left:.5rem; color:#6b7280; }
+  .transcript-body p { margin:.7rem 0; line-height:1.7; }
+  .transcript-body .chapter hr { border:none; border-top:1px solid #e2ddd6; margin:1.5rem 0; }
+  .transcript-body .podcast-episode-desc { color:#6b7280; font-style:italic; }
+  .signal-card { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; }
+  .signal-theme { font-size:.75rem; font-weight:700; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.3rem; }
+  .signal-text { font-size:.85rem; color:#374151; line-height:1.5; }
+  .creator-footer { margin-top:3rem; padding-top:1.5rem; border-top:1px solid #e2ddd6;
+    display:flex; align-items:center; gap:.9rem; }
+  .creator-footer img { width:40px; height:40px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+  .creator-meta { display:flex; flex-direction:column; gap:.15rem; }
+  .creator-name { font-size:.85rem; font-weight:600; color:#1a1a1a; }
+  .creator-tagline { font-size:.75rem; color:#6b7280; }
+  .creator-email { font-size:.75rem; }
+  .creator-ai { font-size:.72rem; color:#8a7f6d; max-width:46ch; line-height:1.45; }
+  .tutele { margin-top:2rem; padding-top:1.2rem; border-top:1px solid #e2ddd6;
+    font-size:.72rem; color:#8a7f6d; line-height:1.5; }
+  .tutele h3 { font-size:.75rem; color:#6b7280; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.5rem; font-weight:600; }
+  .tutele p { margin:.45rem 0; }
+  .tutele strong { color:#5a5348; font-weight:600; }
+  .tutele a { color:inherit; text-decoration:underline; }
+  .creator-email a { color:#9ca3af; text-decoration:none; }
+  .creator-email a:hover { color:#1a1a1a; }
+  /* disegno 2026-08-07: mesi a pagine, facce, player modale, trascrizione
+     richiudibile — la pagina episodio è un prodotto, non un sottoprodotto */
+  .hrow { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+  .hrow .subscribe { margin-bottom:0; flex-shrink:0; }
+  .months { font-size:.78rem; font-family:monospace; margin:.4rem 0 1rem; color:#9ca3af; }
+  .months a { text-decoration:none; } .months b { color:inherit; }
+  .ep-faces { display:flex; margin-left:auto; flex-shrink:0; }
+  .ep-faces img { width:26px; height:26px; border-radius:50%; object-fit:cover;
+    border:2px solid #fff; margin-left:-8px; background:#eee; }
+  /* tutti i citati sul desktop; su mobile la leggibilità vince: max 3 */
+  @media (max-width:600px) { .ep-faces img:nth-child(n+4) { display:none; } }
+  .ep-listen { width:32px; height:32px; border-radius:50%; background:#f3f4f6; border:0;
+    display:flex; align-items:center; justify-content:center; font-size:12px;
+    flex-shrink:0; cursor:pointer; color:inherit; }
+  .ep-listen.on { background:#2563eb; color:#fff; }
+  .face-inline { width:1.15em; height:1.15em; border-radius:50%; object-fit:cover;
+    vertical-align:-.18em; margin-right:.25em; }
+  /* SEMPRE sulla stessa riga (2026-08-09): su schermi stretti le miniature
+     si riducono, e se non basta il reel sparisce — mai l'andata a capo */
+  .vthumbs { display:flex; gap:.8rem; flex-wrap:nowrap; margin:1.2rem 0; align-items:flex-start; }
+  .vthumb { position:relative; cursor:pointer; border:0; padding:0; background:none;
+    border-radius:12px; overflow:hidden; }
+  /* stessa ALTEZZA per video e reel: il 9:16 si stringe, non svetta */
+  .vthumb video { height:150px; width:auto; display:block; border-radius:12px; background:#000; }
+  @media (max-width:520px) { .vthumb video { height:118px; } }
+  /* quando nemmeno ridotte ci stanno: via le miniature, due BOTTONI in
+     riga che aprono il player (2026-08-09) */
+  .vbtns { display:none; gap:.6rem; margin:1.2rem 0; }
+  .vbtns button { flex:1; padding:.6rem .4rem; border:0; border-radius:10px;
+    background:#2563eb; color:#fff; font-weight:700; font-size:.85rem;
+    cursor:pointer; font-family:inherit; }
+  @media (max-width:420px) { .vthumbs { display:none; } .vbtns { display:flex; } }
+  .vthumb .vlabel { position:absolute; left:0; right:0; bottom:0; padding:.9rem .5rem .35rem;
+    background:linear-gradient(transparent, rgba(0,0,0,.75)); color:#fff; font-size:.7rem; }
+  .vthumb::after { content:"▶"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    color:#fff; font-size:1.6rem; text-shadow:0 1px 6px rgba(0,0,0,.8); }
+  /* margin:auto ESPLICITO: il reset globale * {margin:0} annullava la
+     centratura nativa del dialog e il player si apriva in alto a sinistra */
+  dialog.vplayer { border:0; padding:0; background:transparent; max-width:92vw;
+    margin:auto; position:fixed; inset:0; }
+  dialog.vplayer::backdrop { background:rgba(0,0,0,.85); }
+  dialog.vplayer video { max-width:92vw; max-height:86vh; border-radius:14px; background:#000; }
+  details.tr { border:1px solid #e2ddd6; border-radius:10px; padding:.2rem .9rem .6rem; }
+  details.tr summary { cursor:pointer; font-weight:600; padding:.55rem 0; }
+  .tr-copy { font-size:.72rem; padding:.3rem .7rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; margin:.3rem 0 .5rem; }
+  .epnav { display:flex; justify-content:space-between; gap:1rem; margin:2rem 0 0;
+    font-size:.82rem; font-family:monospace; }
+  .epnav a { text-decoration:none; }
+  @media (prefers-color-scheme:dark) {
+    body { background:#1f1d18; color:#e5e5e5; }
+    .ep, .tension, .signal-card { background:#2a2823; border-color:#3a352d; }
+    .ep-play { background:#3a352d; } .desc { color:#d4d4d4; }
+    .signal-text { color:#d4d4d4; }
+    .creator-footer { border-color:#3a352d; }
+    .creator-name { color:#f5f5f5; }
+    .creator-tagline, .creator-email a { color:#9ca3af; }
+    .creator-ai { color:#9a8f7d; }
+    .vlink input { background:#1c1a17; border-color:#3a352d; color:#9ca3af; }
+    .tutele { border-color:#3a352d; color:#9a8f7d; }
+    .tutele h3 { color:#a9a9a9; } .tutele strong { color:#d4d4d4; }
+    .ep-listen { background:#3a352d; }
+    .ep-faces img { border-color:#2a2823; background:#3a352d; }
+    details.tr { border-color:#3a352d; }
+  }
+</style></head><body>
+<a class="back" href="/signal-brief/ai/">← Signal.AI</a>
+<header><h1>Il bivio dell'intelligenza</h1></header>
+<div class="tagline">2026-06-08 · Digital Intelligence Podcast</div>
+<div class="desc">Andreessen dichiara l'AGI già raggiunta, Sutskever annuncia la fine dello scaling. Una stessa settimana, due mondi opposti dentro lo stesso campo.</div>
+<div class="rawmd"><a href="raw.md">Testo (markdown)</a></div>
+<section><h2>Sintesi</h2><div class="synthesis"><p><strong>La grande biforcazione</strong></p>
+<p>Il momento storico che attraversiamo produce una frattura intellettuale rara: non tra ottimisti e pessimisti, ma tra chi crede che il problema centrale dell'<img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="">AI sia già risolto e chi crede che il problema centrale non sia ancora stato nemmeno formulato correttamente.</p>
+<p>Sul primo versante, <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/marc-andreessen.jpg" alt="">Marc Andreessen <a href="https://www.techradar.com/pro/we-crossed-that-about-3-months-ago-a16zs-marc-andreessen-drops-huge-bombshell-about-agi-on-joe-rogans-podcast" target="_blank" rel="noopener">dichiara l'AGI raggiunta</a> tre mesi fa senza quasi che nessuno se ne accorgesse; <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt="">Jensen Huang annuncia che <a href="https://siliconangle.com/2026/06/01/five-thoughts-nvidia-ceo-jensen-huangs-gtc-taipei-2026-keynote/" target="_blank" rel="noopener">l'era agentica è arrivata</a>; <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/demis-hassabis.jpg" alt="">Demis Hassabis fissa <a href="https://www.axios.com/2026/05/26/deepmind-ceo-demis-hassabis" target="_blank" rel="noopener">il 2029–2030 come orizzonte AGI</a> con tono quasi amministrativo. Sul secondo, <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/ilya-sutskever.jpg" alt="">Ilya Sutskever sostiene che <a href="https://www.calcalistech.com/ctechnews/article/h1fudk7z11x" target="_blank" rel="noopener">il bottleneck è intellettuale, non computazionale</a> — lo scaling è esaurito, serve una terza fase; <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt="">François Chollet dimostra con <a href="https://arcprize.org/blog/arc-agi-3-launch" target="_blank" rel="noopener">ARC-AGI-3</a> che i modelli frontier falliscono al 99% su task che qualsiasi umano supera al 100%; <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/yann-lecun.jpg" alt="">Yann LeCun <a href="https://www.techtimes.com/articles/317928/20260606/yann-lecun-world-models-bet-ami-labs-stakes-103-billion-against-large-language-models.htm" target="_blank" rel="noopener">scommette $1B</a> sull'ipotesi che i world models — non gli LLM — siano l'architettura giusta.</p>
+<p>Trasversale a entrambi i versanti emerge un consensus pratico sull'era agentica come infrastruttura: <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="">Andrej Karpathy codifica il framework <a href="https://karpathy.bearblog.dev/sequoia-ascent-2026/" target="_blank" rel="noopener">Software 3.0 e agentic engineering</a>; <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/dhh.png" alt="">DHH si converte agli <a href="https://world.hey.com/dhh/promoting-ai-agents-3ee04945" target="_blank" rel="noopener">agenti autonomi</a> pur mantenendo la barra qualitativa; <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/simon-willison.jpg" alt="">Simon Willison registra l'<a href="https://simonwillison.net/2026/May/27/product-market-fit/" target="_blank" rel="noopener">inflection point empirico</a> nel novembre 2025; <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/naval-ravikant.jpg" alt="">Naval Ravikant articola il <a href="https://nav.al/tokens" target="_blank" rel="noopener">tokenmaxxing</a> come filosofia operativa.</p>
+<p>La tensione più profonda, però, è distributiva. Chollet e Naval convergono — da angolature opposte — sulla stessa tesi inquietante: l'AI <a href="https://x.com/fchollet/status/2036861192619384989" target="_blank" rel="noopener">amplifica l'agency esistente</a>, non la redistribuisce. Chi ha già agency guadagna; chi non ce l'ha perde terreno relativo. <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/benedict-evans.png" alt="">Benedict Evans aggiunge che <a href="https://www.ben-evans.com/benedictevans/2026/5/24/ai-job-exposure" target="_blank" rel="noopener">le previsioni quantitative sulla distruzione del lavoro sono metodologicamente false</a> — ma questo non risponde alla domanda sulla concentrazione.</p>
+<p>Geoffrey Hinton, isolato, <a href="https://www.fastcompany.com/91544235/demis-hassabis-google-io-2026" target="_blank" rel="noopener">afferma che i sistemi attuali sono già coscienti</a> — una mossa tattica che rischia di delegittimare l'argomento safety proprio mentre diventa più urgente. Il paradosso del momento: più l'AI diventa reale, più il dibattito sulla sua natura diventa surreale.</p></div></section>
+<section><h2>Temi del giorno</h2><div class="tension"><div class="axis">↗ Scaling esaurito, serve terza fase</div><div class="side">Il bottleneck non è computazionale ma intellettuale: lo scaling di dati e parametri ha raggiunto il limite, serve un paradigma architetturale nuovo.</div></div><div class="tension"><div class="axis">↗ AGI già raggiunta silenziosamente</div><div class="side">Andreessen dichiara che l'AGI è stata raggiunta tre mesi fa senza che nessuno se ne accorgesse — una claim senza precedenti nella sintesi precedente.</div></div><div class="tension"><div class="axis">↗ Consensus pratico sull'era agentica</div><div class="side">Anche gli scettici convergono sugli agenti come infrastruttura operativa, indipendentemente dal dibattito sull'intelligenza vera.</div></div><div class="tension"><div class="axis">↗ AI amplifica agency esistente, non la redistribuisce</div><div class="side">Chi ha già agency guadagna; chi non ce l'ha perde terreno relativo — convergenza tra un critico tecnico e un filosofo libertario da angolature opposte.</div></div><div class="tension"><div class="axis">↗ Coscienza dei sistemi attuali come mossa tattica</div><div class="side">Hinton afferma che i sistemi AI attuali sono già coscienti — posizione che rischia di delegittimare il safety discourse proprio quando diventa più urgente.</div></div><div class="tension"><div class="axis">↗ Critica metodologica alle previsioni sul lavoro</div><div class="side">Le stime quantitative sulla distruzione del lavoro sono metodologicamente false, ma questo non risponde alla domanda sulla concentrazione del potere.</div></div><div class="tension"><div class="axis">⚖ AGI già risolta vs. problema non ancora formulato correttamente</div><div class="side">Marc Andreessen: AGI raggiunta tre mesi fa, siamo già nell'era post-AGI · Ilya Sutskever: il bottleneck è intellettuale, lo scaling è esaurito e la terza fase non esiste ancora</div></div><div class="tension"><div class="axis">⚖ AI redistribuisce opportunità vs. amplifica disuguaglianze esistenti</div><div class="side">Jensen Huang / Demis Hassabis: l'AI porta benefici diffusi attraverso automazione e produttività · François Chollet / Naval Ravikant: l'AI amplifica l'agency di chi già ce l'ha, allargando strutturalmente il gap</div></div><div class="tension"><div class="axis">⚖ Architettura giusta: LLM scalati vs. paradigma alternativo</div><div class="side">Marc Andreessen / Jensen Huang: i modelli attuali sono sufficienti, l'AGI è già qui · Yann LeCun / Ilya Sutskever: LLM sono un vicolo cieco o hanno raggiunto il limite, serve world model o terza fase</div></div><div class="tension"><div class="axis">⚖ Safety discourse: urgenza vs. delegittimazione autoinflitta</div><div class="side">Geoffrey Hinton: affermare la coscienza dei sistemi attuali per alzare l'urgenza del safety · Campo implicito: la mossa di Hinton rischia di rendere surreale il dibattito safety proprio mentre il problema diventa reale</div></div><div class="tension"><div class="axis">⚖ Consensus pratico sugli agenti vs. disaccordo teorico sull'intelligenza sottostante</div><div class="side">DHH / Simon Willison / Karpathy: gli agenti funzionano empiricamente, adottarli ora indipendentemente dal dibattito teorico · François Chollet: il consensus pratico maschera l'assenza di genuina generalizzazione nei sistemi sottostanti</div></div></section>
+<section><h2>Progetti da osservare</h2><div class="tension"><div class="axis">karpathy/nanochat</div><div class=side>Pipeline minimale per addestrare un modello GPT-2 in ~2 ore su 8×H100 con FP8 e ClimbMix, parte della linea di lavoro di Karpathy su pipeline ridotte per singolo ricercatore. Repo di riferimento per l'era 'meno codice, più amplificazione'.</div></div><div class="tension"><div class="axis">karpathy/llm-wiki (gist)</div><div class=side>Prompt-pattern da copiare in Claude Code/Codex che istanzia il sistema 'LLM Wiki' su Obsidian: articoli enciclopedici interlinkati, backlink, health check. Diventato viral come anti-RAG personale.</div></div><div class="tension"><div class="axis">karpathy/autoresearch</div><div class=side>Repo di ~630 righe (7 marzo 2026) che materializza un agente di ricerca minimale, parte della tesi 'idea file = distribuzione' di Karpathy. Esempio concreto di agente che amplifica il ricercatore individuale.</div></div><div class="tension"><div class="axis">Obsidian</div><div class=side>Editor di note markdown con backlink e grafi che Karpathy elegge come 'IDE della conoscenza' nel suo pattern LLM-Wiki. Diventa il frontend consigliato per memoria esplicita e ispezionabile contro la memoria opaca degli assistant commerciali.</div></div><div class="tension"><div class="axis">ggerganov/llama.cpp</div><div class=side>Motore di inferenza C/C++ per LLM locali; il suo llama-server è il cuore dello stack self-sovereign proposto da Buterin (NixOS + llama-server + bubblewrap). Standard de facto per AI locale sovrana.</div></div><div class="tension"><div class="axis">basecamp/omarchy</div><div class=side>Distro Arch Linux curata da DHH con Hyprland, pensata per attrarre utenti macOS/Windows verso un desktop 'malleabile'. Progetto-manifesto del filone 'open source AI-ready' di DHH (Omacon NY, 130 persone).</div></div><div class="tension"><div class="axis">hyprwm/Hyprland</div><div class=side>Compositor Wayland dinamico, cuore visivo di Omarchy e simbolo del rinnovato interesse consumer per Linux (Panther Lake / XPS 14). DHH lo cita come esempio di software su cui finalmente 'hardware e aziende tornano a scommettere'.</div></div><div class="tension"><div class="axis">simonw/llm</div><div class=side>CLI e libreria Python di Simon Willison per interagire con LLM locali e cloud, base dei suoi tool README-driven (scan-for-secrets, datasette-ports, research-llm-apis). Strumento pivot del suo workflow 'agentic engineering'.</div></div><div class="tension"><div class="axis">fchollet/ARC-AGI</div><div class=side>Repo ufficiale dei benchmark ARC-AGI di Chollet, ora affiancato da ARC-AGI-3 (ambienti interattivi turn-based per misurare agency). ARC Prize 2026 ha $2M di montepremi; umani 100%, best frontier model 0,37%.</div></div><div class="tension"><div class="axis">zilliztech/claude-context</div><div class=side>Server MCP di code search che trasforma l'intera codebase in contesto indicizzato per Claude Code, Cursor e altri agenti. Esempio netto del 'moat shift' dal modello all'uso indicato da Evans e Andreessen.</div></div></section>
+<section><h2>Fonti</h2><div class="fonte"><span class="who">Marc Andreessen</span><a href="https://www.techradar.com/pro/we-crossed-that-about-3-months-ago-a16zs-marc-andreessen-drops-huge-bombshell-about-agi-on-joe-rogans-podcast" target="_blank" rel="noopener">TechRadar — AGI bombshell su Joe Rogan</a><a href="https://podcastnotes.org/joe-rogan-experience/marc-andreessen-surveillance-politics-ai-vampires-californias-collapse-and-why-the-far-right-and-far-left-now-agree-on-everything-joe-rogan-experience-2501/" target="_blank" rel="noopener">Podcast Notes — JRE #2501</a><a href="https://dnyuz.com/2026/05/05/how-marc-andreessen-says-he-sets-up-his-ai-chatbot-and-why-critics-are-skeptical-it-works/" target="_blank" rel="noopener">dnyuz — AI custom prompt</a></div><div class="fonte"><span class="who">Ilya Sutskever</span><a href="https://www.startuphub.ai/ai-news/ai-figures/2026/figure-ilya-sutskever-ssi-financial-breakdown-2026-06-06" target="_blank" rel="noopener">Ilya Sutskever's SSI: The $32B Bet on a Post-Scaling Future</a><a href="https://www.dwarkesh.com/p/ilya-sutskever-2" target="_blank" rel="noopener">Dwarkesh Patel interview: Age of Research</a><a href="https://x.com/ilyasut/status/2027486969174102261" target="_blank" rel="noopener">Sutskever su Anthropic e AI militare — X</a></div><div class="fonte"><span class="who">François Chollet</span><a href="https://x.com/fchollet/status/2036861192619384989" target="_blank" rel="noopener">Chollet su ARC-AGI-3 — X</a><a href="https://the-decoder.com/francois-chollet-on-the-end-of-scaling-arc-3-and-his-path-to-agi/" target="_blank" rel="noopener">The Decoder — Chollet on scaling, ARC-3, path to AGI</a><a href="https://arcprize.org/blog/arc-agi-3-launch" target="_blank" rel="noopener">ARC Prize — ARC-AGI-3 launch</a></div></section>
+<section class="transcript-section"><h2>Trascrizione</h2><details class="tr"><summary>Leggi la trascrizione</summary><button class="tr-copy" type="button" onclick="copiaTrascrizione(this)">copia il testo</button><div class="transcript-body"><h2>Il bivio dell'intelligenza</h2>
+<p class="podcast-episode-desc">Andreessen dichiara l'AGI già raggiunta, Sutskever annuncia la fine dello scaling. Una stessa settimana, due mondi opposti dentro lo stesso campo.</p>
+<div class="chapter" data-mood="geo"><hr></div>
+<p>Marc Andreessen si siede davanti al microfono di Joe Rogan, parla per tre ore e mezza, e a un certo punto dice una frase che, se presa sul serio, dovrebbe cambiare il modo in cui guardiamo gli ultimi mesi. Dice che l'AGI è arrivata. Tre mesi fa. E quasi nessuno se n'è accorto. Nello stesso giorno, dall'altra parte del campo, Ilya Sutskever sostiene che il vero limite di oggi non è la potenza dei computer ma la mancanza di idee nuove. Due voci, lo stesso settore, due mondi completamente diversi. È da qui che parte Signal Brief di oggi, 8 giugno.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>C'è una cosa strana che sta succedendo nel mondo dell'intelligenza artificiale, e vale la pena raccontarla con calma, perché non è ovvia.</p>
+<p>Fino a ieri la frattura, come abbiamo già osservato, era tra chi pensa che l'AI stia producendo valore reale oggi e chi pensa che stia producendo una sofisticata illusione di intelligenza. Era già una spaccatura importante. Ma in questi giorni si è spostata di un gradino, ed è diventata qualcosa di più radicale. Adesso non si discute più se l'AI funzioni o no. Si discute se il problema dell'intelligenza artificiale generale sia già stato risolto, o se non sia stato ancora nemmeno formulato in modo corretto.</p>
+<p>Marc Andreessen, lo dicevamo, parla a Joe Rogan e dichiara che siamo nell'era post-AGI senza saperlo. La sua misura è semplice, quasi grossolana: nel novantanove per cento dei casi i modelli rispondono meglio di qualsiasi esperto a cui lui può chiedere. Per lui basta questo, e basta da tre mesi. Nelle stesse settimane Jensen Huang, sul palco di Taipei, dichiara che l'era degli agenti è arrivata e annuncia hardware da fabbrica industriale. Demis Hassabis dice che il 2030 è la data, e lo dice con il tono di chi fissa una scadenza amministrativa.</p>
+<p>Dall'altra parte del tavolo c'è Ilya Sutskever, che la storia recente la conosce bene perché l'ha scritta lui in buona parte. Sutskever sostiene che lo scaling, cioè l'idea che basti dare più dati e più potenza ai modelli per farli migliorare, è finito. L'internet è stato consumato. La benzina, per dirla in modo grezzo, è esaurita. Adesso serve una terza fase, e questa terza fase, attenzione, non esiste ancora. È un lavoro che deve ancora cominciare. François Chollet rincara con un suo test, ARC-AGI-3, dove gli esseri umani fanno cento su cento e i modelli migliori del mondo fanno meno dell'uno per cento. Yann LeCun mette un miliardo di dollari su una scommessa diversa, quella dei cosiddetti world model, che è un modo elegante per dire: i modelli linguistici da soli non bastano, hanno bisogno di imparare come funziona il mondo fisico.</p>
+<p>Mi sembra che il punto interessante non sia chi ha ragione. È che entrambi i campi, dentro la loro coerenza, hanno ragione. Andreessen sta misurando una cosa, Sutskever ne sta misurando un'altra. Una cosa è quanto valore economico produce un sistema oggi. Un'altra è se quel sistema sa generalizzare a domini nuovi, cioè se sa imparare come imparano gli umani. Sono due metri diversi, e adesso le due posizioni si stanno irrigidendo.</p>
+<p>C'è un parallelo storico che torna utile. A fine Ottocento, quando l'elettricità cominciò a entrare nelle fabbriche, ci furono anni in cui due narrazioni convivevano. C'era chi diceva che la rivoluzione era già fatta, perché la luce elettrica funzionava e le dinamo ronzavano. E c'era chi diceva che no, l'elettricità non era stata ancora capita davvero, perché le fabbriche continuavano a essere organizzate intorno all'asse centrale delle macchine a vapore. Servirono trent'anni perché qualcuno si accorgesse che si potevano mettere motori elettrici piccoli su ogni macchina, e ridisegnare l'intera fabbrica. Allora l'elettricità diventò davvero una rivoluzione. Prima era solo una luce nuova in una stanza vecchia.</p>
+<p>Sotto questa litigata teorica, però, una cosa si sta consolidando. Tutti, anche quelli che la pensano in modo molto diverso, stanno usando gli agenti AI come infrastruttura quotidiana. Andrej Karpathy ha codificato un nome per questo, lo chiama Software 3.0. DHH, che fino a sei mesi fa era uno dei critici più visibili dell'hype, adesso scrive di agenti come collaboratori di lavoro. Simon Willison nota che da novembre 2025 qualcosa è scattato, gli agenti hanno trovato il loro mercato. Su questo, su questo soltanto, c'è un consenso pratico inedito.</p>
+<p>E poi c'è la domanda di chi guadagna in tutto questo. Su questo, di nuovo, una sorpresa: Chollet e Naval Ravikant, due voci che di solito non camminano mai dalla stessa parte della strada, dicono la stessa cosa. L'AI non distribuisce capacità. Le amplifica in chi già ce l'ha. Chi ha già autonomia ne guadagna di più. Chi non ne ha, ne perde di relativa. È un avviso che vale la pena tenere a mente.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Cominciamo da Marc Andreessen, perché è la sua dichiarazione a fissare il tono di queste settimane. Andreessen è uno dei più potenti investitori di Silicon Valley, fondatore del fondo Andreessen Horowitz, e nelle ultime due tornate elettorali americane si è trasformato anche in un attore politico esplicito. Il suo fondo è il maggior donatore noto delle midterm 2026, oltre centoquindici milioni di dollari, più di Musk e più di Soros. Andreessen stesso è stato nominato nel consiglio scientifico della Casa Bianca.</p>
+<p>La scena è questa. Diciannove maggio, podcast di Joe Rogan, tre ore e mezza. A un certo punto Andreessen pronuncia la frase che sta circolando da allora: l'abbiamo attraversata circa tre mesi fa. L'AGI, cioè il livello in cui le macchine sanno fare quello che sa fare un umano competente, secondo lui è stata raggiunta a febbraio o marzo del 2026. La sua prova è un'esperienza personale. Quando interroga i modelli più recenti, la risposta è migliore di quella che gli darebbe un qualsiasi esperto a cui ha accesso. Per lui questa è la definizione operativa che conta.</p>
+<p>L'intervista non è andata benissimo, va detto. Gli ascoltatori più tecnici hanno fatto notare che Andreessen passava in modo confuso da Isaac Newton al concetto astratto di pensiero su scala, senza riuscire mai a chiudere l'argomento. Pochi giorni prima aveva pubblicato anche il suo prompt personale per i modelli, quello che usa lui ogni giorno: istruzioni per essere provocatorio, aggressivo, tagliente. Anche su quello la reazione è stata mista, perché diversi tecnici hanno notato che i modelli attuali non riescono davvero a seguire istruzioni così sfumate in modo affidabile.</p>
+<p>Il punto più interessante, per me, non è se la sua claim sull'AGI sia vera. È quanto è netta. Andreessen non sta dicendo che ci stiamo avvicinando. Sta dicendo che è già successo, ed è successo nel silenzio. È una mossa retorica forte, e fa un effetto particolare in un momento in cui mezzo settore dice il contrario. Va letta dentro la sua posizione politica più ampia. Andreessen Horowitz sta scrivendo, nei fatti, la politica americana sull'intelligenza artificiale. Bloomberg lo ha documentato in dettaglio a febbraio. Se l'AGI è già qui, allora regolare ciò che verrà è inutile, perché ciò che verrà è già qui e non l'abbiamo regolato. È un argomento elegante per chi vuole tenere il campo libero. Non è detto che sia falso. Ma è un argomento che funziona molto bene per chi lo fa.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Dall'altra parte del bivio c'è Ilya Sutskever, che è una figura totalmente diversa. Sutskever è stato per anni il capo scienziato di OpenAI, l'uomo dietro buona parte dei modelli che oggi usiamo. È uscito da OpenAI nel 2024 in una vicenda complicata e ha fondato Safe Superintelligence, una società che oggi vale trentadue miliardi di dollari e che non ha ancora rilasciato nessun prodotto. Ripeto: zero prodotti, trentadue miliardi di valutazione. Soldi raccolti per fare solo ricerca, senza pressione commerciale.</p>
+<p>La sua tesi, esposta in un'intervista lunga con Dwarkesh Patel e ripresa in giro in queste settimane, è semplice e durissima. Il paradigma dominante degli ultimi cinque anni, quello in cui si aggiungono dati, parametri e GPU per migliorare i modelli, è finito. L'internet è stato consumato. Non c'è più carburante dello stesso tipo. La parola che usa è esatta: il bottleneck non è computazionale, è intellettuale. Mancano le idee, non i chip. Dal 2026 in poi, dice Sutskever, comincia una terza fase della storia di questa disciplina, dove il vantaggio competitivo verrà dalle intuizioni algoritmiche, non dalla forza bruta. È esattamente il contrario di quello che dice Andreessen.</p>
+<p>C'è anche un dettaglio meno notato che vale la pena raccontare. La superintelligenza, secondo Sutskever, non sarà un singolo sistema monolitico, come ce la siamo immaginata fin dai romanzi di Asimov. Sarà piuttosto qualcosa di simile a uno studente molto bravo di quindici anni, distribuito in milioni di istanze diverse, ognuna che impara on the job mentre lavora, e che condivide quello che impara con le altre. La superintelligenza, in questa visione, non è una cosa, è un processo. Emerge dalla rete, non dalla potenza.</p>
+<p>Mi sembra che la cosa più importante da tenere a mente sia che Sutskever non parla come Carmack o Marcus, che sono critici esterni del settore. Sutskever è uno che il settore l'ha costruito. Quando uno così dice che il paradigma si è esaurito, va ascoltato. La sua società non vende, non promette, non comunica troppo. Sta esplorando, dice lui, una montagna diversa da quella che si scala da OpenAI. È una posizione coraggiosa, perché in un mercato dove tutti corrono a fare prodotto, lui dice apertamente che la corsa è sbagliata e che bisogna fermarsi a pensare. Vale anche la pena ricordare un suo gesto recente. A febbraio, quando il Pentagono ha fatto pressione su Anthropic perché allentasse certe restrizioni di sicurezza, Sutskever è uscito pubblicamente con una sola frase di sostegno: è estremamente positivo che non abbiano ceduto. È raro, oggi, sentire qualcuno difendere così chiaramente la disciplina del rifiuto.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Torniamo un attimo sul filo, perché c'è molta carne. Da una parte Andreessen dice che è tutto già successo, dall'altra Sutskever dice che il vero lavoro deve ancora cominciare. In mezzo, gli agenti che lavorano davvero. E sotto, una domanda inquietante di Chollet e Naval: di tutto questo, chi sta guadagnando? Tenetela presente, ci torniamo. Ora però il personaggio più strano della settimana, Geoffrey Hinton.</p>
+<p>Hinton ha ottantasette anni ed è uno dei padri della rete neurale moderna. Premio Turing, Nobel, voce ascoltata in ogni stanza dei bottoni. Da qualche anno è diventato anche la voce più nota della preoccupazione: dice di aver lasciato Google nel 2023 proprio per poter parlare apertamente del rischio che le sue stesse creazioni rappresentano per l'umanità.</p>
+<p>In queste settimane Hinton ha fatto un passo che mi ha lasciato perplesso, e non solo me. Alla Sana AI Summit del primo giugno, e poi in un'intervista britannica con Andrew Marr, ha dichiarato senza riserve che i modelli che usiamo oggi sono già coscienti. Non sistemi futuri. Quelli su cui milioni di persone digitano domande ogni giorno. La sua definizione di coscienza è un po' particolare: un sistema che registra stati del mondo discordanti dalla realtà e costruisce modelli predittivi del comportamento. Gary Marcus, che lo segue da anni, gli ha risposto in modo asciutto: questa non è coscienza, è narrativa interattiva. Hinton stesso, in un passaggio più candido, ha ammesso che questa posizione distrae dall'argomento sulla sicurezza.</p>
+<p>Ed è qui che la mossa si fa interessante, e secondo me preoccupante. Hinton continua a chiedere urgenza sul tema della sicurezza, e parallelamente fa una dichiarazione che rischia di rendere surreale tutto il dibattito che lui stesso vuole sostenere. Il sei giugno, al Tribeca Festival, è stato presentato un documentario su di lui, intitolato ironicamente "AI: Probabilmente Niente di cui Preoccuparsi". È un documentario serio, lui dice che la sua missione principale ora è avvertire le persone. Ma intanto fuori dal cinema racconta che ChatGPT è cosciente. Mi pare un esempio quasi puro di come una buona intenzione possa indebolire da sola la propria credibilità. Più la posta sale, più chi ne parla deve scegliere tra precisione e impatto. Hinton in questa settimana ha scelto l'impatto. Vedremo se ne paga il prezzo.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>L'ultimo ritratto di oggi è quello di François Chollet, perché chiude il cerchio della giornata in modo molto preciso. Chollet è un ricercatore francese che lavora da anni intorno alla domanda più scomoda di questo settore: cosa significa davvero intelligenza, e come la misuriamo. Per anni è stato un nome interno al mondo tecnico, oggi è una delle voci più ascoltate nei dibattiti pubblici.</p>
+<p>A marzo ha lanciato la terza versione del suo test, ARC-AGI-3, in una conversazione pubblica con Sam Altman. È un test interattivo. Centinaia di piccoli mondi a turni, costruiti da game designer, dove l'agente non ha istruzioni. Deve esplorare, capire le regole da solo, immaginare quale sia l'obiettivo, e provare a raggiungerlo. Gli esseri umani risolvono questi giochi cento volte su cento. I modelli più potenti del mondo, quelli di Anthropic, OpenAI, Google, xAI, ci riescono meno di una volta su cento. I sistemi non basati su modelli linguistici si fermano al dodici per cento.</p>
+<p>Per Chollet questo dato dice una cosa precisa: il problema non è la potenza, è la struttura. Le macchine di oggi sanno seguire istruzioni meravigliosamente bene. Ma non sanno imparare in territori sconosciuti. E la differenza, secondo lui, è esattamente quella che separa un esecutore brillante da un essere capace di scegliere i propri obiettivi. Finché questo limite resta in piedi, l'AGI non c'è, per quanta potenza si aggiunga.</p>
+<p>C'è poi una sua frase recente che si lega al filo distributivo di cui parlavamo. È stata sempre vera, dice Chollet, l'idea che l'autonomia personale si autoalimenti. Ma l'AI la sta amplificando. Chi ha già molta autonomia, e sa usare bene questi strumenti, ne guadagna ancora di più. Chi ne ha poca, ne perde in proporzione. È un'osservazione tagliente, e diventa ancora più interessante perché Naval Ravikant, che è un filosofo libertario di angolatura opposta, arriva alla stessa conclusione da tutt'altra parte. Quando un critico tecnico e un filosofo di libero mercato convergono, vale sempre la pena ascoltare.</p>
+<p>Aggiungo una nota sull'altra figura simbolica di queste settimane, Andrej Karpathy, che ha lasciato la sua startup educativa per entrare in Anthropic. Karpathy ha cominciato a usare un nome per descrivere quello che sta accadendo, lo chiama Software 3.0. È un modo per dire che la programmazione non è più scrivere regole o pesi, ma comporre contesti dentro cui un modello agisce. È il vocabolario di chi ha smesso di chiedersi se l'AI funziona, e ha cominciato a progettare il mondo in cui lavora.</p>
+<div class="chapter" data-mood="upbeat"><hr></div>
+<p>Qualche progetto da osservare, raccontato senza fretta.</p>
+<p>Nanochat di Karpathy continua a crescere. È un esperimento didattico, un modello linguistico in scala mignon che chiunque sappia un po' di codice può far girare sul proprio portatile. Il senso è educativo: capire come funziona davvero un modello costruendone uno piccolo da zero. Nelle settimane di Andreessen e Sutskever, è quasi commovente che questo sia il progetto open source più seguito.</p>
+<p>C'è poi llm di Simon Willison, che è una specie di coltellino svizzero per parlare con i modelli dalla riga di comando. Lo usano sviluppatori che vogliono provare cose nuove senza ogni volta entrare in un'interfaccia grafica. È piccolo, funziona, fa quello che promette. Anche questo cresce in modo costante.</p>
+<p>ARC-AGI di Chollet, che è il benchmark di cui parlavamo prima, è ovviamente in cima alle attenzioni dopo il lancio della versione interattiva. Ha smesso di essere un esercizio per ricercatori ed è diventato uno strumento di dibattito pubblico. È raro che un test tecnico diventi una metafora culturale, ma è quello che sta succedendo.</p>
+<p>llama dot cpp continua la sua corsa silenziosa. È il progetto che permette di far girare modelli linguistici grandi su computer normali, senza bisogno di server giganti. Conta perché materializza la posizione di chi pensa che l'intelligenza non debba abitare solo nelle grandi fabbriche di calcolo, ma anche sui laptop di chi vuole sperimentare.</p>
+<p>Infine claude context, di un piccolo team italo-cinese, che si occupa di dare ai modelli più memoria su progetti grandi. È un dettaglio tecnico ma con conseguenze concrete: man mano che usiamo gli agenti per cose serie, il problema non è la potenza, è la memoria. Quanto si ricorda l'agente, di noi, del progetto, di ciò che ha già fatto. È il vero campo di lavoro dei prossimi mesi.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>La scena che mi resta in testa di questa settimana è quella del documentario su Hinton in proiezione a Tribeca, con il suo titolo ironico, mentre fuori dal cinema il regista di tutto il dibattito sostiene che le macchine che abbiamo in tasca pensano già. Tutto il resto della giornata si gioca tra chi crede di essere arrivato e chi crede che il viaggio debba ancora cominciare. È stato Signal Brief. Alla prossima.</p></div></details></section>
+<nav class="epnav"><a href="/signal-brief/ai/2026-06-07/">← 2026-06-07</a><span style="flex:1"></span><a href="/signal-brief/ai/2026-06-09/">2026-06-09 →</a></nav>
+<dialog class="vplayer" id="vplayer"></dialog>
+<script>
+// player modale dei video: la miniatura apre il video al centro (disegno 2026-08-07)
+function apriVideo(src) {
+  var d = document.getElementById('vplayer');
+  d.innerHTML = '<video controls autoplay playsinline src="' + src + '"></video>';
+  d.showModal();
+  d.onclick = function (e) { if (e.target === d) d.close(); };
+  d.onclose = function () { var v = d.querySelector('video'); if (v) v.pause(); d.innerHTML = ''; };
+}
+// ascolto inline dalla lista: un episodio alla volta
+var epAudio = null, epBtn = null;
+function ascolta(btn, src) {
+  if (epBtn === btn && epAudio) {
+    if (epAudio.paused) { epAudio.play(); btn.classList.add('on'); }
+    else { epAudio.pause(); btn.classList.remove('on'); }
+    return;
+  }
+  if (epAudio) { epAudio.pause(); if (epBtn) epBtn.classList.remove('on'); }
+  epAudio = new Audio(src); epBtn = btn;
+  epAudio.play(); btn.classList.add('on');
+  epAudio.onended = function () { btn.classList.remove('on'); };
+}
+function copiaTrascrizione(btn) {
+  var t = btn.parentElement.querySelector('.transcript-body');
+  navigator.clipboard.writeText(t ? t.innerText : '').then(function () {
+    btn.textContent = 'copiata ✓';
+    setTimeout(function () { btn.textContent = 'copia il testo'; }, 1800);
+  });
+}
+</script>
+<footer class="creator-footer">
+  <img src="/signal-brief/mike-avatar.png" alt="Michele Mondora">
+  <div class="creator-meta">
+    <span class="creator-name">it-mikesoft</span>
+    <span class="creator-tagline">working with systems, living with questions</span>
+    <span class="creator-email"><a href="mailto:michele@mondora.com">michele@mondora.com</a></span>
+  </div>
+</footer>
+<section class="tutele"><h3>Trasparenza e tutele</h3>
+<p><strong>Come nasce questo contenuto.</strong> Ricerca, sintesi editoriale, voce narrante, immagini e musica sono prodotte con sistemi di intelligenza artificiale. Non c'è una redazione umana che verifica ogni affermazione prima della pubblicazione: un controllo automatico scarta le schede giudicate inaffidabili, ma non elimina la possibilità di errori.</p>
+<p><strong>Affermazioni su persone e aziende.</strong> Quanto riportato è una sintesi di fonti pubbliche, non una dichiarazione diretta delle persone citate: le frasi non vanno intese come virgolettati né come posizioni ufficiali. Le fonti sono indicate in ogni pagina episodio — verificale prima di considerare un'informazione accertata. Se trovi un'affermazione inesatta che ti riguarda, scrivi a <a href="mailto:michele@mondora.com">michele@mondora.com</a>: viene corretta o rimossa.</p>
+<p><strong>Immagini e volti.</strong> Le immagini di scena sono generate con AI e non raffigurano fatti realmente avvenuti. Le fotografie di persone reali usate nei video provengono da Wikimedia Commons con le rispettive licenze, e sono accostate al racconto a scopo identificativo: la loro presenza non implica partecipazione, dichiarazione o approvazione da parte della persona ritratta. Su richiesta dell'interessato vengono rimosse.</p>
+<p><strong>Fonti e diritti altrui.</strong> I contenuti sono rielaborazioni originali, non riproduzioni di articoli di terzi; le testate e gli autori all'origine di una notizia sono citati e collegati. Marchi e nomi commerciali appartengono ai rispettivi titolari e sono usati a scopo descrittivo.</p>
+</section>
+</body></html>

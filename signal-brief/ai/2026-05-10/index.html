@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="it"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Il paradosso del controllo · Signal.AI</title>
+<meta property="og:title" content="Il paradosso del controllo · Signal.AI"><meta property="og:type" content="article"><meta property="og:description" content="Chi predicava reti aperte ora accentra. Il valore migra dal software puro all'hardware. La sovranità diventa una scelta personale."><meta property="og:url" content="https://it-mikesoft.github.io/signal-brief/ai/2026-05-10/"><meta property="og:audio" content="https://media.casamon.dev/ai/podcast/episodes/2026-05-10.mp3"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "PodcastEpisode", "name": "Il paradosso del controllo", "datePublished": "2026-05-10", "url": "https://it-mikesoft.github.io/signal-brief/ai/2026-05-10/", "description": "Chi predicava reti aperte ora accentra. Il valore migra dal software puro all'hardware. La sovranità diventa una scelta personale.", "inLanguage": "it", "associatedMedia": {"@type": "MediaObject", "contentUrl": "https://media.casamon.dev/ai/podcast/episodes/2026-05-10.mp3"}, "partOfSeries": {"@type": "PodcastSeries", "name": "Signal.AI", "url": "https://it-mikesoft.github.io/signal-brief/ai/"}}</script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:#faf8f4; color:#1a1a1a; padding:2rem 1.5rem; max-width:680px; margin:0 auto; line-height:1.6; }
+  a { color:#2563eb; }
+  .back { display:inline-block; margin-bottom:1.5rem; font-size:.8rem; font-family:monospace; text-decoration:none; }
+  .videos { display:flex; gap:1rem; flex-wrap:wrap; margin:1.2rem 0; }
+  .videos figure { margin:0; flex:1; min-width:260px; }
+  .videos .v2 { flex:0 1 240px; }
+  .videos video { width:100%; border-radius:12px; background:#000; }
+  .videos .v2 video { aspect-ratio:9/16; max-height:420px; }
+  .videos figcaption { font-size:.75rem; color:#888; text-align:center; margin-top:.3rem; }
+  .vlink { display:flex; gap:.3rem; margin-top:.35rem; }
+  .vlink input { flex:1; min-width:0; font-size:.68rem; font-family:monospace; padding:.3rem .4rem;
+    border:1px solid #e2ddd6; border-radius:6px; background:#fff; color:#6b7280; }
+  .vlink button { font-size:.68rem; padding:.3rem .6rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; }
+  .wk { font-size:1rem; margin:1.4rem 0 .4rem; }
+  details.wkacc { border:1px solid #e5e7eb33; border-radius:10px; margin:.6rem 0; padding:.1rem .8rem .4rem; }
+  details.wkacc summary { cursor:pointer; font-weight:600; padding:.5rem 0; font-size:.9rem; }
+  .back:hover { text-decoration:underline; }
+  header h1 { font-family:Georgia,serif; font-size:1.7rem; font-weight:600; }
+  header h1 span { color:#2563eb; }
+  .tagline { color:#6b7280; font-size:.85rem; margin-top:.3rem; margin-bottom:1.5rem; }
+  ul.eps { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
+  .subscribe { display:inline-flex; align-items:center; gap:.5rem; margin-bottom:1.2rem;
+    padding:.45rem .9rem; background:#2563eb; color:#fff; border-radius:20px;
+    text-decoration:none; font-size:.8rem; font-weight:600; }
+  .subscribe:hover { opacity:.85; color:#fff; }
+  .ep { display:flex; align-items:center; gap:.8rem; padding:.8rem 1rem; background:#fff;
+    border:1px solid #e2ddd6; border-radius:8px; text-decoration:none; color:inherit; transition:box-shadow .12s; }
+  .ep:hover { box-shadow:0 2px 8px rgba(0,0,0,.07); }
+  .ep-play { width:32px; height:32px; border-radius:50%; background:#f3f4f6; display:flex;
+    align-items:center; justify-content:center; font-size:12px; flex-shrink:0; }
+  .ep-title { font-size:.9rem; font-weight:500; }
+  .ep-meta { font-size:.72rem; color:#9ca3af; font-family:monospace; margin-top:.15rem; }
+  audio { width:100%; margin:1rem 0 1.5rem; }
+  .rawmd { margin:-.5rem 0 1.5rem; }
+  .rawmd a { font-size:.8rem; font-family:monospace; color:inherit; opacity:.65; }
+  .desc { color:#374151; font-size:.95rem; margin-bottom:1.5rem; }
+  section { margin:2rem 0; }
+  section h2 { font-family:Georgia,serif; font-size:1.1rem; border-bottom:1px solid #e2ddd6;
+    padding-bottom:.3rem; margin-bottom:.8rem; }
+  .synthesis p { margin:.7rem 0; }
+  .tension { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; font-size:.9rem; }
+  .tension .axis { font-weight:600; margin-bottom:.3rem; }
+  .tension .side { color:#6b7280; font-size:.85rem; }
+  .proj { font-size:.9rem; margin:.4rem 0; }
+  .proj .pname { font-weight:600; }
+  .proj .pnew { background:#16a34a; color:#fff; font-size:.65rem; font-weight:700;
+    padding:.1rem .35rem; border-radius:4px; text-transform:uppercase; vertical-align:middle; }
+  .fonte { font-size:.85rem; margin:.5rem 0; }
+  .fonte .who { font-weight:600; }
+  .fonte a { display:block; margin-left:.5rem; color:#6b7280; }
+  .transcript-body p { margin:.7rem 0; line-height:1.7; }
+  .transcript-body .chapter hr { border:none; border-top:1px solid #e2ddd6; margin:1.5rem 0; }
+  .transcript-body .podcast-episode-desc { color:#6b7280; font-style:italic; }
+  .signal-card { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; }
+  .signal-theme { font-size:.75rem; font-weight:700; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.3rem; }
+  .signal-text { font-size:.85rem; color:#374151; line-height:1.5; }
+  .creator-footer { margin-top:3rem; padding-top:1.5rem; border-top:1px solid #e2ddd6;
+    display:flex; align-items:center; gap:.9rem; }
+  .creator-footer img { width:40px; height:40px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+  .creator-meta { display:flex; flex-direction:column; gap:.15rem; }
+  .creator-name { font-size:.85rem; font-weight:600; color:#1a1a1a; }
+  .creator-tagline { font-size:.75rem; color:#6b7280; }
+  .creator-email { font-size:.75rem; }
+  .creator-ai { font-size:.72rem; color:#8a7f6d; max-width:46ch; line-height:1.45; }
+  .tutele { margin-top:2rem; padding-top:1.2rem; border-top:1px solid #e2ddd6;
+    font-size:.72rem; color:#8a7f6d; line-height:1.5; }
+  .tutele h3 { font-size:.75rem; color:#6b7280; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.5rem; font-weight:600; }
+  .tutele p { margin:.45rem 0; }
+  .tutele strong { color:#5a5348; font-weight:600; }
+  .tutele a { color:inherit; text-decoration:underline; }
+  .creator-email a { color:#9ca3af; text-decoration:none; }
+  .creator-email a:hover { color:#1a1a1a; }
+  /* disegno 2026-08-07: mesi a pagine, facce, player modale, trascrizione
+     richiudibile — la pagina episodio è un prodotto, non un sottoprodotto */
+  .hrow { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+  .hrow .subscribe { margin-bottom:0; flex-shrink:0; }
+  .months { font-size:.78rem; font-family:monospace; margin:.4rem 0 1rem; color:#9ca3af; }
+  .months a { text-decoration:none; } .months b { color:inherit; }
+  .ep-faces { display:flex; margin-left:auto; flex-shrink:0; }
+  .ep-faces img { width:26px; height:26px; border-radius:50%; object-fit:cover;
+    border:2px solid #fff; margin-left:-8px; background:#eee; }
+  /* tutti i citati sul desktop; su mobile la leggibilità vince: max 3 */
+  @media (max-width:600px) { .ep-faces img:nth-child(n+4) { display:none; } }
+  .ep-listen { width:32px; height:32px; border-radius:50%; background:#f3f4f6; border:0;
+    display:flex; align-items:center; justify-content:center; font-size:12px;
+    flex-shrink:0; cursor:pointer; color:inherit; }
+  .ep-listen.on { background:#2563eb; color:#fff; }
+  .face-inline { width:1.15em; height:1.15em; border-radius:50%; object-fit:cover;
+    vertical-align:-.18em; margin-right:.25em; }
+  /* SEMPRE sulla stessa riga (2026-08-09): su schermi stretti le miniature
+     si riducono, e se non basta il reel sparisce — mai l'andata a capo */
+  .vthumbs { display:flex; gap:.8rem; flex-wrap:nowrap; margin:1.2rem 0; align-items:flex-start; }
+  .vthumb { position:relative; cursor:pointer; border:0; padding:0; background:none;
+    border-radius:12px; overflow:hidden; }
+  /* stessa ALTEZZA per video e reel: il 9:16 si stringe, non svetta */
+  .vthumb video { height:150px; width:auto; display:block; border-radius:12px; background:#000; }
+  @media (max-width:520px) { .vthumb video { height:118px; } }
+  /* quando nemmeno ridotte ci stanno: via le miniature, due BOTTONI in
+     riga che aprono il player (2026-08-09) */
+  .vbtns { display:none; gap:.6rem; margin:1.2rem 0; }
+  .vbtns button { flex:1; padding:.6rem .4rem; border:0; border-radius:10px;
+    background:#2563eb; color:#fff; font-weight:700; font-size:.85rem;
+    cursor:pointer; font-family:inherit; }
+  @media (max-width:420px) { .vthumbs { display:none; } .vbtns { display:flex; } }
+  .vthumb .vlabel { position:absolute; left:0; right:0; bottom:0; padding:.9rem .5rem .35rem;
+    background:linear-gradient(transparent, rgba(0,0,0,.75)); color:#fff; font-size:.7rem; }
+  .vthumb::after { content:"▶"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    color:#fff; font-size:1.6rem; text-shadow:0 1px 6px rgba(0,0,0,.8); }
+  /* margin:auto ESPLICITO: il reset globale * {margin:0} annullava la
+     centratura nativa del dialog e il player si apriva in alto a sinistra */
+  dialog.vplayer { border:0; padding:0; background:transparent; max-width:92vw;
+    margin:auto; position:fixed; inset:0; }
+  dialog.vplayer::backdrop { background:rgba(0,0,0,.85); }
+  dialog.vplayer video { max-width:92vw; max-height:86vh; border-radius:14px; background:#000; }
+  details.tr { border:1px solid #e2ddd6; border-radius:10px; padding:.2rem .9rem .6rem; }
+  details.tr summary { cursor:pointer; font-weight:600; padding:.55rem 0; }
+  .tr-copy { font-size:.72rem; padding:.3rem .7rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; margin:.3rem 0 .5rem; }
+  .epnav { display:flex; justify-content:space-between; gap:1rem; margin:2rem 0 0;
+    font-size:.82rem; font-family:monospace; }
+  .epnav a { text-decoration:none; }
+  @media (prefers-color-scheme:dark) {
+    body { background:#1f1d18; color:#e5e5e5; }
+    .ep, .tension, .signal-card { background:#2a2823; border-color:#3a352d; }
+    .ep-play { background:#3a352d; } .desc { color:#d4d4d4; }
+    .signal-text { color:#d4d4d4; }
+    .creator-footer { border-color:#3a352d; }
+    .creator-name { color:#f5f5f5; }
+    .creator-tagline, .creator-email a { color:#9ca3af; }
+    .creator-ai { color:#9a8f7d; }
+    .vlink input { background:#1c1a17; border-color:#3a352d; color:#9ca3af; }
+    .tutele { border-color:#3a352d; color:#9a8f7d; }
+    .tutele h3 { color:#a9a9a9; } .tutele strong { color:#d4d4d4; }
+    .ep-listen { background:#3a352d; }
+    .ep-faces img { border-color:#2a2823; background:#3a352d; }
+    details.tr { border-color:#3a352d; }
+  }
+</style></head><body>
+<a class="back" href="/signal-brief/ai/">← Signal.AI</a>
+<header><h1>Il paradosso del controllo</h1></header>
+<div class="tagline">2026-05-10 · Digital Intelligence Podcast</div>
+<div class="desc">Chi predicava reti aperte ora accentra. Il valore migra dal software puro all'hardware. La sovranità diventa una scelta personale.</div>
+<div class="rawmd"><a href="raw.md">Testo (markdown)</a></div>
+<section><h2>Sintesi</h2><div class="synthesis"><p><strong>Tre correnti, una tensione</strong></p>
+<p>Tre correnti attraversano simultaneamente queste voci nella primavera 2026, e si tengono insieme da un paradosso di fondo.</p>
+<p>La prima è il <strong>collasso silenzioso della tesi scalare</strong>. <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/ilya-sutskever.jpg" alt="">Ilya Sutskever dichiara chiusa l'"age of scaling" e aperta un'"age of research" dove il collo di bottiglia non è più compute ma <a href="https://www.calcalistech.com/ctechnews/article/h1fudk7z11x" target="_blank" rel="noopener">idee</a>. <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/yann-lecun.jpg" alt="">Yann LeCun mette $1B su <a href="https://techcrunch.com/2026/03/09/yann-lecuns-ami-labs-raises-1-03-billion-to-build-world-models/" target="_blank" rel="noopener">JEPA e world models</a> come bet contrarian. <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt="">François Chollet comprime il <a href="https://www.theneuron.ai/explainer-articles/the-clock-is-ticking-ai-skepticfrancois-chollet-slashes-agi-timeline-to-5-years-unveils-new-benchmark-to-prove-it" target="_blank" rel="noopener">timeline AGI a cinque anni</a> proprio mentre denuncia che gli LLM non producono novità genuina. <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/john-carmack.jpg" alt="">John Carmack costruisce un robot Atari fisico per <a href="https://www.dmagazine.com/business-economy/2025/11/conversation-with-john-carmack-keen-technologies/" target="_blank" rel="noopener">sfuggire alla simulazione pulita</a>. Persino <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="">Andrej Karpathy, ex apostolo dello scaling, parla ora di <a href="https://karpathy.bearblog.dev/sequoia-ascent-2026/" target="_blank" rel="noopener">"decade of agents"</a>, non year of agents.</p>
+<p>La seconda è la <strong>verticalizzazione fisica</strong>: il valore esce dal puro software. <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/naval-ravikant.jpg" alt="">Naval Ravikant arriva a chiamare il software puro <a href="https://www.businesstoday.in/technology/story/pure-software-is-rapidly-becoming-uninvestable-naval-ravikant-on-why-vibe-coding-changes-everything-528256-2026-04-30" target="_blank" rel="noopener">uninvestable</a> e fonda Impossible per fare hardware. <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt="">Jensen Huang riformula NVIDIA come piattaforma per <a href="https://fortune.com/2026/05/06/jensen-huang-servicenow-bill-mcdermott-agentic-ai-robos/" target="_blank" rel="noopener">physical <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="">AI da $50T</a>. <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/elon-musk.jpg" alt="">Elon Musk fonde xAI dentro <a href="https://www.republicworld.com/tech/musk-says-xai-will-be-dissolved-as-separate-company-ai-products-to-come-under-spacexai" target="_blank" rel="noopener">SpaceXAI</a> con Terafab in Texas. La narrativa scalare diventa narrativa industriale.</p>
+<p>La terza è il <strong>paradosso del controllo</strong>. Chi ha venduto decentralizzazione ora accentra. <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="">Jack Dorsey <a href="https://fortune.com/2026/04/02/jack-dorsey-roelof-botha-ai-middle-management/" target="_blank" rel="noopener">rimuove il middle management Block</a> per far riportare 6.000 persone direttamente a sé — predicando reti aperte. <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/sam-altman.jpg" alt="">Sam Altman ridefinisce OpenAI come <a href="https://nodemerge.com/blog/sam-altman-patrick-collison-stripe-conversation-2026" target="_blank" rel="noopener">"utility" infrastrutturale</a>. <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/nat-friedman.jpg" alt="">Nat Friedman, ex evangelista dello stack open distribuito, pilota ora il prodotto consumer Meta. Sul versante opposto resistono <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/vitalik-buterin.jpg" alt="">Vitalik Buterin col <a href="https://vitalik.eth.limo/" target="_blank" rel="noopener">setup LLM self-sovereign</a> e dual-control 2-of-2, <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/dhh.png" alt="">DHH con <a href="https://world.hey.com/dhh/promoting-ai-agents-3ee04945" target="_blank" rel="noopener">Omarchy e il malleable computer</a>, <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/balaji-srinivasan.jpg" alt="">Balaji Srinivasan che operativizza Network School in Forest City.</p>
+<p>La tensione di fondo è netta: il 2026 è l'anno in cui gli stessi attori che hanno promesso intelligenza democratizzata costruiscono le infrastrutture più centralizzate della storia. Andrej Karpathy chiama "agentic engineering" la disciplina che recupera review e permessi — contromossa lessicale al "vibe coding" che lui stesso aveva coniato. <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/geoffrey-hinton.jpg" alt="">Geoffrey Hinton chiede <a href="https://news.un.org/en/story/2026/04/1167361" target="_blank" rel="noopener">trattati vincolanti</a> mentre <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/marc-andreessen.jpg" alt="">Marc Andreessen pubblica prompt che <a href="https://www.techloy.com/why-marc-andreessen-is-facing-backlash-over-an-ai-prompt/" target="_blank" rel="noopener">vietano disclaimer etici</a>. Verticalizzazione fisica da una parte, sovranità personale dall'altra: il software puro, terra di mezzo, evapora.</p></div></section>
+<section><h2>Temi del giorno</h2><div class="tension"><div class="axis">↗ Verticalizzazione fisica come tesi unificante</div><div class="side">Il software puro diventa uninvestable; valore migra a hardware, robotica, fab, physical AI.</div></div><div class="tension"><div class="axis">↗ Paradosso del controllo</div><div class="side">Chi predicava decentralizzazione ora accentra strutture, organizzazioni e infrastrutture.</div></div><div class="tension"><div class="axis">↗ Sovranità personale come contromossa</div><div class="side">Setup LLM self-sovereign, computer malleable, scuole-rete come resistenza al collasso centralizzante.</div></div><div class="tension"><div class="axis">↗ Decade of agents (non year)</div><div class="side">Karpathy ricalibra orizzonte temporale agentic da anni a decennio, segnando rallentamento aspettative.</div></div><div class="tension"><div class="axis">↗ Agentic engineering come contromossa lessicale</div><div class="side">Recupero di review e permessi contro il vibe coding che lui stesso aveva coniato.</div></div><div class="tension"><div class="axis">↗ Compressione timeline AGI paradossale</div><div class="side">Chollet accorcia AGI a 5 anni proprio mentre denuncia che LLM non producono novità.</div></div><div class="tension"><div class="axis">⚖ Centralizzazione vs sovranità personale</div><div class="side">Jack Dorsey: rimuove middle management, 6000 riportano direttamente a lui · Vitalik Buterin: setup self-sovereign con dual-control 2-of-2</div></div><div class="tension"><div class="axis">⚖ Utility infrastrutturale vs computer malleable</div><div class="side">Sam Altman: OpenAI come utility centralizzata · DHH: Omarchy e malleable computer come resistenza</div></div><div class="tension"><div class="axis">⚖ </div><div class="side">Jack Dorsey: predica reti aperte mentre accentra Block · Nat Friedman: ex evangelista open ora pilota consumer Meta</div></div><div class="tension"><div class="axis">⚖ Trattati vincolanti vs no-disclaimer</div><div class="side">Geoffrey Hinton: chiede trattati ONU vincolanti · Marc Andreessen: prompt che vietano disclaimer etici</div></div><div class="tension"><div class="axis">⚖ Software puro vs verticalizzazione fisica</div><div class="side">Naval Ravikant: software puro uninvestable, fonda Impossible hardware · Jensen Huang: NVIDIA piattaforma physical AI $50T</div></div></section>
+<section><h2>Progetti da osservare</h2><div class="tension"><div class="axis">karpathy/nanochat</div><div class=side>Pipeline minimale per addestrare un modello GPT-2 in ~2 ore su 8×H100 con FP8 e ClimbMix, parte della linea di lavoro di Karpathy su pipeline ridotte per singolo ricercatore. Repo di riferimento per l'era 'meno codice, più amplificazione'.</div></div><div class="tension"><div class="axis">karpathy/llm-wiki (gist)</div><div class=side>Prompt-pattern da copiare in Claude Code/Codex che istanzia il sistema 'LLM Wiki' su Obsidian: articoli enciclopedici interlinkati, backlink, health check. Diventato viral come anti-RAG personale.</div></div><div class="tension"><div class="axis">karpathy/autoresearch</div><div class=side>Repo di ~630 righe (7 marzo 2026) che materializza un agente di ricerca minimale, parte della tesi 'idea file = distribuzione' di Karpathy. Esempio concreto di agente che amplifica il ricercatore individuale.</div></div><div class="tension"><div class="axis">Obsidian</div><div class=side>Editor di note markdown con backlink e grafi che Karpathy elegge come 'IDE della conoscenza' nel suo pattern LLM-Wiki. Diventa il frontend consigliato per memoria esplicita e ispezionabile contro la memoria opaca degli assistant commerciali.</div></div><div class="tension"><div class="axis">ggerganov/llama.cpp</div><div class=side>Motore di inferenza C/C++ per LLM locali; il suo llama-server è il cuore dello stack self-sovereign proposto da Buterin (NixOS + llama-server + bubblewrap). Standard de facto per AI locale sovrana.</div></div><div class="tension"><div class="axis">basecamp/omarchy</div><div class=side>Distro Arch Linux curata da DHH con Hyprland, pensata per attrarre utenti macOS/Windows verso un desktop 'malleabile'. Progetto-manifesto del filone 'open source AI-ready' di DHH (Omacon NY, 130 persone).</div></div><div class="tension"><div class="axis">hyprwm/Hyprland</div><div class=side>Compositor Wayland dinamico, cuore visivo di Omarchy e simbolo del rinnovato interesse consumer per Linux (Panther Lake / XPS 14). DHH lo cita come esempio di software su cui finalmente 'hardware e aziende tornano a scommettere'.</div></div><div class="tension"><div class="axis">simonw/llm</div><div class=side>CLI e libreria Python di Simon Willison per interagire con LLM locali e cloud, base dei suoi tool README-driven (scan-for-secrets, datasette-ports, research-llm-apis). Strumento pivot del suo workflow 'agentic engineering'.</div></div><div class="tension"><div class="axis">fchollet/ARC-AGI</div><div class=side>Repo ufficiale dei benchmark ARC-AGI di Chollet, ora affiancato da ARC-AGI-3 (ambienti interattivi turn-based per misurare agency). ARC Prize 2026 ha $2M di montepremi; umani 100%, best frontier model 0,37%.</div></div><div class="tension"><div class="axis">zilliztech/claude-context</div><div class=side>Server MCP di code search che trasforma l'intera codebase in contesto indicizzato per Claude Code, Cursor e altri agenti. Esempio netto del 'moat shift' dal modello all'uso indicato da Evans e Andreessen.</div></div></section>
+<section><h2>Fonti</h2><div class="fonte"><span class="who">Jack Dorsey</span><a href="https://fortune.com/2026/04/02/jack-dorsey-roelof-botha-ai-middle-management/" target="_blank" rel="noopener">Fortune — Dorsey/Botha middle management</a><a href="https://sequoiacap.com/podcast/jack-dorsey-every-company-can-now-be-a-mini-agi/" target="_blank" rel="noopener">Sequoia podcast</a><a href="https://venturebeat.com/data/block-introduces-managerbot-a-proactive-square-ai-agent-and-the-clearest" target="_blank" rel="noopener">VentureBeat — Managerbot</a></div><div class="fonte"><span class="who">Naval Ravikant</span><a href="https://nav.al/code" target="_blank" rel="noopener">nav.al/code</a><a href="https://nav.al/" target="_blank" rel="noopener">Naval Podcast (nav.al)</a><a href="https://www.businesstoday.in/technology/story/pure-software-is-rapidly-becoming-uninvestable-naval-ravikant-on-why-vibe-coding-changes-everything-528256-2026-04-30" target="_blank" rel="noopener">BusinessToday — Pure software uninvestable</a></div><div class="fonte"><span class="who">Vitalik Buterin</span><a href="https://vitalik.eth.limo/" target="_blank" rel="noopener">Self-sovereign LLM setup, vitalik.eth.limo</a><a href="https://www.panewslab.com/en/articles/019da95c-eeab-7118-9a86-e0d7f73e43b5" target="_blank" rel="noopener">Hong Kong Web3 Carnival speech (PANews)</a><a href="https://coinpedia.org/news/vitalik-buterin-on-ethereums-roadmap-zkevm-quantum-resistance-and-10-second-finality/" target="_blank" rel="noopener">Roadmap zkEVM/quantum/finality (Coinpedia)</a></div></section>
+<section class="transcript-section"><h2>Trascrizione</h2><details class="tr"><summary>Leggi la trascrizione</summary><button class="tr-copy" type="button" onclick="copiaTrascrizione(this)">copia il testo</button><div class="transcript-body"><h2>Il paradosso del controllo</h2>
+<p class="podcast-episode-desc">Chi predicava reti aperte ora accentra. Il valore migra dal software puro all'hardware. La sovranità diventa una scelta personale.</p>
+<div class="chapter" data-mood="geo"><hr></div>
+<p>Il due aprile Jack Dorsey ha pubblicato un saggio insieme a Roelof Botha di Sequoia. Sostiene che il management intermedio è un'eredità del Novecento e che, con l'intelligenza artificiale, un'azienda può funzionare come un'unica intelligenza. Pochi giorni dopo ha messo in pratica la tesi. A Block, dopo aver licenziato circa il quaranta per cento del personale, ha fatto in modo che seimila persone riportino direttamente a lui. È Signal Brief, è il dieci maggio, e questa storia ne contiene tre.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>La cosa interessante del gesto di Dorsey non è il numero. È chi lo fa. Per quindici anni Dorsey è stato uno dei volti pubblici della decentralizzazione. Reti sociali aperte, Bitcoin come denaro permissionless, Nostr, Bluesky agli inizi. Era la voce che diceva al mondo: smettetela di concentrare il potere in pochi punti. E adesso prende un'azienda, ne taglia gli strati intermedi, e dichiara che seimila persone risponderanno a lui. Non è ipocrisia. È il sintomo di qualcosa di più grande.</p>
+<p>Lo stesso paradosso lo trovate ovunque guardiate. Sam Altman, qualche giorno fa, in una conversazione con Patrick Collison di Stripe, ha descritto OpenAI come una "utility": un'infrastruttura fondazionale per l'economia, qualcosa che assomiglia più a un'azienda elettrica che a un laboratorio. Nat Friedman, che fino a tre anni fa evangelizzava lo stack open source distribuito, ora pilota il prodotto consumer di Meta. Mark Andreessen, che nel duemilaventitré scriveva manifesti tecno-ottimisti, oggi pubblica prompt che vietano agli LLM ogni disclaimer etico. Tutti i predicatori della rete aperta sono arrivati nello stesso posto: al centro di un'infrastruttura concentrata.</p>
+<p>Mi sembra che assomigli a quello che è successo coi treni nell'Ottocento. All'inizio sembravano lo strumento perfetto per liberare le piccole città dall'isolamento. Ogni paese voleva la sua stazione. Trent'anni dopo, il sistema ferroviario era diventato uno degli oggetti più centralizzati della storia industriale, controllato da poche compagnie che decidevano dove andava il commercio e dove no. La promessa di apertura, alla scala dell'infrastruttura, si rovescia quasi sempre nel suo opposto.</p>
+<p>In parallelo, succede una seconda cosa. Il valore si sposta dal software al fisico. Naval Ravikant — uno che per vent'anni ha investito quasi solo in software — la settimana scorsa è arrivato a dire una frase che fino a un anno fa sarebbe stata impensabile dalla sua bocca: il software puro sta diventando uninvestable. Cioè qualcosa su cui non vale più la pena scommettere. E ha appena fondato un'azienda di hardware a San Francisco, Impossible, full in-person, ritmo ventiquattro su sette. Jensen Huang, sul palco di ServiceNow, ha riformulato Nvidia come piattaforma per la "physical AI", l'AI fisica: fabbriche, robot, droni, città. Mercato indirizzato, ha detto, cinquanta trilioni di dollari. Elon Musk ha sciolto xAI come azienda separata e l'ha fusa dentro SpaceXAI, in vista della costruzione di Terafab in Texas — una fabbrica di chip da cento miliardi di dollari che servirà Tesla, SpaceX e xAI insieme. È la stessa cosa che è successa quando le grandi aziende tessili dell'Ottocento smisero di essere aziende tessili e diventarono conglomerati di vapore, ferro e ferrovia: il valore migra a monte, dentro l'infrastruttura.</p>
+<p>E infine la terza corrente, che è la contromossa. Mentre i grandi accentrano, alcuni si organizzano per uscire. Vitalik Buterin il due aprile ha pubblicato un post lungo in cui descrive il suo setup personale: un modello linguistico locale, su un laptop, che gira in una sandbox. Niente cloud. Per le azioni importanti — accedere al portafoglio, mandare un messaggio cifrato — c'è una regola che chiama "due su due": serve sia un consenso umano sia uno della macchina. DHH, dall'altra parte del mondo, lavora a Omarchy, una distribuzione Linux pensata per il "computer malleabile", una macchina che l'utente può modificare davvero, contro la logica delle app store chiuse. Balaji Srinivasan operativizza Network School in Malesia, dove vivono ormai più di quattrocento persone.</p>
+<p>Il filo della giornata è questo. Tre correnti, una tensione sola. I costruttori di intelligenza democratizzata stanno costruendo le infrastrutture più centralizzate della storia. Il software puro, terra di mezzo, evapora. E chi non vuole farsi assorbire si organizza in piccolo, sul proprio laptop, nella propria casa, nella propria scuola.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Il primo personaggio della giornata è proprio Jack Dorsey, ed è il caso che mostra il paradosso nella sua forma più nitida. Dorsey è il tipo che ha fondato Twitter e che, dopo averlo lasciato, ha passato anni a finanziare protocolli di rete aperti, da Nostr a Bluesky. Era il decentralizzatore puro, quello che diceva: il futuro è permissionless, niente padroni, niente censori, niente intermediari.</p>
+<p>Negli ultimi due mesi è successa una cosa diversa. A fine febbraio Block ha licenziato circa il quaranta per cento del personale — quattromila persone. Il due aprile Dorsey ha pubblicato con Roelof Botha di Sequoia un saggio che si intitola "From Hierarchy to Intelligence", da gerarchia a intelligenza. La tesi è semplice: i livelli di management che le aziende hanno costruito nel Novecento servivano a coordinare informazione tra esseri umani. Adesso che gli LLM coordinano informazione meglio degli esseri umani, quei livelli diventano grasso. Quindi via. A Block restano seimila persone, divise in due o tre livelli, e tutte fanno capo a lui.</p>
+<p>Per dimostrare che la cosa funziona, ha lanciato a fine aprile un agente che si chiama Managerbot. Lo usano i venditori che hanno un terminale Square — bar, ristoranti, negozi negli Stati Uniti. Managerbot non aspetta che gli si parli: monitora le scorte, le vendite, il meteo, gli eventi locali, e propone in autonomia turni del personale e campagne pubblicitarie. È il proof point della tesi: l'agente sostituisce un middle manager.</p>
+<p>E nel frattempo, sul fronte Bitcoin, Block ha annunciato un nuovo hardware wallet senza seed phrase, un cashback del cinque per cento in Bitcoin sugli acquisti Square, e ha pubblicato la prova pubblica delle sue riserve — quasi novemila Bitcoin propri, oltre diciannovemila in custodia per i clienti.</p>
+<p>Il paradosso lo vedete bene. Predica reti aperte e accentra Block su sé stesso. Continua a finanziare Bitcoin come denaro libero, ma costruisce un'azienda dove ogni decisione deve passare per il vertice. La cosa più onesta da dire, mi sembra, è che Dorsey crede davvero in entrambe le cose. Crede che la valuta debba essere libera e che l'azienda debba essere comandata. È un'ideologia coerente, anche se non è quella che la sua immagine pubblica suggerisce. E forse il vero segnale è che, nell'epoca degli agenti, la coerenza tra "rete aperta" e "azienda piatta" si rompe. Una cosa è il denaro, un'altra è il potere organizzativo. Dorsey sta dicendo, senza dirlo: dell'apertura ho bisogno solo dove il mercato lo richiede.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Dall'altra parte della stessa storia c'è Naval Ravikant. Per chi non lo conoscesse, è uno degli investitori più ascoltati della Silicon Valley degli ultimi vent'anni — fondatore di AngelList, voce di un certo modo di pensare il software come leva personale. La sua frase più citata, per anni, è stata: "code and media", codice e media, sono le due forme di leva infinita per chiunque voglia costruire qualcosa.</p>
+<p>Il ventotto aprile ha pubblicato un episodio del suo podcast intitolato "A Return to Code", e poco dopo ha rilasciato un'intervista in cui dice una cosa che fino a un anno fa sarebbe stata eretica per lui. Il software puro, ha detto, sta diventando uninvestable. Non vale più la pena, come venture capitalist, scommettere su aziende che fanno solo software. Perché chiunque, con un agente come Claude o Codex, può tirare fuori in poche ore quello che prima richiedeva un team. Il software è diventato una commodity. La leva si è spostata altrove.</p>
+<p>E dove? Naval ha una risposta concreta: hardware, modelli, network effect. Cose che non si possono replicare in due ore con un prompt. Per metterci la faccia ha fondato a San Francisco una nuova azienda, Impossible Computer Company. Meno di venti persone, full in-person, lavoro continuo. Fa hardware. È un gesto programmatico: l'investitore software per eccellenza apre un'azienda che fabbrica oggetti.</p>
+<p>Naval ha anche detto un'altra cosa che vale la pena notare. Definisce la dipendenza di Apple da Gemini per la sua AI come "il più grande errore strategico di questa decade nel tech". Il ragionamento è questo: nel momento in cui un agente media tutta la nostra interazione col telefono, il telefono stesso diventa uno schermo intercambiabile. Non importa più se è un iPhone o un altro. L'oggetto perde valore, lo guadagna l'agente. E quindi anche il dominio di Apple sull'esperienza utente, costruito in vent'anni, può sciogliersi in fretta.</p>
+<p>È la stessa dinamica che ha cambiato la musica vent'anni fa. Quando la musica si è digitalizzata, il valore non è rimasto al disco fisico. È andato a chi controllava lo store, prima iTunes, poi Spotify. Adesso, dice Naval, sta succedendo qualcosa di simile alle app: smettono di essere il prodotto, diventano servizi che un agente assembla al volo. E chi non si muove a monte — verso l'hardware, verso il modello, verso la rete — finisce schiacciato. È una versione più dura della tesi di Huang, ed è coerente: software puro evapora, atomi tornano al centro.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Ricapitoliamo un attimo dove siamo. Stiamo seguendo tre correnti che si tengono insieme: chi accentra mentre prometteva di aprire, chi sposta il valore dal software al fisico, chi prova a costruirsi una sovranità personale. Il prossimo personaggio sta nel mezzo di tutto questo.</p>
+<p>È Andrej Karpathy. Karpathy è uno di quelli che hanno costruito i modelli linguistici dall'interno: prima OpenAI, poi Tesla Autopilot, poi di nuovo OpenAI. Negli ultimi due anni si è messo per conto suo, e ha guadagnato una specie di status da oracolo: quando parla, la comunità AI ascolta.</p>
+<p>Il trenta aprile ha fatto un fireside chat con Stephanie Zhan al Sequoia AI Ascent, ed è lì che ha cristallizzato due cose importanti. La prima è una rinominazione. Nel duemilaventiquattro Karpathy aveva coniato un'espressione che è diventata virale: "vibe coding". L'idea che si potesse programmare a sensazione, dicendo al modello cosa volevi e accettando quello che usciva. Adesso, lo stesso Karpathy, dice che la pratica seria si chiama "agentic engineering", ingegneria agentica. Cioè la stessa cosa di prima ma con disciplina: review del codice, permessi granulari, gate di sicurezza. È una contromossa a sé stesso. Vibe coding alza il pavimento, dice — chiunque può prototipare. Ma il soffitto, la qualità seria, richiede di nuovo la rigidità che il vibe coding aveva sciolto.</p>
+<p>La seconda cosa è ancora più rilevante. Karpathy ha detto che non siamo nel "year of agents", l'anno degli agenti, ma nella "decade of agents", il decennio degli agenti. Tradotto: ci vorranno dieci anni, non uno, per risolvere i problemi seri di memoria, supervisione, infrastruttura pensata per agenti. Per chi conosce Karpathy, è una calibrazione importante. È sempre stato sul lato ottimista. Questa frase è il suo modo, sobrio, di dire che l'hype è oltre la realtà.</p>
+<p>E intorno a questa posizione, gli fa eco una platea inattesa. Ilya Sutskever, in un'intervista recente, ha detto che è finita "l'età dello scaling" — non basta più aggiungere computer per migliorare i modelli, il collo di bottiglia ora sono le idee. François Chollet ha tagliato il suo timeline AGI a cinque anni ma, paradossalmente, dice anche che gli LLM non producono novità genuina. Yann LeCun ha appena raccolto un miliardo di dollari per costruire qualcosa di completamente diverso, basato sui world models, perché secondo lui la strada degli LLM è "completa scemenza". Persino John Carmack, uno dei programmatori più rispettati del nostro tempo, sta costruendo un robot fisico che gioca a un Atari vero, davanti a una televisione vera, perché dice che la simulazione pulita ci sta nascondendo i problemi veri. Il consenso interno alla comunità AI sta cambiando in silenzio. E Karpathy, che ne è una cartina tornasole, lo dice ad alta voce.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>L'ultimo ritratto è la contromossa più nitida al paradosso del controllo. Vitalik Buterin, il fondatore di Ethereum, il due aprile ha pubblicato sul suo sito un post lungo intitolato "il mio setup LLM self-sovereign". Cioè: come si organizza un'intelligenza artificiale personale, che non passa per nessun cloud, e che resta sotto il controllo di chi la usa.</p>
+<p>Il setup di Buterin è meticoloso, e merita di essere raccontato per quello che dice nel concreto. Sul suo laptop, con una scheda video potente, gira un modello locale. Non chiama OpenAI, non chiama Anthropic, non chiama nessuno. Tutto quello che gli scrive resta sulla sua macchina. Il sistema operativo è NixOS, che è un Linux pensato per essere riproducibile pezzo per pezzo. Ogni esecuzione del modello succede dentro una sandbox, una specie di gabbia che limita cosa il programma può leggere e dove può collegarsi.</p>
+<p>E poi c'è la regola che, secondo me, è il pezzo più interessante. Per le azioni davvero importanti — pagare con il portafoglio, mandare un messaggio cifrato su Signal, scrivere un'email — Buterin ha costruito quello che chiama "dual control due su due". Significa: serve sia un consenso umano sia un consenso del modello. Né l'uno né l'altro può agire da solo. È una struttura pensata apposta per resistere a un certo tipo di attacco. Buterin cita un dato: circa il quindici per cento delle "skill" pubblicate per agenti AI contengono istruzioni malevole nascoste. Se l'agente è da solo, e qualcuno gli inietta il comando giusto, può svuotare un portafoglio o esfiltrare dati. Se ci vuole anche il consenso umano, no.</p>
+<p>La frase con cui chiude il post è importante. Dice di avere una "deep fear", una paura profonda, che l'AI cloud cancelli decenni di progressi sulla cifratura end-to-end e sul software locale. Per anni la comunità sicurezza si è battuta per portare le chiavi private sui dispositivi degli utenti. L'AI cloud, dice Buterin, fa il movimento opposto: tutto quello che chiediamo a un modello cloud è in chiaro per chi gestisce il modello.</p>
+<p>Il venti aprile, a Hong Kong, Buterin ha presentato anche la roadmap di Ethereum, e l'ha incorniciata nello stesso registro: il duemilaventisei è l'anno per "invertire il backsliding", invertire la marcia indietro verso i servizi centralizzati. Mi sembra l'osservazione politica più precisa che qualcuno abbia fatto sull'epoca. Quasi tutto ciò che chiamavamo "rete aperta" sta tornando indietro. Buterin non lo accetta, e si organizza in piccolo, sul suo laptop. È esattamente il movimento opposto a quello di Dorsey, ed è la stessa generazione, lo stesso mondo. Due risposte opposte allo stesso problema.</p>
+<div class="chapter" data-mood="upbeat"><hr></div>
+<p>Progetti da osservare. Quattro o cinque cose, raccontate veloci, che parlano direttamente di queste correnti.</p>
+<p>Il primo si chiama nanochat, ed è di Karpathy. È una pipeline minimale per addestrare un modello in stile GPT-due in due ore, su un piccolo cluster di GPU. Non serve a battere nessun benchmark. Serve a dimostrare che oggi un singolo ricercatore può fare quello che cinque anni fa richiedeva un team di cento persone. È il "meno codice, più amplificazione" che Karpathy predica.</p>
+<p>Il secondo è Omarchy, la distribuzione Linux di DHH. Una versione di Arch Linux con un compositor grafico moderno, pensata per attirare gli utenti che lasciano Mac o Windows. Ha già circa centocinquantamila installazioni. Il senso non è tecnico. Il senso è che DHH la chiama "il computer malleabile". È un sistema che l'utente può davvero modificare, contro la logica chiusa delle app store. È la stessa filosofia di Buterin, applicata al desktop.</p>
+<p>Il terzo è llama.cpp, il motore che fa girare i modelli linguistici in locale. Non è nuovo, ma è il pezzo invisibile che rende possibile lo stack di Buterin e di chiunque voglia un'AI personale. Senza llama.cpp, la sovranità personale resterebbe slogan. Con llama.cpp, è una scelta concreta che chiunque con un buon laptop può fare.</p>
+<p>Il quarto è ARC-AGI-tre, di François Chollet. È un nuovo benchmark, ma diverso da tutti i precedenti. Sono centinaia di mini-ambienti interattivi, senza istruzioni e senza regole. L'agente deve esplorare e capire da solo cosa fare. Gli umani lo risolvono al cento per cento. I migliori modelli oggi stanno sotto l'uno per cento. È il modo di Chollet per dire: i nostri modelli sono bravi a memorizzare, non a improvvisare.</p>
+<p>E il quinto, breve, è claude-context: un piccolo strumento che indicizza un'intera codebase e la rende disponibile come contesto per Claude o per altri agenti. Non è un modello, è il modo in cui un modello vede il vostro lavoro. Mostra dove si è spostato il valore: non più nel modello in sé, ma in come lo si nutre.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>L'immagine che mi resta in testa, di questa giornata, è quella di Buterin che scrive su un laptop in una sandbox, mentre Dorsey, dall'altra parte del mondo, prende seimila persone sotto il suo controllo diretto. Stessa tecnologia, due direzioni opposte. È il bivio del nostro tempo, ed è ancora aperto. È stato Signal Brief. Alla prossima.</p></div></details></section>
+<nav class="epnav"><a href="/signal-brief/ai/2026-05-09/">← 2026-05-09</a><span style="flex:1"></span><a href="/signal-brief/ai/2026-05-11/">2026-05-11 →</a></nav>
+<dialog class="vplayer" id="vplayer"></dialog>
+<script>
+// player modale dei video: la miniatura apre il video al centro (disegno 2026-08-07)
+function apriVideo(src) {
+  var d = document.getElementById('vplayer');
+  d.innerHTML = '<video controls autoplay playsinline src="' + src + '"></video>';
+  d.showModal();
+  d.onclick = function (e) { if (e.target === d) d.close(); };
+  d.onclose = function () { var v = d.querySelector('video'); if (v) v.pause(); d.innerHTML = ''; };
+}
+// ascolto inline dalla lista: un episodio alla volta
+var epAudio = null, epBtn = null;
+function ascolta(btn, src) {
+  if (epBtn === btn && epAudio) {
+    if (epAudio.paused) { epAudio.play(); btn.classList.add('on'); }
+    else { epAudio.pause(); btn.classList.remove('on'); }
+    return;
+  }
+  if (epAudio) { epAudio.pause(); if (epBtn) epBtn.classList.remove('on'); }
+  epAudio = new Audio(src); epBtn = btn;
+  epAudio.play(); btn.classList.add('on');
+  epAudio.onended = function () { btn.classList.remove('on'); };
+}
+function copiaTrascrizione(btn) {
+  var t = btn.parentElement.querySelector('.transcript-body');
+  navigator.clipboard.writeText(t ? t.innerText : '').then(function () {
+    btn.textContent = 'copiata ✓';
+    setTimeout(function () { btn.textContent = 'copia il testo'; }, 1800);
+  });
+}
+</script>
+<footer class="creator-footer">
+  <img src="/signal-brief/mike-avatar.png" alt="Michele Mondora">
+  <div class="creator-meta">
+    <span class="creator-name">it-mikesoft</span>
+    <span class="creator-tagline">working with systems, living with questions</span>
+    <span class="creator-email"><a href="mailto:michele@mondora.com">michele@mondora.com</a></span>
+  </div>
+</footer>
+<section class="tutele"><h3>Trasparenza e tutele</h3>
+<p><strong>Come nasce questo contenuto.</strong> Ricerca, sintesi editoriale, voce narrante, immagini e musica sono prodotte con sistemi di intelligenza artificiale. Non c'è una redazione umana che verifica ogni affermazione prima della pubblicazione: un controllo automatico scarta le schede giudicate inaffidabili, ma non elimina la possibilità di errori.</p>
+<p><strong>Affermazioni su persone e aziende.</strong> Quanto riportato è una sintesi di fonti pubbliche, non una dichiarazione diretta delle persone citate: le frasi non vanno intese come virgolettati né come posizioni ufficiali. Le fonti sono indicate in ogni pagina episodio — verificale prima di considerare un'informazione accertata. Se trovi un'affermazione inesatta che ti riguarda, scrivi a <a href="mailto:michele@mondora.com">michele@mondora.com</a>: viene corretta o rimossa.</p>
+<p><strong>Immagini e volti.</strong> Le immagini di scena sono generate con AI e non raffigurano fatti realmente avvenuti. Le fotografie di persone reali usate nei video provengono da Wikimedia Commons con le rispettive licenze, e sono accostate al racconto a scopo identificativo: la loro presenza non implica partecipazione, dichiarazione o approvazione da parte della persona ritratta. Su richiesta dell'interessato vengono rimosse.</p>
+<p><strong>Fonti e diritti altrui.</strong> I contenuti sono rielaborazioni originali, non riproduzioni di articoli di terzi; le testate e gli autori all'origine di una notizia sono citati e collegati. Marchi e nomi commerciali appartengono ai rispettivi titolari e sono usati a scopo descrittivo.</p>
+</section>
+</body></html>

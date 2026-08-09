@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="it"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La fine dello scaling puro · Signal.AI</title>
+<meta property="og:title" content="La fine dello scaling puro · Signal.AI"><meta property="og:type" content="article"><meta property="og:description" content="L'industria dell'AI esce dall'era della pura potenza di calcolo. Architettura, sicurezza e modelli di proprietà diventano la nuova posta in gioco."><meta property="og:url" content="https://it-mikesoft.github.io/signal-brief/ai/2026-05-25/"><meta property="og:audio" content="https://media.casamon.dev/ai/podcast/episodes/2026-05-25.mp3"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "PodcastEpisode", "name": "La fine dello scaling puro", "datePublished": "2026-05-25", "url": "https://it-mikesoft.github.io/signal-brief/ai/2026-05-25/", "description": "L'industria dell'AI esce dall'era della pura potenza di calcolo. Architettura, sicurezza e modelli di proprietà diventano la nuova posta in gioco.", "inLanguage": "it", "associatedMedia": {"@type": "MediaObject", "contentUrl": "https://media.casamon.dev/ai/podcast/episodes/2026-05-25.mp3"}, "partOfSeries": {"@type": "PodcastSeries", "name": "Signal.AI", "url": "https://it-mikesoft.github.io/signal-brief/ai/"}}</script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:#faf8f4; color:#1a1a1a; padding:2rem 1.5rem; max-width:680px; margin:0 auto; line-height:1.6; }
+  a { color:#2563eb; }
+  .back { display:inline-block; margin-bottom:1.5rem; font-size:.8rem; font-family:monospace; text-decoration:none; }
+  .videos { display:flex; gap:1rem; flex-wrap:wrap; margin:1.2rem 0; }
+  .videos figure { margin:0; flex:1; min-width:260px; }
+  .videos .v2 { flex:0 1 240px; }
+  .videos video { width:100%; border-radius:12px; background:#000; }
+  .videos .v2 video { aspect-ratio:9/16; max-height:420px; }
+  .videos figcaption { font-size:.75rem; color:#888; text-align:center; margin-top:.3rem; }
+  .vlink { display:flex; gap:.3rem; margin-top:.35rem; }
+  .vlink input { flex:1; min-width:0; font-size:.68rem; font-family:monospace; padding:.3rem .4rem;
+    border:1px solid #e2ddd6; border-radius:6px; background:#fff; color:#6b7280; }
+  .vlink button { font-size:.68rem; padding:.3rem .6rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; }
+  .wk { font-size:1rem; margin:1.4rem 0 .4rem; }
+  details.wkacc { border:1px solid #e5e7eb33; border-radius:10px; margin:.6rem 0; padding:.1rem .8rem .4rem; }
+  details.wkacc summary { cursor:pointer; font-weight:600; padding:.5rem 0; font-size:.9rem; }
+  .back:hover { text-decoration:underline; }
+  header h1 { font-family:Georgia,serif; font-size:1.7rem; font-weight:600; }
+  header h1 span { color:#2563eb; }
+  .tagline { color:#6b7280; font-size:.85rem; margin-top:.3rem; margin-bottom:1.5rem; }
+  ul.eps { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
+  .subscribe { display:inline-flex; align-items:center; gap:.5rem; margin-bottom:1.2rem;
+    padding:.45rem .9rem; background:#2563eb; color:#fff; border-radius:20px;
+    text-decoration:none; font-size:.8rem; font-weight:600; }
+  .subscribe:hover { opacity:.85; color:#fff; }
+  .ep { display:flex; align-items:center; gap:.8rem; padding:.8rem 1rem; background:#fff;
+    border:1px solid #e2ddd6; border-radius:8px; text-decoration:none; color:inherit; transition:box-shadow .12s; }
+  .ep:hover { box-shadow:0 2px 8px rgba(0,0,0,.07); }
+  .ep-play { width:32px; height:32px; border-radius:50%; background:#f3f4f6; display:flex;
+    align-items:center; justify-content:center; font-size:12px; flex-shrink:0; }
+  .ep-title { font-size:.9rem; font-weight:500; }
+  .ep-meta { font-size:.72rem; color:#9ca3af; font-family:monospace; margin-top:.15rem; }
+  audio { width:100%; margin:1rem 0 1.5rem; }
+  .rawmd { margin:-.5rem 0 1.5rem; }
+  .rawmd a { font-size:.8rem; font-family:monospace; color:inherit; opacity:.65; }
+  .desc { color:#374151; font-size:.95rem; margin-bottom:1.5rem; }
+  section { margin:2rem 0; }
+  section h2 { font-family:Georgia,serif; font-size:1.1rem; border-bottom:1px solid #e2ddd6;
+    padding-bottom:.3rem; margin-bottom:.8rem; }
+  .synthesis p { margin:.7rem 0; }
+  .tension { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; font-size:.9rem; }
+  .tension .axis { font-weight:600; margin-bottom:.3rem; }
+  .tension .side { color:#6b7280; font-size:.85rem; }
+  .proj { font-size:.9rem; margin:.4rem 0; }
+  .proj .pname { font-weight:600; }
+  .proj .pnew { background:#16a34a; color:#fff; font-size:.65rem; font-weight:700;
+    padding:.1rem .35rem; border-radius:4px; text-transform:uppercase; vertical-align:middle; }
+  .fonte { font-size:.85rem; margin:.5rem 0; }
+  .fonte .who { font-weight:600; }
+  .fonte a { display:block; margin-left:.5rem; color:#6b7280; }
+  .transcript-body p { margin:.7rem 0; line-height:1.7; }
+  .transcript-body .chapter hr { border:none; border-top:1px solid #e2ddd6; margin:1.5rem 0; }
+  .transcript-body .podcast-episode-desc { color:#6b7280; font-style:italic; }
+  .signal-card { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; }
+  .signal-theme { font-size:.75rem; font-weight:700; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.3rem; }
+  .signal-text { font-size:.85rem; color:#374151; line-height:1.5; }
+  .creator-footer { margin-top:3rem; padding-top:1.5rem; border-top:1px solid #e2ddd6;
+    display:flex; align-items:center; gap:.9rem; }
+  .creator-footer img { width:40px; height:40px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+  .creator-meta { display:flex; flex-direction:column; gap:.15rem; }
+  .creator-name { font-size:.85rem; font-weight:600; color:#1a1a1a; }
+  .creator-tagline { font-size:.75rem; color:#6b7280; }
+  .creator-email { font-size:.75rem; }
+  .creator-ai { font-size:.72rem; color:#8a7f6d; max-width:46ch; line-height:1.45; }
+  .tutele { margin-top:2rem; padding-top:1.2rem; border-top:1px solid #e2ddd6;
+    font-size:.72rem; color:#8a7f6d; line-height:1.5; }
+  .tutele h3 { font-size:.75rem; color:#6b7280; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.5rem; font-weight:600; }
+  .tutele p { margin:.45rem 0; }
+  .tutele strong { color:#5a5348; font-weight:600; }
+  .tutele a { color:inherit; text-decoration:underline; }
+  .creator-email a { color:#9ca3af; text-decoration:none; }
+  .creator-email a:hover { color:#1a1a1a; }
+  /* disegno 2026-08-07: mesi a pagine, facce, player modale, trascrizione
+     richiudibile — la pagina episodio è un prodotto, non un sottoprodotto */
+  .hrow { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+  .hrow .subscribe { margin-bottom:0; flex-shrink:0; }
+  .months { font-size:.78rem; font-family:monospace; margin:.4rem 0 1rem; color:#9ca3af; }
+  .months a { text-decoration:none; } .months b { color:inherit; }
+  .ep-faces { display:flex; margin-left:auto; flex-shrink:0; }
+  .ep-faces img { width:26px; height:26px; border-radius:50%; object-fit:cover;
+    border:2px solid #fff; margin-left:-8px; background:#eee; }
+  /* tutti i citati sul desktop; su mobile la leggibilità vince: max 3 */
+  @media (max-width:600px) { .ep-faces img:nth-child(n+4) { display:none; } }
+  .ep-listen { width:32px; height:32px; border-radius:50%; background:#f3f4f6; border:0;
+    display:flex; align-items:center; justify-content:center; font-size:12px;
+    flex-shrink:0; cursor:pointer; color:inherit; }
+  .ep-listen.on { background:#2563eb; color:#fff; }
+  .face-inline { width:1.15em; height:1.15em; border-radius:50%; object-fit:cover;
+    vertical-align:-.18em; margin-right:.25em; }
+  /* SEMPRE sulla stessa riga (2026-08-09): su schermi stretti le miniature
+     si riducono, e se non basta il reel sparisce — mai l'andata a capo */
+  .vthumbs { display:flex; gap:.8rem; flex-wrap:nowrap; margin:1.2rem 0; align-items:flex-start; }
+  .vthumb { position:relative; cursor:pointer; border:0; padding:0; background:none;
+    border-radius:12px; overflow:hidden; }
+  /* stessa ALTEZZA per video e reel: il 9:16 si stringe, non svetta */
+  .vthumb video { height:150px; width:auto; display:block; border-radius:12px; background:#000; }
+  @media (max-width:520px) { .vthumb video { height:118px; } }
+  /* quando nemmeno ridotte ci stanno: via le miniature, due BOTTONI in
+     riga che aprono il player (2026-08-09) */
+  .vbtns { display:none; gap:.6rem; margin:1.2rem 0; }
+  .vbtns button { flex:1; padding:.6rem .4rem; border:0; border-radius:10px;
+    background:#2563eb; color:#fff; font-weight:700; font-size:.85rem;
+    cursor:pointer; font-family:inherit; }
+  @media (max-width:420px) { .vthumbs { display:none; } .vbtns { display:flex; } }
+  .vthumb .vlabel { position:absolute; left:0; right:0; bottom:0; padding:.9rem .5rem .35rem;
+    background:linear-gradient(transparent, rgba(0,0,0,.75)); color:#fff; font-size:.7rem; }
+  .vthumb::after { content:"▶"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    color:#fff; font-size:1.6rem; text-shadow:0 1px 6px rgba(0,0,0,.8); }
+  /* margin:auto ESPLICITO: il reset globale * {margin:0} annullava la
+     centratura nativa del dialog e il player si apriva in alto a sinistra */
+  dialog.vplayer { border:0; padding:0; background:transparent; max-width:92vw;
+    margin:auto; position:fixed; inset:0; }
+  dialog.vplayer::backdrop { background:rgba(0,0,0,.85); }
+  dialog.vplayer video { max-width:92vw; max-height:86vh; border-radius:14px; background:#000; }
+  details.tr { border:1px solid #e2ddd6; border-radius:10px; padding:.2rem .9rem .6rem; }
+  details.tr summary { cursor:pointer; font-weight:600; padding:.55rem 0; }
+  .tr-copy { font-size:.72rem; padding:.3rem .7rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; margin:.3rem 0 .5rem; }
+  .epnav { display:flex; justify-content:space-between; gap:1rem; margin:2rem 0 0;
+    font-size:.82rem; font-family:monospace; }
+  .epnav a { text-decoration:none; }
+  @media (prefers-color-scheme:dark) {
+    body { background:#1f1d18; color:#e5e5e5; }
+    .ep, .tension, .signal-card { background:#2a2823; border-color:#3a352d; }
+    .ep-play { background:#3a352d; } .desc { color:#d4d4d4; }
+    .signal-text { color:#d4d4d4; }
+    .creator-footer { border-color:#3a352d; }
+    .creator-name { color:#f5f5f5; }
+    .creator-tagline, .creator-email a { color:#9ca3af; }
+    .creator-ai { color:#9a8f7d; }
+    .vlink input { background:#1c1a17; border-color:#3a352d; color:#9ca3af; }
+    .tutele { border-color:#3a352d; color:#9a8f7d; }
+    .tutele h3 { color:#a9a9a9; } .tutele strong { color:#d4d4d4; }
+    .ep-listen { background:#3a352d; }
+    .ep-faces img { border-color:#2a2823; background:#3a352d; }
+    details.tr { border-color:#3a352d; }
+  }
+</style></head><body>
+<a class="back" href="/signal-brief/ai/">← Signal.AI</a>
+<header><h1>La fine dello scaling puro</h1></header>
+<div class="tagline">2026-05-25 · Digital Intelligence Podcast</div>
+<div class="desc">L'industria dell'AI esce dall'era della pura potenza di calcolo. Architettura, sicurezza e modelli di proprietà diventano la nuova posta in gioco.</div>
+<div class="rawmd"><a href="raw.md">Testo (markdown)</a></div>
+<section><h2>Sintesi</h2><div class="synthesis"><p><strong>Cross-Synthesis: Maggio 2026 – Transizione Architetturale</strong></p>
+<p>Convergenza dominante: <strong>fine scaling puro, competizione su fondamentali</strong>. Chollet, Sutskever, LeCun concordano su rottura netta—deep learning scalato raggiunge plateau. Pre-training tradizionale "finirà indubbiamente". Contrappunti: Huang enfatizza ancora infrastruttura compute (Vera $200B), Musk timeline AGI aggressiva. Divergenza reale, non superficiale.</p>
+<p>Tema trasversale più forte: <strong>agenti come primitiva di design riscrive stack</strong>. Willison, <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/dhh.png" alt="">DHH, Friedman (Entire), Karpathy convergono—software non è più discreto ma servizi agent-orchestrated. CLI <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="">AI-native, durable context, agent harness sostituiscono Git-for-humans. Dato critico: Entire raccoglie $60M riconoscendo finestra temporale ristretta. Chi non riadatta ora resta indietro. Effetto compounding visibile anche in trend occupazionale—Hinton predice disoccupazione strutturale; Andreessen sostiene "ognuno diventa boss con agent"; DHH nota amplificazione divario (alta agency → 10x, bassa agency → sostituzione).</p>
+<p>Tensione geopolitica inespressa: <strong>centralizzazione vs. sovranità computazionale</strong>. Huang concede Cina a Huawei (pragmatismo). Balaji, Vitalik spingono crypto-native ownership + privacy + decentralizzazione. Musk integra verticale (SpaceX-xAI) come sovranità proprietaria. Friedman/Meta puntano piattaforma mass-scale. Non coesistono—distribuzione di agency computazionale diventa leva geopolitica, non accessorio.</p>
+<p>Frizione implicita sottovalutata: <strong>ricerca vs. deployment</strong>. Sutskever ferma commercializzazione per safety. Karpathy accelera pretraining Claude. Chollet costruisce benchmarks avant-garde (ARC-3). Versus Musk/Huang lanciando prodotti continuamente. Non è dibattito safety-vs-scaling classico—è <strong>competizione su quale modello (open research, corporate R&amp;D, startup acceleration) genera AGI pratico</strong>.</p>
+<p>Tema nascosto: <strong>crisi fiducia infrastrutturale</strong>. Collison segnala token theft 1-su-6 account nuovi compromette trial gratuiti. Economia IA ancora fragile. Willison identifica agentic engineering come disciplina proprio perché output agenti richiede validazione umana esperta—non commodity automation.</p>
+<p>Corrente fondo: transizione da "chi ha compute vince" (2023-2025) a "chi ha architettura + safety + ownership model vince" (2026-2030). Scaling è commoditized. Agency diventa scarsità.</p></div></section>
+<section><h2>Temi del giorno</h2><div class="tension"><div class="axis">↗ Competizione su pathway AGI: ricerca vs deployment</div><div class="side">Sutskever ferma commercializzazione per safety; Karpathy accelera pretraining; Musk/Huang lanciano prodotti continuamente; battaglia su quale modello (open research, corporate R&amp;D, startup acceleration) genera AGI pratico.</div></div><div class="tension"><div class="axis">↗ Geopolitica computazionale: centralizzazione vs sovranità</div><div class="side">Huang concede Cina a Huawei (pragmatismo); Balaji/Vitalik spingono ownership crypto-native; Musk integra verticale proprietaria; distribuzione di agency computazionale diventa leva geopolitica, non accessorio.</div></div><div class="tension"><div class="axis">↗ Crisi fiducia infrastrutturale</div><div class="side">Token theft 1-su-6 account compromette economia IA; validazione umana esperta diventa prerequisito perché output agenti richiede verifica, non commodity automation.</div></div><div class="tension"><div class="axis">↗ Ownership model e safety come fattori scarsità</div><div class="side">Transizione da 'chi ha compute vince' a 'chi ha architettura + safety + ownership model vince'; scaling è commoditized, agency diventa scarsità.</div></div><div class="tension"><div class="axis">⚖ Compute infrastructure vs Architettura fondamentale come leva competitiva</div><div class="side">Jensen Huang: infrastruttura compute ancora centrale (Vera $200B market) · François Chollet, Ilya Sutskever, Yann LeCun: plateau scaling, competizione su nuovi fondamentali</div></div><div class="tension"><div class="axis">⚖ Safety-first research vs Speed-first deployment nel percorso AGI</div><div class="side">Ilya Sutskever: ferma commercializzazione per safety; François Chollet: benchmark avant-garde rigoroso · Elon Musk, Jensen Huang: lanciano prodotti continuamente; Nat Friedman: piattaforma mass-scale acceleration</div></div><div class="tension"><div class="axis">⚖ Modello di sovranità: centralizzazione vs decentralizzazione vs proprietaria</div><div class="side">Nat Friedman, Meta: piattaforma mass-scale centralizzata open-source · Balaji Srinivasan, Vitalik Buterin: ownership crypto-native + privacy decentralizzata; Elon Musk: integrazione verticale proprietaria (SpaceX-xAI)</div></div><div class="tension"><div class="axis">⚖ Impatto occupazionale: sostituzione vs amplificazione vs strutturale</div><div class="side">Geoffrey Hinton: disoccupazione strutturale massiccia · Marc Andreessen: ognuno diventa boss con agent; David Heinemeier Hansson: amplificazione divario tra alta e bassa agency</div></div></section>
+<section><h2>Progetti da osservare</h2><div class="tension"><div class="axis">karpathy/nanochat</div><div class=side>Pipeline minimale per addestrare un modello GPT-2 in ~2 ore su 8×H100 con FP8 e ClimbMix, parte della linea di lavoro di Karpathy su pipeline ridotte per singolo ricercatore. Repo di riferimento per l'era 'meno codice, più amplificazione'.</div></div><div class="tension"><div class="axis">karpathy/llm-wiki (gist)</div><div class=side>Prompt-pattern da copiare in Claude Code/Codex che istanzia il sistema 'LLM Wiki' su Obsidian: articoli enciclopedici interlinkati, backlink, health check. Diventato viral come anti-RAG personale.</div></div><div class="tension"><div class="axis">karpathy/autoresearch</div><div class=side>Repo di ~630 righe (7 marzo 2026) che materializza un agente di ricerca minimale, parte della tesi 'idea file = distribuzione' di Karpathy. Esempio concreto di agente che amplifica il ricercatore individuale.</div></div><div class="tension"><div class="axis">Obsidian</div><div class=side>Editor di note markdown con backlink e grafi che Karpathy elegge come 'IDE della conoscenza' nel suo pattern LLM-Wiki. Diventa il frontend consigliato per memoria esplicita e ispezionabile contro la memoria opaca degli assistant commerciali.</div></div><div class="tension"><div class="axis">ggerganov/llama.cpp</div><div class=side>Motore di inferenza C/C++ per LLM locali; il suo llama-server è il cuore dello stack self-sovereign proposto da Buterin (NixOS + llama-server + bubblewrap). Standard de facto per AI locale sovrana.</div></div><div class="tension"><div class="axis">basecamp/omarchy</div><div class=side>Distro Arch Linux curata da DHH con Hyprland, pensata per attrarre utenti macOS/Windows verso un desktop 'malleabile'. Progetto-manifesto del filone 'open source AI-ready' di DHH (Omacon NY, 130 persone).</div></div><div class="tension"><div class="axis">hyprwm/Hyprland</div><div class=side>Compositor Wayland dinamico, cuore visivo di Omarchy e simbolo del rinnovato interesse consumer per Linux (Panther Lake / XPS 14). DHH lo cita come esempio di software su cui finalmente 'hardware e aziende tornano a scommettere'.</div></div><div class="tension"><div class="axis">simonw/llm</div><div class=side>CLI e libreria Python di Simon Willison per interagire con LLM locali e cloud, base dei suoi tool README-driven (scan-for-secrets, datasette-ports, research-llm-apis). Strumento pivot del suo workflow 'agentic engineering'.</div></div><div class="tension"><div class="axis">fchollet/ARC-AGI</div><div class=side>Repo ufficiale dei benchmark ARC-AGI di Chollet, ora affiancato da ARC-AGI-3 (ambienti interattivi turn-based per misurare agency). ARC Prize 2026 ha $2M di montepremi; umani 100%, best frontier model 0,37%.</div></div><div class="tension"><div class="axis">zilliztech/claude-context</div><div class=side>Server MCP di code search che trasforma l'intera codebase in contesto indicizzato per Claude Code, Cursor e altri agenti. Esempio netto del 'moat shift' dal modello all'uso indicato da Evans e Andreessen.</div></div></section>
+<section><h2>Fonti</h2><div class="fonte"><span class="who">Andrej Karpathy</span><a href="https://techcrunch.com/2026/05/19/openai-co-founder-andrej-karpathy-joins-anthropics-pre-training-team/" target="_blank" rel="noopener">TechCrunch: Karpathy joins Anthropic's pre-training team</a><a href="https://www.axios.com/2026/05/19/anthropic-openai-karpathy-andrej-claude" target="_blank" rel="noopener">Axios: OpenAI co-founder Andrej Karpathy joins Anthropic</a><a href="https://fortune.com/2026/05/19/who-is-andrej-karpathy-vibe-coding-anthropic-openai-rubiks-cube/" target="_blank" rel="noopener">Fortune: Andrej Karpathy joins Anthropic</a></div><div class="fonte"><span class="who">Ilya Sutskever</span><a href="https://brief.bismarckanalysis.com/p/ai-2026-ilya-sutskever-and-the-end" target="_blank" rel="noopener">Bismarck Analysis: AI 2026 - End of Age of Scaling</a><a href="https://the-decoder.com/ilya-sutskever-says-a-new-learning-paradigm-is-necessary-and-is-already-chasing-it/" target="_blank" rel="noopener">The Decoder: New Learning Paradigm</a><a href="https://www.theglobeandmail.com/investing/markets/stocks/IBM/pressreleases/31876045/ilya-sutskevers-safe-superintelligence-raises-6b-to-build-ai-that-wont-break-the-world/" target="_blank" rel="noopener">The Globe and Mail: SSI Raises $6B</a></div><div class="fonte"><span class="who">Jensen Huang</span><a href="https://techcrunch.com/2026/05/20/jensen-huang-says-hes-found-a-brand-new-200b-market-for-nvidia/" target="_blank" rel="noopener">TechCrunch: Jensen Huang Vera $200B market</a><a href="https://www.cnbc.com/2026/05/21/nvidia-jensen-huang-china-ai-chip-market-huawei.html" target="_blank" rel="noopener">CNBC: Nvidia concedes China market to Huawei</a><a href="https://www.bloomberg.com/news/articles/2026-05-23/nvidia-ceo-urges-super-micro-to-tighten-up-amid-taiwan-crackdown" target="_blank" rel="noopener">Bloomberg: Super Micro compliance</a></div><div class="fonte"><span class="who">François Chollet</span><a href="https://x.com/fchollet/status/2053169711341551936" target="_blank" rel="noopener">X thread su agency (9 mag)</a><a href="https://the-decoder.com/francois-chollet-on-the-end-of-scaling-arc-3-and-his-path-to-agi/" target="_blank" rel="noopener">The Decoder: end of scaling + ARC-3</a><a href="https://arcprize.org/blog/arc-agi-3-launch" target="_blank" rel="noopener">ARC Prize: ARC-AGI-3</a></div></section>
+<section class="transcript-section"><h2>Trascrizione</h2><details class="tr"><summary>Leggi la trascrizione</summary><button class="tr-copy" type="button" onclick="copiaTrascrizione(this)">copia il testo</button><div class="transcript-body"><h2>La fine dello scaling puro</h2>
+<p class="podcast-episode-desc">L'industria dell'AI esce dall'era della pura potenza di calcolo. Architettura, sicurezza e modelli di proprietà diventano la nuova posta in gioco.</p>
+<div class="chapter" data-mood="geo"><hr></div>
+<p>Lunedì 19 maggio, in un post breve su X, Andrej Karpathy annuncia che entra in Anthropic. Si occuperà di pre-training, la parte più costosa, più lenta, più oscura del lavoro sui grandi modelli. Non è una notizia di gossip aziendale, anche se ha l'aria di esserlo. È un piccolo gesto pubblico che rivela una grande corrente sotterranea, e questa puntata di Signal Brief, datata 25 maggio 2026, prova a seguirla fino al punto in cui sbuca.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Per capire perché Karpathy che cambia squadra è una scena importante, bisogna fare un passo indietro. Per quasi tre anni — dal 2023 in poi — la storia dell'intelligenza artificiale è stata raccontata con una metafora sola, quella della corsa. Chi ha più chip vince. Chi ha più dati vince. Chi ha più centri di calcolo vince. Era un'era in cui la formula sembrava chiara: prendi una rete neurale già grande, falla diventare gigantesca, dalle in pasto tutto Internet, e dall'altra parte esce qualcosa di sempre più simile a un ragionamento. Funzionava. Per un po'.</p>
+<p>A maggio del 2026 però — e questo è il filo che attraversa tutta la puntata di oggi — la corsa ha cambiato natura. La gente che lavora seriamente su questi sistemi ha smesso di parlare solo di scala e ha cominciato a parlare di altre tre cose: l'architettura sotto il cofano, la sicurezza degli usi, e chi possiede davvero la macchina. Tre cose che fino a ieri sembravano dettagli da specialisti, e che oggi sono diventate il vero campo di battaglia.</p>
+<p>Il primo segnale arriva proprio da chi sta in fondo al laboratorio. François Chollet, uno dei ricercatori più rispettati nel campo, ha lasciato Google dopo dieci anni per fondare una startup nuova che si chiama Ndea. La sua tesi è scomoda: la pura crescita delle reti neurali ha raggiunto un plateau, e per fare il passo successivo serve una strada diversa. Ilya Sutskever, dal canto suo, ha praticamente fermato la commercializzazione nella sua nuova azienda Safe Superintelligence — niente prodotti, niente abbonamenti, niente servizi a pagamento, fino a quando il problema della sicurezza non avrà una risposta. Sull'altro versante, Elon Musk e Jensen Huang non hanno fermato nulla: anzi, lanciano prodotti e infrastrutture in continuazione. È una battaglia su chi arriverà per primo all'AGI pratica, ma soprattutto su quale strada conta — la ricerca paziente, la R&amp;D delle grandi aziende, o l'accelerazione delle startup.</p>
+<p>Il secondo filo è geopolitico. Jensen Huang, in un'intervista di metà maggio, ha ammesso una cosa che fino a un anno fa era tabù: Nvidia ha sostanzialmente ceduto il mercato cinese a Huawei. Non per gentilezza, per realismo. Nello stesso periodo Balaji Srinivasan e Vitalik Buterin spingono in una direzione opposta, quella della proprietà distribuita: chiavi crittografiche, reti che non passano per nessun governo. E Musk fa la terza strada, la sua: integrazione verticale totale, ha fuso xAI con SpaceX, una specie di feudo tecnologico autosufficiente che va dai chip ai satelliti. È un po' come quando, all'inizio del Novecento, le grandi industrie americane hanno smesso di comprare elettricità dalla rete e si sono costruite la propria centrale dentro lo stabilimento. La sovranità del calcolo, oggi, ha lo stesso sapore.</p>
+<p>Il terzo filo è più sottile ma forse il più pratico. Patrick Collison, il fondatore di Stripe, ha pubblicato un dato che fa pensare: un account su sei aperto sui servizi di intelligenza artificiale viene compromesso da furti di credenziali. Le bande criminali le rubano, le rivendono, drenano risorse dai trial gratuiti. È una crisi di fiducia sull'infrastruttura, una di quelle cose che succedono sempre quando una tecnologia esce dalla bolla degli early adopter e arriva al mondo reale. È successo col commercio elettronico vent'anni fa, è successo coi pagamenti contactless, sta succedendo adesso con l'AI.</p>
+<p>Tre fili: chi fa la ricerca, chi possiede l'infrastruttura, chi si fida del sistema. E sopra di essi, una corrente di fondo: la scala è diventata un bene di consumo. Quello che fa la differenza adesso è la capacità di iniziativa — delle persone, delle organizzazioni, dei modelli stessi. Vediamo come questo si è incarnato, in questa settimana, in quattro figure precise.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Cominciamo proprio da Karpathy. Per chi non lo conoscesse: è uno dei nomi più ascoltati nella comunità dell'AI, è stato tra i fondatori di OpenAI, poi ha guidato per anni il pilota automatico di Tesla, e gli ultimi due anni li aveva passati a costruire Eureka Labs, una startup che voleva reinventare l'educazione con l'aiuto dei modelli linguistici. È anche, va detto, uno dei migliori divulgatori che il campo abbia: i suoi video su YouTube spiegano come funziona un modello dall'interno meglio di qualsiasi corso universitario.</p>
+<p>A metà maggio annuncia il suo nuovo lavoro: entra in Anthropic, nel team di pre-training. È la fase più lunga e più cara nella costruzione di un modello, quella in cui la rete neurale legge per la prima volta miliardi di pagine di testo. E lui ci entra con un'idea precisa: usare Claude stesso — il modello di Anthropic — per accelerare la ricerca su Claude. Una specie di apprendista stregone che impara a costruire altri apprendisti. Lui la chiama, mezzo serio e mezzo ironico, "tokenmaxxing": passare giornate intere immerso nei modelli, stressarli, sondarli, capire cosa fanno davvero quando nessuno guarda.</p>
+<p>Ma la cosa più interessante è un'altra. In una serie di post recenti Karpathy ha sostenuto che il vero problema non è quanto sono potenti i modelli — è che il software intorno a loro è progettato male. I siti web, le applicazioni, gli strumenti di sviluppo: tutto è stato pensato per essere usato da esseri umani con gli occhi e con le dita. Ma se la prossima generazione di programmi viene usata da agenti automatici, allora serve un'intera infrastruttura nuova, fatta non di pagine ma di interfacce conversazionali, di documentazione leggibile dalle macchine, di software fluido e personalizzato che si compone sul momento. Karpathy lo chiama "bespoke software", software su misura, come un vestito sartoriale.</p>
+<p>Il suo passaggio ad Anthropic dice due cose insieme. La prima: anche chi credeva che l'educazione fosse la frontiera più importante torna in laboratorio, perché sente che il vero gioco è ancora lì. La seconda: il talento dell'AI si concentra. È un'epoca un po' simile a quando i fisici nucleari, negli anni Quaranta, si spostavano da un'università all'altra inseguendo i pochi posti dove davvero si poteva fare la frontiera. Anthropic, oggi, è uno di quei posti. E Karpathy, scegliendola, segnala dove pensa che si muoverà il pendolo nei prossimi due o tre anni.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Sull'altro versante c'è Ilya Sutskever. È il ricercatore che ha disegnato gran parte delle architetture che oggi usiamo tutti, ed è uno dei fondatori di OpenAI da cui se n'è andato l'anno scorso. Ha fondato una nuova azienda con un nome che è già un programma: Safe Superintelligence. Ha raccolto tre miliardi di dollari, e la valutazione è arrivata a trenta. Ma la cosa che la rende strana, in un settore dove tutti corrono a vendere abbonamenti, è la regola interna: niente prodotti finché non avremo costruito una superintelligenza sicura. Niente. Nessun servizio, nessun sito a pagamento, nessuna offerta commerciale. Solo ricerca.</p>
+<p>A maggio Sutskever ha fatto qualcosa di insolitamente pubblico per uno che di solito sta zitto. Ha testimoniato nel processo che oppone Elon Musk a OpenAI, e ha depositato cinquantadue pagine di documenti in cui descrive — sono parole sue — un "pattern coerente di menzogne" da parte di Sam Altman. È un colpo durissimo a un ex collega, e dice molto sul perché lui se ne sia andato. Sutskever, semplicemente, non si fida più di un mondo in cui i modelli vengono spinti sul mercato prima di averli capiti davvero.</p>
+<p>La sua frase più citata, di qualche mese fa, è diventata una specie di motto: "il pre-training, così come lo conosciamo, finirà indubbiamente". Significa che il modo con cui oggi alleniamo i grandi modelli — dargli da leggere mezzo Internet e sperare che diventino intelligenti — ha già mostrato i suoi limiti. Serve un altro paradigma. Lui non dice quale: dice solo che sta lavorando in segreto per trovarlo.</p>
+<p>Per riprendere il filo di questa puntata: se Karpathy è il pragmatico che entra nella fabbrica più grande, Sutskever è il monaco che si chiude in cella per ripensare le fondamenta. Sono due risposte opposte alla stessa intuizione — che la corsa alla scala sta finendo. E nel mezzo, là fuori, ci sono Musk e Huang che continuano a vendere a tutta velocità.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Veniamo a Huang, allora. Il capo di Nvidia ha avuto un trimestre da raccontare ai nipoti: ottantun miliardi di dollari di ricavi, cinquantotto miliardi di profitto netto, una crescita dell'ottantacinque per cento rispetto all'anno prima. È difficile mantenere il senso delle proporzioni con questi numeri. Per dire, sono i ricavi di un trimestre, non di un anno. Nvidia oggi vale più di qualsiasi azienda nella storia, e continua a crescere.</p>
+<p>Ma a metà maggio Huang ha detto due cose che sono più interessanti del fatturato. La prima è il lancio di una nuova piattaforma chiamata Vera Rubin — un chip che combina processore generale e processore grafico, pensato per essere il cuore dei centri di calcolo della prossima generazione. Huang dice che è un mercato nuovo da duecento miliardi di dollari, completamente non servito fino a oggi. Nvidia ne ha già venduti per venti miliardi.</p>
+<p>La seconda dichiarazione è più sorprendente. Huang ammette, con una franchezza inusuale per un amministratore delegato, che Nvidia ha "in larga misura ceduto" il mercato cinese dei chip avanzati ad Huawei. Lo dice senza drammi, come una constatazione pragmatica. Le restrizioni americane all'esportazione hanno aperto uno spazio, e Huawei l'ha occupato. Punto. È un riconoscimento che il mondo dell'AI non sarà uno solo: sarà almeno due, forse tre, ognuno con la propria filiera di silicio.</p>
+<p>Per chi guarda con un po' di prospettiva, è un momento che ricorda gli anni Settanta dell'industria automobilistica giapponese. Per anni gli americani avevano fatto finta che non esistesse; poi un giorno si sono svegliati e Toyota era a Detroit. La differenza è che adesso il fenomeno è ufficiale, dichiarato dall'azienda più potente del settore. E mentre Huang concede la Cina, Musk costruisce la sua piccola galassia integrando xAI dentro SpaceX, e altri ancora — Balaji, Buterin — propongono un terzo modello, fatto di reti distribuite dove nessuno comanda davvero.</p>
+<p>Tre modi diversi di rispondere alla stessa domanda: chi controlla questa cosa? Nessuno ha la risposta giusta, ma tutti hanno smesso di fare finta che la domanda non esista.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>L'ultimo ritratto di oggi torna a Chollet, che avevo nominato all'inizio. François Chollet è francese, lavora da anni nel campo, e ha una caratteristica rara: è uno dei pochi ricercatori che ha sempre detto, anche quando era impopolare, che i grandi modelli linguistici da soli non sono la strada per arrivare a una vera intelligenza. Per anni l'hanno chiamato scettico. Adesso, mese dopo mese, l'industria gli sta dando ragione.</p>
+<p>A marzo Chollet ha lanciato la terza versione del suo test di riferimento, ARC-AGI-3. Per capirci: è un test che si dà ai modelli per misurarne le capacità. I precedenti erano puzzle statici. Questo terzo è diverso, ed è disegnato da progettisti di videogiochi. Sono ambienti interattivi, a turni, dove un agente deve scoprire da solo le regole, capire qual è l'obiettivo, e provare ad arrivarci. Gli esseri umani lo risolvono al cento per cento. I migliori modelli al mondo, oggi, sono allo 0,37 per cento. Lo zero virgola trentasette, non è un refuso.</p>
+<p>E nel mese di maggio Chollet ha fatto la sua mossa: ha lasciato Google e si è dedicato a tempo pieno a una startup che si chiama Ndea, fondata insieme a Mike Knoop. Hanno raccolto quaranta milioni di dollari. La loro tesi è semplice: per arrivare a un'intelligenza generale serve un sistema che impari da pochi esempi, non da miliardi. Più simile a come fa un bambino con i giocattoli che a come fa un modello con un terabyte di testo.</p>
+<p>In un post di inizio maggio, Chollet ha aggiunto un'osservazione che vale la pena tenersi. L'AI, dice, amplifica le differenze tra chi ha già una forte capacità di iniziativa e chi non ce l'ha. Chi sapeva già muoversi, con questi strumenti diventa molto più potente. Chi non sapeva, rischia di trovarsi sostituito. È un tema che attraversa quasi tutti i pensatori di cui si parla questa settimana. Il punto cioè non è solo cosa fanno i modelli — è cosa fanno alle persone che li usano.</p>
+<div class="chapter" data-mood="upbeat"><hr></div>
+<p>Progetti da osservare, e questa volta sono storie piccole che illustrano bene i fili di oggi. Karpathy ha pubblicato un programma che si chiama nanochat, una sorta di ricettario minimale per addestrare un piccolo modello in un paio d'ore su otto schede grafiche di buon livello. È un manifesto: l'idea è che oggi un singolo ricercatore, con un po' di accortezza, può fare cose che fino a poco fa richiedevano un'intera azienda. Meno codice, più amplificazione.</p>
+<p>Sempre nell'orbita dell'AI locale c'è llama.cpp, un piccolo motore scritto in linguaggio C che permette di far girare modelli linguistici sul proprio computer, senza chiamare il cloud. Vitalik Buterin lo cita come fondamento del suo computer personale: vuole un'AI che gira a casa sua, dentro un sistema che controlla, senza che nessuno guardi. È il sogno della sovranità del calcolo tradotto in righe di codice.</p>
+<p>Poi c'è Omarchy, una distribuzione di Linux preparata da David Heinemeier Hansson, il creatore di Ruby on Rails. È pensata per attirare gli utenti del Mac verso un computer più libero, più modificabile, in cui le cose si possono aprire e cambiare. È un piccolo segno del ritorno di interesse, dopo vent'anni, per il software che si possiede invece di quello che si affitta.</p>
+<p>Sul fronte ricerca pura: ARC-AGI, il test di Chollet, ha un premio di due milioni di dollari per chi riesce a superarlo. È una sfida pubblica, aperta a chiunque, e finora nessun grande modello ci è andato vicino. È bello vedere che esistono ancora cose che si possono provare a battere come si batteva il record dell'ora in bicicletta.</p>
+<p>E infine claude-context, un piccolo strumento open source che prende tutto il codice di un'azienda e lo trasforma in materiale che gli agenti automatici possono leggere e usare. È un esempio concreto di una cosa che ricorre questa settimana: il valore non è più solo nel modello, è in tutto quello che gli sta intorno.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Se devo lasciare un'immagine, è quella di Sutskever chiuso a chiave nel suo laboratorio mentre Huang firma contratti da venti miliardi per chip nuovi. Stanno andando in direzioni opposte, ma seguono lo stesso vento. Il calcolo non basta più. Quello che conta adesso è chi pensa più a fondo, chi costruisce più solido, chi possiede davvero la macchina. È stato Signal Brief. Alla prossima.</p></div></details></section>
+<nav class="epnav"><a href="/signal-brief/ai/2026-05-24/">← 2026-05-24</a><span style="flex:1"></span><a href="/signal-brief/ai/2026-05-26/">2026-05-26 →</a></nav>
+<dialog class="vplayer" id="vplayer"></dialog>
+<script>
+// player modale dei video: la miniatura apre il video al centro (disegno 2026-08-07)
+function apriVideo(src) {
+  var d = document.getElementById('vplayer');
+  d.innerHTML = '<video controls autoplay playsinline src="' + src + '"></video>';
+  d.showModal();
+  d.onclick = function (e) { if (e.target === d) d.close(); };
+  d.onclose = function () { var v = d.querySelector('video'); if (v) v.pause(); d.innerHTML = ''; };
+}
+// ascolto inline dalla lista: un episodio alla volta
+var epAudio = null, epBtn = null;
+function ascolta(btn, src) {
+  if (epBtn === btn && epAudio) {
+    if (epAudio.paused) { epAudio.play(); btn.classList.add('on'); }
+    else { epAudio.pause(); btn.classList.remove('on'); }
+    return;
+  }
+  if (epAudio) { epAudio.pause(); if (epBtn) epBtn.classList.remove('on'); }
+  epAudio = new Audio(src); epBtn = btn;
+  epAudio.play(); btn.classList.add('on');
+  epAudio.onended = function () { btn.classList.remove('on'); };
+}
+function copiaTrascrizione(btn) {
+  var t = btn.parentElement.querySelector('.transcript-body');
+  navigator.clipboard.writeText(t ? t.innerText : '').then(function () {
+    btn.textContent = 'copiata ✓';
+    setTimeout(function () { btn.textContent = 'copia il testo'; }, 1800);
+  });
+}
+</script>
+<footer class="creator-footer">
+  <img src="/signal-brief/mike-avatar.png" alt="Michele Mondora">
+  <div class="creator-meta">
+    <span class="creator-name">it-mikesoft</span>
+    <span class="creator-tagline">working with systems, living with questions</span>
+    <span class="creator-email"><a href="mailto:michele@mondora.com">michele@mondora.com</a></span>
+  </div>
+</footer>
+<section class="tutele"><h3>Trasparenza e tutele</h3>
+<p><strong>Come nasce questo contenuto.</strong> Ricerca, sintesi editoriale, voce narrante, immagini e musica sono prodotte con sistemi di intelligenza artificiale. Non c'è una redazione umana che verifica ogni affermazione prima della pubblicazione: un controllo automatico scarta le schede giudicate inaffidabili, ma non elimina la possibilità di errori.</p>
+<p><strong>Affermazioni su persone e aziende.</strong> Quanto riportato è una sintesi di fonti pubbliche, non una dichiarazione diretta delle persone citate: le frasi non vanno intese come virgolettati né come posizioni ufficiali. Le fonti sono indicate in ogni pagina episodio — verificale prima di considerare un'informazione accertata. Se trovi un'affermazione inesatta che ti riguarda, scrivi a <a href="mailto:michele@mondora.com">michele@mondora.com</a>: viene corretta o rimossa.</p>
+<p><strong>Immagini e volti.</strong> Le immagini di scena sono generate con AI e non raffigurano fatti realmente avvenuti. Le fotografie di persone reali usate nei video provengono da Wikimedia Commons con le rispettive licenze, e sono accostate al racconto a scopo identificativo: la loro presenza non implica partecipazione, dichiarazione o approvazione da parte della persona ritratta. Su richiesta dell'interessato vengono rimosse.</p>
+<p><strong>Fonti e diritti altrui.</strong> I contenuti sono rielaborazioni originali, non riproduzioni di articoli di terzi; le testate e gli autori all'origine di una notizia sono citati e collegati. Marchi e nomi commerciali appartengono ai rispettivi titolari e sono usati a scopo descrittivo.</p>
+</section>
+</body></html>

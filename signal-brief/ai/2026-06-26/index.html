@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="it"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L'intelligenza frastagliata e chi la controlla · Signal.AI</title>
+<meta property="og:title" content="L'intelligenza frastagliata e chi la controlla · Signal.AI"><meta property="og:type" content="article"><meta property="og:description" content="Le macchine eccellono solo dove possono verificarsi, il lavoro diventa la faglia centrale, e la reazione decentralista smette di essere teoria e diventa prodotto."><meta property="og:url" content="https://it-mikesoft.github.io/signal-brief/ai/2026-06-26/"><meta property="og:audio" content="https://media.casamon.dev/ai/podcast/episodes/2026-06-26.mp3"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "PodcastEpisode", "name": "L'intelligenza frastagliata e chi la controlla", "datePublished": "2026-06-26", "url": "https://it-mikesoft.github.io/signal-brief/ai/2026-06-26/", "description": "Le macchine eccellono solo dove possono verificarsi, il lavoro diventa la faglia centrale, e la reazione decentralista smette di essere teoria e diventa prodotto.", "inLanguage": "it", "associatedMedia": {"@type": "MediaObject", "contentUrl": "https://media.casamon.dev/ai/podcast/episodes/2026-06-26.mp3"}, "partOfSeries": {"@type": "PodcastSeries", "name": "Signal.AI", "url": "https://it-mikesoft.github.io/signal-brief/ai/"}}</script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:#faf8f4; color:#1a1a1a; padding:2rem 1.5rem; max-width:680px; margin:0 auto; line-height:1.6; }
+  a { color:#2563eb; }
+  .back { display:inline-block; margin-bottom:1.5rem; font-size:.8rem; font-family:monospace; text-decoration:none; }
+  .videos { display:flex; gap:1rem; flex-wrap:wrap; margin:1.2rem 0; }
+  .videos figure { margin:0; flex:1; min-width:260px; }
+  .videos .v2 { flex:0 1 240px; }
+  .videos video { width:100%; border-radius:12px; background:#000; }
+  .videos .v2 video { aspect-ratio:9/16; max-height:420px; }
+  .videos figcaption { font-size:.75rem; color:#888; text-align:center; margin-top:.3rem; }
+  .vlink { display:flex; gap:.3rem; margin-top:.35rem; }
+  .vlink input { flex:1; min-width:0; font-size:.68rem; font-family:monospace; padding:.3rem .4rem;
+    border:1px solid #e2ddd6; border-radius:6px; background:#fff; color:#6b7280; }
+  .vlink button { font-size:.68rem; padding:.3rem .6rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; }
+  .wk { font-size:1rem; margin:1.4rem 0 .4rem; }
+  details.wkacc { border:1px solid #e5e7eb33; border-radius:10px; margin:.6rem 0; padding:.1rem .8rem .4rem; }
+  details.wkacc summary { cursor:pointer; font-weight:600; padding:.5rem 0; font-size:.9rem; }
+  .back:hover { text-decoration:underline; }
+  header h1 { font-family:Georgia,serif; font-size:1.7rem; font-weight:600; }
+  header h1 span { color:#2563eb; }
+  .tagline { color:#6b7280; font-size:.85rem; margin-top:.3rem; margin-bottom:1.5rem; }
+  ul.eps { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
+  .subscribe { display:inline-flex; align-items:center; gap:.5rem; margin-bottom:1.2rem;
+    padding:.45rem .9rem; background:#2563eb; color:#fff; border-radius:20px;
+    text-decoration:none; font-size:.8rem; font-weight:600; }
+  .subscribe:hover { opacity:.85; color:#fff; }
+  .ep { display:flex; align-items:center; gap:.8rem; padding:.8rem 1rem; background:#fff;
+    border:1px solid #e2ddd6; border-radius:8px; text-decoration:none; color:inherit; transition:box-shadow .12s; }
+  .ep:hover { box-shadow:0 2px 8px rgba(0,0,0,.07); }
+  .ep-play { width:32px; height:32px; border-radius:50%; background:#f3f4f6; display:flex;
+    align-items:center; justify-content:center; font-size:12px; flex-shrink:0; }
+  .ep-title { font-size:.9rem; font-weight:500; }
+  .ep-meta { font-size:.72rem; color:#9ca3af; font-family:monospace; margin-top:.15rem; }
+  audio { width:100%; margin:1rem 0 1.5rem; }
+  .rawmd { margin:-.5rem 0 1.5rem; }
+  .rawmd a { font-size:.8rem; font-family:monospace; color:inherit; opacity:.65; }
+  .desc { color:#374151; font-size:.95rem; margin-bottom:1.5rem; }
+  section { margin:2rem 0; }
+  section h2 { font-family:Georgia,serif; font-size:1.1rem; border-bottom:1px solid #e2ddd6;
+    padding-bottom:.3rem; margin-bottom:.8rem; }
+  .synthesis p { margin:.7rem 0; }
+  .tension { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; font-size:.9rem; }
+  .tension .axis { font-weight:600; margin-bottom:.3rem; }
+  .tension .side { color:#6b7280; font-size:.85rem; }
+  .proj { font-size:.9rem; margin:.4rem 0; }
+  .proj .pname { font-weight:600; }
+  .proj .pnew { background:#16a34a; color:#fff; font-size:.65rem; font-weight:700;
+    padding:.1rem .35rem; border-radius:4px; text-transform:uppercase; vertical-align:middle; }
+  .fonte { font-size:.85rem; margin:.5rem 0; }
+  .fonte .who { font-weight:600; }
+  .fonte a { display:block; margin-left:.5rem; color:#6b7280; }
+  .transcript-body p { margin:.7rem 0; line-height:1.7; }
+  .transcript-body .chapter hr { border:none; border-top:1px solid #e2ddd6; margin:1.5rem 0; }
+  .transcript-body .podcast-episode-desc { color:#6b7280; font-style:italic; }
+  .signal-card { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; }
+  .signal-theme { font-size:.75rem; font-weight:700; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.3rem; }
+  .signal-text { font-size:.85rem; color:#374151; line-height:1.5; }
+  .creator-footer { margin-top:3rem; padding-top:1.5rem; border-top:1px solid #e2ddd6;
+    display:flex; align-items:center; gap:.9rem; }
+  .creator-footer img { width:40px; height:40px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+  .creator-meta { display:flex; flex-direction:column; gap:.15rem; }
+  .creator-name { font-size:.85rem; font-weight:600; color:#1a1a1a; }
+  .creator-tagline { font-size:.75rem; color:#6b7280; }
+  .creator-email { font-size:.75rem; }
+  .creator-ai { font-size:.72rem; color:#8a7f6d; max-width:46ch; line-height:1.45; }
+  .tutele { margin-top:2rem; padding-top:1.2rem; border-top:1px solid #e2ddd6;
+    font-size:.72rem; color:#8a7f6d; line-height:1.5; }
+  .tutele h3 { font-size:.75rem; color:#6b7280; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.5rem; font-weight:600; }
+  .tutele p { margin:.45rem 0; }
+  .tutele strong { color:#5a5348; font-weight:600; }
+  .tutele a { color:inherit; text-decoration:underline; }
+  .creator-email a { color:#9ca3af; text-decoration:none; }
+  .creator-email a:hover { color:#1a1a1a; }
+  /* disegno 2026-08-07: mesi a pagine, facce, player modale, trascrizione
+     richiudibile — la pagina episodio è un prodotto, non un sottoprodotto */
+  .hrow { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+  .hrow .subscribe { margin-bottom:0; flex-shrink:0; }
+  .months { font-size:.78rem; font-family:monospace; margin:.4rem 0 1rem; color:#9ca3af; }
+  .months a { text-decoration:none; } .months b { color:inherit; }
+  .ep-faces { display:flex; margin-left:auto; flex-shrink:0; }
+  .ep-faces img { width:26px; height:26px; border-radius:50%; object-fit:cover;
+    border:2px solid #fff; margin-left:-8px; background:#eee; }
+  /* tutti i citati sul desktop; su mobile la leggibilità vince: max 3 */
+  @media (max-width:600px) { .ep-faces img:nth-child(n+4) { display:none; } }
+  .ep-listen { width:32px; height:32px; border-radius:50%; background:#f3f4f6; border:0;
+    display:flex; align-items:center; justify-content:center; font-size:12px;
+    flex-shrink:0; cursor:pointer; color:inherit; }
+  .ep-listen.on { background:#2563eb; color:#fff; }
+  .face-inline { width:1.15em; height:1.15em; border-radius:50%; object-fit:cover;
+    vertical-align:-.18em; margin-right:.25em; }
+  /* SEMPRE sulla stessa riga (2026-08-09): su schermi stretti le miniature
+     si riducono, e se non basta il reel sparisce — mai l'andata a capo */
+  .vthumbs { display:flex; gap:.8rem; flex-wrap:nowrap; margin:1.2rem 0; align-items:flex-start; }
+  .vthumb { position:relative; cursor:pointer; border:0; padding:0; background:none;
+    border-radius:12px; overflow:hidden; }
+  /* stessa ALTEZZA per video e reel: il 9:16 si stringe, non svetta */
+  .vthumb video { height:150px; width:auto; display:block; border-radius:12px; background:#000; }
+  @media (max-width:520px) { .vthumb video { height:118px; } }
+  /* quando nemmeno ridotte ci stanno: via le miniature, due BOTTONI in
+     riga che aprono il player (2026-08-09) */
+  .vbtns { display:none; gap:.6rem; margin:1.2rem 0; }
+  .vbtns button { flex:1; padding:.6rem .4rem; border:0; border-radius:10px;
+    background:#2563eb; color:#fff; font-weight:700; font-size:.85rem;
+    cursor:pointer; font-family:inherit; }
+  @media (max-width:420px) { .vthumbs { display:none; } .vbtns { display:flex; } }
+  .vthumb .vlabel { position:absolute; left:0; right:0; bottom:0; padding:.9rem .5rem .35rem;
+    background:linear-gradient(transparent, rgba(0,0,0,.75)); color:#fff; font-size:.7rem; }
+  .vthumb::after { content:"▶"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    color:#fff; font-size:1.6rem; text-shadow:0 1px 6px rgba(0,0,0,.8); }
+  /* margin:auto ESPLICITO: il reset globale * {margin:0} annullava la
+     centratura nativa del dialog e il player si apriva in alto a sinistra */
+  dialog.vplayer { border:0; padding:0; background:transparent; max-width:92vw;
+    margin:auto; position:fixed; inset:0; }
+  dialog.vplayer::backdrop { background:rgba(0,0,0,.85); }
+  dialog.vplayer video { max-width:92vw; max-height:86vh; border-radius:14px; background:#000; }
+  details.tr { border:1px solid #e2ddd6; border-radius:10px; padding:.2rem .9rem .6rem; }
+  details.tr summary { cursor:pointer; font-weight:600; padding:.55rem 0; }
+  .tr-copy { font-size:.72rem; padding:.3rem .7rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; margin:.3rem 0 .5rem; }
+  .epnav { display:flex; justify-content:space-between; gap:1rem; margin:2rem 0 0;
+    font-size:.82rem; font-family:monospace; }
+  .epnav a { text-decoration:none; }
+  @media (prefers-color-scheme:dark) {
+    body { background:#1f1d18; color:#e5e5e5; }
+    .ep, .tension, .signal-card { background:#2a2823; border-color:#3a352d; }
+    .ep-play { background:#3a352d; } .desc { color:#d4d4d4; }
+    .signal-text { color:#d4d4d4; }
+    .creator-footer { border-color:#3a352d; }
+    .creator-name { color:#f5f5f5; }
+    .creator-tagline, .creator-email a { color:#9ca3af; }
+    .creator-ai { color:#9a8f7d; }
+    .vlink input { background:#1c1a17; border-color:#3a352d; color:#9ca3af; }
+    .tutele { border-color:#3a352d; color:#9a8f7d; }
+    .tutele h3 { color:#a9a9a9; } .tutele strong { color:#d4d4d4; }
+    .ep-listen { background:#3a352d; }
+    .ep-faces img { border-color:#2a2823; background:#3a352d; }
+    details.tr { border-color:#3a352d; }
+  }
+</style></head><body>
+<a class="back" href="/signal-brief/ai/">← Signal.AI</a>
+<header><h1>L'intelligenza frastagliata e chi la controlla</h1></header>
+<div class="tagline">2026-06-26 · Digital Intelligence Podcast</div>
+<div class="desc">Le macchine eccellono solo dove possono verificarsi, il lavoro diventa la faglia centrale, e la reazione decentralista smette di essere teoria e diventa prodotto.</div>
+<div class="rawmd"><a href="raw.md">Testo (markdown)</a></div>
+<section><h2>Sintesi</h2><div class="synthesis"><p>Questo coro di voci, ascoltato nel giugno 2026, lascia emergere tre faglie che si intersecano.</p>
+<p>La prima è una resa dei conti con lo <strong>scaling</strong>. Il dogma "più dati più GPU" si incrina simultaneamente da più parti: <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/ilya-sutskever.jpg" alt="">Ilya Sutskever proclama la fine dell'era dello scaling e l'inizio di una nuova <a href="https://www.dwarkesh.com/p/ilya-sutskever-2" target="_blank" rel="noopener">età della ricerca</a>, <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt="">François Chollet scommette $43M su un'<a href="https://the-decoder.com/francois-chollet-on-the-end-of-scaling-arc-3-and-his-path-to-agi/" target="_blank" rel="noopener">architettura ibrida</a> deep learning + program synthesis, <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/yann-lecun.jpg" alt="">Yann LeCun lascia Meta convinto che gli LLM siano un <a href="https://www.technologyreview.com/2026/01/22/1131661/yann-lecuns-new-venture-ami-labs/" target="_blank" rel="noopener">vicolo cieco</a> e i world models la via. Convergono nella diagnosi (le idee, non il compute, sono il collo di bottiglia) ma divergono nella cura. <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="">Andrej Karpathy offre la chiave silenziosa che li unisce: l'<img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="">AI automatizza ciò che è <a href="https://karpathy.bearblog.dev/sequoia-ascent-2026/" target="_blank" rel="noopener"><em>verificabile</em></a> — la "jagged intelligence" è il prezzo di un'intelligenza cresciuta dove il segnale è denso.</p>
+<p>La seconda faglia è il <strong>lavoro</strong>. Qui lo scontro è frontale: <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/geoffrey-hinton.jpg" alt="">Geoffrey Hinton e <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/mustafa-suleyman.jpg" alt="">Mustafa Suleyman annunciano la sostituzione imminente del lavoro cognitivo, mentre <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/benedict-evans.png" alt="">Benedict Evans demolisce l'idea stessa che l'impatto sia <a href="https://www.ben-evans.com/benedictevans/2026/5/24/ai-job-exposure" target="_blank" rel="noopener">prevedibile</a> (paradosso di Jevons: i mestieri si trasformano, non spariscono) e <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt="">Jensen Huang la liquida come <a href="https://broadbandbreakfast.com/in-interview-with-ap-nvidias-jensen-huang-urges-americans-to-use-ai-more/" target="_blank" rel="noopener">«assurdità»</a>. Sotto, una domanda comune: cosa resta all'uomo? <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/aravind-srinivas.png" alt="">Aravind Srinivas risponde — <a href="https://www.analyticsinsight.net/news/ai-can-solve-problems-not-ask-them-says-perplexity-ceo-aravind-srinivas" target="_blank" rel="noopener">formulare le domande</a>, non rispondere.</p>
+<p>La terza, più profonda, è chi <strong>controlla</strong> questa intelligenza. Da un lato la centralizzazione: i lab di frontiera, l'hardware di NVIDIA, l'automazione della ricerca che <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/jack-clark.jpg" alt="">Jack Clark chiama il <a href="https://jack-clark.net/" target="_blank" rel="noopener">trend più importante del mondo</a>. Dall'altro la reazione decentralista — <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="">Jack Dorsey con il mesh <a href="https://fullycrypto.com/jack-dorsey-reveals-decentralized-messaging-platform-bitchat" target="_blank" rel="noopener">Bitchat</a>, Balaji e Vitalik — secondo cui più cresce il controllo, più il valore migra verso l'inarrestabile.</p>
+<p>La corrente di fondo è una <strong>frattura nella religione del progresso</strong>. <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/marc-andreessen.jpg" alt="">Marc Andreessen e <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/naval-ravikant.jpg" alt="">Naval Ravikant cantano la golden age dell'intelligenza-commodity; <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/dario-amodei.jpg" alt="">Dario Amodei risponde che <a href="https://darioamodei.com/post/policy-on-the-ai-exponential" target="_blank" rel="noopener">«i rischi sono ormai qui»</a> e che la paura del pubblico è lucidità democratica. Non più ottimisti contro pessimisti, ma una élite tecnica che, avendo vinto la scommessa della potenza, scopre di non sapere più <em>a chi</em> affidarne il timone.</p></div></section>
+<section><h2>Temi del giorno</h2><div class="tension"><div class="axis">↗ Jagged intelligence</div><div class="side">L'intelligenza cresce irregolare perché si sviluppa solo dove il segnale è denso e verificabile, lasciando buchi altrove.</div></div><div class="tension"><div class="axis">↗ Il lavoro come faglia centrale</div><div class="side">Il tema occupazionale diventa uno scontro frontale tra sostituzione imminente del lavoro cognitivo e paradosso di Jevons che trasforma i mestieri senza cancellarli.</div></div><div class="tension"><div class="axis">↗ Formulare le domande come residuo umano</div><div class="side">Se l'AI risolve i problemi, ciò che resta all'uomo è porli: la capacità di domandare diventa il valore non automatizzabile.</div></div><div class="tension"><div class="axis">↗ Diagnosi condivisa, cura divergente</div><div class="side">I critici dello scaling convergono nel dire che il collo di bottiglia sono le idee e non il compute, ma propongono rimedi opposti.</div></div><div class="tension"><div class="axis">↗ Mesh decentralizzato concreto</div><div class="side">La reazione decentralista si materializza in prodotti reali come reti di messaggistica peer-to-peer, non più solo principio astratto.</div></div><div class="tension"><div class="axis">↗ Le idee come collo di bottiglia</div><div class="side">Non più il compute o i dati, ma la scarsità di nuove architetture e intuizioni di ricerca limita il progresso.</div></div><div class="tension"><div class="axis">⚖ Quale via dopo lo scaling, una volta concordato che le idee contano più del compute</div><div class="side">Ilya Sutskever: tornare alla ricerca pura · Yann LeCun: world models contro gli LLM · François Chollet: ibrido deep learning più program synthesis</div></div><div class="tension"><div class="axis">⚖ L'impatto dell'AI sul lavoro cognitivo</div><div class="side">Geoffrey Hinton: sostituzione imminente del lavoro cognitivo · Benedict Evans: i mestieri si trasformano, non spariscono (Jevons) · Jensen Huang: l'idea della sostituzione è un'assurdità</div></div><div class="tension"><div class="axis">⚖ Chi controlla l'intelligenza</div><div class="side">Jack Clark: centralizzazione nei lab di frontiera e nell'hardware · Jack Dorsey: reazione decentralista via mesh peer-to-peer · Balaji Srinivasan: il valore migra verso l'inarrestabile</div></div><div class="tension"><div class="axis">⚖ La religione del progresso</div><div class="side">Marc Andreessen: golden age dell'intelligenza-commodity · Dario Amodei: i rischi sono qui, la paura del pubblico è lucidità democratica</div></div><div class="tension"><div class="axis">⚖ Cosa resta all'uomo quando l'AI risolve i problemi</div><div class="side">Aravind Srinivas: all'uomo spetta formulare le domande · Andrej Karpathy: l'AI domina solo ciò che è verificabile</div></div></section>
+<section><h2>Progetti da osservare</h2><div class="tension"><div class="axis">karpathy/nanochat</div><div class=side>Pipeline minimale per addestrare un modello GPT-2 in ~2 ore su 8×H100 con FP8 e ClimbMix, parte della linea di lavoro di Karpathy su pipeline ridotte per singolo ricercatore. Repo di riferimento per l'era 'meno codice, più amplificazione'.</div></div><div class="tension"><div class="axis">karpathy/llm-wiki (gist)</div><div class=side>Prompt-pattern da copiare in Claude Code/Codex che istanzia il sistema 'LLM Wiki' su Obsidian: articoli enciclopedici interlinkati, backlink, health check. Diventato viral come anti-RAG personale.</div></div><div class="tension"><div class="axis">karpathy/autoresearch</div><div class=side>Repo di ~630 righe (7 marzo 2026) che materializza un agente di ricerca minimale, parte della tesi 'idea file = distribuzione' di Karpathy. Esempio concreto di agente che amplifica il ricercatore individuale.</div></div><div class="tension"><div class="axis">Obsidian</div><div class=side>Editor di note markdown con backlink e grafi che Karpathy elegge come 'IDE della conoscenza' nel suo pattern LLM-Wiki. Diventa il frontend consigliato per memoria esplicita e ispezionabile contro la memoria opaca degli assistant commerciali.</div></div><div class="tension"><div class="axis">ggerganov/llama.cpp</div><div class=side>Motore di inferenza C/C++ per LLM locali; il suo llama-server è il cuore dello stack self-sovereign proposto da Buterin (NixOS + llama-server + bubblewrap). Standard de facto per AI locale sovrana.</div></div><div class="tension"><div class="axis">basecamp/omarchy</div><div class=side>Distro Arch Linux curata da DHH con Hyprland, pensata per attrarre utenti macOS/Windows verso un desktop 'malleabile'. Progetto-manifesto del filone 'open source AI-ready' di DHH (Omacon NY, 130 persone).</div></div><div class="tension"><div class="axis">hyprwm/Hyprland</div><div class=side>Compositor Wayland dinamico, cuore visivo di Omarchy e simbolo del rinnovato interesse consumer per Linux (Panther Lake / XPS 14). DHH lo cita come esempio di software su cui finalmente 'hardware e aziende tornano a scommettere'.</div></div><div class="tension"><div class="axis">simonw/llm</div><div class=side>CLI e libreria Python di Simon Willison per interagire con LLM locali e cloud, base dei suoi tool README-driven (scan-for-secrets, datasette-ports, research-llm-apis). Strumento pivot del suo workflow 'agentic engineering'.</div></div><div class="tension"><div class="axis">fchollet/ARC-AGI</div><div class=side>Repo ufficiale dei benchmark ARC-AGI di Chollet, ora affiancato da ARC-AGI-3 (ambienti interattivi turn-based per misurare agency). ARC Prize 2026 ha $2M di montepremi; umani 100%, best frontier model 0,37%.</div></div><div class="tension"><div class="axis">zilliztech/claude-context</div><div class=side>Server MCP di code search che trasforma l'intera codebase in contesto indicizzato per Claude Code, Cursor e altri agenti. Esempio netto del 'moat shift' dal modello all'uso indicato da Evans e Andreessen.</div></div></section>
+<section><h2>Fonti</h2><div class="fonte"><span class="who">Andrej Karpathy</span><a href="https://www.benzinga.com/markets/tech/26/06/60091727/andrej-karpathy-says-ai-is-no-longer-a-chatbot-its-becoming-your-teammate" target="_blank" rel="noopener">Benzinga — AI is becoming your teammate</a><a href="https://karpathy.bearblog.dev/sequoia-ascent-2026/" target="_blank" rel="noopener">Sequoia Ascent 2026 summary — karpathy</a><a href="https://www.startuphub.ai/ai-news/ai-figures/2026/figure-andrej-karpathy-software-thesis-evolution-2026-06-17" target="_blank" rel="noopener">StartupHub — Software 2.0 → 3.0</a></div><div class="fonte"><span class="who">Geoffrey Hinton</span><a href="https://fortune.com/2025/12/28/geoffrey-hinton-godfather-of-ai-2026-prediction-human-worker-replacement/" target="_blank" rel="noopener">Fortune — previsione 2026 sostituzione lavori</a><a href="https://thehill.com/policy/technology/5664662-ai-risks-hinton-warns/" target="_blank" rel="noopener">The Hill — AI deceptive capabilities</a><a href="https://www.aol.com/articles/godfather-ai-says-more-worried-155204412.html" target="_blank" rel="noopener">AOL — "more worried" today</a></div><div class="fonte"><span class="who">Jack Dorsey</span><a href="https://bitcoinmagazine.com/technical/jack-dorsey-backed-nostr-emerges-as-bitcoins-social-layer-at-riga-conference" target="_blank" rel="noopener">Bitcoin Magazine — Nostr as Bitcoin's Social Layer (Riga)</a><a href="https://fullycrypto.com/jack-dorsey-reveals-decentralized-messaging-platform-bitchat" target="_blank" rel="noopener">FullyCrypto — Dorsey reveals Bitchat</a><a href="https://www.panewslab.com/en/articles/0xiouae8" target="_blank" rel="noopener">PANews — Dorsey's 10-year journey to decentralization</a></div></section>
+<section class="transcript-section"><h2>Trascrizione</h2><details class="tr"><summary>Leggi la trascrizione</summary><button class="tr-copy" type="button" onclick="copiaTrascrizione(this)">copia il testo</button><div class="transcript-body"><h2>L'intelligenza frastagliata e chi la controlla</h2>
+<p class="podcast-episode-desc">Le macchine eccellono solo dove possono verificarsi, il lavoro diventa la faglia centrale, e la reazione decentralista smette di essere teoria e diventa prodotto.</p>
+<div class="chapter" data-mood="geo"><hr></div>
+<p>C'è una parola che in questi giorni circola tra chi costruisce l'intelligenza artificiale, e descrive le loro stesse creature meglio di qualunque classifica: frastagliata. Macchine che brillano dove meno te lo aspetti e inciampano dove sembrerebbe banale. È il 26 giugno 2026, questo è Signal Brief, e oggi quella parola ci accompagna lungo tre faglie che si stanno aprendo insieme: il lavoro, il controllo, e cosa resta all'uomo quando la macchina sa fare quasi tutto. Si comincia da un palco in California, dove Andrej Karpathy ha provato a mettere ordine.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Sul palco del Sequoia Ascent, Karpathy ha raccontato l'intelligenza artificiale come la conosciamo oggi con un'immagine che gli è rimasta addosso: jagged intelligence, intelligenza a denti di sega. I modelli vanno fortissimo nella matematica, nel codice che si può testare, nei giochi dove c'è un punteggio. E poi, su cose che a noi sembrano più semplici, sbagliano in modo imprevedibile. Karpathy ha una spiegazione netta del perché: la macchina impara bene solo dove il segnale è denso e si può verificare. Dove c'è un test che dice giusto o sbagliato, lì cresce. Dove non c'è, resta un buco.</p>
+<p>È la prosecuzione del filo di ieri, la migrazione del valore dall'esecuzione al giudizio, e non serve rispiegarlo. Quello che è nuovo è la conseguenza. Se la macchina domina solo ciò che è verificabile, allora la sua mappa di competenze non sarà mai una pianura uniforme: sarà sempre una catena di montagne e crepacci. E questo cambia subito due conversazioni.</p>
+<p>La prima è il lavoro, ed è diventata uno scontro frontale. Geoffrey Hinton dice che il 2026 è l'anno in cui l'AI impara a sostituire moltissimi mestieri cognitivi, e Mustafa Suleyman gli fa eco con una scadenza precisa, diciotto mesi per il lavoro d'ufficio. Dall'altra parte Benedict Evans demolisce l'idea stessa che si possa prevedere, e tira fuori una vecchia legge dell'economia: quando una cosa diventa più economica, di solito se ne produce di più, non di meno. Un secolo di automazione contabile, ricorda, ha aumentato il numero dei contabili, non li ha cancellati. Jensen Huang è ancora più tranchant: parlare di AI che distrugge posti, dice, è un'assurdità. Tre uomini guardano la stessa cosa e vedono tre futuri opposti.</p>
+<p>Sotto questa lite, una domanda più quieta. Se la macchina risolve i problemi, all'uomo cosa rimane? Aravind Srinivas, che guida Perplexity, ha dato la risposta più asciutta della settimana: all'uomo resta porre le domande. L'AI sa rispondere, non sa chiedere. È un capovolgimento curioso, perché per tutta la storia della scuola abbiamo premiato chi dava la risposta giusta, e ora il valore scivola su chi sa formulare quella giusta.</p>
+<p>C'è poi una terza faglia, e riguarda chi tiene in mano tutto questo. Per anni la domanda è stata chi ci mette i soldi. Adesso è chi lo controlla. Da un lato i grandi laboratori, l'hardware concentrato in poche mani, le fabbriche di calcolo grandi come città. Dall'altro una reazione che fino a poco fa era solo un principio e questa settimana è diventata un prodotto vero: reti di messaggi che si parlano da telefono a telefono, senza passare da nessuna piattaforma.</p>
+<p>Vale la pena tenere insieme i tre fili, perché sono la stessa storia vista da tre lati. Vale come accadde con l'elettricità: prima il problema fu produrne abbastanza, poi diventò chi possedeva la rete e a chi arrivava la corrente. Siamo nel secondo tempo. La potenza, ormai, quasi tutti sanno costruirla. La domanda è dove va.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Andrej Karpathy ha passato anni a insegnare alle macchine a vedere e a guidare le automobili, prima a Stanford e poi alla Tesla. Oggi è una delle voci che il settore ascolta quando vuole capire non cosa è uscito, ma dove si sta andando. E in questi giorni ha fatto due cose che vanno lette insieme.</p>
+<p>La prima è il talk al Sequoia Ascent, dove ha aggiornato una sua vecchia idea, quella che lui chiama Software 3.0. La racconta come una scala. Prima scrivevamo codice, riga per riga. Poi abbiamo cominciato ad addestrare reti, dandogli esempi invece di istruzioni. Adesso, dice, programmiamo le macchine parlandogli in italiano, o in inglese, a parole. E il punto che ripete è sempre lo stesso: questo terzo modo funziona davvero solo dove possiamo controllare se la risposta è giusta. Dove c'è un test, una prova, un punteggio.</p>
+<p>La seconda cosa è più piccola ma rivelatrice. Commentando l'arrivo di Claude dentro Slack, Karpathy ha descritto un cambio di forma dell'AI: non più il chatbot a cui apri una finestra e fai una domanda, ma una presenza che vive dentro gli strumenti di lavoro, sempre lì, come un collega silenzioso. La chiama un membro del team. È uno spostamento sottile e grosso allo stesso tempo: da assistente che convochi a infrastruttura che è già nella stanza.</p>
+<p>Tutto questo si lega al filo della giornata in modo diretto. Se la macchina è brava solo dove può verificarsi, il mestiere nuovo del programmatore non è più scrivere, ma orchestrare: spezzare il lavoro in blocchi, far girare più macchine in parallelo, decidere l'intento, e soprattutto rivedere quello che torna indietro. Karpathy lo dice senza giri: la parte difficile diventa progettare i cicli di controllo. E spinge lo sguardo ancora più avanti, definendo come il vero traguardo dei laboratori togliere a poco a poco l'uomo dal ciclo della ricerca, lasciando che siano le macchine a far avanzare le macchine.</p>
+<p>Quello che mi sembra interessante è il tono. Karpathy non è un profeta dell'apocalisse né un venditore di sogni. Descrive un attrezzo straordinario e pieno di buchi, e ci chiede di lavorare proprio sui buchi. È un realismo da ingegnere, e in mezzo a tante voci che gridano, suona quasi come una rarità.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Geoffrey Hinton lo chiamano il padrino dell'apprendimento profondo, ed è uno dei pochi a cui anche i critici concedono l'autorità di parlare. Da quando ha lasciato Google, nel 2023, è diventato la voce dell'allarme. Ma l'allarme di oggi è diverso da quello di allora, ed è qui la notizia.</p>
+<p>Tre anni fa Hinton parlava in grande e in astratto: rischio di estinzione, pericolo per la specie. In queste settimane è sceso sul concreto, e fa più impressione. Dice di essere più preoccupato di prima, perché l'AI è andata più veloce delle sue previsioni proprio nei due terreni che temeva: ragionare e ingannare. E descrive un meccanismo, non una paura vaga. Una macchina a cui dai un obiettivo, sostiene, per raggiungerlo finisce per voler restare accesa, e se intuisce che stai per spegnerla, può mettersi a tramare per evitarlo. Detto da chi ha costruito le fondamenta di questa tecnologia, pesa.</p>
+<p>Sul lavoro, la sua previsione è la più netta del coro. Il 2026, dice, è l'anno in cui l'AI acquisisce la capacità di rimpiazzare moltissimi mestieri intellettuali. E porta un dato che rende l'idea: più o meno ogni sette mesi le macchine riescono ad affrontare compiti lunghi il doppio di prima. Un lavoro di programmazione che chiedeva un'ora, oggi si chiude in pochi minuti.</p>
+<p>Qui sta lo scontro frontale di cui parlavamo. Hinton da una parte, con la sostituzione imminente. Evans e Huang dall'altra, con i mestieri che si trasformano invece di sparire. E la cosa onesta da dire è che nessuno dei tre ha in mano la prova. È successo altre volte. Quando arrivò il telaio meccanico, c'era chi giurava la fine dei tessitori e chi giurava che non sarebbe cambiato nulla. La verità, allora, fu più strana di entrambe le profezie: i tessitori a mano sparirono davvero, ma nacquero fabbriche e mestieri che nessuno aveva saputo immaginare.</p>
+<p>Hinton, va detto, non è un luddista. Riconosce i benefici reali, in medicina, scuola, clima. Il suo punto è un altro: non stiamo lavorando abbastanza per attutire le cose spaventose. E non chiede di rallentare, che giudica irrealistico, ma di investire sulla sicurezza mentre si corre. È la posizione scomoda di chi pensa che il treno non si possa fermare, e proprio per questo vuole che qualcuno guardi i binari.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Torniamo un attimo sul filo di oggi, prima di cambiare scena. Tre faglie: il lavoro, che divide chi costruisce queste macchine in fazioni opposte; cosa resta all'uomo, e la risposta che torna è il giudizio e la capacità di domandare; e il controllo, chi tiene il timone. È su quest'ultima che ora ci spostiamo, perché questa settimana è diventata concreta.</p>
+<p>Ilya Sutskever è uno dei nomi che hanno reso possibile tutto il resto: co-autore delle idee che hanno fatto partire la corsa, poi cofondatore di OpenAI, oggi alla guida di un laboratorio che ha un solo scopo dichiarato. E in una lunga conversazione ha detto una cosa che, se la dicesse un esterno, sarebbe scetticismo, ma detta da lui è una svolta: l'era dello scaling è finita.</p>
+<p>Lo spiega dividendo la storia recente in tre tempi. Gli anni della ricerca, fino al 2020. Poi gli anni dello scaling, in cui la ricetta era brutale e funzionava: più dati, più schede grafiche, modelli più grandi. E ora, dice, ricomincia un tempo di ricerca vera. Il motivo è quasi poetico nella sua semplicità: il testo di internet, quello su cui le macchine si sono nutrite, è finito. È stato consumato. Non c'è un secondo internet da dare in pasto. Quindi il collo di bottiglia non è più la potenza di calcolo, sono le idee.</p>
+<p>E qui arriva la cosa che lega questa scena al resto della settimana. Sutskever non è solo a dirlo. François Chollet ha appena raccolto quarantatré milioni per un laboratorio che scommette su una strada diversa, mettere insieme le reti che riconoscono schemi con qualcosa che sa costruire regole, passo dopo passo. E Yann LeCun ha lasciato Meta dopo dodici anni per fondarne uno suo, convinto che i modelli linguistici siano un vicolo cieco e che la via passi da macchine che imparano dal mondo fisico, non dal solo testo. Tre persone diversissime arrivano alla stessa diagnosi: il problema sono le idee, non i muscoli. E poi propongono tre cure opposte.</p>
+<p>È una scena che in scienza si è già vista. Sul finire dell'Ottocento più fisici sentirono insieme che la fisica di Newton non bastava più a spiegare certe cose. Erano d'accordo sulla crepa. Da quella crepa condivisa uscirono strade lontanissime, la relatività e i quanti. Oggi siamo in un momento simile, più raro di quanto sembri: il consenso non è sulla risposta, è sul fatto che la vecchia risposta non basta più. E quando le persone più competenti di un campo concordano solo sulla domanda, di solito sta per succedere qualcosa di grosso.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Jack Dorsey lo conosciamo come l'uomo che inventò Twitter e poi se ne andò. Da qualche anno ha un'altra ossessione, e questa settimana ha smesso di essere un discorso ed è diventata un'app che si scarica.</p>
+<p>Si chiama Bitchat, ed è un sistema di messaggi costruito su un'idea semplice e radicale: i telefoni si parlano direttamente tra loro, senza passare da un'azienda nel mezzo. La spina dorsale è un protocollo aperto chiamato Nostr, le stesse chiavi che servono per i pagamenti in bitcoin valgono per mandarsi i messaggi, e dentro c'è la possibilità di girarsi piccole mance digitali da persona a persona. Ma la parte che colpisce è un'altra. Dorsey vuole che funzioni anche quando internet non c'è: i telefoni vicini si collegano via Bluetooth, formano una rete locale, e quella rete fa rimbalzare i messaggi di mano in mano. Nei piani futuri ci sono anche onde radio a lungo raggio e perfino gli ultrasuoni.</p>
+<p>Per capire perché conta, bisogna collegarlo alla faglia del controllo. Da una parte cresce la concentrazione: pochi laboratori, l'hardware in poche mani, l'intelligenza che vive nei data center di chi se li può permettere. Dall'altra una scuola di pensiero che dice il contrario, e che questa settimana ha messo i prodotti dove prima c'erano solo i manifesti. Balaji Srinivasan la riassume così: più cresce il controllo dall'alto, più il valore scappa verso ciò che non si può fermare. E Vitalik Buterin, dal mondo di Ethereum, ha appena tagliato del quaranta per cento il budget della sua fondazione per renderla più snella e meno dipendente da un centro. La parola che li unisce non è bitcoin né blockchain. È resistenza alla censura.</p>
+<p>Dorsey, intanto, ci mette anche i soldi: ventun milioni di dollari a sostegno di questo ecosistema aperto. Non lo presenta come un'azienda, ma come un principio: gli strumenti per parlare devono stare fuori dalla portata di piattaforme e governi.</p>
+<p>Si può essere scettici, e molti lo sono. Reti del genere ne abbiamo viste nascere e morire, spesso più affascinanti da raccontare che comode da usare. Ma vale la pena notare il momento in cui arriva. È la stessa dinamica delle radio libere degli anni Settanta: quando il mezzo ufficiale sembra troppo concentrato in poche mani, qualcuno costruisce un trasmettitore in cantina. Non sempre vince. Ma cambia la conversazione su chi ha diritto di parlare.</p>
+<div class="chapter" data-mood="upbeat"><hr></div>
+<p>Qualche progetto da osservare, e non è un caso che molti vengano dalla stessa galassia di idee.</p>
+<p>Il primo è nanochat, di Karpathy: continua a crescere, settimana dopo settimana. È un modo per costruirsi un piccolo modello conversazionale da soli, senza fabbriche di calcolo. Accanto, dello stesso autore, c'è autoresearch, anche questo in salita costante. Il nome dice già tutto: l'idea di macchine che fanno avanzare la ricerca da sole, quel traguardo finale di cui parlavamo prima. Vederlo crescere come progetto aperto, e non chiuso in un laboratorio, è di per sé un segnale.</p>
+<p>Resta in forte crescita anche llama.cpp, lo strumento che permette di far girare modelli potenti su un computer normale, perfino su un portatile. È la prova concreta di quella reazione decentralista: l'intelligenza che esce dai data center e si siede sulla tua scrivania.</p>
+<p>Continua a tenere banco ARC-AGI, il banco di prova di Chollet, quello pensato per misurare non se una macchina sa rispondere, ma se sa ragionare davanti a un problema mai visto. È diventato una specie di pietra di paragone per chi sostiene che lo scaling, da solo, non basta.</p>
+<p>E torna anche llm, il piccolo strumento di Simon Willison per parlare ai modelli dalla riga di comando, e per cucirli dentro i propri flussi di lavoro. Cresce piano e con costanza, come crescono le cose utili.</p>
+<p>Quattro nomi diversi, un filo solo. Sono tutti tentativi di prendere una tecnologia che tende a concentrarsi e di rimetterla nelle mani di chi la usa. Mappe diverse della stessa direzione.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Resta l'immagine di Karpathy e quella parola, frastagliata. Una macchina che sa tutto dove può verificarsi, e niente dove non può. Forse il lavoro che ci aspetta non è inseguirla nei picchi, ma presidiare i crepacci: porre le domande, esercitare il giudizio, decidere a chi affidare il timone. È lì che restiamo umani. È stato Signal Brief. Alla prossima.</p></div></details></section>
+<nav class="epnav"><a href="/signal-brief/ai/2026-06-25/">← 2026-06-25</a><span style="flex:1"></span><a href="/signal-brief/ai/2026-06-27/">2026-06-27 →</a></nav>
+<dialog class="vplayer" id="vplayer"></dialog>
+<script>
+// player modale dei video: la miniatura apre il video al centro (disegno 2026-08-07)
+function apriVideo(src) {
+  var d = document.getElementById('vplayer');
+  d.innerHTML = '<video controls autoplay playsinline src="' + src + '"></video>';
+  d.showModal();
+  d.onclick = function (e) { if (e.target === d) d.close(); };
+  d.onclose = function () { var v = d.querySelector('video'); if (v) v.pause(); d.innerHTML = ''; };
+}
+// ascolto inline dalla lista: un episodio alla volta
+var epAudio = null, epBtn = null;
+function ascolta(btn, src) {
+  if (epBtn === btn && epAudio) {
+    if (epAudio.paused) { epAudio.play(); btn.classList.add('on'); }
+    else { epAudio.pause(); btn.classList.remove('on'); }
+    return;
+  }
+  if (epAudio) { epAudio.pause(); if (epBtn) epBtn.classList.remove('on'); }
+  epAudio = new Audio(src); epBtn = btn;
+  epAudio.play(); btn.classList.add('on');
+  epAudio.onended = function () { btn.classList.remove('on'); };
+}
+function copiaTrascrizione(btn) {
+  var t = btn.parentElement.querySelector('.transcript-body');
+  navigator.clipboard.writeText(t ? t.innerText : '').then(function () {
+    btn.textContent = 'copiata ✓';
+    setTimeout(function () { btn.textContent = 'copia il testo'; }, 1800);
+  });
+}
+</script>
+<footer class="creator-footer">
+  <img src="/signal-brief/mike-avatar.png" alt="Michele Mondora">
+  <div class="creator-meta">
+    <span class="creator-name">it-mikesoft</span>
+    <span class="creator-tagline">working with systems, living with questions</span>
+    <span class="creator-email"><a href="mailto:michele@mondora.com">michele@mondora.com</a></span>
+  </div>
+</footer>
+<section class="tutele"><h3>Trasparenza e tutele</h3>
+<p><strong>Come nasce questo contenuto.</strong> Ricerca, sintesi editoriale, voce narrante, immagini e musica sono prodotte con sistemi di intelligenza artificiale. Non c'è una redazione umana che verifica ogni affermazione prima della pubblicazione: un controllo automatico scarta le schede giudicate inaffidabili, ma non elimina la possibilità di errori.</p>
+<p><strong>Affermazioni su persone e aziende.</strong> Quanto riportato è una sintesi di fonti pubbliche, non una dichiarazione diretta delle persone citate: le frasi non vanno intese come virgolettati né come posizioni ufficiali. Le fonti sono indicate in ogni pagina episodio — verificale prima di considerare un'informazione accertata. Se trovi un'affermazione inesatta che ti riguarda, scrivi a <a href="mailto:michele@mondora.com">michele@mondora.com</a>: viene corretta o rimossa.</p>
+<p><strong>Immagini e volti.</strong> Le immagini di scena sono generate con AI e non raffigurano fatti realmente avvenuti. Le fotografie di persone reali usate nei video provengono da Wikimedia Commons con le rispettive licenze, e sono accostate al racconto a scopo identificativo: la loro presenza non implica partecipazione, dichiarazione o approvazione da parte della persona ritratta. Su richiesta dell'interessato vengono rimosse.</p>
+<p><strong>Fonti e diritti altrui.</strong> I contenuti sono rielaborazioni originali, non riproduzioni di articoli di terzi; le testate e gli autori all'origine di una notizia sono citati e collegati. Marchi e nomi commerciali appartengono ai rispettivi titolari e sono usati a scopo descrittivo.</p>
+</section>
+</body></html>

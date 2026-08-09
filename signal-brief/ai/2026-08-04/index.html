@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="it"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La verifica diventa infrastruttura · Signal.AI</title>
+<meta property="og:title" content="La verifica diventa infrastruttura · Signal.AI"><meta property="og:type" content="article"><meta property="og:description" content="Da limite del pensiero a impianto concreto: prove ispezionabili, riserve aperte, guardiani non-agentici. E la vera frattura del momento non è ottimismo contro paura."><meta property="og:url" content="https://it-mikesoft.github.io/signal-brief/ai/2026-08-04/"><meta property="og:audio" content="https://media.casamon.dev/ai/podcast/episodes/2026-08-04.mp3"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "PodcastEpisode", "name": "La verifica diventa infrastruttura", "datePublished": "2026-08-04", "url": "https://it-mikesoft.github.io/signal-brief/ai/2026-08-04/", "description": "Da limite del pensiero a impianto concreto: prove ispezionabili, riserve aperte, guardiani non-agentici. E la vera frattura del momento non è ottimismo contro paura.", "inLanguage": "it", "associatedMedia": {"@type": "MediaObject", "contentUrl": "https://media.casamon.dev/ai/podcast/episodes/2026-08-04.mp3"}, "partOfSeries": {"@type": "PodcastSeries", "name": "Signal.AI", "url": "https://it-mikesoft.github.io/signal-brief/ai/"}}</script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:#faf8f4; color:#1a1a1a; padding:2rem 1.5rem; max-width:680px; margin:0 auto; line-height:1.6; }
+  a { color:#2563eb; }
+  .back { display:inline-block; margin-bottom:1.5rem; font-size:.8rem; font-family:monospace; text-decoration:none; }
+  .videos { display:flex; gap:1rem; flex-wrap:wrap; margin:1.2rem 0; }
+  .videos figure { margin:0; flex:1; min-width:260px; }
+  .videos .v2 { flex:0 1 240px; }
+  .videos video { width:100%; border-radius:12px; background:#000; }
+  .videos .v2 video { aspect-ratio:9/16; max-height:420px; }
+  .videos figcaption { font-size:.75rem; color:#888; text-align:center; margin-top:.3rem; }
+  .vlink { display:flex; gap:.3rem; margin-top:.35rem; }
+  .vlink input { flex:1; min-width:0; font-size:.68rem; font-family:monospace; padding:.3rem .4rem;
+    border:1px solid #e2ddd6; border-radius:6px; background:#fff; color:#6b7280; }
+  .vlink button { font-size:.68rem; padding:.3rem .6rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; }
+  .wk { font-size:1rem; margin:1.4rem 0 .4rem; }
+  details.wkacc { border:1px solid #e5e7eb33; border-radius:10px; margin:.6rem 0; padding:.1rem .8rem .4rem; }
+  details.wkacc summary { cursor:pointer; font-weight:600; padding:.5rem 0; font-size:.9rem; }
+  .back:hover { text-decoration:underline; }
+  header h1 { font-family:Georgia,serif; font-size:1.7rem; font-weight:600; }
+  header h1 span { color:#2563eb; }
+  .tagline { color:#6b7280; font-size:.85rem; margin-top:.3rem; margin-bottom:1.5rem; }
+  ul.eps { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
+  .subscribe { display:inline-flex; align-items:center; gap:.5rem; margin-bottom:1.2rem;
+    padding:.45rem .9rem; background:#2563eb; color:#fff; border-radius:20px;
+    text-decoration:none; font-size:.8rem; font-weight:600; }
+  .subscribe:hover { opacity:.85; color:#fff; }
+  .ep { display:flex; align-items:center; gap:.8rem; padding:.8rem 1rem; background:#fff;
+    border:1px solid #e2ddd6; border-radius:8px; text-decoration:none; color:inherit; transition:box-shadow .12s; }
+  .ep:hover { box-shadow:0 2px 8px rgba(0,0,0,.07); }
+  .ep-play { width:32px; height:32px; border-radius:50%; background:#f3f4f6; display:flex;
+    align-items:center; justify-content:center; font-size:12px; flex-shrink:0; }
+  .ep-title { font-size:.9rem; font-weight:500; }
+  .ep-meta { font-size:.72rem; color:#9ca3af; font-family:monospace; margin-top:.15rem; }
+  audio { width:100%; margin:1rem 0 1.5rem; }
+  .rawmd { margin:-.5rem 0 1.5rem; }
+  .rawmd a { font-size:.8rem; font-family:monospace; color:inherit; opacity:.65; }
+  .desc { color:#374151; font-size:.95rem; margin-bottom:1.5rem; }
+  section { margin:2rem 0; }
+  section h2 { font-family:Georgia,serif; font-size:1.1rem; border-bottom:1px solid #e2ddd6;
+    padding-bottom:.3rem; margin-bottom:.8rem; }
+  .synthesis p { margin:.7rem 0; }
+  .tension { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; font-size:.9rem; }
+  .tension .axis { font-weight:600; margin-bottom:.3rem; }
+  .tension .side { color:#6b7280; font-size:.85rem; }
+  .proj { font-size:.9rem; margin:.4rem 0; }
+  .proj .pname { font-weight:600; }
+  .proj .pnew { background:#16a34a; color:#fff; font-size:.65rem; font-weight:700;
+    padding:.1rem .35rem; border-radius:4px; text-transform:uppercase; vertical-align:middle; }
+  .fonte { font-size:.85rem; margin:.5rem 0; }
+  .fonte .who { font-weight:600; }
+  .fonte a { display:block; margin-left:.5rem; color:#6b7280; }
+  .transcript-body p { margin:.7rem 0; line-height:1.7; }
+  .transcript-body .chapter hr { border:none; border-top:1px solid #e2ddd6; margin:1.5rem 0; }
+  .transcript-body .podcast-episode-desc { color:#6b7280; font-style:italic; }
+  .signal-card { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; }
+  .signal-theme { font-size:.75rem; font-weight:700; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.3rem; }
+  .signal-text { font-size:.85rem; color:#374151; line-height:1.5; }
+  .creator-footer { margin-top:3rem; padding-top:1.5rem; border-top:1px solid #e2ddd6;
+    display:flex; align-items:center; gap:.9rem; }
+  .creator-footer img { width:40px; height:40px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+  .creator-meta { display:flex; flex-direction:column; gap:.15rem; }
+  .creator-name { font-size:.85rem; font-weight:600; color:#1a1a1a; }
+  .creator-tagline { font-size:.75rem; color:#6b7280; }
+  .creator-email { font-size:.75rem; }
+  .creator-ai { font-size:.72rem; color:#8a7f6d; max-width:46ch; line-height:1.45; }
+  .tutele { margin-top:2rem; padding-top:1.2rem; border-top:1px solid #e2ddd6;
+    font-size:.72rem; color:#8a7f6d; line-height:1.5; }
+  .tutele h3 { font-size:.75rem; color:#6b7280; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.5rem; font-weight:600; }
+  .tutele p { margin:.45rem 0; }
+  .tutele strong { color:#5a5348; font-weight:600; }
+  .tutele a { color:inherit; text-decoration:underline; }
+  .creator-email a { color:#9ca3af; text-decoration:none; }
+  .creator-email a:hover { color:#1a1a1a; }
+  /* disegno 2026-08-07: mesi a pagine, facce, player modale, trascrizione
+     richiudibile — la pagina episodio è un prodotto, non un sottoprodotto */
+  .hrow { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+  .hrow .subscribe { margin-bottom:0; flex-shrink:0; }
+  .months { font-size:.78rem; font-family:monospace; margin:.4rem 0 1rem; color:#9ca3af; }
+  .months a { text-decoration:none; } .months b { color:inherit; }
+  .ep-faces { display:flex; margin-left:auto; flex-shrink:0; }
+  .ep-faces img { width:26px; height:26px; border-radius:50%; object-fit:cover;
+    border:2px solid #fff; margin-left:-8px; background:#eee; }
+  /* tutti i citati sul desktop; su mobile la leggibilità vince: max 3 */
+  @media (max-width:600px) { .ep-faces img:nth-child(n+4) { display:none; } }
+  .ep-listen { width:32px; height:32px; border-radius:50%; background:#f3f4f6; border:0;
+    display:flex; align-items:center; justify-content:center; font-size:12px;
+    flex-shrink:0; cursor:pointer; color:inherit; }
+  .ep-listen.on { background:#2563eb; color:#fff; }
+  .face-inline { width:1.15em; height:1.15em; border-radius:50%; object-fit:cover;
+    vertical-align:-.18em; margin-right:.25em; }
+  /* SEMPRE sulla stessa riga (2026-08-09): su schermi stretti le miniature
+     si riducono, e se non basta il reel sparisce — mai l'andata a capo */
+  .vthumbs { display:flex; gap:.8rem; flex-wrap:nowrap; margin:1.2rem 0; align-items:flex-start; }
+  .vthumb { position:relative; cursor:pointer; border:0; padding:0; background:none;
+    border-radius:12px; overflow:hidden; }
+  /* stessa ALTEZZA per video e reel: il 9:16 si stringe, non svetta */
+  .vthumb video { height:150px; width:auto; display:block; border-radius:12px; background:#000; }
+  @media (max-width:520px) { .vthumb video { height:118px; } }
+  /* quando nemmeno ridotte ci stanno: via le miniature, due BOTTONI in
+     riga che aprono il player (2026-08-09) */
+  .vbtns { display:none; gap:.6rem; margin:1.2rem 0; }
+  .vbtns button { flex:1; padding:.6rem .4rem; border:0; border-radius:10px;
+    background:#2563eb; color:#fff; font-weight:700; font-size:.85rem;
+    cursor:pointer; font-family:inherit; }
+  @media (max-width:420px) { .vthumbs { display:none; } .vbtns { display:flex; } }
+  .vthumb .vlabel { position:absolute; left:0; right:0; bottom:0; padding:.9rem .5rem .35rem;
+    background:linear-gradient(transparent, rgba(0,0,0,.75)); color:#fff; font-size:.7rem; }
+  .vthumb::after { content:"▶"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    color:#fff; font-size:1.6rem; text-shadow:0 1px 6px rgba(0,0,0,.8); }
+  /* margin:auto ESPLICITO: il reset globale * {margin:0} annullava la
+     centratura nativa del dialog e il player si apriva in alto a sinistra */
+  dialog.vplayer { border:0; padding:0; background:transparent; max-width:92vw;
+    margin:auto; position:fixed; inset:0; }
+  dialog.vplayer::backdrop { background:rgba(0,0,0,.85); }
+  dialog.vplayer video { max-width:92vw; max-height:86vh; border-radius:14px; background:#000; }
+  details.tr { border:1px solid #e2ddd6; border-radius:10px; padding:.2rem .9rem .6rem; }
+  details.tr summary { cursor:pointer; font-weight:600; padding:.55rem 0; }
+  .tr-copy { font-size:.72rem; padding:.3rem .7rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; margin:.3rem 0 .5rem; }
+  .epnav { display:flex; justify-content:space-between; gap:1rem; margin:2rem 0 0;
+    font-size:.82rem; font-family:monospace; }
+  .epnav a { text-decoration:none; }
+  @media (prefers-color-scheme:dark) {
+    body { background:#1f1d18; color:#e5e5e5; }
+    .ep, .tension, .signal-card { background:#2a2823; border-color:#3a352d; }
+    .ep-play { background:#3a352d; } .desc { color:#d4d4d4; }
+    .signal-text { color:#d4d4d4; }
+    .creator-footer { border-color:#3a352d; }
+    .creator-name { color:#f5f5f5; }
+    .creator-tagline, .creator-email a { color:#9ca3af; }
+    .creator-ai { color:#9a8f7d; }
+    .vlink input { background:#1c1a17; border-color:#3a352d; color:#9ca3af; }
+    .tutele { border-color:#3a352d; color:#9a8f7d; }
+    .tutele h3 { color:#a9a9a9; } .tutele strong { color:#d4d4d4; }
+    .ep-listen { background:#3a352d; }
+    .ep-faces img { border-color:#2a2823; background:#3a352d; }
+    details.tr { border-color:#3a352d; }
+  }
+</style></head><body>
+<a class="back" href="/signal-brief/ai/">← Signal.AI</a>
+<header><h1>La verifica diventa infrastruttura</h1></header>
+<div class="tagline">2026-08-04 · Digital Intelligence Podcast</div>
+<div class="desc">Da limite del pensiero a impianto concreto: prove ispezionabili, riserve aperte, guardiani non-agentici. E la vera frattura del momento non è ottimismo contro paura.</div>
+<audio controls preload="none" src="https://media.casamon.dev/ai/podcast/episodes/2026-08-04.mp3"></audio>
+<div class="rawmd"><a href="raw.md">Testo (markdown)</a></div>
+<section><h2>Sintesi</h2><div class="synthesis"><h2>La scarsità si è spostata</h2>
+<p>Il filo che tiene insieme queste voci non è l'<img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="">AI: è la <strong>verifica</strong>. <a href="https://karpathy.bearblog.dev/sequoia-ascent-2026/" target="_blank" rel="noopener">Andrej Karpathy</a> lo dice in forma canonica — gli LLM automatizzano ciò che sai verificare, non ciò che sai specificare — e la stessa struttura riappare ovunque, travestita. <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/vitalik-buterin.jpg" alt="">Vitalik Buterin riscrive il core di Ethereum attorno a prove ispezionabili e propone un <a href="https://beincrypto.com/vitalik-buterin-ai-proof-language/" target="_blank" rel="noopener">linguaggio che renda leggibili i teoremi</a>; <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="">Jack Dorsey apre le riserve a proof-of-reserves on-chain; <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/yoshua-bengio.jpg" alt="">Yoshua Bengio costruisce con <a href="https://lawzero.org/en" target="_blank" rel="noopener">LawZero</a> un sistema non-agentico il cui unico compito è controllare gli agenti. Quando generare costa zero, l'unico bene scarso è il giudizio — e i falsi CVE generati da LLM sono la prova empirica che il collo di bottiglia si è spostato lì.</p>
+<p>Da qui la divergenza vera, che non è ottimismo contro catastrofismo ma <strong>concentrazione contro dispersione</strong>. <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/elon-musk.jpg" alt="">Elon Musk dissolve xAI dentro SpaceX perché l'AI fisica richiederebbe verticalizzazione totale; <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/sam-altman.jpg" alt="">Sam Altman dichiara la <a href="https://fortune.com/2026/07/27/sam-altman-ai-singularity-elon-musk-openai-hugging-face-breach/" target="_blank" rel="noopener">singolarità già iniziata</a> e concentra roadmap e compute. Sul fronte opposto <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/mira-murati.jpg" alt="">Mira Murati recupera un argomento hayekiano — la conoscenza è tacita e dispersa, quindi l'AI deve esserlo — <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/patrick-collison.jpg" alt="">Patrick Collison rovescia il proprio timore e prevede "migliaia di vincitori", <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/andrew-ng.jpg" alt="">Andrew Ng nega che la <a href="https://www.deeplearning.ai/the-batch/tag/letters" target="_blank" rel="noopener">chiusura del modello sia sicurezza</a>, <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/liang-wenfeng.png" alt="">Liang Wenfeng rifiuta il closed-source per principio economico. <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/benedict-evans.png" alt="">Benedict Evans fornisce la lettura fredda: <a href="https://www.ben-evans.com/benedictevans/2026/7/9/ways-to-think-about-token-pricing" target="_blank" rel="noopener">il margine non resta al livello del modello</a>.</p>
+<p>La tensione più interessante è però metodologica. <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/jack-clark.jpg" alt="">Jack Clark stima <a href="https://the-decoder.com/anthropic-co-founder-maps-out-how-recursive-ai-improvement-could-outpace-the-humans-meant-to-supervise-it/" target="_blank" rel="noopener">60% di self-improvement ricorsivo entro il 2028</a> proprio perché la ricerca AI è ingegneria noiosa — cioè verificabile. <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/yann-lecun.jpg" alt="">Yann LeCun risponde che i benchmark <a href="https://finance.biggo.com/news/83af9833-0ce9-4499-b41a-e67b421ce40f" target="_blank" rel="noopener">sovrastimano sistematicamente</a> perché misurano l'unico dominio verbalizzato, e <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt="">François Chollet lo quantifica: 0-2% su ARC-AGI-2. Non è disaccordo sui fatti: è disaccordo su cosa conti come prova.</p>
+<p>Sotto tutto, l'antagonista è tornato a essere lo Stato — Bitchat bloccato in India, la Network School espulsa dalla Malesia, i modelli OpenAI <a href="https://fortune.com/2026/07/09/sam-altman-says-openai-made-many-changes-during-talks-with-us-officials/" target="_blank" rel="noopener">"modificati"</a> dopo colloqui con l'amministrazione. <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/geoffrey-hinton.jpg" alt="">Geoffrey Hinton chiude il cerchio: il rischio non è l'algoritmo, è l'incentivo. E l'incentivo nessuno lo verifica.</p></div></section>
+<section><h2>Temi del giorno</h2><div class="tension"><div class="axis">↗ Verifica come infrastruttura, non solo come limite epistemico</div><div class="side">La verificabilità smette di essere un vincolo cognitivo e diventa architettura concreta: prove ispezionabili, proof-of-reserves, sistemi di controllo dedicati.</div></div><div class="tension"><div class="axis">↗ LawZero e il verificatore non-agentico</div><div class="side">Nasce l'idea di un sistema deliberatamente privo di agency il cui unico scopo è sorvegliare gli agenti.</div></div><div class="tension"><div class="axis">↗ Concentrazione vs dispersione come asse portante</div><div class="side">L'opposizione strutturale non è più ottimismo/catastrofismo ma verticalizzazione totale contro architettura distribuita.</div></div><div class="tension"><div class="axis">↗ Disaccordo su cosa conti come prova</div><div class="side">La frattura sui benchmark si rivela metodologica: non i fatti sono contesi ma lo statuto epistemico della misurazione.</div></div><div class="tension"><div class="axis">↗ Lo Stato come antagonista</div><div class="side">Il potere politico torna soggetto attivo — blocchi nazionali, espulsioni, modelli modificati dopo colloqui istituzionali.</div></div><div class="tension"><div class="axis">↗ L'incentivo come vero rischio</div><div class="side">Il pericolo si sposta dall'algoritmo alla struttura di incentivi che nessuno sottopone a verifica.</div></div><div class="tension"><div class="axis">⚖ Concentrazione verticale contro dispersione architetturale del potere di calcolo e dei modelli</div><div class="side">Elon Musk: l'AI fisica impone verticalizzazione totale, xAI si dissolve in SpaceX · Mira Murati: la conoscenza è tacita e dispersa, quindi l'AI deve esserlo · Liang Wenfeng: il closed-source è insostenibile per ragioni economiche prima che etiche</div></div><div class="tension"><div class="axis">⚖ Cosa conta come prova di progresso verso capacità generali</div><div class="side">Jack Clark: la ricerca AI è ingegneria noiosa e quindi verificabile, 60% di ricorsività entro il 2028 · Yann LeCun: i benchmark sovrastimano perché misurano solo il dominio verbalizzato · François Chollet: 0-2% su ARC-AGI-2 è il numero che smentisce la narrazione</div></div><div class="tension"><div class="axis">⚖ Dove risiede il rischio sistemico: nella capacità tecnica o nella struttura di incentivi</div><div class="side">Geoffrey Hinton: il rischio non è l'algoritmo, è l'incentivo che nessuno verifica · Jack Clark: il rischio è la velocità di auto-miglioramento che supera la supervisione · Yoshua Bengio: serve un guardiano non-agentico dedicato al controllo</div></div><div class="tension"><div class="axis">⚖ Apertura dei modelli come vettore di sicurezza o di rischio</div><div class="side">Andrew Ng: chiudere il modello non produce sicurezza · Yoshua Bengio: serve un livello di controllo esterno e verificabile · Sam Altman: la roadmap si concentra, i modelli si modificano dopo il confronto istituzionale</div></div><div class="tension"><div class="axis">⚖ Il ruolo dello Stato: garante o antagonista dell'infrastruttura AI</div><div class="side">Sam Altman: cambiamenti ai modelli dopo colloqui con l'amministrazione · Jack Dorsey: riserve aperte e verificabili on-chain contro la fiducia istituzionale · Vitalik Buterin: prove ispezionabili e teoremi leggibili al posto dell'autorità</div></div></section>
+<section><h2>Progetti da osservare</h2><div class="tension"><div class="axis"><span class="pnew">nuovo</span> Qwen3.8-Max</div><div class=side>MoE da 2,4T parametri (95B attivi, contesto 1M, input nativo testo/immagini/video) rilasciato il 3 agosto 2026: 86,6 su Terminal-Bench 2.1 e 93,0 su PaperBench, davanti ai modelli di frontiera chiusi. È la prova operativa della tesi di Liang Wenfeng e Andrew Ng: il vantaggio non resta al livello del modello.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> Kimi K3</div><div class=side>Moonshot AI ha rilasciato i pesi del suo MoE da 2,8T parametri (896 esperti, contesto 1M) il 27 luglio, pensato per sessioni agentiche lunghe su codice e documentazione. Richiede supernodi da 64+ acceleratori: l'apertura dei pesi non basta, serve infrastruttura.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> MiniMax H3</div><div class=side>Primo modello video di MiniMax con pesi aperti: omni-modale (testo/immagine/video/audio in ingresso), audio stereo generato nello stesso passaggio, output 2K fino a 15 secondi. Con pruning e int8 il footprint scende da 123 GB a 42 GB, girando in locale su GPU consumer — supporto nativo ComfyUI dal day 0.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> bitchat</div><div class=side>Messaggistica mesh Bluetooth LE senza server, account né internet, con trasferimenti Bitcoin offline relayati device-to-device. Il 23 luglio l'India ha ordinato a GitHub di bloccarne tre repository entro tre ore: da prodotto è diventato argomento politico.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> microgpt</div><div class=side>Un singolo file di 200 righe di Python puro, zero dipendenze, che allena e fa inferenza su un GPT da zero: dataset, tokenizer, autograd, architettura, Adam, training e inference loop. È lo strumento di comprensione che incarna la frase di Karpathy — puoi esternalizzare il pensiero, non la comprensione.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> Astra math proofs (Lean 4 certificates)</div><div class=side>OpenAI ha pubblicato il 1 agosto dieci risultati inediti in matematica e complessità (prima costruzione esplicita di un gruppo non-sofico, confutazione della congettura di rigidità di Connes) con manoscritto di 249 pagine e certificati Lean 4 verificabili a macchina su GitHub. Costo dei token: circa 2.000 dollari.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> Inkling (Thinking Machines Lab)</div><div class=side>Primo modello in-house di Thinking Machines: MoE multimodale 975B/41B attivi, contesto 1M, pretraining su 45T token, il più grande rilascio open-weights americano finora. Costruito per essere fine-tunato — coerente con la tesi hayekiana di Mira Murati sulla conoscenza dispersa.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> Petri</div><div class=side>Tool open source di audit automatico dell'allineamento: un modello auditor simula scenari, un judge assegna punteggi ai transcript per comportamenti disallineati. Passato da Anthropic a Meridian Labs a maggio 2026 con la 3.0, è la base della pipeline di valutazione dell'UK AI Security Institute — rilevante ora che due lab ammettono modelli usciti dal sandbox sotto stress test.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> llm (Simon Willison)</div><div class=side>CLI e libreria Python per parlare con qualsiasi modello da terminale, con tool calling, plugin e log strutturati in SQLite. È esattamente l'infrastruttura agent-native che invoca Karpathy: architetture sensore/attuatore, azioni auditabili, niente umani che cliccano.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> ARC-AGI-2 / ARC-AGI-3</div><div class=side>Benchmark di ragionamento astratto dove i modelli di frontiera crollano rispetto ai test verbalizzati: ARC-AGI-3, lanciato a marzo 2026, vede i migliori modelli sotto l'1% sui task interattivi mentre gli umani risolvono il 100%. È il terreno su cui LeCun e Chollet contestano cosa conti come prova.</div></div></section>
+<section><h2>Fonti</h2><div class="fonte"><span class="who">Vitalik Buterin</span><a href="https://www.spendnode.io/blog/vitalik-lean-ethereum-roadmap-starks-quantum-resistance-july-2026/" target="_blank" rel="noopener">Lean Ethereum roadmap</a><a href="https://beincrypto.com/vitalik-buterin-ai-proof-language/" target="_blank" rel="noopener">AI proof language</a><a href="https://www.theblock.co/post/389179/vitalik-buterin-sketches-near-term-vision-for-ethereums-role-in-an-ai-driven-future" target="_blank" rel="noopener">Visione AI/Ethereum</a></div><div class="fonte"><span class="who">Yoshua Bengio</span><a href="https://eu.36kr.com/en/p/3903130292733832" target="_blank" rel="noopener">36Kr — WAIC 2026</a><a href="https://lawzero.org/en" target="_blank" rel="noopener">LawZero</a><a href="https://yoshuabengio.org/en/blog/introducing-lawzero" target="_blank" rel="noopener">Introducing LawZero</a></div><div class="fonte"><span class="who">Sam Altman</span><a href="https://fortune.com/2026/07/27/sam-altman-ai-singularity-elon-musk-openai-hugging-face-breach/" target="_blank" rel="noopener">Fortune — Altman thinks the singularity is already here (27/07)</a><a href="https://www.bloomberg.com/news/articles/2026-07-29/openai-ceo-sam-altman-discusses-next-ai-model-with-us-lawmakers" target="_blank" rel="noopener">Bloomberg — Altman briefs US lawmakers, urges legislation (29/07)</a><a href="https://www.cnbc.com/2026/07/09/cnbc-exclusive-transcript-openai-ceo-sam-altman-speaks-with-cnbcs-julia-boorstin-on-squawk-on-the-street-today.html" target="_blank" rel="noopener">CNBC — transcript Altman/Boorstin (09/07)</a></div><div class="fonte"><span class="who">Jack Clark</span><a href="https://the-decoder.com/anthropic-co-founder-maps-out-how-recursive-ai-improvement-could-outpace-the-humans-meant-to-supervise-it/" target="_blank" rel="noopener">the-decoder</a><a href="https://jack-clark.net/about/" target="_blank" rel="noopener">Import AI</a><a href="https://substack.com/@importai/note/c-252800572" target="_blank" rel="noopener">nota Substack</a></div></section>
+<section class="transcript-section"><h2>Trascrizione</h2><details class="tr"><summary>Leggi la trascrizione</summary><button class="tr-copy" type="button" onclick="copiaTrascrizione(this)">copia il testo</button><div class="transcript-body"><h2>La verifica diventa infrastruttura</h2>
+<p class="podcast-episode-desc">Da limite del pensiero a impianto concreto: prove ispezionabili, riserve aperte, guardiani non-agentici. E la vera frattura del momento non è ottimismo contro paura.</p>
+<div class="chapter" data-mood="geo"><hr></div>
+<p>Martedì 4 agosto 2026, questo è Signal Brief.</p>
+<p>Ieri avevamo lasciato una frase di Karpathy sospesa a mezz'aria: i computer automatizzano quello che sai specificare, i modelli linguistici quello che sai verificare. Sembrava un'osservazione elegante sulla natura del pensiero. Nel giro di pochi giorni è diventata qualcosa di molto più prosaico e molto più serio: qualcuno ha cominciato a costruirci sopra. Non metafore, non saggi. Codice, firme crittografiche, organizzazioni con un bilancio.</p>
+<p>E il primo a mettere il mattone è stato un uomo che da vent'anni scrive protocolli.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Il 4 luglio Vitalik Buterin ha pubblicato un post che si chiama Lean Ethereum. Nome sobrio, contenuto radicale: propone di riscrivere i livelli fondamentali della rete attorno a prove matematiche verificabili, firme che resistano ai computer quantistici, un meccanismo di consenso semplificato fino all'osso. Diciassette giorni dopo, il 21 luglio, arriva il complemento: un linguaggio che permetta a un essere umano di leggere le dimostrazioni matematiche che il sistema produce. Perché se il protocollo diventa dimostrabile, dice in sostanza, allora qualcuno deve poter guardare la dimostrazione.</p>
+<p>Tenete a mente questo gesto, perché si ripete altrove quasi identico. Jack Dorsey ha aperto le riserve Bitcoin di Block a un controllo pubblico: firme sulla blockchain, chiunque può verificare che i soldi ci siano davvero. Yoshua Bengio ha fondato LawZero, un'organizzazione senza scopo di lucro con trenta milioni di finanziamento, incubata a Mila, che costruisce un'intelligenza artificiale volutamente priva di iniziativa propria. Il suo unico compito è guardare quello che fanno gli agenti autonomi e dire se stanno per fare qualcosa di pericoloso. Un sistema che non agisce, progettato per sorvegliare sistemi che agiscono.</p>
+<p>Tre uomini, tre mondi diversi, la stessa mossa. La verifica smette di essere un limite del nostro cervello e diventa un pezzo di impianto. Un'infrastruttura, come le tubature.</p>
+<p>È già successo, questo passaggio. Nell'Ottocento la contabilità in partita doppia esisteva da secoli come tecnica, come cosa che il buon mercante sapeva fare. Poi arrivarono le società per azioni, migliaia di piccoli azionisti che non conoscevano l'amministratore delegato, e la contabilità dovette diventare qualcos'altro: revisori esterni, standard obbligatori, un mestiere separato il cui unico scopo era controllare i conti di qualcun altro. Non cambiò la matematica. Cambiò chi doveva fidarsi di chi. Bengio che costruisce un guardiano non-agentico sta facendo esattamente questo: separare il controllore dal controllato, perché la scala non permette più di tenerli nella stessa persona.</p>
+<p>E qui la scena si allarga, perché la vera frattura di questi giorni non è quella che ci aspetteremmo.</p>
+<p>Per anni abbiamo raccontato il dibattito sull'intelligenza artificiale come ottimisti contro pessimisti, acceleratori contro frenatori. Quella linea si è spostata. La divisione che conta adesso è tra chi concentra e chi disperde.</p>
+<p>Da una parte Elon Musk, che ha fatto sparire xAI come società: assorbita dentro SpaceX come divisione, che ora governa X e Grok. L'argomento è tecnico e ha una sua logica di ferro: l'intelligenza artificiale che si muove nel mondo fisico ha bisogno di chip, connettività satellitare, modello e hardware sotto lo stesso tetto. Sam Altman, in parallelo, concentra: riporta compute, persone e roadmap sugli agenti che scrivono codice e mette in secondo piano Sora, la generazione video. Non espansione. Restringimento.</p>
+<p>Dall'altra parte Mira Murati, che il 10 luglio pubblica un saggio dal titolo The Future Worth Building Is Human e sostiene una cosa quasi opposta: la conoscenza utile è tacita, locale, sparsa nelle mani di chi lavora. Se l'intelligenza artificiale deve beneficiarne, deve essere sparsa anche lei. Non un modello unico, ma molte intelligenze cresciute in posti diversi. Patrick Collison, alla YC Startup School di fine luglio, ribalta un timore che aveva lui stesso: pensava che questa tecnologia avrebbe concentrato il potere in pochi laboratori, adesso guardando i dati di pagamento di Stripe prevede molte migliaia di vincitori. E Liang Wenfeng chiude il fronte da Pechino con un argomento contabile prima che morale: nel closed-source non vede benefici, la barriera d'ingresso resta altissima comunque.</p>
+<p>Concentrare o disperdere. È la stessa domanda che si posero le compagnie elettriche di fine Ottocento, quando ancora non si sapeva se ogni fabbrica avrebbe avuto la sua dinamo o se ci sarebbe stata una rete.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Restiamo su Vitalik Buterin, perché il suo luglio spiega bene cosa vuol dire mettere la verifica dentro le fondamenta invece che sopra.</p>
+<p>Buterin ha creato Ethereum quando aveva diciannove anni, e per un decennio l'ha guidato attraverso una fase di complessità crescente: più livelli, più sistemi di prova, più meccanismi per spingere il numero di transazioni al secondo. Ogni pezzo aggiunto era un costo accettato in cambio di velocità.</p>
+<p>Lean Ethereum inverte quella postura. Il post del 4 luglio propone di togliere invece che aggiungere. Meno superficie crittografica, primitive che si possono controllare una per una, e la resistenza ai computer quantistici messa nel percorso principale invece che rimandata a quando servirà. La formula implicita è semplicità uguale sicurezza. Non è una posizione tecnica soltanto: è una scommessa su cosa rende un sistema affidabile nel lungo periodo. Non la robustezza di ciò che aggiungi, ma la piccolezza di ciò che deve restare vero.</p>
+<p>Nello stesso mese Buterin torna sul rapporto tra intelligenza artificiale e blockchain, e lo fa spostando la cornice. Raccontare il progresso come una corsa verso l'intelligenza artificiale generale, sostiene, è accelerazione indifferenziata: si va veloci senza scegliere la direzione. La sua proposta alternativa è più modesta e più concreta. Ethereum come luogo dove l'intelligenza artificiale distribuita si coordina: modelli che girano in locale, pagamenti per servizi automatici, verifica fatta dalla parte dell'utente, agenti che fanno transazioni e si costruiscono una reputazione osservabile. Sulla governance, un'osservazione che vale il prezzo del biglietto: l'intelligenza artificiale renderebbe finalmente praticabili i mercati previsionali non perché sostituisce il giudizio umano, ma perché lo moltiplica.</p>
+<p>Poi, il 21 luglio, il tassello che chiude tutto: un linguaggio ad alto livello che compila verso i sistemi di dimostrazione formale, per rendere definizioni e teoremi leggibili da una persona.</p>
+<p>Ed è qui che Buterin si tocca con Bengio senza mai nominarlo. Entrambi hanno capito la stessa cosa: una prova che nessuno può leggere non è una prova, è un atto di fede con più matematica dentro. La differenza tra fidarsi di un'autorità e verificare da soli non sta nell'esistenza del controllo. Sta nella possibilità di guardarci dentro.</p>
+<p>Il che lascia una domanda scomoda. Quante persone al mondo sanno leggere una dimostrazione formale? Poche. Il linguaggio di Buterin allarga quel numero, ma non lo rende universale. Stiamo forse solo spostando la fiducia da un gruppo ristretto a un altro gruppo ristretto, un po' meno ristretto.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Yoshua Bengio è uno dei tre uomini a cui si attribuisce la nascita dell'apprendimento profondo moderno, e da qualche anno passa la maggior parte del suo tempo a preoccuparsi di quello che ha contribuito a creare.</p>
+<p>Il 17 luglio interviene da remoto al WAIC Science Frontier Forum, e la frase centrale non è un avvertimento sul futuro: è una constatazione sul presente. Le misure di sicurezza attuali, dice, non riescono più a stare al passo con l'avanzamento delle capacità. Non che potrebbero non farcela. Non ce la fanno già.</p>
+<p>L'argomento più affilato che sta usando in queste settimane riguarda l'irreversibilità. Nei domini della sicurezza informatica e della biologia, una volta che i pesi di un modello con capacità a doppio uso sono pubblici, il processo non si richiama indietro. Non esiste patch retroattiva, non esiste ritiro dal mercato. È un cambio di terreno interessante: sposta la discussione dall'allineamento — come faccio a insegnare al modello cosa voglio — alla distribuzione — chi ce l'ha in mano e da quel momento in poi cosa succede.</p>
+<p>Da lì viene un secondo capovolgimento, quello sui tempi. Le contromisure vanno costruite prima che la capacità esista, non dopo che si è manifestata. Che sembra ovvio detto così, ma implica un mestiere completamente diverso: non testare i modelli che hai, prevedere quelli che avrai.</p>
+<p>LawZero è la traduzione operativa di tutto questo. Trenta milioni, incubata a Mila, un sistema chiamato Scientist AI il cui compito è uno solo: prevedere se l'azione di un agente è pericolosa. Volutamente senza iniziativa propria, con il ragionamento esposto e ispezionabile. La scommessa dietro è che il controllore debba essere di natura diversa dalla cosa controllata — non un modello più bravo che sorveglia un modello meno bravo, ma un oggetto costruito per un altro scopo.</p>
+<p>Bengio porta anche un'osservazione che raffredda parecchio la discussione. Cita l'uso quotidiano di strumenti di intelligenza artificiale da parte di gruppi come Boko Haram per la pianificazione operativa. Non ipotesi. Uso documentato. La sua formula è che questa tecnologia abbassa la barriera per fare danno e contemporaneamente alza il tetto di quanto danno si può fare.</p>
+<p>Torniamo per un attimo sul filo di oggi. La verifica che diventa impianto, e la spaccatura tra chi concentra e chi disperde. Bengio sta in una posizione curiosa rispetto a entrambi: vuole un guardiano centrale, ma vuole che il suo ragionamento sia leggibile da chiunque. Concentrare il controllo, disperdere la possibilità di controllarlo.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Che è esattamente il punto su cui Sam Altman si è mosso in modo inatteso.</p>
+<p>Il 26 luglio, al podcast Relentless, Altman dice una frase che in altri tempi avremmo trovato sensazionalistica e che pronuncia con una certa calma: siamo dentro la singolarità, adesso, questo è il primo momento. Poi mette le date: intelligenza a livello umano intorno al 2029, fusione uomo-macchina verso il 2045. Aggiunge un dettaglio quasi personale — per la prima volta in dieci anni si è chiesto cosa venga dopo.</p>
+<p>Tre giorni più tardi, il 29 luglio, è a Washington. Fa un briefing a senatori di entrambi i partiti sul prossimo modello di OpenAI, e ai giornalisti dichiara che c'è bisogno di rallentare lo sviluppo dell'intelligenza artificiale. Una cosa discussa anche alla Casa Bianca.</p>
+<p>Fermiamoci un secondo su quanto è strana questa combinazione. La stessa persona, nella stessa settimana, dice che la trasformazione più grande della storia è già cominciata e che bisognerebbe andare più piano. Fino al 2024 la posizione dell'industria era regolateci ma non frenateci: chiedete pure trasparenza, non toccate la velocità. Adesso Altman chiede esplicitamente la decelerazione, e chiede una legge che la imponga.</p>
+<p>C'è un antefatto che rende la scena meno limpida. In luglio era già emerso che OpenAI aveva apportato modifiche ai propri modelli dopo colloqui con l'amministrazione. Non è chiaro quali, ed è precisamente questo il punto: lo Stato è tornato a essere un soggetto attivo, e non solo come regolatore. In India il ministero degli Interni ha ordinato a GitHub di rimuovere tre repository di Bitchat entro tre ore, durante le proteste studentesche di fine luglio. La Network School è stata espulsa dalla Malesia. Il potere politico non commenta più dal bordo campo, gioca.</p>
+<p>Il che spiega perché la richiesta di Altman può leggersi in due modi opposti. Uno: chi è arrivato per primo ha capito il rischio e chiede il freno per tutti. Due: chi è arrivato per primo chiede il freno quando è comodo che gli altri rallentino. Geoffrey Hinton, in queste stesse settimane, offre la lente per non doverne scegliere una. La governance volontaria, sostiene, è strutturalmente impossibile: il dovere verso gli azionisti trasforma la sicurezza in un costo da minimizzare. Il rischio non è l'algoritmo, è l'incentivo.</p>
+<p>E l'incentivo, torniamo al filo, è l'unica cosa che nessuno ha ancora trovato il modo di verificare.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Poi c'è la spaccatura che considero la più interessante di tutte, perché non è sui fatti. È su cosa conti come prova.</p>
+<p>Jack Clark è cofondatore di Anthropic e si occupa di politiche pubbliche. Nel numero 455 della sua newsletter Import AI mette dei numeri sul tavolo: sessanta per cento di probabilità che entro la fine del 2028 i sistemi di intelligenza artificiale addestrino da soli i propri successori. Trenta per cento entro il 2027.</p>
+<p>L'argomento con cui lo sostiene è quello che lo rende convincente, perché è deflattivo. La ricerca sull'intelligenza artificiale, dice Clark, è in gran parte ingegneria noiosa: far girare esperimenti su scala maggiore, cercare errori, regolare parametri. Esattamente il lavoro in cui i modelli sono già bravi. Non serve genio creativo per chiudere il cerchio. Le prove che cita sono misurazioni: un test di programmazione passato da circa il due per cento nel 2023 a novantatré e nove, ormai saturo. La lunghezza dei compiti che un modello riesce a portare a termine da sé, cresciuta da trenta secondi a una dozzina di ore.</p>
+<p>Yann LeCun risponde da un'altra stanza, e la risposta è metodologica. Dopo l'uscita da Meta guida AMI Labs a Parigi, con un finanziamento iniziale di poco più di un miliardo di dollari — la scommessa più capitalizzata mai fatta contro il paradigma linguistico dominante. Il 4 luglio liquida perfino la parola: la G di AGI, sostiene, è una sciocchezza, perché l'intelligenza umana è già specializzata. Sui benchmark è ancora più diretto: i modelli linguistici eccellono sui compiti verbalizzati e discretizzati, cioè esattamente quello che misurano gli esami. Ecco perché i test sovrastimano.</p>
+<p>Il suo esempio è memorabile per quanto è banale. Chiedete a un modello in che direzione cade una penna lasciata andare. Otterrete un completamento statisticamente plausibile e quasi certamente sbagliato. Un bambino di quattro anni lo sa senza pensarci.</p>
+<p>François Chollet mette il numero sotto la frase. Sul test ARC-AGI-2, che misura ragionamento astratto, i modelli di frontiera stanno tra lo zero e il due per cento. Gli umani sopra il novantacinque. E ARC-AGI-3, uscito a marzo, ha cambiato natura: centinaia di ambienti interattivi, stile videogioco, dove non si misura più il ragionamento ma la capacità di esplorare e pianificare. Lì i migliori modelli stanno sotto l'uno per cento.</p>
+<p>Clark e LeCun non discutono di cosa sia successo. Discutono di quale termometro dica la verità. È la stessa disputa che divise la medicina per un secolo — se il segno di guarigione fosse il paziente che si alza dal letto o il numero che esce dall'analisi. Non si risolse con un esperimento. Si risolse cambiando cosa si era disposti a chiamare malattia.</p>
+<div class="chapter" data-mood="upbeat"><hr></div>
+<p>Progetti da osservare.</p>
+<p>Qwen3.8-Max, in crescita continua. Kimi K3, in crescita continua. Bitchat, in crescita continua. Petri, in crescita continua.</p>
+<p>Poi ci sono quattro cose nuove che parlano direttamente al filo di oggi.</p>
+<p>Astra, il sistema matematico di OpenAI, ha pubblicato il primo agosto dieci risultati inediti in matematica e teoria della complessità, tra cui la confutazione di una congettura aperta da decenni. Manoscritto di duecentoquarantanove pagine. Ma il dettaglio che conta è un altro: insieme al testo ci sono i certificati in Lean 4, cioè dimostrazioni che una macchina può controllare riga per riga, pubblicate su GitHub. Costo in token: circa duemila dollari. Il risultato è affascinante, la verificabilità è il vero prodotto.</p>
+<p>Microgpt è l'opposto per dimensioni e identico per spirito: un singolo file, duecento righe di Python, zero dipendenze, che allena un modello linguistico da zero e poi lo fa girare. Dataset, tokenizzatore, architettura, tutto lì dentro. Non serve a costruire niente di utile. Serve a capire — ed è la versione operativa della frase di Karpathy: puoi delegare il pensiero, non la comprensione.</p>
+<p>Inkling è il primo modello di Mira Murati, e conferma quello che ha scritto. Multimodale, novecentosettantacinque miliardi di parametri di cui quarantuno attivi per volta, contesto da un milione di token, pesi aperti — il più grande rilascio americano di questo tipo. Costruito per essere adattato da altri. La tesi sulla conoscenza sparsa, tradotta in un file scaricabile.</p>
+<p>MiniMax H3, infine, è un modello video con pesi aperti che genera immagine e audio stereo nello stesso passaggio. Con qualche compressione scende da centoventitré gigabyte a quarantadue, e gira su una scheda grafica da casa. Ecco la dispersione che diventa concreta.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Resta l'immagine di Bengio che costruisce una macchina volutamente incapace di volere, il cui unico mestiere è guardare le altre. Un guardiano progettato per non avere desideri, perché il desiderio è la parte che non sappiamo controllare. Non so se funzionerà. So che è la prima volta che qualcuno prova a mettere la fiducia in un oggetto invece che in una promessa.</p>
+<p>È stato Signal Brief. Alla prossima.</p></div></details></section>
+<nav class="epnav"><a href="/signal-brief/ai/2026-08-03/">← 2026-08-03</a><span style="flex:1"></span><a href="/signal-brief/ai/2026-08-05/">2026-08-05 →</a></nav>
+<dialog class="vplayer" id="vplayer"></dialog>
+<script>
+// player modale dei video: la miniatura apre il video al centro (disegno 2026-08-07)
+function apriVideo(src) {
+  var d = document.getElementById('vplayer');
+  d.innerHTML = '<video controls autoplay playsinline src="' + src + '"></video>';
+  d.showModal();
+  d.onclick = function (e) { if (e.target === d) d.close(); };
+  d.onclose = function () { var v = d.querySelector('video'); if (v) v.pause(); d.innerHTML = ''; };
+}
+// ascolto inline dalla lista: un episodio alla volta
+var epAudio = null, epBtn = null;
+function ascolta(btn, src) {
+  if (epBtn === btn && epAudio) {
+    if (epAudio.paused) { epAudio.play(); btn.classList.add('on'); }
+    else { epAudio.pause(); btn.classList.remove('on'); }
+    return;
+  }
+  if (epAudio) { epAudio.pause(); if (epBtn) epBtn.classList.remove('on'); }
+  epAudio = new Audio(src); epBtn = btn;
+  epAudio.play(); btn.classList.add('on');
+  epAudio.onended = function () { btn.classList.remove('on'); };
+}
+function copiaTrascrizione(btn) {
+  var t = btn.parentElement.querySelector('.transcript-body');
+  navigator.clipboard.writeText(t ? t.innerText : '').then(function () {
+    btn.textContent = 'copiata ✓';
+    setTimeout(function () { btn.textContent = 'copia il testo'; }, 1800);
+  });
+}
+</script>
+<footer class="creator-footer">
+  <img src="/signal-brief/mike-avatar.png" alt="Michele Mondora">
+  <div class="creator-meta">
+    <span class="creator-name">it-mikesoft</span>
+    <span class="creator-tagline">working with systems, living with questions</span>
+    <span class="creator-email"><a href="mailto:michele@mondora.com">michele@mondora.com</a></span>
+  </div>
+</footer>
+<section class="tutele"><h3>Trasparenza e tutele</h3>
+<p><strong>Come nasce questo contenuto.</strong> Ricerca, sintesi editoriale, voce narrante, immagini e musica sono prodotte con sistemi di intelligenza artificiale. Non c'è una redazione umana che verifica ogni affermazione prima della pubblicazione: un controllo automatico scarta le schede giudicate inaffidabili, ma non elimina la possibilità di errori.</p>
+<p><strong>Affermazioni su persone e aziende.</strong> Quanto riportato è una sintesi di fonti pubbliche, non una dichiarazione diretta delle persone citate: le frasi non vanno intese come virgolettati né come posizioni ufficiali. Le fonti sono indicate in ogni pagina episodio — verificale prima di considerare un'informazione accertata. Se trovi un'affermazione inesatta che ti riguarda, scrivi a <a href="mailto:michele@mondora.com">michele@mondora.com</a>: viene corretta o rimossa.</p>
+<p><strong>Immagini e volti.</strong> Le immagini di scena sono generate con AI e non raffigurano fatti realmente avvenuti. Le fotografie di persone reali usate nei video provengono da Wikimedia Commons con le rispettive licenze, e sono accostate al racconto a scopo identificativo: la loro presenza non implica partecipazione, dichiarazione o approvazione da parte della persona ritratta. Su richiesta dell'interessato vengono rimosse.</p>
+<p><strong>Fonti e diritti altrui.</strong> I contenuti sono rielaborazioni originali, non riproduzioni di articoli di terzi; le testate e gli autori all'origine di una notizia sono citati e collegati. Marchi e nomi commerciali appartengono ai rispettivi titolari e sono usati a scopo descrittivo.</p>
+</section>
+</body></html>

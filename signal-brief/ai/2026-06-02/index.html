@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="it"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Il cantiere senza progetto · Signal.AI</title>
+<meta property="og:title" content="Il cantiere senza progetto · Signal.AI"><meta property="og:type" content="article"><meta property="og:description" content="Karpathy si sposta in Anthropic, Stripe lancia l'infrastruttura per gli agenti, LeCun raccoglie un miliardo per dire che la strada è un'altra. Quattro mosse, una sola direzione."><meta property="og:url" content="https://it-mikesoft.github.io/signal-brief/ai/2026-06-02/"><meta property="og:audio" content="https://media.casamon.dev/ai/podcast/episodes/2026-06-02.mp3"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "PodcastEpisode", "name": "Il cantiere senza progetto", "datePublished": "2026-06-02", "url": "https://it-mikesoft.github.io/signal-brief/ai/2026-06-02/", "description": "Karpathy si sposta in Anthropic, Stripe lancia l'infrastruttura per gli agenti, LeCun raccoglie un miliardo per dire che la strada è un'altra. Quattro mosse, una sola direzione.", "inLanguage": "it", "associatedMedia": {"@type": "MediaObject", "contentUrl": "https://media.casamon.dev/ai/podcast/episodes/2026-06-02.mp3"}, "partOfSeries": {"@type": "PodcastSeries", "name": "Signal.AI", "url": "https://it-mikesoft.github.io/signal-brief/ai/"}}</script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:#faf8f4; color:#1a1a1a; padding:2rem 1.5rem; max-width:680px; margin:0 auto; line-height:1.6; }
+  a { color:#2563eb; }
+  .back { display:inline-block; margin-bottom:1.5rem; font-size:.8rem; font-family:monospace; text-decoration:none; }
+  .videos { display:flex; gap:1rem; flex-wrap:wrap; margin:1.2rem 0; }
+  .videos figure { margin:0; flex:1; min-width:260px; }
+  .videos .v2 { flex:0 1 240px; }
+  .videos video { width:100%; border-radius:12px; background:#000; }
+  .videos .v2 video { aspect-ratio:9/16; max-height:420px; }
+  .videos figcaption { font-size:.75rem; color:#888; text-align:center; margin-top:.3rem; }
+  .vlink { display:flex; gap:.3rem; margin-top:.35rem; }
+  .vlink input { flex:1; min-width:0; font-size:.68rem; font-family:monospace; padding:.3rem .4rem;
+    border:1px solid #e2ddd6; border-radius:6px; background:#fff; color:#6b7280; }
+  .vlink button { font-size:.68rem; padding:.3rem .6rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; }
+  .wk { font-size:1rem; margin:1.4rem 0 .4rem; }
+  details.wkacc { border:1px solid #e5e7eb33; border-radius:10px; margin:.6rem 0; padding:.1rem .8rem .4rem; }
+  details.wkacc summary { cursor:pointer; font-weight:600; padding:.5rem 0; font-size:.9rem; }
+  .back:hover { text-decoration:underline; }
+  header h1 { font-family:Georgia,serif; font-size:1.7rem; font-weight:600; }
+  header h1 span { color:#2563eb; }
+  .tagline { color:#6b7280; font-size:.85rem; margin-top:.3rem; margin-bottom:1.5rem; }
+  ul.eps { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
+  .subscribe { display:inline-flex; align-items:center; gap:.5rem; margin-bottom:1.2rem;
+    padding:.45rem .9rem; background:#2563eb; color:#fff; border-radius:20px;
+    text-decoration:none; font-size:.8rem; font-weight:600; }
+  .subscribe:hover { opacity:.85; color:#fff; }
+  .ep { display:flex; align-items:center; gap:.8rem; padding:.8rem 1rem; background:#fff;
+    border:1px solid #e2ddd6; border-radius:8px; text-decoration:none; color:inherit; transition:box-shadow .12s; }
+  .ep:hover { box-shadow:0 2px 8px rgba(0,0,0,.07); }
+  .ep-play { width:32px; height:32px; border-radius:50%; background:#f3f4f6; display:flex;
+    align-items:center; justify-content:center; font-size:12px; flex-shrink:0; }
+  .ep-title { font-size:.9rem; font-weight:500; }
+  .ep-meta { font-size:.72rem; color:#9ca3af; font-family:monospace; margin-top:.15rem; }
+  audio { width:100%; margin:1rem 0 1.5rem; }
+  .rawmd { margin:-.5rem 0 1.5rem; }
+  .rawmd a { font-size:.8rem; font-family:monospace; color:inherit; opacity:.65; }
+  .desc { color:#374151; font-size:.95rem; margin-bottom:1.5rem; }
+  section { margin:2rem 0; }
+  section h2 { font-family:Georgia,serif; font-size:1.1rem; border-bottom:1px solid #e2ddd6;
+    padding-bottom:.3rem; margin-bottom:.8rem; }
+  .synthesis p { margin:.7rem 0; }
+  .tension { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; font-size:.9rem; }
+  .tension .axis { font-weight:600; margin-bottom:.3rem; }
+  .tension .side { color:#6b7280; font-size:.85rem; }
+  .proj { font-size:.9rem; margin:.4rem 0; }
+  .proj .pname { font-weight:600; }
+  .proj .pnew { background:#16a34a; color:#fff; font-size:.65rem; font-weight:700;
+    padding:.1rem .35rem; border-radius:4px; text-transform:uppercase; vertical-align:middle; }
+  .fonte { font-size:.85rem; margin:.5rem 0; }
+  .fonte .who { font-weight:600; }
+  .fonte a { display:block; margin-left:.5rem; color:#6b7280; }
+  .transcript-body p { margin:.7rem 0; line-height:1.7; }
+  .transcript-body .chapter hr { border:none; border-top:1px solid #e2ddd6; margin:1.5rem 0; }
+  .transcript-body .podcast-episode-desc { color:#6b7280; font-style:italic; }
+  .signal-card { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; }
+  .signal-theme { font-size:.75rem; font-weight:700; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.3rem; }
+  .signal-text { font-size:.85rem; color:#374151; line-height:1.5; }
+  .creator-footer { margin-top:3rem; padding-top:1.5rem; border-top:1px solid #e2ddd6;
+    display:flex; align-items:center; gap:.9rem; }
+  .creator-footer img { width:40px; height:40px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+  .creator-meta { display:flex; flex-direction:column; gap:.15rem; }
+  .creator-name { font-size:.85rem; font-weight:600; color:#1a1a1a; }
+  .creator-tagline { font-size:.75rem; color:#6b7280; }
+  .creator-email { font-size:.75rem; }
+  .creator-ai { font-size:.72rem; color:#8a7f6d; max-width:46ch; line-height:1.45; }
+  .tutele { margin-top:2rem; padding-top:1.2rem; border-top:1px solid #e2ddd6;
+    font-size:.72rem; color:#8a7f6d; line-height:1.5; }
+  .tutele h3 { font-size:.75rem; color:#6b7280; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.5rem; font-weight:600; }
+  .tutele p { margin:.45rem 0; }
+  .tutele strong { color:#5a5348; font-weight:600; }
+  .tutele a { color:inherit; text-decoration:underline; }
+  .creator-email a { color:#9ca3af; text-decoration:none; }
+  .creator-email a:hover { color:#1a1a1a; }
+  /* disegno 2026-08-07: mesi a pagine, facce, player modale, trascrizione
+     richiudibile — la pagina episodio è un prodotto, non un sottoprodotto */
+  .hrow { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+  .hrow .subscribe { margin-bottom:0; flex-shrink:0; }
+  .months { font-size:.78rem; font-family:monospace; margin:.4rem 0 1rem; color:#9ca3af; }
+  .months a { text-decoration:none; } .months b { color:inherit; }
+  .ep-faces { display:flex; margin-left:auto; flex-shrink:0; }
+  .ep-faces img { width:26px; height:26px; border-radius:50%; object-fit:cover;
+    border:2px solid #fff; margin-left:-8px; background:#eee; }
+  /* tutti i citati sul desktop; su mobile la leggibilità vince: max 3 */
+  @media (max-width:600px) { .ep-faces img:nth-child(n+4) { display:none; } }
+  .ep-listen { width:32px; height:32px; border-radius:50%; background:#f3f4f6; border:0;
+    display:flex; align-items:center; justify-content:center; font-size:12px;
+    flex-shrink:0; cursor:pointer; color:inherit; }
+  .ep-listen.on { background:#2563eb; color:#fff; }
+  .face-inline { width:1.15em; height:1.15em; border-radius:50%; object-fit:cover;
+    vertical-align:-.18em; margin-right:.25em; }
+  /* SEMPRE sulla stessa riga (2026-08-09): su schermi stretti le miniature
+     si riducono, e se non basta il reel sparisce — mai l'andata a capo */
+  .vthumbs { display:flex; gap:.8rem; flex-wrap:nowrap; margin:1.2rem 0; align-items:flex-start; }
+  .vthumb { position:relative; cursor:pointer; border:0; padding:0; background:none;
+    border-radius:12px; overflow:hidden; }
+  /* stessa ALTEZZA per video e reel: il 9:16 si stringe, non svetta */
+  .vthumb video { height:150px; width:auto; display:block; border-radius:12px; background:#000; }
+  @media (max-width:520px) { .vthumb video { height:118px; } }
+  /* quando nemmeno ridotte ci stanno: via le miniature, due BOTTONI in
+     riga che aprono il player (2026-08-09) */
+  .vbtns { display:none; gap:.6rem; margin:1.2rem 0; }
+  .vbtns button { flex:1; padding:.6rem .4rem; border:0; border-radius:10px;
+    background:#2563eb; color:#fff; font-weight:700; font-size:.85rem;
+    cursor:pointer; font-family:inherit; }
+  @media (max-width:420px) { .vthumbs { display:none; } .vbtns { display:flex; } }
+  .vthumb .vlabel { position:absolute; left:0; right:0; bottom:0; padding:.9rem .5rem .35rem;
+    background:linear-gradient(transparent, rgba(0,0,0,.75)); color:#fff; font-size:.7rem; }
+  .vthumb::after { content:"▶"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    color:#fff; font-size:1.6rem; text-shadow:0 1px 6px rgba(0,0,0,.8); }
+  /* margin:auto ESPLICITO: il reset globale * {margin:0} annullava la
+     centratura nativa del dialog e il player si apriva in alto a sinistra */
+  dialog.vplayer { border:0; padding:0; background:transparent; max-width:92vw;
+    margin:auto; position:fixed; inset:0; }
+  dialog.vplayer::backdrop { background:rgba(0,0,0,.85); }
+  dialog.vplayer video { max-width:92vw; max-height:86vh; border-radius:14px; background:#000; }
+  details.tr { border:1px solid #e2ddd6; border-radius:10px; padding:.2rem .9rem .6rem; }
+  details.tr summary { cursor:pointer; font-weight:600; padding:.55rem 0; }
+  .tr-copy { font-size:.72rem; padding:.3rem .7rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; margin:.3rem 0 .5rem; }
+  .epnav { display:flex; justify-content:space-between; gap:1rem; margin:2rem 0 0;
+    font-size:.82rem; font-family:monospace; }
+  .epnav a { text-decoration:none; }
+  @media (prefers-color-scheme:dark) {
+    body { background:#1f1d18; color:#e5e5e5; }
+    .ep, .tension, .signal-card { background:#2a2823; border-color:#3a352d; }
+    .ep-play { background:#3a352d; } .desc { color:#d4d4d4; }
+    .signal-text { color:#d4d4d4; }
+    .creator-footer { border-color:#3a352d; }
+    .creator-name { color:#f5f5f5; }
+    .creator-tagline, .creator-email a { color:#9ca3af; }
+    .creator-ai { color:#9a8f7d; }
+    .vlink input { background:#1c1a17; border-color:#3a352d; color:#9ca3af; }
+    .tutele { border-color:#3a352d; color:#9a8f7d; }
+    .tutele h3 { color:#a9a9a9; } .tutele strong { color:#d4d4d4; }
+    .ep-listen { background:#3a352d; }
+    .ep-faces img { border-color:#2a2823; background:#3a352d; }
+    details.tr { border-color:#3a352d; }
+  }
+</style></head><body>
+<a class="back" href="/signal-brief/ai/">← Signal.AI</a>
+<header><h1>Il cantiere senza progetto</h1></header>
+<div class="tagline">2026-06-02 · Digital Intelligence Podcast</div>
+<div class="desc">Karpathy si sposta in Anthropic, Stripe lancia l'infrastruttura per gli agenti, LeCun raccoglie un miliardo per dire che la strada è un'altra. Quattro mosse, una sola direzione.</div>
+<div class="rawmd"><a href="raw.md">Testo (markdown)</a></div>
+<section><h2>Sintesi</h2><div class="synthesis"><p><strong>Infrastruttura come fronte di battaglia nascosto</strong></p>
+<p>Tema trasversale sorprendente: convergenza totale su infrastruttura agentica come fondazione prossima. <a href="https://www.theaiopportunities.com/p/sequoia-ai-ascent-2026-andrej-karpathy" target="_blank" rel="noopener">Andrej Karpathy</a> spinge agent-native infrastructure, <a href="https://stripe.com/newsroom/news/sessions-2026" target="_blank" rel="noopener">Patrick Collison</a> costruisce plumbing commercio agentico, <a href="https://quasa.io/media/former-github-ceo-nat-friedman-unveils-entire-revolutionizing-ai-development-with-git-integration" target="_blank" rel="noopener">Nat Friedman</a> ripensa developer stack per agenti, <a href="https://sequoiacap.com/podcast/jack-dorsey-every-company-can-now-be-a-mini-agi/" target="_blank" rel="noopener">Jack Dorsey</a> distribuisce mini-AGI organizzativi. Non è narrativa — è costruzione parallela di rails economico-tecniche per mondo dove agenti operano autonomamente.</p>
+<p>Pero tensione critica emerge: <strong>quale architettura vince?</strong> <a href="https://www.franksworld.com/2026/05/06/yann-lecuns-paradigm-shift-a-billion-dollar-bet-on-jepa-and-ais-future/" target="_blank" rel="noopener">Yann LeCun</a> e <a href="https://arcprize.org/blog/arc-agi-3-launch" target="_blank" rel="noopener">François Chollet</a> sfidano paradigma scale-only apertamente. LLM transformer giganti non basteranno; serve world models + program synthesis. <a href="https://www.geeky-gadgets.com/john-carmack-artificial-general-intelligence/" target="_blank" rel="noopener">John Carmack</a> muove in parallelo: robotica + sim-to-real come <em>proof ground</em> per architetture alternative. <a href="https://brief.bismarckanalysis.com/p/ai-2026-ilya-sutskever-and-the-end" target="_blank" rel="noopener">Ilya Sutskever</a> formalizza: era scaling finita, innovazione architettonica adesso.</p>
+<p>Industriale (Altman, Hassabis, Musk) continua spinta accelerazionista ma mitiga con <strong>management occupazionale opportunistica</strong>: Altman ritrae apocalisse lavoro, Hassabis chiama governo coordinato, Dorsey licenzia 40% staff e lo sostituisce con agenti. Non è coerenza — è gestione narrativa di velocità incontrollabile.</p>
+<p>Divergenza fondamentale: governi + timeline AGI rimangono <strong>urgente pero non urgent</strong>. Hassabis invoca "coordinamento species-level" ma OpenAI prepara IPO. Sutskever alza bandiera safety radicale (SSI 100% focused, zero prodotti) mentre mercato continua valutare superintelligenza come milestone inevitabile. <a href="https://indiandiaspora.org/news/balaji-srinivasans-radical-experiment-indian-american-tech-visionary-acquires-island-near" target="_blank" rel="noopener">Balaji</a> sceglie pragmatismo Singapore su purismo libertario — riconosce ordine necessario, non solo decentralizzazione.</p>
+<p>Corrente di fondo: <strong>industria costruisce infrastruttura per realtà che non riesce a governare</strong>. Tutti sanno problema architetturale è non risolto (LeCun, Chollet, Carmack corretti). Nessuno sa che fare. Accelerazione continua.</p></div></section>
+<section><h2>Temi del giorno</h2><div class="tension"><div class="axis">↗ Agent-native infrastructure come fronte di battaglia</div><div class="side">Convergenza di Karpathy, Collison, Friedman, Dorsey sulla costruzione parallela di rails economico-tecniche per sistemi autonomi agentico.</div></div><div class="tension"><div class="axis">↗ Battaglia architettonica esplicita: scaling vs alternative</div><div class="side">LeCun, Chollet, Carmack costruiscono prove di concetto (JEPA, ARC-AGI-3, robotica sim-to-real) per dimostrare insufficienza paradigma scale-only.</div></div><div class="tension"><div class="axis">↗ Occupational management narrativa</div><div class="side">Strategia di mitigation narrativa della disoccupazione: Altman ritrae apocalisse, Hassabis invoca coordinamento, Dorsey licenzia + rimpiazza con agenti.</div></div><div class="tension"><div class="axis">↗ Industria costruisce infrastruttura per realtà incontrollabile</div><div class="side">Meta-osservazione sulla contraddizione strutturale: nessuno sa la risposta architettonica, tutti sanno il problema, accelerazione continua.</div></div><div class="tension"><div class="axis">⚖ Architettura del futuro: scale-only acceleration vs alternative paradigm</div><div class="side">Sam Altman: continue scaling, agent-native infrastructure accelerazionista · Yann LeCun: LLM insufficient, serve JEPA + world models + robotics proof grounds</div></div><div class="tension"><div class="axis">⚖ Safety governance vs competitive market dynamics</div><div class="side">Ilya Sutskever: safety radicale, SSI focused, zero prodotti commerciali · Sam Altman (OpenAI): IPO, competitive pressure, product acceleration</div></div><div class="tension"><div class="axis">⚖ Narrativa mitigation vs realtà incontrollabile</div><div class="side">Industry management: occupational narrative, disoccupazione mitigation · Struttura reale: infrastruttura costruita per fenomeno incontrollabile</div></div><div class="tension"><div class="axis">⚖ Ordine necessario vs autonomia decentralizzata</div><div class="side">Balaji Srinivasan: pragmatismo Singapore, ordine necessario riconosciuto · Libertarian purity: decentralizzazione assoluta (pero convergente su ordine)</div></div></section>
+<section><h2>Progetti da osservare</h2><div class="tension"><div class="axis">karpathy/nanochat</div><div class=side>Pipeline minimale per addestrare un modello GPT-2 in ~2 ore su 8×H100 con FP8 e ClimbMix, parte della linea di lavoro di Karpathy su pipeline ridotte per singolo ricercatore. Repo di riferimento per l'era 'meno codice, più amplificazione'.</div></div><div class="tension"><div class="axis">karpathy/llm-wiki (gist)</div><div class=side>Prompt-pattern da copiare in Claude Code/Codex che istanzia il sistema 'LLM Wiki' su Obsidian: articoli enciclopedici interlinkati, backlink, health check. Diventato viral come anti-RAG personale.</div></div><div class="tension"><div class="axis">karpathy/autoresearch</div><div class=side>Repo di ~630 righe (7 marzo 2026) che materializza un agente di ricerca minimale, parte della tesi 'idea file = distribuzione' di Karpathy. Esempio concreto di agente che amplifica il ricercatore individuale.</div></div><div class="tension"><div class="axis">Obsidian</div><div class=side>Editor di note markdown con backlink e grafi che Karpathy elegge come 'IDE della conoscenza' nel suo pattern LLM-Wiki. Diventa il frontend consigliato per memoria esplicita e ispezionabile contro la memoria opaca degli assistant commerciali.</div></div><div class="tension"><div class="axis">ggerganov/llama.cpp</div><div class=side>Motore di inferenza C/C++ per LLM locali; il suo llama-server è il cuore dello stack self-sovereign proposto da Buterin (NixOS + llama-server + bubblewrap). Standard de facto per AI locale sovrana.</div></div><div class="tension"><div class="axis">basecamp/omarchy</div><div class=side>Distro Arch Linux curata da DHH con Hyprland, pensata per attrarre utenti macOS/Windows verso un desktop 'malleabile'. Progetto-manifesto del filone 'open source AI-ready' di DHH (Omacon NY, 130 persone).</div></div><div class="tension"><div class="axis">hyprwm/Hyprland</div><div class=side>Compositor Wayland dinamico, cuore visivo di Omarchy e simbolo del rinnovato interesse consumer per Linux (Panther Lake / XPS 14). DHH lo cita come esempio di software su cui finalmente 'hardware e aziende tornano a scommettere'.</div></div><div class="tension"><div class="axis">simonw/llm</div><div class=side>CLI e libreria Python di Simon Willison per interagire con LLM locali e cloud, base dei suoi tool README-driven (scan-for-secrets, datasette-ports, research-llm-apis). Strumento pivot del suo workflow 'agentic engineering'.</div></div><div class="tension"><div class="axis">fchollet/ARC-AGI</div><div class=side>Repo ufficiale dei benchmark ARC-AGI di Chollet, ora affiancato da ARC-AGI-3 (ambienti interattivi turn-based per misurare agency). ARC Prize 2026 ha $2M di montepremi; umani 100%, best frontier model 0,37%.</div></div><div class="tension"><div class="axis">zilliztech/claude-context</div><div class=side>Server MCP di code search che trasforma l'intera codebase in contesto indicizzato per Claude Code, Cursor e altri agenti. Esempio netto del 'moat shift' dal modello all'uso indicato da Evans e Andreessen.</div></div></section>
+<section><h2>Fonti</h2><div class="fonte"><span class="who">Andrej Karpathy</span><a href="https://www.theaiopportunities.com/p/sequoia-ai-ascent-2026-andrej-karpathy" target="_blank" rel="noopener">Sequoia AI Ascent 2026</a><a href="https://techcrunch.com/2026/05/19/openai-co-founder-andrej-karpathy-joins-anthropics-pre-training-team/" target="_blank" rel="noopener">TechCrunch: Karpathy joins Anthropic</a><a href="https://venturebeat.com/technology/andrej-karpathys-new-open-source-autoresearch-lets-you-run-hundreds-of-ai" target="_blank" rel="noopener">VentureBeat: AutoResearch explained</a></div><div class="fonte"><span class="who">Yann LeCun</span><a href="https://www.franksworld.com/2026/05/06/yann-lecuns-paradigm-shift-a-billion-dollar-bet-on-jepa-and-ais-future/" target="_blank" rel="noopener">Yann LeCun's Paradigm Shift: JEPA and AI's Future</a><a href="https://www.techtimes.com/articles/317452/20260531/yann-lecuns-world-model-earns-formal-proof-benchmark-finds-current-models-brittle.htm" target="_blank" rel="noopener">World Model Formal Proof</a><a href="https://www.brown.edu/news/2026-04-01/yann-lecun-artificial-intelligence-pioneer" target="_blank" rel="noopener">Brown University Lecture</a></div><div class="fonte"><span class="who">Ilya Sutskever</span><a href="https://thenextweb.com/news/ilya-sutskever-7bn-openai-stake-disclosure" target="_blank" rel="noopener">Testimony Musk-OpenAI, maggio 2026</a><a href="https://www.cio.com/article/3504983/ilya-sutskevers-safe-superintelligence-inc-lands-1b-investment.html" target="_blank" rel="noopener">SSI founding e funding</a><a href="https://brief.bismarckanalysis.com/p/ai-2026-ilya-sutskever-and-the-end" target="_blank" rel="noopener">Fine scaling era</a></div></section>
+<section class="transcript-section"><h2>Trascrizione</h2><details class="tr"><summary>Leggi la trascrizione</summary><button class="tr-copy" type="button" onclick="copiaTrascrizione(this)">copia il testo</button><div class="transcript-body"><h2>Il cantiere senza progetto</h2>
+<p class="podcast-episode-desc">Karpathy si sposta in Anthropic, Stripe lancia l'infrastruttura per gli agenti, LeCun raccoglie un miliardo per dire che la strada è un'altra. Quattro mosse, una sola direzione.</p>
+<div class="chapter" data-mood="geo"><hr></div>
+<p>C'è un cantiere strano in corso, in questi mesi, nel mondo della tecnologia. Tutti stanno costruendo lo stesso pezzo di infrastruttura, allo stesso tempo, con grande fretta — e nessuno è davvero d'accordo su cosa ci passerà sopra. È Signal Brief, martedì due giugno. Andrej Karpathy si è appena trasferito da OpenAI ad Anthropic, Stripe ha annunciato quasi trecento funzionalità per agenti AI, Yann LeCun raccoglie un miliardo per dire che la strada giusta è un'altra. Quattro mosse, una sola direzione, tante architetture diverse. Cominciamo da lì.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Il diciannove maggio Andrej Karpathy ha pubblicato un post breve, quasi laconico, per dire che lasciava la sua indipendenza e tornava a fare ricerca dentro Anthropic. La frase chiave era una: i prossimi anni ai confini dei modelli linguistici saranno formativi, e gli sembrava troppo eccitante restare fuori. Il dettaglio interessante è cosa va a fare. Il suo nuovo team userà Claude — il modello di Anthropic — per accelerare la ricerca su come si addestra Claude. Modelli che progettano modelli. Una specie di anello che si chiude.</p>
+<p>Quel post non sarebbe stato grande notizia, da solo. Ma quella settimana, e quelle prima, sono successe altre cose che, messe insieme, raccontano una storia che vale la pena raccontare. A Stripe Sessions, a fine aprile, Patrick Collison ha annunciato quasi trecento nuove funzionalità per quella che lui chiama l'infrastruttura economica dell'era degli agenti. Pagamenti dentro le app AI, sistemi di identità per software che agisce per conto degli utenti, abbonamenti pensati per essere consumati da macchine non da persone.</p>
+<p>In parallelo Nat Friedman, l'ex CEO di GitHub, ha lanciato con sessanta milioni una nuova piattaforma per sviluppatori: si chiama Entire, e parte dall'idea che strumenti come Git, le pull request, le issue erano stati pensati per gli umani che scrivono codice. Adesso che a scrivere codice sono sempre più gli agenti, servono altri strumenti.</p>
+<p>E Jack Dorsey, da San Francisco, ha licenziato il quaranta per cento di Block — quattromila persone — sostituendole con un agente interno che hanno chiamato Goose. In un podcast con Sequoia ha detto che ogni azienda può diventare una piccola intelligenza artificiale generale. Lo ha detto come una buona notizia.</p>
+<p>Quattro mosse molto diverse — un ricercatore, un fondatore di pagamenti, un imprenditore di strumenti per sviluppatori, un proprietario di fintech — che convergono sulla stessa idea: il prossimo strato di infrastruttura del mondo digitale non sarà fatto per le persone, ma per gli agenti. È una decisione che si sta prendendo in parallelo, in posti diversi, senza un coordinamento, e in fretta.</p>
+<p>A me ricorda quello che è successo nelle fabbriche americane all'inizio del Novecento, quando hanno smesso di muoversi a vapore e sono passate all'elettricità. Per quindici, vent'anni hanno semplicemente sostituito il motore — stessa fabbrica, stesso disegno, stesso modo di lavorare, solo con un motore elettrico al posto della grande caldaia centrale. La produttività non è cresciuta granché. Poi qualcuno ha capito che con l'elettricità non serviva più una macchina centrale che faceva girare cinghie ovunque: ogni macchina poteva avere il suo motore, e si poteva ridisegnare la fabbrica da zero. Lì la produttività è esplosa. Oggi siamo nella fase in cui le aziende stanno mettendo i motori elettrici nelle stesse fabbriche di prima. Ancora non sappiamo come sarà fatta la fabbrica nuova.</p>
+<p>E poi c'è il pezzo che rende tutto più strano. Mentre tutti costruiscono, nessuno è d'accordo su cosa ci girerà sopra. Yann LeCun ha lasciato Meta a novembre, ha messo in piedi a Parigi un laboratorio nuovo, AMI Labs, ha raccolto un miliardo di dollari, e in una lezione alla Brown University ad aprile ha detto, testualmente, che l'AI di oggi fa schifo. I modelli linguistici grandi, sostiene, non hanno memoria, non capiscono il mondo fisico, non sanno pianificare. Sono bravissimi a parlare, e noi ci facciamo ingannare. François Chollet, dall'altra parte dell'oceano, ha lanciato una nuova versione del suo test ARC — quello dove gli umani prendono cento e i modelli migliori prendono mezzo punto. John Carmack, da Dallas, sta facendo robot che imparano a giocare ai videogiochi guardando una televisione, con venti milioni di dollari invece dei miliardi degli altri.</p>
+<p>E poi c'è Ilya Sutskever, che è la storia da raccontare per ultima. Ma ci arriviamo.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Per chi non lo conoscesse, Andrej Karpathy è uno dei nomi più strani della Silicon Valley degli ultimi dieci anni. Slovacco arrivato in America da ragazzo, è passato per Stanford, per OpenAI dei primi tempi, per Tesla dove guidava il team della guida autonoma, e poi da OpenAI di nuovo. A un certo punto ha smesso e si è messo a fare un lavoro che assomiglia più al divulgatore che al ricercatore: tutorial gratuiti su YouTube dove costruisce da zero un modello linguistico spiegando ogni riga di codice, repository minuscoli che chiunque può scaricare e capire, pensati per il singolo ricercatore curioso. Non l'azienda. La persona.</p>
+<p>Questa primavera ha fatto due cose. La prima, a marzo, è stato pubblicare AutoResearch — un agente di seicento righe di codice che fa una cosa semplice e folle insieme. Legge il proprio codice, propone una modifica, lancia un addestramento, valuta il risultato, e se va meglio tiene la modifica, se va peggio la cancella. Lo lascia girare. In due giorni ha fatto settecento esperimenti e ha ridotto del dieci per cento il tempo necessario ad addestrare un certo modello. Karpathy l'ha messo su GitHub e in poche settimane ha avuto sessantaseimila stelle, che è un numero enorme per quel tipo di progetto.</p>
+<p>La seconda cosa l'ha fatta il diciannove maggio, ed è il post di cui parlavamo prima. Ha annunciato che tornava a fare ricerca dentro Anthropic, nel team che si occupa dell'addestramento iniziale dei modelli. Il dettaglio che mi sembra più interessante è il loop che descrive: useranno Claude per generare ipotesi, per progettare esperimenti, per leggere la letteratura scientifica, per costruire i sistemi di valutazione. Cioè useranno l'AI di oggi per costruire l'AI di domani.</p>
+<p>Se uno si ferma a pensare a cosa sta succedendo, è una scena che pochi anni fa sembrava fantascienza scadente. Una persona che insegna a una macchina a migliorare se stessa, e poi va a lavorare per un'azienda dove quella macchina è già lo strumento principale di chi sta cercando di costruire la macchina successiva. Karpathy lo ha detto in modo asciutto — gli sembrava troppo eccitante per restare fuori — e non c'è motivo di dubitare che pensasse esattamente questo.</p>
+<p>Quello che il suo gesto racconta, dentro il filo di oggi, è la velocità con cui si sta passando dall'AI come oggetto di studio all'AI come collega di laboratorio. Non c'è una grande dichiarazione, non c'è un manifesto. C'è una persona molto brava che ha deciso che il punto interessante adesso sta lì, ed è andata lì. E quando le persone molto brave si spostano in massa nella stessa direzione, vale la pena guardare dove vanno.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Yann LeCun è il dissenso, in questa storia. Francese, settant'anni, uno dei tre nomi che hanno vinto il Turing Award nel duemila e diciotto per il lavoro che ha reso possibile tutta l'AI moderna. Per quasi quindici anni è stato il capo della ricerca AI di Meta. A novembre scorso ha annunciato di lasciare, e a marzo ha aperto a Parigi un laboratorio nuovo che si chiama AMI Labs. In poche settimane ha raccolto un miliardo di dollari da investitori che hanno deciso di scommettere su una tesi controcorrente.</p>
+<p>La tesi è semplice da raccontare e difficile da accettare per chi ha investito gli ultimi cinque anni a scommettere il contrario. I modelli linguistici di oggi — quelli che fanno funzionare ChatGPT e Claude e Gemini — secondo LeCun sono una strada senza uscita. Non perché non funzionino, ma perché funzionano sul tipo sbagliato di intelligenza. Sono fenomenali a manipolare il linguaggio, ma il linguaggio è la punta di un iceberg di intelligenza che riguarda muoversi, capire il mondo fisico, ricordare, pianificare. Tutte cose che questi modelli, dice LeCun, non sanno fare, anche quando sembrano farle.</p>
+<p>Ad aprile, durante una lezione a Brown University, l'ha detto con una frase che è circolata molto: l'AI di oggi fa schifo. Lo ha detto sorridendo, ma sul serio. La sua scommessa si chiama JEPA — un nome tecnico che vale la pena dimenticare subito — ed è un modo diverso di costruire macchine intelligenti: invece di farle imparare leggendo internet, farle imparare guardando il mondo, come fa un bambino piccolo. A maggio è uscito un paper che dimostra matematicamente in che condizioni questo approccio funziona davvero. È una scommessa di lungo periodo. Cinque, dieci anni almeno.</p>
+<p>Quello che mi sembra interessante è che LeCun non si limita più a criticare. Per molti anni è stato l'intellettuale scomodo dentro Meta, quello che andava sui podcast a dire che i suoi colleghi stavano sbagliando direzione. Adesso ha lasciato e ha messo in piedi un'altra cosa, con un miliardo di dollari di chi gli crede. È un gesto che cambia il peso della critica. Una cosa è dirlo da dentro l'azienda più grande, un'altra è uscire e costruire l'alternativa.</p>
+<p>E questo, dentro il filo di oggi, dice una cosa precisa. Mentre Karpathy e Collison e Friedman costruiscono il piano sopra — la struttura per gli agenti — LeCun sta scavando le fondamenta nuove, perché secondo lui quelle attuali non reggeranno il peso. Stanno costruendo case diverse sullo stesso terreno, e non si parlano molto.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Ricapitoliamo un attimo dove siamo. Da una parte chi tira i tubi degli agenti, in fretta — Stripe, Friedman, e adesso Karpathy che entra in Anthropic per chiudere l'anello. Dall'altra LeCun e una piccola pattuglia che dice: state costruendo sulla sabbia, l'architettura di fondo non è ancora quella giusta. E poi c'è una terza scena, quella che riguarda le persone. È qui che entra Jack Dorsey.</p>
+<p>Dorsey, per orientarsi, è quello che ha fondato Twitter, lo ha lasciato, ha fatto Square — adesso si chiama Block — e da qualche anno ha smesso di parlare di social media e si occupa quasi solo di pagamenti, bitcoin, e in generale di infrastrutture finanziarie alternative.</p>
+<p>A maggio e a giugno Block ha annunciato il licenziamento di circa quattromila persone, distribuito su un paio di mesi. Significa il quaranta per cento dell'azienda. Al loro posto Dorsey ha messo un agente AI interno che hanno chiamato Goose. Goose lavora sui pezzi di codice vecchi che nessuno vuole più toccare, fa supporto clienti, sviluppa nuove funzioni. Il titolo in borsa è salito dell'otto per cento. In un podcast con Sequoia, Dorsey ha detto una frase che vale la pena ricordare: ogni azienda può diventare una piccola intelligenza artificiale generale.</p>
+<p>In parallelo, ad aprile, aveva pubblicato con Roelof Botha — uno dei capi di Sequoia — un saggio per dire che il modello di azienda con cinque, sei, sette livelli di management è un'eredità di duemila anni di organizzazione gerarchica, ed è arrivato il momento di smontarla. L'obiettivo dichiarato: due livelli, massimo tre, e idealmente tutti riportano direttamente a lui.</p>
+<p>E mentre licenzia il quaranta per cento della sua azienda di pagamenti, finanzia il ritorno di Vine. Vine, per chi non se lo ricorda, era l'app di video brevi del duemila e tredici, prima di TikTok. Si chiamerà Divine. Il dettaglio è che Dorsey ha tenuto a precisare che Divine sarà costruita da persone, per persone. Niente AI generativa al centro, niente agenti, niente automazione. Solo creatori umani che fanno video.</p>
+<p>C'è un dualismo che mi sembra istruttivo. Da una parte l'infrastruttura — i tubi del denaro, i sistemi interni di Block — viene affidata sempre più alle macchine. Dall'altra il prodotto consumer, quello che le persone toccano direttamente, viene tenuto deliberatamente fuori dall'automazione. Ricorda i grandi proprietari delle ferrovie americane di fine Ottocento, che facevano costruire i binari da operai a basso costo ma tenevano la facciata delle stazioni curatissima per i passeggeri. Le cose che vanno sotto il pavimento sono lavoro da agenti. Le cose che la gente vede sono lavoro da persone.</p>
+<p>Nello stesso periodo Sam Altman si è messo a fare marcia indietro sulle previsioni catastrofiche sul lavoro che faceva fino a poco fa. A Sydney ha detto che è felice di essersi sbagliato. Per i lavori entry-level la situazione, dice, è meglio di quello che pensava. È successo nel giro di poche settimane, e proprio mentre OpenAI si prepara a quotarsi in borsa con una valutazione che gira intorno al trilione di dollari. Coincidenze.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Ilya Sutskever è la figura più strana di questa stagione, ed è giusto chiudere con lui. Israeliano-canadese, è stato per anni il direttore scientifico di OpenAI, uno dei tre o quattro nomi senza i quali probabilmente non esisterebbe l'AI moderna. Nel duemila e ventitré ha partecipato al breve tentativo di rimuovere Sam Altman dal vertice dell'azienda. Quel tentativo è fallito in cinque giorni, Sutskever ha fatto pubblica ammenda, e qualche mese dopo è uscito.</p>
+<p>A giugno del duemila e ventiquattro ha fondato Safe Superintelligence. Il nome è il programma: vogliono costruire una superintelligenza sicura, e fino a quando non sono sicuri di averla fatta sicura, non venderanno niente. Zero prodotti. Zero ricavi. Solo ricerca. È un'azienda che, se la giudichi con i parametri normali della Silicon Valley, è impossibile. Eppure ha raccolto tre miliardi di dollari da fondi come Andreessen Horowitz e Sequoia, ed è valutata trentadue miliardi senza vendere niente.</p>
+<p>A maggio è successa una cosa che ha aggiunto un capitolo a questa storia. Nel processo che Elon Musk ha intentato contro OpenAI, Sutskever è stato chiamato a testimoniare. Sotto giuramento ha descritto Sam Altman come una persona con un pattern consistente di disonestà, che mina la coesione dell'azienda e ostacola gli obiettivi di sicurezza. E nello stesso documento si è scoperto che la sua quota in OpenAI vale sette miliardi di dollari.</p>
+<p>C'è qualcosa di profondamente novecentesco in tutto questo. Ricorda i fisici che a un certo punto degli anni Quaranta hanno smesso di credere che la bomba atomica fosse un progetto come gli altri e hanno iniziato a fare quello che potevano per rallentare, contenere, separare. Sutskever è uscito dall'azienda che ha contribuito a costruire, ha messo in piedi un laboratorio dove non si vende niente, e ha testimoniato contro chi prima era il suo capo. Tutto questo mentre OpenAI prepara la quotazione in borsa più grande della storia recente.</p>
+<p>La cosa che mi sembra valga la pena tenere in mente è che Sutskever non è un esterno che critica. È uno degli architetti originali che ha visto il cantiere dall'interno e ha deciso che doveva fare un altro mestiere. Dichiara, fra le altre cose, che l'era dello scaling — cioè dell'idea per cui basta fare modelli sempre più grandi per arrivare a un'intelligenza vera — è finita. Adesso, dice, servono idee architetturali nuove. Quasi le stesse parole di LeCun, da due lati opposti del mondo.</p>
+<p>Tre persone — LeCun, Chollet, Sutskever, e si potrebbe aggiungere Carmack — che da posizioni diversissime arrivano alla stessa conclusione: il motore di tutto questo cantiere non è quello giusto. E intanto il cantiere continua.</p>
+<div class="chapter" data-mood="upbeat"><hr></div>
+<p>Cinque progetti che vale la pena tenere d'occhio in questa stagione.</p>
+<p>Il primo è AutoResearch, l'agente di Karpathy di cui parlavamo. Settecento righe di codice che cercano di migliorare se stesse, una piccola cosa che lascia intuire una grande direzione. Sessantaseimila persone lo hanno già stellato su GitHub.</p>
+<p>Il secondo è ARC-AGI tre, il test di François Chollet. Sembra un gioco — bisogna capire le regole di un piccolo mondo a turni guardando esempi, senza che nessuno te le dica — e per un essere umano è quasi sempre facile. Per i modelli AI di oggi, anche i migliori, è quasi impossibile. Mezzo punto percentuale, contro il cento degli umani. È il termometro che misura cosa ancora non sappiamo fare, e i numeri rendono onesta la conversazione.</p>
+<p>Il terzo si chiama llama dot cpp. Non è un nome attraente, ma il progetto sì: è il pezzo di software che permette di far girare un modello AI grosso sul proprio laptop, senza chiedere niente a nessuna azienda. Open source, gratis, gira anche su un computer di cinque anni fa. È il fondamento di tutto il movimento di AI sovrana, quella che non passa dal cloud.</p>
+<p>Il quarto è Omarchy, una piccola distribuzione di Linux curata da David Heinemeier Hansson, il fondatore di Basecamp e di Rails. È pensata per attirare chi viene da Mac o Windows e vuole un desktop che si può ancora smontare e rimontare. Un manifesto, più che un prodotto.</p>
+<p>E il quinto si chiama claude-context. Trasforma tutto un progetto di codice in qualcosa che gli agenti AI possono leggere e ricordare. È un buon esempio del passaggio di cui parlavamo: il valore non sta più tanto nel modello, sta in tutto quello che gli mettiamo intorno per fargli fare lavoro vero.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Mi resta in testa l'immagine di Karpathy che il diciannove maggio annuncia di andare in Anthropic per usare Claude e migliorare Claude. Un anello che si chiude su se stesso, mentre intorno le fabbriche di chip si moltiplicano e nessuno sa ancora di che forma sarà la fabbrica del futuro. Ci stiamo arrivando in tanti, da strade diverse, e in fretta. È stato Signal Brief. Alla prossima.</p></div></details></section>
+<nav class="epnav"><a href="/signal-brief/ai/2026-06-01/">← 2026-06-01</a><span style="flex:1"></span><a href="/signal-brief/ai/2026-06-03/">2026-06-03 →</a></nav>
+<dialog class="vplayer" id="vplayer"></dialog>
+<script>
+// player modale dei video: la miniatura apre il video al centro (disegno 2026-08-07)
+function apriVideo(src) {
+  var d = document.getElementById('vplayer');
+  d.innerHTML = '<video controls autoplay playsinline src="' + src + '"></video>';
+  d.showModal();
+  d.onclick = function (e) { if (e.target === d) d.close(); };
+  d.onclose = function () { var v = d.querySelector('video'); if (v) v.pause(); d.innerHTML = ''; };
+}
+// ascolto inline dalla lista: un episodio alla volta
+var epAudio = null, epBtn = null;
+function ascolta(btn, src) {
+  if (epBtn === btn && epAudio) {
+    if (epAudio.paused) { epAudio.play(); btn.classList.add('on'); }
+    else { epAudio.pause(); btn.classList.remove('on'); }
+    return;
+  }
+  if (epAudio) { epAudio.pause(); if (epBtn) epBtn.classList.remove('on'); }
+  epAudio = new Audio(src); epBtn = btn;
+  epAudio.play(); btn.classList.add('on');
+  epAudio.onended = function () { btn.classList.remove('on'); };
+}
+function copiaTrascrizione(btn) {
+  var t = btn.parentElement.querySelector('.transcript-body');
+  navigator.clipboard.writeText(t ? t.innerText : '').then(function () {
+    btn.textContent = 'copiata ✓';
+    setTimeout(function () { btn.textContent = 'copia il testo'; }, 1800);
+  });
+}
+</script>
+<footer class="creator-footer">
+  <img src="/signal-brief/mike-avatar.png" alt="Michele Mondora">
+  <div class="creator-meta">
+    <span class="creator-name">it-mikesoft</span>
+    <span class="creator-tagline">working with systems, living with questions</span>
+    <span class="creator-email"><a href="mailto:michele@mondora.com">michele@mondora.com</a></span>
+  </div>
+</footer>
+<section class="tutele"><h3>Trasparenza e tutele</h3>
+<p><strong>Come nasce questo contenuto.</strong> Ricerca, sintesi editoriale, voce narrante, immagini e musica sono prodotte con sistemi di intelligenza artificiale. Non c'è una redazione umana che verifica ogni affermazione prima della pubblicazione: un controllo automatico scarta le schede giudicate inaffidabili, ma non elimina la possibilità di errori.</p>
+<p><strong>Affermazioni su persone e aziende.</strong> Quanto riportato è una sintesi di fonti pubbliche, non una dichiarazione diretta delle persone citate: le frasi non vanno intese come virgolettati né come posizioni ufficiali. Le fonti sono indicate in ogni pagina episodio — verificale prima di considerare un'informazione accertata. Se trovi un'affermazione inesatta che ti riguarda, scrivi a <a href="mailto:michele@mondora.com">michele@mondora.com</a>: viene corretta o rimossa.</p>
+<p><strong>Immagini e volti.</strong> Le immagini di scena sono generate con AI e non raffigurano fatti realmente avvenuti. Le fotografie di persone reali usate nei video provengono da Wikimedia Commons con le rispettive licenze, e sono accostate al racconto a scopo identificativo: la loro presenza non implica partecipazione, dichiarazione o approvazione da parte della persona ritratta. Su richiesta dell'interessato vengono rimosse.</p>
+<p><strong>Fonti e diritti altrui.</strong> I contenuti sono rielaborazioni originali, non riproduzioni di articoli di terzi; le testate e gli autori all'origine di una notizia sono citati e collegati. Marchi e nomi commerciali appartengono ai rispettivi titolari e sono usati a scopo descrittivo.</p>
+</section>
+</body></html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="it"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La macchina che allena se stessa · Signal.AI</title>
+<meta property="og:title" content="La macchina che allena se stessa · Signal.AI"><meta property="og:type" content="article"><meta property="og:description" content="La frontiera non è più scalare i modelli, ma delegare la ricerca alle macchine. E mentre l'AGI diventa quasi gratis, resta una sola cosa da trattenere: il giudizio."><meta property="og:url" content="https://it-mikesoft.github.io/signal-brief/ai/2026-06-17/"><meta property="og:audio" content="https://media.casamon.dev/ai/podcast/episodes/2026-06-17.mp3"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "PodcastEpisode", "name": "La macchina che allena se stessa", "datePublished": "2026-06-17", "url": "https://it-mikesoft.github.io/signal-brief/ai/2026-06-17/", "description": "La frontiera non è più scalare i modelli, ma delegare la ricerca alle macchine. E mentre l'AGI diventa quasi gratis, resta una sola cosa da trattenere: il giudizio.", "inLanguage": "it", "associatedMedia": {"@type": "MediaObject", "contentUrl": "https://media.casamon.dev/ai/podcast/episodes/2026-06-17.mp3"}, "partOfSeries": {"@type": "PodcastSeries", "name": "Signal.AI", "url": "https://it-mikesoft.github.io/signal-brief/ai/"}}</script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:#faf8f4; color:#1a1a1a; padding:2rem 1.5rem; max-width:680px; margin:0 auto; line-height:1.6; }
+  a { color:#2563eb; }
+  .back { display:inline-block; margin-bottom:1.5rem; font-size:.8rem; font-family:monospace; text-decoration:none; }
+  .videos { display:flex; gap:1rem; flex-wrap:wrap; margin:1.2rem 0; }
+  .videos figure { margin:0; flex:1; min-width:260px; }
+  .videos .v2 { flex:0 1 240px; }
+  .videos video { width:100%; border-radius:12px; background:#000; }
+  .videos .v2 video { aspect-ratio:9/16; max-height:420px; }
+  .videos figcaption { font-size:.75rem; color:#888; text-align:center; margin-top:.3rem; }
+  .vlink { display:flex; gap:.3rem; margin-top:.35rem; }
+  .vlink input { flex:1; min-width:0; font-size:.68rem; font-family:monospace; padding:.3rem .4rem;
+    border:1px solid #e2ddd6; border-radius:6px; background:#fff; color:#6b7280; }
+  .vlink button { font-size:.68rem; padding:.3rem .6rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; }
+  .wk { font-size:1rem; margin:1.4rem 0 .4rem; }
+  details.wkacc { border:1px solid #e5e7eb33; border-radius:10px; margin:.6rem 0; padding:.1rem .8rem .4rem; }
+  details.wkacc summary { cursor:pointer; font-weight:600; padding:.5rem 0; font-size:.9rem; }
+  .back:hover { text-decoration:underline; }
+  header h1 { font-family:Georgia,serif; font-size:1.7rem; font-weight:600; }
+  header h1 span { color:#2563eb; }
+  .tagline { color:#6b7280; font-size:.85rem; margin-top:.3rem; margin-bottom:1.5rem; }
+  ul.eps { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
+  .subscribe { display:inline-flex; align-items:center; gap:.5rem; margin-bottom:1.2rem;
+    padding:.45rem .9rem; background:#2563eb; color:#fff; border-radius:20px;
+    text-decoration:none; font-size:.8rem; font-weight:600; }
+  .subscribe:hover { opacity:.85; color:#fff; }
+  .ep { display:flex; align-items:center; gap:.8rem; padding:.8rem 1rem; background:#fff;
+    border:1px solid #e2ddd6; border-radius:8px; text-decoration:none; color:inherit; transition:box-shadow .12s; }
+  .ep:hover { box-shadow:0 2px 8px rgba(0,0,0,.07); }
+  .ep-play { width:32px; height:32px; border-radius:50%; background:#f3f4f6; display:flex;
+    align-items:center; justify-content:center; font-size:12px; flex-shrink:0; }
+  .ep-title { font-size:.9rem; font-weight:500; }
+  .ep-meta { font-size:.72rem; color:#9ca3af; font-family:monospace; margin-top:.15rem; }
+  audio { width:100%; margin:1rem 0 1.5rem; }
+  .rawmd { margin:-.5rem 0 1.5rem; }
+  .rawmd a { font-size:.8rem; font-family:monospace; color:inherit; opacity:.65; }
+  .desc { color:#374151; font-size:.95rem; margin-bottom:1.5rem; }
+  section { margin:2rem 0; }
+  section h2 { font-family:Georgia,serif; font-size:1.1rem; border-bottom:1px solid #e2ddd6;
+    padding-bottom:.3rem; margin-bottom:.8rem; }
+  .synthesis p { margin:.7rem 0; }
+  .tension { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; font-size:.9rem; }
+  .tension .axis { font-weight:600; margin-bottom:.3rem; }
+  .tension .side { color:#6b7280; font-size:.85rem; }
+  .proj { font-size:.9rem; margin:.4rem 0; }
+  .proj .pname { font-weight:600; }
+  .proj .pnew { background:#16a34a; color:#fff; font-size:.65rem; font-weight:700;
+    padding:.1rem .35rem; border-radius:4px; text-transform:uppercase; vertical-align:middle; }
+  .fonte { font-size:.85rem; margin:.5rem 0; }
+  .fonte .who { font-weight:600; }
+  .fonte a { display:block; margin-left:.5rem; color:#6b7280; }
+  .transcript-body p { margin:.7rem 0; line-height:1.7; }
+  .transcript-body .chapter hr { border:none; border-top:1px solid #e2ddd6; margin:1.5rem 0; }
+  .transcript-body .podcast-episode-desc { color:#6b7280; font-style:italic; }
+  .signal-card { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; }
+  .signal-theme { font-size:.75rem; font-weight:700; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.3rem; }
+  .signal-text { font-size:.85rem; color:#374151; line-height:1.5; }
+  .creator-footer { margin-top:3rem; padding-top:1.5rem; border-top:1px solid #e2ddd6;
+    display:flex; align-items:center; gap:.9rem; }
+  .creator-footer img { width:40px; height:40px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+  .creator-meta { display:flex; flex-direction:column; gap:.15rem; }
+  .creator-name { font-size:.85rem; font-weight:600; color:#1a1a1a; }
+  .creator-tagline { font-size:.75rem; color:#6b7280; }
+  .creator-email { font-size:.75rem; }
+  .creator-ai { font-size:.72rem; color:#8a7f6d; max-width:46ch; line-height:1.45; }
+  .tutele { margin-top:2rem; padding-top:1.2rem; border-top:1px solid #e2ddd6;
+    font-size:.72rem; color:#8a7f6d; line-height:1.5; }
+  .tutele h3 { font-size:.75rem; color:#6b7280; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.5rem; font-weight:600; }
+  .tutele p { margin:.45rem 0; }
+  .tutele strong { color:#5a5348; font-weight:600; }
+  .tutele a { color:inherit; text-decoration:underline; }
+  .creator-email a { color:#9ca3af; text-decoration:none; }
+  .creator-email a:hover { color:#1a1a1a; }
+  /* disegno 2026-08-07: mesi a pagine, facce, player modale, trascrizione
+     richiudibile — la pagina episodio è un prodotto, non un sottoprodotto */
+  .hrow { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+  .hrow .subscribe { margin-bottom:0; flex-shrink:0; }
+  .months { font-size:.78rem; font-family:monospace; margin:.4rem 0 1rem; color:#9ca3af; }
+  .months a { text-decoration:none; } .months b { color:inherit; }
+  .ep-faces { display:flex; margin-left:auto; flex-shrink:0; }
+  .ep-faces img { width:26px; height:26px; border-radius:50%; object-fit:cover;
+    border:2px solid #fff; margin-left:-8px; background:#eee; }
+  /* tutti i citati sul desktop; su mobile la leggibilità vince: max 3 */
+  @media (max-width:600px) { .ep-faces img:nth-child(n+4) { display:none; } }
+  .ep-listen { width:32px; height:32px; border-radius:50%; background:#f3f4f6; border:0;
+    display:flex; align-items:center; justify-content:center; font-size:12px;
+    flex-shrink:0; cursor:pointer; color:inherit; }
+  .ep-listen.on { background:#2563eb; color:#fff; }
+  .face-inline { width:1.15em; height:1.15em; border-radius:50%; object-fit:cover;
+    vertical-align:-.18em; margin-right:.25em; }
+  /* SEMPRE sulla stessa riga (2026-08-09): su schermi stretti le miniature
+     si riducono, e se non basta il reel sparisce — mai l'andata a capo */
+  .vthumbs { display:flex; gap:.8rem; flex-wrap:nowrap; margin:1.2rem 0; align-items:flex-start; }
+  .vthumb { position:relative; cursor:pointer; border:0; padding:0; background:none;
+    border-radius:12px; overflow:hidden; }
+  /* stessa ALTEZZA per video e reel: il 9:16 si stringe, non svetta */
+  .vthumb video { height:150px; width:auto; display:block; border-radius:12px; background:#000; }
+  @media (max-width:520px) { .vthumb video { height:118px; } }
+  /* quando nemmeno ridotte ci stanno: via le miniature, due BOTTONI in
+     riga che aprono il player (2026-08-09) */
+  .vbtns { display:none; gap:.6rem; margin:1.2rem 0; }
+  .vbtns button { flex:1; padding:.6rem .4rem; border:0; border-radius:10px;
+    background:#2563eb; color:#fff; font-weight:700; font-size:.85rem;
+    cursor:pointer; font-family:inherit; }
+  @media (max-width:420px) { .vthumbs { display:none; } .vbtns { display:flex; } }
+  .vthumb .vlabel { position:absolute; left:0; right:0; bottom:0; padding:.9rem .5rem .35rem;
+    background:linear-gradient(transparent, rgba(0,0,0,.75)); color:#fff; font-size:.7rem; }
+  .vthumb::after { content:"▶"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    color:#fff; font-size:1.6rem; text-shadow:0 1px 6px rgba(0,0,0,.8); }
+  /* margin:auto ESPLICITO: il reset globale * {margin:0} annullava la
+     centratura nativa del dialog e il player si apriva in alto a sinistra */
+  dialog.vplayer { border:0; padding:0; background:transparent; max-width:92vw;
+    margin:auto; position:fixed; inset:0; }
+  dialog.vplayer::backdrop { background:rgba(0,0,0,.85); }
+  dialog.vplayer video { max-width:92vw; max-height:86vh; border-radius:14px; background:#000; }
+  details.tr { border:1px solid #e2ddd6; border-radius:10px; padding:.2rem .9rem .6rem; }
+  details.tr summary { cursor:pointer; font-weight:600; padding:.55rem 0; }
+  .tr-copy { font-size:.72rem; padding:.3rem .7rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; margin:.3rem 0 .5rem; }
+  .epnav { display:flex; justify-content:space-between; gap:1rem; margin:2rem 0 0;
+    font-size:.82rem; font-family:monospace; }
+  .epnav a { text-decoration:none; }
+  @media (prefers-color-scheme:dark) {
+    body { background:#1f1d18; color:#e5e5e5; }
+    .ep, .tension, .signal-card { background:#2a2823; border-color:#3a352d; }
+    .ep-play { background:#3a352d; } .desc { color:#d4d4d4; }
+    .signal-text { color:#d4d4d4; }
+    .creator-footer { border-color:#3a352d; }
+    .creator-name { color:#f5f5f5; }
+    .creator-tagline, .creator-email a { color:#9ca3af; }
+    .creator-ai { color:#9a8f7d; }
+    .vlink input { background:#1c1a17; border-color:#3a352d; color:#9ca3af; }
+    .tutele { border-color:#3a352d; color:#9a8f7d; }
+    .tutele h3 { color:#a9a9a9; } .tutele strong { color:#d4d4d4; }
+    .ep-listen { background:#3a352d; }
+    .ep-faces img { border-color:#2a2823; background:#3a352d; }
+    details.tr { border-color:#3a352d; }
+  }
+</style></head><body>
+<a class="back" href="/signal-brief/ai/">← Signal.AI</a>
+<header><h1>La macchina che allena se stessa</h1></header>
+<div class="tagline">2026-06-17 · Digital Intelligence Podcast</div>
+<div class="desc">La frontiera non è più scalare i modelli, ma delegare la ricerca alle macchine. E mentre l'AGI diventa quasi gratis, resta una sola cosa da trattenere: il giudizio.</div>
+<div class="rawmd"><a href="raw.md">Testo (markdown)</a></div>
+<section><h2>Sintesi</h2><div class="synthesis"><p>Convergono su un punto che pochi avrebbero scritto un anno fa: la frontiera non è più <em>scalare</em>, è <em>delegare la ricerca alle macchine</em>. L'<a href="https://github.com/karpathy/autoresearch" target="_blank" rel="noopener">autoresearch di Andrej Karpathy</a> — agenti che modificano codice e validano empiricamente senza supervisione — è la stessa idea che <a href="https://letsdatascience.com/blog/anthropic-jack-clark-60-percent-ai-builds-successor-2028" target="_blank" rel="noopener">Jack Clark data al 60% entro il 2028</a> (un'<img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="">AI che allena il proprio successore) e che <a href="https://eu.36kr.com/en/p/3598888503902981" target="_blank" rel="noopener">Demis Hassabis</a> pone come condizione dell'AGI insieme ai world model. Ricorsione come metodo, non più solo come spavento.</p>
+<p>Qui si apre lo scisma più netto. Per <a href="https://www.techradar.com/pro/we-crossed-that-about-3-months-ago-a16zs-marc-andreessen-drops-huge-bombshell-about-agi-on-joe-rogans-podcast" target="_blank" rel="noopener">Marc Andreessen l'AGI è già arrivata</a>; per <a href="https://brief.bismarckanalysis.com/p/ai-2026-ilya-sutskever-and-the-end" target="_blank" rel="noopener">Ilya Sutskever lo scaling è esaurito</a> — "one internet" — e si entra in una terza era algoritmica. <a href="https://www.newsweek.com/nw-ai/ai-impact-interview-yann-lecun-llm-limitations-analysis-2054255" target="_blank" rel="noopener">Yann LeCun</a>, <a href="https://arcprize.org/blog/arc-agi-3-launch" target="_blank" rel="noopener">François Chollet</a> e <a href="https://www.webpronews.com/john-carmacks-blunt-verdict-on-ai-progress-we-are-not-on-the-brink-of-agi/" target="_blank" rel="noopener">John Carmack</a> rincarano: i LLM memorizzano, non ragionano; la via è world model, program synthesis, RL fisico. La parola "AGI" stessa si sgretola come categoria di marketing.</p>
+<p>Sotto, una corrente economica fredda: i modelli si commoditizzano. <a href="https://www.ben-evans.com/benedictevans/2026/5/24/ai-job-exposure" target="_blank" rel="noopener">Benedict Evans</a> nega il moat — convergenza a 10-15 punti, valore nella distribuzione; <a href="https://aimagazine.com/news/perplexity-ceo-value-per-watt-will-define-ai-winners" target="_blank" rel="noopener">Aravind Srinivas</a> lo riformula come "value per watt"; <a href="https://www.bloomberg.com/news/articles/2026-05-22/deepseek-founder-declares-agi-goal-as-10-billion-round-advances" target="_blank" rel="noopener">Liang Wenfeng</a> lo radicalizza — "AGI sarà open source e quasi gratis". L'infrastruttura non difende.</p>
+<p>La tensione di fondo, però, è morale e di tempistica. Mentre <a href="https://fortune.com/2026/06/01/godfather-of-ai-geoffrey-hinton-beings-smarter-than-us/" target="_blank" rel="noopener">Geoffrey Hinton</a> parla di "esseri alieni" e <a href="https://darioamodei.com/post/policy-on-the-ai-exponential" target="_blank" rel="noopener">Dario Amodei chiede regolazione vincolante subito</a>, lo stesso Amodei <a href="https://fortune.com/2026/05/26/sam-altman-dario-amodei-walking-back-ai-jobs-apocalypse-prophecies-ipo/" target="_blank" rel="noopener">ritratta l'apocalisse occupazionale</a> — come <a href="https://www.startuphub.ai/ai-news/ai-figures/2026/figure-sam-altman-public-position-evolution-2026-06-13" target="_blank" rel="noopener">Sam Altman e la sua "gentle singularity"</a> — proprio mentre si avvicinano alle IPO. Il rischio viene normalizzato quando diventa scomodo per la valutazione.</p>
+<p>Resta un residuo umanista condiviso da voci opposte: "<a href="https://karpathy.bearblog.dev/sequoia-ascent-2026/" target="_blank" rel="noopener">puoi esternalizzare il pensiero, non la comprensione</a>" (Karpathy), il gusto come ultimo vantaggio (<a href="https://nav.al/" target="_blank" rel="noopener">Naval Ravikant</a>), l'agency che si polarizza (<a href="https://x.com/fchollet/status/2053169711341551936" target="_blank" rel="noopener">Chollet</a>). Mentre <a href="https://www.coindesk.com/tech/2026/04/01/jack-dorsey-says-ai-should-replace-corporate-hierarchy-after-block-cuts-4-000-jobs" target="_blank" rel="noopener">Jack Dorsey dissolve i manager</a> e <a href="https://www.commondreams.org/news/andreessen-ai-vs-humans" target="_blank" rel="noopener">Andreessen immagina org-chart di bot</a>, tutti tengono per sé la stessa cosa: il giudizio.</p></div></section>
+<section><h2>Temi del giorno</h2><div class="tension"><div class="axis">↗ Ricorsione come metodo</div><div class="side">La frontiera si sposta dallo scalare al delegare la ricerca alle macchine: agenti che modificano codice, AI che allena il proprio successore.</div></div><div class="tension"><div class="axis">↗ AGI open source e quasi gratis</div><div class="side">La commoditizzazione spinta all'estremo: l'AGI come bene pubblico a costo marginale nullo, non asset proprietario.</div></div><div class="tension"><div class="axis">↗ Rischio normalizzato per la valutazione</div><div class="side">L'apocalisse occupazionale viene ritrattata proprio mentre i protagonisti si avvicinano alle IPO.</div></div><div class="tension"><div class="axis">↗ Gusto come ultimo vantaggio</div><div class="side">Quando tutto si automatizza, resta il gusto/giudizio estetico come differenziale non replicabile.</div></div><div class="tension"><div class="axis">↗ Paradigma alternativo concreto</div><div class="side">I dissidenti non negano soltanto: indicano world model, program synthesis e RL fisico come la via vera.</div></div><div class="tension"><div class="axis">↗ AGI come categoria di marketing che si sgretola</div><div class="side">La parola stessa perde valore descrittivo e diventa etichetta promozionale.</div></div><div class="tension"><div class="axis">⚖ L'AGI è qui oppure lo scaling è morto</div><div class="side">Marc Andreessen: AGI superata tre mesi fa · Ilya Sutskever: scaling esaurito, 'one internet', nuova era algoritmica</div></div><div class="tension"><div class="axis">⚖ I LLM ragionano o memorizzano soltanto</div><div class="side">Demis Hassabis: ricorsione e world model verso l'AGI · Yann LeCun: i LLM memorizzano, servono world model e program synthesis</div></div><div class="tension"><div class="axis">⚖ Il rischio è urgente o si normalizza quando scomodo</div><div class="side">Geoffrey Hinton: esseri alieni più intelligenti di noi · Dario Amodei: ritratta l'apocalisse occupazionale verso l'IPO</div></div><div class="tension"><div class="axis">⚖ Delegare alle macchine vs trattenere il giudizio</div><div class="side">Andrej Karpathy: puoi esternalizzare il pensiero, non la comprensione · Jack Dorsey: dissolvere i manager e affidare la struttura all'AI</div></div></section>
+<section><h2>Progetti da osservare</h2><div class="tension"><div class="axis">karpathy/nanochat</div><div class=side>Pipeline minimale per addestrare un modello GPT-2 in ~2 ore su 8×H100 con FP8 e ClimbMix, parte della linea di lavoro di Karpathy su pipeline ridotte per singolo ricercatore. Repo di riferimento per l'era 'meno codice, più amplificazione'.</div></div><div class="tension"><div class="axis">karpathy/llm-wiki (gist)</div><div class=side>Prompt-pattern da copiare in Claude Code/Codex che istanzia il sistema 'LLM Wiki' su Obsidian: articoli enciclopedici interlinkati, backlink, health check. Diventato viral come anti-RAG personale.</div></div><div class="tension"><div class="axis">karpathy/autoresearch</div><div class=side>Repo di ~630 righe (7 marzo 2026) che materializza un agente di ricerca minimale, parte della tesi 'idea file = distribuzione' di Karpathy. Esempio concreto di agente che amplifica il ricercatore individuale.</div></div><div class="tension"><div class="axis">Obsidian</div><div class=side>Editor di note markdown con backlink e grafi che Karpathy elegge come 'IDE della conoscenza' nel suo pattern LLM-Wiki. Diventa il frontend consigliato per memoria esplicita e ispezionabile contro la memoria opaca degli assistant commerciali.</div></div><div class="tension"><div class="axis">ggerganov/llama.cpp</div><div class=side>Motore di inferenza C/C++ per LLM locali; il suo llama-server è il cuore dello stack self-sovereign proposto da Buterin (NixOS + llama-server + bubblewrap). Standard de facto per AI locale sovrana.</div></div><div class="tension"><div class="axis">basecamp/omarchy</div><div class=side>Distro Arch Linux curata da DHH con Hyprland, pensata per attrarre utenti macOS/Windows verso un desktop 'malleabile'. Progetto-manifesto del filone 'open source AI-ready' di DHH (Omacon NY, 130 persone).</div></div><div class="tension"><div class="axis">hyprwm/Hyprland</div><div class=side>Compositor Wayland dinamico, cuore visivo di Omarchy e simbolo del rinnovato interesse consumer per Linux (Panther Lake / XPS 14). DHH lo cita come esempio di software su cui finalmente 'hardware e aziende tornano a scommettere'.</div></div><div class="tension"><div class="axis">simonw/llm</div><div class=side>CLI e libreria Python di Simon Willison per interagire con LLM locali e cloud, base dei suoi tool README-driven (scan-for-secrets, datasette-ports, research-llm-apis). Strumento pivot del suo workflow 'agentic engineering'.</div></div><div class="tension"><div class="axis">fchollet/ARC-AGI</div><div class=side>Repo ufficiale dei benchmark ARC-AGI di Chollet, ora affiancato da ARC-AGI-3 (ambienti interattivi turn-based per misurare agency). ARC Prize 2026 ha $2M di montepremi; umani 100%, best frontier model 0,37%.</div></div><div class="tension"><div class="axis">zilliztech/claude-context</div><div class=side>Server MCP di code search che trasforma l'intera codebase in contesto indicizzato per Claude Code, Cursor e altri agenti. Esempio netto del 'moat shift' dal modello all'uso indicato da Evans e Andreessen.</div></div></section>
+<section><h2>Fonti</h2><div class="fonte"><span class="who">Liang Wenfeng</span><a href="https://www.bloomberg.com/news/articles/2026-05-22/deepseek-founder-declares-agi-goal-as-10-billion-round-advances" target="_blank" rel="noopener">Bloomberg, 22 mag 2026</a><a href="https://www.investing.com/news/stock-market-news/deepseek-prioritizes-agi-over-commercialization-in-funding-talks--bloomberg-4705755" target="_blank" rel="noopener">DeepSeek prioritizes AGI over commercialization — Bloomberg/Investing.com</a><a href="https://www.scmp.com/tech/big-tech/article/3338427/deepseek-kicks-2026-paper-signalling-push-train-bigger-models-less" target="_blank" rel="noopener">DeepSeek kicks off 2026 with paper on training bigger models for less — SCMP</a></div><div class="fonte"><span class="who">Dario Amodei</span><a href="https://darioamodei.com/post/policy-on-the-ai-exponential" target="_blank" rel="noopener">Dario Amodei — Policy on the AI Exponential</a><a href="https://medium.com/@marc.bara.iniesta/what-dario-amodei-just-proposed-in-policy-on-the-ai-exponential-13f28e35c159" target="_blank" rel="noopener">What Dario Amodei Just Proposed (Medium)</a><a href="https://www.techtimes.com/articles/318217/20260611/ai-regulation-push-amodei-demands-power-blocking-unsafe-models-anthropic-pledges-350-million.htm" target="_blank" rel="noopener">AI Regulation Push — Anthropic pledges $350M (TechTimes)</a></div><div class="fonte"><span class="who">Naval Ravikant</span><a href="https://nav.al/" target="_blank" rel="noopener">nav.al — episodi maggio–giugno 2026</a><a href="https://nav.al/hardware" target="_blank" rel="noopener">Vibe Coding Hardware — Naval</a><a href="https://www.businesstoday.in/technology/story/pure-software-is-rapidly-becoming-uninvestable-naval-ravikant-on-why-vibe-coding-changes-everything-528256-2026-04-30" target="_blank" rel="noopener">Pure software is rapidly becoming uninvestable — BusinessToday</a></div></section>
+<section class="transcript-section"><h2>Trascrizione</h2><details class="tr"><summary>Leggi la trascrizione</summary><button class="tr-copy" type="button" onclick="copiaTrascrizione(this)">copia il testo</button><div class="transcript-body"><h2>La macchina che allena se stessa</h2>
+<p class="podcast-episode-desc">La frontiera non è più scalare i modelli, ma delegare la ricerca alle macchine. E mentre l'AGI diventa quasi gratis, resta una sola cosa da trattenere: il giudizio.</p>
+<div class="chapter" data-mood="geo"><hr></div>
+<p>Una notte di marzo, su un computer, un programma piccolissimo ha cominciato a riscrivere il proprio codice. Lo lanciava Andrej Karpathy. Seicentotrenta righe, nessun umano a guardare: modifica, prova, misura, tiene o scarta, ricomincia. In due giorni, settecento modifiche da solo. È una scena minuscola, quasi domestica, eppure dice dove sta scivolando tutta la storia. Da qui parte la puntata di Signal Brief di oggi, diciassette giugno. Perché quella macchina che si allena da sola è la stessa idea che, in queste settimane, è diventata la nuova ossessione di chi costruisce l'intelligenza artificiale.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Torniamo a quella notte. Il progetto si chiama autoresearch, e Karpathy lo ha messo in pubblico quasi come uno scherzo: un agente riceve un modello linguistico minimo, gli dà il permesso di cambiare il proprio codice di addestramento, e lo lascia correre. Lui non decide quale esperimento fare. Decide solo le regole del gioco, poi guarda. Risultato: il sistema ha trovato da sé un modo per allenarsi più in fretta, e su GitHub ventunmila persone hanno messo una stella in pochi giorni. Pochi mesi prima, Karpathy aveva chiuso la sua scuola di intelligenza artificiale ed era entrato in Anthropic, nel cuore della ricerca. Il segnale è chiaro: non gli interessa più spiegare come funzionano i modelli. Gli interessa costruire macchine che facciano ricerca al posto nostro.</p>
+<p>E qui sta lo spostamento di fondo. Per anni la corsa è stata una sola parola: scalare. Più dati, più calcolo, modelli più grandi. Adesso la frontiera si è spostata di un passo, e il passo è enorme. Non si tratta più di rendere la macchina più grande, ma di delegarle la ricerca stessa. Jack Clark, che ha co-fondato Anthropic, ha messo persino una probabilità su questa idea: sessanta per cento che entro la fine del 2028 un sistema di intelligenza artificiale alleni da solo il proprio successore. Non un modello che fa un compito. Un modello che costruisce il modello dopo di lui. E Demis Hassabis, che guida la ricerca di Google su questo fronte, dice che senza questa capacità di fare esperimenti in autonomia l'intelligenza vera non arriverà proprio.</p>
+<p>Vale la pena fermarsi su quanto è strano tutto questo. Per gran parte degli ultimi anni l'idea di una macchina che si migliora da sola era soltanto uno spavento, la trama di un film. Adesso è diventata un metodo di lavoro, una riga in un piano di ricerca. È un po' come quando, nelle fabbriche, le macchine smisero di essere semplici utensili mossi a mano e cominciarono a regolarsi da sole: cambiò il mestiere di chi ci stava dentro. L'operaio non spingeva più la leva, sorvegliava un processo. Qui sta succedendo la stessa cosa, ma con la ricerca scientifica.</p>
+<p>Solo che, proprio mentre questa idea si afferma, sotto di essa si è aperta una crepa profonda. Da una parte Marc Andreessen, sul podcast di Joe Rogan, ha detto che l'intelligenza artificiale generale è già arrivata, "circa tre mesi fa", e che i modelli di oggi battono il novantanove per cento degli esperti. Dall'altra Ilya Sutskever, una delle menti che quella corsa l'ha disegnata, dice l'opposto: lo scaling è finito, "c'è una sola internet" e l'abbiamo già consumata tutta, ora servono idee nuove, non più macchine più grandi. Stessa montagna di soldi spesi, due letture rovesciate. Uno vede un traguardo tagliato, l'altro un muro.</p>
+<p>Teniamo questi due fili in mano: la macchina che impara a fare ricerca da sola, e il litigio su dove siamo davvero arrivati. Perché tutto il resto della giornata gira attorno a loro.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Spostiamoci dall'altra parte del mondo, in Cina, dove un uomo che parla pochissimo ha detto in pubblico una frase che vale la pena ripetere lentamente. Liang Wenfeng guida DeepSeek, il laboratorio che da un paio d'anni fa tremare i polsi alle grandi aziende americane perché costruisce modelli quasi altrettanto bravi a una frazione del costo. In maggio, in una riunione con investitori per raccogliere il primo capitale esterno della sua storia, ha messo le carte in tavola: l'obiettivo non sono i soldi, è l'intelligenza artificiale generale. E ha aggiunto: "tutto il mondo dovrebbe poter usare gratis un modello enorme. L'AGI sarà open source e quasi gratis."</p>
+<p>Fermiamoci su quel "quasi gratis". È la fine di un'idea che fino a ieri sembrava ovvia: che il modello fosse il tesoro, la cosa da chiudere a chiave e far pagare. Liang lo capovolge. Ha rilasciato il suo modello più grande in aperto, a disposizione di chiunque, a un prezzo tredici volte più basso dei concorrenti americani. E non come mossa commerciale, come scelta di principio: l'apertura viene prima, e vincola tutto il resto. Ha persino messo un paletto a chi gli porta i soldi: nessun investitore può cambiare quella missione o forzarlo a vendere in fretta.</p>
+<p>Questo si lega al filo che attraversava già la puntata di ieri, e che oggi diventa più ruvido: il modello si sta trasformando in una merce comune. Quando una cosa costosissima diventa quasi gratis, il valore scappa altrove. È successo con l'elettricità: all'inizio chi aveva la dinamo aveva il potere, poi la corrente è diventata una presa nel muro che hanno tutti, e il valore si è spostato su ciò che con quella corrente potevi fare. Liang sta scommettendo che con l'intelligenza artificiale andrà uguale. Se ha ragione, le fortune costruite sull'idea che il modello fosse un fortino difendibile sono fortune con le fondamenta di sabbia. E la cosa più interessante, per me, è che a dirlo non è un critico da fuori, ma uno che quei modelli li costruisce tra i migliori al mondo, e ha deciso di regalarli.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Restiamo sul tema dei soldi, ma cambiamo continente e cambiamo registro morale. Il dieci giugno, sul suo sito personale, Dario Amodei, che guida Anthropic, ha pubblicato il testo più pesante delle ultime settimane: "Politica sull'esponenziale dell'intelligenza artificiale". La diagnosi è semplice e dura. La tecnologia corre su una curva che raddoppia, le istituzioni democratiche camminano su una linea retta. Questo scarto, dice, è il vero problema politico del decennio. E propone cose concrete: test obbligatori fatti da terzi prima di rilasciare un modello, col governo che ha il potere di bloccarlo, esattamente come l'ente che certifica gli aerei prima che possano volare. Più una tassa sulle aziende di intelligenza artificiale per finanziare chi perde il lavoro. È un cambio netto: Anthropic passa dal "fidatevi, ci regoliamo da soli" al "serve una legge vincolante, e subito".</p>
+<p>Fin qui la parte coraggiosa. Ma nello stesso periodo è successa anche un'altra cosa, ed è quella che mi colpisce di più. Lo stesso Amodei, che un anno fa agitava lo spettro di un'apocalisse del lavoro, mezza forza lavoro spazzata via, ha cominciato a fare marcia indietro su quella profezia. E non è solo: anche Sam Altman ha ammorbidito tutto in quella che chiama "singolarità gentile", una transizione dolce e gestibile. Il dettaglio che fa quadrare il cerchio: entrambe le aziende si stanno avvicinando alla quotazione in borsa. OpenAI a una valutazione di ottocentocinquanta miliardi.</p>
+<p>Qui c'è la tensione vera della giornata, e non è tecnica, è di carattere. Da una parte Geoffrey Hinton, il padrino di tutto questo, che gira il mondo dicendo che stiamo costruendo "esseri alieni" più intelligenti di noi e che dovremmo avere paura. Dall'altra chi quegli stessi allarmi li aveva lanciati, e ora che si avvicina la cassa li sta abbassando di tono. Non sto dicendo che mentano. Dico che il rischio, guarda caso, diventa meno urgente proprio quando comincia a essere scomodo per il prezzo delle azioni. È un copione vecchio come l'industria: l'allarme è sincero finché non costa, e si stempera quando arriva il momento di vendere.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Ricapitoliamo un attimo dove siamo, perché i fili cominciano a essere parecchi. Macchine che imparano a fare ricerca da sole. Il modello che diventa merce comune e quasi gratis. Il rischio che si gonfia e si sgonfia a seconda di chi parla e di quando. Adesso teniamo presente una voce che dice una cosa scomoda a tutti: e se la strada fosse proprio quella sbagliata?</p>
+<p>A dirlo è Yann LeCun, uno dei tre studiosi che hanno fatto nascere l'intelligenza artificiale moderna. A fine 2025 ha lasciato Meta e ha fondato a Parigi un nuovo laboratorio, AMI Labs, raccogliendo oltre un miliardo di dollari. La sua tesi è netta fino a essere brutale: i modelli linguistici di oggi non porteranno mai a un'intelligenza come la nostra. Memorizzano, dice, non ragionano. E aggiunge una frase che nelle università è suonata come una provocazione: non ha più senso che i ricercatori accademici lavorino sui modelli linguistici.</p>
+<p>Ma il punto, e questo è ciò che rende LeCun interessante, è che non si limita a dire di no. Indica un'altra strada e la sta costruendo. In marzo ha pubblicato un sistema che chiama "modello del mondo": un'intelligenza che impara a prevedere come va il mondo guardando immagini grezze, come fa un bambino prima ancora di parlare, invece di ingoiare montagne di testo. L'idea è che la fisica, lo spazio, le cose che cadono e rimbalzano, vengano prima del linguaggio. Su questa stessa linea ci sono François Chollet, che ha costruito un test dove gli umani fanno cento su cento e i migliori modelli zero virgola tre, a dimostrare che quei modelli imparano a memoria invece di capire; e c'è John Carmack, il leggendario programmatore di videogiochi, che ora fa giocare dei robot fisici ad Atari con una telecamera e un joystick vero, perché, dice, "la realtà non è un gioco a turni".</p>
+<p>È la tensione che attraversa tutta la giornata: i modelli linguistici ragionano davvero o ripetono a memoria in modo molto elegante? Hassabis crede che la ricorsione e i modelli del mondo ci porteranno fin lassù. LeCun pensa che la scala stessa di partenza sia sbagliata, e che si stia salendo, con grande fatica, l'albero giusto verso la luna sperando di arrivarci. Vale la pena tenerla aperta, questa domanda, perché da come si risponde dipende dove andranno, nei prossimi anni, decine di miliardi.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>C'è un'ultima voce che oggi voglio tenere, perché chiude il cerchio in modo umano. Naval Ravikant, investitore e una specie di filosofo della Silicon Valley, in queste settimane ha pubblicato una serie di conversazioni con tre fondatori e ne ha tirato fuori un'immagine sola: ogni azienda sta diventando una fabbrica di software su misura. Il costo di scrivere un programma sta crollando verso zero. Una delle sue battute, lanciata a fine maggio, suona così: "spreca pure i calcoli della macchina, risparmia il tempo dell'uomo". Capovolge un'abitudine antica, quella di centellinare la potenza di calcolo. Adesso la potenza è abbondante e quasi gratis; ciò che resta prezioso è il tempo e l'attenzione delle persone.</p>
+<p>Ma è dove arriva che conta. Se chiunque può costruire un'app in una sera, dice Naval, allora il software puro smette di essere un buon investimento. Tutti possono farlo, quindi non vale quasi nulla. E allora cosa resta a fare la differenza? Una sola cosa: il gusto. Il giudizio. La capacità di scegliere cosa vale la pena costruire e cosa no. Quando l'esecuzione diventa gratis, il vantaggio si sposta tutto su quella sensibilità che non si automatizza.</p>
+<p>Qui le voci più lontane di questa puntata, che su tutto il resto litigano, si ritrovano d'accordo su una cosa sola. Karpathy, quello che lascia le macchine fare ricerca di notte, ha scritto che "puoi esternalizzare il pensiero, ma non la comprensione": puoi far macinare il lavoro alla macchina, ma capire davvero resta tuo. Chollet osserva che l'intelligenza artificiale ingigantisce l'effetto di chi ha iniziativa e schiaccia chi non ne ha. E mentre Jack Dorsey licenzia quasi metà della sua azienda dicendo che i capi servivano solo a smistare informazioni e ora ci pensa la macchina, e Andreessen immagina un futuro in cui un programmatore comanda migliaia di robot, tutti, alla fine, tengono per sé esattamente la stessa cosa: il giudizio. Lo automatizzano tutto, tranne quello.</p>
+<p>Mi sembra il vero filo nascosto della giornata. In un mondo dove la macchina impara a fare ricerca, dove i modelli costano quasi nulla, dove il lavoro si delega a sciami di agenti, l'unica cosa che nessuno è disposto a cedere è il momento in cui qualcuno decide se una cosa è buona o no. È un pensiero antico, in fondo: la differenza tra avere gli strumenti e avere il gusto di usarli bene è la stessa che separava il bottega­io dall'artigiano, secoli fa.</p>
+<div class="chapter" data-mood="upbeat"><hr></div>
+<p>Qualche progetto da osservare, e oggi parlano tutti la stessa lingua del racconto di prima: macchine che imparano da sole, modelli che girano dappertutto a costo bassissimo. Sono tutti progetti già in crescita da settimane, quindi solo un cenno per ciascuno.</p>
+<p>Autoresearch di Karpathy, l'agente che riscrive il proprio addestramento di cui abbiamo parlato all'inizio: in crescita continua. È il simbolo concreto della ricorsione come metodo.</p>
+<p>Nanochat, sempre di Karpathy, un piccolo modello conversazionale da studiare e smontare pezzo per pezzo: in crescita continua. Serve a capire da dentro come funzionano queste cose, senza scatole nere.</p>
+<p>Llama punto cpp, il programma che fa girare modelli grandi su un computer normale, anche senza schede grafiche costose: in crescita continua. È la commoditizzazione resa palpabile: l'intelligenza che esce dai data center grandi come città e entra in un laptop.</p>
+<p>Llm, lo strumento da riga di comando di Simon Willison per parlare con qualsiasi modello dallo stesso posto: in crescita continua. Indifferente a quale azienda ci sia dietro, che è poi il senso di un mondo dove i modelli si equivalgono.</p>
+<p>E ARC-AGI di François Chollet, il test che separa il ragionare vero dal memorizzare: in crescita continua. È la pietra di paragone della tensione di oggi, quella su cui gli umani fanno il pieno e le macchine quasi zero.</p>
+<p>Cinque progetti, una direzione sola: capire come funzionano queste macchine, farle girare ovunque, e misurare onestamente quanto sono brave davvero.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Resta in mente quella notte di marzo, con un programma di poche righe che si correggeva da solo mentre nessuno guardava. È la nuova frontiera, e fa una certa impressione. Ma forse la cosa più umana di tutta la giornata è che, anche delegando tutto, ciascuno di questi protagonisti tiene stretta la stessa cosa: il momento in cui qualcuno decide se ne è valsa la pena. È stato Signal Brief. Alla prossima.</p></div></details></section>
+<nav class="epnav"><a href="/signal-brief/ai/2026-06-16/">← 2026-06-16</a><span style="flex:1"></span><a href="/signal-brief/ai/2026-06-18/">2026-06-18 →</a></nav>
+<dialog class="vplayer" id="vplayer"></dialog>
+<script>
+// player modale dei video: la miniatura apre il video al centro (disegno 2026-08-07)
+function apriVideo(src) {
+  var d = document.getElementById('vplayer');
+  d.innerHTML = '<video controls autoplay playsinline src="' + src + '"></video>';
+  d.showModal();
+  d.onclick = function (e) { if (e.target === d) d.close(); };
+  d.onclose = function () { var v = d.querySelector('video'); if (v) v.pause(); d.innerHTML = ''; };
+}
+// ascolto inline dalla lista: un episodio alla volta
+var epAudio = null, epBtn = null;
+function ascolta(btn, src) {
+  if (epBtn === btn && epAudio) {
+    if (epAudio.paused) { epAudio.play(); btn.classList.add('on'); }
+    else { epAudio.pause(); btn.classList.remove('on'); }
+    return;
+  }
+  if (epAudio) { epAudio.pause(); if (epBtn) epBtn.classList.remove('on'); }
+  epAudio = new Audio(src); epBtn = btn;
+  epAudio.play(); btn.classList.add('on');
+  epAudio.onended = function () { btn.classList.remove('on'); };
+}
+function copiaTrascrizione(btn) {
+  var t = btn.parentElement.querySelector('.transcript-body');
+  navigator.clipboard.writeText(t ? t.innerText : '').then(function () {
+    btn.textContent = 'copiata ✓';
+    setTimeout(function () { btn.textContent = 'copia il testo'; }, 1800);
+  });
+}
+</script>
+<footer class="creator-footer">
+  <img src="/signal-brief/mike-avatar.png" alt="Michele Mondora">
+  <div class="creator-meta">
+    <span class="creator-name">it-mikesoft</span>
+    <span class="creator-tagline">working with systems, living with questions</span>
+    <span class="creator-email"><a href="mailto:michele@mondora.com">michele@mondora.com</a></span>
+  </div>
+</footer>
+<section class="tutele"><h3>Trasparenza e tutele</h3>
+<p><strong>Come nasce questo contenuto.</strong> Ricerca, sintesi editoriale, voce narrante, immagini e musica sono prodotte con sistemi di intelligenza artificiale. Non c'è una redazione umana che verifica ogni affermazione prima della pubblicazione: un controllo automatico scarta le schede giudicate inaffidabili, ma non elimina la possibilità di errori.</p>
+<p><strong>Affermazioni su persone e aziende.</strong> Quanto riportato è una sintesi di fonti pubbliche, non una dichiarazione diretta delle persone citate: le frasi non vanno intese come virgolettati né come posizioni ufficiali. Le fonti sono indicate in ogni pagina episodio — verificale prima di considerare un'informazione accertata. Se trovi un'affermazione inesatta che ti riguarda, scrivi a <a href="mailto:michele@mondora.com">michele@mondora.com</a>: viene corretta o rimossa.</p>
+<p><strong>Immagini e volti.</strong> Le immagini di scena sono generate con AI e non raffigurano fatti realmente avvenuti. Le fotografie di persone reali usate nei video provengono da Wikimedia Commons con le rispettive licenze, e sono accostate al racconto a scopo identificativo: la loro presenza non implica partecipazione, dichiarazione o approvazione da parte della persona ritratta. Su richiesta dell'interessato vengono rimosse.</p>
+<p><strong>Fonti e diritti altrui.</strong> I contenuti sono rielaborazioni originali, non riproduzioni di articoli di terzi; le testate e gli autori all'origine di una notizia sono citati e collegati. Marchi e nomi commerciali appartengono ai rispettivi titolari e sono usati a scopo descrittivo.</p>
+</section>
+</body></html>

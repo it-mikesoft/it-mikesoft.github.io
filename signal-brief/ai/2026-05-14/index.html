@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="it"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chi misura e chi racconta · Signal.AI</title>
+<meta property="og:title" content="Chi misura e chi racconta · Signal.AI"><meta property="og:type" content="article"><meta property="og:description" content="Il software diventa effimero, l'agency vale più dell'intelligenza pura, e Block ha già licenziato il quaranta per cento. La settimana in cui le narrazioni sull'AI si sono separate dai dati."><meta property="og:url" content="https://it-mikesoft.github.io/signal-brief/ai/2026-05-14/"><meta property="og:audio" content="https://media.casamon.dev/ai/podcast/episodes/2026-05-14.mp3"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "PodcastEpisode", "name": "Chi misura e chi racconta", "datePublished": "2026-05-14", "url": "https://it-mikesoft.github.io/signal-brief/ai/2026-05-14/", "description": "Il software diventa effimero, l'agency vale più dell'intelligenza pura, e Block ha già licenziato il quaranta per cento. La settimana in cui le narrazioni sull'AI si sono separate dai dati.", "inLanguage": "it", "associatedMedia": {"@type": "MediaObject", "contentUrl": "https://media.casamon.dev/ai/podcast/episodes/2026-05-14.mp3"}, "partOfSeries": {"@type": "PodcastSeries", "name": "Signal.AI", "url": "https://it-mikesoft.github.io/signal-brief/ai/"}}</script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:#faf8f4; color:#1a1a1a; padding:2rem 1.5rem; max-width:680px; margin:0 auto; line-height:1.6; }
+  a { color:#2563eb; }
+  .back { display:inline-block; margin-bottom:1.5rem; font-size:.8rem; font-family:monospace; text-decoration:none; }
+  .videos { display:flex; gap:1rem; flex-wrap:wrap; margin:1.2rem 0; }
+  .videos figure { margin:0; flex:1; min-width:260px; }
+  .videos .v2 { flex:0 1 240px; }
+  .videos video { width:100%; border-radius:12px; background:#000; }
+  .videos .v2 video { aspect-ratio:9/16; max-height:420px; }
+  .videos figcaption { font-size:.75rem; color:#888; text-align:center; margin-top:.3rem; }
+  .vlink { display:flex; gap:.3rem; margin-top:.35rem; }
+  .vlink input { flex:1; min-width:0; font-size:.68rem; font-family:monospace; padding:.3rem .4rem;
+    border:1px solid #e2ddd6; border-radius:6px; background:#fff; color:#6b7280; }
+  .vlink button { font-size:.68rem; padding:.3rem .6rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; }
+  .wk { font-size:1rem; margin:1.4rem 0 .4rem; }
+  details.wkacc { border:1px solid #e5e7eb33; border-radius:10px; margin:.6rem 0; padding:.1rem .8rem .4rem; }
+  details.wkacc summary { cursor:pointer; font-weight:600; padding:.5rem 0; font-size:.9rem; }
+  .back:hover { text-decoration:underline; }
+  header h1 { font-family:Georgia,serif; font-size:1.7rem; font-weight:600; }
+  header h1 span { color:#2563eb; }
+  .tagline { color:#6b7280; font-size:.85rem; margin-top:.3rem; margin-bottom:1.5rem; }
+  ul.eps { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
+  .subscribe { display:inline-flex; align-items:center; gap:.5rem; margin-bottom:1.2rem;
+    padding:.45rem .9rem; background:#2563eb; color:#fff; border-radius:20px;
+    text-decoration:none; font-size:.8rem; font-weight:600; }
+  .subscribe:hover { opacity:.85; color:#fff; }
+  .ep { display:flex; align-items:center; gap:.8rem; padding:.8rem 1rem; background:#fff;
+    border:1px solid #e2ddd6; border-radius:8px; text-decoration:none; color:inherit; transition:box-shadow .12s; }
+  .ep:hover { box-shadow:0 2px 8px rgba(0,0,0,.07); }
+  .ep-play { width:32px; height:32px; border-radius:50%; background:#f3f4f6; display:flex;
+    align-items:center; justify-content:center; font-size:12px; flex-shrink:0; }
+  .ep-title { font-size:.9rem; font-weight:500; }
+  .ep-meta { font-size:.72rem; color:#9ca3af; font-family:monospace; margin-top:.15rem; }
+  audio { width:100%; margin:1rem 0 1.5rem; }
+  .rawmd { margin:-.5rem 0 1.5rem; }
+  .rawmd a { font-size:.8rem; font-family:monospace; color:inherit; opacity:.65; }
+  .desc { color:#374151; font-size:.95rem; margin-bottom:1.5rem; }
+  section { margin:2rem 0; }
+  section h2 { font-family:Georgia,serif; font-size:1.1rem; border-bottom:1px solid #e2ddd6;
+    padding-bottom:.3rem; margin-bottom:.8rem; }
+  .synthesis p { margin:.7rem 0; }
+  .tension { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; font-size:.9rem; }
+  .tension .axis { font-weight:600; margin-bottom:.3rem; }
+  .tension .side { color:#6b7280; font-size:.85rem; }
+  .proj { font-size:.9rem; margin:.4rem 0; }
+  .proj .pname { font-weight:600; }
+  .proj .pnew { background:#16a34a; color:#fff; font-size:.65rem; font-weight:700;
+    padding:.1rem .35rem; border-radius:4px; text-transform:uppercase; vertical-align:middle; }
+  .fonte { font-size:.85rem; margin:.5rem 0; }
+  .fonte .who { font-weight:600; }
+  .fonte a { display:block; margin-left:.5rem; color:#6b7280; }
+  .transcript-body p { margin:.7rem 0; line-height:1.7; }
+  .transcript-body .chapter hr { border:none; border-top:1px solid #e2ddd6; margin:1.5rem 0; }
+  .transcript-body .podcast-episode-desc { color:#6b7280; font-style:italic; }
+  .signal-card { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; }
+  .signal-theme { font-size:.75rem; font-weight:700; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.3rem; }
+  .signal-text { font-size:.85rem; color:#374151; line-height:1.5; }
+  .creator-footer { margin-top:3rem; padding-top:1.5rem; border-top:1px solid #e2ddd6;
+    display:flex; align-items:center; gap:.9rem; }
+  .creator-footer img { width:40px; height:40px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+  .creator-meta { display:flex; flex-direction:column; gap:.15rem; }
+  .creator-name { font-size:.85rem; font-weight:600; color:#1a1a1a; }
+  .creator-tagline { font-size:.75rem; color:#6b7280; }
+  .creator-email { font-size:.75rem; }
+  .creator-ai { font-size:.72rem; color:#8a7f6d; max-width:46ch; line-height:1.45; }
+  .tutele { margin-top:2rem; padding-top:1.2rem; border-top:1px solid #e2ddd6;
+    font-size:.72rem; color:#8a7f6d; line-height:1.5; }
+  .tutele h3 { font-size:.75rem; color:#6b7280; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.5rem; font-weight:600; }
+  .tutele p { margin:.45rem 0; }
+  .tutele strong { color:#5a5348; font-weight:600; }
+  .tutele a { color:inherit; text-decoration:underline; }
+  .creator-email a { color:#9ca3af; text-decoration:none; }
+  .creator-email a:hover { color:#1a1a1a; }
+  /* disegno 2026-08-07: mesi a pagine, facce, player modale, trascrizione
+     richiudibile — la pagina episodio è un prodotto, non un sottoprodotto */
+  .hrow { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+  .hrow .subscribe { margin-bottom:0; flex-shrink:0; }
+  .months { font-size:.78rem; font-family:monospace; margin:.4rem 0 1rem; color:#9ca3af; }
+  .months a { text-decoration:none; } .months b { color:inherit; }
+  .ep-faces { display:flex; margin-left:auto; flex-shrink:0; }
+  .ep-faces img { width:26px; height:26px; border-radius:50%; object-fit:cover;
+    border:2px solid #fff; margin-left:-8px; background:#eee; }
+  /* tutti i citati sul desktop; su mobile la leggibilità vince: max 3 */
+  @media (max-width:600px) { .ep-faces img:nth-child(n+4) { display:none; } }
+  .ep-listen { width:32px; height:32px; border-radius:50%; background:#f3f4f6; border:0;
+    display:flex; align-items:center; justify-content:center; font-size:12px;
+    flex-shrink:0; cursor:pointer; color:inherit; }
+  .ep-listen.on { background:#2563eb; color:#fff; }
+  .face-inline { width:1.15em; height:1.15em; border-radius:50%; object-fit:cover;
+    vertical-align:-.18em; margin-right:.25em; }
+  /* SEMPRE sulla stessa riga (2026-08-09): su schermi stretti le miniature
+     si riducono, e se non basta il reel sparisce — mai l'andata a capo */
+  .vthumbs { display:flex; gap:.8rem; flex-wrap:nowrap; margin:1.2rem 0; align-items:flex-start; }
+  .vthumb { position:relative; cursor:pointer; border:0; padding:0; background:none;
+    border-radius:12px; overflow:hidden; }
+  /* stessa ALTEZZA per video e reel: il 9:16 si stringe, non svetta */
+  .vthumb video { height:150px; width:auto; display:block; border-radius:12px; background:#000; }
+  @media (max-width:520px) { .vthumb video { height:118px; } }
+  /* quando nemmeno ridotte ci stanno: via le miniature, due BOTTONI in
+     riga che aprono il player (2026-08-09) */
+  .vbtns { display:none; gap:.6rem; margin:1.2rem 0; }
+  .vbtns button { flex:1; padding:.6rem .4rem; border:0; border-radius:10px;
+    background:#2563eb; color:#fff; font-weight:700; font-size:.85rem;
+    cursor:pointer; font-family:inherit; }
+  @media (max-width:420px) { .vthumbs { display:none; } .vbtns { display:flex; } }
+  .vthumb .vlabel { position:absolute; left:0; right:0; bottom:0; padding:.9rem .5rem .35rem;
+    background:linear-gradient(transparent, rgba(0,0,0,.75)); color:#fff; font-size:.7rem; }
+  .vthumb::after { content:"▶"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    color:#fff; font-size:1.6rem; text-shadow:0 1px 6px rgba(0,0,0,.8); }
+  /* margin:auto ESPLICITO: il reset globale * {margin:0} annullava la
+     centratura nativa del dialog e il player si apriva in alto a sinistra */
+  dialog.vplayer { border:0; padding:0; background:transparent; max-width:92vw;
+    margin:auto; position:fixed; inset:0; }
+  dialog.vplayer::backdrop { background:rgba(0,0,0,.85); }
+  dialog.vplayer video { max-width:92vw; max-height:86vh; border-radius:14px; background:#000; }
+  details.tr { border:1px solid #e2ddd6; border-radius:10px; padding:.2rem .9rem .6rem; }
+  details.tr summary { cursor:pointer; font-weight:600; padding:.55rem 0; }
+  .tr-copy { font-size:.72rem; padding:.3rem .7rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; margin:.3rem 0 .5rem; }
+  .epnav { display:flex; justify-content:space-between; gap:1rem; margin:2rem 0 0;
+    font-size:.82rem; font-family:monospace; }
+  .epnav a { text-decoration:none; }
+  @media (prefers-color-scheme:dark) {
+    body { background:#1f1d18; color:#e5e5e5; }
+    .ep, .tension, .signal-card { background:#2a2823; border-color:#3a352d; }
+    .ep-play { background:#3a352d; } .desc { color:#d4d4d4; }
+    .signal-text { color:#d4d4d4; }
+    .creator-footer { border-color:#3a352d; }
+    .creator-name { color:#f5f5f5; }
+    .creator-tagline, .creator-email a { color:#9ca3af; }
+    .creator-ai { color:#9a8f7d; }
+    .vlink input { background:#1c1a17; border-color:#3a352d; color:#9ca3af; }
+    .tutele { border-color:#3a352d; color:#9a8f7d; }
+    .tutele h3 { color:#a9a9a9; } .tutele strong { color:#d4d4d4; }
+    .ep-listen { background:#3a352d; }
+    .ep-faces img { border-color:#2a2823; background:#3a352d; }
+    details.tr { border-color:#3a352d; }
+  }
+</style></head><body>
+<a class="back" href="/signal-brief/ai/">← Signal.AI</a>
+<header><h1>Chi misura e chi racconta</h1></header>
+<div class="tagline">2026-05-14 · Digital Intelligence Podcast</div>
+<div class="desc">Il software diventa effimero, l'agency vale più dell'intelligenza pura, e Block ha già licenziato il quaranta per cento. La settimana in cui le narrazioni sull'AI si sono separate dai dati.</div>
+<div class="rawmd"><a href="raw.md">Testo (markdown)</a></div>
+<section><h2>Sintesi</h2><div class="synthesis"><p>La frattura più profonda non è tra ottimisti e pessimisti. È tra chi misura e chi narra.</p>
+<p>Benedict Evans <a href="https://www.threads.com/@benedictevans/post/DVlle5xDgHW/i-remain-fascinated-by-the-fact-that-we-have-really-no-real-operating-data-on" target="_blank" rel="noopener">osserva che non esistono dati operativi affidabili sull'adozione AI</a>: le stesse aziende che costruiscono i modelli non pubblicano metriche. Eppure <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/patrick-collison.jpg" alt="">Patrick Collison <a href="https://officechai.com/ai/2026-q1-could-be-looked-at-as-the-first-quarter-of-the-singularity-says-stripe-co-founder-patrick-collison/" target="_blank" rel="noopener">definisce il Q1 2026 "il primo trimestre della singolarità"</a> — ma almeno lui lo ancora nei dati di pagamento reali. La tensione tra narrazione e evidenza non è mai stata così alta.</p>
+<p>Sotto, tre correnti trasversali si intrecciano.</p>
+<p><strong>Il software diventa effimero.</strong> <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="">Andrej Karpathy, <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/naval-ravikant.jpg" alt="">Naval Ravikant, <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/dhh.png" alt="">DHH e Collison convergono sulla stessa tesi: <a href="https://x.com/karpathy/status/2024583544157458452" target="_blank" rel="noopener">l'app store è obsoleto</a>, il software su misura generato al volo per un singolo utente è la norma emergente. Naval arriva alla conseguenza economica: <a href="https://x.com/naval/status/2027981651012473197" target="_blank" rel="noopener">il software puro è diventato non-investibile</a>. È la stessa intuizione da angolazioni diverse — il prodotto si dissolve nel processo.</p>
+<p><strong>L'agency ridistribuisce il valore umano.</strong> <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/john-carmack.jpg" alt="">John Carmack sostiene che intelligenza media + agenzia eccezionale batte intelligenza alta + agenzia media. <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt="">François Chollet <a href="https://x.com/fchollet/status/2053169711341551936" target="_blank" rel="noopener">sintetizza l'asimmetria in modo netto</a>: chi delega si atrofizza, chi usa <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="">AI come leva cresce. Naval la formula più brutalmente: non è junior vs senior, è bravo-con-AI vs non-bravo-con-AI. Il consenso implicito è che l'AI non democratizza — amplifica le differenze pre-esistenti.</p>
+<p><strong>I modelli attuali toccano il tetto.</strong> <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/ilya-sutskever.jpg" alt="">Ilya Sutskever chiama la fine dell'era dello scaling, LeCun scommette $1B su JEPA contro gli LLM, Chollet misura il gap con <a href="https://arcprize.org/blog/arc-agi-3-launch" target="_blank" rel="noopener">ARC-AGI-3: i migliori modelli frontier al 0.37% contro il 100% umano</a>. Tre voci tecnicamente credibili che indicano lo stesso muro — mentre Altman e Andreessen scommettono sull'inerzia del progresso.</p>
+<p>La tensione di fondo: chi controlla l'AI e chi ne paga i costi. <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="">Jack Dorsey ha licenziato il 40% di Block citando l'AI. <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/sam-altman.jpg" alt="">Sam Altman propone un <a href="https://fortune.com/2026/04/06/sam-altman-says-ai-superintelligence-is-so-big-that-we-need-a-new-deal-critics-say-openais-policy-ideas-are-a-cover-for-regulatory-nihilism/" target="_blank" rel="noopener">New Deal per la superintelligenza</a>. <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/geoffrey-hinton.jpg" alt="">Geoffrey Hinton avverte che l'1% delle risorse globali va sulla sicurezza. Il dibattito sulla governance non è ancora iniziato davvero — ma i suoi protagonisti stanno prendendo posizione.</p></div></section>
+<section><h2>Temi del giorno</h2><div class="tension"><div class="axis">↗ Misura vs narrativa</div><div class="side">Frattura epistemica nuova: nessun dato operativo reale sull'adozione AI esiste, ma le narrazioni sulla singolarità proliferano — tensione tra evidenza e racconto che sovrasta i dibattiti tecnici.</div></div><div class="tension"><div class="axis">↗ Software effimero</div><div class="side">Il prodotto software si dissolve nel processo: app store obsoleto, codice su misura generato al volo per singolo utente diventa norma emergente.</div></div><div class="tension"><div class="axis">↗ Software puro non-investibile</div><div class="side">Conseguenza economica diretta dell'AI generativa: il software come categoria di investimento perde fondamento perché il prodotto è istantaneamente replicabile a costo zero.</div></div><div class="tension"><div class="axis">↗ Agency come leva differenziante</div><div class="side">Intelligenza media con agency eccezionale batte intelligenza alta con agency media — l'AI non livella le differenze umane, le amplifica.</div></div><div class="tension"><div class="axis">↗ Costo umano concreto dell'AI</div><div class="side">L'AI produce effetti occupazionali immediati e misurabili (Block -40%) e spinge al dibattito su New Deal e sicurezza come percentuale di risorse globali.</div></div><div class="tension"><div class="axis">⚖ Evidenza vs narrazione: l'adozione AI è misurabile?</div><div class="side">Benedict Evans: nessun dato operativo reale esiste — le metriche mancano, le narrazioni corrono libere · Patrick Collison: Q1 2026 è il primo trimestre della singolarità, ancorato però ai dati di pagamento reali di Stripe</div></div><div class="tension"><div class="axis">⚖ Soffitto dei modelli attuali vs inerzia del progresso</div><div class="side">Ilya Sutskever / Yann LeCun / François Chollet: i modelli frontier toccano un muro misurabile, servono nuove architetture · Sam Altman / Marc Andreessen: il progresso continua per inerzia, la scommessa è sull'accelerazione</div></div><div class="tension"><div class="axis">⚖ Chi paga i costi dell'AI: contratto sociale da ridefinire</div><div class="side">Jack Dorsey: tagli immediati (Block -40%), le aziende agiscono senza aspettare la governance · Sam Altman: serve un New Deal per la superintelligenza, redistribuzione sistematica prima che sia troppo tardi</div></div><div class="tension"><div class="axis">⚖ Risposta all'AI: ottimizzazione individuale o sicurezza collettiva?</div><div class="side">Andrej Karpathy / Naval Ravikant: ottimizza la tua agency individuale con AI — chi si adatta vince, il resto è irrilevante · Geoffrey Hinton: solo l'1% delle risorse globali va sulla sicurezza — il problema è sistemico e non si risolve con l'adattamento individuale</div></div></section>
+<section><h2>Progetti da osservare</h2><div class="tension"><div class="axis">karpathy/nanochat</div><div class=side>Pipeline minimale per addestrare un modello GPT-2 in ~2 ore su 8×H100 con FP8 e ClimbMix, parte della linea di lavoro di Karpathy su pipeline ridotte per singolo ricercatore. Repo di riferimento per l'era 'meno codice, più amplificazione'.</div></div><div class="tension"><div class="axis">karpathy/llm-wiki (gist)</div><div class=side>Prompt-pattern da copiare in Claude Code/Codex che istanzia il sistema 'LLM Wiki' su Obsidian: articoli enciclopedici interlinkati, backlink, health check. Diventato viral come anti-RAG personale.</div></div><div class="tension"><div class="axis">karpathy/autoresearch</div><div class=side>Repo di ~630 righe (7 marzo 2026) che materializza un agente di ricerca minimale, parte della tesi 'idea file = distribuzione' di Karpathy. Esempio concreto di agente che amplifica il ricercatore individuale.</div></div><div class="tension"><div class="axis">Obsidian</div><div class=side>Editor di note markdown con backlink e grafi che Karpathy elegge come 'IDE della conoscenza' nel suo pattern LLM-Wiki. Diventa il frontend consigliato per memoria esplicita e ispezionabile contro la memoria opaca degli assistant commerciali.</div></div><div class="tension"><div class="axis">ggerganov/llama.cpp</div><div class=side>Motore di inferenza C/C++ per LLM locali; il suo llama-server è il cuore dello stack self-sovereign proposto da Buterin (NixOS + llama-server + bubblewrap). Standard de facto per AI locale sovrana.</div></div><div class="tension"><div class="axis">basecamp/omarchy</div><div class=side>Distro Arch Linux curata da DHH con Hyprland, pensata per attrarre utenti macOS/Windows verso un desktop 'malleabile'. Progetto-manifesto del filone 'open source AI-ready' di DHH (Omacon NY, 130 persone).</div></div><div class="tension"><div class="axis">hyprwm/Hyprland</div><div class=side>Compositor Wayland dinamico, cuore visivo di Omarchy e simbolo del rinnovato interesse consumer per Linux (Panther Lake / XPS 14). DHH lo cita come esempio di software su cui finalmente 'hardware e aziende tornano a scommettere'.</div></div><div class="tension"><div class="axis">simonw/llm</div><div class=side>CLI e libreria Python di Simon Willison per interagire con LLM locali e cloud, base dei suoi tool README-driven (scan-for-secrets, datasette-ports, research-llm-apis). Strumento pivot del suo workflow 'agentic engineering'.</div></div><div class="tension"><div class="axis">fchollet/ARC-AGI</div><div class=side>Repo ufficiale dei benchmark ARC-AGI di Chollet, ora affiancato da ARC-AGI-3 (ambienti interattivi turn-based per misurare agency). ARC Prize 2026 ha $2M di montepremi; umani 100%, best frontier model 0,37%.</div></div><div class="tension"><div class="axis">zilliztech/claude-context</div><div class=side>Server MCP di code search che trasforma l'intera codebase in contesto indicizzato per Claude Code, Cursor e altri agenti. Esempio netto del 'moat shift' dal modello all'uso indicato da Evans e Andreessen.</div></div></section>
+<section><h2>Fonti</h2><div class="fonte"><span class="who">Jack Dorsey</span><a href="https://fortune.com/2026/04/02/jack-dorsey-roelof-botha-ai-middle-management/" target="_blank" rel="noopener">Fortune — AI Middle Management</a><a href="https://www.cnn.com/2026/02/26/business/block-layoffs-ai-jack-dorsey" target="_blank" rel="noopener">CNN — Block layoffs</a><a href="https://sequoiacap.com/podcast/jack-dorsey-every-company-can-now-be-a-mini-agi/" target="_blank" rel="noopener">Sequoia podcast — Mini-AGI</a></div><div class="fonte"><span class="who">Andrej Karpathy</span><a href="https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f" target="_blank" rel="noopener">llm-wiki su GitHub</a><a href="https://x.com/karpathy/status/2024583544157458452" target="_blank" rel="noopener">X: bespoke software / cardio experiment</a><a href="https://x.com/karpathy/status/2042334451611693415" target="_blank" rel="noopener">X: AI capability gap</a></div><div class="fonte"><span class="who">François Chollet</span><a href="https://x.com/fchollet/status/2053169711341551936" target="_blank" rel="noopener">fchollet su X — agency post</a><a href="https://arcprize.org/blog/arc-agi-3-launch" target="_blank" rel="noopener">ARC-AGI-3 launch — ARC Prize</a><a href="https://the-decoder.com/francois-chollet-on-the-end-of-scaling-arc-3-and-his-path-to-agi/" target="_blank" rel="noopener">Chollet su ARC-3 e fine dello scaling — The Decoder</a></div><div class="fonte"><span class="who">Naval Ravikant</span><a href="https://www.businesstoday.in/technology/story/pure-software-is-rapidly-becoming-uninvestable-naval-ravikant-on-why-vibe-coding-changes-everything-528256-2026-04-30" target="_blank" rel="noopener">Pure software is rapidly becoming uninvestable - BusinessToday</a><a href="https://x.com/naval/status/2027981651012473197" target="_blank" rel="noopener">Naval on X: "Pure software is rapidly becoming un-investable"</a><a href="https://x.com/naval/status/2029142431405392034" target="_blank" rel="noopener">Naval on X: "good with AI vs not good with AI"</a></div></section>
+<section class="transcript-section"><h2>Trascrizione</h2><details class="tr"><summary>Leggi la trascrizione</summary><button class="tr-copy" type="button" onclick="copiaTrascrizione(this)">copia il testo</button><div class="transcript-body"><h2>Chi misura e chi racconta</h2>
+<p class="podcast-episode-desc">Il software diventa effimero, l'agency vale più dell'intelligenza pura, e Block ha già licenziato il quaranta per cento. La settimana in cui le narrazioni sull'AI si sono separate dai dati.</p>
+<div class="chapter" data-mood="geo"><hr></div>
+<p>Un analista dice che non esistono dati reali sull'adozione dell'intelligenza artificiale. Il fondatore di Stripe dice di averli, e che dimostrano di essere già dentro la singolarità. Nel mezzo, Jack Dorsey ha mandato a casa quaranta per cento del suo staff senza aspettare che i due si mettessero d'accordo. È il quattordici maggio, e questo è Signal Brief.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Benedict Evans è uno degli osservatori più metodici che il settore tecnologico abbia prodotto. Pubblica analisi da vent'anni, legge i dati con la stessa diffidenza con cui un medico legge un'anamnesi. Qualche giorno fa ha scritto una cosa semplice: non esistono dati operativi reali sull'adozione dell'AI. Le aziende che costruiscono i modelli non pubblicano metriche di utilizzo. Quelle che li adottano non dicono quanto li usino davvero. I segnali che circolano vengono da sondaggi — che misurano le intenzioni, non i comportamenti.</p>
+<p>Dall'altra parte c'è Patrick Collison, il fondatore di Stripe. Lui vede ogni transazione che passa sulla sua piattaforma. Sa quante startup nascono, quante sopravvivono, quante guadagnano. E in aprile ha detto qualcosa di molto pesante: è ragionevole aspettarsi che il primo trimestre del 2026 venga ricordato come il primo trimestre della singolarità. Non è retorica — lo dice guardando i numeri di pagamento reali.</p>
+<p>Questa frattura — tra chi non trova i dati e chi li ha, tra chi narra e chi misura — è il filo conduttore di questa settimana.</p>
+<p>Sotto, tre correnti si intrecciano e si sostengono a vicenda.</p>
+<p>La prima: il software sta diventando effimero. Non nel senso che sparisce — nel senso che smette di essere un prodotto da acquistare, conservare e aggiornare, e diventa un gesto. Pensate a come è cambiata la fotografia: fino a trent'anni fa ogni scatto aveva un costo fisico, si aspettavano giorni per vedere le foto sviluppate, ogni immagine pesava. Oggi scattate cento foto per sceglierne una e le scartate non le vede nessuno. Il software sta facendo la stessa transizione. Andrej Karpathy racconta di aver costruito un'app per il suo allenamento cardiaco — non l'ha scaricata, l'ha generata al volo, l'ha usata per otto settimane, poi non esiste più da nessuna parte. Patrick Collison usa un'immagine diversa ma identica nella sostanza: il software dovrebbe funzionare come una pizza fatta al momento, non come qualcosa prodotto industrialmente e stoccato.</p>
+<p>La seconda corrente: se il software vale meno come prodotto, dove si sposta il valore? Naval Ravikant ha risposto in una frase che ha fatto circolazione per settimane: il software puro è diventato non-investibile. Se chiunque assembla un'app funzionante in una sessione con un agente AI, non ci sono più barriere. Il valore si sposta dove non puoi copiare — hardware, reti, dati esclusivi.</p>
+<p>La terza intuizione è la più sottile: in questo nuovo mondo, la capacità di agire — di decidere, di muoversi, di eseguire — vale più dell'intelligenza pura. John Carmack, uno dei programmatori più rispettati degli ultimi trent'anni, ha scritto qualcosa di apparentemente controintuitivo: una persona di intelligenza media con una capacità di azione eccezionale batterà una persona brillante ma passiva. François Chollet la traduce in modo ancora più diretto: chi usa l'AI come leva cresce, chi le delega il pensiero si atrofizza.</p>
+<p>È come la differenza tra un idraulico che conosce ogni cantiere in città e un ingegnere brillante che aspetta che le cose si risolvano da sole. Il vantaggio cognitivo si sta commoditizzando. Quello operativo no.</p>
+<p>E mentre tutto questo avviene in modo graduale e distribuito, qualcuno sta già agendo.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Jack Dorsey non è il tipo che aspetta. A febbraio ha licenziato quattromila persone da Block — la sua azienda, quella che gestisce Cash App e i pagamenti digitali. Quaranta per cento dello staff. Citando esplicitamente l'intelligenza artificiale come sostituto strutturale, non come ottimizzazione temporanea.</p>
+<p>Ha detto: "Credo che entro un anno la maggioranza delle aziende arriverà alla stessa conclusione." Non una previsione cauta. Una certezza operativa.</p>
+<p>Pochi mesi dopo, con Roelof Botha di Sequoia, ha pubblicato un saggio intitolato "Dalla gerarchia all'intelligenza". La tesi è semplice: il management intermedio esiste per instradare informazioni e precomputare decisioni. L'AI elimina quella funzione. La struttura aziendale che conosciamo — con i suoi livelli, i suoi direttori, i suoi responsabili — è paragonata nel saggio alla struttura militare romana. Duemila anni di gerarchia, nata per coordinare eserciti in assenza di comunicazione istantanea. Oggi quella comunicazione istantanea esiste, l'AI la elabora meglio di qualsiasi coordinatore umano, e la gerarchia sopravvive per inerzia più che per utilità.</p>
+<p>Dorsey descrive il futuro dell'azienda come una "mini-AGI": un sistema intelligente senza strati permanenti di coordinamento. Le riunioni che erano presentazioni sono diventate sessioni su prototipi con dati reali. I manager sono diventati "player-coach" — persone che fanno e guidano allo stesso tempo, senza un piano permanente di coordinamento sotto di loro.</p>
+<p>Quello che colpisce non è la visione — molti hanno visioni simili. È la sequenza. Prima ha licenziato. Poi ha spiegato perché. La maggior parte delle aziende fa il contrario: annuncia i principi e poi, eventualmente, agisce. Dorsey ha saltato il primo passo.</p>
+<p>La domanda che resta in sospeso è quella che Sam Altman sta cercando di rispondere dall'altra parte dello stesso problema. Altman propone un piano di redistribuzione sistematica, tasse sul lavoro automatizzato, un fondo pubblico alimentato dalle stesse aziende AI. Lo chiama un nuovo New Deal. I critici lo accusano di costruire copertura retorica per un cambiamento che ha già deciso di lasciare correre.</p>
+<p>Quattromila persone che perdono il lavoro citando l'AI non sono una statistica astratta. Sono il costo concreto di una transizione che procede molto più veloce della capacità collettiva di gestirla.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Andrej Karpathy è ingegnere nel senso più preciso del termine — sa com'è fatto l'interno dei modelli, ha lavorato a Tesla e a OpenAI, ha scritto tutorial che milioni di programmatori hanno usato come punto di riferimento. Ma da qualche mese il centro di gravità dei suoi post si è spostato. Meno architetture, più flussi di lavoro. Meno come funzionano i modelli, più come cambia il modo in cui le persone ci lavorano.</p>
+<p>L'esperimento cardio è diventato emblematico nel dibattito di questo periodo. Karpathy voleva abbassare la sua frequenza cardiaca a riposo. Invece di cercare un'app, ha chiesto all'AI di costruirne una — su misura, per lui, per quel programma specifico di otto settimane. L'ha usata. Poi è scomparsa. Non esiste più da nessuna parte perché non doveva esistere da nessuna parte: era un gesto, non un prodotto.</p>
+<p>Da lì è arrivata la sua tesi: il modello dell'app store è già obsoleto come concetto di riferimento. Non nell'immediato, non per tutti gli usi — ma l'idea che il software si trovi in un catalogo, si scarichi, si impari e si aggiorni è un'idea che appartiene a una logica di produzione che sta cedendo. Karpathy stima che il novantanove per cento dei prodotti e servizi non abbia ancora un equivalente costruito su questa logica nuova. Il che non è una promessa, è una lacuna enorme.</p>
+<p>L'altro segnale che vale la pena riportare riguarda il suo modo di lavorare. Oggi l'ottanta per cento del suo codice passa attraverso agenti AI. Il venti per cento è revisione e aggiustamenti. Lo chiama "agentic engineering" — distinto dal "vibe coding" che descriveva come fase iniziale, intuitiva, non strutturata. La differenza è sostanziale: la fase due richiede di sapere abbastanza da capire cosa controllare, non solo cosa chiedere. Non puoi delegare completamente se non riesci a valutare il risultato.</p>
+<p>Dice di non essersi mai sentito così indietro come programmatore. Non perché stia peggiorando — ma perché il ruolo si sta ridefinendo più in fretta di quanto riesca a tenersi aggiornato. È una confessione rara, in un ambiente dove l'aggiornamento continuo è dato per scontato e quasi mai ammessa l'inadeguatezza del momento.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>François Chollet ha lanciato a marzo il terzo capitolo di ARC-AGI — il suo benchmark per misurare qualcosa che si avvicina all'intelligenza fluida reale. I dettagli tecnici sono secondari. Il risultato no: gli umani risolvono i puzzle al cento per cento. Il miglior modello disponibile oggi si ferma allo zero virgola trentasette per cento.</p>
+<p>Non è un gap che si chiude aumentando la potenza di calcolo. Chollet, Ilya Sutskever e Yann LeCun convergono sulla stessa posizione: i modelli attuali hanno raggiunto un soffitto architetturale. Funzionano bene su tutto ciò per cui sono stati addestrati. Ma generalizzare — affrontare un problema davvero nuovo, senza schemi riconoscibili — è un'altra cosa. È come il soffitto che i motori a vapore hanno raggiunto alla fine dell'Ottocento: la fisica non lasciava margine, e per andare oltre ci voleva un principio diverso. L'elettricità. Non più vapore della stessa qualità.</p>
+<p>Sutskever lo ha detto formalmente: l'era dello scaling è finita. LeCun ha fondato una nuova azienda, con un miliardo di dollari di finanziamenti, per scommettere su un approccio alternativo alle reti neurali. Chollet mette i soldi dove mette le parole: due milioni di dollari di montepremi per chi supera la soglia. Nessuno ha ancora vinto.</p>
+<p>Ma questa settimana Chollet ha scritto qualcosa su un piano completamente diverso — non tecnico, quasi politico. La dicotomia tra come si usa l'AI e cosa succede a chi la usa. La frase è breve: chi ha poca capacità di azione la perde, chi ne ha tanta la guadagna. L'AI non livella il campo — lo inclina.</p>
+<p>È una posizione che stride con la narrativa della democratizzazione dell'intelligenza. Chollet non dice che l'AI è pericolosa in sé. Dice che chi si aspetta che l'AI lo renda capace di cose per cui non ha le basi operative probabilmente resterà deluso. E chi invece sa già agire, decidere, eseguire — quella persona moltiplica la sua capacità.</p>
+<p>Vale la pena tenere insieme questi due piani. Chollet costruisce il termometro più onesto disponibile per misurare cosa sanno fare i modelli. E al tempo stesso avverte che la domanda più importante non è quanto siano bravi i modelli — è come li usa chi li usa.</p>
+<p>Torniamo un attimo sul filo di oggi, perché è facile perderlo nelle singole storie. Il software diventa effimero. Il valore si sposta da cosa si produce a come si produce. La capacità di agire — non solo di capire — diventa la variabile che distingue chi guadagna da chi perde in questa transizione. Questi tre fili si tengono insieme. E il quarto personaggio di oggi li tocca tutti e tre.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Naval Ravikant è difficile da classificare. Non è un ingegnere, non è un ricercatore. È un investitore con la tendenza rara di formulare intuizioni brevi che rimangono in circolazione per anni, come monete che passano di mano in mano. L'ultima: "il software puro è diventato non-investibile."</p>
+<p>Ha scritto questa frase alla fine di aprile. L'argomento è semplice e difficile da confutare: se chiunque con un'idea chiara può costruire un'app funzionante in una sessione con un agente AI — e se quegli agenti migliorano abbastanza veloce da produrre architetture robuste entro diciotto mesi — non esistono più barriere all'entrata. Il codice si replica a costo zero. Dove cercare valore, allora? Nel hardware, nelle reti di distribuzione, nei dati che non puoi copiare, nei modelli di AI stessi.</p>
+<p>Naval non lo dice come osservatore distante — lo fa. Ogni notte, da qualche mese, passa due ore a costruire software con agenti AI. Applicazioni per sé, per i figli, per la famiglia. Le distribuisce attraverso una pagina web sul suo telefono, senza passare dall'app store. Chiama questa cosa il suo "personal app store". Non lo dice come esperimento curioso — lo dice come prova di un modello distributivo che non ha ancora un nome ma che sta già funzionando.</p>
+<p>La sua distinzione più netta è questa: non è junior contro senior, è bravo-con-AI contro non-bravo-con-AI. È la stessa intuizione di Chollet e Carmack, da un angolo economico. L'AI non democratizza le capacità — ridisegna il confine tra chi ha e chi non ha. E lo fa abbastanza in fretta da rendere irrilevante la storia precedente.</p>
+<p>Su AI e potere ha una posizione che non cambia: non ha paura dell'AI in sé, ha paura di cosa farà un piccolo numero di persone che la controlla al resto di noi. È la stessa preoccupazione che Geoffrey Hinton misura in modo diverso — stimando che solo l'uno per cento delle risorse globali vada sulla sicurezza, mentre il novantanove percento accelera. Due angoli, la stessa domanda di fondo: chi ha in mano il volante?</p>
+<div class="chapter" data-mood="upbeat"><hr></div>
+<p>Qualche progetto da tenere d'occhio, perché parlano la stessa lingua di questa settimana.</p>
+<p>llm-wiki di Karpathy non è un'applicazione commerciale — è una ricetta pubblica. Karpathy ha descritto come costruirsi una base di conoscenza personale usando un modello linguistico: prendi materiali grezzi, puntali a un LLM, questo costruisce articoli collegati tra loro con backlink e struttura enciclopedica. Il suo wiki su un singolo argomento conta cento articoli e quattrocento mila parole. È l'opposto del chatbot: memoria esplicita, ispezionabile, che non sparisce tra una sessione e l'altra.</p>
+<p>ARC-AGI di Chollet è il benchmark che misura il gap tra quello che i modelli sembrano capire e quello che capiscono davvero. Tenerlo d'occhio non è un esercizio accademico: è il termometro più onesto disponibile per orientarsi nel rumore delle dichiarazioni sui modelli. Zero virgola trentasette per cento contro cento per cento umano. Aggiornatelo mentalmente mentre leggete le prossime notizie sui progressi dell'AI.</p>
+<p>Omarchy è il sistema operativo Linux curato da David Heinemeier Hansson — cinquantamila download settimanali, trenta mila persone nella community. Non è solo software: è la scommessa che il computer torni a essere qualcosa che si può modificare, adattare, controllare davvero. In un momento in cui le piattaforme grandi diventano più opache, è un segnale che vale la pena guardare.</p>
+<p>llm di Simon Willison è uno strumento a riga di comando per interagire con modelli linguistici senza mandare dati a servizi esterni. Piccolo, preciso, aperto. È la versione pratica della stessa tesi — il controllo della propria infrastruttura computazionale come scelta, non come dato acquisito.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Benedict Evans dice che i dati non esistono. Patrick Collison dice di averli. Nel mezzo, Dorsey ha già agito, Karpathy ha già cambiato come lavora, Naval ha già smesso di investire nel software puro.</p>
+<p>Il cambiamento che stiamo guardando riguarda chi costruisce l'AI, o riguarda tutti quanti?</p>
+<p>È stato Signal Brief. Alla prossima.</p></div></details></section>
+<nav class="epnav"><a href="/signal-brief/ai/2026-05-13/">← 2026-05-13</a><span style="flex:1"></span><a href="/signal-brief/ai/2026-05-15/">2026-05-15 →</a></nav>
+<dialog class="vplayer" id="vplayer"></dialog>
+<script>
+// player modale dei video: la miniatura apre il video al centro (disegno 2026-08-07)
+function apriVideo(src) {
+  var d = document.getElementById('vplayer');
+  d.innerHTML = '<video controls autoplay playsinline src="' + src + '"></video>';
+  d.showModal();
+  d.onclick = function (e) { if (e.target === d) d.close(); };
+  d.onclose = function () { var v = d.querySelector('video'); if (v) v.pause(); d.innerHTML = ''; };
+}
+// ascolto inline dalla lista: un episodio alla volta
+var epAudio = null, epBtn = null;
+function ascolta(btn, src) {
+  if (epBtn === btn && epAudio) {
+    if (epAudio.paused) { epAudio.play(); btn.classList.add('on'); }
+    else { epAudio.pause(); btn.classList.remove('on'); }
+    return;
+  }
+  if (epAudio) { epAudio.pause(); if (epBtn) epBtn.classList.remove('on'); }
+  epAudio = new Audio(src); epBtn = btn;
+  epAudio.play(); btn.classList.add('on');
+  epAudio.onended = function () { btn.classList.remove('on'); };
+}
+function copiaTrascrizione(btn) {
+  var t = btn.parentElement.querySelector('.transcript-body');
+  navigator.clipboard.writeText(t ? t.innerText : '').then(function () {
+    btn.textContent = 'copiata ✓';
+    setTimeout(function () { btn.textContent = 'copia il testo'; }, 1800);
+  });
+}
+</script>
+<footer class="creator-footer">
+  <img src="/signal-brief/mike-avatar.png" alt="Michele Mondora">
+  <div class="creator-meta">
+    <span class="creator-name">it-mikesoft</span>
+    <span class="creator-tagline">working with systems, living with questions</span>
+    <span class="creator-email"><a href="mailto:michele@mondora.com">michele@mondora.com</a></span>
+  </div>
+</footer>
+<section class="tutele"><h3>Trasparenza e tutele</h3>
+<p><strong>Come nasce questo contenuto.</strong> Ricerca, sintesi editoriale, voce narrante, immagini e musica sono prodotte con sistemi di intelligenza artificiale. Non c'è una redazione umana che verifica ogni affermazione prima della pubblicazione: un controllo automatico scarta le schede giudicate inaffidabili, ma non elimina la possibilità di errori.</p>
+<p><strong>Affermazioni su persone e aziende.</strong> Quanto riportato è una sintesi di fonti pubbliche, non una dichiarazione diretta delle persone citate: le frasi non vanno intese come virgolettati né come posizioni ufficiali. Le fonti sono indicate in ogni pagina episodio — verificale prima di considerare un'informazione accertata. Se trovi un'affermazione inesatta che ti riguarda, scrivi a <a href="mailto:michele@mondora.com">michele@mondora.com</a>: viene corretta o rimossa.</p>
+<p><strong>Immagini e volti.</strong> Le immagini di scena sono generate con AI e non raffigurano fatti realmente avvenuti. Le fotografie di persone reali usate nei video provengono da Wikimedia Commons con le rispettive licenze, e sono accostate al racconto a scopo identificativo: la loro presenza non implica partecipazione, dichiarazione o approvazione da parte della persona ritratta. Su richiesta dell'interessato vengono rimosse.</p>
+<p><strong>Fonti e diritti altrui.</strong> I contenuti sono rielaborazioni originali, non riproduzioni di articoli di terzi; le testate e gli autori all'origine di una notizia sono citati e collegati. Marchi e nomi commerciali appartengono ai rispettivi titolari e sono usati a scopo descrittivo.</p>
+</section>
+</body></html>

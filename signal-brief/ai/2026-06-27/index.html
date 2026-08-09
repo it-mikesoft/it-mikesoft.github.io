@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="it"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L'agente, il prezzo e la fabbrica leggera · Signal.AI</title>
+<meta property="og:title" content="L'agente, il prezzo e la fabbrica leggera · Signal.AI"><meta property="og:type" content="article"><meta property="og:description" content="Chi costruisce l'AI dichiara di aver già vinto, chi la misura parla di fragilità. E intanto la vera battaglia si sposta su un terreno inatteso: quanto costa."><meta property="og:url" content="https://it-mikesoft.github.io/signal-brief/ai/2026-06-27/"><meta property="og:audio" content="https://media.casamon.dev/ai/podcast/episodes/2026-06-27.mp3"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "PodcastEpisode", "name": "L'agente, il prezzo e la fabbrica leggera", "datePublished": "2026-06-27", "url": "https://it-mikesoft.github.io/signal-brief/ai/2026-06-27/", "description": "Chi costruisce l'AI dichiara di aver già vinto, chi la misura parla di fragilità. E intanto la vera battaglia si sposta su un terreno inatteso: quanto costa.", "inLanguage": "it", "associatedMedia": {"@type": "MediaObject", "contentUrl": "https://media.casamon.dev/ai/podcast/episodes/2026-06-27.mp3"}, "partOfSeries": {"@type": "PodcastSeries", "name": "Signal.AI", "url": "https://it-mikesoft.github.io/signal-brief/ai/"}}</script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:#faf8f4; color:#1a1a1a; padding:2rem 1.5rem; max-width:680px; margin:0 auto; line-height:1.6; }
+  a { color:#2563eb; }
+  .back { display:inline-block; margin-bottom:1.5rem; font-size:.8rem; font-family:monospace; text-decoration:none; }
+  .videos { display:flex; gap:1rem; flex-wrap:wrap; margin:1.2rem 0; }
+  .videos figure { margin:0; flex:1; min-width:260px; }
+  .videos .v2 { flex:0 1 240px; }
+  .videos video { width:100%; border-radius:12px; background:#000; }
+  .videos .v2 video { aspect-ratio:9/16; max-height:420px; }
+  .videos figcaption { font-size:.75rem; color:#888; text-align:center; margin-top:.3rem; }
+  .vlink { display:flex; gap:.3rem; margin-top:.35rem; }
+  .vlink input { flex:1; min-width:0; font-size:.68rem; font-family:monospace; padding:.3rem .4rem;
+    border:1px solid #e2ddd6; border-radius:6px; background:#fff; color:#6b7280; }
+  .vlink button { font-size:.68rem; padding:.3rem .6rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; }
+  .wk { font-size:1rem; margin:1.4rem 0 .4rem; }
+  details.wkacc { border:1px solid #e5e7eb33; border-radius:10px; margin:.6rem 0; padding:.1rem .8rem .4rem; }
+  details.wkacc summary { cursor:pointer; font-weight:600; padding:.5rem 0; font-size:.9rem; }
+  .back:hover { text-decoration:underline; }
+  header h1 { font-family:Georgia,serif; font-size:1.7rem; font-weight:600; }
+  header h1 span { color:#2563eb; }
+  .tagline { color:#6b7280; font-size:.85rem; margin-top:.3rem; margin-bottom:1.5rem; }
+  ul.eps { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
+  .subscribe { display:inline-flex; align-items:center; gap:.5rem; margin-bottom:1.2rem;
+    padding:.45rem .9rem; background:#2563eb; color:#fff; border-radius:20px;
+    text-decoration:none; font-size:.8rem; font-weight:600; }
+  .subscribe:hover { opacity:.85; color:#fff; }
+  .ep { display:flex; align-items:center; gap:.8rem; padding:.8rem 1rem; background:#fff;
+    border:1px solid #e2ddd6; border-radius:8px; text-decoration:none; color:inherit; transition:box-shadow .12s; }
+  .ep:hover { box-shadow:0 2px 8px rgba(0,0,0,.07); }
+  .ep-play { width:32px; height:32px; border-radius:50%; background:#f3f4f6; display:flex;
+    align-items:center; justify-content:center; font-size:12px; flex-shrink:0; }
+  .ep-title { font-size:.9rem; font-weight:500; }
+  .ep-meta { font-size:.72rem; color:#9ca3af; font-family:monospace; margin-top:.15rem; }
+  audio { width:100%; margin:1rem 0 1.5rem; }
+  .rawmd { margin:-.5rem 0 1.5rem; }
+  .rawmd a { font-size:.8rem; font-family:monospace; color:inherit; opacity:.65; }
+  .desc { color:#374151; font-size:.95rem; margin-bottom:1.5rem; }
+  section { margin:2rem 0; }
+  section h2 { font-family:Georgia,serif; font-size:1.1rem; border-bottom:1px solid #e2ddd6;
+    padding-bottom:.3rem; margin-bottom:.8rem; }
+  .synthesis p { margin:.7rem 0; }
+  .tension { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; font-size:.9rem; }
+  .tension .axis { font-weight:600; margin-bottom:.3rem; }
+  .tension .side { color:#6b7280; font-size:.85rem; }
+  .proj { font-size:.9rem; margin:.4rem 0; }
+  .proj .pname { font-weight:600; }
+  .proj .pnew { background:#16a34a; color:#fff; font-size:.65rem; font-weight:700;
+    padding:.1rem .35rem; border-radius:4px; text-transform:uppercase; vertical-align:middle; }
+  .fonte { font-size:.85rem; margin:.5rem 0; }
+  .fonte .who { font-weight:600; }
+  .fonte a { display:block; margin-left:.5rem; color:#6b7280; }
+  .transcript-body p { margin:.7rem 0; line-height:1.7; }
+  .transcript-body .chapter hr { border:none; border-top:1px solid #e2ddd6; margin:1.5rem 0; }
+  .transcript-body .podcast-episode-desc { color:#6b7280; font-style:italic; }
+  .signal-card { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; }
+  .signal-theme { font-size:.75rem; font-weight:700; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.3rem; }
+  .signal-text { font-size:.85rem; color:#374151; line-height:1.5; }
+  .creator-footer { margin-top:3rem; padding-top:1.5rem; border-top:1px solid #e2ddd6;
+    display:flex; align-items:center; gap:.9rem; }
+  .creator-footer img { width:40px; height:40px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+  .creator-meta { display:flex; flex-direction:column; gap:.15rem; }
+  .creator-name { font-size:.85rem; font-weight:600; color:#1a1a1a; }
+  .creator-tagline { font-size:.75rem; color:#6b7280; }
+  .creator-email { font-size:.75rem; }
+  .creator-ai { font-size:.72rem; color:#8a7f6d; max-width:46ch; line-height:1.45; }
+  .tutele { margin-top:2rem; padding-top:1.2rem; border-top:1px solid #e2ddd6;
+    font-size:.72rem; color:#8a7f6d; line-height:1.5; }
+  .tutele h3 { font-size:.75rem; color:#6b7280; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.5rem; font-weight:600; }
+  .tutele p { margin:.45rem 0; }
+  .tutele strong { color:#5a5348; font-weight:600; }
+  .tutele a { color:inherit; text-decoration:underline; }
+  .creator-email a { color:#9ca3af; text-decoration:none; }
+  .creator-email a:hover { color:#1a1a1a; }
+  /* disegno 2026-08-07: mesi a pagine, facce, player modale, trascrizione
+     richiudibile — la pagina episodio è un prodotto, non un sottoprodotto */
+  .hrow { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+  .hrow .subscribe { margin-bottom:0; flex-shrink:0; }
+  .months { font-size:.78rem; font-family:monospace; margin:.4rem 0 1rem; color:#9ca3af; }
+  .months a { text-decoration:none; } .months b { color:inherit; }
+  .ep-faces { display:flex; margin-left:auto; flex-shrink:0; }
+  .ep-faces img { width:26px; height:26px; border-radius:50%; object-fit:cover;
+    border:2px solid #fff; margin-left:-8px; background:#eee; }
+  /* tutti i citati sul desktop; su mobile la leggibilità vince: max 3 */
+  @media (max-width:600px) { .ep-faces img:nth-child(n+4) { display:none; } }
+  .ep-listen { width:32px; height:32px; border-radius:50%; background:#f3f4f6; border:0;
+    display:flex; align-items:center; justify-content:center; font-size:12px;
+    flex-shrink:0; cursor:pointer; color:inherit; }
+  .ep-listen.on { background:#2563eb; color:#fff; }
+  .face-inline { width:1.15em; height:1.15em; border-radius:50%; object-fit:cover;
+    vertical-align:-.18em; margin-right:.25em; }
+  /* SEMPRE sulla stessa riga (2026-08-09): su schermi stretti le miniature
+     si riducono, e se non basta il reel sparisce — mai l'andata a capo */
+  .vthumbs { display:flex; gap:.8rem; flex-wrap:nowrap; margin:1.2rem 0; align-items:flex-start; }
+  .vthumb { position:relative; cursor:pointer; border:0; padding:0; background:none;
+    border-radius:12px; overflow:hidden; }
+  /* stessa ALTEZZA per video e reel: il 9:16 si stringe, non svetta */
+  .vthumb video { height:150px; width:auto; display:block; border-radius:12px; background:#000; }
+  @media (max-width:520px) { .vthumb video { height:118px; } }
+  /* quando nemmeno ridotte ci stanno: via le miniature, due BOTTONI in
+     riga che aprono il player (2026-08-09) */
+  .vbtns { display:none; gap:.6rem; margin:1.2rem 0; }
+  .vbtns button { flex:1; padding:.6rem .4rem; border:0; border-radius:10px;
+    background:#2563eb; color:#fff; font-weight:700; font-size:.85rem;
+    cursor:pointer; font-family:inherit; }
+  @media (max-width:420px) { .vthumbs { display:none; } .vbtns { display:flex; } }
+  .vthumb .vlabel { position:absolute; left:0; right:0; bottom:0; padding:.9rem .5rem .35rem;
+    background:linear-gradient(transparent, rgba(0,0,0,.75)); color:#fff; font-size:.7rem; }
+  .vthumb::after { content:"▶"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    color:#fff; font-size:1.6rem; text-shadow:0 1px 6px rgba(0,0,0,.8); }
+  /* margin:auto ESPLICITO: il reset globale * {margin:0} annullava la
+     centratura nativa del dialog e il player si apriva in alto a sinistra */
+  dialog.vplayer { border:0; padding:0; background:transparent; max-width:92vw;
+    margin:auto; position:fixed; inset:0; }
+  dialog.vplayer::backdrop { background:rgba(0,0,0,.85); }
+  dialog.vplayer video { max-width:92vw; max-height:86vh; border-radius:14px; background:#000; }
+  details.tr { border:1px solid #e2ddd6; border-radius:10px; padding:.2rem .9rem .6rem; }
+  details.tr summary { cursor:pointer; font-weight:600; padding:.55rem 0; }
+  .tr-copy { font-size:.72rem; padding:.3rem .7rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; margin:.3rem 0 .5rem; }
+  .epnav { display:flex; justify-content:space-between; gap:1rem; margin:2rem 0 0;
+    font-size:.82rem; font-family:monospace; }
+  .epnav a { text-decoration:none; }
+  @media (prefers-color-scheme:dark) {
+    body { background:#1f1d18; color:#e5e5e5; }
+    .ep, .tension, .signal-card { background:#2a2823; border-color:#3a352d; }
+    .ep-play { background:#3a352d; } .desc { color:#d4d4d4; }
+    .signal-text { color:#d4d4d4; }
+    .creator-footer { border-color:#3a352d; }
+    .creator-name { color:#f5f5f5; }
+    .creator-tagline, .creator-email a { color:#9ca3af; }
+    .creator-ai { color:#9a8f7d; }
+    .vlink input { background:#1c1a17; border-color:#3a352d; color:#9ca3af; }
+    .tutele { border-color:#3a352d; color:#9a8f7d; }
+    .tutele h3 { color:#a9a9a9; } .tutele strong { color:#d4d4d4; }
+    .ep-listen { background:#3a352d; }
+    .ep-faces img { border-color:#2a2823; background:#3a352d; }
+    details.tr { border-color:#3a352d; }
+  }
+</style></head><body>
+<a class="back" href="/signal-brief/ai/">← Signal.AI</a>
+<header><h1>L'agente, il prezzo e la fabbrica leggera</h1></header>
+<div class="tagline">2026-06-27 · Digital Intelligence Podcast</div>
+<div class="desc">Chi costruisce l'AI dichiara di aver già vinto, chi la misura parla di fragilità. E intanto la vera battaglia si sposta su un terreno inatteso: quanto costa.</div>
+<div class="rawmd"><a href="raw.md">Testo (markdown)</a></div>
+<section><h2>Sintesi</h2><div class="synthesis"><p>Il fronte più nitido che attraversa queste voci è una <strong>frattura sullo scaling</strong>. Dopo cinque anni di brute-force, i critici convergono: <a href="https://brief.bismarckanalysis.com/p/ai-2026-ilya-sutskever-and-the-end" target="_blank" rel="noopener">Ilya Sutskever</a> dichiara chiuso "l'age of scaling" — il collo di bottiglia sono le idee, non il compute — e l'eco è quasi letterale in <a href="https://www.startuphub.ai/ai-news/ai-research/2026/fran-ois-chollet-on-arc-agi-3-the-future-of-ai-reasoning" target="_blank" rel="noopener">François Chollet</a>, che con ARC-AGI-3 trasforma la tesi in numero (modelli &lt;1%, umani al 100%), e in <a href="https://www.technologyreview.com/2026/01/22/1131661/yann-lecuns-new-venture-ami-labs/" target="_blank" rel="noopener">Yann LeCun</a>, che mette un miliardo dietro l'idea che gli LLM siano "un vicolo cieco". Eppure, sullo stesso palcoscenico, <a href="https://www.techradar.com/pro/we-crossed-that-about-3-months-ago-a16zs-marc-andreessen-drops-huge-bombshell-about-agi-on-joe-rogans-podcast" target="_blank" rel="noopener">Marc Andreessen</a> proclama l'AGI già raggiunta e <a href="https://www.fastcompany.com/91544235/demis-hassabis-google-io-2026" target="_blank" rel="noopener">Demis Hassabis</a> parla di "pendici della singolarità". La divergenza non è di grado ma di natura: chi costruisce dichiara l'arrivo, chi misura dichiara la fragilità.</p>
+<p>Sotto, però, scorre una <strong>corrente unificante: la verificabilità come nuovo principio organizzatore</strong>. <a href="https://karpathy.bearblog.dev/sequoia-ascent-2026/" target="_blank" rel="noopener">Andrej Karpathy</a> la formula nettamente — l'<img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="">AI automatizza "ciò che puoi verificare" — e questo spiega perché tutti, scettici e accelerazionisti, puntino ora sugli <strong>agenti</strong>: Hassabis li cita come prova della rotta, <a href="https://siliconangle.com/2026/06/01/five-thoughts-nvidia-ceo-jensen-huangs-gtc-taipei-2026-keynote/" target="_blank" rel="noopener">Jensen Huang</a> li chiama "l'era arrivata", <a href="https://stratechery.com/topic/events/interview/nat-friedman-and-daniel-gross/" target="_blank" rel="noopener">Nat Friedman</a> ripensa Git per quando il codice lo scrive una macchina. L'agente è il punto dove reasoning interattivo (Chollet), continual learning (Sutskever) e infrastruttura collaborativa convergono.</p>
+<p>Il secondo asse è <strong>economico, non più capacitivo</strong>. <a href="https://www.startuphub.ai/ai-news/ai-figures/2026/figure-sam-altman-public-position-evolution-2026-06-13" target="_blank" rel="noopener">Sam Altman</a> ammette che il costo è ormai la seconda lamentela enterprise; <a href="https://www.cnbc.com/2026/06/03/perplexity-ceo-ai-valuations-computer-agentic.html" target="_blank" rel="noopener">Aravind Srinivas</a> riduce la competizione a "token value per watt"; <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/liang-wenfeng.png" alt="">Liang Wenfeng fa dell'efficienza un'arma geopolitica. Da qui la <strong>tesi dei team minimali</strong> — <a href="https://finance.yahoo.com/news/jack-dorsey-4-000-pink-145500355.html" target="_blank" rel="noopener">Jack Dorsey</a> taglia il 40%, <a href="https://nav.al/" target="_blank" rel="noopener">Naval Ravikant</a> parla di "software factory", <a href="https://digg.com/tech/jv3lfy4e" target="_blank" rel="noopener">Paul Graham</a> di valore creato da pochi.</p>
+<p>La tensione di fondo, infine, è <strong>sovranità contro accelerazione</strong>: <a href="https://harro.com/2026/06/11/balaji-srinivasan-at-superai-the-case-for-personal-private-programmable-ai/" target="_blank" rel="noopener">Balaji Srinivasan</a> e <img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/dhh.png" alt="">DHH spingono l'AI locale come emancipazione, mentre <a href="https://news.un.org/en/story/2026/04/1167361" target="_blank" rel="noopener">Geoffrey Hinton</a> e <a href="https://newrepublic.com/article/211735/anthropic-ceo-dario-amodei-wants-us-think-he-building-god" target="_blank" rel="noopener">Dario Amodei</a> invocano lo "sterzo" regolatorio. Il momento storico è questo: l'industria ha smesso di chiedersi <em>se</em> l'AI funziona e si divide su <em>cosa</em> esattamente abbiamo costruito — e a quale prezzo umano.</p></div></section>
+<section><h2>Temi del giorno</h2><div class="tension"><div class="axis">↗ Gli agenti come punto di convergenza</div><div class="side">L'agente diventa il terreno comune dove reasoning interattivo, continual learning e infrastruttura collaborativa si incontrano, abbracciato sia da scettici sia da accelerazionisti.</div></div><div class="tension"><div class="axis">↗ L'asse economico al posto di quello capacitivo</div><div class="side">La domanda non è più se l'AI può, ma quanto costa: efficienza, token value per watt e costo enterprise diventano il vero campo di battaglia.</div></div><div class="tension"><div class="axis">↗ La tesi dei team minimali</div><div class="side">Poche persone più AI generano il valore di intere organizzazioni — la 'software factory' che giustifica tagli e strutture snelle.</div></div><div class="tension"><div class="axis">↗ L'AGI dichiarata già raggiunta</div><div class="side">Chi costruisce annuncia l'arrivo — AGI superata o 'pendici della singolarità' — trasformando la previsione in proclama di stato presente.</div></div><div class="tension"><div class="axis">↗ L'efficienza come arma geopolitica</div><div class="side">Fare di più con meno compute diventa una leva di potere tra nazioni, non solo una scelta tecnica.</div></div><div class="tension"><div class="axis">⚖ Costruttori contro misuratori sulla maturità dell'AI</div><div class="side">Marc Andreessen: l'AGI è già stata raggiunta · Ilya Sutskever: siamo alla fragilità, le idee sono il limite</div></div><div class="tension"><div class="axis">⚖ Sovranità contro accelerazione nel governo dell'AI</div><div class="side">Balaji Srinivasan: AI locale e privata come emancipazione · Dario Amodei: serve lo sterzo regolatorio</div></div><div class="tension"><div class="axis">⚖ Cosa abbiamo davvero costruito e a quale prezzo</div><div class="side">Demis Hassabis: siamo sulle pendici della singolarità · Dario Amodei: i rischi sono ormai qui</div></div><div class="tension"><div class="axis">⚖ La frontiera è capacità o economia</div><div class="side">Aravind Srinivas: conta il token value per watt · Sam Altman: il costo è ormai la seconda lamentela enterprise</div></div></section>
+<section><h2>Progetti da osservare</h2><div class="tension"><div class="axis">karpathy/nanochat</div><div class=side>Pipeline minimale per addestrare un modello GPT-2 in ~2 ore su 8×H100 con FP8 e ClimbMix, parte della linea di lavoro di Karpathy su pipeline ridotte per singolo ricercatore. Repo di riferimento per l'era 'meno codice, più amplificazione'.</div></div><div class="tension"><div class="axis">karpathy/llm-wiki (gist)</div><div class=side>Prompt-pattern da copiare in Claude Code/Codex che istanzia il sistema 'LLM Wiki' su Obsidian: articoli enciclopedici interlinkati, backlink, health check. Diventato viral come anti-RAG personale.</div></div><div class="tension"><div class="axis">karpathy/autoresearch</div><div class=side>Repo di ~630 righe (7 marzo 2026) che materializza un agente di ricerca minimale, parte della tesi 'idea file = distribuzione' di Karpathy. Esempio concreto di agente che amplifica il ricercatore individuale.</div></div><div class="tension"><div class="axis">Obsidian</div><div class=side>Editor di note markdown con backlink e grafi che Karpathy elegge come 'IDE della conoscenza' nel suo pattern LLM-Wiki. Diventa il frontend consigliato per memoria esplicita e ispezionabile contro la memoria opaca degli assistant commerciali.</div></div><div class="tension"><div class="axis">ggerganov/llama.cpp</div><div class=side>Motore di inferenza C/C++ per LLM locali; il suo llama-server è il cuore dello stack self-sovereign proposto da Buterin (NixOS + llama-server + bubblewrap). Standard de facto per AI locale sovrana.</div></div><div class="tension"><div class="axis">basecamp/omarchy</div><div class=side>Distro Arch Linux curata da DHH con Hyprland, pensata per attrarre utenti macOS/Windows verso un desktop 'malleabile'. Progetto-manifesto del filone 'open source AI-ready' di DHH (Omacon NY, 130 persone).</div></div><div class="tension"><div class="axis">hyprwm/Hyprland</div><div class=side>Compositor Wayland dinamico, cuore visivo di Omarchy e simbolo del rinnovato interesse consumer per Linux (Panther Lake / XPS 14). DHH lo cita come esempio di software su cui finalmente 'hardware e aziende tornano a scommettere'.</div></div><div class="tension"><div class="axis">simonw/llm</div><div class=side>CLI e libreria Python di Simon Willison per interagire con LLM locali e cloud, base dei suoi tool README-driven (scan-for-secrets, datasette-ports, research-llm-apis). Strumento pivot del suo workflow 'agentic engineering'.</div></div><div class="tension"><div class="axis">fchollet/ARC-AGI</div><div class=side>Repo ufficiale dei benchmark ARC-AGI di Chollet, ora affiancato da ARC-AGI-3 (ambienti interattivi turn-based per misurare agency). ARC Prize 2026 ha $2M di montepremi; umani 100%, best frontier model 0,37%.</div></div><div class="tension"><div class="axis">zilliztech/claude-context</div><div class=side>Server MCP di code search che trasforma l'intera codebase in contesto indicizzato per Claude Code, Cursor e altri agenti. Esempio netto del 'moat shift' dal modello all'uso indicato da Evans e Andreessen.</div></div></section>
+<section><h2>Fonti</h2><div class="fonte"><span class="who">Andrej Karpathy</span><a href="https://karpathy.bearblog.dev/sequoia-ascent-2026/" target="_blank" rel="noopener">Sequoia Ascent 2026</a><a href="https://x.com/karpathy" target="_blank" rel="noopener">@karpathy su X</a><a href="https://x.com/karpathy/status/2040470801506541998" target="_blank" rel="noopener">thread sulle "idea files"</a></div><div class="fonte"><span class="who">Demis Hassabis</span><a href="https://www.axios.com/2026/05/26/deepmind-ceo-demis-hassabis" target="_blank" rel="noopener">Axios — Hassabis on AGI</a><a href="https://sherwood.news/tech/google-deepminds-hassabis-agi-is-3-to-4-years-away/" target="_blank" rel="noopener">Sherwood News — AGI 3-4 anni</a><a href="https://www.fastcompany.com/91544235/demis-hassabis-google-io-2026" target="_blank" rel="noopener">Fast Company — Google I/O 2026</a></div><div class="fonte"><span class="who">Liang Wenfeng</span><a href="https://www.scmp.com/tech/big-tech/article/3357525/how-deepseeks-landmark-funding-secures-liang-wenfengs-grip-chinas-ai-rivalry-heats" target="_blank" rel="noopener">SCMP — funding e controllo di Liang</a><a href="https://www.cnbc.com/2026/06/03/deepseek-slated-to-draw-7-billion-in-maiden-fundraising-sources-say.html" target="_blank" rel="noopener">CNBC — round da ~7 mld $</a><a href="https://www.scmp.com/tech/big-tech/article/3338427/deepseek-kicks-2026-paper-signalling-push-train-bigger-models-less" target="_blank" rel="noopener">SCMP — paper "modelli più grandi a meno costo"</a></div></section>
+<section class="transcript-section"><h2>Trascrizione</h2><details class="tr"><summary>Leggi la trascrizione</summary><button class="tr-copy" type="button" onclick="copiaTrascrizione(this)">copia il testo</button><div class="transcript-body"><h2>L'agente, il prezzo e la fabbrica leggera</h2>
+<p class="podcast-episode-desc">Chi costruisce l'AI dichiara di aver già vinto, chi la misura parla di fragilità. E intanto la vera battaglia si sposta su un terreno inatteso: quanto costa.</p>
+<div class="chapter" data-mood="geo"><hr></div>
+<p>C'è una parola che questa settimana sembra uscire da bocche che di solito non si parlano: agente. La dicono gli scettici e la dicono gli entusiasti, la dice chi pensa che manchi ancora moltissimo e chi annuncia di essere già arrivato. Quando persone in disaccordo su tutto cominciano a usare lo stesso termine, di solito significa che il terreno si è spostato sotto i piedi di entrambi. È il 27 giugno 2026, questo è Signal Brief, e oggi proviamo a guardare quel terreno.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Cominciamo da una scena piccola. Andrej Karpathy, in questi giorni, si è messo a commentare una cosa apparentemente banale: l'arrivo di Claude dentro Slack. Non un nuovo modello, non un annuncio roboante — un assistente che entra nella chat di lavoro accanto ai colleghi umani. Karpathy lo nota perché, dice, è molto più "dentro" il flusso del lavoro di tutti gli altri. Non più il chatbot a cui ti rivolgi aprendo una finestra, ma un collega silenzioso che sta lì, nello stesso posto dove stanno le persone.</p>
+<p>Sembra un dettaglio. È invece il cuore di tutto quello che racconteremo oggi. Perché l'agente — questa cosa che osserva, ragiona e agisce da sola — è diventato il punto dove si incontrano persone che fino a ieri si davano battaglia. Demis Hassabis lo cita come la prova che la strada è quella giusta. Jensen Huang lo chiama, semplicemente, "l'era arrivata". E Nat Friedman è arrivato a ripensare Git, lo strumento con cui i programmatori salvano il loro lavoro da vent'anni, immaginando un mondo in cui il codice non lo scrive più un umano ma una macchina. Strade diverse, stessa casa.</p>
+<p>Karpathy ci ha messo sopra una chiave che spiega molto. La sua formula è semplice: i computer di una volta automatizzavano quello che sai scrivere come istruzione precisa; questi nuovi modelli automatizzano quello che sai verificare. Dove puoi controllare se la risposta è giusta — la matematica, il codice — corrono. Dove non puoi, restano ruvidi. Fino a ieri questa era un'osservazione laterale. Adesso spiega l'intera corsa agli agenti: costruisci un agente proprio dove puoi mettergli accanto un giudice che dice sì o no.</p>
+<p>Sotto questa convergenza, però, resta la frattura di cui parlavamo già ieri, e che oggi si fa più netta. Da una parte chi costruisce: Marc Andreessen, da Joe Rogan, dice che l'AGI è già qui, che la soglia l'abbiamo passata tre mesi fa. Dall'altra chi misura: Ilya Sutskever, François Chollet, che mostrano numeri impietosi e parlano di sistemi fragili. La cosa più interessante, per me, è che non è una differenza di grado. Non è "manca poco" contro "manca tanto". È una differenza di natura. Chi costruisce annuncia l'arrivo. Chi misura annuncia la fragilità. Sono due mestieri diversi che guardano lo stesso oggetto e vedono due cose opposte.</p>
+<p>Ma il vero spostamento di questa settimana è un altro, ed è quasi invisibile perché non fa rumore. Per cinque anni la domanda è stata: l'AI ce la fa? Adesso la domanda è diventata: quanto costa? È successo come col passaggio dal vapore all'elettricità nelle fabbriche. All'inizio conta solo se la macchina gira. Poi, quando girano tutte, l'unica cosa che conta è quanta energia bruciano per ogni pezzo prodotto. Siamo entrati in quella fase. E quasi tutti i protagonisti di oggi, ognuno a modo suo, ci stanno girando intorno.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Restiamo un momento su Karpathy, perché è il personaggio che tiene insieme il filo. Per chi non lo conoscesse: è stato una delle menti dietro la guida autonoma di Tesla e tra i primi di OpenAI, ed è oggi una delle voci più ascoltate quando si tratta di capire dove sta davvero andando questa tecnologia, senza vendere niente.</p>
+<p>In queste settimane insiste su due immagini. La prima l'abbiamo detta: la verificabilità come legge che spiega cosa funziona e cosa no. La seconda è più curiosa, e dice molto sul mondo che arriva. Karpathy sostiene che nell'era degli agenti condividere il codice di un programma conterà sempre meno. Quello che condividerai è l'idea. E l'agente dell'altra persona ricostruirà il programma su misura per lei. Lo lega a una pratica che porta avanti in prima persona: tenere una specie di archivio personale di idee, una base di conoscenza che interroghi ogni giorno come strumento di lavoro.</p>
+<p>Fermiamoci a pensare cosa significa. Per tutta la storia del software l'oggetto di valore è stato il programma: lo scrivi una volta, lo copi, lo distribuisci identico a milioni di persone. È la logica della stampa, da Gutenberg in poi: un originale, infinite copie uguali. Karpathy sta descrivendo qualcosa di diverso. Non distribuisci più l'oggetto, distribuisci l'intenzione, e ogni copia nasce diversa, cucita addosso a chi la riceve. È più simile a come si trasmettevano le ricette prima dei libri di cucina: non il piatto, ma l'idea del piatto, che ogni cuoco rifaceva con quello che aveva in casa.</p>
+<p>Il collegamento con la giornata è diretto. Se l'agente sa ricostruire da un'idea, allora la cosa rara non è più saper programmare. È avere idee chiare e saperle verificare. Ed è qui che Karpathy chiude il cerchio con sé stesso: automatizziamo ciò che sappiamo controllare, e quindi il lavoro umano che resta prezioso è proprio quello del controllo, del giudizio, del decidere se una cosa è buona. Mi sembra che dietro la sua apparente leggerezza ci sia un'idea piuttosto seria su cosa varrà la pena saper fare, tra qualche anno.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Dall'osservatore passiamo a chi costruisce. Demis Hassabis guida DeepMind, il laboratorio di Google che ha insegnato a una macchina a battere i campioni di Go e poi ha decifrato la forma delle proteine. È uno scienziato prima che un imprenditore, e questo rende il suo cambio di tono ancora più notevole.</p>
+<p>A Google I/O, quest'anno, ha usato una frase che si è impressa: siamo "alle pendici della singolarità". Non la cima, le pendici — ma comunque dentro la salita. È un linguaggio quasi solenne, da momento storico, lontano dal tecnico misurato di prima. E la sua nuova fiducia poggia esattamente sull'oggetto di oggi: gli agenti. "Li vediamo funzionare adesso", dice, "immagina cosa saranno tra un anno". Per lui sono la prova concreta che l'industria ha imboccato la strada giusta verso un'intelligenza generale, che ora colloca intorno al 2029, anticipando le sue stesse previsioni passate.</p>
+<p>Fin qui è il costruttore che annuncia l'arrivo. Ma c'è una crepa nel suo discorso, ed è la parte che trovo più onesta. Hassabis ha spostato l'accento da "come la costruiamo" a "siamo pronti?". Si lamenta che i suoi amici economisti non stiano prendendo la cosa abbastanza sul serio, che il dibattito resti chiuso nei circoli tecnici, e che restino pochi anni per prepararsi. Sostiene che l'impatto sarà dieci volte quello della rivoluzione industriale, compresso in un decennio invece che in un secolo.</p>
+<p>Ecco la tensione di oggi che gli passa dentro, tutta intera. Da una parte la sicurezza di chi vede le macchine funzionare e dichiara che ci siamo quasi. Dall'altra l'inquietudine di chi capisce che, se ha ragione, la società non è attrezzata per quello che sta per arrivare. Hassabis è raro perché tiene insieme le due cose senza nasconderne nessuna.</p>
+<p>Pensiamo a quanto è strano tutto questo. La rivoluzione industriale nessuno l'ha annunciata mentre accadeva: i contadini che si trasferivano in città non sapevano di essere dentro una svolta epocale, lo abbiamo capito noi un secolo dopo, sui libri. Qui, invece, i protagonisti salgono sul palco e dichiarano di essere dentro la svolta mentre la stanno vivendo. Trasformano la previsione in proclama. E questa, di per sé, è una novità nella storia: non è mai successo che chi fa una rivoluzione la racconti in diretta.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Ricapitoliamo un attimo dove siamo, per chi ci ha persi a un semaforo. Tutti convergono sull'agente. I costruttori dicono che siamo arrivati, chi misura dice che siamo fragili. E sotto, silenziosa, la domanda è cambiata: non più "si può fare", ma "quanto costa". È qui che entra Sam Altman.</p>
+<p>Altman guida OpenAI, l'azienda di ChatGPT, ed è probabilmente la persona che più di ogni altra ha venduto al mondo l'idea che l'AI stesse arrivando. Per questo quello che ha detto il 2 giugno, a un evento per clienti aziendali, conta parecchio. Ha ammesso che il costo è ormai la seconda lamentela più frequente di chi compra i suoi servizi. All'inizio del 2026, racconta, non se ne curava nessuno. Poi, all'improvviso, è esploso. Cita persino, divertito, il messaggio tipo che gli arriva dai clienti: abbiamo bruciato tutto il budget dell'anno nel primo trimestre, puoi renderlo più efficiente?</p>
+<p>È una frase piccola che segna un'epoca. Per anni la frontiera è stata la capacità: chi ha il modello più bravo. Altman ci dice che il vero collo di bottiglia, adesso, è l'uso. I suoi clienti più grandi consumano qualcosa come cento miliardi di "parole-macchina" al mese, e a quella scala il problema non è più se il modello è capace, ma se te lo puoi permettere.</p>
+<p>C'è anche un secondo spostamento, nel suo tono, ed è il più umano. Altman ha messo da parte la retorica del rischio di estinzione e parla ora di "gentle singularity", una transizione dolce, graduale, gestibile. Continua a pensare che entro il 2030 avremo modelli straordinari, capaci di cose oltre l'umano. Ma il colore è cambiato: meno apocalisse, più adozione pratica.</p>
+<p>Mi sembra interessante mettere le due cose accanto. La stessa persona che ti dice "arriveranno macchine più capaci di noi" ti dice anche "intanto i miei clienti si lamentano della bolletta". È il momento in cui una tecnologia smette di essere magia e diventa infrastruttura — come l'elettricità, che ha smesso di stupire il giorno in cui abbiamo cominciato a guardare il contatore. L'AI sta avendo il suo incontro col contatore. E i contatori, nella storia, hanno sempre deciso più rivoluzioni dei manifesti.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Se il costo è il nuovo campo di battaglia, ci sono due modi di rispondere. Uno è tagliare le persone. L'altro è tagliare il calcolo. Jack Dorsey ha scelto il primo, Liang Wenfeng il secondo. Cominciamo da Dorsey.</p>
+<p>Dorsey, il fondatore di Twitter e di quella che oggi si chiama Block, ha fatto una mossa netta e divisiva: ha tagliato circa il quaranta per cento dei dipendenti, quasi quattromila persone. La giustificazione è una tesi quasi ideologica: con gli strumenti di AI, sostiene, un team piccolo può fare di più e farlo meglio di una grande organizzazione. Il mercato gli ha dato ragione subito, con il titolo su del venticinque per cento; il mondo del lavoro tech, molto meno.</p>
+<p>Non è una voce isolata. È quello che nel briefing di oggi chiamiamo la tesi dei team minimali, e torna identica in altri due personaggi. Naval Ravikant parla di "fabbrica del software": descrivi a parole l'applicazione che vuoi, l'AI la costruisce, la prova, corregge gli errori e ricomincia. La sua frase è "spreca token per risparmiare tempo" — bruciare calcolo a volontà pur di non bruciare ore umane. E Paul Graham, in un saggio di metà giugno, ribadisce la sua vecchia idea: la ricchezza non si prende, si crea, e oggi pochissime persone con gli strumenti giusti possono creare il valore di intere aziende.</p>
+<p>Tre voci, una sola immagine: poche persone più le macchine valgono quanto un'organizzazione intera. È l'argomento con cui si giustificano i tagli e le strutture leggere.</p>
+<p>Vale la pena guardarla con un po' di distanza, questa storia, perché l'abbiamo già vista. Ogni volta che una tecnologia aumenta enormemente la produttività di un singolo, qualcuno annuncia la fine delle grandi organizzazioni. Lo si disse del personal computer negli anni Ottanta, lo si disse di internet negli anni Novanta. A volte è successo davvero, più spesso le aziende sono diventate diverse, non più piccole. Dorsey scommette che stavolta sia vero sul serio. È una scommessa, non un dato — e fa una certa impressione che a pagarne il conto, intanto, siano quattromila persone reali.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>L'altra risposta al problema del costo arriva dalla Cina, e ha un nome: Liang Wenfeng, il fondatore di DeepSeek. Se Dorsey taglia le persone, Liang taglia il calcolo — e ne fa un'arma.</p>
+<p>La notizia è del 16 giugno: DeepSeek ha chiuso il suo primo finanziamento esterno, qualcosa come sette miliardi e mezzo di dollari. Ma la cosa che racconta di più non è la cifra, è come Liang l'ha costruita. Ci ha messo di tasca propria quasi la metà, diventando il primo investitore di sé stesso. Agli investitori commerciali non ha dato diritto di voto e ha imposto cinque anni di vincolo. L'unica eccezione con vero potere è il fondo statale cinese. Il messaggio è chiaro: i soldi sì, il controllo no — tranne che allo Stato.</p>
+<p>La sua bussola, ha ripetuto, è una sola: l'intelligenza artificiale generale. DeepSeek, dice, "non ha interesse in nient'altro", niente prodotti laterali, niente diversificazioni per fare cassa. E il modo per arrivarci è la vecchia ossessione della casa: fare di più spendendo meno. Il loro ultimo modello arriva a una dimensione enorme con un prezzo d'uso che, a sentire i numeri, è oltre dieci volte più economico dei concorrenti americani.</p>
+<p>Qui la questione del costo smette di essere una faccenda da contabili e diventa geopolitica. Se puoi addestrare e far girare modelli potenti con una frazione del calcolo, non dipendi più da chi controlla i chip più avanzati. L'efficienza diventa sovranità. È la stessa logica per cui, nella storia dell'energia, chi imparava a ricavare più lavoro da meno carbone non risparmiava soltanto: cambiava i rapporti di forza tra le nazioni. Liang sta giocando esattamente quella partita, con il calcolo al posto del carbone.</p>
+<p>E si lega all'altra grande tensione di oggi, quella tra sovranità e accelerazione. Da una parte c'è chi, come Balaji Srinivasan o Dario Amodei, discute di AI locale o di regole per governarla. Dall'altra c'è chi, come Liang, la sovranità se la prende e basta, rendendosi indipendente sul piano che conta davvero: quanto ti costa pensare.</p>
+<div class="chapter" data-mood="upbeat"><hr></div>
+<p>Qualche progetto da tenere d'occhio, e stavolta sono tutti vecchie conoscenze che continuano a crescere, il che di per sé dice qualcosa.</p>
+<p>C'è un grappolo intero che porta la firma di Karpathy, e non è un caso vista la giornata: nanochat, in crescita costante; llm-wiki, l'idea della base di conoscenza personale di cui parlavamo, sempre in tendenza; e autoresearch, anche lui in salita. Sono i ferri del mestiere di chi vuole tenersi le idee in casa, esattamente la pratica che Karpathy predica.</p>
+<p>Accanto, due strumenti che incarnano l'AI locale di cui parlava Liang. llama.cpp continua a crescere: è quello che permette di far girare i modelli sul proprio computer, senza server di nessuno. E llm, di Simon Willison, lo stesso spirito da riga di comando, anch'esso in tendenza.</p>
+<p>Resta in crescita ARC-AGI, la prova ideata da François Chollet, quella su cui i modelli prendono meno dell'uno per cento e gli umani cento — il termometro della fragilità di cui dicevamo. E torna Obsidian, il programma per costruirsi un secondo cervello fatto di note collegate.</p>
+<p>C'è un filo che tiene insieme questa lista, e non l'ho scelto io: archivi personali di idee, modelli che girano sul tuo portatile, strumenti per misurare quanto manca davvero. È la versione "fai da te" di tutto quello che oggi i grandi annunciano dai palchi. Mentre Hassabis parla di pendici della singolarità, qualcuno, la sera, si costruisce in silenzio gli attrezzi per non dipendere da nessuno.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Resta l'immagine di Karpathy che guarda un assistente entrare in una chat di lavoro, accanto alle persone. Una cosa minima. Eppure dentro c'è tutto: la macchina che smette di essere uno strumento da interrogare e diventa qualcuno con cui stare. Forse la domanda dei prossimi anni non sarà quanto sono capaci, né quanto costano, ma che posto gli lasciamo accanto a noi. È stato Signal Brief. Alla prossima.</p></div></details></section>
+<nav class="epnav"><a href="/signal-brief/ai/2026-06-26/">← 2026-06-26</a><span style="flex:1"></span><a href="/signal-brief/ai/2026-06-28/">2026-06-28 →</a></nav>
+<dialog class="vplayer" id="vplayer"></dialog>
+<script>
+// player modale dei video: la miniatura apre il video al centro (disegno 2026-08-07)
+function apriVideo(src) {
+  var d = document.getElementById('vplayer');
+  d.innerHTML = '<video controls autoplay playsinline src="' + src + '"></video>';
+  d.showModal();
+  d.onclick = function (e) { if (e.target === d) d.close(); };
+  d.onclose = function () { var v = d.querySelector('video'); if (v) v.pause(); d.innerHTML = ''; };
+}
+// ascolto inline dalla lista: un episodio alla volta
+var epAudio = null, epBtn = null;
+function ascolta(btn, src) {
+  if (epBtn === btn && epAudio) {
+    if (epAudio.paused) { epAudio.play(); btn.classList.add('on'); }
+    else { epAudio.pause(); btn.classList.remove('on'); }
+    return;
+  }
+  if (epAudio) { epAudio.pause(); if (epBtn) epBtn.classList.remove('on'); }
+  epAudio = new Audio(src); epBtn = btn;
+  epAudio.play(); btn.classList.add('on');
+  epAudio.onended = function () { btn.classList.remove('on'); };
+}
+function copiaTrascrizione(btn) {
+  var t = btn.parentElement.querySelector('.transcript-body');
+  navigator.clipboard.writeText(t ? t.innerText : '').then(function () {
+    btn.textContent = 'copiata ✓';
+    setTimeout(function () { btn.textContent = 'copia il testo'; }, 1800);
+  });
+}
+</script>
+<footer class="creator-footer">
+  <img src="/signal-brief/mike-avatar.png" alt="Michele Mondora">
+  <div class="creator-meta">
+    <span class="creator-name">it-mikesoft</span>
+    <span class="creator-tagline">working with systems, living with questions</span>
+    <span class="creator-email"><a href="mailto:michele@mondora.com">michele@mondora.com</a></span>
+  </div>
+</footer>
+<section class="tutele"><h3>Trasparenza e tutele</h3>
+<p><strong>Come nasce questo contenuto.</strong> Ricerca, sintesi editoriale, voce narrante, immagini e musica sono prodotte con sistemi di intelligenza artificiale. Non c'è una redazione umana che verifica ogni affermazione prima della pubblicazione: un controllo automatico scarta le schede giudicate inaffidabili, ma non elimina la possibilità di errori.</p>
+<p><strong>Affermazioni su persone e aziende.</strong> Quanto riportato è una sintesi di fonti pubbliche, non una dichiarazione diretta delle persone citate: le frasi non vanno intese come virgolettati né come posizioni ufficiali. Le fonti sono indicate in ogni pagina episodio — verificale prima di considerare un'informazione accertata. Se trovi un'affermazione inesatta che ti riguarda, scrivi a <a href="mailto:michele@mondora.com">michele@mondora.com</a>: viene corretta o rimossa.</p>
+<p><strong>Immagini e volti.</strong> Le immagini di scena sono generate con AI e non raffigurano fatti realmente avvenuti. Le fotografie di persone reali usate nei video provengono da Wikimedia Commons con le rispettive licenze, e sono accostate al racconto a scopo identificativo: la loro presenza non implica partecipazione, dichiarazione o approvazione da parte della persona ritratta. Su richiesta dell'interessato vengono rimosse.</p>
+<p><strong>Fonti e diritti altrui.</strong> I contenuti sono rielaborazioni originali, non riproduzioni di articoli di terzi; le testate e gli autori all'origine di una notizia sono citati e collegati. Marchi e nomi commerciali appartengono ai rispettivi titolari e sono usati a scopo descrittivo.</p>
+</section>
+</body></html>
