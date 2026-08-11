@@ -132,11 +132,56 @@
   .epnav { display:flex; justify-content:space-between; gap:1rem; margin:2rem 0 0;
     font-size:.82rem; font-family:monospace; }
   .epnav a { text-decoration:none; }
+  /* Header + tab bar (spec-016, Task 5): stessa forma di
+     public/console/podcast-render.css, riusando i nomi classe dove
+     combaciano — solo la meccanica tab/pannello è nuova qui. */
+  .episode-header .date-line { font-size:.72rem; font-family:monospace; color:#9ca3af;
+    text-transform:uppercase; letter-spacing:.08em; margin-bottom:.3rem; }
+  .ep-header-block { margin-bottom:.5rem; }
+  .ep-header-faces { margin:.6rem 0; }
+  .ep-header-faces .ep-faces { margin-left:0; }
+  .tabs { display:flex; gap:.25rem; border-bottom:1px solid #e2ddd6; margin:1.5rem 0; flex-wrap:wrap; }
+  .tab { font-family:monospace; font-size:.72rem; text-transform:uppercase; letter-spacing:.08em;
+    padding:.6rem .9rem; background:transparent; border:0; border-bottom:2px solid transparent;
+    color:#9ca3af; cursor:pointer; }
+  .tab[aria-selected="true"] { color:#1a1a1a; border-bottom-color:#2563eb; }
+  .tab-panel { display:block; }
+  .tab-panel[hidden] { display:none !important; }
+  /* Fallback dei pannelli senza dati (episodi storici senza un sidecar) —
+     porta di public/console/podcast-render.css:304-309, sui token pubblici. */
+  /* Header episodio a due colonne: barra tab e pannello nel primo schermo
+     (stesse regole del modulo condiviso, richiesta 2026-08-10). */
+  .ep-header-block { display:grid; grid-template-columns:minmax(0,1fr) 340px;
+    grid-template-rows:repeat(4,min-content); gap:.3rem 1.6rem;
+    align-items:start; margin-bottom:.5rem; }
+  .ep-header-block > [data-sb="data"] { grid-column:1; margin:0; }
+  .ep-header-block > [data-sb="titolo"] { grid-column:1; margin:.1rem 0; }
+  .ep-header-block > [data-sb="player"] { grid-column:1; }
+  .ep-header-block > [data-sb="nav"] { grid-column:1; }
+  .ep-header-block > [data-sb="facce"] { grid-column:2; grid-row:1; }
+  .ep-header-block > [data-sb="video"] { grid-column:2; grid-row:2/5;
+    display:flex; gap:.5rem; flex-wrap:wrap; }
+  .ep-header-block [data-sb="facce"] img { width:26px; height:26px; }
+  .ep-header-block [data-sb="video"] video { max-height:96px; width:auto; }
+  .ep-header-block audio { height:36px; width:100%; }
+  .tabs { position:sticky; top:0; z-index:5; background:#fff;
+    padding:.4rem 0; border-bottom:1px solid #e5e7eb; }
+  @media (max-width:760px) {
+    .ep-header-block { grid-template-columns:1fr; }
+    .ep-header-block > [data-sb="facce"],
+    .ep-header-block > [data-sb="video"] { grid-column:1; grid-row:auto; }
+  }
+  .state-note { padding:2rem 1rem; text-align:center; color:#9ca3af;
+    font-family:monospace; font-size:.85rem; }
   @media (prefers-color-scheme:dark) {
     body { background:#1f1d18; color:#e5e5e5; }
     .ep, .tension, .signal-card { background:#2a2823; border-color:#3a352d; }
     .ep-play { background:#3a352d; } .desc { color:#d4d4d4; }
     .signal-text { color:#d4d4d4; }
+    .episode-header .date-line { color:#9ca3af; }
+    .tabs { border-color:#3a352d; }
+    .tab[aria-selected="true"] { color:#f5f5f5; }
+    .state-note { color:#9ca3af; }
     .creator-footer { border-color:#3a352d; }
     .creator-name { color:#f5f5f5; }
     .creator-tagline, .creator-email a { color:#9ca3af; }
@@ -149,12 +194,15 @@
     details.tr { border-color:#3a352d; }
   }
 </style></head><body>
-<a class="back" href="/signal-brief/ai/">← Signal.AI</a>
-<header><h1>Il muro del settanta per cento</h1></header>
-<div class="tagline">2026-04-20 · Digital Intelligence Podcast</div>
-<div class="desc">Gli agenti AI si fermano, i ricercatori dicono che lo scaling è finito, mentre chi vende promette l'AGI. E intanto gli utenti si dividono in due classi.</div>
-<section><h2>Progetti da osservare</h2><div class="tension"><div class="axis">OpenClaw</div><div class=side>Assistente AI personale che gira sui propri dispositivi — browsing, shell, file system, smart home. 357k stelle, il progetto open-source a crescita più rapida nella storia di GitHub.</div></div><div class="tension"><div class="axis">AutoResearch</div><div class=side>630 righe di Python: un agente lancia esperimenti ML su singola GPU, tiene o scarta, ripete tutta la notte. ~12 esperimenti/ora, 70.5k stelle.</div></div><div class="tension"><div class="axis">NemoClaw</div><div class=side>Piattaforma open-source di NVIDIA che aggiunge sicurezza enterprise, privacy e policy control sopra OpenClaw. Definito da Huang il 'sistema operativo dell'era agentica'.</div></div><div class="tension"><div class="axis">OpenCode</div><div class=side>Coding agent open-source per terminale scritto in Go. Supporta 75+ modelli (Anthropic, OpenAI, Gemini, Groq). Alternativa model-agnostic a Claude Code, TUI ricca e architettura local-first.</div></div><div class="tension"><div class="axis">ARC-AGI-3</div><div class=side>Primo benchmark interattivo per intelligenza agentica: ambienti a turni senza istruzioni, l'agente deve esplorare, capire le regole e vincere. Umani 100%, Gemini 3.1 Pro 0,37%. Premio $2M+.</div></div><div class="tension"><div class="axis">oh-my-codex</div><div class=side>Layer di orchestrazione multi-agente per Codex CLI e Claude Code: hook, team di agenti paralleli in worktree isolati, HUD. +14.100 stelle in una settimana.</div></div><div class="tension"><div class="axis">Entire CLI</div><div class=side>Layer di osservabilità Git per sessioni di coding con agenti AI: traccia contesto, reasoning e decisioni nel flusso di versioning. Seed da $60M dall'ex-CEO di GitHub.</div></div><div class="tension"><div class="axis">MemPalace</div><div class=side>Sistema di memoria persistente per LLM organizzato come un palazzo della memoria: ali, corridoi e stanze. 170 token di startup, 96.6% di accuratezza, completamente offline. 43k+ stelle in 72 ore.</div></div><div class="tension"><div class="axis">LLM Wiki (gist)</div><div class=side>Idea file di Karpathy per costruire wiki personali con LLM: materiali grezzi → indicizzazione → artefatto permanente interlinked in Markdown. Non è RAG, è un cambio di paradigma nel flusso di lavoro.</div></div><div class="tension"><div class="axis">Omarchy</div><div class=side>Distribuzione Linux opinionata (Arch + Hyprland) di DHH. 150k installazioni in 30 giorni, 1 PB di ISO distribuiti. Omacon sold out in ore. Catalizzatore del ritorno al desktop Linux tra sviluppatori.</div></div></section>
-<nav class="epnav"><a href="/signal-brief/ai/2026-04-18/">← 2026-04-18</a><span style="flex:1"></span><a href="/signal-brief/ai/2026-04-21/">2026-04-21 →</a></nav>
+<a class="back back-link" href="/signal-brief/ai/">← Signal.AI</a><div class="ep-header-block"><header class="episode-header"><div class="date-line" data-sb="data">2026-04-20</div><h1 data-sb="titolo">Il muro del settanta per cento</h1><div class="desc">Gli agenti AI si fermano, i ricercatori dicono che lo scaling è finito, mentre chi vende promette l'AGI. E intanto gli utenti si dividono in due classi.</div><div class="tagline">Digital Intelligence Podcast</div></header><div data-sb="player"></div><nav class="epnav" data-sb="nav"><a href="/signal-brief/ai/2026-04-18/">← 2026-04-18</a><span style="flex:1"></span><a href="/signal-brief/ai/2026-04-21/">2026-04-21 →</a></nav><div class="ep-header-faces" data-sb="facce"></div><div class="ep-header-video" data-sb="video"></div></div>
+<div class="tabs-block"><div class="tabs" role="tablist" id="sbTabs"><button class="tab" type="button" role="tab" data-tab="sintesi" aria-selected="true" onclick="sbTab('sintesi')">Sintesi</button><button class="tab" type="button" role="tab" data-tab="testo" aria-selected="false" onclick="sbTab('testo')">Testo</button><button class="tab" type="button" role="tab" data-tab="comparazione" aria-selected="false" onclick="sbTab('comparazione')">Comparazione</button><button class="tab" type="button" role="tab" data-tab="segnali" aria-selected="false" onclick="sbTab('segnali')">Segnali</button><button class="tab" type="button" role="tab" data-tab="fonti" aria-selected="false" onclick="sbTab('fonti')">Fonti</button></div>
+<div class="tab-panel panel" data-sb-panel="sintesi"><div class="state-note">Sintesi non disponibile.</div></div>
+<div class="tab-panel panel" data-sb-panel="testo" hidden><div class="state-note">Testo non disponibile.</div></div>
+<div class="tab-panel panel" data-sb-panel="comparazione" hidden><div class="state-note">Comparazione non disponibile per questo episodio.</div></div>
+<div class="tab-panel panel" data-sb-panel="segnali" hidden><section><h2>Progetti da osservare</h2><div class="tension"><div class="axis">OpenClaw</div><div class=side>Assistente AI personale che gira sui propri dispositivi — browsing, shell, file system, smart home. 357k stelle, il progetto open-source a crescita più rapida nella storia di GitHub.</div></div><div class="tension"><div class="axis">AutoResearch</div><div class=side>630 righe di Python: un agente lancia esperimenti ML su singola GPU, tiene o scarta, ripete tutta la notte. ~12 esperimenti/ora, 70.5k stelle.</div></div><div class="tension"><div class="axis">NemoClaw</div><div class=side>Piattaforma open-source di NVIDIA che aggiunge sicurezza enterprise, privacy e policy control sopra OpenClaw. Definito da Huang il 'sistema operativo dell'era agentica'.</div></div><div class="tension"><div class="axis">OpenCode</div><div class=side>Coding agent open-source per terminale scritto in Go. Supporta 75+ modelli (Anthropic, OpenAI, Gemini, Groq). Alternativa model-agnostic a Claude Code, TUI ricca e architettura local-first.</div></div><div class="tension"><div class="axis">ARC-AGI-3</div><div class=side>Primo benchmark interattivo per intelligenza agentica: ambienti a turni senza istruzioni, l'agente deve esplorare, capire le regole e vincere. Umani 100%, Gemini 3.1 Pro 0,37%. Premio $2M+.</div></div><div class="tension"><div class="axis">oh-my-codex</div><div class=side>Layer di orchestrazione multi-agente per Codex CLI e Claude Code: hook, team di agenti paralleli in worktree isolati, HUD. +14.100 stelle in una settimana.</div></div><div class="tension"><div class="axis">Entire CLI</div><div class=side>Layer di osservabilità Git per sessioni di coding con agenti AI: traccia contesto, reasoning e decisioni nel flusso di versioning. Seed da $60M dall'ex-CEO di GitHub.</div></div><div class="tension"><div class="axis">MemPalace</div><div class=side>Sistema di memoria persistente per LLM organizzato come un palazzo della memoria: ali, corridoi e stanze. 170 token di startup, 96.6% di accuratezza, completamente offline. 43k+ stelle in 72 ore.</div></div><div class="tension"><div class="axis">LLM Wiki (gist)</div><div class=side>Idea file di Karpathy per costruire wiki personali con LLM: materiali grezzi → indicizzazione → artefatto permanente interlinked in Markdown. Non è RAG, è un cambio di paradigma nel flusso di lavoro.</div></div><div class="tension"><div class="axis">Omarchy</div><div class=side>Distribuzione Linux opinionata (Arch + Hyprland) di DHH. 150k installazioni in 30 giorni, 1 PB di ISO distribuiti. Omacon sold out in ore. Catalizzatore del ritorno al desktop Linux tra sviluppatori.</div></div></section></div>
+<div class="tab-panel panel" data-sb-panel="fonti" hidden><div class="state-note">Nessuna fonte disponibile per questo episodio.</div></div>
+</div>
+<script>function sbTab(key) {  document.querySelectorAll('.tab-panel').forEach(function (p) {    p.hidden = p.getAttribute('data-sb-panel') !== key;  });  document.querySelectorAll('#sbTabs .tab').forEach(function (b) {    b.setAttribute('aria-selected', b.dataset.tab === key ? 'true' : 'false');  });}function vaiFonte(ev, nome) {  ev.preventDefault();  sbTab('fonti');  var d = document.querySelector('[data-fonte-nome="' + nome + '"]');  if (d) d.scrollIntoView({behavior: 'smooth', block: 'center'});}</script>
 <dialog class="vplayer" id="vplayer"></dialog>
 <script>
 // player modale dei video: la miniatura apre il video al centro (disegno 2026-08-07)

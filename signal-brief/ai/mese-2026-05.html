@@ -132,11 +132,56 @@
   .epnav { display:flex; justify-content:space-between; gap:1rem; margin:2rem 0 0;
     font-size:.82rem; font-family:monospace; }
   .epnav a { text-decoration:none; }
+  /* Header + tab bar (spec-016, Task 5): stessa forma di
+     public/console/podcast-render.css, riusando i nomi classe dove
+     combaciano — solo la meccanica tab/pannello è nuova qui. */
+  .episode-header .date-line { font-size:.72rem; font-family:monospace; color:#9ca3af;
+    text-transform:uppercase; letter-spacing:.08em; margin-bottom:.3rem; }
+  .ep-header-block { margin-bottom:.5rem; }
+  .ep-header-faces { margin:.6rem 0; }
+  .ep-header-faces .ep-faces { margin-left:0; }
+  .tabs { display:flex; gap:.25rem; border-bottom:1px solid #e2ddd6; margin:1.5rem 0; flex-wrap:wrap; }
+  .tab { font-family:monospace; font-size:.72rem; text-transform:uppercase; letter-spacing:.08em;
+    padding:.6rem .9rem; background:transparent; border:0; border-bottom:2px solid transparent;
+    color:#9ca3af; cursor:pointer; }
+  .tab[aria-selected="true"] { color:#1a1a1a; border-bottom-color:#2563eb; }
+  .tab-panel { display:block; }
+  .tab-panel[hidden] { display:none !important; }
+  /* Fallback dei pannelli senza dati (episodi storici senza un sidecar) —
+     porta di public/console/podcast-render.css:304-309, sui token pubblici. */
+  /* Header episodio a due colonne: barra tab e pannello nel primo schermo
+     (stesse regole del modulo condiviso, richiesta 2026-08-10). */
+  .ep-header-block { display:grid; grid-template-columns:minmax(0,1fr) 340px;
+    grid-template-rows:repeat(4,min-content); gap:.3rem 1.6rem;
+    align-items:start; margin-bottom:.5rem; }
+  .ep-header-block > [data-sb="data"] { grid-column:1; margin:0; }
+  .ep-header-block > [data-sb="titolo"] { grid-column:1; margin:.1rem 0; }
+  .ep-header-block > [data-sb="player"] { grid-column:1; }
+  .ep-header-block > [data-sb="nav"] { grid-column:1; }
+  .ep-header-block > [data-sb="facce"] { grid-column:2; grid-row:1; }
+  .ep-header-block > [data-sb="video"] { grid-column:2; grid-row:2/5;
+    display:flex; gap:.5rem; flex-wrap:wrap; }
+  .ep-header-block [data-sb="facce"] img { width:26px; height:26px; }
+  .ep-header-block [data-sb="video"] video { max-height:96px; width:auto; }
+  .ep-header-block audio { height:36px; width:100%; }
+  .tabs { position:sticky; top:0; z-index:5; background:#fff;
+    padding:.4rem 0; border-bottom:1px solid #e5e7eb; }
+  @media (max-width:760px) {
+    .ep-header-block { grid-template-columns:1fr; }
+    .ep-header-block > [data-sb="facce"],
+    .ep-header-block > [data-sb="video"] { grid-column:1; grid-row:auto; }
+  }
+  .state-note { padding:2rem 1rem; text-align:center; color:#9ca3af;
+    font-family:monospace; font-size:.85rem; }
   @media (prefers-color-scheme:dark) {
     body { background:#1f1d18; color:#e5e5e5; }
     .ep, .tension, .signal-card { background:#2a2823; border-color:#3a352d; }
     .ep-play { background:#3a352d; } .desc { color:#d4d4d4; }
     .signal-text { color:#d4d4d4; }
+    .episode-header .date-line { color:#9ca3af; }
+    .tabs { border-color:#3a352d; }
+    .tab[aria-selected="true"] { color:#f5f5f5; }
+    .state-note { color:#9ca3af; }
     .creator-footer { border-color:#3a352d; }
     .creator-name { color:#f5f5f5; }
     .creator-tagline, .creator-email a { color:#9ca3af; }
@@ -155,215 +200,275 @@
   <div class="months"><a href="/signal-brief/ai/">ago 2026</a> · <a href="/signal-brief/ai/mese-2026-07.html">lug 2026</a> · <a href="/signal-brief/ai/mese-2026-06.html">giu 2026</a> · <b>mag 2026</b> · <a href="/signal-brief/ai/mese-2026-04.html">apr 2026</a></div>
   
   <details class="wkacc"><summary>Settimana del 25/05 · 7 episodi</summary><ul class="eps">
-      <a class="ep" href="/signal-brief/ai/2026-05-31/">
-        <button class="ep-listen" title="Ascolta qui"
+      <a class="ep" data-sb="card" href="/signal-brief/ai/2026-05-31/">
+        <button class="ep-listen" data-sb="play" title="Ascolta qui"
           onclick="event.preventDefault();event.stopPropagation();ascolta(this,'https://media.casamon.dev/ai/podcast/episodes/2026-05-31.mp3')">▶</button>
-        <div><div class="ep-title">Quando l'intelligenza diventa elettricità</div>
-        <div class="ep-meta">2026-05-31 · 18:35</div></div>
-        <span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt="" title="Jensen Huang"><img loading="lazy" src="/signal-brief/ai/avatars/naval-ravikant.jpg" alt="" title="Naval Ravikant"><img loading="lazy" src="/signal-brief/ai/avatars/marc-andreessen.jpg" alt="" title="Marc Andreessen"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="/signal-brief/ai/avatars/benedict-evans.png" alt="" title="Benedict Evans"><img loading="lazy" src="/signal-brief/ai/avatars/simon-willison.jpg" alt="" title="Simon Willison"><img loading="lazy" src="/signal-brief/ai/avatars/paul-graham.png" alt="" title="Paul Graham"></span>
+        <div><div class="ep-title" data-sb="titolo">Quando l'intelligenza diventa elettricità</div>
+        <div class="ep-meta" data-sb="data">2026-05-31</div>
+        <div class="ep-description" data-sb="descrizione">Dal modello che si commoditizza al fossato che si sposta sull'hardware e sull'organizzazione: una settimana in cui il valore migra altrove e il dibattito si spacca in due.</div>
+        <div class="meta"><span class="durata" data-sb="durata">18:35</span> · <span class="parole" data-sb="parole">2910 parole</span></div></div>
+        <span data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt="" title="Jensen Huang"><img loading="lazy" src="/signal-brief/ai/avatars/naval-ravikant.jpg" alt="" title="Naval Ravikant"><img loading="lazy" src="/signal-brief/ai/avatars/marc-andreessen.jpg" alt="" title="Marc Andreessen"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="/signal-brief/ai/avatars/benedict-evans.png" alt="" title="Benedict Evans"><img loading="lazy" src="/signal-brief/ai/avatars/simon-willison.jpg" alt="" title="Simon Willison"><img loading="lazy" src="/signal-brief/ai/avatars/paul-graham.png" alt="" title="Paul Graham"></span></span>
       </a>
-      <a class="ep" href="/signal-brief/ai/2026-05-30/">
-        <button class="ep-listen" title="Ascolta qui"
+      <a class="ep" data-sb="card" href="/signal-brief/ai/2026-05-30/">
+        <button class="ep-listen" data-sb="play" title="Ascolta qui"
           onclick="event.preventDefault();event.stopPropagation();ascolta(this,'https://media.casamon.dev/ai/podcast/episodes/2026-05-30.mp3')">▶</button>
-        <div><div class="ep-title">Tre strade verso la macchina pensante</div>
-        <div class="ep-meta">2026-05-30 · 16:27</div></div>
-        <span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/geoffrey-hinton.jpg" alt="" title="Geoffrey Hinton"><img loading="lazy" src="/signal-brief/ai/avatars/simon-willison.jpg" alt="" title="Simon Willison"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"><img loading="lazy" src="/signal-brief/ai/avatars/paul-graham.png" alt="" title="Paul Graham"></span>
+        <div><div class="ep-title" data-sb="titolo">Tre strade verso la macchina pensante</div>
+        <div class="ep-meta" data-sb="data">2026-05-30</div>
+        <div class="ep-description" data-sb="descrizione">Maggio 2026, i grandi nomi dell'intelligenza artificiale si dividono in tre correnti rivali. Sotto, cresce la sfiducia verso le promesse di automazione totale.</div>
+        <div class="meta"><span class="durata" data-sb="durata">16:27</span> · <span class="parole" data-sb="parole">2616 parole</span></div></div>
+        <span data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/geoffrey-hinton.jpg" alt="" title="Geoffrey Hinton"><img loading="lazy" src="/signal-brief/ai/avatars/simon-willison.jpg" alt="" title="Simon Willison"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"><img loading="lazy" src="/signal-brief/ai/avatars/paul-graham.png" alt="" title="Paul Graham"></span></span>
       </a>
-      <a class="ep" href="/signal-brief/ai/2026-05-29/">
-        <button class="ep-listen" title="Ascolta qui"
+      <a class="ep" data-sb="card" href="/signal-brief/ai/2026-05-29/">
+        <button class="ep-listen" data-sb="play" title="Ascolta qui"
           onclick="event.preventDefault();event.stopPropagation();ascolta(this,'https://media.casamon.dev/ai/podcast/episodes/2026-05-29.mp3')">▶</button>
-        <div><div class="ep-title">Costruire senza una mappa</div>
-        <div class="ep-meta">2026-05-29 · 16:09</div></div>
-        <span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/dhh.png" alt="" title="DHH"><img loading="lazy" src="/signal-brief/ai/avatars/vitalik-buterin.jpg" alt="" title="Vitalik Buterin"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"></span>
+        <div><div class="ep-title" data-sb="titolo">Costruire senza una mappa</div>
+        <div class="ep-meta" data-sb="data">2026-05-29</div>
+        <div class="ep-description" data-sb="descrizione">Gli agenti AI sono già in produzione, ma nessuno concorda su dove stiamo andando: calendari divergenti, potere che si concentra e si disperde insieme.</div>
+        <div class="meta"><span class="durata" data-sb="durata">16:09</span> · <span class="parole" data-sb="parole">2601 parole</span></div></div>
+        <span data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/dhh.png" alt="" title="DHH"><img loading="lazy" src="/signal-brief/ai/avatars/vitalik-buterin.jpg" alt="" title="Vitalik Buterin"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"></span></span>
       </a>
-      <a class="ep" href="/signal-brief/ai/2026-05-28/">
-        <button class="ep-listen" title="Ascolta qui"
+      <a class="ep" data-sb="card" href="/signal-brief/ai/2026-05-28/">
+        <button class="ep-listen" data-sb="play" title="Ascolta qui"
           onclick="event.preventDefault();event.stopPropagation();ascolta(this,'https://media.casamon.dev/ai/podcast/episodes/2026-05-28.mp3')">▶</button>
-        <div><div class="ep-title">Le tre crepe del consenso</div>
-        <div class="ep-meta">2026-05-28 · 17:08</div></div>
-        <span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/yann-lecun.jpg" alt="" title="Yann LeCun"><img loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="/signal-brief/ai/avatars/benedict-evans.png" alt="" title="Benedict Evans"><img loading="lazy" src="/signal-brief/ai/avatars/vitalik-buterin.jpg" alt="" title="Vitalik Buterin"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/sam-altman.jpg" alt="" title="Sam Altman"><img loading="lazy" src="/signal-brief/ai/avatars/demis-hassabis.jpg" alt="" title="Demis Hassabis"><img loading="lazy" src="/signal-brief/ai/avatars/marc-andreessen.jpg" alt="" title="Marc Andreessen"><img loading="lazy" src="/signal-brief/ai/avatars/paul-graham.png" alt="" title="Paul Graham"><img loading="lazy" src="/signal-brief/ai/avatars/dhh.png" alt="" title="DHH"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"></span>
+        <div><div class="ep-title" data-sb="titolo">Le tre crepe del consenso</div>
+        <div class="ep-meta" data-sb="data">2026-05-28</div>
+        <div class="ep-description" data-sb="descrizione">A maggio 2026 il mondo tech si divide su tre fronti: quale AI costruire, chi lavorerà, chi la controllerà. E perfino i più influenti ammettono di non sapere dove si va.</div>
+        <div class="meta"><span class="durata" data-sb="durata">17:08</span> · <span class="parole" data-sb="parole">2809 parole</span></div></div>
+        <span data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/yann-lecun.jpg" alt="" title="Yann LeCun"><img loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="/signal-brief/ai/avatars/benedict-evans.png" alt="" title="Benedict Evans"><img loading="lazy" src="/signal-brief/ai/avatars/vitalik-buterin.jpg" alt="" title="Vitalik Buterin"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/sam-altman.jpg" alt="" title="Sam Altman"><img loading="lazy" src="/signal-brief/ai/avatars/demis-hassabis.jpg" alt="" title="Demis Hassabis"><img loading="lazy" src="/signal-brief/ai/avatars/marc-andreessen.jpg" alt="" title="Marc Andreessen"><img loading="lazy" src="/signal-brief/ai/avatars/paul-graham.png" alt="" title="Paul Graham"><img loading="lazy" src="/signal-brief/ai/avatars/dhh.png" alt="" title="DHH"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"></span></span>
       </a>
-      <a class="ep" href="/signal-brief/ai/2026-05-27/">
-        <button class="ep-listen" title="Ascolta qui"
+      <a class="ep" data-sb="card" href="/signal-brief/ai/2026-05-27/">
+        <button class="ep-listen" data-sb="play" title="Ascolta qui"
           onclick="event.preventDefault();event.stopPropagation();ascolta(this,'https://media.casamon.dev/ai/podcast/episodes/2026-05-27.mp3')">▶</button>
-        <div><div class="ep-title">Dalla scala al mestiere</div>
-        <div class="ep-meta">2026-05-27 · 18:40</div></div>
-        <span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/dhh.png" alt="" title="DHH"><img loading="lazy" src="/signal-brief/ai/avatars/john-carmack.jpg" alt="" title="John Carmack"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/simon-willison.jpg" alt="" title="Simon Willison"><img loading="lazy" src="/signal-brief/ai/avatars/benedict-evans.png" alt="" title="Benedict Evans"><img loading="lazy" src="/signal-brief/ai/avatars/nat-friedman.jpg" alt="" title="Nat Friedman"><img loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt="" title="Jensen Huang"><img loading="lazy" src="/signal-brief/ai/avatars/demis-hassabis.jpg" alt="" title="Demis Hassabis"><img loading="lazy" src="/signal-brief/ai/avatars/patrick-collison.jpg" alt="" title="Patrick Collison"></span>
+        <div><div class="ep-title" data-sb="titolo">Dalla scala al mestiere</div>
+        <div class="ep-meta" data-sb="data">2026-05-27</div>
+        <div class="ep-description" data-sb="descrizione">Maggio 2026: la corsa all'AI cambia natura. Non più "quanto è potente" ma "come la integro senza perderci dentro". Una mappa della transizione in corso.</div>
+        <div class="meta"><span class="durata" data-sb="durata">18:40</span> · <span class="parole" data-sb="parole">2923 parole</span></div></div>
+        <span data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/dhh.png" alt="" title="DHH"><img loading="lazy" src="/signal-brief/ai/avatars/john-carmack.jpg" alt="" title="John Carmack"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/simon-willison.jpg" alt="" title="Simon Willison"><img loading="lazy" src="/signal-brief/ai/avatars/benedict-evans.png" alt="" title="Benedict Evans"><img loading="lazy" src="/signal-brief/ai/avatars/nat-friedman.jpg" alt="" title="Nat Friedman"><img loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt="" title="Jensen Huang"><img loading="lazy" src="/signal-brief/ai/avatars/demis-hassabis.jpg" alt="" title="Demis Hassabis"><img loading="lazy" src="/signal-brief/ai/avatars/patrick-collison.jpg" alt="" title="Patrick Collison"></span></span>
       </a>
-      <a class="ep" href="/signal-brief/ai/2026-05-26/">
-        <button class="ep-listen" title="Ascolta qui"
+      <a class="ep" data-sb="card" href="/signal-brief/ai/2026-05-26/">
+        <button class="ep-listen" data-sb="play" title="Ascolta qui"
           onclick="event.preventDefault();event.stopPropagation();ascolta(this,'https://media.casamon.dev/ai/podcast/episodes/2026-05-26.mp3')">▶</button>
-        <div><div class="ep-title">Quando gli agenti diventano infrastruttura</div>
-        <div class="ep-meta">2026-05-26 · 17:25</div></div>
-        <span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="/signal-brief/ai/avatars/yann-lecun.jpg" alt="" title="Yann LeCun"><img loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"></span>
+        <div><div class="ep-title" data-sb="titolo">Quando gli agenti diventano infrastruttura</div>
+        <div class="ep-meta" data-sb="data">2026-05-26</div>
+        <div class="ep-description" data-sb="descrizione">Maggio 2026: gli agenti AI smettono di essere una funzione e iniziano a riconfigurare lavoro, ricerca e management. Intanto si apre una faglia su cosa significhi davvero intelligenza.</div>
+        <div class="meta"><span class="durata" data-sb="durata">17:25</span> · <span class="parole" data-sb="parole">2784 parole</span></div></div>
+        <span data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="/signal-brief/ai/avatars/yann-lecun.jpg" alt="" title="Yann LeCun"><img loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"></span></span>
       </a>
-      <a class="ep" href="/signal-brief/ai/2026-05-25/">
-        <button class="ep-listen" title="Ascolta qui"
+      <a class="ep" data-sb="card" href="/signal-brief/ai/2026-05-25/">
+        <button class="ep-listen" data-sb="play" title="Ascolta qui"
           onclick="event.preventDefault();event.stopPropagation();ascolta(this,'https://media.casamon.dev/ai/podcast/episodes/2026-05-25.mp3')">▶</button>
-        <div><div class="ep-title">La fine dello scaling puro</div>
-        <div class="ep-meta">2026-05-25 · 15:33</div></div>
-        <span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/ilya-sutskever.jpg" alt="" title="Ilya Sutskever"><img loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt="" title="Jensen Huang"><img loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="/signal-brief/ai/avatars/dhh.png" alt="" title="DHH"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"></span>
+        <div><div class="ep-title" data-sb="titolo">La fine dello scaling puro</div>
+        <div class="ep-meta" data-sb="data">2026-05-25</div>
+        <div class="ep-description" data-sb="descrizione">L'industria dell'AI esce dall'era della pura potenza di calcolo. Architettura, sicurezza e modelli di proprietà diventano la nuova posta in gioco.</div>
+        <div class="meta"><span class="durata" data-sb="durata">15:33</span> · <span class="parole" data-sb="parole">2502 parole</span></div></div>
+        <span data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/ilya-sutskever.jpg" alt="" title="Ilya Sutskever"><img loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt="" title="Jensen Huang"><img loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="/signal-brief/ai/avatars/dhh.png" alt="" title="DHH"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"></span></span>
       </a></ul></details><details class="wkacc"><summary>Settimana del 18/05 · 7 episodi</summary><ul class="eps">
-      <a class="ep" href="/signal-brief/ai/2026-05-24/">
-        <button class="ep-listen" title="Ascolta qui"
+      <a class="ep" data-sb="card" href="/signal-brief/ai/2026-05-24/">
+        <button class="ep-listen" data-sb="play" title="Ascolta qui"
           onclick="event.preventDefault();event.stopPropagation();ascolta(this,'https://media.casamon.dev/ai/podcast/episodes/2026-05-24.mp3')">▶</button>
-        <div><div class="ep-title">Chi orchestra vince</div>
-        <div class="ep-meta">2026-05-24 · 18:16</div></div>
-        <span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="/signal-brief/ai/avatars/dhh.png" alt="" title="DHH"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"></span>
+        <div><div class="ep-title" data-sb="titolo">Chi orchestra vince</div>
+        <div class="ep-meta" data-sb="data">2026-05-24</div>
+        <div class="ep-description" data-sb="descrizione">Maggio 2026: la vera partita dell'AI non si gioca più sui modelli ma su chi controlla energia, chip e agenti. E una crepa generazionale divide il settore.</div>
+        <div class="meta"><span class="durata" data-sb="durata">18:16</span> · <span class="parole" data-sb="parole">2853 parole</span></div></div>
+        <span data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="/signal-brief/ai/avatars/dhh.png" alt="" title="DHH"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"></span></span>
       </a>
-      <a class="ep" href="/signal-brief/ai/2026-05-23/">
-        <button class="ep-listen" title="Ascolta qui"
+      <a class="ep" data-sb="card" href="/signal-brief/ai/2026-05-23/">
+        <button class="ep-listen" data-sb="play" title="Ascolta qui"
           onclick="event.preventDefault();event.stopPropagation();ascolta(this,'https://media.casamon.dev/ai/podcast/episodes/2026-05-23.mp3')">▶</button>
-        <div><div class="ep-title">La grande riarchitettura</div>
-        <div class="ep-meta">2026-05-23 · 18:11</div></div>
-        <span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="/signal-brief/ai/avatars/ilya-sutskever.jpg" alt="" title="Ilya Sutskever"><img loading="lazy" src="/signal-brief/ai/avatars/sam-altman.jpg" alt="" title="Sam Altman"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"></span>
+        <div><div class="ep-title" data-sb="titolo">La grande riarchitettura</div>
+        <div class="ep-meta" data-sb="data">2026-05-23</div>
+        <div class="ep-description" data-sb="descrizione">L'AI come riscrittura dei sistemi, e la promessa di democratizzazione che si scontra con la geometria dell'oligopolio. Karpathy, Dorsey, Sutskever, Altman.</div>
+        <div class="meta"><span class="durata" data-sb="durata">18:11</span> · <span class="parole" data-sb="parole">2781 parole</span></div></div>
+        <span data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="/signal-brief/ai/avatars/ilya-sutskever.jpg" alt="" title="Ilya Sutskever"><img loading="lazy" src="/signal-brief/ai/avatars/sam-altman.jpg" alt="" title="Sam Altman"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"></span></span>
       </a>
-      <a class="ep" href="/signal-brief/ai/2026-05-22/">
-        <button class="ep-listen" title="Ascolta qui"
+      <a class="ep" data-sb="card" href="/signal-brief/ai/2026-05-22/">
+        <button class="ep-listen" data-sb="play" title="Ascolta qui"
           onclick="event.preventDefault();event.stopPropagation();ascolta(this,'https://media.casamon.dev/ai/podcast/episodes/2026-05-22.mp3')">▶</button>
-        <div><div class="ep-title">Veloci, ma non vicini alla meta</div>
-        <div class="ep-meta">2026-05-22 · 15:47</div></div>
-        <span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/ilya-sutskever.jpg" alt="" title="Ilya Sutskever"><img loading="lazy" src="/signal-brief/ai/avatars/john-carmack.jpg" alt="" title="John Carmack"><img loading="lazy" src="/signal-brief/ai/avatars/demis-hassabis.jpg" alt="" title="Demis Hassabis"><img loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt="" title="Jensen Huang"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/sam-altman.jpg" alt="" title="Sam Altman"><img loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="/signal-brief/ai/avatars/simon-willison.jpg" alt="" title="Simon Willison"><img loading="lazy" src="/signal-brief/ai/avatars/dhh.png" alt="" title="DHH"><img loading="lazy" src="/signal-brief/ai/avatars/marc-andreessen.jpg" alt="" title="Marc Andreessen"><img loading="lazy" src="/signal-brief/ai/avatars/patrick-collison.jpg" alt="" title="Patrick Collison"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"></span>
+        <div><div class="ep-title" data-sb="titolo">Veloci, ma non vicini alla meta</div>
+        <div class="ep-meta" data-sb="data">2026-05-22</div>
+        <div class="ep-description" data-sb="descrizione">Il progresso dell'intelligenza artificiale corre, ma forse non verso dove pensiamo. Viaggio dentro la differenza tra andare veloci e arrivare.</div>
+        <div class="meta"><span class="durata" data-sb="durata">15:47</span> · <span class="parole" data-sb="parole">2467 parole</span></div></div>
+        <span data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/ilya-sutskever.jpg" alt="" title="Ilya Sutskever"><img loading="lazy" src="/signal-brief/ai/avatars/john-carmack.jpg" alt="" title="John Carmack"><img loading="lazy" src="/signal-brief/ai/avatars/demis-hassabis.jpg" alt="" title="Demis Hassabis"><img loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt="" title="Jensen Huang"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/sam-altman.jpg" alt="" title="Sam Altman"><img loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="/signal-brief/ai/avatars/simon-willison.jpg" alt="" title="Simon Willison"><img loading="lazy" src="/signal-brief/ai/avatars/dhh.png" alt="" title="DHH"><img loading="lazy" src="/signal-brief/ai/avatars/marc-andreessen.jpg" alt="" title="Marc Andreessen"><img loading="lazy" src="/signal-brief/ai/avatars/patrick-collison.jpg" alt="" title="Patrick Collison"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"></span></span>
       </a>
-      <a class="ep" href="/signal-brief/ai/2026-05-21/">
-        <button class="ep-listen" title="Ascolta qui"
+      <a class="ep" data-sb="card" href="/signal-brief/ai/2026-05-21/">
+        <button class="ep-listen" data-sb="play" title="Ascolta qui"
           onclick="event.preventDefault();event.stopPropagation();ascolta(this,'https://media.casamon.dev/ai/podcast/episodes/2026-05-21.mp3')">▶</button>
-        <div><div class="ep-title">La battaglia per lo stack</div>
-        <div class="ep-meta">2026-05-21 · 15:48</div></div>
-        <span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/elon-musk.jpg" alt="" title="Elon Musk"><img loading="lazy" src="/signal-brief/ai/avatars/balaji-srinivasan.jpg" alt="" title="Balaji Srinivasan"><img loading="lazy" src="/signal-brief/ai/avatars/patrick-collison.jpg" alt="" title="Patrick Collison"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/ilya-sutskever.jpg" alt="" title="Ilya Sutskever"><img loading="lazy" src="/signal-brief/ai/avatars/yann-lecun.jpg" alt="" title="Yann LeCun"><img loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="/signal-brief/ai/avatars/marc-andreessen.jpg" alt="" title="Marc Andreessen"><img loading="lazy" src="/signal-brief/ai/avatars/geoffrey-hinton.jpg" alt="" title="Geoffrey Hinton"><img loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt="" title="Jensen Huang"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"><img loading="lazy" src="/signal-brief/ai/avatars/vitalik-buterin.jpg" alt="" title="Vitalik Buterin"></span>
+        <div><div class="ep-title" data-sb="titolo">La battaglia per lo stack</div>
+        <div class="ep-meta" data-sb="data">2026-05-21</div>
+        <div class="ep-description" data-sb="descrizione">Maggio 2026: la corsa all'intelligenza artificiale smette di essere una gara di modelli e diventa una guerra per chi controlla l'infrastruttura. Musk, Balaji, Collison.</div>
+        <div class="meta"><span class="durata" data-sb="durata">15:48</span> · <span class="parole" data-sb="parole">2707 parole</span></div></div>
+        <span data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/elon-musk.jpg" alt="" title="Elon Musk"><img loading="lazy" src="/signal-brief/ai/avatars/balaji-srinivasan.jpg" alt="" title="Balaji Srinivasan"><img loading="lazy" src="/signal-brief/ai/avatars/patrick-collison.jpg" alt="" title="Patrick Collison"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/ilya-sutskever.jpg" alt="" title="Ilya Sutskever"><img loading="lazy" src="/signal-brief/ai/avatars/yann-lecun.jpg" alt="" title="Yann LeCun"><img loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="/signal-brief/ai/avatars/marc-andreessen.jpg" alt="" title="Marc Andreessen"><img loading="lazy" src="/signal-brief/ai/avatars/geoffrey-hinton.jpg" alt="" title="Geoffrey Hinton"><img loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt="" title="Jensen Huang"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"><img loading="lazy" src="/signal-brief/ai/avatars/vitalik-buterin.jpg" alt="" title="Vitalik Buterin"></span></span>
       </a>
-      <a class="ep" href="/signal-brief/ai/2026-05-20/">
-        <button class="ep-listen" title="Ascolta qui"
+      <a class="ep" data-sb="card" href="/signal-brief/ai/2026-05-20/">
+        <button class="ep-listen" data-sb="play" title="Ascolta qui"
           onclick="event.preventDefault();event.stopPropagation();ascolta(this,'https://media.casamon.dev/ai/podcast/episodes/2026-05-20.mp3')">▶</button>
-        <div><div class="ep-title">Tre correnti che dividono l'intelligenza</div>
-        <div class="ep-meta">2026-05-20 · 17:22</div></div>
-        <span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/marc-andreessen.jpg" alt="" title="Marc Andreessen"><img loading="lazy" src="/signal-brief/ai/avatars/patrick-collison.jpg" alt="" title="Patrick Collison"><img loading="lazy" src="/signal-brief/ai/avatars/ilya-sutskever.jpg" alt="" title="Ilya Sutskever"><img loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt="" title="Jensen Huang"><img loading="lazy" src="/signal-brief/ai/avatars/benedict-evans.png" alt="" title="Benedict Evans"><img loading="lazy" src="/signal-brief/ai/avatars/nat-friedman.jpg" alt="" title="Nat Friedman"><img loading="lazy" src="/signal-brief/ai/avatars/geoffrey-hinton.jpg" alt="" title="Geoffrey Hinton"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"></span>
+        <div><div class="ep-title" data-sb="titolo">Tre correnti che dividono l'intelligenza</div>
+        <div class="ep-meta" data-sb="data">2026-05-20</div>
+        <div class="ep-description" data-sb="descrizione">Maggio 2026: il mondo dell'AI si spezza in tre visioni rivali — fine dello scaling, infrastruttura come fortezza, agenti che agiscono da soli.</div>
+        <div class="meta"><span class="durata" data-sb="durata">17:22</span> · <span class="parole" data-sb="parole">2799 parole</span></div></div>
+        <span data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/marc-andreessen.jpg" alt="" title="Marc Andreessen"><img loading="lazy" src="/signal-brief/ai/avatars/patrick-collison.jpg" alt="" title="Patrick Collison"><img loading="lazy" src="/signal-brief/ai/avatars/ilya-sutskever.jpg" alt="" title="Ilya Sutskever"><img loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt="" title="Jensen Huang"><img loading="lazy" src="/signal-brief/ai/avatars/benedict-evans.png" alt="" title="Benedict Evans"><img loading="lazy" src="/signal-brief/ai/avatars/nat-friedman.jpg" alt="" title="Nat Friedman"><img loading="lazy" src="/signal-brief/ai/avatars/geoffrey-hinton.jpg" alt="" title="Geoffrey Hinton"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"></span></span>
       </a>
-      <a class="ep" href="/signal-brief/ai/2026-05-19/">
-        <button class="ep-listen" title="Ascolta qui"
+      <a class="ep" data-sb="card" href="/signal-brief/ai/2026-05-19/">
+        <button class="ep-listen" data-sb="play" title="Ascolta qui"
           onclick="event.preventDefault();event.stopPropagation();ascolta(this,'https://media.casamon.dev/ai/podcast/episodes/2026-05-19.mp3')">▶</button>
-        <div><div class="ep-title">Di chi è l'intelligenza artificiale</div>
-        <div class="ep-meta">2026-05-19 · 15:03</div></div>
-        <span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="/signal-brief/ai/avatars/vitalik-buterin.jpg" alt="" title="Vitalik Buterin"><img loading="lazy" src="/signal-brief/ai/avatars/geoffrey-hinton.jpg" alt="" title="Geoffrey Hinton"><img loading="lazy" src="/signal-brief/ai/avatars/dhh.png" alt="" title="DHH"></span>
+        <div><div class="ep-title" data-sb="titolo">Di chi è l'intelligenza artificiale</div>
+        <div class="ep-meta" data-sb="data">2026-05-19</div>
+        <div class="ep-description" data-sb="descrizione">Mentre i modelli smettono di migliorare per forza bruta, la vera partita si sposta: non più chi costruisce l'AI, ma chi la controlla.</div>
+        <div class="meta"><span class="durata" data-sb="durata">15:03</span> · <span class="parole" data-sb="parole">2375 parole</span></div></div>
+        <span data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="/signal-brief/ai/avatars/vitalik-buterin.jpg" alt="" title="Vitalik Buterin"><img loading="lazy" src="/signal-brief/ai/avatars/geoffrey-hinton.jpg" alt="" title="Geoffrey Hinton"><img loading="lazy" src="/signal-brief/ai/avatars/dhh.png" alt="" title="DHH"></span></span>
       </a>
-      <a class="ep" href="/signal-brief/ai/2026-05-18/">
-        <button class="ep-listen" title="Ascolta qui"
+      <a class="ep" data-sb="card" href="/signal-brief/ai/2026-05-18/">
+        <button class="ep-listen" data-sb="play" title="Ascolta qui"
           onclick="event.preventDefault();event.stopPropagation();ascolta(this,'https://media.casamon.dev/ai/podcast/episodes/2026-05-18.mp3')">▶</button>
-        <div><div class="ep-title">La fine della corsa alla potenza</div>
-        <div class="ep-meta">2026-05-18 · 15:09</div></div>
-        <span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/ilya-sutskever.jpg" alt="" title="Ilya Sutskever"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"></span>
+        <div><div class="ep-title" data-sb="titolo">La fine della corsa alla potenza</div>
+        <div class="ep-meta" data-sb="data">2026-05-18</div>
+        <div class="ep-description" data-sb="descrizione">I grandi nomi dell'intelligenza artificiale concordano: la corsa alla potenza bruta è finita. Ma su cosa viene dopo, e su chi comanderà, il disaccordo è totale.</div>
+        <div class="meta"><span class="durata" data-sb="durata">15:09</span> · <span class="parole" data-sb="parole">2398 parole</span></div></div>
+        <span data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/ilya-sutskever.jpg" alt="" title="Ilya Sutskever"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"></span></span>
       </a></ul></details><details class="wkacc"><summary>Settimana del 11/05 · 6 episodi</summary><ul class="eps">
-      <a class="ep" href="/signal-brief/ai/2026-05-17/">
-        <button class="ep-listen" title="Ascolta qui"
+      <a class="ep" data-sb="card" href="/signal-brief/ai/2026-05-17/">
+        <button class="ep-listen" data-sb="play" title="Ascolta qui"
           onclick="event.preventDefault();event.stopPropagation();ascolta(this,'https://media.casamon.dev/ai/podcast/episodes/2026-05-17.mp3')">▶</button>
-        <div><div class="ep-title">Cosa rimane dopo la delega</div>
-        <div class="ep-meta">2026-05-17 · 15:14</div></div>
-        <span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/dhh.png" alt="" title="DHH"><img loading="lazy" src="/signal-brief/ai/avatars/geoffrey-hinton.jpg" alt="" title="Geoffrey Hinton"><img loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt="" title="Jensen Huang"><img loading="lazy" src="/signal-brief/ai/avatars/yann-lecun.jpg" alt="" title="Yann LeCun"><img loading="lazy" src="/signal-brief/ai/avatars/ilya-sutskever.jpg" alt="" title="Ilya Sutskever"><img loading="lazy" src="/signal-brief/ai/avatars/naval-ravikant.jpg" alt="" title="Naval Ravikant"><img loading="lazy" src="/signal-brief/ai/avatars/vitalik-buterin.jpg" alt="" title="Vitalik Buterin"></span>
+        <div><div class="ep-title" data-sb="titolo">Cosa rimane dopo la delega</div>
+        <div class="ep-meta" data-sb="data">2026-05-17</div>
+        <div class="ep-description" data-sb="descrizione">Karpathy, Hansson, Dorsey: tutti delegano il codice agli agenti. Ma c'è qualcosa che non si può delegare — e capire cosa sia è diventato il problema centrale del momento.</div>
+        <div class="meta"><span class="durata" data-sb="durata">15:14</span> · <span class="parole" data-sb="parole">2339 parole</span></div></div>
+        <span data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/dhh.png" alt="" title="DHH"><img loading="lazy" src="/signal-brief/ai/avatars/geoffrey-hinton.jpg" alt="" title="Geoffrey Hinton"><img loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt="" title="Jensen Huang"><img loading="lazy" src="/signal-brief/ai/avatars/yann-lecun.jpg" alt="" title="Yann LeCun"><img loading="lazy" src="/signal-brief/ai/avatars/ilya-sutskever.jpg" alt="" title="Ilya Sutskever"><img loading="lazy" src="/signal-brief/ai/avatars/naval-ravikant.jpg" alt="" title="Naval Ravikant"><img loading="lazy" src="/signal-brief/ai/avatars/vitalik-buterin.jpg" alt="" title="Vitalik Buterin"></span></span>
       </a>
-      <a class="ep" href="/signal-brief/ai/2026-05-16/">
-        <button class="ep-listen" title="Ascolta qui"
+      <a class="ep" data-sb="card" href="/signal-brief/ai/2026-05-16/">
+        <button class="ep-listen" data-sb="play" title="Ascolta qui"
           onclick="event.preventDefault();event.stopPropagation();ascolta(this,'https://media.casamon.dev/ai/podcast/episodes/2026-05-16.mp3')">▶</button>
-        <div><div class="ep-title">La Grande Frattura</div>
-        <div class="ep-meta">2026-05-16 · 15:55</div></div>
-        <span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/geoffrey-hinton.jpg" alt="" title="Geoffrey Hinton"><img loading="lazy" src="/signal-brief/ai/avatars/marc-andreessen.jpg" alt="" title="Marc Andreessen"><img loading="lazy" src="/signal-brief/ai/avatars/vitalik-buterin.jpg" alt="" title="Vitalik Buterin"><img loading="lazy" src="/signal-brief/ai/avatars/sam-altman.jpg" alt="" title="Sam Altman"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"><img loading="lazy" src="/signal-brief/ai/avatars/patrick-collison.jpg" alt="" title="Patrick Collison"><img loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt="" title="Jensen Huang"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="/signal-brief/ai/avatars/yann-lecun.jpg" alt="" title="Yann LeCun"><img loading="lazy" src="/signal-brief/ai/avatars/ilya-sutskever.jpg" alt="" title="Ilya Sutskever"><img loading="lazy" src="/signal-brief/ai/avatars/naval-ravikant.jpg" alt="" title="Naval Ravikant"></span>
+        <div><div class="ep-title" data-sb="titolo">La Grande Frattura</div>
+        <div class="ep-meta" data-sb="data">2026-05-16</div>
+        <div class="ep-description" data-sb="descrizione">L'AI divide chi costruisce e chi governa. Non è disaccordo sui tempi — è disaccordo su cosa si stia costruendo davvero, e nelle mani di chi finirà.</div>
+        <div class="meta"><span class="durata" data-sb="durata">15:55</span> · <span class="parole" data-sb="parole">2424 parole</span></div></div>
+        <span data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/geoffrey-hinton.jpg" alt="" title="Geoffrey Hinton"><img loading="lazy" src="/signal-brief/ai/avatars/marc-andreessen.jpg" alt="" title="Marc Andreessen"><img loading="lazy" src="/signal-brief/ai/avatars/vitalik-buterin.jpg" alt="" title="Vitalik Buterin"><img loading="lazy" src="/signal-brief/ai/avatars/sam-altman.jpg" alt="" title="Sam Altman"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"><img loading="lazy" src="/signal-brief/ai/avatars/patrick-collison.jpg" alt="" title="Patrick Collison"><img loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt="" title="Jensen Huang"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="/signal-brief/ai/avatars/yann-lecun.jpg" alt="" title="Yann LeCun"><img loading="lazy" src="/signal-brief/ai/avatars/ilya-sutskever.jpg" alt="" title="Ilya Sutskever"><img loading="lazy" src="/signal-brief/ai/avatars/naval-ravikant.jpg" alt="" title="Naval Ravikant"></span></span>
       </a>
-      <a class="ep" href="/signal-brief/ai/2026-05-15/">
-        <button class="ep-listen" title="Ascolta qui"
+      <a class="ep" data-sb="card" href="/signal-brief/ai/2026-05-15/">
+        <button class="ep-listen" data-sb="play" title="Ascolta qui"
           onclick="event.preventDefault();event.stopPropagation();ascolta(this,'https://media.casamon.dev/ai/podcast/episodes/2026-05-15.mp3')">▶</button>
-        <div><div class="ep-title">Chi controlla il cervello del mondo</div>
-        <div class="ep-meta">2026-05-15 · 17:21</div></div>
-        <span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/sam-altman.jpg" alt="" title="Sam Altman"><img loading="lazy" src="/signal-brief/ai/avatars/ilya-sutskever.jpg" alt="" title="Ilya Sutskever"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/patrick-collison.jpg" alt="" title="Patrick Collison"><img loading="lazy" src="/signal-brief/ai/avatars/simon-willison.jpg" alt="" title="Simon Willison"><img loading="lazy" src="/signal-brief/ai/avatars/dhh.png" alt="" title="DHH"><img loading="lazy" src="/signal-brief/ai/avatars/yann-lecun.jpg" alt="" title="Yann LeCun"><img loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="/signal-brief/ai/avatars/naval-ravikant.jpg" alt="" title="Naval Ravikant"><img loading="lazy" src="/signal-brief/ai/avatars/balaji-srinivasan.jpg" alt="" title="Balaji Srinivasan"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"></span>
+        <div><div class="ep-title" data-sb="titolo">Chi controlla il cervello del mondo</div>
+        <div class="ep-meta" data-sb="data">2026-05-15</div>
+        <div class="ep-description" data-sb="descrizione">Mentre Altman e Sutskever testimoniano in tribunale, emerge la vera posta in gioco: chi governa l'infrastruttura cognitiva che tutti stiamo iniziando a usare.</div>
+        <div class="meta"><span class="durata" data-sb="durata">17:21</span> · <span class="parole" data-sb="parole">2602 parole</span></div></div>
+        <span data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/sam-altman.jpg" alt="" title="Sam Altman"><img loading="lazy" src="/signal-brief/ai/avatars/ilya-sutskever.jpg" alt="" title="Ilya Sutskever"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/patrick-collison.jpg" alt="" title="Patrick Collison"><img loading="lazy" src="/signal-brief/ai/avatars/simon-willison.jpg" alt="" title="Simon Willison"><img loading="lazy" src="/signal-brief/ai/avatars/dhh.png" alt="" title="DHH"><img loading="lazy" src="/signal-brief/ai/avatars/yann-lecun.jpg" alt="" title="Yann LeCun"><img loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="/signal-brief/ai/avatars/naval-ravikant.jpg" alt="" title="Naval Ravikant"><img loading="lazy" src="/signal-brief/ai/avatars/balaji-srinivasan.jpg" alt="" title="Balaji Srinivasan"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"></span></span>
       </a>
-      <a class="ep" href="/signal-brief/ai/2026-05-14/">
-        <button class="ep-listen" title="Ascolta qui"
+      <a class="ep" data-sb="card" href="/signal-brief/ai/2026-05-14/">
+        <button class="ep-listen" data-sb="play" title="Ascolta qui"
           onclick="event.preventDefault();event.stopPropagation();ascolta(this,'https://media.casamon.dev/ai/podcast/episodes/2026-05-14.mp3')">▶</button>
-        <div><div class="ep-title">Chi misura e chi racconta</div>
-        <div class="ep-meta">2026-05-14 · 15:29</div></div>
-        <span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="/signal-brief/ai/avatars/naval-ravikant.jpg" alt="" title="Naval Ravikant"><img loading="lazy" src="/signal-brief/ai/avatars/benedict-evans.png" alt="" title="Benedict Evans"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"><img loading="lazy" src="/signal-brief/ai/avatars/patrick-collison.jpg" alt="" title="Patrick Collison"><img loading="lazy" src="/signal-brief/ai/avatars/dhh.png" alt="" title="DHH"><img loading="lazy" src="/signal-brief/ai/avatars/john-carmack.jpg" alt="" title="John Carmack"><img loading="lazy" src="/signal-brief/ai/avatars/ilya-sutskever.jpg" alt="" title="Ilya Sutskever"><img loading="lazy" src="/signal-brief/ai/avatars/sam-altman.jpg" alt="" title="Sam Altman"><img loading="lazy" src="/signal-brief/ai/avatars/geoffrey-hinton.jpg" alt="" title="Geoffrey Hinton"></span>
+        <div><div class="ep-title" data-sb="titolo">Chi misura e chi racconta</div>
+        <div class="ep-meta" data-sb="data">2026-05-14</div>
+        <div class="ep-description" data-sb="descrizione">Il software diventa effimero, l'agency vale più dell'intelligenza pura, e Block ha già licenziato il quaranta per cento. La settimana in cui le narrazioni sull'AI si sono separate dai dati.</div>
+        <div class="meta"><span class="durata" data-sb="durata">15:29</span> · <span class="parole" data-sb="parole">2405 parole</span></div></div>
+        <span data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="/signal-brief/ai/avatars/naval-ravikant.jpg" alt="" title="Naval Ravikant"><img loading="lazy" src="/signal-brief/ai/avatars/benedict-evans.png" alt="" title="Benedict Evans"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"><img loading="lazy" src="/signal-brief/ai/avatars/patrick-collison.jpg" alt="" title="Patrick Collison"><img loading="lazy" src="/signal-brief/ai/avatars/dhh.png" alt="" title="DHH"><img loading="lazy" src="/signal-brief/ai/avatars/john-carmack.jpg" alt="" title="John Carmack"><img loading="lazy" src="/signal-brief/ai/avatars/ilya-sutskever.jpg" alt="" title="Ilya Sutskever"><img loading="lazy" src="/signal-brief/ai/avatars/sam-altman.jpg" alt="" title="Sam Altman"><img loading="lazy" src="/signal-brief/ai/avatars/geoffrey-hinton.jpg" alt="" title="Geoffrey Hinton"></span></span>
       </a>
-      <a class="ep" href="/signal-brief/ai/2026-05-13/">
-        <button class="ep-listen" title="Ascolta qui"
+      <a class="ep" data-sb="card" href="/signal-brief/ai/2026-05-13/">
+        <button class="ep-listen" data-sb="play" title="Ascolta qui"
           onclick="event.preventDefault();event.stopPropagation();ascolta(this,'https://media.casamon.dev/ai/podcast/episodes/2026-05-13.mp3')">▶</button>
-        <div><div class="ep-title">Il consenso sull'AI si spezza</div>
-        <div class="ep-meta">2026-05-13 · 16:33</div></div>
-        <span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/ilya-sutskever.jpg" alt="" title="Ilya Sutskever"><img loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="/signal-brief/ai/avatars/balaji-srinivasan.jpg" alt="" title="Balaji Srinivasan"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/marc-andreessen.jpg" alt="" title="Marc Andreessen"><img loading="lazy" src="/signal-brief/ai/avatars/demis-hassabis.jpg" alt="" title="Demis Hassabis"><img loading="lazy" src="/signal-brief/ai/avatars/yann-lecun.jpg" alt="" title="Yann LeCun"><img loading="lazy" src="/signal-brief/ai/avatars/benedict-evans.png" alt="" title="Benedict Evans"><img loading="lazy" src="/signal-brief/ai/avatars/naval-ravikant.jpg" alt="" title="Naval Ravikant"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="/signal-brief/ai/avatars/john-carmack.jpg" alt="" title="John Carmack"></span>
+        <div><div class="ep-title" data-sb="titolo">Il consenso sull'AI si spezza</div>
+        <div class="ep-meta" data-sb="data">2026-05-13</div>
+        <div class="ep-description" data-sb="descrizione">Questo maggio i più lucidi osservatori del mondo tech non sono più d'accordo su cosa sappia fare davvero l'AI — né su chi cattura il valore quando l'intelligenza diventa merce.</div>
+        <div class="meta"><span class="durata" data-sb="durata">16:33</span> · <span class="parole" data-sb="parole">2592 parole</span></div></div>
+        <span data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/ilya-sutskever.jpg" alt="" title="Ilya Sutskever"><img loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="/signal-brief/ai/avatars/balaji-srinivasan.jpg" alt="" title="Balaji Srinivasan"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/marc-andreessen.jpg" alt="" title="Marc Andreessen"><img loading="lazy" src="/signal-brief/ai/avatars/demis-hassabis.jpg" alt="" title="Demis Hassabis"><img loading="lazy" src="/signal-brief/ai/avatars/yann-lecun.jpg" alt="" title="Yann LeCun"><img loading="lazy" src="/signal-brief/ai/avatars/benedict-evans.png" alt="" title="Benedict Evans"><img loading="lazy" src="/signal-brief/ai/avatars/naval-ravikant.jpg" alt="" title="Naval Ravikant"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="/signal-brief/ai/avatars/john-carmack.jpg" alt="" title="John Carmack"></span></span>
       </a>
-      <a class="ep" href="/signal-brief/ai/2026-05-11/">
-        <button class="ep-listen" title="Ascolta qui"
+      <a class="ep" data-sb="card" href="/signal-brief/ai/2026-05-11/">
+        <button class="ep-listen" data-sb="play" title="Ascolta qui"
           onclick="event.preventDefault();event.stopPropagation();ascolta(this,'https://media.casamon.dev/ai/podcast/episodes/2026-05-11.mp3')">▶</button>
-        <div><div class="ep-title">Il programmatore che non scrive più</div>
-        <div class="ep-meta">2026-05-11 · 17:29</div></div>
-        <span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/dhh.png" alt="" title="DHH"><img loading="lazy" src="/signal-brief/ai/avatars/ilya-sutskever.jpg" alt="" title="Ilya Sutskever"><img loading="lazy" src="/signal-brief/ai/avatars/vitalik-buterin.jpg" alt="" title="Vitalik Buterin"><img loading="lazy" src="/signal-brief/ai/avatars/simon-willison.jpg" alt="" title="Simon Willison"><img loading="lazy" src="/signal-brief/ai/avatars/patrick-collison.jpg" alt="" title="Patrick Collison"><img loading="lazy" src="/signal-brief/ai/avatars/naval-ravikant.jpg" alt="" title="Naval Ravikant"><img loading="lazy" src="/signal-brief/ai/avatars/yann-lecun.jpg" alt="" title="Yann LeCun"><img loading="lazy" src="/signal-brief/ai/avatars/john-carmack.jpg" alt="" title="John Carmack"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt="" title="Jensen Huang"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"></span>
+        <div><div class="ep-title" data-sb="titolo">Il programmatore che non scrive più</div>
+        <div class="ep-meta" data-sb="data">2026-05-11</div>
+        <div class="ep-description" data-sb="descrizione">Karpathy delega l'80% del codice agli agenti, Naval dice che il software puro non è più investibile, i lab cercano idee nuove. Dove va il valore: atomi, brand o sovranità.</div>
+        <div class="meta"><span class="durata" data-sb="durata">17:29</span> · <span class="parole" data-sb="parole">2753 parole</span></div></div>
+        <span data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/dhh.png" alt="" title="DHH"><img loading="lazy" src="/signal-brief/ai/avatars/ilya-sutskever.jpg" alt="" title="Ilya Sutskever"><img loading="lazy" src="/signal-brief/ai/avatars/vitalik-buterin.jpg" alt="" title="Vitalik Buterin"><img loading="lazy" src="/signal-brief/ai/avatars/simon-willison.jpg" alt="" title="Simon Willison"><img loading="lazy" src="/signal-brief/ai/avatars/patrick-collison.jpg" alt="" title="Patrick Collison"><img loading="lazy" src="/signal-brief/ai/avatars/naval-ravikant.jpg" alt="" title="Naval Ravikant"><img loading="lazy" src="/signal-brief/ai/avatars/yann-lecun.jpg" alt="" title="Yann LeCun"><img loading="lazy" src="/signal-brief/ai/avatars/john-carmack.jpg" alt="" title="John Carmack"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt="" title="Jensen Huang"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"></span></span>
       </a></ul></details><details class="wkacc"><summary>Settimana del 04/05 · 7 episodi</summary><ul class="eps">
-      <a class="ep" href="/signal-brief/ai/2026-05-10/">
-        <button class="ep-listen" title="Ascolta qui"
+      <a class="ep" data-sb="card" href="/signal-brief/ai/2026-05-10/">
+        <button class="ep-listen" data-sb="play" title="Ascolta qui"
           onclick="event.preventDefault();event.stopPropagation();ascolta(this,'https://media.casamon.dev/ai/podcast/episodes/2026-05-10.mp3')">▶</button>
-        <div><div class="ep-title">Il paradosso del controllo</div>
-        <div class="ep-meta">2026-05-10 · 18:29</div></div>
-        <span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="/signal-brief/ai/avatars/naval-ravikant.jpg" alt="" title="Naval Ravikant"><img loading="lazy" src="/signal-brief/ai/avatars/vitalik-buterin.jpg" alt="" title="Vitalik Buterin"><img loading="lazy" src="/signal-brief/ai/avatars/ilya-sutskever.jpg" alt="" title="Ilya Sutskever"><img loading="lazy" src="/signal-brief/ai/avatars/yann-lecun.jpg" alt="" title="Yann LeCun"><img loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="/signal-brief/ai/avatars/john-carmack.jpg" alt="" title="John Carmack"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt="" title="Jensen Huang"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"><img loading="lazy" src="/signal-brief/ai/avatars/elon-musk.jpg" alt="" title="Elon Musk"><img loading="lazy" src="/signal-brief/ai/avatars/sam-altman.jpg" alt="" title="Sam Altman"></span>
+        <div><div class="ep-title" data-sb="titolo">Il paradosso del controllo</div>
+        <div class="ep-meta" data-sb="data">2026-05-10</div>
+        <div class="ep-description" data-sb="descrizione">Chi predicava reti aperte ora accentra. Il valore migra dal software puro all'hardware. La sovranità diventa una scelta personale.</div>
+        <div class="meta"><span class="durata" data-sb="durata">18:29</span> · <span class="parole" data-sb="parole">2810 parole</span></div></div>
+        <span data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="/signal-brief/ai/avatars/naval-ravikant.jpg" alt="" title="Naval Ravikant"><img loading="lazy" src="/signal-brief/ai/avatars/vitalik-buterin.jpg" alt="" title="Vitalik Buterin"><img loading="lazy" src="/signal-brief/ai/avatars/ilya-sutskever.jpg" alt="" title="Ilya Sutskever"><img loading="lazy" src="/signal-brief/ai/avatars/yann-lecun.jpg" alt="" title="Yann LeCun"><img loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="/signal-brief/ai/avatars/john-carmack.jpg" alt="" title="John Carmack"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt="" title="Jensen Huang"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"><img loading="lazy" src="/signal-brief/ai/avatars/elon-musk.jpg" alt="" title="Elon Musk"><img loading="lazy" src="/signal-brief/ai/avatars/sam-altman.jpg" alt="" title="Sam Altman"></span></span>
       </a>
-      <a class="ep" href="/signal-brief/ai/2026-05-09/">
-        <button class="ep-listen" title="Ascolta qui"
+      <a class="ep" data-sb="card" href="/signal-brief/ai/2026-05-09/">
+        <button class="ep-listen" data-sb="play" title="Ascolta qui"
           onclick="event.preventDefault();event.stopPropagation();ascolta(this,'https://media.casamon.dev/ai/podcast/episodes/2026-05-09.mp3')">▶</button>
-        <div><div class="ep-title">La crepa sotto i mille miliardi</div>
-        <div class="ep-meta">2026-05-09 · 18:06</div></div>
-        <span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/demis-hassabis.jpg" alt="" title="Demis Hassabis"><img loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="/signal-brief/ai/avatars/dhh.png" alt="" title="DHH"><img loading="lazy" src="/signal-brief/ai/avatars/sam-altman.jpg" alt="" title="Sam Altman"><img loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt="" title="Jensen Huang"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="/signal-brief/ai/avatars/geoffrey-hinton.jpg" alt="" title="Geoffrey Hinton"><img loading="lazy" src="/signal-brief/ai/avatars/ilya-sutskever.jpg" alt="" title="Ilya Sutskever"><img loading="lazy" src="/signal-brief/ai/avatars/yann-lecun.jpg" alt="" title="Yann LeCun"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/vitalik-buterin.jpg" alt="" title="Vitalik Buterin"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"></span>
+        <div><div class="ep-title" data-sb="titolo">La crepa sotto i mille miliardi</div>
+        <div class="ep-meta" data-sb="data">2026-05-09</div>
+        <div class="ep-description" data-sb="descrizione">La cassaforte spinge sull'AI come non mai, mentre il banco di lavoro dei ricercatori ammette di non avere ancora le idee giuste. Un episodio sulla frattura.</div>
+        <div class="meta"><span class="durata" data-sb="durata">18:06</span> · <span class="parole" data-sb="parole">2829 parole</span></div></div>
+        <span data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/demis-hassabis.jpg" alt="" title="Demis Hassabis"><img loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="/signal-brief/ai/avatars/dhh.png" alt="" title="DHH"><img loading="lazy" src="/signal-brief/ai/avatars/sam-altman.jpg" alt="" title="Sam Altman"><img loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt="" title="Jensen Huang"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="/signal-brief/ai/avatars/geoffrey-hinton.jpg" alt="" title="Geoffrey Hinton"><img loading="lazy" src="/signal-brief/ai/avatars/ilya-sutskever.jpg" alt="" title="Ilya Sutskever"><img loading="lazy" src="/signal-brief/ai/avatars/yann-lecun.jpg" alt="" title="Yann LeCun"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/vitalik-buterin.jpg" alt="" title="Vitalik Buterin"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"></span></span>
       </a>
-      <a class="ep" href="/signal-brief/ai/2026-05-08/">
-        <button class="ep-listen" title="Ascolta qui"
+      <a class="ep" data-sb="card" href="/signal-brief/ai/2026-05-08/">
+        <button class="ep-listen" data-sb="play" title="Ascolta qui"
           onclick="event.preventDefault();event.stopPropagation();ascolta(this,'https://media.casamon.dev/ai/podcast/episodes/2026-05-08.mp3')">▶</button>
-        <div><div class="ep-title">Il valore lascia il codice</div>
-        <div class="ep-meta">2026-05-08 · 17:22</div></div>
-        <span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/naval-ravikant.jpg" alt="" title="Naval Ravikant"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="/signal-brief/ai/avatars/paul-graham.png" alt="" title="Paul Graham"><img loading="lazy" src="/signal-brief/ai/avatars/benedict-evans.png" alt="" title="Benedict Evans"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"><img loading="lazy" src="/signal-brief/ai/avatars/nat-friedman.jpg" alt="" title="Nat Friedman"><img loading="lazy" src="/signal-brief/ai/avatars/ilya-sutskever.jpg" alt="" title="Ilya Sutskever"><img loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="/signal-brief/ai/avatars/demis-hassabis.jpg" alt="" title="Demis Hassabis"><img loading="lazy" src="/signal-brief/ai/avatars/yann-lecun.jpg" alt="" title="Yann LeCun"><img loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt="" title="Jensen Huang"></span>
+        <div><div class="ep-title" data-sb="titolo">Il valore lascia il codice</div>
+        <div class="ep-meta" data-sb="data">2026-05-08</div>
+        <div class="ep-description" data-sb="descrizione">Naval, Karpathy, Dorsey, Buterin: il software smette di essere la fonte del vantaggio. Dove sta migrando il valore nell'era degli agenti.</div>
+        <div class="meta"><span class="durata" data-sb="durata">17:22</span> · <span class="parole" data-sb="parole">2692 parole</span></div></div>
+        <span data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/naval-ravikant.jpg" alt="" title="Naval Ravikant"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="/signal-brief/ai/avatars/paul-graham.png" alt="" title="Paul Graham"><img loading="lazy" src="/signal-brief/ai/avatars/benedict-evans.png" alt="" title="Benedict Evans"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"><img loading="lazy" src="/signal-brief/ai/avatars/nat-friedman.jpg" alt="" title="Nat Friedman"><img loading="lazy" src="/signal-brief/ai/avatars/ilya-sutskever.jpg" alt="" title="Ilya Sutskever"><img loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="/signal-brief/ai/avatars/demis-hassabis.jpg" alt="" title="Demis Hassabis"><img loading="lazy" src="/signal-brief/ai/avatars/yann-lecun.jpg" alt="" title="Yann LeCun"><img loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt="" title="Jensen Huang"></span></span>
       </a>
-      <a class="ep" href="/signal-brief/ai/2026-05-07/">
-        <button class="ep-listen" title="Ascolta qui"
+      <a class="ep" data-sb="card" href="/signal-brief/ai/2026-05-07/">
+        <button class="ep-listen" data-sb="play" title="Ascolta qui"
           onclick="event.preventDefault();event.stopPropagation();ascolta(this,'https://media.casamon.dev/ai/podcast/episodes/2026-05-07.mp3')">▶</button>
-        <div><div class="ep-title">Quando il codice non è più il fossato</div>
-        <div class="ep-meta">2026-05-07 · 17:43</div></div>
-        <span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/naval-ravikant.jpg" alt="" title="Naval Ravikant"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="/signal-brief/ai/avatars/yann-lecun.jpg" alt="" title="Yann LeCun"><img loading="lazy" src="/signal-brief/ai/avatars/nat-friedman.jpg" alt="" title="Nat Friedman"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/patrick-collison.jpg" alt="" title="Patrick Collison"><img loading="lazy" src="/signal-brief/ai/avatars/simon-willison.jpg" alt="" title="Simon Willison"><img loading="lazy" src="/signal-brief/ai/avatars/benedict-evans.png" alt="" title="Benedict Evans"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"><img loading="lazy" src="/signal-brief/ai/avatars/sam-altman.jpg" alt="" title="Sam Altman"><img loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt="" title="Jensen Huang"><img loading="lazy" src="/signal-brief/ai/avatars/paul-graham.png" alt="" title="Paul Graham"></span>
+        <div><div class="ep-title" data-sb="titolo">Quando il codice non è più il fossato</div>
+        <div class="ep-meta" data-sb="data">2026-05-07</div>
+        <div class="ep-description" data-sb="descrizione">Il software puro perde valore. Capex, brand e atomi diventano i nuovi terreni della tecnologia. Una mappa di dove sta andando l'industria.</div>
+        <div class="meta"><span class="durata" data-sb="durata">17:43</span> · <span class="parole" data-sb="parole">2816 parole</span></div></div>
+        <span data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/naval-ravikant.jpg" alt="" title="Naval Ravikant"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="/signal-brief/ai/avatars/yann-lecun.jpg" alt="" title="Yann LeCun"><img loading="lazy" src="/signal-brief/ai/avatars/nat-friedman.jpg" alt="" title="Nat Friedman"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/patrick-collison.jpg" alt="" title="Patrick Collison"><img loading="lazy" src="/signal-brief/ai/avatars/simon-willison.jpg" alt="" title="Simon Willison"><img loading="lazy" src="/signal-brief/ai/avatars/benedict-evans.png" alt="" title="Benedict Evans"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"><img loading="lazy" src="/signal-brief/ai/avatars/sam-altman.jpg" alt="" title="Sam Altman"><img loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt="" title="Jensen Huang"><img loading="lazy" src="/signal-brief/ai/avatars/paul-graham.png" alt="" title="Paul Graham"></span></span>
       </a>
-      <a class="ep" href="/signal-brief/ai/2026-05-06/">
-        <button class="ep-listen" title="Ascolta qui"
+      <a class="ep" data-sb="card" href="/signal-brief/ai/2026-05-06/">
+        <button class="ep-listen" data-sb="play" title="Ascolta qui"
           onclick="event.preventDefault();event.stopPropagation();ascolta(this,'https://media.casamon.dev/ai/podcast/episodes/2026-05-06.mp3')">▶</button>
-        <div><div class="ep-title">La frattura sotto l'AI che funziona</div>
-        <div class="ep-meta">2026-05-06 · 16:15</div></div>
-        <span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/dhh.png" alt="" title="DHH"><img loading="lazy" src="/signal-brief/ai/avatars/yann-lecun.jpg" alt="" title="Yann LeCun"><img loading="lazy" src="/signal-brief/ai/avatars/geoffrey-hinton.jpg" alt="" title="Geoffrey Hinton"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"><img loading="lazy" src="/signal-brief/ai/avatars/patrick-collison.jpg" alt="" title="Patrick Collison"><img loading="lazy" src="/signal-brief/ai/avatars/nat-friedman.jpg" alt="" title="Nat Friedman"><img loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="/signal-brief/ai/avatars/ilya-sutskever.jpg" alt="" title="Ilya Sutskever"><img loading="lazy" src="/signal-brief/ai/avatars/marc-andreessen.jpg" alt="" title="Marc Andreessen"><img loading="lazy" src="/signal-brief/ai/avatars/sam-altman.jpg" alt="" title="Sam Altman"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"></span>
+        <div><div class="ep-title" data-sb="titolo">La frattura sotto l'AI che funziona</div>
+        <div class="ep-meta" data-sb="data">2026-05-06</div>
+        <div class="ep-description" data-sb="descrizione">Gli agenti funzionano, il paradigma professionale è cambiato. Ma sotto c'è una crepa: chi guadagna davvero, chi decide come si costruisce, chi controlla le macchine.</div>
+        <div class="meta"><span class="durata" data-sb="durata">16:15</span> · <span class="parole" data-sb="parole">2596 parole</span></div></div>
+        <span data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/dhh.png" alt="" title="DHH"><img loading="lazy" src="/signal-brief/ai/avatars/yann-lecun.jpg" alt="" title="Yann LeCun"><img loading="lazy" src="/signal-brief/ai/avatars/geoffrey-hinton.jpg" alt="" title="Geoffrey Hinton"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"><img loading="lazy" src="/signal-brief/ai/avatars/patrick-collison.jpg" alt="" title="Patrick Collison"><img loading="lazy" src="/signal-brief/ai/avatars/nat-friedman.jpg" alt="" title="Nat Friedman"><img loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="/signal-brief/ai/avatars/ilya-sutskever.jpg" alt="" title="Ilya Sutskever"><img loading="lazy" src="/signal-brief/ai/avatars/marc-andreessen.jpg" alt="" title="Marc Andreessen"><img loading="lazy" src="/signal-brief/ai/avatars/sam-altman.jpg" alt="" title="Sam Altman"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"></span></span>
       </a>
-      <a class="ep" href="/signal-brief/ai/2026-05-05/">
-        <button class="ep-listen" title="Ascolta qui"
+      <a class="ep" data-sb="card" href="/signal-brief/ai/2026-05-05/">
+        <button class="ep-listen" data-sb="play" title="Ascolta qui"
           onclick="event.preventDefault();event.stopPropagation();ascolta(this,'https://media.casamon.dev/ai/podcast/episodes/2026-05-05.mp3')">▶</button>
-        <div><div class="ep-title">Chi tiene il volante</div>
-        <div class="ep-meta">2026-05-05 · 16:51</div></div>
-        <span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/vitalik-buterin.jpg" alt="" title="Vitalik Buterin"><img loading="lazy" src="/signal-brief/ai/avatars/geoffrey-hinton.jpg" alt="" title="Geoffrey Hinton"><img loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt="" title="Jensen Huang"><img loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/patrick-collison.jpg" alt="" title="Patrick Collison"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="/signal-brief/ai/avatars/naval-ravikant.jpg" alt="" title="Naval Ravikant"><img loading="lazy" src="/signal-brief/ai/avatars/demis-hassabis.jpg" alt="" title="Demis Hassabis"><img loading="lazy" src="/signal-brief/ai/avatars/sam-altman.jpg" alt="" title="Sam Altman"><img loading="lazy" src="/signal-brief/ai/avatars/yann-lecun.jpg" alt="" title="Yann LeCun"></span>
+        <div><div class="ep-title" data-sb="titolo">Chi tiene il volante</div>
+        <div class="ep-meta" data-sb="data">2026-05-05</div>
+        <div class="ep-description" data-sb="descrizione">L'AI sta diventando infrastruttura, non strumento. Chi la controlla e dove sta davvero andando: le grandi tensioni del pensiero tech in questo momento.</div>
+        <div class="meta"><span class="durata" data-sb="durata">16:51</span> · <span class="parole" data-sb="parole">2554 parole</span></div></div>
+        <span data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/vitalik-buterin.jpg" alt="" title="Vitalik Buterin"><img loading="lazy" src="/signal-brief/ai/avatars/geoffrey-hinton.jpg" alt="" title="Geoffrey Hinton"><img loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt="" title="Jensen Huang"><img loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/patrick-collison.jpg" alt="" title="Patrick Collison"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="/signal-brief/ai/avatars/naval-ravikant.jpg" alt="" title="Naval Ravikant"><img loading="lazy" src="/signal-brief/ai/avatars/demis-hassabis.jpg" alt="" title="Demis Hassabis"><img loading="lazy" src="/signal-brief/ai/avatars/sam-altman.jpg" alt="" title="Sam Altman"><img loading="lazy" src="/signal-brief/ai/avatars/yann-lecun.jpg" alt="" title="Yann LeCun"></span></span>
       </a>
-      <a class="ep" href="/signal-brief/ai/2026-05-04/">
-        <button class="ep-listen" title="Ascolta qui"
+      <a class="ep" data-sb="card" href="/signal-brief/ai/2026-05-04/">
+        <button class="ep-listen" data-sb="play" title="Ascolta qui"
           onclick="event.preventDefault();event.stopPropagation();ascolta(this,'https://media.casamon.dev/ai/podcast/episodes/2026-05-04.mp3')">▶</button>
-        <div><div class="ep-title">Il vantaggio non è più nel codice</div>
-        <div class="ep-meta">2026-05-04 · 15:50</div></div>
-        <span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="/signal-brief/ai/avatars/yann-lecun.jpg" alt="" title="Yann LeCun"><img loading="lazy" src="/signal-brief/ai/avatars/geoffrey-hinton.jpg" alt="" title="Geoffrey Hinton"><img loading="lazy" src="/signal-brief/ai/avatars/naval-ravikant.jpg" alt="" title="Naval Ravikant"><img loading="lazy" src="/signal-brief/ai/avatars/marc-andreessen.jpg" alt="" title="Marc Andreessen"><img loading="lazy" src="/signal-brief/ai/avatars/patrick-collison.jpg" alt="" title="Patrick Collison"><img loading="lazy" src="/signal-brief/ai/avatars/benedict-evans.png" alt="" title="Benedict Evans"><img loading="lazy" src="/signal-brief/ai/avatars/demis-hassabis.jpg" alt="" title="Demis Hassabis"><img loading="lazy" src="/signal-brief/ai/avatars/balaji-srinivasan.jpg" alt="" title="Balaji Srinivasan"><img loading="lazy" src="/signal-brief/ai/avatars/vitalik-buterin.jpg" alt="" title="Vitalik Buterin"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"></span>
+        <div><div class="ep-title" data-sb="titolo">Il vantaggio non è più nel codice</div>
+        <div class="ep-meta" data-sb="data">2026-05-04</div>
+        <div class="ep-description" data-sb="descrizione">Il software scalabile non è più il fossato di nessuno. Questa settimana i costruttori convergono — ma su chi erediterà il vantaggio non c'è accordo.</div>
+        <div class="meta"><span class="durata" data-sb="durata">15:50</span> · <span class="parole" data-sb="parole">2463 parole</span></div></div>
+        <span data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="/signal-brief/ai/avatars/yann-lecun.jpg" alt="" title="Yann LeCun"><img loading="lazy" src="/signal-brief/ai/avatars/geoffrey-hinton.jpg" alt="" title="Geoffrey Hinton"><img loading="lazy" src="/signal-brief/ai/avatars/naval-ravikant.jpg" alt="" title="Naval Ravikant"><img loading="lazy" src="/signal-brief/ai/avatars/marc-andreessen.jpg" alt="" title="Marc Andreessen"><img loading="lazy" src="/signal-brief/ai/avatars/patrick-collison.jpg" alt="" title="Patrick Collison"><img loading="lazy" src="/signal-brief/ai/avatars/benedict-evans.png" alt="" title="Benedict Evans"><img loading="lazy" src="/signal-brief/ai/avatars/demis-hassabis.jpg" alt="" title="Demis Hassabis"><img loading="lazy" src="/signal-brief/ai/avatars/balaji-srinivasan.jpg" alt="" title="Balaji Srinivasan"><img loading="lazy" src="/signal-brief/ai/avatars/vitalik-buterin.jpg" alt="" title="Vitalik Buterin"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"></span></span>
       </a></ul></details><details class="wkacc"><summary>Settimana del 27/04 · 3 episodi</summary><ul class="eps">
-      <a class="ep" href="/signal-brief/ai/2026-05-03/">
-        <button class="ep-listen" title="Ascolta qui"
+      <a class="ep" data-sb="card" href="/signal-brief/ai/2026-05-03/">
+        <button class="ep-listen" data-sb="play" title="Ascolta qui"
           onclick="event.preventDefault();event.stopPropagation();ascolta(this,'https://media.casamon.dev/ai/podcast/episodes/2026-05-03.mp3')">▶</button>
-        <div><div class="ep-title">Chi verifica, governa</div>
-        <div class="ep-meta">2026-05-03 · 15:18</div></div>
-        <span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/yann-lecun.jpg" alt="" title="Yann LeCun"><img loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"><img loading="lazy" src="/signal-brief/ai/avatars/simon-willison.jpg" alt="" title="Simon Willison"><img loading="lazy" src="/signal-brief/ai/avatars/marc-andreessen.jpg" alt="" title="Marc Andreessen"><img loading="lazy" src="/signal-brief/ai/avatars/sam-altman.jpg" alt="" title="Sam Altman"><img loading="lazy" src="/signal-brief/ai/avatars/geoffrey-hinton.jpg" alt="" title="Geoffrey Hinton"><img loading="lazy" src="/signal-brief/ai/avatars/vitalik-buterin.jpg" alt="" title="Vitalik Buterin"><img loading="lazy" src="/signal-brief/ai/avatars/balaji-srinivasan.jpg" alt="" title="Balaji Srinivasan"></span>
+        <div><div class="ep-title" data-sb="titolo">Chi verifica, governa</div>
+        <div class="ep-meta" data-sb="data">2026-05-03</div>
+        <div class="ep-description" data-sb="descrizione">Da Karpathy a Chollet, un'idea attraversa il dibattito AI di questa settimana: delegare senza capire costa. Il vero bottleneck non è la macchina, è il giudizio.</div>
+        <div class="meta"><span class="durata" data-sb="durata">15:18</span> · <span class="parole" data-sb="parole">2342 parole</span></div></div>
+        <span data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/yann-lecun.jpg" alt="" title="Yann LeCun"><img loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"><img loading="lazy" src="/signal-brief/ai/avatars/simon-willison.jpg" alt="" title="Simon Willison"><img loading="lazy" src="/signal-brief/ai/avatars/marc-andreessen.jpg" alt="" title="Marc Andreessen"><img loading="lazy" src="/signal-brief/ai/avatars/sam-altman.jpg" alt="" title="Sam Altman"><img loading="lazy" src="/signal-brief/ai/avatars/geoffrey-hinton.jpg" alt="" title="Geoffrey Hinton"><img loading="lazy" src="/signal-brief/ai/avatars/vitalik-buterin.jpg" alt="" title="Vitalik Buterin"><img loading="lazy" src="/signal-brief/ai/avatars/balaji-srinivasan.jpg" alt="" title="Balaji Srinivasan"></span></span>
       </a>
-      <a class="ep" href="/signal-brief/ai/2026-05-02/">
-        <button class="ep-listen" title="Ascolta qui"
+      <a class="ep" data-sb="card" href="/signal-brief/ai/2026-05-02/">
+        <button class="ep-listen" data-sb="play" title="Ascolta qui"
           onclick="event.preventDefault();event.stopPropagation();ascolta(this,'https://media.casamon.dev/ai/podcast/episodes/2026-05-02.mp3')">▶</button>
-        <div><div class="ep-title">Il software non è più un fossato</div>
-        <div class="ep-meta">2026-05-02 · 16:02</div></div>
-        
+        <div><div class="ep-title" data-sb="titolo">Il software non è più un fossato</div>
+        <div class="ep-meta" data-sb="data">2026-05-02</div>
+        <div class="ep-description" data-sb="descrizione">Il vantaggio competitivo tecnico sta evaporando: tre angolazioni diverse, stessa diagnosi. E intanto sul piano politico due visioni incompatibili si scontrano sullo stesso oggetto.</div>
+        <div class="meta"><span class="durata" data-sb="durata">16:02</span> · <span class="parole" data-sb="parole">2476 parole</span></div></div>
+        <span data-sb="facce"></span>
       </a>
-      <a class="ep" href="/signal-brief/ai/2026-05-01/">
-        <button class="ep-listen" title="Ascolta qui"
+      <a class="ep" data-sb="card" href="/signal-brief/ai/2026-05-01/">
+        <button class="ep-listen" data-sb="play" title="Ascolta qui"
           onclick="event.preventDefault();event.stopPropagation();ascolta(this,'https://media.casamon.dev/ai/podcast/episodes/2026-05-01.mp3')">▶</button>
-        <div><div class="ep-title">Chi possiede l'intelligenza</div>
-        <div class="ep-meta">2026-05-01 · 16:53</div></div>
-        
+        <div><div class="ep-title" data-sb="titolo">Chi possiede l'intelligenza</div>
+        <div class="ep-meta" data-sb="data">2026-05-01</div>
+        <div class="ep-description" data-sb="descrizione">L'AI è diventata una questione di potere. Chi la controlla, cosa conta davvero come intelligenza, e se stiamo costruendo un prodotto o qualcosa di molto più grande.</div>
+        <div class="meta"><span class="durata" data-sb="durata">16:53</span> · <span class="parole" data-sb="parole">2625 parole</span></div></div>
+        <span data-sb="facce"></span>
       </a></ul></details>
 <dialog class="vplayer" id="vplayer"></dialog>
 <script>

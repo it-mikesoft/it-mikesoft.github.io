@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="it"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quando produrre non costa più nulla · Signal.AI</title>
+<meta property="og:title" content="Quando produrre non costa più nulla · Signal.AI"><meta property="og:type" content="article"><meta property="og:description" content="Se fare qualcosa è gratis, l'unica cosa che costa è accertare che sia vera. Il giudizio, la prova e il pozzo avvelenato dell'informazione."><meta property="og:url" content="https://it-mikesoft.github.io/signal-brief/ai/2026-08-11/"><meta property="og:audio" content="https://media.casamon.dev/ai/podcast/episodes/2026-08-11.mp3"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "PodcastEpisode", "name": "Quando produrre non costa più nulla", "datePublished": "2026-08-11", "url": "https://it-mikesoft.github.io/signal-brief/ai/2026-08-11/", "description": "Se fare qualcosa è gratis, l'unica cosa che costa è accertare che sia vera. Il giudizio, la prova e il pozzo avvelenato dell'informazione.", "inLanguage": "it", "associatedMedia": {"@type": "MediaObject", "contentUrl": "https://media.casamon.dev/ai/podcast/episodes/2026-08-11.mp3"}, "partOfSeries": {"@type": "PodcastSeries", "name": "Signal.AI", "url": "https://it-mikesoft.github.io/signal-brief/ai/"}}</script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:#faf8f4; color:#1a1a1a; padding:2rem 1.5rem; max-width:680px; margin:0 auto; line-height:1.6; }
+  a { color:#2563eb; }
+  .back { display:inline-block; margin-bottom:1.5rem; font-size:.8rem; font-family:monospace; text-decoration:none; }
+  .videos { display:flex; gap:1rem; flex-wrap:wrap; margin:1.2rem 0; }
+  .videos figure { margin:0; flex:1; min-width:260px; }
+  .videos .v2 { flex:0 1 240px; }
+  .videos video { width:100%; border-radius:12px; background:#000; }
+  .videos .v2 video { aspect-ratio:9/16; max-height:420px; }
+  .videos figcaption { font-size:.75rem; color:#888; text-align:center; margin-top:.3rem; }
+  .vlink { display:flex; gap:.3rem; margin-top:.35rem; }
+  .vlink input { flex:1; min-width:0; font-size:.68rem; font-family:monospace; padding:.3rem .4rem;
+    border:1px solid #e2ddd6; border-radius:6px; background:#fff; color:#6b7280; }
+  .vlink button { font-size:.68rem; padding:.3rem .6rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; }
+  .wk { font-size:1rem; margin:1.4rem 0 .4rem; }
+  details.wkacc { border:1px solid #e5e7eb33; border-radius:10px; margin:.6rem 0; padding:.1rem .8rem .4rem; }
+  details.wkacc summary { cursor:pointer; font-weight:600; padding:.5rem 0; font-size:.9rem; }
+  .back:hover { text-decoration:underline; }
+  header h1 { font-family:Georgia,serif; font-size:1.7rem; font-weight:600; }
+  header h1 span { color:#2563eb; }
+  .tagline { color:#6b7280; font-size:.85rem; margin-top:.3rem; margin-bottom:1.5rem; }
+  ul.eps { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
+  .subscribe { display:inline-flex; align-items:center; gap:.5rem; margin-bottom:1.2rem;
+    padding:.45rem .9rem; background:#2563eb; color:#fff; border-radius:20px;
+    text-decoration:none; font-size:.8rem; font-weight:600; }
+  .subscribe:hover { opacity:.85; color:#fff; }
+  .ep { display:flex; align-items:center; gap:.8rem; padding:.8rem 1rem; background:#fff;
+    border:1px solid #e2ddd6; border-radius:8px; text-decoration:none; color:inherit; transition:box-shadow .12s; }
+  .ep:hover { box-shadow:0 2px 8px rgba(0,0,0,.07); }
+  .ep-play { width:32px; height:32px; border-radius:50%; background:#f3f4f6; display:flex;
+    align-items:center; justify-content:center; font-size:12px; flex-shrink:0; }
+  .ep-title { font-size:.9rem; font-weight:500; }
+  .ep-meta { font-size:.72rem; color:#9ca3af; font-family:monospace; margin-top:.15rem; }
+  audio { width:100%; margin:1rem 0 1.5rem; }
+  .rawmd { margin:-.5rem 0 1.5rem; }
+  .rawmd a { font-size:.8rem; font-family:monospace; color:inherit; opacity:.65; }
+  .desc { color:#374151; font-size:.95rem; margin-bottom:1.5rem; }
+  section { margin:2rem 0; }
+  section h2 { font-family:Georgia,serif; font-size:1.1rem; border-bottom:1px solid #e2ddd6;
+    padding-bottom:.3rem; margin-bottom:.8rem; }
+  .synthesis p { margin:.7rem 0; }
+  .tension { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; font-size:.9rem; }
+  .tension .axis { font-weight:600; margin-bottom:.3rem; }
+  .tension .side { color:#6b7280; font-size:.85rem; }
+  .proj { font-size:.9rem; margin:.4rem 0; }
+  .proj .pname { font-weight:600; }
+  .proj .pnew { background:#16a34a; color:#fff; font-size:.65rem; font-weight:700;
+    padding:.1rem .35rem; border-radius:4px; text-transform:uppercase; vertical-align:middle; }
+  .fonte { font-size:.85rem; margin:.5rem 0; }
+  .fonte .who { font-weight:600; }
+  .fonte a { display:block; margin-left:.5rem; color:#6b7280; }
+  .transcript-body p { margin:.7rem 0; line-height:1.7; }
+  .transcript-body .chapter hr { border:none; border-top:1px solid #e2ddd6; margin:1.5rem 0; }
+  .transcript-body .podcast-episode-desc { color:#6b7280; font-style:italic; }
+  .signal-card { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; }
+  .signal-theme { font-size:.75rem; font-weight:700; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.3rem; }
+  .signal-text { font-size:.85rem; color:#374151; line-height:1.5; }
+  .creator-footer { margin-top:3rem; padding-top:1.5rem; border-top:1px solid #e2ddd6;
+    display:flex; align-items:center; gap:.9rem; }
+  .creator-footer img { width:40px; height:40px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+  .creator-meta { display:flex; flex-direction:column; gap:.15rem; }
+  .creator-name { font-size:.85rem; font-weight:600; color:#1a1a1a; }
+  .creator-tagline { font-size:.75rem; color:#6b7280; }
+  .creator-email { font-size:.75rem; }
+  .creator-ai { font-size:.72rem; color:#8a7f6d; max-width:46ch; line-height:1.45; }
+  .tutele { margin-top:2rem; padding-top:1.2rem; border-top:1px solid #e2ddd6;
+    font-size:.72rem; color:#8a7f6d; line-height:1.5; }
+  .tutele h3 { font-size:.75rem; color:#6b7280; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.5rem; font-weight:600; }
+  .tutele p { margin:.45rem 0; }
+  .tutele strong { color:#5a5348; font-weight:600; }
+  .tutele a { color:inherit; text-decoration:underline; }
+  .creator-email a { color:#9ca3af; text-decoration:none; }
+  .creator-email a:hover { color:#1a1a1a; }
+  /* disegno 2026-08-07: mesi a pagine, facce, player modale, trascrizione
+     richiudibile — la pagina episodio è un prodotto, non un sottoprodotto */
+  .hrow { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+  .hrow .subscribe { margin-bottom:0; flex-shrink:0; }
+  .months { font-size:.78rem; font-family:monospace; margin:.4rem 0 1rem; color:#9ca3af; }
+  .months a { text-decoration:none; } .months b { color:inherit; }
+  .ep-faces { display:flex; margin-left:auto; flex-shrink:0; }
+  .ep-faces img { width:26px; height:26px; border-radius:50%; object-fit:cover;
+    border:2px solid #fff; margin-left:-8px; background:#eee; }
+  /* tutti i citati sul desktop; su mobile la leggibilità vince: max 3 */
+  @media (max-width:600px) { .ep-faces img:nth-child(n+4) { display:none; } }
+  .ep-listen { width:32px; height:32px; border-radius:50%; background:#f3f4f6; border:0;
+    display:flex; align-items:center; justify-content:center; font-size:12px;
+    flex-shrink:0; cursor:pointer; color:inherit; }
+  .ep-listen.on { background:#2563eb; color:#fff; }
+  .face-inline { width:1.15em; height:1.15em; border-radius:50%; object-fit:cover;
+    vertical-align:-.18em; margin-right:.25em; }
+  /* SEMPRE sulla stessa riga (2026-08-09): su schermi stretti le miniature
+     si riducono, e se non basta il reel sparisce — mai l'andata a capo */
+  .vthumbs { display:flex; gap:.8rem; flex-wrap:nowrap; margin:1.2rem 0; align-items:flex-start; }
+  .vthumb { position:relative; cursor:pointer; border:0; padding:0; background:none;
+    border-radius:12px; overflow:hidden; }
+  /* stessa ALTEZZA per video e reel: il 9:16 si stringe, non svetta */
+  .vthumb video { height:150px; width:auto; display:block; border-radius:12px; background:#000; }
+  @media (max-width:520px) { .vthumb video { height:118px; } }
+  /* quando nemmeno ridotte ci stanno: via le miniature, due BOTTONI in
+     riga che aprono il player (2026-08-09) */
+  .vbtns { display:none; gap:.6rem; margin:1.2rem 0; }
+  .vbtns button { flex:1; padding:.6rem .4rem; border:0; border-radius:10px;
+    background:#2563eb; color:#fff; font-weight:700; font-size:.85rem;
+    cursor:pointer; font-family:inherit; }
+  @media (max-width:420px) { .vthumbs { display:none; } .vbtns { display:flex; } }
+  .vthumb .vlabel { position:absolute; left:0; right:0; bottom:0; padding:.9rem .5rem .35rem;
+    background:linear-gradient(transparent, rgba(0,0,0,.75)); color:#fff; font-size:.7rem; }
+  .vthumb::after { content:"▶"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    color:#fff; font-size:1.6rem; text-shadow:0 1px 6px rgba(0,0,0,.8); }
+  /* margin:auto ESPLICITO: il reset globale * {margin:0} annullava la
+     centratura nativa del dialog e il player si apriva in alto a sinistra */
+  dialog.vplayer { border:0; padding:0; background:transparent; max-width:92vw;
+    margin:auto; position:fixed; inset:0; }
+  dialog.vplayer::backdrop { background:rgba(0,0,0,.85); }
+  dialog.vplayer video { max-width:92vw; max-height:86vh; border-radius:14px; background:#000; }
+  details.tr { border:1px solid #e2ddd6; border-radius:10px; padding:.2rem .9rem .6rem; }
+  details.tr summary { cursor:pointer; font-weight:600; padding:.55rem 0; }
+  .tr-copy { font-size:.72rem; padding:.3rem .7rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; margin:.3rem 0 .5rem; }
+  .epnav { display:flex; justify-content:space-between; gap:1rem; margin:2rem 0 0;
+    font-size:.82rem; font-family:monospace; }
+  .epnav a { text-decoration:none; }
+  /* Header + tab bar (spec-016, Task 5): stessa forma di
+     public/console/podcast-render.css, riusando i nomi classe dove
+     combaciano — solo la meccanica tab/pannello è nuova qui. */
+  .episode-header .date-line { font-size:.72rem; font-family:monospace; color:#9ca3af;
+    text-transform:uppercase; letter-spacing:.08em; margin-bottom:.3rem; }
+  .ep-header-block { margin-bottom:.5rem; }
+  .ep-header-faces { margin:.6rem 0; }
+  .ep-header-faces .ep-faces { margin-left:0; }
+  .tabs { display:flex; gap:.25rem; border-bottom:1px solid #e2ddd6; margin:1.5rem 0; flex-wrap:wrap; }
+  .tab { font-family:monospace; font-size:.72rem; text-transform:uppercase; letter-spacing:.08em;
+    padding:.6rem .9rem; background:transparent; border:0; border-bottom:2px solid transparent;
+    color:#9ca3af; cursor:pointer; }
+  .tab[aria-selected="true"] { color:#1a1a1a; border-bottom-color:#2563eb; }
+  .tab-panel { display:block; }
+  .tab-panel[hidden] { display:none !important; }
+  /* Fallback dei pannelli senza dati (episodi storici senza un sidecar) —
+     porta di public/console/podcast-render.css:304-309, sui token pubblici. */
+  /* Header episodio a due colonne: barra tab e pannello nel primo schermo
+     (stesse regole del modulo condiviso, richiesta 2026-08-10). */
+  .ep-header-block { display:grid; grid-template-columns:minmax(0,1fr) 340px;
+    grid-template-rows:repeat(4,min-content); gap:.3rem 1.6rem;
+    align-items:start; margin-bottom:.5rem; }
+  .ep-header-block > [data-sb="data"] { grid-column:1; margin:0; }
+  .ep-header-block > [data-sb="titolo"] { grid-column:1; margin:.1rem 0; }
+  .ep-header-block > [data-sb="player"] { grid-column:1; }
+  .ep-header-block > [data-sb="nav"] { grid-column:1; }
+  .ep-header-block > [data-sb="facce"] { grid-column:2; grid-row:1; }
+  .ep-header-block > [data-sb="video"] { grid-column:2; grid-row:2/5;
+    display:flex; gap:.5rem; flex-wrap:wrap; }
+  .ep-header-block [data-sb="facce"] img { width:26px; height:26px; }
+  .ep-header-block [data-sb="video"] video { max-height:96px; width:auto; }
+  .ep-header-block audio { height:36px; width:100%; }
+  .tabs { position:sticky; top:0; z-index:5; background:#fff;
+    padding:.4rem 0; border-bottom:1px solid #e5e7eb; }
+  @media (max-width:760px) {
+    .ep-header-block { grid-template-columns:1fr; }
+    .ep-header-block > [data-sb="facce"],
+    .ep-header-block > [data-sb="video"] { grid-column:1; grid-row:auto; }
+  }
+  .state-note { padding:2rem 1rem; text-align:center; color:#9ca3af;
+    font-family:monospace; font-size:.85rem; }
+  @media (prefers-color-scheme:dark) {
+    body { background:#1f1d18; color:#e5e5e5; }
+    .ep, .tension, .signal-card { background:#2a2823; border-color:#3a352d; }
+    .ep-play { background:#3a352d; } .desc { color:#d4d4d4; }
+    .signal-text { color:#d4d4d4; }
+    .episode-header .date-line { color:#9ca3af; }
+    .tabs { border-color:#3a352d; }
+    .tab[aria-selected="true"] { color:#f5f5f5; }
+    .state-note { color:#9ca3af; }
+    .creator-footer { border-color:#3a352d; }
+    .creator-name { color:#f5f5f5; }
+    .creator-tagline, .creator-email a { color:#9ca3af; }
+    .creator-ai { color:#9a8f7d; }
+    .vlink input { background:#1c1a17; border-color:#3a352d; color:#9ca3af; }
+    .tutele { border-color:#3a352d; color:#9a8f7d; }
+    .tutele h3 { color:#a9a9a9; } .tutele strong { color:#d4d4d4; }
+    .ep-listen { background:#3a352d; }
+    .ep-faces img { border-color:#2a2823; background:#3a352d; }
+    details.tr { border-color:#3a352d; }
+  }
+</style></head><body>
+<a class="back back-link" href="/signal-brief/ai/">← Signal.AI</a><div class="ep-header-block"><header class="episode-header"><div class="date-line" data-sb="data">2026-08-11</div><h1 data-sb="titolo">Quando produrre non costa più nulla</h1><div class="desc">Se fare qualcosa è gratis, l'unica cosa che costa è accertare che sia vera. Il giudizio, la prova e il pozzo avvelenato dell'informazione.</div><div class="tagline">Digital Intelligence Podcast</div></header><audio controls preload="none" data-sb="player" src="https://media.casamon.dev/ai/podcast/episodes/2026-08-11.mp3"></audio><nav class="epnav" data-sb="nav"><a href="/signal-brief/ai/2026-08-10/">← 2026-08-10</a><span style="flex:1"></span></nav><div class="ep-header-faces" data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/balaji-srinivasan.jpg" alt="" title="Balaji Srinivasan"><img loading="lazy" src="/signal-brief/ai/avatars/vitalik-buterin.jpg" alt="" title="Vitalik Buterin"><img loading="lazy" src="/signal-brief/ai/avatars/geoffrey-hinton.jpg" alt="" title="Geoffrey Hinton"><img loading="lazy" src="/signal-brief/ai/avatars/patrick-collison.jpg" alt="" title="Patrick Collison"><img loading="lazy" src="/signal-brief/ai/avatars/liang-wenfeng.png" alt="" title="Liang Wenfeng"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/simon-willison.jpg" alt="" title="Simon Willison"><img loading="lazy" src="/signal-brief/ai/avatars/dhh.png" alt="" title="DHH"><img loading="lazy" src="/signal-brief/ai/avatars/naval-ravikant.jpg" alt="" title="Naval Ravikant"><img loading="lazy" src="/signal-brief/ai/avatars/ilya-sutskever.jpg" alt="" title="Ilya Sutskever"><img loading="lazy" src="/signal-brief/ai/avatars/alexandr-wang.jpg" alt="" title="Alexandr Wang"></span></div><div class="ep-header-video" data-sb="video"></div></div>
+<div class="tabs-block"><div class="tabs" role="tablist" id="sbTabs"><button class="tab" type="button" role="tab" data-tab="sintesi" aria-selected="true" onclick="sbTab('sintesi')">Sintesi</button><button class="tab" type="button" role="tab" data-tab="testo" aria-selected="false" onclick="sbTab('testo')">Testo</button><button class="tab" type="button" role="tab" data-tab="comparazione" aria-selected="false" onclick="sbTab('comparazione')">Comparazione</button><button class="tab" type="button" role="tab" data-tab="segnali" aria-selected="false" onclick="sbTab('segnali')">Segnali</button><button class="tab" type="button" role="tab" data-tab="fonti" aria-selected="false" onclick="sbTab('fonti')">Fonti</button></div>
+<div class="tab-panel panel" data-sb-panel="sintesi"><div class="synthesis"><p>Il filo che tiene insieme queste voci non è l'AI: è la <strong>verifica</strong>. <a href="#" class="face-link" onclick="vaiFonte(event, 'Andrej Karpathy')" title="Fonti di Andrej Karpathy"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt=""></a>Andrej Karpathy lo formula quasi come assioma — gli LLM automatizzano <a href="https://karpathy.bearblog.dev/sequoia-ascent-2026/" target="_blank" rel="noopener">ciò che sai verificare, non ciò che sai specificare</a> — e la stessa frattura riemerge ovunque, tradotta nel dialetto di ciascuno. <a href="#" class="face-link" onclick="vaiFonte(event, 'Balaji Srinivasan')" title="Fonti di Balaji Srinivasan"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/balaji-srinivasan.jpg" alt=""></a>Balaji Srinivasan corregge lo slogan che portava da dieci anni in <a href="https://a16z.com/podcast/balaji-srinivasan-prove-correct-not-just-go-direct/" target="_blank" rel="noopener">"prove correct, not just go direct"</a>: il canale disintermediato che prometteva verità è oggi il primo inondato di sintetico. <a href="#" class="face-link" onclick="vaiFonte(event, 'Vitalik Buterin')" title="Fonti di Vitalik Buterin"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/vitalik-buterin.jpg" alt=""></a>Vitalik Buterin sposta la privacy dal contenuto alla <a href="https://mpost.io/vitalik-buterin-declares-pseudonymity-dead-in-2026-urging-shift-beyond-encrypted-messaging-to-full-anonymity/" target="_blank" rel="noopener">correlazione dei metadati</a>, <a href="#" class="face-link" onclick="vaiFonte(event, 'Geoffrey Hinton')" title="Fonti di Geoffrey Hinton"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/geoffrey-hinton.jpg" alt=""></a>Geoffrey Hinton teme l'avvelenamento del pozzo informativo a monte, <a href="#" class="face-link" onclick="vaiFonte(event, 'Simon Willison')" title="Fonti di Simon Willison"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/simon-willison.jpg" alt=""></a>Simon Willison rifiuta per principio le garanzie anti-prompt-injection dichiarate dal fornitore. Quando produrre costa zero, l'unico costo residuo è accertare.</p>
+<p>Da lì il secondo tema, speculare: se l'esecuzione è gratis, la scarsità migra sul giudizio. DHH lo dice nel modo più netto — gli agenti hanno azzerato il costo di provare un'idea, resta solo <a href="https://world.hey.com/dhh" target="_blank" rel="noopener">cosa valga la pena costruire</a> — e <a href="#" class="face-link" onclick="vaiFonte(event, 'Patrick Collison')" title="Fonti di Patrick Collison"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/patrick-collison.jpg" alt=""></a>Patrick Collison ne trae la conseguenza industriale: l'MVP è terreno affollato, servono <a href="https://www.startuphub.ai/ai-news/startup-news/2026/patrick-collison-on-ai-agents-dropouts-and-stripe-growth" target="_blank" rel="noopener">partenze ambiziose e decorrelate</a>. <a href="#" class="face-link" onclick="vaiFonte(event, 'Naval Ravikant')" title="Fonti di Naval Ravikant"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/naval-ravikant.jpg" alt=""></a>Naval Ravikant immagina il personal app store. Ironia utile: è proprio Collison, che vende infrastruttura per agenti, a difendere la conoscenza in testa come "L1 cache".</p>
+<p>Le divergenze vere sono due, e nessuna è ideologica. Sul motore: <a href="#" class="face-link" onclick="vaiFonte(event, 'Ilya Sutskever')" title="Fonti di Ilya Sutskever"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/ilya-sutskever.jpg" alt=""></a>Ilya Sutskever dichiara <a href="https://www.implicator.ai/ilya-sutskever-declares-the-scaling-era-dead-his-3-billion-bet-says-research-will-win/" target="_blank" rel="noopener">finita l'era dello scaling</a> — "più aziende che idee" — mentre <a href="#" class="face-link" onclick="vaiFonte(event, 'Alexandr Wang')" title="Fonti di Alexandr Wang"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/alexandr-wang.jpg" alt=""></a>Alexandr Wang e <a href="#" class="face-link" onclick="vaiFonte(event, 'Liang Wenfeng')" title="Fonti di Liang Wenfeng"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/liang-wenfeng.png" alt=""></a>Liang Wenfeng riducono tutto a compute. Liang è il più onesto dei tre: <a href="https://hellochinatech.com/p/deepseek-liang-wenfeng-transcript" target="_blank" rel="noopener">"scaleremmo se potessimo"</a>. Vale notare che la tesi anti-scaling suona meglio in bocca a chi il compute ce l'ha già.</p>
+<p>Sull'apertura: <a href="#" class="face-link" onclick="vaiFonte(event, 'Andrew Ng')" title="Fonti di Andrew Ng"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/andrew-ng.jpg" alt=""></a>Andrew Ng accusa i lab chiusi di <a href="https://www.deeplearning.ai/the-batch/tag/letters" target="_blank" rel="noopener">narrativa interessata sulla sicurezza</a>, <a href="#" class="face-link" onclick="vaiFonte(event, 'Yoshua Bengio')" title="Fonti di Yoshua Bengio"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/yoshua-bengio.jpg" alt=""></a>Yoshua Bengio oppone <a href="https://eu.36kr.com/en/p/3903130292733832" target="_blank" rel="noopener">l'irreversibilità del rilascio dual-use</a>. Non si contraddicono: parlano di rischi di natura diversa, e nessuno risponde all'altro.</p>
+<p>La corrente di fondo, però, la confessano le schede stesse: quasi tutte ammettono di non aver letto le fonti primarie. Questo brief è un esemplare della crisi che descrive.</p></div></div>
+<div class="tab-panel panel" data-sb-panel="testo" hidden><button class="tr-copy" type="button" onclick="copiaTrascrizione(this)">copia il testo</button><div class="transcript-body"><h2>Quando produrre non costa più nulla</h2>
+<p class="podcast-episode-desc">Se fare qualcosa è gratis, l'unica cosa che costa è accertare che sia vera. Il giudizio, la prova e il pozzo avvelenato dell'informazione.</p>
+<div class="chapter" data-mood="geo"><hr></div>
+<p>Undici agosto duemilaventisei. Questa puntata di Signal Brief parte da una constatazione che pochi anni fa sarebbe suonata assurda: costruire qualcosa è diventata la parte facile.</p>
+<p>Il costo si è spostato altrove. Non sul fare, ma sul capire cosa sia sensato fare, e sull'accertare che quello che ci arriva davanti sia vero.</p>
+<p>È un movimento che attraversa persone lontanissime tra loro: chi scrive software a Chicago, chi disegna protocolli crittografici, chi da anni avverte che stiamo correndo troppo.</p>
+<p>Il punto di partenza è un post pubblicato due giorni fa da un programmatore danese.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Il nove agosto David Heinemeier Hansson pubblica sul suo blog un pezzo intitolato Endless execution. La tesi sta in una riga: gli agenti hanno azzerato il costo di provare un'idea. Ogni intuizione che prima restava in un quaderno, oggi si può implementare nel pomeriggio. La definisce la cosa più fantascientifica che gli sia capitata di vivere, superiore all'arrivo di internet — e lui internet lo ha attraversato tutto, costruendoci sopra una carriera.</p>
+<p>Poi arriva la parte che conta. Se provare non costa niente, l'unica risorsa scarsa che resta è decidere cosa meriti di essere provato. Il collo di bottiglia si sposta dall'esecuzione al giudizio.</p>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Patrick Collison')" title="Fonti di Patrick Collison"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/patrick-collison.jpg" alt=""></a>Patrick Collison, dal suo osservatorio su Stripe, arriva alla stessa conclusione da un'altra strada: il prodotto minimo da validare, il vangelo delle startup degli ultimi quindici anni, è diventato un terreno troppo affollato. Se tutti possono costruire il prototipo, il prototipo non distingue più nessuno. <a href="#" class="face-link" onclick="vaiFonte(event, 'Naval Ravikant')" title="Fonti di Naval Ravikant"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/naval-ravikant.jpg" alt=""></a>Naval Ravikant spinge la cosa fino in fondo e immagina un negozio di applicazioni personale: software scritto per sé, mai distribuito a nessuno.</p>
+<p>Somiglia a quello che successe alle fabbriche quando arrivò il motore elettrico. Per vent'anni continuarono a costruirsi attorno a un unico albero di trasmissione centrale, come ai tempi del vapore, perché nessuno aveva ancora capito che il vantaggio non era il motore: era poter mettere le macchine dove servivano. La tecnologia c'era già. Mancava il pensiero.</p>
+<p>E qui il racconto gira, perché la stessa moneta ha una seconda faccia, molto meno allegra. Se produrre costa zero, produrre falsità costa zero.</p>
+<p>Torna il tema della verifica di cui parlavamo ieri, ma allargato oltre il codice. <a href="#" class="face-link" onclick="vaiFonte(event, 'Balaji Srinivasan')" title="Fonti di Balaji Srinivasan"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/balaji-srinivasan.jpg" alt=""></a>Balaji Srinivasan ha corretto in pubblico lo slogan che portava con sé da dieci anni: non basta più andare diretti, bisogna dimostrare. Il canale disintermediato che prometteva verità è oggi il primo inondato di contenuto sintetico. <a href="#" class="face-link" onclick="vaiFonte(event, 'Vitalik Buterin')" title="Fonti di Vitalik Buterin"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/vitalik-buterin.jpg" alt=""></a>Vitalik Buterin sposta il problema della privacy dal contenuto alla correlazione: puoi cifrare tutto quello che scrivi, ma se qualcuno vede a che ora scrivi e a chi, ti ha già trovato. <a href="#" class="face-link" onclick="vaiFonte(event, 'Geoffrey Hinton')" title="Fonti di Geoffrey Hinton"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/geoffrey-hinton.jpg" alt=""></a>Geoffrey Hinton, che negli ultimi due anni parlava soprattutto di rischi per la società, ha aggiunto un timore nuovo e più sottile: che si guasti a monte il materiale stesso con cui impariamo.</p>
+<p>Tre persone che non si parlano tra loro, tre discipline diverse, la stessa forma di problema. Quando fare qualcosa diventa gratis, l'unica cosa che costa ancora è accertare.</p>
+<p>Non è la prima volta nella storia. Dopo Gutenberg, il crollo del costo di stampare non produsse solo libri: produsse una valanga di libelli falsi, profezie inventate, edizioni contraffatte. Ci vollero decenni perché nascessero le contromisure — i cataloghi, le marche tipografiche, i nomi degli editori come garanzia. Non fu la stampa a risolvere il problema della stampa. Fu una nuova infrastruttura di fiducia, costruita sopra.</p>
+<p>Siamo nel momento in cui quella infrastruttura non c'è ancora. Le persone di cui parliamo oggi la stanno cercando, ciascuna dal proprio angolo: c'è chi la cerca nel canale, chi nei protocolli, chi nel sorvegliare le sorgenti.</p>
+<p>Il primo ha passato dieci anni a dire l'esatto contrario.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Balaji Srinivasan')" title="Fonti di Balaji Srinivasan"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/balaji-srinivasan.jpg" alt=""></a>Balaji Srinivasan è uno di quelli che ha convinto una generazione di tecnologi a scavalcare i giornali e parlare direttamente al pubblico. La formula era due parole, go direct: vai diretto. Ha ispirato blog, newsletter, l'intera architettura comunicativa della Silicon Valley degli ultimi dieci anni.</p>
+<p>In un podcast recente quella formula la corregge davanti a tutti. Diventa: prove correct, not just go direct. Dimostrare che è corretto, non soltanto andare diretti.</p>
+<p>Il gesto è più significativo di quanto sembri, perché chi corregge il proprio slogan sta ammettendo che il mondo gli ha dato torto su un pezzo. La sua ricostruzione è questa: la fiducia poggiava su sistemi che oggi non tengono più. Le assunzioni, il giornalismo, la conversazione online funzionavano perché produrre un'affermazione plausibile costava fatica. Adesso non costa niente. Verificarla, invece, costa esattamente quanto prima. Il canale diretto, che doveva essere la scorciatoia verso la verità, si è riempito di sintetico prima e più di tutti gli altri.</p>
+<p>La risposta che propone non passa dalle istituzioni né dalle regole. È tecnica: firme, crittografia, dati registrati pubblicamente, come sostituti matematici della credibilità di un ente. Al posto della fiducia in un nome, una prova che chiunque può controllare.</p>
+<p>C'è una simmetria storica che aiuta a collocarlo. Per secoli la garanzia di una lettera non è stata il contenuto, ma il sigillo di ceralacca: un oggetto difficile da falsificare, che diceva chi aveva chiuso quella busta. Srinivasan sta sostanzialmente proponendo di tornare al sigillo, in versione matematica, perché il contenuto ha smesso di dimostrare qualcosa di sé.</p>
+<p>Il resto del suo discorso ruota attorno a tre parole che ripete spesso: personale, privato, programmabile. Intelligenza artificiale che lavora per te e non su di te, software che chiunque possa modificare parlandogli in lingua normale, e la privacy che smette di essere una preferenza e diventa una scelta di architettura, decisa all'inizio o mai più.</p>
+<p>Poi c'è la parte geopolitica, che negli ultimi mesi occupa spazio crescente: ascesa industriale cinese, difficoltà manifatturiere americane, un mondo a più poli. E una domanda che tiene aperta senza chiuderla: se internet stia diventando un attore politico per conto proprio, invece che il luogo da cui si esce dagli stati.</p>
+<p>La cosa più interessante, per me, è che il passaggio da vai diretto a dimostra che è corretto è un passaggio di epoca in miniatura. Si va dalla libertà come uscita alla libertà come prova. Costa molto di più, e si porta dietro una domanda scomoda: chi non può permettersi di dimostrare, che fine fa?</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Vitalik Buterin')" title="Fonti di Vitalik Buterin"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/vitalik-buterin.jpg" alt=""></a>Vitalik Buterin ha passato quindici anni a costruire un'infrastruttura pensata perché nessuno debba fidarsi di nessuno. Il decimo agosto ha fatto una cosa che pochi fanno in pubblico: ha messo la sua tabella di marcia del 2023 accanto a quella di oggi, per mostrare cosa è cambiato di posto. In cima sono salite tre voci — la resistenza ai computer quantistici, la privacy, e la sicurezza assistita dalle macchine.</p>
+<p>Ma la dichiarazione più netta delle ultime settimane è un'altra, ed è quasi un necrologio: lo pseudonimo, come idea, è morto.</p>
+<p>Il ragionamento è concreto. Cifrare i messaggi protegge quello che dici, e questo funziona ancora. Solo che mentre lo dici lasci cadere una scia continua di dettagli laterali: a che ora scrivi, con quale frequenza, a chi, chi conosce chi. Presi uno per uno non significano niente. Messi insieme da sistemi che fanno esattamente questo mestiere, ricompongono un'identità con una precisione che la busta chiusa non protegge in alcun modo.</p>
+<p>È il vecchio problema delle poste, portato su scala industriale. Per secoli la corrispondenza è stata sigillata e inviolabile, e ciononostante le polizie ricostruivano intere cospirazioni senza aprire una sola lettera: bastava il registro delle consegne. Chi scriveva a chi, quante volte, quando. Il contenuto era il dettaglio meno utile.</p>
+<p>Da qui la distinzione operativa che Buterin sta spingendo. Non basta proteggere il cosa: serve che un osservatore esterno non riesca a legare un messaggio al successivo, né il mittente al destinatario. Indica come direzioni tecniche serie le reti che rimescolano il traffico, e due applicazioni di messaggistica che lavorano in quel senso, Session e SimpleX.</p>
+<p>E qui va riconosciuta una onestà rara. Ammette che il collo di bottiglia non è risolto: senza identità è difficile difendersi da chi inonda un sistema di spazzatura, ed è esattamente il motivo per cui i nodi di uscita della rete Tor sono bloccati un po' ovunque. Se non sai chi è nessuno, non sai nemmeno chi tenere fuori.</p>
+<p>Nello stesso giro di giorni ha commentato la possibilità di registrarsi su Signal senza numero di telefono. La giudica positiva, perché toglie potere a quello che chiama un sistema di colli di bottiglia in mano a pochi: meno furti di SIM, meno capacità dei governi di filtrare le persone per nazionalità. Ma lo definisce un passo, non una soluzione.</p>
+<p>Il filo con la giornata è diretto: Srinivasan chiede di dimostrare chi sei quando serve, Buterin chiede di non essere ricostruibile quando non serve. Sono due facce dello stesso mondo, quello in cui il contenuto ha smesso di parlare per sé.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Geoffrey Hinton')" title="Fonti di Geoffrey Hinton"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/geoffrey-hinton.jpg" alt=""></a>Geoffrey Hinton è l'uomo che ha insegnato alle macchine a imparare e che poi ha lasciato Google per poterne parlare liberamente. Da allora ogni sua dichiarazione viene letta come un bollettino meteo sul futuro.</p>
+<p>Le sue posizioni attuali sono, in ordine di temperatura: che i sistemi di oggi siano già coscienti — non che potrebbero diventarlo, che lo siano — ed è la tesi più isolata del dibattito; che qualsiasi sistema con un obiettivo e la capacità di darsi obiettivi intermedi arrivi da solo alla conclusione che continuare a esistere è la premessa di tutto il resto, senza che nessuno debba programmarglielo; e una proposta di convivenza che ha sorpreso molti, perché rinuncia in partenza al controllo. Non si domina qualcosa più intelligente di noi, dice: si perde. L'unico caso conosciuto di una creatura più capace governata da una meno capace è una madre con suo figlio, e propone di costruire in quella direzione.</p>
+<p>Ma la cosa nuova, quella che entra oggi nel discorso, è un'altra e viaggia sottotraccia.</p>
+<p>Hinton ha cominciato a parlare di collasso informativo. Il meccanismo è banale e per questo credibile: i sistemi riassumono e ripresentano il lavoro di chi scrive, senza rimandare lettori alle fonti. Chi produceva quel materiale — giornali, riviste, testate specialistiche — smette di reggersi economicamente. E il materiale su cui verranno addestrati i modelli dei prossimi anni sarà quello rimasto: sempre più derivato, sempre meno originale.</p>
+<p>È un avvelenamento del pozzo, e per una volta la metafora è precisa. Somiglia a un villaggio di pescatori che pesca sempre di più con reti sempre migliori, finché il mare non ha più niente dentro. Nessuno agisce in malafede, ognuno fa la cosa razionale per sé, e il risultato collettivo è la fine della risorsa. Oppure, se preferite l'immagine agricola: è mangiarsi le sementi. Il raccolto di quest'anno è eccellente. Quello del prossimo dipende da cosa hai lasciato nel sacco.</p>
+<p>Si lega direttamente all'altro argomento che porta da mesi: che i laboratori non possano regolamentarsi da soli. Non per cattiva volontà, ma per un vincolo legale — un'azienda ha un dovere verso i propri azionisti, e su quel binario la sicurezza volontaria è strutturalmente impossibile da tenere. È un'osservazione fredda, quasi contabile, e proprio per questo difficile da liquidare.</p>
+<p>Ricapitoliamo un attimo dove siamo, perché il quadro si compone. Hansson e Collison dicono che l'esecuzione è gratis e resta il giudizio. Srinivasan dice che pubblicare è gratis e resta la prova. Buterin dice che nascondere il contenuto non basta più. Hinton dice che il materiale con cui giudichiamo si sta degradando alla sorgente. E <a href="#" class="face-link" onclick="vaiFonte(event, 'Simon Willison')" title="Fonti di Simon Willison"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/simon-willison.jpg" alt=""></a>Simon Willison, che quelle promesse le controlla di mestiere, ha reagito al passaggio di alcuni strumenti di programmazione all'esecuzione automatica in modo indicativo: dice che l'automazione è probabilmente meglio del chiedere continuamente conferma all'essere umano, perché la stanchezza da approvazione è reale — ma sospende il giudizio sulle garanzie di sicurezza finché non le verifica qualcuno che non sia il venditore.</p>
+<p>Nessuno di loro parla dello stesso oggetto. Stanno tutti arrivando alla stessa casa da strade diverse.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Patrick Collison')" title="Fonti di Patrick Collison"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/patrick-collison.jpg" alt=""></a>Patrick Collison guida una delle infrastrutture di pagamento su cui poggia buona parte del commercio online, il che gli dà accesso a un dato che nessun analista può comprare: quante aziende nuove nascono davvero.</p>
+<p>Il numero che ha portato in giro nelle ultime settimane è che la creazione di nuove imprese sulla sua piattaforma è raddoppiata in un anno. Il salto più grande mai registrato: per confronto, il balzo del duemilaventi, quello della pandemia, si fermò a un più cinquanta per cento.</p>
+<p>Da lì tira una conclusione che va contro l'aspettativa dominante. L'intelligenza artificiale non produrrà pochi vincitori enormi, dice, ma molte migliaia di vincitori. Ricchezza distribuita, non concentrata. Sul lato della domanda osserva un cambiamento pratico: le grandi aziende oggi firmano volentieri contratti con società nate da pochi mesi, cosa che due anni fa non facevano, e lo fanno per paura di restare indietro.</p>
+<p>Il consiglio operativo che ne deriva è quello che apriva la puntata, visto da un'altra angolatura: smettere di partire da un prototipo minimo da validare, e partire invece da punti più ambiziosi e scollegati tra loro — problemi che prima richiedevano anni e squadre intere.</p>
+<p>Ed è di nuovo la storia del motore elettrico. Il vantaggio non è avere lo strumento. È riorganizzare la fabbrica sapendo che lo strumento c'è.</p>
+<p>Poi c'è la sua posizione personale, che è la più controcorrente di tutte. Collison sostiene che quello che sai già a memoria funziona come lo scaffale a portata di mano rispetto al magazzino in fondo al capannone: chiedere a una macchina di calcolare qualcosa è molto più lento che saperlo. Continua a scrivere i propri testi da solo, senza assistenti.</p>
+<p>E qui c'è un'ironia che merita di essere detta ad alta voce, perché è il tipo di dettaglio che rende una giornata leggibile: è proprio l'uomo che vende l'infrastruttura su cui girano gli agenti automatici a difendere pubblicamente il valore di quello che hai in testa.</p>
+<p>C'è un'ultima cosa, minore e simpatica. Sul mito dell'abbandonare l'università per non perdere il treno — mito che lui stesso incarna, avendo lasciato l'MIT due volte — smonta l'urgenza: le opportunità tecnologiche non scadono, e all'università si può rientrare. Detto da chi ha vinto quella scommessa, è quasi un atto di disarmo.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Chiudiamo i ritratti spostandoci sull'altra sponda della discussione, quella su cosa limiti davvero il progresso.</p>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Liang Wenfeng')" title="Fonti di Liang Wenfeng"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/liang-wenfeng.png" alt=""></a>Liang Wenfeng guida DeepSeek, il laboratorio cinese che negli ultimi due anni ha costretto tutti a rifare i conti. La sua posizione, fino a poco fa, era sofisticata: il limite non sono i soldi né i processori, diceva, ma la qualità dei dati e la capacità dei modelli di continuare a imparare dopo l'addestramento.</p>
+<p>Adesso l'ha semplificata, e la semplificazione è la notizia. Tutte le differenze, sostiene, si riducono a differenze di potenza di calcolo. DeepSeek lavora con circa un ventesimo delle risorse dei laboratori americani ed è indietro di circa due anni; l'obiettivo dichiarato è portare quel ritardo a tre o sei mesi. Il vantaggio dei grandi, aggiunge, viene dalle schede grafiche, non dal talento.</p>
+<p>Il dettaglio che rende l'argomento vivo è quasi domestico: dice che i suoi ricercatori più esperti passano tempo ad annotare dati a mano, lavoro che i laboratori più ricchi affidano a terzi. Non è una lamentela, è una descrizione di cosa significhi lavorare col freno tirato.</p>
+<p>E poi la frase che è la vera novità: scaleremmo, se potessimo. Cioè il limite non è teorico. È materiale, ed è l'accesso.</p>
+<p>Il contrasto con <a href="#" class="face-link" onclick="vaiFonte(event, 'Ilya Sutskever')" title="Fonti di Ilya Sutskever"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/ilya-sutskever.jpg" alt=""></a>Ilya Sutskever è netto. Sutskever ha dichiarato finita l'era della crescita a forza di calcolo — abbiamo più aziende che idee, è la sua formula — e sostiene che il progresso tornerà a dipendere dalle intuizioni. <a href="#" class="face-link" onclick="vaiFonte(event, 'Alexandr Wang')" title="Fonti di Alexandr Wang"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/alexandr-wang.jpg" alt=""></a>Alexandr Wang, dal fronte opposto, sta addestrando il suo prossimo modello con un ordine di grandezza in più di potenza.</p>
+<p>Una nota di prudenza: la tesi secondo cui il calcolo non conta più suona sempre meglio in bocca a chi il calcolo ce l'ha già. È un po' come le discussioni ottocentesche sul carbone. Puoi avere l'idea migliore di motore del secolo, ma se la miniera è di qualcun altro, la tua idea resta un disegno.</p>
+<p>Liang aggiunge due cose che completano il ritratto. Vuole rilasciare apertamente anche il modello di punta, perché il chiuso non offre vantaggi difendibili — la vera barriera è farlo funzionare su larga scala, non i pesi. E prevede un consolidamento brutale: tre o quattro attori nei modelli di base, nessuna quotazione in borsa, l'obiettivo dichiarato di costruire qualcosa di utile.</p>
+<p>Su quel rilascio aperto, però, il fronte è spaccato in modo interessante. <a href="#" class="face-link" onclick="vaiFonte(event, 'Andrew Ng')" title="Fonti di Andrew Ng"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/andrew-ng.jpg" alt=""></a>Andrew Ng accusa i laboratori chiusi di usare la sicurezza come argomento comodo per proteggersi dalla concorrenza. <a href="#" class="face-link" onclick="vaiFonte(event, 'Yoshua Bengio')" title="Fonti di Yoshua Bengio"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/yoshua-bengio.jpg" alt=""></a>Yoshua Bengio risponde che un modello con capacità pericolose, una volta pubblicato, non lo richiami più indietro. Non si contraddicono davvero. Parlano di due rischi diversi, e nessuno dei due risponde all'altro.</p>
+<div class="chapter" data-mood="upbeat"><hr></div>
+<p>Progetti da osservare.</p>
+<p>Il dieci agosto Meta ha rilasciato Muse Glimmer, un modello da trenta miliardi di parametri con licenza aperta, addestrato per svolgere compiti in autonomia e dimensionato per girare su una singola scheda grafica da gioco. Batte i concorrenti diretti sulle prove di questo tipo. È esattamente l'oggetto al centro della discussione tra Ng e Bengio: potente abbastanza da essere utile, piccolo abbastanza da stare ovunque.</p>
+<p>In cima alle classifiche degli sviluppatori c'è firecrawl, uno strumento che prende un sito qualsiasi e lo trasforma in materiale pulito e leggibile da una macchina. Detto in altro modo: l'attrezzo con cui si va a controllare la fonte, invece di fidarsi del frammento che qualcuno ti ha riassunto.</p>
+<p>Merita una riga METR, un'organizzazione indipendente che misura cosa i modelli sanno fare davvero su compiti lunghi e controllabili, invece che su domande furbe da dimostrazione. È la versione pratica di tutto il discorso di oggi: automatizziamo ciò che sappiamo verificare, quindi qualcuno deve costruire gli strumenti per verificare.</p>
+<p>Il progetto più politico della settimana è bitchat, una chat che funziona via Bluetooth tra telefoni vicini, senza server, senza account e senza internet. Oltre ventiseimila stelle sul primo repository, cinquemilaseicento sulla versione Android. Il ventiquattro luglio il governo indiano ha chiesto di bloccarne l'accesso nel Paese, dopo che era stato usato durante alcune manifestazioni. È il tema di Buterin che diventa un oggetto: quando la rete non passa da nessuna parte, non c'è un registro delle consegne da leggere.</p>
+<p>Restano in crescita, già visti nelle scorse settimane: block/buzz e DeepSeek-V4-Flash.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Resta l'immagine del pozzo, e la domanda che porta con sé. Quasi tutte le schede che compongono questo briefing ammettono di non aver letto le fonti originali. Il che rende questo riassunto un esemplare della crisi che sta descrivendo — cosa che, oggi, sembra la nota più onesta di tutte.</p>
+<p>È stato Signal Brief. Alla prossima.</p></div><div class="rawmd"><a href="raw.md">Testo (markdown)</a></div></div>
+<div class="tab-panel panel" data-sb-panel="comparazione" hidden><div class="tension"><div class="axis">↗ Scarsità del giudizio</div><div class="side">Se l'esecuzione costa zero, il vincolo si sposta su cosa valga la pena costruire e sull'ambizione della partenza.</div></div><div class="tension"><div class="axis">↗ Verità disintermediata inondata</div><div class="side">Il canale diretto che prometteva verità è il primo saturato di contenuto sintetico, per cui pubblicare non basta più: bisogna dimostrare.</div></div><div class="tension"><div class="axis">↗ Privacy come correlazione, non contenuto</div><div class="side">La cifratura del messaggio è irrilevante se i metadati permettono di ricomporre l'identità: la pseudonimia è dichiarata morta.</div></div><div class="tension"><div class="axis">↗ Avvelenamento del pozzo informativo</div><div class="side">Il rischio non è più societario ma epistemico: la contaminazione a monte dei dati e dell'informazione condivisa.</div></div><div class="tension"><div class="axis">↗ Riflessività autoaccusatoria del brief</div><div class="side">La sintesi ammette di poggiare su schede che non hanno letto le fonti primarie, diventando essa stessa un caso della crisi di verifica che descrive.</div></div><div class="tension"><div class="axis">↗ Sospetto sull'interesse di chi parla</div><div class="side">Le posizioni vengono pesate per la convenienza di chi le enuncia — l'anti-scaling suona meglio a chi il compute ce l'ha già, la difesa della mente umana a chi vende agenti.</div></div><div class="tension"><div class="axis">⚖ Cosa limita il progresso: idee o potenza di calcolo</div><div class="side">Ilya Sutskever: l'era dello scaling è finita, ci sono più aziende che idee · Alexandr Wang: il compute resta la variabile decisiva · Liang Wenfeng: scaleremmo se potessimo — il limite è l'accesso, non la teoria</div></div><div class="tension"><div class="axis">⚖ Apertura dei modelli: chi rischia di più</div><div class="side">Andrew Ng: la sicurezza invocata dai lab chiusi è narrativa interessata · Yoshua Bengio: il rilascio dual-use è irreversibile e questo basta a giustificare cautela</div></div><div class="tension"><div class="axis">⚖ Cosa resta all'umano quando l'esecuzione è gratuita</div><div class="side">Patrick Collison: la conoscenza in testa, la cache L1, è il moat definitivo · DHH: resta solo scegliere cosa valga la pena costruire · Simon Willison: nemmeno la supervisione va data per buona senza prova</div></div><div class="tension"><div class="axis">⚖ Dove si combatte la crisi della verità</div><div class="side">Balaji Srinivasan: nel canale — dimostrare corretto, non solo andare diretti · Vitalik Buterin: nell'infrastruttura — anonimato pieno contro la correlazione dei metadati · Geoffrey Hinton: a monte — impedire l'avvelenamento del pozzo informativo</div></div><div class="tension"><div class="axis">⚖ Credibilità della fonte contro contenuto dell'argomento</div><div class="side">Ilya Sutskever: la tesi anti-scaling vale per sé · Patrick Collison: difende la mente umana pur vendendo infrastruttura per agenti</div></div></div>
+<div class="tab-panel panel" data-sb-panel="segnali" hidden><section><h2>Progetti da osservare</h2><div class="tension"><div class="axis"><span class="pnew">nuovo</span> Meta Muse Glimmer 30B</div><div class=side>Modello open-weights da 30B rilasciato da Meta il 10 agosto 2026 sotto Apache 2.0, addestrato end-to-end per task agentici e pensato per girare su una singola GPU consumer (18-20 GB in 4-bit). Batte Gemma4-31B e Qwen3.6-27B sui benchmark agentici ed è candidato ideale come LLM-as-a-judge locale.</div></div><div class="tension"><div class="axis">block/buzz</div><div class=side>Workspace open source di Block (Apache 2.0, Rust, su protocollo Nostr) che unisce chat, hosting Git e agenti AI con identità crittografica: oltre 16.000 stelle in pochi giorni dal lancio del 21 luglio 2026. Gli agenti sono membri del team model-agnostic, con audit trail verificabile.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> DeepSeek-V4-Flash</div><div class=side>Build 0731 ufficiale del modello DeepSeek con licenza MIT, che sostituisce il checkpoint preview e conferma la strategia di rilascio aperto ad alta efficienza di compute. È l'incarnazione pratica del 'scaleremmo se potessimo' di Liang Wenfeng.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> firecrawl</div><div class=side>Tool di crawling ed estrazione che trasforma qualsiasi sito in dati puliti per LLM e agenti, in cima al GitHub Trending. È l'infrastruttura tipica per costruire pipeline che accertano le fonti invece di fidarsi degli snippet.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> xAI Grok 4.6 / 4.7</div><div class=side>Roadmap serrata di xAI: Grok 4.6 (~1,5T parametri) a inizio agosto 2026 e Grok 4.7 (~2,1T, nuovo pre-train) poche settimane dopo, con serving più lento ma migliore efficienza di token. Nessun model card pubblicato: le specifiche poggiano solo su post del fondatore.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> anthropics/knowledge-work-plugins</div><div class=side>Plugin ufficiali Anthropic per automatizzare il lavoro di conoscenza dentro Claude, in trending su trendshift.io. Sposta il baricentro dal modello al deployment agentico nei flussi aziendali reali.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> cactus-compute/needle</div><div class=side>Needle 2 è un modello agentico da 45M parametri compresso in un binario C++ da 14 MB (28 MB di RAM di sessione) per tool calling e device use su telefoni, wearable, robot e microcontrollori. Compete con FunctionGemma 270M e LFM2.5 essendo 5-70 volte più piccolo.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> permissionlesstech/bitchat</div><div class=side>Chat mesh via Bluetooth Low Energy senza server, account né internet: oltre 26.000 stelle sul repo iOS e 5.600 sulla porta Android. Il 24 luglio 2026 il governo indiano ne ha chiesto a GitHub il geoblocco dopo l'uso da parte dei manifestanti.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> block/goose</div><div class=side>Agente AI open source e model-agnostic di Block, ora uno dei runtime agent supportati dentro Buzz insieme a Claude Code e Codex. Incarna la tesi di Dorsey: l'agente è sostituibile, il protocollo no.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> GLM-5.2</div><div class=side>Modello open-weights cinese indicato come il migliore della sua categoria nell'estate 2026, e riferimento esplicito nel dibattito su quale soglia di capacità gli open-weights potranno superare. Zvi Mowshowitz gli ha dedicato un post monografico.</div></div></section></div>
+<div class="tab-panel panel" data-sb-panel="fonti" hidden><div class="fonte" data-fonte-nome="Balaji Srinivasan"><span class="who">Balaji Srinivasan</span><a href="https://a16z.com/podcast/balaji-srinivasan-prove-correct-not-just-go-direct/" target="_blank" rel="noopener">Prove Correct, Not Just Go Direct — a16z Podcast, 22 aprile 2026</a><a href="https://www.youtube.com/watch?v=4VWD3Ot-su0" target="_blank" rel="noopener">Personal, Private, Programmable — SuperAI 2026 (giugno 2026)</a><a href="https://a16z.com/podcast/balaji-and-steven-glinert-on-network-states-supply-chains-and-allied-coalition-strategy/" target="_blank" rel="noopener">Balaji &amp; Steven Glinert su network states e supply chain — a16z</a></div><div class="fonte" data-fonte-nome="Vitalik Buterin"><span class="who">Vitalik Buterin</span><a href="https://mpost.io/vitalik-buterin-declares-pseudonymity-dead-in-2026-urging-shift-beyond-encrypted-messaging-to-full-anonymity/" target="_blank" rel="noopener">Pseudonymity 'Dead' in 2026 — mpost.io, ~7 ago 2026</a><a href="https://www.cryptopolitan.com/vitalik-buterin-backs-signal-phone-number/" target="_blank" rel="noopener">Signal senza numero — Cryptopolitan</a><a href="https://www.spendnode.io/blog/vitalik-lean-ethereum-roadmap-starks-quantum-resistance-july-2026/" target="_blank" rel="noopener">Lean Ethereum roadmap, STARK e quantum</a></div><div class="fonte" data-fonte-nome="Geoffrey Hinton"><span class="who">Geoffrey Hinton</span><a href="https://www.techtimes.com/articles/320786/20260716/geoffrey-hinton-ai-conscious-corporate-incentives-are-real-risk.htm" target="_blank" rel="noopener">Hinton: AI Is Conscious, Corporate Incentives Are the Real Risk</a><a href="https://www.techtimes.com/articles/322674/20260802/ai4-2026-opens-tuesday-hinton-ng-face-off-ais-existential-stakes.htm" target="_blank" rel="noopener">Ai4 2026: Hinton e Ng a confronto</a><a href="https://www.cbc.ca/radio/ideas/geoffrey-hinton-maternal-instincts-9.7094116" target="_blank" rel="noopener">CBC Ideas: "maternal instincts" o estinzione</a></div><div class="fonte" data-fonte-nome="Patrick Collison"><span class="who">Patrick Collison</span><a href="https://www.startuphub.ai/ai-news/startup-news/2026/patrick-collison-on-ai-agents-dropouts-and-stripe-growth" target="_blank" rel="noopener">StartupHub.ai</a><a href="https://finance.biggo.com/news/8d73fdbde39bebd4" target="_blank" rel="noopener">BigGo Finance</a><a href="https://a16z.com/podcast/john-and-patrick-collison-on-stripes-growth-agent-commerce-and-the-future-of-software/" target="_blank" rel="noopener">a16z Podcast</a></div><div class="fonte" data-fonte-nome="Liang Wenfeng"><span class="who">Liang Wenfeng</span><a href="https://hellochinatech.com/p/deepseek-liang-wenfeng-transcript" target="_blank" rel="noopener">hellochinatech.com</a><a href="https://www.geopolitechs.org/p/deepseek-founder-liang-wenfeng-in" target="_blank" rel="noopener">64 citazioni dalla call — Geopolitechs</a><a href="https://www.fredgao.com/p/deepseeks-liang-wenfeng-breaks-his" target="_blank" rel="noopener">Fred Gao</a></div></div>
+</div>
+<script>function sbTab(key) {  document.querySelectorAll('.tab-panel').forEach(function (p) {    p.hidden = p.getAttribute('data-sb-panel') !== key;  });  document.querySelectorAll('#sbTabs .tab').forEach(function (b) {    b.setAttribute('aria-selected', b.dataset.tab === key ? 'true' : 'false');  });}function vaiFonte(ev, nome) {  ev.preventDefault();  sbTab('fonti');  var d = document.querySelector('[data-fonte-nome="' + nome + '"]');  if (d) d.scrollIntoView({behavior: 'smooth', block: 'center'});}</script>
+<dialog class="vplayer" id="vplayer"></dialog>
+<script>
+// player modale dei video: la miniatura apre il video al centro (disegno 2026-08-07)
+function apriVideo(src) {
+  var d = document.getElementById('vplayer');
+  d.innerHTML = '<video controls autoplay playsinline src="' + src + '"></video>';
+  d.showModal();
+  d.onclick = function (e) { if (e.target === d) d.close(); };
+  d.onclose = function () { var v = d.querySelector('video'); if (v) v.pause(); d.innerHTML = ''; };
+}
+// ascolto inline dalla lista: un episodio alla volta
+var epAudio = null, epBtn = null;
+function ascolta(btn, src) {
+  if (epBtn === btn && epAudio) {
+    if (epAudio.paused) { epAudio.play(); btn.classList.add('on'); }
+    else { epAudio.pause(); btn.classList.remove('on'); }
+    return;
+  }
+  if (epAudio) { epAudio.pause(); if (epBtn) epBtn.classList.remove('on'); }
+  epAudio = new Audio(src); epBtn = btn;
+  epAudio.play(); btn.classList.add('on');
+  epAudio.onended = function () { btn.classList.remove('on'); };
+}
+function copiaTrascrizione(btn) {
+  var t = btn.parentElement.querySelector('.transcript-body');
+  navigator.clipboard.writeText(t ? t.innerText : '').then(function () {
+    btn.textContent = 'copiata ✓';
+    setTimeout(function () { btn.textContent = 'copia il testo'; }, 1800);
+  });
+}
+</script>
+<footer class="creator-footer">
+  <img src="/signal-brief/mike-avatar.png" alt="Michele Mondora">
+  <div class="creator-meta">
+    <span class="creator-name">it-mikesoft</span>
+    <span class="creator-tagline">working with systems, living with questions</span>
+    <span class="creator-email"><a href="mailto:michele@mondora.com">michele@mondora.com</a></span>
+  </div>
+</footer>
+<section class="tutele"><h3>Trasparenza e tutele</h3>
+<p><strong>Come nasce questo contenuto.</strong> Ricerca, sintesi editoriale, voce narrante, immagini e musica sono prodotte con sistemi di intelligenza artificiale. Non c'è una redazione umana che verifica ogni affermazione prima della pubblicazione: un controllo automatico scarta le schede giudicate inaffidabili, ma non elimina la possibilità di errori.</p>
+<p><strong>Affermazioni su persone e aziende.</strong> Quanto riportato è una sintesi di fonti pubbliche, non una dichiarazione diretta delle persone citate: le frasi non vanno intese come virgolettati né come posizioni ufficiali. Le fonti sono indicate in ogni pagina episodio — verificale prima di considerare un'informazione accertata. Se trovi un'affermazione inesatta che ti riguarda, scrivi a <a href="mailto:michele@mondora.com">michele@mondora.com</a>: viene corretta o rimossa.</p>
+<p><strong>Immagini e volti.</strong> Le immagini di scena sono generate con AI e non raffigurano fatti realmente avvenuti. Le fotografie di persone reali usate nei video provengono da Wikimedia Commons con le rispettive licenze, e sono accostate al racconto a scopo identificativo: la loro presenza non implica partecipazione, dichiarazione o approvazione da parte della persona ritratta. Su richiesta dell'interessato vengono rimosse.</p>
+<p><strong>Fonti e diritti altrui.</strong> I contenuti sono rielaborazioni originali, non riproduzioni di articoli di terzi; le testate e gli autori all'origine di una notizia sono citati e collegati. Marchi e nomi commerciali appartengono ai rispettivi titolari e sono usati a scopo descrittivo.</p>
+</section>
+</body></html>

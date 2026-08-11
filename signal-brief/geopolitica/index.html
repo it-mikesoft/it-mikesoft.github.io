@@ -132,11 +132,56 @@
   .epnav { display:flex; justify-content:space-between; gap:1rem; margin:2rem 0 0;
     font-size:.82rem; font-family:monospace; }
   .epnav a { text-decoration:none; }
+  /* Header + tab bar (spec-016, Task 5): stessa forma di
+     public/console/podcast-render.css, riusando i nomi classe dove
+     combaciano — solo la meccanica tab/pannello è nuova qui. */
+  .episode-header .date-line { font-size:.72rem; font-family:monospace; color:#9ca3af;
+    text-transform:uppercase; letter-spacing:.08em; margin-bottom:.3rem; }
+  .ep-header-block { margin-bottom:.5rem; }
+  .ep-header-faces { margin:.6rem 0; }
+  .ep-header-faces .ep-faces { margin-left:0; }
+  .tabs { display:flex; gap:.25rem; border-bottom:1px solid #e2ddd6; margin:1.5rem 0; flex-wrap:wrap; }
+  .tab { font-family:monospace; font-size:.72rem; text-transform:uppercase; letter-spacing:.08em;
+    padding:.6rem .9rem; background:transparent; border:0; border-bottom:2px solid transparent;
+    color:#9ca3af; cursor:pointer; }
+  .tab[aria-selected="true"] { color:#1a1a1a; border-bottom-color:#1e3a5f; }
+  .tab-panel { display:block; }
+  .tab-panel[hidden] { display:none !important; }
+  /* Fallback dei pannelli senza dati (episodi storici senza un sidecar) —
+     porta di public/console/podcast-render.css:304-309, sui token pubblici. */
+  /* Header episodio a due colonne: barra tab e pannello nel primo schermo
+     (stesse regole del modulo condiviso, richiesta 2026-08-10). */
+  .ep-header-block { display:grid; grid-template-columns:minmax(0,1fr) 340px;
+    grid-template-rows:repeat(4,min-content); gap:.3rem 1.6rem;
+    align-items:start; margin-bottom:.5rem; }
+  .ep-header-block > [data-sb="data"] { grid-column:1; margin:0; }
+  .ep-header-block > [data-sb="titolo"] { grid-column:1; margin:.1rem 0; }
+  .ep-header-block > [data-sb="player"] { grid-column:1; }
+  .ep-header-block > [data-sb="nav"] { grid-column:1; }
+  .ep-header-block > [data-sb="facce"] { grid-column:2; grid-row:1; }
+  .ep-header-block > [data-sb="video"] { grid-column:2; grid-row:2/5;
+    display:flex; gap:.5rem; flex-wrap:wrap; }
+  .ep-header-block [data-sb="facce"] img { width:26px; height:26px; }
+  .ep-header-block [data-sb="video"] video { max-height:96px; width:auto; }
+  .ep-header-block audio { height:36px; width:100%; }
+  .tabs { position:sticky; top:0; z-index:5; background:#fff;
+    padding:.4rem 0; border-bottom:1px solid #e5e7eb; }
+  @media (max-width:760px) {
+    .ep-header-block { grid-template-columns:1fr; }
+    .ep-header-block > [data-sb="facce"],
+    .ep-header-block > [data-sb="video"] { grid-column:1; grid-row:auto; }
+  }
+  .state-note { padding:2rem 1rem; text-align:center; color:#9ca3af;
+    font-family:monospace; font-size:.85rem; }
   @media (prefers-color-scheme:dark) {
     body { background:#1f1d18; color:#e5e5e5; }
     .ep, .tension, .signal-card { background:#2a2823; border-color:#3a352d; }
     .ep-play { background:#3a352d; } .desc { color:#d4d4d4; }
     .signal-text { color:#d4d4d4; }
+    .episode-header .date-line { color:#9ca3af; }
+    .tabs { border-color:#3a352d; }
+    .tab[aria-selected="true"] { color:#f5f5f5; }
+    .state-note { color:#9ca3af; }
     .creator-footer { border-color:#3a352d; }
     .creator-name { color:#f5f5f5; }
     .creator-tagline, .creator-email a { color:#9ca3af; }
@@ -155,19 +200,23 @@
   <div class="months"><b>lug 2026</b> · <a href="/signal-brief/geopolitica/mese-2026-06.html">giu 2026</a></div>
   
   <h2 class="wk">Questa settimana</h2><ul class="eps">
-      <a class="ep" href="/signal-brief/geopolitica/2026-07-10/">
-        <button class="ep-listen" title="Ascolta qui"
+      <a class="ep" data-sb="card" href="/signal-brief/geopolitica/2026-07-10/">
+        <button class="ep-listen" data-sb="play" title="Ascolta qui"
           onclick="event.preventDefault();event.stopPropagation();ascolta(this,'https://media.casamon.dev/geopolitica/podcast/episodes/2026-07-10.mp3')">▶</button>
-        <div><div class="ep-title">Due teorie del disordine</div>
-        <div class="ep-meta">2026-07-10 · 5:36</div></div>
-        <span class="ep-faces"><img loading="lazy" src="/signal-brief/geopolitica/avatars/ian-bremmer.png" alt="" title="Ian Bremmer"><img loading="lazy" src="/signal-brief/geopolitica/avatars/comfort-ero.png" alt="" title="Comfort Ero"><img loading="lazy" src="/signal-brief/geopolitica/avatars/anne-marie-slaughter.png" alt="" title="Anne-Marie Slaughter"><img loading="lazy" src="/signal-brief/geopolitica/avatars/elbridge-colby.png" alt="" title="Elbridge Colby"><img loading="lazy" src="/signal-brief/geopolitica/avatars/kishore-mahbubani.jpg" alt="" title="Kishore Mahbubani"></span>
+        <div><div class="ep-title" data-sb="titolo">Due teorie del disordine</div>
+        <div class="ep-meta" data-sb="data">2026-07-10</div>
+        <div class="ep-description" data-sb="descrizione">Non più chi smonta l'ordine mondiale, ma che tipo di caos ci aspetta: successione inevitabile o scelta reversibile. E le potenze medie che smettono di scegliere un padrone.</div>
+        <div class="meta"><span class="durata" data-sb="durata">5:36</span> · <span class="parole" data-sb="parole">889 parole</span></div></div>
+        <span data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/geopolitica/avatars/ian-bremmer.png" alt="" title="Ian Bremmer"><img loading="lazy" src="/signal-brief/geopolitica/avatars/comfort-ero.png" alt="" title="Comfort Ero"><img loading="lazy" src="/signal-brief/geopolitica/avatars/anne-marie-slaughter.png" alt="" title="Anne-Marie Slaughter"><img loading="lazy" src="/signal-brief/geopolitica/avatars/elbridge-colby.png" alt="" title="Elbridge Colby"><img loading="lazy" src="/signal-brief/geopolitica/avatars/kishore-mahbubani.jpg" alt="" title="Kishore Mahbubani"></span></span>
       </a></ul><details class="wkacc"><summary>Settimana del 29/06 · 1 episodi</summary><ul class="eps">
-      <a class="ep" href="/signal-brief/geopolitica/2026-07-03/">
-        <button class="ep-listen" title="Ascolta qui"
+      <a class="ep" data-sb="card" href="/signal-brief/geopolitica/2026-07-03/">
+        <button class="ep-listen" data-sb="play" title="Ascolta qui"
           onclick="event.preventDefault();event.stopPropagation();ascolta(this,'https://media.casamon.dev/geopolitica/podcast/episodes/2026-07-03.mp3')">▶</button>
-        <div><div class="ep-title">Cosa nasce dalle ceneri dell'ordine</div>
-        <div class="ep-meta">2026-07-03 · 8:38</div></div>
-        <span class="ep-faces"><img loading="lazy" src="/signal-brief/geopolitica/avatars/elbridge-colby.png" alt="" title="Elbridge Colby"><img loading="lazy" src="/signal-brief/geopolitica/avatars/ian-bremmer.png" alt="" title="Ian Bremmer"><img loading="lazy" src="/signal-brief/geopolitica/avatars/anne-marie-slaughter.png" alt="" title="Anne-Marie Slaughter"><img loading="lazy" src="/signal-brief/geopolitica/avatars/kishore-mahbubani.jpg" alt="" title="Kishore Mahbubani"><img loading="lazy" src="/signal-brief/geopolitica/avatars/comfort-ero.png" alt="" title="Comfort Ero"></span>
+        <div><div class="ep-title" data-sb="titolo">Cosa nasce dalle ceneri dell'ordine</div>
+        <div class="ep-meta" data-sb="data">2026-07-03</div>
+        <div class="ep-description" data-sb="descrizione">Tutti danno per morto l'ordine liberale. Ma sul mondo che verrà — bipolare o frammentato — le voci più acute si dividono, e la frattura corre anche tra chi la pensa uguale.</div>
+        <div class="meta"><span class="durata" data-sb="durata">8:38</span> · <span class="parole" data-sb="parole">1392 parole</span></div></div>
+        <span data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/geopolitica/avatars/elbridge-colby.png" alt="" title="Elbridge Colby"><img loading="lazy" src="/signal-brief/geopolitica/avatars/ian-bremmer.png" alt="" title="Ian Bremmer"><img loading="lazy" src="/signal-brief/geopolitica/avatars/anne-marie-slaughter.png" alt="" title="Anne-Marie Slaughter"><img loading="lazy" src="/signal-brief/geopolitica/avatars/kishore-mahbubani.jpg" alt="" title="Kishore Mahbubani"><img loading="lazy" src="/signal-brief/geopolitica/avatars/comfort-ero.png" alt="" title="Comfort Ero"></span></span>
       </a></ul></details>
 <dialog class="vplayer" id="vplayer"></dialog>
 <script>

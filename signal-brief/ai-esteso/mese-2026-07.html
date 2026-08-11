@@ -132,11 +132,56 @@
   .epnav { display:flex; justify-content:space-between; gap:1rem; margin:2rem 0 0;
     font-size:.82rem; font-family:monospace; }
   .epnav a { text-decoration:none; }
+  /* Header + tab bar (spec-016, Task 5): stessa forma di
+     public/console/podcast-render.css, riusando i nomi classe dove
+     combaciano — solo la meccanica tab/pannello è nuova qui. */
+  .episode-header .date-line { font-size:.72rem; font-family:monospace; color:#9ca3af;
+    text-transform:uppercase; letter-spacing:.08em; margin-bottom:.3rem; }
+  .ep-header-block { margin-bottom:.5rem; }
+  .ep-header-faces { margin:.6rem 0; }
+  .ep-header-faces .ep-faces { margin-left:0; }
+  .tabs { display:flex; gap:.25rem; border-bottom:1px solid #e2ddd6; margin:1.5rem 0; flex-wrap:wrap; }
+  .tab { font-family:monospace; font-size:.72rem; text-transform:uppercase; letter-spacing:.08em;
+    padding:.6rem .9rem; background:transparent; border:0; border-bottom:2px solid transparent;
+    color:#9ca3af; cursor:pointer; }
+  .tab[aria-selected="true"] { color:#1a1a1a; border-bottom-color:#7c3aed; }
+  .tab-panel { display:block; }
+  .tab-panel[hidden] { display:none !important; }
+  /* Fallback dei pannelli senza dati (episodi storici senza un sidecar) —
+     porta di public/console/podcast-render.css:304-309, sui token pubblici. */
+  /* Header episodio a due colonne: barra tab e pannello nel primo schermo
+     (stesse regole del modulo condiviso, richiesta 2026-08-10). */
+  .ep-header-block { display:grid; grid-template-columns:minmax(0,1fr) 340px;
+    grid-template-rows:repeat(4,min-content); gap:.3rem 1.6rem;
+    align-items:start; margin-bottom:.5rem; }
+  .ep-header-block > [data-sb="data"] { grid-column:1; margin:0; }
+  .ep-header-block > [data-sb="titolo"] { grid-column:1; margin:.1rem 0; }
+  .ep-header-block > [data-sb="player"] { grid-column:1; }
+  .ep-header-block > [data-sb="nav"] { grid-column:1; }
+  .ep-header-block > [data-sb="facce"] { grid-column:2; grid-row:1; }
+  .ep-header-block > [data-sb="video"] { grid-column:2; grid-row:2/5;
+    display:flex; gap:.5rem; flex-wrap:wrap; }
+  .ep-header-block [data-sb="facce"] img { width:26px; height:26px; }
+  .ep-header-block [data-sb="video"] video { max-height:96px; width:auto; }
+  .ep-header-block audio { height:36px; width:100%; }
+  .tabs { position:sticky; top:0; z-index:5; background:#fff;
+    padding:.4rem 0; border-bottom:1px solid #e5e7eb; }
+  @media (max-width:760px) {
+    .ep-header-block { grid-template-columns:1fr; }
+    .ep-header-block > [data-sb="facce"],
+    .ep-header-block > [data-sb="video"] { grid-column:1; grid-row:auto; }
+  }
+  .state-note { padding:2rem 1rem; text-align:center; color:#9ca3af;
+    font-family:monospace; font-size:.85rem; }
   @media (prefers-color-scheme:dark) {
     body { background:#1f1d18; color:#e5e5e5; }
     .ep, .tension, .signal-card { background:#2a2823; border-color:#3a352d; }
     .ep-play { background:#3a352d; } .desc { color:#d4d4d4; }
     .signal-text { color:#d4d4d4; }
+    .episode-header .date-line { color:#9ca3af; }
+    .tabs { border-color:#3a352d; }
+    .tab[aria-selected="true"] { color:#f5f5f5; }
+    .state-note { color:#9ca3af; }
     .creator-footer { border-color:#3a352d; }
     .creator-name { color:#f5f5f5; }
     .creator-tagline, .creator-email a { color:#9ca3af; }
@@ -155,26 +200,32 @@
   <div class="months"><a href="/signal-brief/ai-esteso/">ago 2026</a> · <b>lug 2026</b> · <a href="/signal-brief/ai-esteso/mese-2026-06.html">giu 2026</a></div>
   
   <details class="wkacc"><summary>Settimana del 06/07 · 2 episodi</summary><ul class="eps">
-      <a class="ep" href="/signal-brief/ai-esteso/2026-07-12/">
-        <button class="ep-listen" title="Ascolta qui"
+      <a class="ep" data-sb="card" href="/signal-brief/ai-esteso/2026-07-12/">
+        <button class="ep-listen" data-sb="play" title="Ascolta qui"
           onclick="event.preventDefault();event.stopPropagation();ascolta(this,'https://media.casamon.dev/ai-esteso/podcast/episodes/2026-07-12.mp3')">▶</button>
-        <div><div class="ep-title">Il prezzo del pensiero</div>
-        <div class="ep-meta">2026-07-12 · 20:20</div></div>
-        <span class="ep-faces"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/simon-willison.jpg" alt="" title="Simon Willison"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/benedict-evans.png" alt="" title="Benedict Evans"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/yann-lecun.jpg" alt="" title="Yann LeCun"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/fran-ois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/ilya-sutskever.jpg" alt="" title="Ilya Sutskever"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/john-carmack.jpg" alt="" title="John Carmack"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/sam-altman.jpg" alt="" title="Sam Altman"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/patrick-collison.jpg" alt="" title="Patrick Collison"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/marc-andreessen.jpg" alt="" title="Marc Andreessen"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/jensen-huang.png" alt="" title="Jensen Huang"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/ai.png" alt="" title="AI"></span>
+        <div><div class="ep-title" data-sb="titolo">Il prezzo del pensiero</div>
+        <div class="ep-meta" data-sb="data">2026-07-12</div>
+        <div class="ep-description" data-sb="descrizione">Il progresso dell'intelligenza artificiale non si misura più in parametri, ma in dollari per compito svolto. E chi è in testa ha smesso di chiedere libertà: adesso chiede regole.</div>
+        <div class="meta"><span class="durata" data-sb="durata">20:20</span> · <span class="parole" data-sb="parole">3167 parole</span></div></div>
+        <span data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/simon-willison.jpg" alt="" title="Simon Willison"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/benedict-evans.png" alt="" title="Benedict Evans"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/yann-lecun.jpg" alt="" title="Yann LeCun"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/fran-ois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/ilya-sutskever.jpg" alt="" title="Ilya Sutskever"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/john-carmack.jpg" alt="" title="John Carmack"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/sam-altman.jpg" alt="" title="Sam Altman"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/patrick-collison.jpg" alt="" title="Patrick Collison"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/marc-andreessen.jpg" alt="" title="Marc Andreessen"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/jensen-huang.png" alt="" title="Jensen Huang"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/ai.png" alt="" title="AI"></span></span>
       </a>
-      <a class="ep" href="/signal-brief/ai-esteso/2026-07-06/">
-        <button class="ep-listen" title="Ascolta qui"
+      <a class="ep" data-sb="card" href="/signal-brief/ai-esteso/2026-07-06/">
+        <button class="ep-listen" data-sb="play" title="Ascolta qui"
           onclick="event.preventDefault();event.stopPropagation();ascolta(this,'https://media.casamon.dev/ai-esteso/podcast/episodes/2026-07-06.mp3')">▶</button>
-        <div><div class="ep-title">Gli architetti dubitano, il denaro decide</div>
-        <div class="ep-meta">2026-07-06 · 19:32</div></div>
-        <span class="ep-faces"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/patrick-collison.jpg" alt="" title="Patrick Collison"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/sam-altman.jpg" alt="" title="Sam Altman"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/ilya-sutskever.jpg" alt="" title="Ilya Sutskever"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/yann-lecun.jpg" alt="" title="Yann LeCun"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/john-carmack.jpg" alt="" title="John Carmack"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/demis-hassabis.jpg" alt="" title="Demis Hassabis"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/fran-ois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/ai.png" alt="" title="AI"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/simon-willison.jpg" alt="" title="Simon Willison"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/naval-ravikant.jpg" alt="" title="Naval Ravikant"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/marc-andreessen.jpg" alt="" title="Marc Andreessen"></span>
+        <div><div class="ep-title" data-sb="titolo">Gli architetti dubitano, il denaro decide</div>
+        <div class="ep-meta" data-sb="data">2026-07-06</div>
+        <div class="ep-description" data-sb="descrizione">I padri dello scaling dichiarano esaurita la loro stessa era mentre il capitale accelera. Viaggio nella frattura tra chi costruisce l'AI e chi la finanzia.</div>
+        <div class="meta"><span class="durata" data-sb="durata">19:32</span> · <span class="parole" data-sb="parole">3120 parole</span></div></div>
+        <span data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/patrick-collison.jpg" alt="" title="Patrick Collison"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/sam-altman.jpg" alt="" title="Sam Altman"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/ilya-sutskever.jpg" alt="" title="Ilya Sutskever"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/yann-lecun.jpg" alt="" title="Yann LeCun"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/john-carmack.jpg" alt="" title="John Carmack"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/demis-hassabis.jpg" alt="" title="Demis Hassabis"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/fran-ois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/ai.png" alt="" title="AI"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/simon-willison.jpg" alt="" title="Simon Willison"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/naval-ravikant.jpg" alt="" title="Naval Ravikant"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/marc-andreessen.jpg" alt="" title="Marc Andreessen"></span></span>
       </a></ul></details><details class="wkacc"><summary>Settimana del 29/06 · 1 episodi</summary><ul class="eps">
-      <a class="ep" href="/signal-brief/ai-esteso/2026-07-05/">
-        <button class="ep-listen" title="Ascolta qui"
+      <a class="ep" data-sb="card" href="/signal-brief/ai-esteso/2026-07-05/">
+        <button class="ep-listen" data-sb="play" title="Ascolta qui"
           onclick="event.preventDefault();event.stopPropagation();ascolta(this,'https://media.casamon.dev/ai-esteso/podcast/episodes/2026-07-05.mp3')">▶</button>
-        <div><div class="ep-title">Il bivio dei modelli linguistici</div>
-        <div class="ep-meta">2026-07-05 · 15:42</div></div>
-        <span class="ep-faces"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/greg-brockman.jpg" alt="" title="Greg Brockman"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/ai.png" alt="" title="AI"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/tobi-l-tke.jpg" alt="" title="Tobi Lütke"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/ben-thompson.jpg" alt="" title="Ben Thompson"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/yann-lecun.jpg" alt="" title="Yann LeCun"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/fran-ois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/fei-fei-li.jpg" alt="" title="Fei-Fei Li"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/dario-amodei.jpg" alt="" title="Dario Amodei"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/geoffrey-hinton.jpg" alt="" title="Geoffrey Hinton"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/stuart-russell.png" alt="" title="Stuart Russell"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"></span>
+        <div><div class="ep-title" data-sb="titolo">Il bivio dei modelli linguistici</div>
+        <div class="ep-meta" data-sb="data">2026-07-05</div>
+        <div class="ep-description" data-sb="descrizione">La vera frattura dell'AI non è più velocità contro prudenza, ma chi crede che questi modelli portino a un'intelligenza vera e chi li ritiene un vicolo cieco.</div>
+        <div class="meta"><span class="durata" data-sb="durata">15:42</span> · <span class="parole" data-sb="parole">2473 parole</span></div></div>
+        <span data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/greg-brockman.jpg" alt="" title="Greg Brockman"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/ai.png" alt="" title="AI"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/tobi-l-tke.jpg" alt="" title="Tobi Lütke"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/ben-thompson.jpg" alt="" title="Ben Thompson"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/yann-lecun.jpg" alt="" title="Yann LeCun"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/fran-ois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/fei-fei-li.jpg" alt="" title="Fei-Fei Li"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/dario-amodei.jpg" alt="" title="Dario Amodei"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/geoffrey-hinton.jpg" alt="" title="Geoffrey Hinton"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/stuart-russell.png" alt="" title="Stuart Russell"><img loading="lazy" src="/signal-brief/ai-esteso/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"></span></span>
       </a></ul></details>
 <dialog class="vplayer" id="vplayer"></dialog>
 <script>

@@ -132,11 +132,56 @@
   .epnav { display:flex; justify-content:space-between; gap:1rem; margin:2rem 0 0;
     font-size:.82rem; font-family:monospace; }
   .epnav a { text-decoration:none; }
+  /* Header + tab bar (spec-016, Task 5): stessa forma di
+     public/console/podcast-render.css, riusando i nomi classe dove
+     combaciano — solo la meccanica tab/pannello è nuova qui. */
+  .episode-header .date-line { font-size:.72rem; font-family:monospace; color:#9ca3af;
+    text-transform:uppercase; letter-spacing:.08em; margin-bottom:.3rem; }
+  .ep-header-block { margin-bottom:.5rem; }
+  .ep-header-faces { margin:.6rem 0; }
+  .ep-header-faces .ep-faces { margin-left:0; }
+  .tabs { display:flex; gap:.25rem; border-bottom:1px solid #e2ddd6; margin:1.5rem 0; flex-wrap:wrap; }
+  .tab { font-family:monospace; font-size:.72rem; text-transform:uppercase; letter-spacing:.08em;
+    padding:.6rem .9rem; background:transparent; border:0; border-bottom:2px solid transparent;
+    color:#9ca3af; cursor:pointer; }
+  .tab[aria-selected="true"] { color:#1a1a1a; border-bottom-color:#0d9488; }
+  .tab-panel { display:block; }
+  .tab-panel[hidden] { display:none !important; }
+  /* Fallback dei pannelli senza dati (episodi storici senza un sidecar) —
+     porta di public/console/podcast-render.css:304-309, sui token pubblici. */
+  /* Header episodio a due colonne: barra tab e pannello nel primo schermo
+     (stesse regole del modulo condiviso, richiesta 2026-08-10). */
+  .ep-header-block { display:grid; grid-template-columns:minmax(0,1fr) 340px;
+    grid-template-rows:repeat(4,min-content); gap:.3rem 1.6rem;
+    align-items:start; margin-bottom:.5rem; }
+  .ep-header-block > [data-sb="data"] { grid-column:1; margin:0; }
+  .ep-header-block > [data-sb="titolo"] { grid-column:1; margin:.1rem 0; }
+  .ep-header-block > [data-sb="player"] { grid-column:1; }
+  .ep-header-block > [data-sb="nav"] { grid-column:1; }
+  .ep-header-block > [data-sb="facce"] { grid-column:2; grid-row:1; }
+  .ep-header-block > [data-sb="video"] { grid-column:2; grid-row:2/5;
+    display:flex; gap:.5rem; flex-wrap:wrap; }
+  .ep-header-block [data-sb="facce"] img { width:26px; height:26px; }
+  .ep-header-block [data-sb="video"] video { max-height:96px; width:auto; }
+  .ep-header-block audio { height:36px; width:100%; }
+  .tabs { position:sticky; top:0; z-index:5; background:#fff;
+    padding:.4rem 0; border-bottom:1px solid #e5e7eb; }
+  @media (max-width:760px) {
+    .ep-header-block { grid-template-columns:1fr; }
+    .ep-header-block > [data-sb="facce"],
+    .ep-header-block > [data-sb="video"] { grid-column:1; grid-row:auto; }
+  }
+  .state-note { padding:2rem 1rem; text-align:center; color:#9ca3af;
+    font-family:monospace; font-size:.85rem; }
   @media (prefers-color-scheme:dark) {
     body { background:#1f1d18; color:#e5e5e5; }
     .ep, .tension, .signal-card { background:#2a2823; border-color:#3a352d; }
     .ep-play { background:#3a352d; } .desc { color:#d4d4d4; }
     .signal-text { color:#d4d4d4; }
+    .episode-header .date-line { color:#9ca3af; }
+    .tabs { border-color:#3a352d; }
+    .tab[aria-selected="true"] { color:#f5f5f5; }
+    .state-note { color:#9ca3af; }
     .creator-footer { border-color:#3a352d; }
     .creator-name { color:#f5f5f5; }
     .creator-tagline, .creator-email a { color:#9ca3af; }
@@ -149,27 +194,22 @@
     details.tr { border-color:#3a352d; }
   }
 </style></head><body>
-<a class="back" href="/signal-brief/benessere/">← Signal.Benessere</a>
-<header><h1>I misuratori tornano alle basi</h1></header>
-<div class="tagline">2026-06-28 · Digital Intelligence Podcast</div>
-<div class="desc">La longevità che inseguiva molecole fa dietrofront verso sonno, cibo e movimento. Tra l'abbondanza di Longo e i farmaci contesi, l'equilibrio diventa il nuovo lusso.</div>
-<audio controls preload="none" src="https://media.casamon.dev/benessere/podcast/episodes/2026-06-28.mp3"></audio>
-<div class="rawmd"><a href="raw.md">Testo (markdown)</a></div>
-<section><h2>Sintesi</h2><div class="synthesis"><h2>Cross-synthesis: la longevità contesa</h2>
-<p>Un consenso silenzioso attraversa quasi tutte queste voci: i <em>fondamentali</em> battono i trucchi. <a href="https://www.hubermanlab.com/all-episodes" target="_blank" rel="noopener">Andrew Huberman</a> predica ormai "fondamenti-first" (sonno, luce, proteine prima degli integratori), <a href="https://peterattiamd.com/podcast/" target="_blank" rel="noopener">Peter Attia</a> ridimensiona la <em>supplement stack</em>, e perfino <a href="https://www.foundmyfitness.com/episodes/steve-horvath-2" target="_blank" rel="noopener">Rhonda Patrick</a> — storicamente entusiasta — ora limita gli integratori alla correzione di carenze reali. È un riflusso del biohacking su sé stesso: il movimento nato per ottimizzare riscopre la disciplina noiosa.</p>
+<a class="back back-link" href="/signal-brief/benessere/">← Signal.Benessere</a><div class="ep-header-block"><header class="episode-header"><div class="date-line" data-sb="data">2026-06-28</div><h1 data-sb="titolo">I misuratori tornano alle basi</h1><div class="desc">La longevità che inseguiva molecole fa dietrofront verso sonno, cibo e movimento. Tra l'abbondanza di Longo e i farmaci contesi, l'equilibrio diventa il nuovo lusso.</div><div class="tagline">Digital Intelligence Podcast</div></header><audio controls preload="none" data-sb="player" src="https://media.casamon.dev/benessere/podcast/episodes/2026-06-28.mp3"></audio><nav class="epnav" data-sb="nav"><a href="/signal-brief/benessere/2026-06-21/">← 2026-06-21</a><span style="flex:1"></span><a href="/signal-brief/benessere/2026-07-05/">2026-07-05 →</a></nav><div class="ep-header-faces" data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/benessere/avatars/andrew-huberman.png" alt="" title="Andrew Huberman"><img loading="lazy" src="/signal-brief/benessere/avatars/dan-buettner.png" alt="" title="Dan Buettner"></span></div><div class="ep-header-video" data-sb="video"></div></div>
+<div class="tabs-block"><div class="tabs" role="tablist" id="sbTabs"><button class="tab" type="button" role="tab" data-tab="sintesi" aria-selected="true" onclick="sbTab('sintesi')">Sintesi</button><button class="tab" type="button" role="tab" data-tab="testo" aria-selected="false" onclick="sbTab('testo')">Testo</button><button class="tab" type="button" role="tab" data-tab="comparazione" aria-selected="false" onclick="sbTab('comparazione')">Comparazione</button><button class="tab" type="button" role="tab" data-tab="segnali" aria-selected="false" onclick="sbTab('segnali')">Segnali</button><button class="tab" type="button" role="tab" data-tab="fonti" aria-selected="false" onclick="sbTab('fonti')">Fonti</button></div>
+<div class="tab-panel panel" data-sb-panel="sintesi"><div class="synthesis"><h2>Cross-synthesis: la longevità contesa</h2>
+<p>Un consenso silenzioso attraversa quasi tutte queste voci: i <em>fondamentali</em> battono i trucchi. <a href="https://www.hubermanlab.com/all-episodes" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="/signal-brief/benessere/avatars/andrew-huberman.png" alt="">Andrew Huberman</a> predica ormai "fondamenti-first" (sonno, luce, proteine prima degli integratori), <a href="https://peterattiamd.com/podcast/" target="_blank" rel="noopener">Peter Attia</a> ridimensiona la <em>supplement stack</em>, e perfino <a href="https://www.foundmyfitness.com/episodes/steve-horvath-2" target="_blank" rel="noopener">Rhonda Patrick</a> — storicamente entusiasta — ora limita gli integratori alla correzione di carenze reali. È un riflusso del biohacking su sé stesso: il movimento nato per ottimizzare riscopre la disciplina noiosa.</p>
 <p>La convergenza più netta è sull'<strong>intensità</strong> (Patrick: vigoroso 4–10× il moderato) e sul <strong>sonno come infrastruttura sistemica</strong>, dove <a href="https://www.sleepdiplomat.com/podcast" target="_blank" rel="noopener">Matthew Walker</a> fornisce il meccanismo glinfatico che Attia traduce in ponte tra rischio cardiovascolare e cognitivo. La nutrizione invece <em>diverge</em>: <a href="https://www.leggo.it/alimentazione/news/09_giugno_2026_valter_longo_longevita_dieta_mediterranea_mima_digiuno_minestrone_aperitivo_pizza-9582272.html" target="_blank" rel="noopener">Valter Longo</a> dice "mangiare di più" (abbondanza vegetale), <a href="https://zoe.com/learn/8-ways-to-eat-better-in-2026" target="_blank" rel="noopener">Tim Spector</a> conta le 30 piante e demonizza il conteggio calorie, mentre la longevità lipidologica di Attia resta in chiave farmacologica. Sui GLP-1 si apre la frattura più visibile: Longo li giudica "un'assurdità", il mainstream li celebra.</p>
-<p>La tensione vera, però, è di paradigma. Da un lato l'asse <strong>misurazione-prevenzione-individuo</strong>: Attia con gli screening, Patrick con gli orologi epigenetici come surrogato sperimentale — l'evidenza come arbitro, l'aneddoto bandito. Dall'altro, un asse <strong>relazionale-sistemico-mente</strong> che rifiuta proprio quella cornice: <a href="https://worth.com/buettner-blue-zones-longevity/" target="_blank" rel="noopener">Dan Buettner</a> sposta la leva dal medico all'urbanistica ("struttura, non disciplina"); <a href="https://drchatterjee.com/dr-gabor-mate-on-trauma-illness-and-healing-in-a-toxic-culture/" target="_blank" rel="noopener">Gabor Maté</a> legge la malattia come "no" del corpo represso; <a href="https://www.kellymcgonigal.com/" target="_blank" rel="noopener">Kelly McGonigal</a> riabilita lo stress come adattamento; <a href="https://www.lionsroar.com/the-mindful-future-a-conversation-with-jon-kabat-zinn/" target="_blank" rel="noopener">Jon Kabat-Zinn</a> e <a href="https://www.tarabrach.com/" target="_blank" rel="noopener">Tara Brach</a> collocano la salute nella coscienza, non nel sangue.</p>
-<p>Qui corpo e mente non dialogano: parlano lingue epistemiche incompatibili. Il primo campo chiede randomized trial e biomarcatori; il secondo lavora su senso, appartenenza, trauma — terreno dove l'evidenza è correlazionale (come ammette persino la critica a Maté). Il filo che li ricuce è debole ma reale: tutti convergono sul <em>contesto</em> contro la pillola — sia esso la comunità di Buettner, la diversità microbica di Spector o il respiro gratuito di <a href="https://richroll.com/podcast/the-iceman-wim-hof/" target="_blank" rel="noopener">Wim Hof</a>. L'equilibrio, non l'ottimizzazione, è il nuovo lusso.</p></div></section>
-<section><h2>Fonti</h2><div class="fonte"><span class="who">Valter Longo</span><a href="https://www.leggo.it/alimentazione/news/09_giugno_2026_valter_longo_longevita_dieta_mediterranea_mima_digiuno_minestrone_aperitivo_pizza-9582272.html" target="_blank" rel="noopener">Leggo — intervista 9 giugno 2026</a><a href="https://tg24.sky.it/salute-e-benessere/2026/06/09/valter-longo-chi-e" target="_blank" rel="noopener">Sky TG24 — chi è Valter Longo / nuovo libro</a><a href="https://www.greenme.it/salute-e-alimentazione/nutrizione/per-dimagrire-mangiare-di-piu-ma-evitare-laperitivo-il-dottor-valter-longo-svela-la-migliore-dieta-per-la-longevita/" target="_blank" rel="noopener">greenMe — "mangiare di più, evitare l'aperitivo"</a></div></section>
-<section class="transcript-section"><h2>Trascrizione</h2><details class="tr"><summary>Leggi la trascrizione</summary><button class="tr-copy" type="button" onclick="copiaTrascrizione(this)">copia il testo</button><div class="transcript-body"><h2>I misuratori tornano alle basi</h2>
+<p>La tensione vera, però, è di paradigma. Da un lato l'asse <strong>misurazione-prevenzione-individuo</strong>: Attia con gli screening, Patrick con gli orologi epigenetici come surrogato sperimentale — l'evidenza come arbitro, l'aneddoto bandito. Dall'altro, un asse <strong>relazionale-sistemico-mente</strong> che rifiuta proprio quella cornice: <a href="https://worth.com/buettner-blue-zones-longevity/" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="/signal-brief/benessere/avatars/dan-buettner.png" alt="">Dan Buettner</a> sposta la leva dal medico all'urbanistica ("struttura, non disciplina"); <a href="https://drchatterjee.com/dr-gabor-mate-on-trauma-illness-and-healing-in-a-toxic-culture/" target="_blank" rel="noopener">Gabor Maté</a> legge la malattia come "no" del corpo represso; <a href="https://www.kellymcgonigal.com/" target="_blank" rel="noopener">Kelly McGonigal</a> riabilita lo stress come adattamento; <a href="https://www.lionsroar.com/the-mindful-future-a-conversation-with-jon-kabat-zinn/" target="_blank" rel="noopener">Jon Kabat-Zinn</a> e <a href="https://www.tarabrach.com/" target="_blank" rel="noopener">Tara Brach</a> collocano la salute nella coscienza, non nel sangue.</p>
+<p>Qui corpo e mente non dialogano: parlano lingue epistemiche incompatibili. Il primo campo chiede randomized trial e biomarcatori; il secondo lavora su senso, appartenenza, trauma — terreno dove l'evidenza è correlazionale (come ammette persino la critica a Maté). Il filo che li ricuce è debole ma reale: tutti convergono sul <em>contesto</em> contro la pillola — sia esso la comunità di Buettner, la diversità microbica di Spector o il respiro gratuito di <a href="https://richroll.com/podcast/the-iceman-wim-hof/" target="_blank" rel="noopener">Wim Hof</a>. L'equilibrio, non l'ottimizzazione, è il nuovo lusso.</p></div></div>
+<div class="tab-panel panel" data-sb-panel="testo" hidden><button class="tr-copy" type="button" onclick="copiaTrascrizione(this)">copia il testo</button><div class="transcript-body"><h2>I misuratori tornano alle basi</h2>
 <p class="podcast-episode-desc">La longevità che inseguiva molecole fa dietrofront verso sonno, cibo e movimento. Tra l'abbondanza di Longo e i farmaci contesi, l'equilibrio diventa il nuovo lusso.</p>
 <div class="chapter" data-mood="geo"><hr></div>
 <p>C'è un movimento che, dopo anni passati a rincorrere la molecola perfetta, sta facendo dietrofront verso le cose più antiche del mondo: dormire, mangiare vero, camminare. È la traccia che attraversa la longevità in questi giorni — qui a Signal Brief, 28 giugno. Ieri avevamo lasciato il corpo come campo di battaglia tra chi lo misura e chi lo ascolta. Oggi quel campo si sposta, e la sorpresa arriva proprio dal fronte dei misuratori, quelli che del corpo volevano fare un foglio di calcolo.</p>
 <div class="chapter" data-mood="soft"><hr></div>
-<p>La scena da cui partire è piccola e quasi banale. Andrew Huberman, che ha costruito un impero di protocolli, si siede con Layne Norton e ripete una cosa che un nonno avrebbe detto gratis: contano le proteine, conta la costanza, le diete miracolose sono rumore. Peter Attia, nello stesso periodo, smonta la pila di integratori che lui stesso aveva contribuito a rendere status symbol. E persino Rhonda Patrick — l'entusiasta per definizione — ora gli integratori li ammette solo per correggere una carenza vera.</p>
+<p>La scena da cui partire è piccola e quasi banale. <a href="#" class="face-link" onclick="vaiFonte(event, 'Andrew Huberman')" title="Fonti di Andrew Huberman"><img class="face-inline" loading="lazy" src="/signal-brief/benessere/avatars/andrew-huberman.png" alt=""></a>Andrew Huberman, che ha costruito un impero di protocolli, si siede con Layne Norton e ripete una cosa che un nonno avrebbe detto gratis: contano le proteine, conta la costanza, le diete miracolose sono rumore. Peter Attia, nello stesso periodo, smonta la pila di integratori che lui stesso aveva contribuito a rendere status symbol. E persino Rhonda Patrick — l'entusiasta per definizione — ora gli integratori li ammette solo per correggere una carenza vera.</p>
 <p>È un riflusso del biohacking su sé stesso. Il movimento nato per ottimizzare riscopre la disciplina noiosa. Succede in ogni avanguardia: dopo aver rotto tutto, l'avanguardia torna al disegno dal vero. La medicina lo fa da un secolo, riscoprendo a ondate che il sonno e il cibo pesano più dell'ultimo ritrovato di laboratorio.</p>
 <p>Ma se sui fondamentali si va d'accordo, sulla tavola si litiga. E qui sta la frattura nuova. Valter Longo dice una cosa controintuitiva: non mangiare meno, mangiare di più — legumi, verdure in abbondanza, minestrone. Tim Spector tiene il punto sulle trenta piante diverse a settimana e detesta il conteggio delle calorie. Attia resta in chiave farmacologica, coi lipidi come leva. E sui farmaci dimagranti, i GLP-1, la spaccatura diventa visibile a occhio nudo: il mainstream li celebra, Longo li liquida come "un'assurdità".</p>
-<p>Sotto il rumore, però, una corrente sotterranea unisce voci che non si parlano. Tutti, alla fine, indicano lo stesso posto: il contesto, non la pillola. Dan Buettner lo chiama urbanistica e abitudini d'ambiente. Spector lo chiama diversità microbica. Wim Hof lo chiama respiro gratuito. È la stessa intuizione vista da finestre diverse.</p>
+<p>Sotto il rumore, però, una corrente sotterranea unisce voci che non si parlano. Tutti, alla fine, indicano lo stesso posto: il contesto, non la pillola. <a href="#" class="face-link" onclick="vaiFonte(event, 'Dan Buettner')" title="Fonti di Dan Buettner"><img class="face-inline" loading="lazy" src="/signal-brief/benessere/avatars/dan-buettner.png" alt=""></a>Dan Buettner lo chiama urbanistica e abitudini d'ambiente. Spector lo chiama diversità microbica. Wim Hof lo chiama respiro gratuito. È la stessa intuizione vista da finestre diverse.</p>
 <p>Resta la tensione di fondo che ci portiamo da ieri — chi chiede dati e biomarcatori contro chi parla di senso e appartenenza, le due culture del corpo che usano lingue incompatibili. Ma stavolta un filo sottile le ricuce. In un'epoca che ci ha promesso l'ottimizzazione totale, il lusso nuovo non è spingere ogni leva al massimo. È l'equilibrio.</p>
 <div class="chapter" data-mood="tech"><hr></div>
 <p>Il personaggio della settimana è Valter Longo, il biologo della dieta mima-digiuno, l'uomo che ha fatto della restrizione una bandiera. Ed è proprio per questo che la sua mossa recente sorprende. Esce con un libro nuovo, "Il peso della longevità", apre il 10 giugno il secondo ambulatorio milanese della sua fondazione, in corso Genova, e nelle interviste a Corriere e Sky ribalta l'intuizione che tutti gli attribuivano.</p>
@@ -182,10 +222,14 @@
 <p>Gli orologi epigenetici come banco di prova: Rhonda Patrick, leggendo il trial COSMOS con Steve Horvath, segnala che un banale multivitaminico avrebbe rallentato l'invecchiamento del cervello di oltre due anni. Un dato piccolo, ma misurabile — ed è proprio la misurabilità il punto.</p>
 <p>Le trenta piante di Spector, e la sua regola facile da ricordare: tre porzioni al giorno di fermentati, "tutto ciò che inizia con la K" — kefir, kombucha, kraut, kimchi.</p>
 <p>Il sonno come infrastruttura, non come riposo: Matthew Walker insiste sul lavaggio notturno del cervello e su quello stato di "stanchi ma iperattivati" che molti conoscono e pochi sanno nominare.</p>
-<p>E un gesto concreto, quasi politico: Dan Buettner, nella sua azienda, ha smesso di rimborsare il parcheggio e paga chi arriva a piedi o in bici. Non un consiglio, una struttura. Cambiare l'ambiente perché la scelta sana diventi quella automatica.</p>
+<p>E un gesto concreto, quasi politico: <a href="#" class="face-link" onclick="vaiFonte(event, 'Dan Buettner')" title="Fonti di Dan Buettner"><img class="face-inline" loading="lazy" src="/signal-brief/benessere/avatars/dan-buettner.png" alt=""></a>Dan Buettner, nella sua azienda, ha smesso di rimborsare il parcheggio e paga chi arriva a piedi o in bici. Non un consiglio, una struttura. Cambiare l'ambiente perché la scelta sana diventi quella automatica.</p>
 <div class="chapter" data-mood="soft"><hr></div>
-<p>Resta l'immagine di chi aveva trasformato il corpo in un cruscotto di numeri e oggi torna a dire: dormi, mangia piante, cammina. Non la rivoluzione, ma il ritorno. E un sospetto comune a tutti, dai laboratori ai monasteri: che il lusso vero, ormai, sia l'equilibrio.</p></div></details></section>
-<nav class="epnav"><a href="/signal-brief/benessere/2026-06-21/">← 2026-06-21</a><span style="flex:1"></span><a href="/signal-brief/benessere/2026-07-05/">2026-07-05 →</a></nav>
+<p>Resta l'immagine di chi aveva trasformato il corpo in un cruscotto di numeri e oggi torna a dire: dormi, mangia piante, cammina. Non la rivoluzione, ma il ritorno. E un sospetto comune a tutti, dai laboratori ai monasteri: che il lusso vero, ormai, sia l'equilibrio.</p></div><div class="rawmd"><a href="raw.md">Testo (markdown)</a></div></div>
+<div class="tab-panel panel" data-sb-panel="comparazione" hidden><div class="state-note">Comparazione non disponibile per questo episodio.</div></div>
+<div class="tab-panel panel" data-sb-panel="segnali" hidden><div class="state-note">Nessun segnale disponibile per questo episodio.</div></div>
+<div class="tab-panel panel" data-sb-panel="fonti" hidden><div class="fonte" data-fonte-nome="Valter Longo"><span class="who">Valter Longo</span><a href="https://www.leggo.it/alimentazione/news/09_giugno_2026_valter_longo_longevita_dieta_mediterranea_mima_digiuno_minestrone_aperitivo_pizza-9582272.html" target="_blank" rel="noopener">Leggo — intervista 9 giugno 2026</a><a href="https://tg24.sky.it/salute-e-benessere/2026/06/09/valter-longo-chi-e" target="_blank" rel="noopener">Sky TG24 — chi è Valter Longo / nuovo libro</a><a href="https://www.greenme.it/salute-e-alimentazione/nutrizione/per-dimagrire-mangiare-di-piu-ma-evitare-laperitivo-il-dottor-valter-longo-svela-la-migliore-dieta-per-la-longevita/" target="_blank" rel="noopener">greenMe — "mangiare di più, evitare l'aperitivo"</a></div></div>
+</div>
+<script>function sbTab(key) {  document.querySelectorAll('.tab-panel').forEach(function (p) {    p.hidden = p.getAttribute('data-sb-panel') !== key;  });  document.querySelectorAll('#sbTabs .tab').forEach(function (b) {    b.setAttribute('aria-selected', b.dataset.tab === key ? 'true' : 'false');  });}function vaiFonte(ev, nome) {  ev.preventDefault();  sbTab('fonti');  var d = document.querySelector('[data-fonte-nome="' + nome + '"]');  if (d) d.scrollIntoView({behavior: 'smooth', block: 'center'});}</script>
 <dialog class="vplayer" id="vplayer"></dialog>
 <script>
 // player modale dei video: la miniatura apre il video al centro (disegno 2026-08-07)

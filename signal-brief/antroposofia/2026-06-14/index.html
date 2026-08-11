@@ -132,11 +132,56 @@
   .epnav { display:flex; justify-content:space-between; gap:1rem; margin:2rem 0 0;
     font-size:.82rem; font-family:monospace; }
   .epnav a { text-decoration:none; }
+  /* Header + tab bar (spec-016, Task 5): stessa forma di
+     public/console/podcast-render.css, riusando i nomi classe dove
+     combaciano — solo la meccanica tab/pannello è nuova qui. */
+  .episode-header .date-line { font-size:.72rem; font-family:monospace; color:#9ca3af;
+    text-transform:uppercase; letter-spacing:.08em; margin-bottom:.3rem; }
+  .ep-header-block { margin-bottom:.5rem; }
+  .ep-header-faces { margin:.6rem 0; }
+  .ep-header-faces .ep-faces { margin-left:0; }
+  .tabs { display:flex; gap:.25rem; border-bottom:1px solid #e2ddd6; margin:1.5rem 0; flex-wrap:wrap; }
+  .tab { font-family:monospace; font-size:.72rem; text-transform:uppercase; letter-spacing:.08em;
+    padding:.6rem .9rem; background:transparent; border:0; border-bottom:2px solid transparent;
+    color:#9ca3af; cursor:pointer; }
+  .tab[aria-selected="true"] { color:#1a1a1a; border-bottom-color:#6d28d9; }
+  .tab-panel { display:block; }
+  .tab-panel[hidden] { display:none !important; }
+  /* Fallback dei pannelli senza dati (episodi storici senza un sidecar) —
+     porta di public/console/podcast-render.css:304-309, sui token pubblici. */
+  /* Header episodio a due colonne: barra tab e pannello nel primo schermo
+     (stesse regole del modulo condiviso, richiesta 2026-08-10). */
+  .ep-header-block { display:grid; grid-template-columns:minmax(0,1fr) 340px;
+    grid-template-rows:repeat(4,min-content); gap:.3rem 1.6rem;
+    align-items:start; margin-bottom:.5rem; }
+  .ep-header-block > [data-sb="data"] { grid-column:1; margin:0; }
+  .ep-header-block > [data-sb="titolo"] { grid-column:1; margin:.1rem 0; }
+  .ep-header-block > [data-sb="player"] { grid-column:1; }
+  .ep-header-block > [data-sb="nav"] { grid-column:1; }
+  .ep-header-block > [data-sb="facce"] { grid-column:2; grid-row:1; }
+  .ep-header-block > [data-sb="video"] { grid-column:2; grid-row:2/5;
+    display:flex; gap:.5rem; flex-wrap:wrap; }
+  .ep-header-block [data-sb="facce"] img { width:26px; height:26px; }
+  .ep-header-block [data-sb="video"] video { max-height:96px; width:auto; }
+  .ep-header-block audio { height:36px; width:100%; }
+  .tabs { position:sticky; top:0; z-index:5; background:#fff;
+    padding:.4rem 0; border-bottom:1px solid #e5e7eb; }
+  @media (max-width:760px) {
+    .ep-header-block { grid-template-columns:1fr; }
+    .ep-header-block > [data-sb="facce"],
+    .ep-header-block > [data-sb="video"] { grid-column:1; grid-row:auto; }
+  }
+  .state-note { padding:2rem 1rem; text-align:center; color:#9ca3af;
+    font-family:monospace; font-size:.85rem; }
   @media (prefers-color-scheme:dark) {
     body { background:#1f1d18; color:#e5e5e5; }
     .ep, .tension, .signal-card { background:#2a2823; border-color:#3a352d; }
     .ep-play { background:#3a352d; } .desc { color:#d4d4d4; }
     .signal-text { color:#d4d4d4; }
+    .episode-header .date-line { color:#9ca3af; }
+    .tabs { border-color:#3a352d; }
+    .tab[aria-selected="true"] { color:#f5f5f5; }
+    .state-note { color:#9ca3af; }
     .creator-footer { border-color:#3a352d; }
     .creator-name { color:#f5f5f5; }
     .creator-tagline, .creator-email a { color:#9ca3af; }
@@ -149,19 +194,14 @@
     details.tr { border-color:#3a352d; }
   }
 </style></head><body>
-<a class="back" href="/signal-brief/antroposofia/">← Signal.Antroposofia</a>
-<header><h1>Quattro lingue, una crisi</h1></header>
-<div class="tagline">2026-06-14 · Digital Intelligence Podcast</div>
-<div class="desc">Scharmer, Florin, Finser, Houghton Budd descrivono la stessa rottura con vocabolari incompatibili. Il traduttore mancava già da un anno.</div>
-<audio controls preload="none" src="https://media.casamon.dev/antroposofia/podcast/episodes/2026-06-14.mp3"></audio>
-<div class="rawmd"><a href="raw.md">Testo (markdown)</a></div>
-<section><h2>Sintesi</h2><div class="synthesis"><p>Il filo che attraversa tutti questi pensatori è uno solo: <strong>la crisi come soglia epistemica</strong>, non come problema tecnico. Otto Scharmer vede un <a href="https://www.noemamag.com/we-may-be-entering-a-second-axial-age/" target="_blank" rel="noopener">Secondo Axial Age</a> che richiede interiorità collettiva; <img class="face-inline" loading="lazy" src="/signal-brief/antroposofia/avatars/jean-michel-florin.png" alt="">Jean-Michel Florin denuncia un <a href="https://www.bio-dynamie.org/produit/biodynamis-2026-printemps-133/" target="_blank" rel="noopener">modello agricolo strutturalmente esaurito</a> che nessuna tecnica può salvare; <img class="face-inline" loading="lazy" src="/signal-brief/antroposofia/avatars/christopher-houghton-budd.png" alt="">Christopher Houghton Budd smonta il denaro come merce; Torin Finser <a href="https://commonthread.antioch.edu/beyond-100-a-return-to-the-social-justice-roots-of-waldorf-education/" target="_blank" rel="noopener">rivendica Steiner come riformatore sociale</a>, non come mistico. La risposta in tutti i casi è cognitiva prima che pratica: cambiare modo di conoscere, non solo di agire.</p>
+<a class="back back-link" href="/signal-brief/antroposofia/">← Signal.Antroposofia</a><div class="ep-header-block"><header class="episode-header"><div class="date-line" data-sb="data">2026-06-14</div><h1 data-sb="titolo">Quattro lingue, una crisi</h1><div class="desc">Scharmer, Florin, Finser, Houghton Budd descrivono la stessa rottura con vocabolari incompatibili. Il traduttore mancava già da un anno.</div><div class="tagline">Digital Intelligence Podcast</div></header><audio controls preload="none" data-sb="player" src="https://media.casamon.dev/antroposofia/podcast/episodes/2026-06-14.mp3"></audio><nav class="epnav" data-sb="nav"><span style="flex:1"></span><a href="/signal-brief/antroposofia/2026-06-21/">2026-06-21 →</a></nav><div class="ep-header-faces" data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/antroposofia/avatars/jean-michel-florin.png" alt="" title="Jean-Michel Florin"><img loading="lazy" src="/signal-brief/antroposofia/avatars/christopher-houghton-budd.png" alt="" title="Christopher Houghton Budd"></span></div><div class="ep-header-video" data-sb="video"></div></div>
+<div class="tabs-block"><div class="tabs" role="tablist" id="sbTabs"><button class="tab" type="button" role="tab" data-tab="sintesi" aria-selected="true" onclick="sbTab('sintesi')">Sintesi</button><button class="tab" type="button" role="tab" data-tab="testo" aria-selected="false" onclick="sbTab('testo')">Testo</button><button class="tab" type="button" role="tab" data-tab="comparazione" aria-selected="false" onclick="sbTab('comparazione')">Comparazione</button><button class="tab" type="button" role="tab" data-tab="segnali" aria-selected="false" onclick="sbTab('segnali')">Segnali</button><button class="tab" type="button" role="tab" data-tab="fonti" aria-selected="false" onclick="sbTab('fonti')">Fonti</button></div>
+<div class="tab-panel panel" data-sb-panel="sintesi"><div class="synthesis"><p>Il filo che attraversa tutti questi pensatori è uno solo: <strong>la crisi come soglia epistemica</strong>, non come problema tecnico. Otto Scharmer vede un <a href="https://www.noemamag.com/we-may-be-entering-a-second-axial-age/" target="_blank" rel="noopener">Secondo Axial Age</a> che richiede interiorità collettiva; <a href="#" class="face-link" onclick="vaiFonte(event, 'Jean-Michel Florin')" title="Fonti di Jean-Michel Florin"><img class="face-inline" loading="lazy" src="/signal-brief/antroposofia/avatars/jean-michel-florin.png" alt=""></a>Jean-Michel Florin denuncia un <a href="https://www.bio-dynamie.org/produit/biodynamis-2026-printemps-133/" target="_blank" rel="noopener">modello agricolo strutturalmente esaurito</a> che nessuna tecnica può salvare; <a href="#" class="face-link" onclick="vaiFonte(event, 'Christopher Houghton Budd')" title="Fonti di Christopher Houghton Budd"><img class="face-inline" loading="lazy" src="/signal-brief/antroposofia/avatars/christopher-houghton-budd.png" alt=""></a>Christopher Houghton Budd smonta il denaro come merce; Torin Finser <a href="https://commonthread.antioch.edu/beyond-100-a-return-to-the-social-justice-roots-of-waldorf-education/" target="_blank" rel="noopener">rivendica Steiner come riformatore sociale</a>, non come mistico. La risposta in tutti i casi è cognitiva prima che pratica: cambiare modo di conoscere, non solo di agire.</p>
 <p>Qui emerge la prima tensione strutturale: <strong>goetheanismo vs validazione empirica</strong>. Demeter porta ricercatori da Kassel University (Jürgen Fritz) alla <a href="https://demeter.net/african-biodynamic-conference/" target="_blank" rel="noopener">Conferenza Biodinamica Africana</a>, cercando legittimità scientifica. Florin insiste sull'"approche sensible" come prerequisito epistemico irriducibile. Non è contraddizione — è una divisione del lavoro non dichiarata che nasconde un disaccordo reale: la biodinamica è verificabile dall'esterno, o si comprende solo dall'interno?</p>
 <p>La seconda tensione è tra <strong>individuo e collettivo</strong>. La tradizione steineriana è fondamentalmente personalistica: sviluppo spirituale del singolo come fondamento di ogni trasformazione. Scharmer la rovescia: il suo <a href="https://medium.com/presencing-institute-blog/holding-the-gaze-steady-87b5a5aa9513" target="_blank" rel="noopener">"Fourth Person Knowing"</a> è intelligenza del <em>campo</em>, non del soggetto. Finser sposta l'asse da Steiner-il-veggente a Steiner-il-costruttore-di-istituzioni. Entrambi riformulano l'antroposofia in modo accettabile fuori dal perimetro Goetheanum — con il rischio di svuotarne il nucleo.</p>
 <p>La terza tensione è <strong>strategica</strong>: chi parla il linguaggio MIT (Scharmer), chi il linguaggio fenomenologico-francofono (Florin), chi la storia monetaria (Houghton Budd), chi la giustizia sociale (Finser) — ma stanno descrivendo la stessa triarticolazione steineriana con vocabolari incompatibili tra loro. Nessun ponte esplicito li connette.</p>
-<p>La morte di Nicanor Perlas lascia vuota precisamente questa funzione: era l'unico a tenere insieme biodinamica, triarticolazione e geopolitica in una sintesi esplicitamente steineriana rivolta al mondo non-Goetheanum. Nessuno lo ha ancora sostituito.</p></div></section>
-<section><h2>Fonti</h2><div class="fonte"><span class="who">Nicanor Perlas</span><a href="https://www.ifoam.bio/news/memoriam-nicanor-perlas-1950-2025" target="_blank" rel="noopener">In Memoriam: Nicanor Perlas (1950–2025) | IFOAM</a><a href="https://dasgoetheanum.com/en/nicanor-perlas-1950-2025/" target="_blank" rel="noopener">Nicanor Perlas 1950–2025 | Das Goetheanum</a><a href="https://en.wikipedia.org/wiki/Nicanor_Perlas" target="_blank" rel="noopener">Nicanor Perlas | Wikipedia</a></div></section>
-<section class="transcript-section"><h2>Trascrizione</h2><details class="tr"><summary>Leggi la trascrizione</summary><button class="tr-copy" type="button" onclick="copiaTrascrizione(this)">copia il testo</button><div class="transcript-body"><h2>Quattro lingue, una crisi</h2>
+<p>La morte di Nicanor Perlas lascia vuota precisamente questa funzione: era l'unico a tenere insieme biodinamica, triarticolazione e geopolitica in una sintesi esplicitamente steineriana rivolta al mondo non-Goetheanum. Nessuno lo ha ancora sostituito.</p></div></div>
+<div class="tab-panel panel" data-sb-panel="testo" hidden><button class="tr-copy" type="button" onclick="copiaTrascrizione(this)">copia il testo</button><div class="transcript-body"><h2>Quattro lingue, una crisi</h2>
 <p class="podcast-episode-desc">Scharmer, Florin, Finser, Houghton Budd descrivono la stessa rottura con vocabolari incompatibili. Il traduttore mancava già da un anno.</p>
 <div class="chapter" data-mood="geo"><hr></div>
 <p>Signal Brief, quattordici giugno. Oggi il dominio antroposofico-biodinamico pone una domanda che riguarda qualunque campo del pensiero: quando quattro persone descrivono la stessa cosa con parole così diverse da non riconoscersi, chi fa da ponte? Perché il ponte, qui, è scomparso quasi un anno fa.</p>
@@ -169,7 +209,7 @@
 <p>Ieri avevamo lasciato sul tavolo la tensione tra traducibilità e fedeltà — il modo in cui questa tradizione cerca di parlare al mondo senza perdere se stessa. Oggi quella tensione ha un nome più preciso: quattro voci che si rivolgono a quattro pubblici separati, con quattro grammatiche incompatibili.</p>
 <p>Otto Scharmer scrive su Noema Magazine — rivista accademica americana — che stiamo entrando in un Secondo Axial Age. Termine storico: il primo era il V-VI secolo avanti Cristo, il momento in cui Socrate, Buddha e Confucio approfondirono l'interiorità individuale quasi in simultanea. Scharmer dice che questa crisi richiede lo stesso salto, ma collettivo. Non il singolo che si sveglia — il campo sociale che cambia qualità. Steiner lo chiamerebbe Impulso Michaelico. Scharmer non lo chiama così: parla a Cambridge, non a Dornach.</p>
 <p>Florin, nello stesso periodo, pubblica su Biodynamis il testo sull'esaurimento del modello agroindustriale. Non insufficiente: esaurito. Non si aggiusta con tecniche nuove. La risposta è un'abilità percettiva che chiama "approche sensible" — prerequisito a qualunque pratica agricola resiliente. Stesso argomento di Scharmer, altra lingua, altro pubblico.</p>
-<p>Christopher Houghton Budd lavora da Basilea sulla storia monetaria: il denaro non è merce, è contabilità condivisa. Torin Finser insegna nelle scuole Waldorf nordamericane che la pedagogia del 1919 era un programma di giustizia sociale, non di spiritualità privata.</p>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Christopher Houghton Budd')" title="Fonti di Christopher Houghton Budd"><img class="face-inline" loading="lazy" src="/signal-brief/antroposofia/avatars/christopher-houghton-budd.png" alt=""></a>Christopher Houghton Budd lavora da Basilea sulla storia monetaria: il denaro non è merce, è contabilità condivisa. Torin Finser insegna nelle scuole Waldorf nordamericane che la pedagogia del 1919 era un programma di giustizia sociale, non di spiritualità privata.</p>
 <p>Quattro voci. Stesso edificio. Ingressi diversi, e nessuno sa dove vanno le scale degli altri.</p>
 <p>Fino all'agosto 2025, Nicanor Perlas teneva insieme questi fili. Poi è morto.</p>
 <div class="chapter" data-mood="tech"><hr></div>
@@ -183,8 +223,12 @@
 <p>Torin Finser porta Building Bridges nelle scuole Waldorf nordamericane nel 2026-2027: workshop itineranti su polarizzazione, razzismo, disuguaglianza. Li porta abbattendo i costi di accesso — l'accessibilità economica come atto pedagogico, non solo logistico.</p>
 <p>Il libro di Houghton Budd — Beyond Gold, Ethics Press 2024 — mette a confronto Hayek, Keynes e Steiner sulla moneta. Tre autori che non si sono mai letti insieme nella stessa analisi. Vale la pena.</p>
 <div class="chapter" data-mood="soft"><hr></div>
-<p>La crisi come soglia, non come problema tecnico. Lo dicono in quattro modi diversi, ma lo dicono. Quello che manca non è la risposta — è qualcuno che ascolti tutte e quattro nella stessa stanza. Nicanor Perlas lo faceva. Chi viene dopo, per ora, non si sa.</p></div></details></section>
-<nav class="epnav"><span style="flex:1"></span><a href="/signal-brief/antroposofia/2026-06-21/">2026-06-21 →</a></nav>
+<p>La crisi come soglia, non come problema tecnico. Lo dicono in quattro modi diversi, ma lo dicono. Quello che manca non è la risposta — è qualcuno che ascolti tutte e quattro nella stessa stanza. Nicanor Perlas lo faceva. Chi viene dopo, per ora, non si sa.</p></div><div class="rawmd"><a href="raw.md">Testo (markdown)</a></div></div>
+<div class="tab-panel panel" data-sb-panel="comparazione" hidden><div class="state-note">Comparazione non disponibile per questo episodio.</div></div>
+<div class="tab-panel panel" data-sb-panel="segnali" hidden><div class="state-note">Nessun segnale disponibile per questo episodio.</div></div>
+<div class="tab-panel panel" data-sb-panel="fonti" hidden><div class="fonte" data-fonte-nome="Nicanor Perlas"><span class="who">Nicanor Perlas</span><a href="https://www.ifoam.bio/news/memoriam-nicanor-perlas-1950-2025" target="_blank" rel="noopener">In Memoriam: Nicanor Perlas (1950–2025) | IFOAM</a><a href="https://dasgoetheanum.com/en/nicanor-perlas-1950-2025/" target="_blank" rel="noopener">Nicanor Perlas 1950–2025 | Das Goetheanum</a><a href="https://en.wikipedia.org/wiki/Nicanor_Perlas" target="_blank" rel="noopener">Nicanor Perlas | Wikipedia</a></div></div>
+</div>
+<script>function sbTab(key) {  document.querySelectorAll('.tab-panel').forEach(function (p) {    p.hidden = p.getAttribute('data-sb-panel') !== key;  });  document.querySelectorAll('#sbTabs .tab').forEach(function (b) {    b.setAttribute('aria-selected', b.dataset.tab === key ? 'true' : 'false');  });}function vaiFonte(ev, nome) {  ev.preventDefault();  sbTab('fonti');  var d = document.querySelector('[data-fonte-nome="' + nome + '"]');  if (d) d.scrollIntoView({behavior: 'smooth', block: 'center'});}</script>
 <dialog class="vplayer" id="vplayer"></dialog>
 <script>
 // player modale dei video: la miniatura apre il video al centro (disegno 2026-08-07)

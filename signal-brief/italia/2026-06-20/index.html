@@ -132,11 +132,56 @@
   .epnav { display:flex; justify-content:space-between; gap:1rem; margin:2rem 0 0;
     font-size:.82rem; font-family:monospace; }
   .epnav a { text-decoration:none; }
+  /* Header + tab bar (spec-016, Task 5): stessa forma di
+     public/console/podcast-render.css, riusando i nomi classe dove
+     combaciano — solo la meccanica tab/pannello è nuova qui. */
+  .episode-header .date-line { font-size:.72rem; font-family:monospace; color:#9ca3af;
+    text-transform:uppercase; letter-spacing:.08em; margin-bottom:.3rem; }
+  .ep-header-block { margin-bottom:.5rem; }
+  .ep-header-faces { margin:.6rem 0; }
+  .ep-header-faces .ep-faces { margin-left:0; }
+  .tabs { display:flex; gap:.25rem; border-bottom:1px solid #e2ddd6; margin:1.5rem 0; flex-wrap:wrap; }
+  .tab { font-family:monospace; font-size:.72rem; text-transform:uppercase; letter-spacing:.08em;
+    padding:.6rem .9rem; background:transparent; border:0; border-bottom:2px solid transparent;
+    color:#9ca3af; cursor:pointer; }
+  .tab[aria-selected="true"] { color:#1a1a1a; border-bottom-color:#15803d; }
+  .tab-panel { display:block; }
+  .tab-panel[hidden] { display:none !important; }
+  /* Fallback dei pannelli senza dati (episodi storici senza un sidecar) —
+     porta di public/console/podcast-render.css:304-309, sui token pubblici. */
+  /* Header episodio a due colonne: barra tab e pannello nel primo schermo
+     (stesse regole del modulo condiviso, richiesta 2026-08-10). */
+  .ep-header-block { display:grid; grid-template-columns:minmax(0,1fr) 340px;
+    grid-template-rows:repeat(4,min-content); gap:.3rem 1.6rem;
+    align-items:start; margin-bottom:.5rem; }
+  .ep-header-block > [data-sb="data"] { grid-column:1; margin:0; }
+  .ep-header-block > [data-sb="titolo"] { grid-column:1; margin:.1rem 0; }
+  .ep-header-block > [data-sb="player"] { grid-column:1; }
+  .ep-header-block > [data-sb="nav"] { grid-column:1; }
+  .ep-header-block > [data-sb="facce"] { grid-column:2; grid-row:1; }
+  .ep-header-block > [data-sb="video"] { grid-column:2; grid-row:2/5;
+    display:flex; gap:.5rem; flex-wrap:wrap; }
+  .ep-header-block [data-sb="facce"] img { width:26px; height:26px; }
+  .ep-header-block [data-sb="video"] video { max-height:96px; width:auto; }
+  .ep-header-block audio { height:36px; width:100%; }
+  .tabs { position:sticky; top:0; z-index:5; background:#fff;
+    padding:.4rem 0; border-bottom:1px solid #e5e7eb; }
+  @media (max-width:760px) {
+    .ep-header-block { grid-template-columns:1fr; }
+    .ep-header-block > [data-sb="facce"],
+    .ep-header-block > [data-sb="video"] { grid-column:1; grid-row:auto; }
+  }
+  .state-note { padding:2rem 1rem; text-align:center; color:#9ca3af;
+    font-family:monospace; font-size:.85rem; }
   @media (prefers-color-scheme:dark) {
     body { background:#1f1d18; color:#e5e5e5; }
     .ep, .tension, .signal-card { background:#2a2823; border-color:#3a352d; }
     .ep-play { background:#3a352d; } .desc { color:#d4d4d4; }
     .signal-text { color:#d4d4d4; }
+    .episode-header .date-line { color:#9ca3af; }
+    .tabs { border-color:#3a352d; }
+    .tab[aria-selected="true"] { color:#f5f5f5; }
+    .state-note { color:#9ca3af; }
     .creator-footer { border-color:#3a352d; }
     .creator-name { color:#f5f5f5; }
     .creator-tagline, .creator-email a { color:#9ca3af; }
@@ -149,31 +194,27 @@
     details.tr { border-color:#3a352d; }
   }
 </style></head><body>
-<a class="back" href="/signal-brief/italia/">← Signal.Italia</a>
-<header><h1>La geografia come ultimo alpha</h1></header>
-<div class="tagline">2026-06-20 · Digital Intelligence Podcast</div>
-<div class="desc">Mentre le aste toccano i 2,1 miliardi, l'interesse si ritira e il valore migra: verso il collateral, verso la stanza chiusa, verso nuove mappe del collezionismo.</div>
-<audio controls preload="none" src="https://media.casamon.dev/italia/podcast/episodes/2026-06-20.mp3"></audio>
-<div class="rawmd"><a href="raw.md">Testo (markdown)</a></div>
-<section><h2>Sintesi</h2><div class="synthesis"><h2>Cross-synthesis: l'Italia ferma vista da chi la osserva</h2>
-<p>Un solo nemico ricorre in quasi tutte le voci: l'<strong>immobilismo come scelta politica</strong>, non come fatalità. <a href="https://www.mondadori.it/libri/leconomia-della-paura-veronica-de-romanis/" target="_blank" rel="noopener">Veronica De Romanis</a> lo nomina "economia della paura" — si conserva e si arretra; <a href="https://www.quotidiano.net/economia/carlo-cottarelli-intervista-ckl2nwny" target="_blank" rel="noopener">Carlo Cottarelli</a> lo traduce in burocrazia da tagliare prima dei sussidi; <a href="https://appunti.substack.com/p/la-polvere-non-e-piu-sotto-il-tappeto" target="_blank" rel="noopener">Stefano Feltri</a> in numeri che smentiscono la narrativa. Convergenza forte sul <strong>debito che supera la Grecia</strong> (138%) e sulla crescita asfittica (0,5–0,6% contro il 3% spagnolo): diagnosi condivisa, colpa bipartisan, non solo Meloni.</p>
+<a class="back back-link" href="/signal-brief/italia/">← Signal.Italia</a><div class="ep-header-block"><header class="episode-header"><div class="date-line" data-sb="data">2026-06-20</div><h1 data-sb="titolo">La geografia come ultimo alpha</h1><div class="desc">Mentre le aste toccano i 2,1 miliardi, l'interesse si ritira e il valore migra: verso il collateral, verso la stanza chiusa, verso nuove mappe del collezionismo.</div><div class="tagline">Digital Intelligence Podcast</div></header><audio controls preload="none" data-sb="player" src="https://media.casamon.dev/italia/podcast/episodes/2026-06-20.mp3"></audio><nav class="epnav" data-sb="nav"><a href="/signal-brief/italia/2026-06-19/">← 2026-06-19</a><span style="flex:1"></span><a href="/signal-brief/italia/2026-06-26/">2026-06-26 →</a></nav><div class="ep-header-faces" data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/italia/avatars/carlo-cottarelli.png" alt="" title="Carlo Cottarelli"><img loading="lazy" src="/signal-brief/italia/avatars/alessandro-barbero.jpg" alt="" title="Alessandro Barbero"></span></div><div class="ep-header-video" data-sb="video"></div></div>
+<div class="tabs-block"><div class="tabs" role="tablist" id="sbTabs"><button class="tab" type="button" role="tab" data-tab="sintesi" aria-selected="true" onclick="sbTab('sintesi')">Sintesi</button><button class="tab" type="button" role="tab" data-tab="testo" aria-selected="false" onclick="sbTab('testo')">Testo</button><button class="tab" type="button" role="tab" data-tab="comparazione" aria-selected="false" onclick="sbTab('comparazione')">Comparazione</button><button class="tab" type="button" role="tab" data-tab="segnali" aria-selected="false" onclick="sbTab('segnali')">Segnali</button><button class="tab" type="button" role="tab" data-tab="fonti" aria-selected="false" onclick="sbTab('fonti')">Fonti</button></div>
+<div class="tab-panel panel" data-sb-panel="sintesi"><div class="synthesis"><h2>Cross-synthesis: l'Italia ferma vista da chi la osserva</h2>
+<p>Un solo nemico ricorre in quasi tutte le voci: l'<strong>immobilismo come scelta politica</strong>, non come fatalità. <a href="https://www.mondadori.it/libri/leconomia-della-paura-veronica-de-romanis/" target="_blank" rel="noopener">Veronica De Romanis</a> lo nomina "economia della paura" — si conserva e si arretra; <a href="https://www.quotidiano.net/economia/carlo-cottarelli-intervista-ckl2nwny" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="/signal-brief/italia/avatars/carlo-cottarelli.png" alt="">Carlo Cottarelli</a> lo traduce in burocrazia da tagliare prima dei sussidi; <a href="https://appunti.substack.com/p/la-polvere-non-e-piu-sotto-il-tappeto" target="_blank" rel="noopener">Stefano Feltri</a> in numeri che smentiscono la narrativa. Convergenza forte sul <strong>debito che supera la Grecia</strong> (138%) e sulla crescita asfittica (0,5–0,6% contro il 3% spagnolo): diagnosi condivisa, colpa bipartisan, non solo Meloni.</p>
 <p>Seconda convergenza: il <strong>frame migratorio rovesciato</strong>. <a href="https://www.ilriformista.it/carlo-cottarelli-protagonista-di-europeisti-vannacci-realta-al-contrario-518387/" target="_blank" rel="noopener">Cottarelli</a> e <a href="https://corriereuniv.it/tito-boeri-economia-italiana-giovani-lavoro-intervista/" target="_blank" rel="noopener">Tito Boeri</a> spostano il problema dall'immigrazione all'<em>emigrazione</em> — 300-400mila residenti l'anno persi, base contributiva che evapora. La ricetta è gemella: decontribuzione strutturale per i giovani.</p>
 <p>Qui però si apre la prima <strong>divergenza — Stato vs mercato</strong>. <a href="https://ossigeno.net/sfruttamento-made-in-italy-la-prefazione-di-tito-boeri/" target="_blank" rel="noopener">Boeri</a> guarda in basso: working poor, salario minimo, filiere di sfruttamento. De Romanis e <a href="https://www.laverita.info/federico-rampini-intervista-2676906736.html" target="_blank" rel="noopener">Federico Rampini</a> guardano in alto: "distruzione creatrice", 9 unicorn contro 800, statalismo come zavorra. Rigore fiscale condiviso, ma l'uno teme il mercato senza argini, l'altro lo Stato senza coraggio.</p>
 <p>Sul <strong>sovranismo vs europeismo</strong> il fronte è quasi compatto — e qui sta il dato politico. <a href="https://www.ilriformista.it/nasce-europeisti-eu-ma-non-e-una-riedizione-del-terzo-polo-calenda-la-nostra-battaglia-e-leuropa-518021/" target="_blank" rel="noopener">Calenda</a>, Cottarelli e De Romanis convergono su Europeisti: l'Europa come leva, non vincolo da aggirare. Rampini è l'eretico: per lui Bruxelles <em>è</em> il problema, regolazione contro innovazione, talenti in fuga verso gli USA.</p>
-<p>La tensione più profonda la introduce <a href="https://www.ilfattoquotidiano.it/2026/04/25/barbero-fascismo-democrazie-autoritarie-notizie/8366325/" target="_blank" rel="noopener">Alessandro Barbero</a>, che cambia piano: mentre gli economisti discutono crescita, lui segnala l'<strong>erosione lenta della democrazia</strong> e la normalizzazione dell'economia di guerra. Sposta il rischio dal PIL alla Costituzione.</p>
-<p>Tensione di fondo: tutti riformisti, nessuno conservatore dichiarato — ma il riformismo si spacca tra <strong>chi vuole riformare per crescere</strong> (De Romanis, Rampini, Cottarelli) e <strong>chi vuole riformare per proteggere</strong> (Boeri). Il <em>Nord-Sud</em> è quasi assente, tranne la Zes Unica citata da Cottarelli come modello da estendere. Il vero asse non è più destra-sinistra: è movimento contro paura.</p></div></section>
-<section class="transcript-section"><h2>Trascrizione</h2><details class="tr"><summary>Leggi la trascrizione</summary><button class="tr-copy" type="button" onclick="copiaTrascrizione(this)">copia il testo</button><div class="transcript-body"><h2>La geografia come ultimo alpha</h2>
+<p>La tensione più profonda la introduce <a href="https://www.ilfattoquotidiano.it/2026/04/25/barbero-fascismo-democrazie-autoritarie-notizie/8366325/" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="/signal-brief/italia/avatars/alessandro-barbero.jpg" alt="">Alessandro Barbero</a>, che cambia piano: mentre gli economisti discutono crescita, lui segnala l'<strong>erosione lenta della democrazia</strong> e la normalizzazione dell'economia di guerra. Sposta il rischio dal PIL alla Costituzione.</p>
+<p>Tensione di fondo: tutti riformisti, nessuno conservatore dichiarato — ma il riformismo si spacca tra <strong>chi vuole riformare per crescere</strong> (De Romanis, Rampini, Cottarelli) e <strong>chi vuole riformare per proteggere</strong> (Boeri). Il <em>Nord-Sud</em> è quasi assente, tranne la Zes Unica citata da Cottarelli come modello da estendere. Il vero asse non è più destra-sinistra: è movimento contro paura.</p></div></div>
+<div class="tab-panel panel" data-sb-panel="testo" hidden><button class="tr-copy" type="button" onclick="copiaTrascrizione(this)">copia il testo</button><div class="transcript-body"><h2>La geografia come ultimo alpha</h2>
 <p class="podcast-episode-desc">Mentre le aste toccano i 2,1 miliardi, l'interesse si ritira e il valore migra: verso il collateral, verso la stanza chiusa, verso nuove mappe del collezionismo.</p>
 <div class="chapter" data-mood="geo"><hr></div>
-<p>Signal Collectibles, venti giugno duemilaventisei.</p>
+<p>Signal <a href="#" class="face-link" onclick="vaiFonte(event, 'Collectibles')" title="Fonti di Collectibles"><img class="face-inline" loading="lazy" src="/signal-brief/italia/avatars/collectibles.jpg" alt=""></a>Collectibles, venti giugno duemilaventisei.</p>
 <p>C'è una serata, questa primavera, in cui una sola casa d'asta ha battuto un miliardo di dollari in poche ore: è successo solo due volte nella storia. Eppure, nello stesso momento, una delle voci più ascoltate del mercato scrive una frase che suona quasi come una smentita: l'interesse per l'arte sta calando. Due verità opposte, lo stesso giorno, lo stesso mercato. Capire come possano convivere è il racconto di oggi.</p>
 <div class="chapter" data-mood="soft"><hr></div>
 <p>Partiamo da un numero che non ha fatto rumore quanto avrebbe dovuto. Heritage, la casa d'aste texana, ha superato i due miliardi di dollari di transato. Non con un Pollock o un Brancusi, ma con orologi, memorabilia sportiva, oggetti. Uno dei pezzi che ha attraversato le sue mani è un orologio appartenuto ad Andy Warhol — un oggetto il cui valore, oggi, non sta tanto in cosa segna il tempo, ma in chi lo ha indossato e nel fatto che esista una catena di proprietà documentata, verificabile, incontestabile.</p>
 <p>Joe Maddalena, che di quel mondo è una delle figure centrali, lo dice senza giri di parole: il denaro che per decenni ha inseguito l'arte ora insegue i collectibles. E lo fa, parola sua, "sistematicamente". Non è più passione che si traveste da investimento. È investimento che cerca oggetti con una provenienza certa e un mercato secondario abbastanza liquido da poterli rivendere domani. Il capitale, in altre parole, ha smesso di cercare la scommessa e ha cominciato a cercare il collateral — qualcosa che tenga, che si possa dare in garanzia, che non chieda di indovinare il gusto di dopodomani.</p>
 <p>Torna qui il filo della scorsa puntata: la polarizzazione non è più tra chi specula e chi ama, ma tra chi possiede abbastanza da non dover giustificare un prezzo e chi ancora dipende dalla logica del valore. Quel filo, oggi, si annoda in tre punti nuovi.</p>
-<p>Il primo. La promessa del post-pandemia era una sola: piattaforma, accesso, online per tutti. Quella promessa si è rotta. Il canale digitale è crollato al minimo dal duemiladiciannove, poco più di nove miliardi. E mentre lo schermo si svuota, il valore si sposta nella direzione esattamente opposta — nelle aste private che Artnet ha ribattezzato "Dark Mode": su invito, opache, riservate a chi ha patrimoni che non si misurano in stipendi. Il mercato non si è democratizzato diventando piattaforma. Si è ri-aristocratizzato nel buio. La porta che lo schermo apriva, la stanza chiusa la richiude.</p>
+<p>Il primo. La promessa del post-pandemia era una sola: piattaforma, accesso, online per tutti. Quella promessa si è rotta. Il canale digitale è crollato al minimo dal duemiladiciannove, poco più di nove miliardi. E mentre lo schermo si svuota, il valore si sposta nella direzione esattamente opposta — nelle aste private che <a href="#" class="face-link" onclick="vaiFonte(event, 'Artnet')" title="Fonti di Artnet"><img class="face-inline" loading="lazy" src="/signal-brief/italia/avatars/artnet.png" alt=""></a>Artnet ha ribattezzato "Dark Mode": su invito, opache, riservate a chi ha patrimoni che non si misurano in stipendi. Il mercato non si è democratizzato diventando piattaforma. Si è ri-aristocratizzato nel buio. La porta che lo schermo apriva, la stanza chiusa la richiude.</p>
 <p>Il secondo punto è geografico, ed è forse il più sorprendente. Dove la diversificazione tra categorie di asset non basta più, ne sopravvive una sola: quella territoriale. I mercati fuori dai tre grandi — Stati Uniti, Regno Unito, Cina — sono saliti dal diciassette al ventiquattro per cento della quota mondiale. E l'India, da sola, è l'eccezione che brilla: una percentuale di venduto dell'ottantanove per cento, una casa come AstaGuru che cresce del centotrentotto per cento, mentre l'Asia nel suo insieme dimezza il proprio valore. È la stessa logica che, negli anni Ottanta, spostò l'attenzione dagli impressionisti di Parigi ai compratori di Tokyo: quando il centro si satura, il margine diventa il centro.</p>
-<p>Il terzo punto è il più sottile, perché riguarda il tempo. È un mercato che riparte, o uno che cambia natura? Melanie Gerlis legge una contrazione strutturale — il gigantismo delle gallerie non scala più. Artnet legge nei collectibles qualcosa di "ascendente", non passeggero. Hanno torto entrambi e ragione entrambi, perché descrivono lo stesso esodo: dal primario speculativo, dove si scommette su un nome nuovo, verso il secondario verificabile, dove si conserva un valore già provato. Ricorda il boom delle figurine sportive del millenovecentonovantuno: finita l'euforia, sopravvisse solo ciò che aveva una storia documentata. Il resto tornò cartaccia.</p>
+<p>Il terzo punto è il più sottile, perché riguarda il tempo. È un mercato che riparte, o uno che cambia natura? Melanie Gerlis legge una contrazione strutturale — il gigantismo delle gallerie non scala più. <a href="#" class="face-link" onclick="vaiFonte(event, 'Artnet')" title="Fonti di Artnet"><img class="face-inline" loading="lazy" src="/signal-brief/italia/avatars/artnet.png" alt=""></a>Artnet legge nei collectibles qualcosa di "ascendente", non passeggero. Hanno torto entrambi e ragione entrambi, perché descrivono lo stesso esodo: dal primario speculativo, dove si scommette su un nome nuovo, verso il secondario verificabile, dove si conserva un valore già provato. Ricorda il boom delle figurine sportive del millenovecentonovantuno: finita l'euforia, sopravvisse solo ciò che aveva una storia documentata. Il resto tornò cartaccia.</p>
 <div class="chapter" data-mood="tech"><hr></div>
 <p>Melanie Gerlis è una di quelle firme che il mercato dell'arte legge prima di parlare. Scrive di economia del collezionismo da anni, e ha il dono raro di non lasciarsi sedurre dai numeri grossi. Quando tutti applaudono, lei conta.</p>
 <p>E questa primavera, mentre i titoli celebravano le aste serali a due miliardi e cento milioni — il doppio dell'anno prima — Gerlis ha fatto la cosa più scomoda: ha guardato dove non guardava nessuno. Il Pollock battuto a centottantuno milioni, il Brancusi a centosette. Cifre da capogiro, certo. Ma cifre fatte da pochissimi lotti, da una manciata di oggetti che non rappresentano un mercato: rappresentano una stanza con dentro dieci persone. Sotto quei nomi, la fascia media — gli artisti che non sono né leggenda né scommessa — continua a sgretolarsi. Da qui la sua frase, secca: l'interesse per l'arte sta calando, anche mentre i volumi salgono. Non è un paradosso. È solo che volume e interesse, ormai, misurano popolazioni diverse.</p>
@@ -194,9 +235,13 @@
 <p>Quarto, l'arte del primo Novecento, il blue chip storico. Mentre il contemporaneo speculativo si svuota, i compratori tornano a ciò che il tempo ha già giudicato: un Picasso degli anni Sessanta passato di mano per trentacinque milioni in un solo giorno racconta dove si è spostata la fiducia.</p>
 <p>E quinto, da tenere d'occhio quasi come scommessa controcorrente: il craft, l'artigianato d'autore, che secondo più di un osservatore sta battendo l'intelligenza artificiale come oggetto narrativo. In un mondo che diffida dell'immateriale, la mano umana torna a valere.</p>
 <div class="chapter" data-mood="soft"><hr></div>
-<p>Resta l'immagine di una stanza chiusa, illuminata appena, dove pochi decidono in silenzio — mentre lo schermo che doveva aprire tutto si spegne. Il mercato non riparte: cambia natura, e sceglie il buio. La domanda è se sapremo ancora chiamarlo collezionismo. È stato Signal Collectibles. Alla prossima.</p>
-<p>Script done. ~3,150 words. All 6 markers, no links/markdown in spoken text, banned phrases avoided, 3 historical comparisons (Impressionisti anni '80, figurine 1991, Rolex Daytona pre-2020), thinkers as characters, continuity callback kept brief.</p></div></details></section>
-<nav class="epnav"><a href="/signal-brief/italia/2026-06-19/">← 2026-06-19</a><span style="flex:1"></span><a href="/signal-brief/italia/2026-06-26/">2026-06-26 →</a></nav>
+<p>Resta l'immagine di una stanza chiusa, illuminata appena, dove pochi decidono in silenzio — mentre lo schermo che doveva aprire tutto si spegne. Il mercato non riparte: cambia natura, e sceglie il buio. La domanda è se sapremo ancora chiamarlo collezionismo. È stato Signal <a href="#" class="face-link" onclick="vaiFonte(event, 'Collectibles')" title="Fonti di Collectibles"><img class="face-inline" loading="lazy" src="/signal-brief/italia/avatars/collectibles.jpg" alt=""></a>Collectibles. Alla prossima.</p>
+<p>Script done. ~3,150 words. All 6 markers, no links/markdown in spoken text, banned phrases avoided, 3 historical comparisons (Impressionisti anni '80, figurine 1991, Rolex Daytona pre-2020), thinkers as characters, continuity callback kept brief.</p></div><div class="rawmd"><a href="raw.md">Testo (markdown)</a></div></div>
+<div class="tab-panel panel" data-sb-panel="comparazione" hidden><div class="state-note">Comparazione non disponibile per questo episodio.</div></div>
+<div class="tab-panel panel" data-sb-panel="segnali" hidden><div class="state-note">Nessun segnale disponibile per questo episodio.</div></div>
+<div class="tab-panel panel" data-sb-panel="fonti" hidden><div class="state-note">Nessuna fonte disponibile per questo episodio.</div></div>
+</div>
+<script>function sbTab(key) {  document.querySelectorAll('.tab-panel').forEach(function (p) {    p.hidden = p.getAttribute('data-sb-panel') !== key;  });  document.querySelectorAll('#sbTabs .tab').forEach(function (b) {    b.setAttribute('aria-selected', b.dataset.tab === key ? 'true' : 'false');  });}function vaiFonte(ev, nome) {  ev.preventDefault();  sbTab('fonti');  var d = document.querySelector('[data-fonte-nome="' + nome + '"]');  if (d) d.scrollIntoView({behavior: 'smooth', block: 'center'});}</script>
 <dialog class="vplayer" id="vplayer"></dialog>
 <script>
 // player modale dei video: la miniatura apre il video al centro (disegno 2026-08-07)

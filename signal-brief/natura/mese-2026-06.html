@@ -132,11 +132,56 @@
   .epnav { display:flex; justify-content:space-between; gap:1rem; margin:2rem 0 0;
     font-size:.82rem; font-family:monospace; }
   .epnav a { text-decoration:none; }
+  /* Header + tab bar (spec-016, Task 5): stessa forma di
+     public/console/podcast-render.css, riusando i nomi classe dove
+     combaciano — solo la meccanica tab/pannello è nuova qui. */
+  .episode-header .date-line { font-size:.72rem; font-family:monospace; color:#9ca3af;
+    text-transform:uppercase; letter-spacing:.08em; margin-bottom:.3rem; }
+  .ep-header-block { margin-bottom:.5rem; }
+  .ep-header-faces { margin:.6rem 0; }
+  .ep-header-faces .ep-faces { margin-left:0; }
+  .tabs { display:flex; gap:.25rem; border-bottom:1px solid #e2ddd6; margin:1.5rem 0; flex-wrap:wrap; }
+  .tab { font-family:monospace; font-size:.72rem; text-transform:uppercase; letter-spacing:.08em;
+    padding:.6rem .9rem; background:transparent; border:0; border-bottom:2px solid transparent;
+    color:#9ca3af; cursor:pointer; }
+  .tab[aria-selected="true"] { color:#1a1a1a; border-bottom-color:#16a34a; }
+  .tab-panel { display:block; }
+  .tab-panel[hidden] { display:none !important; }
+  /* Fallback dei pannelli senza dati (episodi storici senza un sidecar) —
+     porta di public/console/podcast-render.css:304-309, sui token pubblici. */
+  /* Header episodio a due colonne: barra tab e pannello nel primo schermo
+     (stesse regole del modulo condiviso, richiesta 2026-08-10). */
+  .ep-header-block { display:grid; grid-template-columns:minmax(0,1fr) 340px;
+    grid-template-rows:repeat(4,min-content); gap:.3rem 1.6rem;
+    align-items:start; margin-bottom:.5rem; }
+  .ep-header-block > [data-sb="data"] { grid-column:1; margin:0; }
+  .ep-header-block > [data-sb="titolo"] { grid-column:1; margin:.1rem 0; }
+  .ep-header-block > [data-sb="player"] { grid-column:1; }
+  .ep-header-block > [data-sb="nav"] { grid-column:1; }
+  .ep-header-block > [data-sb="facce"] { grid-column:2; grid-row:1; }
+  .ep-header-block > [data-sb="video"] { grid-column:2; grid-row:2/5;
+    display:flex; gap:.5rem; flex-wrap:wrap; }
+  .ep-header-block [data-sb="facce"] img { width:26px; height:26px; }
+  .ep-header-block [data-sb="video"] video { max-height:96px; width:auto; }
+  .ep-header-block audio { height:36px; width:100%; }
+  .tabs { position:sticky; top:0; z-index:5; background:#fff;
+    padding:.4rem 0; border-bottom:1px solid #e5e7eb; }
+  @media (max-width:760px) {
+    .ep-header-block { grid-template-columns:1fr; }
+    .ep-header-block > [data-sb="facce"],
+    .ep-header-block > [data-sb="video"] { grid-column:1; grid-row:auto; }
+  }
+  .state-note { padding:2rem 1rem; text-align:center; color:#9ca3af;
+    font-family:monospace; font-size:.85rem; }
   @media (prefers-color-scheme:dark) {
     body { background:#1f1d18; color:#e5e5e5; }
     .ep, .tension, .signal-card { background:#2a2823; border-color:#3a352d; }
     .ep-play { background:#3a352d; } .desc { color:#d4d4d4; }
     .signal-text { color:#d4d4d4; }
+    .episode-header .date-line { color:#9ca3af; }
+    .tabs { border-color:#3a352d; }
+    .tab[aria-selected="true"] { color:#f5f5f5; }
+    .state-note { color:#9ca3af; }
     .creator-footer { border-color:#3a352d; }
     .creator-name { color:#f5f5f5; }
     .creator-tagline, .creator-email a { color:#9ca3af; }
@@ -155,33 +200,41 @@
   <div class="months"><a href="/signal-brief/natura/">lug 2026</a> · <b>giu 2026</b> · <a href="/signal-brief/natura/mese-2026-05.html">mag 2026</a> · <a href="/signal-brief/natura/mese-2026-04.html">apr 2026</a></div>
   
   <details class="wkacc"><summary>Settimana del 22/06 · 1 episodi</summary><ul class="eps">
-      <a class="ep" href="/signal-brief/natura/2026-06-24/">
-        <button class="ep-listen" title="Ascolta qui"
+      <a class="ep" data-sb="card" href="/signal-brief/natura/2026-06-24/">
+        <button class="ep-listen" data-sb="play" title="Ascolta qui"
           onclick="event.preventDefault();event.stopPropagation();ascolta(this,'https://media.casamon.dev/natura/podcast/episodes/2026-06-24.mp3')">▶</button>
-        <div><div class="ep-title">Quando l'algoritmo entra nella cura</div>
-        <div class="ep-meta">2026-06-24 · 5:28</div></div>
-        <span class="ep-faces"><img loading="lazy" src="/signal-brief/natura/avatars/deepak-chopra.png" alt="" title="Deepak Chopra"><img loading="lazy" src="/signal-brief/natura/avatars/bessel-van-der-kolk.png" alt="" title="Bessel van der Kolk"><img loading="lazy" src="/signal-brief/natura/avatars/claudia-welch.png" alt="" title="Claudia Welch"><img loading="lazy" src="/signal-brief/natura/avatars/andrew-weil.png" alt="" title="Andrew Weil"><img loading="lazy" src="/signal-brief/natura/avatars/vandana-shiva.png" alt="" title="Vandana Shiva"></span>
+        <div><div class="ep-title" data-sb="titolo">Quando l'algoritmo entra nella cura</div>
+        <div class="ep-meta" data-sb="data">2026-06-24</div>
+        <div class="ep-description" data-sb="descrizione">L'intelligenza artificiale diventa il nuovo campo di scontro tra le tradizioni di cura, mentre trauma e contemplazione si saldano e la tradizione cede terreno alla biomedicina.</div>
+        <div class="meta"><span class="durata" data-sb="durata">5:28</span> · <span class="parole" data-sb="parole">817 parole</span></div></div>
+        <span data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/natura/avatars/deepak-chopra.png" alt="" title="Deepak Chopra"><img loading="lazy" src="/signal-brief/natura/avatars/bessel-van-der-kolk.png" alt="" title="Bessel van der Kolk"><img loading="lazy" src="/signal-brief/natura/avatars/claudia-welch.png" alt="" title="Claudia Welch"><img loading="lazy" src="/signal-brief/natura/avatars/andrew-weil.png" alt="" title="Andrew Weil"><img loading="lazy" src="/signal-brief/natura/avatars/vandana-shiva.png" alt="" title="Vandana Shiva"></span></span>
       </a></ul></details><details class="wkacc"><summary>Settimana del 15/06 · 1 episodi</summary><ul class="eps">
-      <a class="ep" href="/signal-brief/natura/2026-06-17/">
-        <button class="ep-listen" title="Ascolta qui"
+      <a class="ep" data-sb="card" href="/signal-brief/natura/2026-06-17/">
+        <button class="ep-listen" data-sb="play" title="Ascolta qui"
           onclick="event.preventDefault();event.stopPropagation();ascolta(this,'https://media.casamon.dev/natura/podcast/episodes/2026-06-17.mp3')">▶</button>
-        <div><div class="ep-title">Dove abita la causa</div>
-        <div class="ep-meta">2026-06-17 · 7:47</div></div>
-        <span class="ep-faces"><img loading="lazy" src="/signal-brief/natura/avatars/claudia-welch.png" alt="" title="Claudia Welch"><img loading="lazy" src="/signal-brief/natura/avatars/andrew-weil.png" alt="" title="Andrew Weil"><img loading="lazy" src="/signal-brief/natura/avatars/vandana-shiva.png" alt="" title="Vandana Shiva"><img loading="lazy" src="/signal-brief/natura/avatars/bessel-van-der-kolk.png" alt="" title="Bessel van der Kolk"></span>
+        <div><div class="ep-title" data-sb="titolo">Dove abita la causa</div>
+        <div class="ep-meta" data-sb="data">2026-06-17</div>
+        <div class="ep-description" data-sb="descrizione">La cura esce dal corpo: suolo, psiche, società. Guarire togliendo invece di aggiungere, mentre tradizione e scienza si incontrano a metà strada.</div>
+        <div class="meta"><span class="durata" data-sb="durata">7:47</span> · <span class="parole" data-sb="parole">1174 parole</span></div></div>
+        <span data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/natura/avatars/claudia-welch.png" alt="" title="Claudia Welch"><img loading="lazy" src="/signal-brief/natura/avatars/andrew-weil.png" alt="" title="Andrew Weil"><img loading="lazy" src="/signal-brief/natura/avatars/vandana-shiva.png" alt="" title="Vandana Shiva"><img loading="lazy" src="/signal-brief/natura/avatars/bessel-van-der-kolk.png" alt="" title="Bessel van der Kolk"></span></span>
       </a></ul></details><details class="wkacc"><summary>Settimana del 08/06 · 1 episodi</summary><ul class="eps">
-      <a class="ep" href="/signal-brief/natura/2026-06-12/">
-        <button class="ep-listen" title="Ascolta qui"
+      <a class="ep" data-sb="card" href="/signal-brief/natura/2026-06-12/">
+        <button class="ep-listen" data-sb="play" title="Ascolta qui"
           onclick="event.preventDefault();event.stopPropagation();ascolta(this,'https://media.casamon.dev/natura/podcast/episodes/2026-06-12.mp3')">▶</button>
-        <div><div class="ep-title">Chi Guarisce? Il Soggetto della Cura</div>
-        <div class="ep-meta">2026-06-12 · 6:52</div></div>
-        <span class="ep-faces"><img loading="lazy" src="/signal-brief/natura/avatars/bessel-van-der-kolk.png" alt="" title="Bessel van der Kolk"><img loading="lazy" src="/signal-brief/natura/avatars/andrew-weil.png" alt="" title="Andrew Weil"><img loading="lazy" src="/signal-brief/natura/avatars/deepak-chopra.png" alt="" title="Deepak Chopra"></span>
+        <div><div class="ep-title" data-sb="titolo">Chi Guarisce? Il Soggetto della Cura</div>
+        <div class="ep-meta" data-sb="data">2026-06-12</div>
+        <div class="ep-description" data-sb="descrizione">Individuo ottimizzabile, comunità ferita o specie integrata: la domanda che divide i pensatori della medicina integrativa.</div>
+        <div class="meta"><span class="durata" data-sb="durata">6:52</span> · <span class="parole" data-sb="parole">991 parole</span></div></div>
+        <span data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/natura/avatars/bessel-van-der-kolk.png" alt="" title="Bessel van der Kolk"><img loading="lazy" src="/signal-brief/natura/avatars/andrew-weil.png" alt="" title="Andrew Weil"><img loading="lazy" src="/signal-brief/natura/avatars/deepak-chopra.png" alt="" title="Deepak Chopra"></span></span>
       </a></ul></details><details class="wkacc"><summary>Settimana del 01/06 · 1 episodi</summary><ul class="eps">
-      <a class="ep" href="/signal-brief/natura/2026-06-05/">
-        <button class="ep-listen" title="Ascolta qui"
+      <a class="ep" data-sb="card" href="/signal-brief/natura/2026-06-05/">
+        <button class="ep-listen" data-sb="play" title="Ascolta qui"
           onclick="event.preventDefault();event.stopPropagation();ascolta(this,'https://media.casamon.dev/natura/podcast/episodes/2026-06-05.mp3')">▶</button>
-        <div><div class="ep-title">Il corpo che conosce</div>
-        <div class="ep-meta">2026-06-05 · 9:55</div></div>
-        <span class="ep-faces"><img loading="lazy" src="/signal-brief/natura/avatars/ai.png" alt="" title="AI"></span>
+        <div><div class="ep-title" data-sb="titolo">Il corpo che conosce</div>
+        <div class="ep-meta" data-sb="data">2026-06-05</div>
+        <div class="ep-description" data-sb="descrizione">Il corpo non è dove la malattia appare: è dove la realtà si manifesta. Cinque tradizioni diverse arrivano alla stessa tesi. E l'AI divide tutto.</div>
+        <div class="meta"><span class="durata" data-sb="durata">9:55</span> · <span class="parole" data-sb="parole">1377 parole</span></div></div>
+        <span data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/natura/avatars/ai.png" alt="" title="AI"></span></span>
       </a></ul></details>
 <dialog class="vplayer" id="vplayer"></dialog>
 <script>

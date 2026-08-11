@@ -132,11 +132,56 @@
   .epnav { display:flex; justify-content:space-between; gap:1rem; margin:2rem 0 0;
     font-size:.82rem; font-family:monospace; }
   .epnav a { text-decoration:none; }
+  /* Header + tab bar (spec-016, Task 5): stessa forma di
+     public/console/podcast-render.css, riusando i nomi classe dove
+     combaciano — solo la meccanica tab/pannello è nuova qui. */
+  .episode-header .date-line { font-size:.72rem; font-family:monospace; color:#9ca3af;
+    text-transform:uppercase; letter-spacing:.08em; margin-bottom:.3rem; }
+  .ep-header-block { margin-bottom:.5rem; }
+  .ep-header-faces { margin:.6rem 0; }
+  .ep-header-faces .ep-faces { margin-left:0; }
+  .tabs { display:flex; gap:.25rem; border-bottom:1px solid #e2ddd6; margin:1.5rem 0; flex-wrap:wrap; }
+  .tab { font-family:monospace; font-size:.72rem; text-transform:uppercase; letter-spacing:.08em;
+    padding:.6rem .9rem; background:transparent; border:0; border-bottom:2px solid transparent;
+    color:#9ca3af; cursor:pointer; }
+  .tab[aria-selected="true"] { color:#1a1a1a; border-bottom-color:#15803d; }
+  .tab-panel { display:block; }
+  .tab-panel[hidden] { display:none !important; }
+  /* Fallback dei pannelli senza dati (episodi storici senza un sidecar) —
+     porta di public/console/podcast-render.css:304-309, sui token pubblici. */
+  /* Header episodio a due colonne: barra tab e pannello nel primo schermo
+     (stesse regole del modulo condiviso, richiesta 2026-08-10). */
+  .ep-header-block { display:grid; grid-template-columns:minmax(0,1fr) 340px;
+    grid-template-rows:repeat(4,min-content); gap:.3rem 1.6rem;
+    align-items:start; margin-bottom:.5rem; }
+  .ep-header-block > [data-sb="data"] { grid-column:1; margin:0; }
+  .ep-header-block > [data-sb="titolo"] { grid-column:1; margin:.1rem 0; }
+  .ep-header-block > [data-sb="player"] { grid-column:1; }
+  .ep-header-block > [data-sb="nav"] { grid-column:1; }
+  .ep-header-block > [data-sb="facce"] { grid-column:2; grid-row:1; }
+  .ep-header-block > [data-sb="video"] { grid-column:2; grid-row:2/5;
+    display:flex; gap:.5rem; flex-wrap:wrap; }
+  .ep-header-block [data-sb="facce"] img { width:26px; height:26px; }
+  .ep-header-block [data-sb="video"] video { max-height:96px; width:auto; }
+  .ep-header-block audio { height:36px; width:100%; }
+  .tabs { position:sticky; top:0; z-index:5; background:#fff;
+    padding:.4rem 0; border-bottom:1px solid #e5e7eb; }
+  @media (max-width:760px) {
+    .ep-header-block { grid-template-columns:1fr; }
+    .ep-header-block > [data-sb="facce"],
+    .ep-header-block > [data-sb="video"] { grid-column:1; grid-row:auto; }
+  }
+  .state-note { padding:2rem 1rem; text-align:center; color:#9ca3af;
+    font-family:monospace; font-size:.85rem; }
   @media (prefers-color-scheme:dark) {
     body { background:#1f1d18; color:#e5e5e5; }
     .ep, .tension, .signal-card { background:#2a2823; border-color:#3a352d; }
     .ep-play { background:#3a352d; } .desc { color:#d4d4d4; }
     .signal-text { color:#d4d4d4; }
+    .episode-header .date-line { color:#9ca3af; }
+    .tabs { border-color:#3a352d; }
+    .tab[aria-selected="true"] { color:#f5f5f5; }
+    .state-note { color:#9ca3af; }
     .creator-footer { border-color:#3a352d; }
     .creator-name { color:#f5f5f5; }
     .creator-tagline, .creator-email a { color:#9ca3af; }
@@ -149,26 +194,21 @@
     details.tr { border-color:#3a352d; }
   }
 </style></head><body>
-<a class="back" href="/signal-brief/italia/">← Signal.Italia</a>
-<header><h1>Il movimento contro la paura</h1></header>
-<div class="tagline">2026-06-19 · Digital Intelligence Podcast</div>
-<div class="desc">I riformisti italiani passano dalle idee all'organizzazione: nasce Europeisti, mentre i conti rinviati tornano a galla. E il riformismo si spacca tra chi vuole crescere e chi vuole proteggere.</div>
-<audio controls preload="none" src="https://media.casamon.dev/italia/podcast/episodes/2026-06-19.mp3"></audio>
-<div class="rawmd"><a href="raw.md">Testo (markdown)</a></div>
-<section><h2>Sintesi</h2><div class="synthesis"><h2>Cross-synthesis: l'Italia ferma vista da chi la osserva</h2>
-<p>Un solo nemico ricorre in quasi tutte le voci: l'<strong>immobilismo come scelta politica</strong>, non come fatalità. <a href="https://www.mondadori.it/libri/leconomia-della-paura-veronica-de-romanis/" target="_blank" rel="noopener">Veronica De Romanis</a> lo nomina "economia della paura" — si conserva e si arretra; <a href="https://www.quotidiano.net/economia/carlo-cottarelli-intervista-ckl2nwny" target="_blank" rel="noopener">Carlo Cottarelli</a> lo traduce in burocrazia da tagliare prima dei sussidi; <a href="https://appunti.substack.com/p/la-polvere-non-e-piu-sotto-il-tappeto" target="_blank" rel="noopener">Stefano Feltri</a> in numeri che smentiscono la narrativa. Convergenza forte sul <strong>debito che supera la Grecia</strong> (138%) e sulla crescita asfittica (0,5–0,6% contro il 3% spagnolo): diagnosi condivisa, colpa bipartisan, non solo Meloni.</p>
+<a class="back back-link" href="/signal-brief/italia/">← Signal.Italia</a><div class="ep-header-block"><header class="episode-header"><div class="date-line" data-sb="data">2026-06-19</div><h1 data-sb="titolo">Il movimento contro la paura</h1><div class="desc">I riformisti italiani passano dalle idee all'organizzazione: nasce Europeisti, mentre i conti rinviati tornano a galla. E il riformismo si spacca tra chi vuole crescere e chi vuole proteggere.</div><div class="tagline">Digital Intelligence Podcast</div></header><audio controls preload="none" data-sb="player" src="https://media.casamon.dev/italia/podcast/episodes/2026-06-19.mp3"></audio><nav class="epnav" data-sb="nav"><span style="flex:1"></span><a href="/signal-brief/italia/2026-06-20/">2026-06-20 →</a></nav><div class="ep-header-faces" data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/italia/avatars/carlo-cottarelli.png" alt="" title="Carlo Cottarelli"><img loading="lazy" src="/signal-brief/italia/avatars/alessandro-barbero.jpg" alt="" title="Alessandro Barbero"></span></div><div class="ep-header-video" data-sb="video"></div></div>
+<div class="tabs-block"><div class="tabs" role="tablist" id="sbTabs"><button class="tab" type="button" role="tab" data-tab="sintesi" aria-selected="true" onclick="sbTab('sintesi')">Sintesi</button><button class="tab" type="button" role="tab" data-tab="testo" aria-selected="false" onclick="sbTab('testo')">Testo</button><button class="tab" type="button" role="tab" data-tab="comparazione" aria-selected="false" onclick="sbTab('comparazione')">Comparazione</button><button class="tab" type="button" role="tab" data-tab="segnali" aria-selected="false" onclick="sbTab('segnali')">Segnali</button><button class="tab" type="button" role="tab" data-tab="fonti" aria-selected="false" onclick="sbTab('fonti')">Fonti</button></div>
+<div class="tab-panel panel" data-sb-panel="sintesi"><div class="synthesis"><h2>Cross-synthesis: l'Italia ferma vista da chi la osserva</h2>
+<p>Un solo nemico ricorre in quasi tutte le voci: l'<strong>immobilismo come scelta politica</strong>, non come fatalità. <a href="https://www.mondadori.it/libri/leconomia-della-paura-veronica-de-romanis/" target="_blank" rel="noopener">Veronica De Romanis</a> lo nomina "economia della paura" — si conserva e si arretra; <a href="https://www.quotidiano.net/economia/carlo-cottarelli-intervista-ckl2nwny" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="/signal-brief/italia/avatars/carlo-cottarelli.png" alt="">Carlo Cottarelli</a> lo traduce in burocrazia da tagliare prima dei sussidi; <a href="https://appunti.substack.com/p/la-polvere-non-e-piu-sotto-il-tappeto" target="_blank" rel="noopener">Stefano Feltri</a> in numeri che smentiscono la narrativa. Convergenza forte sul <strong>debito che supera la Grecia</strong> (138%) e sulla crescita asfittica (0,5–0,6% contro il 3% spagnolo): diagnosi condivisa, colpa bipartisan, non solo Meloni.</p>
 <p>Seconda convergenza: il <strong>frame migratorio rovesciato</strong>. <a href="https://www.ilriformista.it/carlo-cottarelli-protagonista-di-europeisti-vannacci-realta-al-contrario-518387/" target="_blank" rel="noopener">Cottarelli</a> e <a href="https://corriereuniv.it/tito-boeri-economia-italiana-giovani-lavoro-intervista/" target="_blank" rel="noopener">Tito Boeri</a> spostano il problema dall'immigrazione all'<em>emigrazione</em> — 300-400mila residenti l'anno persi, base contributiva che evapora. La ricetta è gemella: decontribuzione strutturale per i giovani.</p>
 <p>Qui però si apre la prima <strong>divergenza — Stato vs mercato</strong>. <a href="https://ossigeno.net/sfruttamento-made-in-italy-la-prefazione-di-tito-boeri/" target="_blank" rel="noopener">Boeri</a> guarda in basso: working poor, salario minimo, filiere di sfruttamento. De Romanis e <a href="https://www.laverita.info/federico-rampini-intervista-2676906736.html" target="_blank" rel="noopener">Federico Rampini</a> guardano in alto: "distruzione creatrice", 9 unicorn contro 800, statalismo come zavorra. Rigore fiscale condiviso, ma l'uno teme il mercato senza argini, l'altro lo Stato senza coraggio.</p>
 <p>Sul <strong>sovranismo vs europeismo</strong> il fronte è quasi compatto — e qui sta il dato politico. <a href="https://www.ilriformista.it/nasce-europeisti-eu-ma-non-e-una-riedizione-del-terzo-polo-calenda-la-nostra-battaglia-e-leuropa-518021/" target="_blank" rel="noopener">Calenda</a>, Cottarelli e De Romanis convergono su Europeisti: l'Europa come leva, non vincolo da aggirare. Rampini è l'eretico: per lui Bruxelles <em>è</em> il problema, regolazione contro innovazione, talenti in fuga verso gli USA.</p>
-<p>La tensione più profonda la introduce <a href="https://www.ilfattoquotidiano.it/2026/04/25/barbero-fascismo-democrazie-autoritarie-notizie/8366325/" target="_blank" rel="noopener">Alessandro Barbero</a>, che cambia piano: mentre gli economisti discutono crescita, lui segnala l'<strong>erosione lenta della democrazia</strong> e la normalizzazione dell'economia di guerra. Sposta il rischio dal PIL alla Costituzione.</p>
-<p>Tensione di fondo: tutti riformisti, nessuno conservatore dichiarato — ma il riformismo si spacca tra <strong>chi vuole riformare per crescere</strong> (De Romanis, Rampini, Cottarelli) e <strong>chi vuole riformare per proteggere</strong> (Boeri). Il <em>Nord-Sud</em> è quasi assente, tranne la Zes Unica citata da Cottarelli come modello da estendere. Il vero asse non è più destra-sinistra: è movimento contro paura.</p></div></section>
-<section><h2>Fonti</h2><div class="fonte"><span class="who">Tito Boeri</span><a href="https://ossigeno.net/sfruttamento-made-in-italy-la-prefazione-di-tito-boeri/" target="_blank" rel="noopener">Prefazione "Sfruttamento Made in Italy" — Ossigeno</a><a href="https://corriereuniv.it/tito-boeri-economia-italiana-giovani-lavoro-intervista/" target="_blank" rel="noopener">Intervista CorriereUniv, 22 maggio 2026</a><a href="https://telenorba.it/2026/05/13/sorpasso-debito-pubblico-italia-grecia-2026-analisi-fmi/" target="_blank" rel="noopener">Debito pubblico: Italia supera Grecia nel 2026 — TeleNorba</a></div><div class="fonte"><span class="who">Veronica De Romanis</span><a href="https://www.businesspeople.it/people/protagonisti/veronica-de-romanis-apriamoci-al-nuovo/" target="_blank" rel="noopener">BusinessPeople — intervista 18 giugno 2026</a><a href="https://www.radioradicale.it/scheda/789016/intervista-a-veronica-de-romanis-sui-motivi-del-fallimento-del-pnrr-in-italia" target="_blank" rel="noopener">Radio Radicale — PNRR, 8 maggio 2026</a><a href="https://www.quotidiano.net/economia/de-romanis-la-stabilita-non-7831fa35" target="_blank" rel="noopener">Quotidiano.net — conti pubblici, maggio 2026</a></div></section>
-<section class="transcript-section"><h2>Trascrizione</h2><details class="tr"><summary>Leggi la trascrizione</summary><button class="tr-copy" type="button" onclick="copiaTrascrizione(this)">copia il testo</button><div class="transcript-body"><h2>Il movimento contro la paura</h2>
+<p>La tensione più profonda la introduce <a href="https://www.ilfattoquotidiano.it/2026/04/25/barbero-fascismo-democrazie-autoritarie-notizie/8366325/" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="/signal-brief/italia/avatars/alessandro-barbero.jpg" alt="">Alessandro Barbero</a>, che cambia piano: mentre gli economisti discutono crescita, lui segnala l'<strong>erosione lenta della democrazia</strong> e la normalizzazione dell'economia di guerra. Sposta il rischio dal PIL alla Costituzione.</p>
+<p>Tensione di fondo: tutti riformisti, nessuno conservatore dichiarato — ma il riformismo si spacca tra <strong>chi vuole riformare per crescere</strong> (De Romanis, Rampini, Cottarelli) e <strong>chi vuole riformare per proteggere</strong> (Boeri). Il <em>Nord-Sud</em> è quasi assente, tranne la Zes Unica citata da Cottarelli come modello da estendere. Il vero asse non è più destra-sinistra: è movimento contro paura.</p></div></div>
+<div class="tab-panel panel" data-sb-panel="testo" hidden><button class="tr-copy" type="button" onclick="copiaTrascrizione(this)">copia il testo</button><div class="transcript-body"><h2>Il movimento contro la paura</h2>
 <p class="podcast-episode-desc">I riformisti italiani passano dalle idee all'organizzazione: nasce Europeisti, mentre i conti rinviati tornano a galla. E il riformismo si spacca tra chi vuole crescere e chi vuole proteggere.</p>
 <div class="chapter" data-mood="geo"><hr></div>
 <p>C'è un teatro a Milano, il Franco Parenti, dove a metà giugno è successo qualcosa di insolito. Un gruppo di economisti e politici ha smesso di spiegare perché l'Italia è ferma e ha provato a trasformare quella diagnosi in un progetto. Signal Brief, 19 giugno. Per mesi abbiamo sentito le stesse voci ripetere che il Paese non cresce e non riforma. Adesso quelle voci cercano una bandiera. La giornata di oggi parte da lì.</p>
 <div class="chapter" data-mood="soft"><hr></div>
-<p>Il gesto concreto è questo: tra il tredici e il quindici giugno Carlo Calenda riunisce a Milano Mario Monti, Carlo Cottarelli, Luigi Marattin, Pina Picierno, e lancia un'assemblea che si chiama Europeisti. Non è il vecchio Terzo Polo, dice lui, e il punto non è il centro: il punto è l'Europa come priorità assoluta. La frase che ripete è quasi uno slogan — "la nostra battaglia si chiama Europa."</p>
+<p>Il gesto concreto è questo: tra il tredici e il quindici giugno <a href="#" class="face-link" onclick="vaiFonte(event, 'Carlo Calenda')" title="Fonti di Carlo Calenda"><img class="face-inline" loading="lazy" src="/signal-brief/italia/avatars/carlo-calenda.png" alt=""></a>Carlo Calenda riunisce a Milano Mario Monti, <a href="#" class="face-link" onclick="vaiFonte(event, 'Carlo Cottarelli')" title="Fonti di Carlo Cottarelli"><img class="face-inline" loading="lazy" src="/signal-brief/italia/avatars/carlo-cottarelli.png" alt=""></a>Carlo Cottarelli, Luigi Marattin, Pina Picierno, e lancia un'assemblea che si chiama Europeisti. Non è il vecchio Terzo Polo, dice lui, e il punto non è il centro: il punto è l'Europa come priorità assoluta. La frase che ripete è quasi uno slogan — "la nostra battaglia si chiama Europa."</p>
 <p>Come già osservato ieri, la convergenza europeista tra queste persone era forte. La novità di oggi è che diventa organizzazione. Succede da sempre, in politica: le idee restano chiacchiera finché qualcuno non cuce addosso un simbolo. È accaduto ai moderati del Risorgimento, è accaduto al centrismo del dopoguerra. Ogni volta, il momento delicato non è avere ragione: è trovare una bandiera senza svuotarla.</p>
 <p>Mentre i riformisti si organizzano, dall'altra parte qualcosa viene a galla. Stefano Feltri lo riassume con un'immagine: "la polvere non è più sotto il tappeto." La sua tesi di giugno è che quattro anni di problemi rinviati stanno emergendo tutti insieme — mercato del lavoro che rallenta, scadenze del PNRR mancate, privatizzazioni promesse e mai fatte. Torna, in forma più dura, la tensione di ieri: l'immobilismo come scelta, non come destino.</p>
 <p>Ma c'è una crepa nuova, ed è la cosa più interessante. Sono tutti riformisti, nessuno si dichiara conservatore — eppure il riformismo si spacca in due. Da una parte chi vuole riformare per crescere: Cottarelli che chiede di tagliare la burocrazia prima dei sussidi, De Romanis che ripete che la stabilità è uno strumento e non l'obiettivo, Rampini che vede nello Stato una zavorra. Dall'altra Tito Boeri, che guarda in basso — non alla crescita, ma a chi un lavoro ce l'ha e resta povero lo stesso.</p>
@@ -185,10 +225,14 @@
 <p>Qualche cosa da tenere d'occhio nelle prossime settimane.</p>
 <p>Cottarelli ha un'idea molto concreta: estendere a tutta Italia la semplificazione amministrativa già sperimentata al Sud con la Zes Unica, con scadenze vincolanti. Dice che vale più di qualsiasi sussidio.</p>
 <p>Sul fronte energia, Feltri smonta un alibi: l'Italia ha incassato oltre diciotto miliardi dalle aste europee sulla CO2, ma ne ha investito in clima meno del dieci per cento, quando l'obbligo era metà. Le bollette alte, suggerisce, sono più colpa nostra che di Bruxelles.</p>
-<p>E poi c'è Alessandro Barbero, che sposta lo sguardo dal portafoglio alla Costituzione. Si è schierato per il No al referendum sulla giustizia e, più in generale, avverte che le democrazie non muoiono più con un colpo di Stato: si logorano piano, rendendo antipatico il dissenso senza vietarlo. Un promemoria utile mentre tutti parlano di crescita: c'è un piano dove non si misura il PIL.</p>
+<p>E poi c'è <a href="#" class="face-link" onclick="vaiFonte(event, 'Alessandro Barbero')" title="Fonti di Alessandro Barbero"><img class="face-inline" loading="lazy" src="/signal-brief/italia/avatars/alessandro-barbero.jpg" alt=""></a>Alessandro Barbero, che sposta lo sguardo dal portafoglio alla Costituzione. Si è schierato per il No al referendum sulla giustizia e, più in generale, avverte che le democrazie non muoiono più con un colpo di Stato: si logorano piano, rendendo antipatico il dissenso senza vietarlo. Un promemoria utile mentre tutti parlano di crescita: c'è un piano dove non si misura il PIL.</p>
 <div class="chapter" data-mood="soft"><hr></div>
-<p>Resta quel teatro a Milano, con un gruppo di persone che per anni hanno spiegato perché l'Italia è ferma e adesso provano a darsi una bandiera. La domanda vera non è se hanno ragione sulla diagnosi. È se sanno mettersi d'accordo su cosa fare. Crescere o proteggere: per ora, due strade nello stesso campo.</p></div></details></section>
-<nav class="epnav"><span style="flex:1"></span><a href="/signal-brief/italia/2026-06-20/">2026-06-20 →</a></nav>
+<p>Resta quel teatro a Milano, con un gruppo di persone che per anni hanno spiegato perché l'Italia è ferma e adesso provano a darsi una bandiera. La domanda vera non è se hanno ragione sulla diagnosi. È se sanno mettersi d'accordo su cosa fare. Crescere o proteggere: per ora, due strade nello stesso campo.</p></div><div class="rawmd"><a href="raw.md">Testo (markdown)</a></div></div>
+<div class="tab-panel panel" data-sb-panel="comparazione" hidden><div class="state-note">Comparazione non disponibile per questo episodio.</div></div>
+<div class="tab-panel panel" data-sb-panel="segnali" hidden><div class="state-note">Nessun segnale disponibile per questo episodio.</div></div>
+<div class="tab-panel panel" data-sb-panel="fonti" hidden><div class="fonte" data-fonte-nome="Tito Boeri"><span class="who">Tito Boeri</span><a href="https://ossigeno.net/sfruttamento-made-in-italy-la-prefazione-di-tito-boeri/" target="_blank" rel="noopener">Prefazione "Sfruttamento Made in Italy" — Ossigeno</a><a href="https://corriereuniv.it/tito-boeri-economia-italiana-giovani-lavoro-intervista/" target="_blank" rel="noopener">Intervista CorriereUniv, 22 maggio 2026</a><a href="https://telenorba.it/2026/05/13/sorpasso-debito-pubblico-italia-grecia-2026-analisi-fmi/" target="_blank" rel="noopener">Debito pubblico: Italia supera Grecia nel 2026 — TeleNorba</a></div><div class="fonte" data-fonte-nome="Veronica De Romanis"><span class="who">Veronica De Romanis</span><a href="https://www.businesspeople.it/people/protagonisti/veronica-de-romanis-apriamoci-al-nuovo/" target="_blank" rel="noopener">BusinessPeople — intervista 18 giugno 2026</a><a href="https://www.radioradicale.it/scheda/789016/intervista-a-veronica-de-romanis-sui-motivi-del-fallimento-del-pnrr-in-italia" target="_blank" rel="noopener">Radio Radicale — PNRR, 8 maggio 2026</a><a href="https://www.quotidiano.net/economia/de-romanis-la-stabilita-non-7831fa35" target="_blank" rel="noopener">Quotidiano.net — conti pubblici, maggio 2026</a></div></div>
+</div>
+<script>function sbTab(key) {  document.querySelectorAll('.tab-panel').forEach(function (p) {    p.hidden = p.getAttribute('data-sb-panel') !== key;  });  document.querySelectorAll('#sbTabs .tab').forEach(function (b) {    b.setAttribute('aria-selected', b.dataset.tab === key ? 'true' : 'false');  });}function vaiFonte(ev, nome) {  ev.preventDefault();  sbTab('fonti');  var d = document.querySelector('[data-fonte-nome="' + nome + '"]');  if (d) d.scrollIntoView({behavior: 'smooth', block: 'center'});}</script>
 <dialog class="vplayer" id="vplayer"></dialog>
 <script>
 // player modale dei video: la miniatura apre il video al centro (disegno 2026-08-07)
