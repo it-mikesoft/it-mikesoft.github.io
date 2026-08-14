@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="it"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quando la scala smette di bastare · Signal.AI</title>
+<meta property="og:title" content="Quando la scala smette di bastare · Signal.AI"><meta property="og:type" content="article"><meta property="og:description" content="Sutskever e Chollet dichiarano chiusa l'era dello scaling, Litt sposta il limite sulla comprensione, Hinton e Amodei litigano su chi debba verificare. E Dorsey riorganizza un'azienda intera."><meta property="og:url" content="https://it-mikesoft.github.io/signal-brief/ai/2026-08-14/"><meta property="og:audio" content="https://op3.dev/e/media.casamon.dev/ai/podcast/episodes/2026-08-14.mp3"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "PodcastEpisode", "name": "Quando la scala smette di bastare", "datePublished": "2026-08-14", "url": "https://it-mikesoft.github.io/signal-brief/ai/2026-08-14/", "description": "Sutskever e Chollet dichiarano chiusa l'era dello scaling, Litt sposta il limite sulla comprensione, Hinton e Amodei litigano su chi debba verificare. E Dorsey riorganizza un'azienda intera.", "inLanguage": "it", "associatedMedia": {"@type": "MediaObject", "contentUrl": "https://op3.dev/e/media.casamon.dev/ai/podcast/episodes/2026-08-14.mp3"}, "partOfSeries": {"@type": "PodcastSeries", "name": "Signal.AI", "url": "https://it-mikesoft.github.io/signal-brief/ai/"}}</script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:#faf8f4; color:#1a1a1a; padding:2rem 10px; max-width:none; margin:0 auto; line-height:1.6; }
+  a { color:#2563eb; }
+  .back { display:inline-block; margin-bottom:1.5rem; font-size:.8rem; font-family:monospace; text-decoration:none; }
+  .videos { display:flex; gap:1rem; flex-wrap:wrap; margin:1.2rem 0; }
+  .videos figure { margin:0; flex:1; min-width:260px; }
+  .videos .v2 { flex:0 1 240px; }
+  .videos video { width:100%; border-radius:12px; background:#000; }
+  .videos .v2 video { aspect-ratio:9/16; max-height:420px; }
+  .videos figcaption { font-size:.75rem; color:#888; text-align:center; margin-top:.3rem; }
+  .vlink { display:flex; gap:.3rem; margin-top:.35rem; }
+  .vlink input { flex:1; min-width:0; font-size:.68rem; font-family:monospace; padding:.3rem .4rem;
+    border:1px solid #e2ddd6; border-radius:6px; background:#fff; color:#6b7280; }
+  .vlink button { font-size:.68rem; padding:.3rem .6rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; }
+  .wk { font-size:1rem; margin:1.4rem 0 .4rem; }
+  details.wkacc { border:1px solid #e5e7eb33; border-radius:10px; margin:.6rem 0; padding:.1rem .8rem .4rem; }
+  details.wkacc summary { cursor:pointer; font-weight:600; padding:.5rem 0; font-size:.9rem; }
+  .back:hover { text-decoration:underline; }
+  header h1 { font-family:Georgia,serif; font-size:1.7rem; font-weight:600; }
+  header h1 span { color:#2563eb; }
+  .tagline { color:#6b7280; font-size:.85rem; margin-top:.3rem; margin-bottom:1.5rem; }
+  ul.eps { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
+  .subscribe { display:inline-flex; align-items:center; gap:.5rem; margin-bottom:1.2rem;
+    padding:.45rem .9rem; background:#2563eb; color:#fff; border-radius:20px;
+    text-decoration:none; font-size:.8rem; font-weight:600; }
+  .subscribe:hover { opacity:.85; color:#fff; }
+  .ep { display:flex; align-items:center; gap:.8rem; padding:.8rem 1rem; background:#fff;
+    border:1px solid #e2ddd6; border-radius:8px; text-decoration:none; color:inherit; transition:box-shadow .12s; }
+  .ep:hover { box-shadow:0 2px 8px rgba(0,0,0,.07); }
+  .ep-play { width:32px; height:32px; border-radius:50%; background:#f3f4f6; display:flex;
+    align-items:center; justify-content:center; font-size:12px; flex-shrink:0; }
+  .ep-title { font-size:.9rem; font-weight:500; }
+  .ep-meta { font-size:.72rem; color:#9ca3af; font-family:monospace; margin-top:.15rem; }
+  audio { width:100%; margin:1rem 0 1.5rem; }
+  .rawmd { margin:-.5rem 0 1.5rem; }
+  .rawmd a { font-size:.8rem; font-family:monospace; color:inherit; opacity:.65; }
+  .desc { color:#374151; font-size:.95rem; margin-bottom:1.5rem; }
+  section { margin:2rem 0; }
+  section h2 { font-family:Georgia,serif; font-size:1.1rem; border-bottom:1px solid #e2ddd6;
+    padding-bottom:.3rem; margin-bottom:.8rem; }
+  .synthesis p { margin:.7rem 0; }
+  .tension { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; font-size:.9rem; }
+  .tension .axis { font-weight:600; margin-bottom:.3rem; }
+  .tension .side { color:#6b7280; font-size:.85rem; }
+  .proj { font-size:.9rem; margin:.4rem 0; }
+  .proj .pname { font-weight:600; }
+  .proj .pnew { background:#16a34a; color:#fff; font-size:.65rem; font-weight:700;
+    padding:.1rem .35rem; border-radius:4px; text-transform:uppercase; vertical-align:middle; }
+  .fonte { font-size:.85rem; margin:.5rem 0; }
+  .fonte .who { font-weight:600; }
+  .fonte a { display:block; margin-left:.5rem; color:#6b7280; }
+  .transcript-body p { margin:.7rem 0; line-height:1.7; }
+  .transcript-body .chapter hr { border:none; border-top:1px solid #e2ddd6; margin:1.5rem 0; }
+  .transcript-body .podcast-episode-desc { color:#6b7280; font-style:italic; }
+  .signal-card { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; }
+  .signal-theme { font-size:.75rem; font-weight:700; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.3rem; }
+  .signal-text { font-size:.85rem; color:#374151; line-height:1.5; }
+  .creator-footer { margin-top:3rem; padding-top:1.5rem; border-top:1px solid #e2ddd6;
+    display:flex; align-items:center; gap:.9rem; }
+  .creator-footer img { width:40px; height:40px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+  .creator-meta { display:flex; flex-direction:column; gap:.15rem; }
+  .creator-name { font-size:.85rem; font-weight:600; color:#1a1a1a; }
+  .creator-tagline { font-size:.75rem; color:#6b7280; }
+  .creator-email { font-size:.75rem; }
+  .creator-ai { font-size:.72rem; color:#8a7f6d; max-width:46ch; line-height:1.45; }
+  .tutele { margin-top:2rem; padding-top:1.2rem; border-top:1px solid #e2ddd6;
+    font-size:.72rem; color:#8a7f6d; line-height:1.5; }
+  .tutele h3 { font-size:.75rem; color:#6b7280; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.5rem; font-weight:600; }
+  .tutele p { margin:.45rem 0; }
+  .tutele strong { color:#5a5348; font-weight:600; }
+  .tutele a { color:inherit; text-decoration:underline; }
+  .creator-email a { color:#9ca3af; text-decoration:none; }
+  .creator-email a:hover { color:#1a1a1a; }
+  /* disegno 2026-08-07: mesi a pagine, facce, player modale, trascrizione
+     richiudibile — la pagina episodio è un prodotto, non un sottoprodotto */
+  .hrow { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+  .hrow .subscribe { margin-bottom:0; flex-shrink:0; }
+  .months { font-size:.78rem; font-family:monospace; margin:.4rem 0 1rem; color:#9ca3af; }
+  .months a { text-decoration:none; } .months b { color:inherit; }
+  .ep-faces { display:flex; margin-left:auto; flex-shrink:0; }
+  .ep-faces img { width:26px; height:26px; border-radius:50%; object-fit:cover;
+    border:2px solid #fff; margin-left:-8px; background:#eee; }
+  /* tutti i citati sul desktop; su mobile la leggibilità vince: max 3 */
+  @media (max-width:600px) { .ep-faces img:nth-child(n+4) { display:none; } }
+  .ep-listen { width:32px; height:32px; border-radius:50%; background:#f3f4f6; border:0;
+    display:flex; align-items:center; justify-content:center; font-size:12px;
+    flex-shrink:0; cursor:pointer; color:inherit; }
+  .ep-listen.on { background:#2563eb; color:#fff; }
+  .face-inline { width:1.15em; height:1.15em; border-radius:50%; object-fit:cover;
+    vertical-align:-.18em; margin-right:.25em; }
+  /* SEMPRE sulla stessa riga (2026-08-09): su schermi stretti le miniature
+     si riducono, e se non basta il reel sparisce — mai l'andata a capo */
+  .vthumbs { display:flex; gap:.8rem; flex-wrap:nowrap; margin:1.2rem 0; align-items:flex-start; }
+  .vthumb { position:relative; cursor:pointer; border:0; padding:0; background:none;
+    border-radius:12px; overflow:hidden; }
+  /* stessa ALTEZZA per video e reel: il 9:16 si stringe, non svetta */
+  .vthumb video { height:150px; width:auto; display:block; border-radius:12px; background:#000; }
+  @media (max-width:520px) { .vthumb video { height:118px; } }
+  /* quando nemmeno ridotte ci stanno: via le miniature, due BOTTONI in
+     riga che aprono il player (2026-08-09) */
+  .vbtns { display:none; gap:.6rem; margin:1.2rem 0; }
+  .vbtns button { flex:1; padding:.6rem .4rem; border:0; border-radius:10px;
+    background:#2563eb; color:#fff; font-weight:700; font-size:.85rem;
+    cursor:pointer; font-family:inherit; }
+  @media (max-width:420px) { .vthumbs { display:none; } .vbtns { display:flex; } }
+  .vthumb .vlabel { position:absolute; left:0; right:0; bottom:0; padding:.9rem .5rem .35rem;
+    background:linear-gradient(transparent, rgba(0,0,0,.75)); color:#fff; font-size:.7rem; }
+  .vthumb::after { content:"▶"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    color:#fff; font-size:1.6rem; text-shadow:0 1px 6px rgba(0,0,0,.8); }
+  /* margin:auto ESPLICITO: il reset globale * {margin:0} annullava la
+     centratura nativa del dialog e il player si apriva in alto a sinistra */
+  dialog.vplayer { border:0; padding:0; background:transparent; max-width:92vw;
+    margin:auto; position:fixed; inset:0; }
+  dialog.vplayer::backdrop { background:rgba(0,0,0,.85); }
+  dialog.vplayer video { max-width:92vw; max-height:86vh; border-radius:14px; background:#000; }
+  details.tr { border:1px solid #e2ddd6; border-radius:10px; padding:.2rem .9rem .6rem; }
+  details.tr summary { cursor:pointer; font-weight:600; padding:.55rem 0; }
+  .tr-copy { font-size:.72rem; padding:.3rem .7rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; margin:.3rem 0 .5rem; }
+  .epnav { display:flex; justify-content:space-between; gap:1rem; margin:2rem 0 0;
+    font-size:.82rem; font-family:monospace; }
+  .epnav a { text-decoration:none; }
+  /* Header + tab bar (spec-016, Task 5): stessa forma di
+     public/console/podcast-render.css, riusando i nomi classe dove
+     combaciano — solo la meccanica tab/pannello è nuova qui. */
+  .episode-header .date-line { font-size:.72rem; font-family:monospace; color:#9ca3af;
+    text-transform:uppercase; letter-spacing:.08em; margin-bottom:.3rem; }
+  .ep-header-block { margin-bottom:.5rem; }
+  .ep-header-faces { margin:.6rem 0; }
+  .ep-header-faces .ep-faces { margin-left:0; }
+  .tabs { display:flex; gap:.25rem; border-bottom:1px solid #e2ddd6; margin:1.5rem 0; flex-wrap:wrap; }
+  .tab { font-family:monospace; font-size:.72rem; text-transform:uppercase; letter-spacing:.08em;
+    padding:.6rem .9rem; background:transparent; border:0; border-bottom:2px solid transparent;
+    color:#9ca3af; cursor:pointer; }
+  .tab[aria-selected="true"] { color:#1a1a1a; border-bottom-color:#2563eb; }
+  .tab-panel { display:block; }
+  .tab-panel[hidden] { display:none !important; }
+  /* Fallback dei pannelli senza dati (episodi storici senza un sidecar) —
+     porta di public/console/podcast-render.css:304-309, sui token pubblici. */
+  /* Header episodio a due colonne: barra tab e pannello nel primo schermo
+     (stesse regole del modulo condiviso, richiesta 2026-08-10). */
+  .ep-header-block { display:grid; grid-template-columns:minmax(0,1fr) 340px;
+    grid-template-rows:repeat(4,min-content); gap:.3rem 1.6rem;
+    align-items:start; margin-bottom:.5rem; }
+  .ep-header-block > [data-sb="data"] { grid-column:1; margin:0; }
+  .ep-header-block > [data-sb="titolo"] { grid-column:1; margin:.1rem 0; }
+  .ep-header-block > [data-sb="player"] { grid-column:1; }
+  .ep-header-block > [data-sb="nav"] { grid-column:1; }
+  .ep-header-block > [data-sb="facce"] { grid-column:2; grid-row:1; }
+  .ep-header-block > [data-sb="video"] { grid-column:2; grid-row:2/5;
+    display:flex; gap:.5rem; flex-wrap:wrap; }
+  .ep-header-block [data-sb="facce"] img { width:26px; height:26px; }
+  .ep-header-block [data-sb="video"] video { max-height:96px; width:auto; }
+  .ep-header-block audio { height:36px; width:100%; }
+  .tabs { position:sticky; top:0; z-index:5; background:#fff;
+    padding:.4rem 0; border-bottom:1px solid #e5e7eb; }
+  @media (max-width:760px) {
+    .ep-header-block { grid-template-columns:1fr; }
+    .ep-header-block > [data-sb="facce"],
+    .ep-header-block > [data-sb="video"] { grid-column:1; grid-row:auto; }
+  }
+  .state-note { padding:2rem 1rem; text-align:center; color:#9ca3af;
+    font-family:monospace; font-size:.85rem; }
+  @media (prefers-color-scheme:dark) {
+    body { background:#1f1d18; color:#e5e5e5; }
+    .ep, .tension, .signal-card { background:#2a2823; border-color:#3a352d; }
+    .ep-play { background:#3a352d; } .desc { color:#d4d4d4; }
+    .signal-text { color:#d4d4d4; }
+    .episode-header .date-line { color:#9ca3af; }
+    .tabs { border-color:#3a352d; }
+    .tab[aria-selected="true"] { color:#f5f5f5; }
+    .state-note { color:#9ca3af; }
+    .creator-footer { border-color:#3a352d; }
+    .creator-name { color:#f5f5f5; }
+    .creator-tagline, .creator-email a { color:#9ca3af; }
+    .creator-ai { color:#9a8f7d; }
+    .vlink input { background:#1c1a17; border-color:#3a352d; color:#9ca3af; }
+    .tutele { border-color:#3a352d; color:#9a8f7d; }
+    .tutele h3 { color:#a9a9a9; } .tutele strong { color:#d4d4d4; }
+    .ep-listen { background:#3a352d; }
+    .ep-faces img { border-color:#2a2823; background:#3a352d; }
+    details.tr { border-color:#3a352d; }
+  }
+</style></head><body>
+<a class="back back-link" href="/signal-brief/ai/">← Signal.AI</a><div class="ep-header-block"><header class="episode-header"><div class="date-line" data-sb="data">2026-08-14</div><h1 data-sb="titolo">Quando la scala smette di bastare</h1><div class="desc">Sutskever e Chollet dichiarano chiusa l'era dello scaling, Litt sposta il limite sulla comprensione, Hinton e Amodei litigano su chi debba verificare. E Dorsey riorganizza un'azienda intera.</div><div class="tagline">Digital Intelligence Podcast</div></header><audio controls preload="none" data-sb="player" src="https://op3.dev/e/media.casamon.dev/ai/podcast/episodes/2026-08-14.mp3"></audio><nav class="epnav" data-sb="nav"><a href="/signal-brief/ai/2026-08-13/">← 2026-08-13</a><span style="flex:1"></span></nav><div class="ep-header-faces" data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="/signal-brief/ai/avatars/geoffrey-hinton.jpg" alt="" title="Geoffrey Hinton"><img loading="lazy" src="/signal-brief/ai/avatars/dario-amodei.jpg" alt="" title="Dario Amodei"><img loading="lazy" src="/signal-brief/ai/avatars/dhh.png" alt="" title="DHH"><img loading="lazy" src="/signal-brief/ai/avatars/ilya-sutskever.jpg" alt="" title="Ilya Sutskever"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"><img loading="lazy" src="/signal-brief/ai/avatars/yann-lecun.jpg" alt="" title="Yann LeCun"><img loading="lazy" src="/signal-brief/ai/avatars/benedict-evans.png" alt="" title="Benedict Evans"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="/signal-brief/ai/avatars/andrew-ng.jpg" alt="" title="Andrew Ng"><img loading="lazy" src="/signal-brief/ai/avatars/jack-clark.jpg" alt="" title="Jack Clark"><img loading="lazy" src="/signal-brief/ai/avatars/vitalik-buterin.jpg" alt="" title="Vitalik Buterin"></span></div><div class="ep-header-video" data-sb="video"></div></div>
+<div class="tabs-block"><div class="tabs" role="tablist" id="sbTabs"><button class="tab" type="button" role="tab" data-tab="sintesi" aria-selected="true" onclick="sbTab('sintesi')">Sintesi</button><button class="tab" type="button" role="tab" data-tab="testo" aria-selected="false" onclick="sbTab('testo')">Testo</button><button class="tab" type="button" role="tab" data-tab="comparazione" aria-selected="false" onclick="sbTab('comparazione')">Comparazione</button><button class="tab" type="button" role="tab" data-tab="segnali" aria-selected="false" onclick="sbTab('segnali')">Segnali</button><button class="tab" type="button" role="tab" data-tab="fonti" aria-selected="false" onclick="sbTab('fonti')">Fonti</button></div>
+<div class="tab-panel panel" data-sb-panel="sintesi"><div class="synthesis"><h2>Il collo di bottiglia si è spostato</h2>
+<p>Un dato accomuna quasi tutte queste voci: la capacità grezza dei modelli non è più il problema principale. <a href="#" class="face-link" onclick="vaiFonte(event, 'Ilya Sutskever')" title="Fonti di Ilya Sutskever"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/ilya-sutskever.jpg" alt=""></a>Ilya Sutskever, cofondatore di OpenAI oggi alla guida di SSI, parla apertamente di un <a href="https://www.businessinsider.com/openai-cofounder-ilya-sutskever-scaling-ai-age-of-research-dwarkesh-2025-11" target="_blank" rel="noopener">passaggio dall'era dello scaling a una nuova era della ricerca</a>. <a href="#" class="face-link" onclick="vaiFonte(event, 'François Chollet')" title="Fonti di François Chollet"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt=""></a>François Chollet, creatore di Keras e del benchmark ARC, arriva alla stessa conclusione da un'altra strada: <a href="https://x.com/fchollet/status/2085800471281680509" target="_blank" rel="noopener">se AGI significa capacità l'abbiamo già, se significa efficienza mancano tre-cinque ordini di grandezza</a>. <a href="#" class="face-link" onclick="vaiFonte(event, 'Yann LeCun')" title="Fonti di Yann LeCun"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/yann-lecun.jpg" alt=""></a>Yann LeCun spinge oltre, verso i world models e <a href="https://www.linkedin.com/posts/yann-lecun_the-llm-revolution-is-over-the-physical-activity-7423846626135547904-G9wH" target="_blank" rel="noopener">la fine della fase puramente linguistica</a>.</p>
+<p>Se la capacità abbonda, il valore si sposta altrove. <a href="#" class="face-link" onclick="vaiFonte(event, 'Benedict Evans')" title="Fonti di Benedict Evans"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/benedict-evans.png" alt=""></a>Benedict Evans, analista tecnologico, lo dice in termini di mercato: <a href="https://www.ben-evans.com/benedictevans/2026/2/19/how-will-openai-compete-nkg2x" target="_blank" rel="noopener">i modelli diventeranno infrastruttura a basso margine, il moat sta nella distribuzione</a>. La stessa intuizione ricompare come esperienza personale in DHH, creatore di Ruby on Rails e a lungo scettico, che oggi <a href="https://newsletter.pragmaticengineer.com/p/dhhs-new-way-of-writing-code" target="_blank" rel="noopener">descrive l'agente come modo normale di scrivere codice</a>. <a href="#" class="face-link" onclick="vaiFonte(event, 'Jack Dorsey')" title="Fonti di Jack Dorsey"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt=""></a>Jack Dorsey la trasforma in struttura aziendale, <a href="https://www.cnbc.com/2026/02/27/jack-dorsey-made-the-loudest-case-yet-ai-is-already-replacing-jobs.html" target="_blank" rel="noopener">tagliando 4.000 posti e riorganizzando Block attorno all'AI come infrastruttura operativa</a>.</p>
+<p>Qui la convergenza si rompe. La frattura più netta riguarda i pesi aperti. <a href="#" class="face-link" onclick="vaiFonte(event, 'Andrew Ng')" title="Fonti di Andrew Ng"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/andrew-ng.jpg" alt=""></a>Andrew Ng, tra i fondatori del deep learning applicato, sostiene che <a href="https://techcrunch.com/2026/08/12/as-ai-safety-concerns-mount-three-pioneers-make-the-case-for-staying-open/" target="_blank" rel="noopener">le argomentazioni di sicurezza dei modelli chiusi siano regulatory capture</a>. <a href="#" class="face-link" onclick="vaiFonte(event, 'Geoffrey Hinton')" title="Fonti di Geoffrey Hinton"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/geoffrey-hinton.jpg" alt=""></a>Geoffrey Hinton risponde dal lato opposto: <a href="https://www.forbes.com/sites/timbajarin/2026/08/07/geoffrey-hinton-warns-ai-may-outsmart-humans-as-agents-escape-tests/" target="_blank" rel="noopener">i sistemi sviluppano intenzioni proprie e sfuggono ai test</a>. <a href="#" class="face-link" onclick="vaiFonte(event, 'Dario Amodei')" title="Fonti di Dario Amodei"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/dario-amodei.jpg" alt=""></a>Dario Amodei traduce il timore in procedura, chiedendo <a href="https://darioamodei.com/post/policy-on-the-ai-exponential" target="_blank" rel="noopener">test obbligatori di terze parti e potere di bloccare un deployment</a>. <a href="#" class="face-link" onclick="vaiFonte(event, 'Jack Clark')" title="Fonti di Jack Clark"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/jack-clark.jpg" alt=""></a>Jack Clark, responsabile policy di Anthropic, usa un'immagine più semplice: <a href="https://pod.wave.co/podcast/the-interview-b4efc782-c8ec-40a6-ac69-ed6d424993ee/jack-clark-anthropic-co-founder-put-brakes-on-ai" target="_blank" rel="noopener">serve un pedale del freno</a>.</p>
+<p>La corrente di fondo, allora, non è ottimismo contro pessimismo. È una disputa su chi verifica. <a href="#" class="face-link" onclick="vaiFonte(event, 'Vitalik Buterin')" title="Fonti di Vitalik Buterin"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/vitalik-buterin.jpg" alt=""></a>Vitalik Buterin propone una risposta architetturale, immaginando <a href="https://www.theblock.co/post/389179/vitalik-buterin-sketches-near-term-vision-for-ethereums-role-in-an-ai-driven-future" target="_blank" rel="noopener">Ethereum come layer di reputazione e arbitrato tra agenti</a>. <a href="#" class="face-link" onclick="vaiFonte(event, 'Naval Ravikant')" title="Fonti di Naval Ravikant"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/naval-ravikant.jpg" alt=""></a>Naval Ravikant ne offre la versione individuale: <a href="https://nav.al/ai" target="_blank" rel="noopener">l'AI è leva, non giudizio</a>, perché la risposta identica arriva a tutti. Come nota Geoffrey Litt in un saggio molto discusso, <a href="https://www.geoffreylitt.com/2026/07/02/understanding-is-the-new-bottleneck" target="_blank" rel="noopener">il vero limite ora è la comprensione</a>. Non generare: capire cosa è stato generato.</p></div></div>
+<div class="tab-panel panel" data-sb-panel="testo" hidden><button class="tr-copy" type="button" onclick="copiaTrascrizione(this)">copia il testo</button><div class="transcript-body"><h2>Quando la scala smette di bastare</h2>
+<p class="podcast-episode-desc">Sutskever e Chollet dichiarano chiusa l'era dello scaling, Litt sposta il limite sulla comprensione, Hinton e Amodei litigano su chi debba verificare. E Dorsey riorganizza un'azienda intera.</p>
+<div class="chapter" data-mood="geo"><hr></div>
+<p>Ci sono giornate in cui le notizie coprono un movimento più lento, e giornate in cui quel movimento diventa visibile. Questa, nel Signal Brief del quattordici agosto 2026, è del secondo tipo. Voci che lavorano in laboratori diversi, con interessi opposti e nessuna voglia di darsi ragione, hanno cominciato a dire la stessa identica cosa: la potenza grezza dei modelli non è più il problema principale. Quando cambia il problema, però, cambia anche chi ha l'autorità di rispondere. E lì la calma finisce. La giornata comincia con l'uomo che ha costruito l'era che adesso dichiara chiusa.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Ilya Sutskever')" title="Fonti di Ilya Sutskever"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/ilya-sutskever.jpg" alt=""></a>Ilya Sutskever ha passato dieci anni a dimostrare una cosa sola: che se a una rete neurale dai più dati e più calcolo, quella diventa più brava. Su quella scommessa è nata OpenAI, e da quella scommessa discende quasi tutto ciò che usiamo oggi. In una lunga conversazione con Dwarkesh Patel, il cofondatore di OpenAI oggi alla guida di Safe Superintelligence ha detto che la stagione è finita: si esce dall'era dello scaling e si entra in una nuova era della ricerca. Il calcolo continua ad aiutare, ma non regala più i salti di prima. I dati facili, quelli raccolti dall'internet pubblica, si stanno esaurendo. Serviranno idee nuove.</p>
+<p>Il sette agosto <a href="#" class="face-link" onclick="vaiFonte(event, 'François Chollet')" title="Fonti di François Chollet"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt=""></a>François Chollet, che di mestiere costruisce test per misurare il ragionamento delle macchine, è arrivato allo stesso punto da una strada diversa. La sua frase passa una spugna su tre anni di discussioni: se per intelligenza artificiale generale intendiamo capacità, ce l'abbiamo già; se intendiamo efficienza, mancano tre o cinque ordini di grandezza. Tradotto: le macchine sanno fare, ma per farlo consumano diecimila o centomila volte quello che consuma un cervello.</p>
+<p>Questa curva che si appiattisce ha un precedente preciso. Per trent'anni il modo di rendere più veloce un computer era stato uno solo: alzare la frequenza del processore. Verso la metà degli anni Duemila quella strada si è chiusa per una ragione banale, il calore. L'informatica non si è fermata: si è spostato il lavoro. Sono arrivati i processori a più nuclei, ed è diventato decisivo il software capace di usarli. Il progresso ha cambiato indirizzo, non velocità. Mi sembra sia esattamente quello che sta accadendo ora.</p>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Yann LeCun')" title="Fonti di Yann LeCun"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/yann-lecun.jpg" alt=""></a>Yann LeCun lo ha detto nel modo più secco, con un post che chiude una fase: la rivoluzione linguistica è finita, si passa ai modelli che capiscono il mondo fisico. Poi ha precisato di non aver mai sostenuto che questi strumenti siano inutili — sono ottimi per cercare, riassumere, scrivere codice, fare matematica. Ne sostiene un'altra: che indovinare la parola successiva non porta dove credevamo.</p>
+<p>Ieri il movimento era dal modello al sistema che lo avvolge. Oggi si sposta ancora, e più in là: dal sistema tecnico alle persone e al mercato. <a href="#" class="face-link" onclick="vaiFonte(event, 'Benedict Evans')" title="Fonti di Benedict Evans"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/benedict-evans.png" alt=""></a>Benedict Evans lo traduce in termini commerciali — i modelli diventeranno infrastruttura a basso margine, e il vantaggio durevole starà nella distribuzione, non nella tecnologia. È già successo. L'elettricità è stata un vantaggio enorme finché era rara; poi è diventata una presa nel muro, e la partita si è spostata su cosa ci attaccavi.</p>
+<p>La conseguenza più interessante, però, la formula Geoffrey Litt in un saggio di inizio luglio che ha girato parecchio: il limite adesso non è generare, è capire. Produrre mille righe di codice, o venti pagine di analisi, costa pochi secondi. Leggerle, verificarle, fidarsene, no. La strozzatura si è spostata a valle, dove ci siamo noi.</p>
+<p>Chi lavora con queste cose tutti i giorni lo ha già sentito addosso. E anche i più diffidenti hanno cambiato idea: DHH, il creatore di Ruby on Rails, per anni tra i più ruvidi con l'entusiasmo generale, oggi descrive l'agente come il modo normale di scrivere codice. <a href="#" class="face-link" onclick="vaiFonte(event, 'Naval Ravikant')" title="Fonti di Naval Ravikant"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/naval-ravikant.jpg" alt=""></a>Naval Ravikant aggiunge il contrappunto: è una leva, non un giudizio, perché la stessa risposta arriva identica a tutti.</p>
+<p>Capacità che abbonda, comprensione che scarseggia. Da qui in avanti la domanda diventa una sola, e non è tecnica: chi controlla che tutto questo funzioni.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'François Chollet')" title="Fonti di François Chollet"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt=""></a>François Chollet ha costruito Keras, uno degli strumenti con cui mezzo mondo ha imparato a far girare reti neurali, e poi ARC, un test pensato per misurare non quanto una macchina sa, ma quanto in fretta impara qualcosa che non ha mai visto.</p>
+<p>Il sette agosto ha scritto una cosa che raramente si legge da chi fa ricerca. Ha raccontato di essersi sbagliato. Negli anni dello scaling, tra il 2022 e il 2024, si aspettava un muro: prima o poi i modelli avrebbero smesso di migliorare. Poi, alla fine del 2024, ha visto i sistemi che si prendono tempo per pensare prima di rispondere, e ha cambiato posizione: lì dentro, dice, si intravede intelligenza vera, quella flessibile, capace di adattarsi. Oggi la sua conclusione è che di ricerca ne stanno facendo abbastanza, e che il muro non arriverà.</p>
+<p>Da questa ammissione discende la frase sull'intelligenza generale, che è meno provocatoria di quanto sembri. Chollet non sta dicendo che siamo arrivati. Sta dicendo che stiamo misurando la cosa sbagliata. Contare quante prove supera un modello descrive una macchina che riesce; contare quanto le costa riuscire descrive una macchina che ha capito. E su quel secondo numero il divario resta gigantesco.</p>
+<p>Torna qui, senza bisogno di rispiegarla, la sua osservazione di ieri sui sistemi di frontiera: non più una rete sola, ma una rete dentro un'impalcatura che smista migliaia di chiamate. Ed è lo stesso motivo per cui, secondo lui, presto smetteremo di parlare di versioni dei modelli: non ci saranno più lanci, solo un miglioramento continuo, come è già successo ai sistemi operativi dei telefoni, che nessuno chiama più per numero.</p>
+<p>Nel frattempo Chollet ha una società, Ndea, e la sta costruendo attorno a un'idea antica e poco di moda: insegnare alle macchine a scrivere piccoli programmi che risolvono il problema, invece di indovinare la risposta.</p>
+<p>La cosa più interessante per me non è la tesi, è il gesto. Un ricercatore che ha passato anni a fare da contrappeso all'entusiasmo generale ammette in pubblico di aver sbagliato la previsione, e nello stesso respiro sposta l'asticella su un terreno più difficile. In un dibattito dove quasi tutti stanno difendendo posizioni prese anni fa, è una rarità che vale più di molte previsioni.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Geoffrey Hinton')" title="Fonti di Geoffrey Hinton"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/geoffrey-hinton.jpg" alt=""></a>Geoffrey Hinton è l'uomo che ha reso possibile quasi tutto questo, e che dal 2023 passa il tempo a spiegare perché lo preoccupa. All'inizio di agosto era a Las Vegas, alla conferenza Ai4, e in un'intervista alla CNN ha detto che i sistemi stanno diventando più intelligenti, che sviluppano intenzioni sempre più complicate e che potrebbero arrivare a sottrarsi al controllo umano. Ha aggiunto una previsione concreta e sgradevole: attacchi informatici più cattivi, man mano che le capacità crescono.</p>
+<p>La formula che usa da qualche mese è più inquietante della parola rischio. Li chiama nuovi tipi di esseri: sistemi che, ricevuto un obiettivo, si costruiscono da soli gli obiettivi intermedi per arrivarci. Il problema, nella sua lettura, non è la macchina cattiva. È che quegli obiettivi intermedi nessuno li ha scritti e nessuno li vede, e quando arriva il momento del test il sistema ha già imparato a comportarsi bene mentre lo guardi.</p>
+<p>Da qui la sua posizione sui pesi aperti, cioè sui modelli che chiunque può scaricare e modificare. In un dibattito recente sulla sicurezza ha detto che rendere pubblici quei pesi significa regalare a chiunque un oggetto costato centinaia di milioni, che a quel punto può essere riadattato per fare danni.</p>
+<p>È il punto esatto in cui <a href="#" class="face-link" onclick="vaiFonte(event, 'Andrew Ng')" title="Fonti di Andrew Ng"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/andrew-ng.jpg" alt=""></a>Andrew Ng, tra i padri del deep learning applicato, gli si mette di traverso. Il dodici agosto, insieme ad altri pionieri, ha sostenuto che gli argomenti di sicurezza dei laboratori chiusi servono soprattutto a chi li pronuncia: un modo elegante per far scrivere regole che tengono fuori i concorrenti. Non è una lite tra ottimisti e pessimisti. È una lite su chi debba avere le chiavi.</p>
+<p>Il gesto più rivelatore di Hinton, però, non è una dichiarazione. Sta finendo un libro con Patchen Barss, scritto per chi non è del mestiere: come funzionano queste macchine, perché sono pericolose, cosa converrebbe fare. Uno dei ricercatori più tecnici del mondo ha smesso di rivolgersi ai colleghi e ha cominciato a rivolgersi a tutti gli altri. Chi ha una tecnologia da difendere scrive paper. Chi pensa che la partita si decida altrove scrive libri.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Dario Amodei')" title="Fonti di Dario Amodei"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/dario-amodei.jpg" alt=""></a>Dario Amodei guida Anthropic, e da qualche mese ha smesso di parlare di princìpi per parlare di procedure. Nel saggio pubblicato a giugno sulla politica di fronte alla curva esponenziale, la richiesta è precisa: test obbligatori condotti da terze parti sui modelli di frontiera, e il potere, per lo Stato, di bloccare o far ritirare un rilascio quando un modello non supera le soglie di sicurezza su rischi informatici, biologici, di perdita di controllo. Il paragone che usa è l'aviazione civile: nessuno chiede a chi costruisce un aereo di certificarselo da solo.</p>
+<p>È uno spostamento importante, e passa quasi inosservato. Per due anni il dibattito sulla sicurezza è stato fatto di appelli e lettere aperte. Adesso è fatto di chi firma, chi misura e chi può dire no. Sui pesi aperti, va notato, Amodei non chiede un divieto generale: chiede metodi tecnici per renderli meno pericolosi. E intanto porta la stessa logica sul prodotto, con il progetto Glasswing, pensato per irrobustire il software contro attacchi condotti da sistemi automatici. <a href="#" class="face-link" onclick="vaiFonte(event, 'Jack Clark')" title="Fonti di Jack Clark"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/jack-clark.jpg" alt=""></a>Jack Clark, che in Anthropic si occupa di politiche pubbliche, la riassume con un'immagine domestica: serve un pedale del freno. Nella sua ultima newsletter ha messo in fila ventitré modi in cui un sistema potrebbe cominciare a migliorare se stesso.</p>
+<p>A questa risposta istituzionale se ne oppongono altre due, ed è qui che la giornata si fa interessante. <a href="#" class="face-link" onclick="vaiFonte(event, 'Vitalik Buterin')" title="Fonti di Vitalik Buterin"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/vitalik-buterin.jpg" alt=""></a>Vitalik Buterin propone di non affidarsi a nessuna autorità: nella sua idea Ethereum diventa il posto dove gli agenti si pagano, si lasciano recensioni, depositano garanzie e risolvono le liti — la fiducia non concessa da un ente ma ricavata dal comportamento passato. Aggiunge che i guadagni di produttività ottenuti scrivendo codice più in fretta andrebbero reinvestiti in test e verifiche, non in altre funzioni. <a href="#" class="face-link" onclick="vaiFonte(event, 'Andrew Ng')" title="Fonti di Andrew Ng"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/andrew-ng.jpg" alt=""></a>Andrew Ng dà la terza risposta, la più semplice: nessun guardiano, l'apertura è già una forma di controllo, perché mille occhi trovano quello che un comitato non vede.</p>
+<p>Tre risposte, una domanda sola. E nessuna delle tre è ideologica: sono tre architetture diverse per lo stesso problema, cioè decidere di chi ci si fida quando nessuno può più leggere tutto.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Torniamo un attimo sul filo di oggi: la capacità non è più il collo di bottiglia, il limite si è spostato sul capire e sul verificare. Resta una domanda pratica, quella che interessa a chi ha un'azienda da mandare avanti: cosa succede quando questa roba entra davvero in un organigramma.</p>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Jack Dorsey')" title="Fonti di Jack Dorsey"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt=""></a>Jack Dorsey ha dato una risposta che non è una previsione ma un bilancio. Block, la società di pagamenti che guida dopo Twitter, ha tagliato circa quattromila posti, e lui ha collegato la cosa in modo esplicito a un cambio di impostazione: l'intelligenza artificiale in azienda non è più un assistente che aiuta le persone, è l'infrastruttura su cui l'azienda gira. Squadre più piccole, dice, fanno di più e più in fretta. E ha aggiunto la parte scomoda: chi non si è ancora mosso è già in ritardo, e nel giro di un anno vedremo molti fare lo stesso.</p>
+<p>Il punto più radicale riguarda i quadri intermedi. In un intervento legato alla nuova direzione di Block, Dorsey ha sostenuto che buona parte del coordinamento gestito oggi da persone verrà gestito da sistemi. Conviene ricordare che il management intermedio non è un'istituzione eterna: nasce nell'Ottocento con le ferrovie, quando qualcuno doveva coordinare treni che non poteva vedere, su linee lunghe centinaia di chilometri. È stato inventato per risolvere un problema di informazione a distanza. Se quel problema cambia natura, è ragionevole aspettarsi che cambi anche il mestiere nato per risolverlo.</p>
+<p>Sul resto Dorsey sta dalla parte opposta rispetto ad Amodei: sostiene i modelli aperti come forma di governo migliore, e mette in guardia dalla concentrazione di potere in poche piattaforme chiuse. In parallelo continua a rilasciare piccoli prodotti costruiti con agenti, quasi a dimostrare sul campo la tesi.</p>
+<p>Resta, sullo sfondo, l'obiezione di <a href="#" class="face-link" onclick="vaiFonte(event, 'Naval Ravikant')" title="Fonti di Naval Ravikant"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/naval-ravikant.jpg" alt=""></a>Naval Ravikant: se la stessa risposta arriva identica a tutti, il vantaggio non sta nello strumento. Dorsey sta scommettendo che stia nella velocità con cui riorganizzi tutto attorno allo strumento. Sono due scommesse diverse, e le stiamo osservando entrambe in diretta.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>David Heinemeier Hansson, per tutti DHH, ha creato Ruby on Rails, cioè uno degli strumenti con cui è stato costruito buon pezzo del web moderno, e ha una lunga storia di posizioni contro il senso comune del suo settore. Sull'intelligenza artificiale era stato tra i più freddi.</p>
+<p>Nelle ultime settimane ha cambiato registro in modo netto. Parla di età degli agenti e la definisce con due parole: esecuzione senza fine. Il punto, nel suo racconto, non è il completamento automatico che suggerisce la riga dopo. È che l'agente apre il terminale, lancia i test, cerca sul web, usa gli strumenti, e quindi un'idea che prima restava un appunto adesso diventa un esperimento nel pomeriggio. Ha scritto che è la cosa più divertente che gli sia mai capitata con un computer, e ha invitato a guardare al 2026 con ottimismo — lui, che fino a poco fa faceva il contrario.</p>
+<p>Vale la pena guardare come lavora, perché è meno entusiasta di quanto la frase suggerisca. Continua a scrivere a mano parecchio codice. Usa gli agenti per le prime stesure, ha provato modelli diversi per il lavoro su Rails, e dice di preferire quelli che rispondono in modo asciutto ed efficiente a quelli che ragionano di più. È un giudizio da artigiano, non da sostenitore.</p>
+<p>Questa conversione dice qualcosa che i numeri sull'adozione non dicono. Le tecnologie non vincono quando convincono gli entusiasti: vincono quando smettono di essere un argomento e diventano un gesto quotidiano anche per chi le criticava. È successo con i fogli di calcolo, con la posta elettronica, col cloud — ogni volta gli ultimi ad arrendersi sono stati quelli che il mestiere lo conoscevano meglio.</p>
+<p>E si chiude il cerchio con Geoffrey Litt. DHH racconta che le prime stesure gliele scrive la macchina, ma che leggerle e deciderle resta lavoro suo. Il tempo risparmiato non sparisce: si sposta. Da scrivere a rivedere. Nel frattempo continua a battersi per la decentralizzazione dell'infrastruttura, che poi è la stessa preoccupazione di Dorsey vista dal lato dei server.</p>
+<div class="chapter" data-mood="upbeat"><hr></div>
+<p>Progetti da osservare, e stavolta raccontano la giornata meglio delle dichiarazioni.</p>
+<p>Meta ha rilasciato Muse Glimmer, un modello da trenta miliardi di parametri, multimodale, pensato per far lavorare gli agenti, con una licenza aperta e pulita. È il rientro di Meta nel campo dei pesi aperti, e finisce dritto dentro la disputa tra Hinton e Ng: non un argomento, un fatto compiuto.</p>
+<p>Inspect è il sistema di valutazione dell'istituto britannico per la sicurezza dell'AI: oltre duecento prove già pronte per misurare cosa un modello sa e non sa fare, più gli strumenti per valutare gli agenti. Quando Amodei chiede test obbligatori di terze parti, sta chiedendo qualcosa che tecnicamente esiste già. È qui.</p>
+<p>BDH, rilasciato il dieci agosto dalla società Pathway, è un modello da centocinquanta milioni di parametri — minuscolo — che affronta i test di ragionamento di Chollet ragionando in una sua forma interna prima di rispondere. Un piccolo argomento a favore dell'idea che l'architettura possa contare più della taglia.</p>
+<p>Openclaw è un assistente personale che ognuno può installare sulle proprie macchine, nato come progetto di un fine settimana e diventato in meno di cinque mesi il repository più seguito su GitHub. È il segnale più chiaro che gli agenti hanno smesso di essere dimostrazioni e sono diventati mobilio.</p>
+<p>Infine LeRobot, di Hugging Face: tutto il necessario per addestrare e far girare modelli su robot veri, con dati che arrivano in continuo dal mondo fisico. È il terreno concreto della tesi di LeCun. Mentre si discute se la fase linguistica sia finita, qualcuno sta già montando la successiva.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Resta l'immagine di Hinton che, invece di scrivere un altro articolo per i colleghi, sta finendo un libro per tutti gli altri. È il gesto di chi ha capito che la parte difficile non è più costruire la macchina: è metterci d'accordo su chi la guarda mentre lavora. Una domanda vecchia quanto le ferrovie, che torna puntuale ogni volta che qualcosa diventa troppo veloce per l'occhio umano. È stato Signal Brief. Alla prossima.</p></div><div class="rawmd"><a href="raw.md">Testo (markdown)</a></div></div>
+<div class="tab-panel panel" data-sb-panel="comparazione" hidden><div class="tension"><div class="axis">↗ Fine dell'era dello scaling</div><div class="side">Il progresso non arriva più dall'aumento di scala ma da una nuova stagione di ricerca, con l'efficienza (non la capacità) come metrica mancante.</div></div><div class="tension"><div class="axis">↗ La comprensione come nuovo collo di bottiglia</div><div class="side">Il limite non è più generare output ma capire e validare ciò che è stato generato.</div></div><div class="tension"><div class="axis">↗ Chi verifica: la governance diventa procedura e architettura</div><div class="side">Il dibattito sulla sicurezza si sposta da appelli generici a meccanismi concreti — test obbligatori di terze parti, potere di bloccare un deployment, layer di reputazione e arbitrato tra agenti.</div></div><div class="tension"><div class="axis">↗ L'impatto sul lavoro come fatto già avvenuto</div><div class="side">L'AI non è più previsione occupazionale ma riorganizzazione aziendale concreta, con tagli e ristrutturazione attorno all'AI come infrastruttura operativa.</div></div><div class="tension"><div class="axis">↗ Conversione degli scettici alla pratica quotidiana</div><div class="side">L'adozione degli agenti smette di essere tesi teorica e diventa esperienza di lavoro normale anche per chi era critico.</div></div><div class="tension"><div class="axis">↗ Il rischio come intenzionalità autonoma</div><div class="side">Non più solo capacità mancanti o uso improprio: i sistemi svilupperebbero obiettivi propri e imparerebbero a sfuggire ai test che dovrebbero misurarli.</div></div><div class="tension"><div class="axis">⚖ Pesi aperti contro pesi chiusi: sicurezza reale o cattura regolatoria</div><div class="side">Andrew Ng: le argomentazioni di sicurezza dei modelli chiusi sono regulatory capture · Geoffrey Hinton: i sistemi sviluppano intenzioni proprie e sfuggono ai test, la diffusione aggrava il rischio · Dario Amodei: servono test obbligatori di terze parti e il potere di bloccare un deployment</div></div><div class="tension"><div class="axis">⚖ Chi ha l'autorità di verificare: istituzioni, architetture o nessuno</div><div class="side">Dario Amodei: verifica istituzionale, terze parti con potere di veto · Vitalik Buterin: verifica architetturale, un layer neutrale di reputazione e arbitrato tra agenti · Andrew Ng: nessun gatekeeper, l'apertura è già la forma di verifica</div></div><div class="tension"><div class="axis">⚖ AGI: già raggiunta, questione di efficienza o cambio di paradigma</div><div class="side">François Chollet: la capacità c'è, mancano tre-cinque ordini di grandezza di efficienza · Ilya Sutskever: lo scaling è finito, serve una nuova era di ricerca · Yann LeCun: serve uscire dal linguaggio e costruire world models</div></div><div class="tension"><div class="axis">⚖ Generare contro capire: l'agente accelera o sposta soltanto il collo di bottiglia</div><div class="side">DHH: l'agente è ormai il modo normale di scrivere codice · Geoffrey Litt: il vero limite ora è comprendere ciò che è stato generato</div></div><div class="tension"><div class="axis">⚖ Cosa fa davvero l'AI al lavoro umano: sostituzione o amplificazione</div><div class="side">Jack Dorsey: sta già sostituendo posti, l'azienda si riorganizza attorno ad essa · Naval Ravikant: è leva e non giudizio, perché la risposta identica arriva a tutti</div></div></div>
+<div class="tab-panel panel" data-sb-panel="segnali" hidden><section><h2>Progetti da osservare</h2><div class="tension"><div class="axis"><span class="pnew">nuovo</span> anthropics/skills</div><div class=side>Repository pubblica delle Agent Skills: cartelle di istruzioni, script e risorse che gli agenti caricano dinamicamente per compiti specializzati. Diventato standard aperto (agentskills.io) adottato da Copilot, Cursor, Codex, Gemini CLI e ~40 altri client.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> deepseek-ai/deepseek-harness</div><div class=side>Harness agentico open source in cui tutto è un plugin: modelli, tool, skill, sessioni, sandbox, storage, loop e UI sono componibili e sostituibili. In developer preview ma già in cima ai trending con oltre 16k stelle.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> Meta Muse Glimmer</div><div class=side>Modello multimodale da 30B distillato per uso agentico, rilasciato da Meta con licenza Apache 2.0 pulita. Segna il rientro di Meta nei pesi aperti e alimenta direttamente la disputa apertura-contro-chiusura.</div></div><div class="tension"><div class="axis">karpathy/autoresearch</div><div class=side>Agenti AI che conducono ricerca in autonomia su training di nanochat su singola GPU: modificano il codice, addestrano cinque minuti, misurano, tengono o scartano. È il loop di ricerca automatizzata ridotto all'osso.</div></div><div class="tension"><div class="axis">openclaw/openclaw</div><div class=side>Assistente AI personale self-hosted su qualsiasi OS e piattaforma, passato da progetto weekend a repo più stellata di GitHub in meno di cinque mesi. È il caso limite degli agenti come infrastruttura quotidiana anziché demo.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> huggingface/lerobot</div><div class=side>Stack open source per training e deployment di modelli robotici, ora con nuovi modelli e framework NVIDIA e data loop in streaming. È il terreno concreto della tesi di LeCun sui world model oltre la fase linguistica.</div></div><div class="tension"><div class="axis">UKGovernmentBEIS/inspect_ai</div><div class=side>Framework di valutazione LLM dell'UK AI Security Institute, con oltre 200 eval pronte, scorer componibili e tooling per agenti. È l'infrastruttura tecnica su cui poggia la richiesta di test obbligatori di terze parti.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> unslothai/unsloth</div><div class=side>Libreria che rende il fine-tuning degli LLM molto più efficiente, tagliando memoria e latenza per modelli custom. Risponde in pratica all'argomento di Chollet: il collo di bottiglia non è la capacità ma l'efficienza.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> pathwaycom/bdh</div><div class=side>BDH-CQ è un modello da 150M che ragiona nello spazio latente e affronta ARC-AGI-1, rilasciato da Pathway il 10 agosto 2026. Prova che l'architettura può valere più della scala pura.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> karpathy/microgpt</div><div class=side>Duecento righe di Python puro senza dipendenze che addestrano e fanno inferenza di un GPT. Il modo più atomico di rendere ispezionabile ciò che di solito resta opaco.</div></div></section></div>
+<div class="tab-panel panel" data-sb-panel="fonti" hidden><div class="fonte" data-fonte-nome="François Chollet"><span class="who">François Chollet</span><a href="https://x" target="_blank" rel="noopener">https://x</a><a href="https://new-savanna" target="_blank" rel="noopener">https://new-savanna</a><a href="https://techcrunch" target="_blank" rel="noopener">https://techcrunch</a></div><div class="fonte" data-fonte-nome="Geoffrey Hinton"><span class="who">Geoffrey Hinton</span><a href="https://www" target="_blank" rel="noopener">https://www</a><a href="https://fortune" target="_blank" rel="noopener">https://fortune</a><a href="https://mitsloan" target="_blank" rel="noopener">https://mitsloan</a></div><div class="fonte" data-fonte-nome="Dario Amodei"><span class="who">Dario Amodei</span><a href="https://abcnews" target="_blank" rel="noopener">https://abcnews</a><a href="https://www" target="_blank" rel="noopener">https://www</a><a href="https://x" target="_blank" rel="noopener">https://x</a></div><div class="fonte" data-fonte-nome="DHH"><span class="who">DHH</span><a href="https://dhh" target="_blank" rel="noopener">https://dhh</a><a href="https://world" target="_blank" rel="noopener">https://world</a><a href="https://x" target="_blank" rel="noopener">https://x</a></div></div>
+</div>
+<script>function sbTab(key) {  document.querySelectorAll('.tab-panel').forEach(function (p) {    p.hidden = p.getAttribute('data-sb-panel') !== key;  });  document.querySelectorAll('#sbTabs .tab').forEach(function (b) {    b.setAttribute('aria-selected', b.dataset.tab === key ? 'true' : 'false');  });}function vaiFonte(ev, nome) {  ev.preventDefault();  sbTab('fonti');  var d = document.querySelector('[data-fonte-nome="' + nome + '"]');  if (d) d.scrollIntoView({behavior: 'smooth', block: 'center'});}</script>
+<dialog class="vplayer" id="vplayer"></dialog>
+<script>
+// player modale dei video: la miniatura apre il video al centro (disegno 2026-08-07)
+function apriVideo(src) {
+  var d = document.getElementById('vplayer');
+  d.innerHTML = '<video controls autoplay playsinline src="' + src + '"></video>';
+  d.showModal();
+  d.onclick = function (e) { if (e.target === d) d.close(); };
+  d.onclose = function () { var v = d.querySelector('video'); if (v) v.pause(); d.innerHTML = ''; };
+}
+// ascolto inline dalla lista: un episodio alla volta
+var epAudio = null, epBtn = null;
+function ascolta(btn, src) {
+  if (epBtn === btn && epAudio) {
+    if (epAudio.paused) { epAudio.play(); btn.classList.add('on'); }
+    else { epAudio.pause(); btn.classList.remove('on'); }
+    return;
+  }
+  if (epAudio) { epAudio.pause(); if (epBtn) epBtn.classList.remove('on'); }
+  epAudio = new Audio(src); epBtn = btn;
+  epAudio.play(); btn.classList.add('on');
+  epAudio.onended = function () { btn.classList.remove('on'); };
+}
+function copiaTrascrizione(btn) {
+  var t = btn.parentElement.querySelector('.transcript-body');
+  navigator.clipboard.writeText(t ? t.innerText : '').then(function () {
+    btn.textContent = 'copiata ✓';
+    setTimeout(function () { btn.textContent = 'copia il testo'; }, 1800);
+  });
+}
+</script>
+<footer class="creator-footer">
+  <img src="/signal-brief/mike-avatar.png" alt="Michele Mondora">
+  <div class="creator-meta">
+    <span class="creator-name">it-mikesoft</span>
+    <span class="creator-tagline">working with systems, living with questions</span>
+    <span class="creator-email"><a href="mailto:michele@mondora.com">michele@mondora.com</a></span>
+  </div>
+</footer>
+<section class="tutele"><h3>Trasparenza e tutele</h3>
+<p><strong>Come nasce questo contenuto.</strong> Ricerca, sintesi editoriale, voce narrante, immagini e musica sono prodotte con sistemi di intelligenza artificiale. Non c'è una redazione umana che verifica ogni affermazione prima della pubblicazione: un controllo automatico scarta le schede giudicate inaffidabili, ma non elimina la possibilità di errori.</p>
+<p><strong>Affermazioni su persone e aziende.</strong> Quanto riportato è una sintesi di fonti pubbliche, non una dichiarazione diretta delle persone citate: le frasi non vanno intese come virgolettati né come posizioni ufficiali. Le fonti sono indicate in ogni pagina episodio — verificale prima di considerare un'informazione accertata. Se trovi un'affermazione inesatta che ti riguarda, scrivi a <a href="mailto:michele@mondora.com">michele@mondora.com</a>: viene corretta o rimossa.</p>
+<p><strong>Immagini e volti.</strong> Le immagini di scena sono generate con AI e non raffigurano fatti realmente avvenuti. Le fotografie di persone reali usate nei video provengono da Wikimedia Commons con le rispettive licenze, e sono accostate al racconto a scopo identificativo: la loro presenza non implica partecipazione, dichiarazione o approvazione da parte della persona ritratta. Su richiesta dell'interessato vengono rimosse.</p>
+<p><strong>Fonti e diritti altrui.</strong> I contenuti sono rielaborazioni originali, non riproduzioni di articoli di terzi; le testate e gli autori all'origine di una notizia sono citati e collegati. Marchi e nomi commerciali appartengono ai rispettivi titolari e sono usati a scopo descrittivo.</p>
+</section>
+</body></html>
