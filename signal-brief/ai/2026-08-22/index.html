@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="it"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Il laboratorio che si ferma · Signal.AI</title>
+<meta property="og:title" content="Il laboratorio che si ferma · Signal.AI"><meta property="og:type" content="article"><meta property="og:description" content="Un addestramento sospeso, cinquecento miliardi di infrastruttura e un test da cinquemila righe di codice: la settimana in cui l'AI ha smesso di essere un modello."><meta property="og:url" content="https://it-mikesoft.github.io/signal-brief/ai/2026-08-22/"><meta property="og:audio" content="https://op3.dev/e/media.casamon.dev/ai/podcast/episodes/2026-08-22.mp3"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "PodcastEpisode", "name": "Il laboratorio che si ferma", "datePublished": "2026-08-22", "url": "https://it-mikesoft.github.io/signal-brief/ai/2026-08-22/", "description": "Un addestramento sospeso, cinquecento miliardi di infrastruttura e un test da cinquemila righe di codice: la settimana in cui l'AI ha smesso di essere un modello.", "inLanguage": "it", "associatedMedia": {"@type": "MediaObject", "contentUrl": "https://op3.dev/e/media.casamon.dev/ai/podcast/episodes/2026-08-22.mp3"}, "partOfSeries": {"@type": "PodcastSeries", "name": "Signal.AI", "url": "https://it-mikesoft.github.io/signal-brief/ai/"}}</script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:#faf8f4; color:#1a1a1a; padding:2rem 10px; max-width:none; margin:0 auto; line-height:1.6; }
+  a { color:#2563eb; }
+  .back { display:inline-block; margin-bottom:1.5rem; font-size:.8rem; font-family:monospace; text-decoration:none; }
+  .videos { display:flex; gap:1rem; flex-wrap:wrap; margin:1.2rem 0; }
+  .videos figure { margin:0; flex:1; min-width:260px; }
+  .videos .v2 { flex:0 1 240px; }
+  .videos video { width:100%; border-radius:12px; background:#000; }
+  .videos .v2 video { aspect-ratio:9/16; max-height:420px; }
+  .videos figcaption { font-size:.75rem; color:#888; text-align:center; margin-top:.3rem; }
+  .vlink { display:flex; gap:.3rem; margin-top:.35rem; }
+  .vlink input { flex:1; min-width:0; font-size:.68rem; font-family:monospace; padding:.3rem .4rem;
+    border:1px solid #e2ddd6; border-radius:6px; background:#fff; color:#6b7280; }
+  .vlink button { font-size:.68rem; padding:.3rem .6rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; }
+  .wk { font-size:1rem; margin:1.4rem 0 .4rem; }
+  details.wkacc { border:1px solid #e5e7eb33; border-radius:10px; margin:.6rem 0; padding:.1rem .8rem .4rem; }
+  details.wkacc summary { cursor:pointer; font-weight:600; padding:.5rem 0; font-size:.9rem; }
+  .back:hover { text-decoration:underline; }
+  header h1 { font-family:Georgia,serif; font-size:1.7rem; font-weight:600; }
+  header h1 span { color:#2563eb; }
+  .tagline { color:#6b7280; font-size:.85rem; margin-top:.3rem; margin-bottom:1.5rem; }
+  ul.eps { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
+  .subscribe { display:inline-flex; align-items:center; gap:.5rem; margin-bottom:1.2rem;
+    padding:.45rem .9rem; background:#2563eb; color:#fff; border-radius:20px;
+    text-decoration:none; font-size:.8rem; font-weight:600; }
+  .subscribe:hover { opacity:.85; color:#fff; }
+  .ep { display:flex; align-items:center; gap:.8rem; padding:.8rem 1rem; background:#fff;
+    border:1px solid #e2ddd6; border-radius:8px; text-decoration:none; color:inherit; transition:box-shadow .12s; }
+  .ep:hover { box-shadow:0 2px 8px rgba(0,0,0,.07); }
+  .ep-play { width:32px; height:32px; border-radius:50%; background:#f3f4f6; display:flex;
+    align-items:center; justify-content:center; font-size:12px; flex-shrink:0; }
+  .ep-title { font-size:.9rem; font-weight:500; }
+  .ep-meta { font-size:.72rem; color:#9ca3af; font-family:monospace; margin-top:.15rem; }
+  audio { width:100%; margin:1rem 0 1.5rem; }
+  .rawmd { margin:-.5rem 0 1.5rem; }
+  .rawmd a { font-size:.8rem; font-family:monospace; color:inherit; opacity:.65; }
+  .desc { color:#374151; font-size:.95rem; margin-bottom:1.5rem; }
+  section { margin:2rem 0; }
+  section h2 { font-family:Georgia,serif; font-size:1.1rem; border-bottom:1px solid #e2ddd6;
+    padding-bottom:.3rem; margin-bottom:.8rem; }
+  .synthesis p { margin:.7rem 0; }
+  .tension { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; font-size:.9rem; }
+  .tension .axis { font-weight:600; margin-bottom:.3rem; }
+  .tension .side { color:#6b7280; font-size:.85rem; }
+  .proj { font-size:.9rem; margin:.4rem 0; }
+  .proj .pname { font-weight:600; }
+  .proj .pnew { background:#16a34a; color:#fff; font-size:.65rem; font-weight:700;
+    padding:.1rem .35rem; border-radius:4px; text-transform:uppercase; vertical-align:middle; }
+  .fonte { font-size:.85rem; margin:.5rem 0; }
+  .fonte .who { font-weight:600; }
+  .fonte a { display:block; margin-left:.5rem; color:#6b7280; }
+  .transcript-body p { margin:.7rem 0; line-height:1.7; }
+  .transcript-body .chapter hr { border:none; border-top:1px solid #e2ddd6; margin:1.5rem 0; }
+  .transcript-body .podcast-episode-desc { color:#6b7280; font-style:italic; }
+  .signal-card { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; }
+  .signal-theme { font-size:.75rem; font-weight:700; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.3rem; }
+  .signal-text { font-size:.85rem; color:#374151; line-height:1.5; }
+  .creator-footer { margin-top:3rem; padding-top:1.5rem; border-top:1px solid #e2ddd6;
+    display:flex; align-items:center; gap:.9rem; }
+  .creator-footer img { width:40px; height:40px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+  .creator-legal { font-size:.78rem; margin-top:.15rem; }
+  .creator-legal a { color:inherit; }
+  .creator-meta { display:flex; flex-direction:column; gap:.15rem; }
+  .creator-name { font-size:.85rem; font-weight:600; color:#1a1a1a; }
+  .creator-tagline { font-size:.75rem; color:#6b7280; }
+  .creator-email { font-size:.75rem; }
+  .creator-ai { font-size:.72rem; color:#8a7f6d; max-width:46ch; line-height:1.45; }
+  .sostieni { margin-top:2.5rem; padding:1.2rem 1.4rem; border-radius:14px;
+    background:#f7f4ef; border:1px solid #e2ddd6; }
+  .sostieni h3 { margin:0 0 .3rem; font-size:1rem; }
+  .sostieni p { margin:0 0 .9rem; font-size:.88rem; color:#6b6257; line-height:1.55; }
+  .sostieni-atti { display:flex; gap:.8rem; align-items:center; flex-wrap:wrap; }
+  .sostieni-btn { display:inline-block; padding:.55rem 1.1rem; border-radius:10px;
+    background:#2563eb; color:#fff; text-decoration:none; font-weight:700; font-size:.88rem; }
+  .sostieni-alt { font-size:.85rem; color:#6b6257; text-decoration:none; }
+  .sostieni-alt:hover { text-decoration:underline; }
+  .tutele { margin-top:2rem; padding-top:1.2rem; border-top:1px solid #e2ddd6;
+    font-size:.72rem; color:#8a7f6d; line-height:1.5; }
+  .tutele h3 { font-size:.75rem; color:#6b7280; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.5rem; font-weight:600; }
+  .tutele p { margin:.45rem 0; }
+  .tutele strong { color:#5a5348; font-weight:600; }
+  .tutele a { color:inherit; text-decoration:underline; }
+  .creator-email a { color:#9ca3af; text-decoration:none; }
+  .creator-email a:hover { color:#1a1a1a; }
+  /* disegno 2026-08-07: mesi a pagine, facce, player modale, trascrizione
+     richiudibile — la pagina episodio è un prodotto, non un sottoprodotto */
+  .hrow { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+  .hrow .subscribe { margin-bottom:0; flex-shrink:0; }
+  .months { font-size:.78rem; font-family:monospace; margin:.4rem 0 1rem; color:#9ca3af; }
+  .months a { text-decoration:none; } .months b { color:inherit; }
+  .ep-faces { display:flex; margin-left:auto; flex-shrink:0; }
+  .ep-faces img { width:26px; height:26px; border-radius:50%; object-fit:cover;
+    border:2px solid #fff; margin-left:-8px; background:#eee; }
+  /* tutti i citati sul desktop; su mobile la leggibilità vince: max 3 */
+  @media (max-width:600px) { .ep-faces img:nth-child(n+4) { display:none; } }
+  .ep-listen { width:32px; height:32px; border-radius:50%; background:#f3f4f6; border:0;
+    display:flex; align-items:center; justify-content:center; font-size:12px;
+    flex-shrink:0; cursor:pointer; color:inherit; }
+  .ep-listen.on { background:#2563eb; color:#fff; }
+  .face-inline { width:1.15em; height:1.15em; border-radius:50%; object-fit:cover;
+    vertical-align:-.18em; margin-right:.25em; }
+  /* SEMPRE sulla stessa riga (2026-08-09): su schermi stretti le miniature
+     si riducono, e se non basta il reel sparisce — mai l'andata a capo */
+  .vthumbs { display:flex; gap:.8rem; flex-wrap:nowrap; margin:1.2rem 0; align-items:flex-start; }
+  .vthumb { position:relative; cursor:pointer; border:0; padding:0; background:none;
+    border-radius:12px; overflow:hidden; }
+  /* stessa ALTEZZA per video e reel: il 9:16 si stringe, non svetta */
+  .vthumb video { height:150px; width:auto; display:block; border-radius:12px; background:#000; }
+  @media (max-width:520px) { .vthumb video { height:118px; } }
+  /* quando nemmeno ridotte ci stanno: via le miniature, due BOTTONI in
+     riga che aprono il player (2026-08-09) */
+  .vbtns { display:none; gap:.6rem; margin:1.2rem 0; }
+  .vbtns button { flex:1; padding:.6rem .4rem; border:0; border-radius:10px;
+    background:#2563eb; color:#fff; font-weight:700; font-size:.85rem;
+    cursor:pointer; font-family:inherit; }
+  @media (max-width:420px) { .vthumbs { display:none; } .vbtns { display:flex; } }
+  .vthumb .vlabel { position:absolute; left:0; right:0; bottom:0; padding:.9rem .5rem .35rem;
+    background:linear-gradient(transparent, rgba(0,0,0,.75)); color:#fff; font-size:.7rem; }
+  .vthumb::after { content:"▶"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    color:#fff; font-size:1.6rem; text-shadow:0 1px 6px rgba(0,0,0,.8); }
+  /* margin:auto ESPLICITO: il reset globale * {margin:0} annullava la
+     centratura nativa del dialog e il player si apriva in alto a sinistra */
+  dialog.vplayer { border:0; padding:0; background:transparent; max-width:92vw;
+    margin:auto; position:fixed; inset:0; }
+  dialog.vplayer::backdrop { background:rgba(0,0,0,.85); }
+  dialog.vplayer video { max-width:92vw; max-height:86vh; border-radius:14px; background:#000; }
+  details.tr { border:1px solid #e2ddd6; border-radius:10px; padding:.2rem .9rem .6rem; }
+  details.tr summary { cursor:pointer; font-weight:600; padding:.55rem 0; }
+  .tr-copy { font-size:.72rem; padding:.3rem .7rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; margin:.3rem 0 .5rem; }
+  .epnav { display:flex; justify-content:space-between; gap:1rem; margin:2rem 0 0;
+    font-size:.82rem; font-family:monospace; }
+  .epnav a { text-decoration:none; }
+  /* Header + tab bar (spec-016, Task 5): stessa forma di
+     public/console/podcast-render.css, riusando i nomi classe dove
+     combaciano — solo la meccanica tab/pannello è nuova qui. */
+  .episode-header .date-line { font-size:.72rem; font-family:monospace; color:#9ca3af;
+    text-transform:uppercase; letter-spacing:.08em; margin-bottom:.3rem; }
+  .ep-header-block { margin-bottom:.5rem; }
+  .ep-header-faces { margin:.6rem 0; }
+  .ep-header-faces .ep-faces { margin-left:0; }
+  .tabs { display:flex; gap:.25rem; border-bottom:1px solid #e2ddd6; margin:1.5rem 0; flex-wrap:wrap; }
+  .tab { font-family:monospace; font-size:.72rem; text-transform:uppercase; letter-spacing:.08em;
+    padding:.6rem .9rem; background:transparent; border:0; border-bottom:2px solid transparent;
+    color:#9ca3af; cursor:pointer; }
+  .tab[aria-selected="true"] { color:#1a1a1a; border-bottom-color:#2563eb; }
+  .tab-panel { display:block; }
+  .tab-panel[hidden] { display:none !important; }
+  /* Fallback dei pannelli senza dati (episodi storici senza un sidecar) —
+     porta di public/console/podcast-render.css:304-309, sui token pubblici. */
+  /* Header episodio a due colonne: barra tab e pannello nel primo schermo
+     (stesse regole del modulo condiviso, richiesta 2026-08-10). */
+  .ep-header-block { display:grid; grid-template-columns:minmax(0,1fr) 340px;
+    grid-template-rows:repeat(4,min-content); gap:.3rem 1.6rem;
+    align-items:start; margin-bottom:.5rem; }
+  .ep-header-block > [data-sb="data"] { grid-column:1; margin:0; }
+  .ep-header-block > [data-sb="titolo"] { grid-column:1; margin:.1rem 0; }
+  .ep-header-block > [data-sb="player"] { grid-column:1; }
+  .ep-header-block > [data-sb="nav"] { grid-column:1; }
+  .ep-header-block > [data-sb="facce"] { grid-column:2; grid-row:1; }
+  .ep-header-block > [data-sb="video"] { grid-column:2; grid-row:2/5;
+    display:flex; gap:.5rem; flex-wrap:wrap; }
+  .ep-header-block [data-sb="facce"] img { width:26px; height:26px; }
+  .ep-header-block [data-sb="video"] video { max-height:96px; width:auto; }
+  .ep-header-block audio { height:36px; width:100%; }
+  .tabs { position:sticky; top:0; z-index:5; background:#fff;
+    padding:.4rem 0; border-bottom:1px solid #e5e7eb; }
+  @media (max-width:760px) {
+    .ep-header-block { grid-template-columns:1fr; }
+    .ep-header-block > [data-sb="facce"],
+    .ep-header-block > [data-sb="video"] { grid-column:1; grid-row:auto; }
+  }
+  .state-note { padding:2rem 1rem; text-align:center; color:#9ca3af;
+    font-family:monospace; font-size:.85rem; }
+  @media (prefers-color-scheme:dark) {
+    body { background:#1f1d18; color:#e5e5e5; }
+    .ep, .tension, .signal-card { background:#2a2823; border-color:#3a352d; }
+    .ep-play { background:#3a352d; } .desc { color:#d4d4d4; }
+    .signal-text { color:#d4d4d4; }
+    .episode-header .date-line { color:#9ca3af; }
+    .tabs { border-color:#3a352d; }
+    .tab[aria-selected="true"] { color:#f5f5f5; }
+    .state-note { color:#9ca3af; }
+    .creator-footer { border-color:#3a352d; }
+    .creator-name { color:#f5f5f5; }
+    .creator-tagline, .creator-email a { color:#9ca3af; }
+    .creator-ai { color:#9a8f7d; }
+    .vlink input { background:#1c1a17; border-color:#3a352d; color:#9ca3af; }
+    .tutele { border-color:#3a352d; color:#9a8f7d; }
+    .tutele h3 { color:#a9a9a9; } .tutele strong { color:#d4d4d4; }
+    .ep-listen { background:#3a352d; }
+    .ep-faces img { border-color:#2a2823; background:#3a352d; }
+    details.tr { border-color:#3a352d; }
+  }
+</style></head><body>
+<a class="back back-link" href="/signal-brief/ai/">← Signal.AI</a><div class="ep-header-block"><header class="episode-header"><div class="date-line" data-sb="data">2026-08-22</div><h1 data-sb="titolo">Il laboratorio che si ferma</h1><div class="desc">Un addestramento sospeso, cinquecento miliardi di infrastruttura e un test da cinquemila righe di codice: la settimana in cui l'AI ha smesso di essere un modello.</div><div class="tagline">Digital Intelligence Podcast</div></header><audio controls preload="none" data-sb="player" src="https://op3.dev/e/media.casamon.dev/ai/podcast/episodes/2026-08-22.mp3"></audio><nav class="epnav" data-sb="nav"><a href="/signal-brief/ai/2026-08-21/">← 2026-08-21</a><span style="flex:1"></span></nav><div class="ep-header-faces" data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/benedict-evans.png" alt="" title="Benedict Evans"><img loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt="" title="Jensen Huang"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"><img loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="/signal-brief/ai/avatars/nat-friedman.jpg" alt="" title="Nat Friedman"><img loading="lazy" src="/signal-brief/ai/avatars/aravind-srinivas.jpg" alt="" title="Aravind Srinivas"><img loading="lazy" src="/signal-brief/ai/avatars/simon-willison.jpg" alt="" title="Simon Willison"><img loading="lazy" src="/signal-brief/ai/avatars/vitalik-buterin.jpg" alt="" title="Vitalik Buterin"><img loading="lazy" src="/signal-brief/ai/avatars/yoshua-bengio.jpg" alt="" title="Yoshua Bengio"><img loading="lazy" src="/signal-brief/ai/avatars/sam-altman.jpg" alt="" title="Sam Altman"><img loading="lazy" src="/signal-brief/ai/avatars/dario-amodei.jpg" alt="" title="Dario Amodei"></span></div><div class="ep-header-video" data-sb="video"></div></div>
+<div class="tabs-block"><div class="tabs" role="tablist" id="sbTabs"><button class="tab" type="button" role="tab" data-tab="sintesi" aria-selected="true" onclick="sbTab('sintesi')">Sintesi</button><button class="tab" type="button" role="tab" data-tab="testo" aria-selected="false" onclick="sbTab('testo')">Testo</button><button class="tab" type="button" role="tab" data-tab="comparazione" aria-selected="false" onclick="sbTab('comparazione')">Comparazione</button><button class="tab" type="button" role="tab" data-tab="segnali" aria-selected="false" onclick="sbTab('segnali')">Segnali</button><button class="tab" type="button" role="tab" data-tab="fonti" aria-selected="false" onclick="sbTab('fonti')">Fonti</button></div>
+<div class="tab-panel panel" data-sb-panel="sintesi"><div class="synthesis"><p>Il dato più evidente di questa settimana è che quasi nessuno parla più del modello come prodotto: si parla di sistemi. <strong><a href="#" class="face-link" onclick="vaiFonte(event, 'Andrej Karpathy')" title="Fonti di Andrej Karpathy"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt=""></a>Andrej Karpathy</strong> descrive l'AI come uno strato di lavoro programmabile, inserito nei flussi dell'organizzazione più che in una finestra di chat, e propone come test la costruzione autonoma di software complesso, non i benchmark brevi (<a href="https://karpathy.bearblog.dev/sequoia-ascent-2026/" target="_blank" rel="noopener">karpathy.bearblog.dev</a>). <strong><a href="#" class="face-link" onclick="vaiFonte(event, 'François Chollet')" title="Fonti di François Chollet"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt=""></a>François Chollet</strong> dice la stessa cosa da un'angolazione avversa agli LLM: gli agenti che funzionano sono "panini simbolici", modello più programma, e la competizione si sposta dal modello al sistema intero (<a href="https://x.com/fchollet/status/2085796727362052241" target="_blank" rel="noopener">x.com/fchollet</a>). <strong><a href="#" class="face-link" onclick="vaiFonte(event, 'Nat Friedman')" title="Fonti di Nat Friedman"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/nat-friedman.jpg" alt=""></a>Nat Friedman</strong> e <strong><a href="#" class="face-link" onclick="vaiFonte(event, 'Aravind Srinivas')" title="Fonti di Aravind Srinivas"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/aravind-srinivas.jpg" alt=""></a>Aravind Srinivas</strong> completano il quadro sul lato commerciale — orchestrazione multi-modello, ambienti di RL specifici per dominio (<a href="https://x.com/AravSrinivas/status/2088087990048600107" target="_blank" rel="noopener">Perplexity Agent API</a>).</p>
+<p>La divergenza vera riguarda dove si depositerà il valore di questo strato. <strong><a href="#" class="face-link" onclick="vaiFonte(event, 'Benedict Evans')" title="Fonti di Benedict Evans"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/benedict-evans.png" alt=""></a>Benedict Evans</strong>, analista, sostiene che i modelli di base finiranno commoditizzati e che il valore andrà a distribuzione, verticali e integrazione nei processi aziendali (<a href="https://www.ben-evans.com/" target="_blank" rel="noopener">ben-evans.com</a>). <strong><a href="#" class="face-link" onclick="vaiFonte(event, 'Jensen Huang')" title="Fonti di Jensen Huang"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt=""></a>Jensen Huang</strong> propone la tesi opposta e la sta finanziando: il calcolo <em>è</em> ricavo, e le fabbriche di AI sono infrastruttura investibile da 500 miliardi (<a href="https://www.cnbc.com/2026/08/10/cnbc-exclusive-transcript-cnbcs-becky-quick-speaks-with-nvidias-jensen-huang-wall-street-leaders-on-500b-ai-infrastructure-push-on-closing-bell-overtime-today.html" target="_blank" rel="noopener">CNBC</a>). Una delle due scommesse ha il capex sbagliato.</p>
+<p>Sotto entrambe corre però una tensione più interessante, ed è il collo di bottiglia che si sposta dalla generazione alla verifica. <strong><a href="#" class="face-link" onclick="vaiFonte(event, 'Simon Willison')" title="Fonti di Simon Willison"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/simon-willison.jpg" alt=""></a>Simon Willison</strong> lo dice in termini operativi: gli agenti rendono il codice economico da scrivere, ma la capacità di revisione diventa il limite (<a href="https://simonwillison.net/2026/Aug/" target="_blank" rel="noopener">simonwillison.net</a>). <strong><a href="#" class="face-link" onclick="vaiFonte(event, 'Vitalik Buterin')" title="Fonti di Vitalik Buterin"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/vitalik-buterin.jpg" alt=""></a>Vitalik Buterin</strong> arriva allo stesso punto per via crittografica, chiedendo AI che acceleri la verifica formale invece di sostituire la prova (<a href="https://www.kucoin.com/news/flash/vitalik-buterin-reveals-2026-ethereum-roadmap-ai-driven-formal-verification-and-strong-privacy-focus" target="_blank" rel="noopener">roadmap Ethereum</a>). <strong><a href="#" class="face-link" onclick="vaiFonte(event, 'Yoshua Bengio')" title="Fonti di Yoshua Bengio"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/yoshua-bengio.jpg" alt=""></a>Yoshua Bengio</strong> propone sistemi che modellano il mondo con verità anziché agire (<a href="https://news.un.org/en/story/2026/07/1167853" target="_blank" rel="noopener">LawZero</a>); <strong><a href="#" class="face-link" onclick="vaiFonte(event, 'Sam Altman')" title="Fonti di Sam Altman"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/sam-altman.jpg" alt=""></a>Sam Altman</strong> ha fermato addestramenti frontier per alzare le soglie di monitoraggio (<a href="https://indianexpress.com/article/technology/artificial-intelligence/openai-pauses-ai-model-sam-altman-10840217/" target="_blank" rel="noopener">Indian Express</a>).</p>
+<p>È qui che la corrente si chiude su sé stessa: sicurezza e ingegneria pratica, partite da poli opposti, stanno convergendo sullo stesso problema. <strong><a href="#" class="face-link" onclick="vaiFonte(event, 'Dario Amodei')" title="Fonti di Dario Amodei"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/dario-amodei.jpg" alt=""></a>Dario Amodei</strong> lo chiama crisi di fiducia (<a href="https://x.com/DarioAmodei/status/2088758819304443967" target="_blank" rel="noopener">X</a>). La delega funziona quanto la nostra capacità di controllarne l'esito — e quella capacità, oggi, non sta scalando insieme al resto.</p></div></div>
+<div class="tab-panel panel" data-sb-panel="testo" hidden><button class="tr-copy" type="button" onclick="copiaTrascrizione(this)">copia il testo</button><div class="transcript-body"><h2>Il laboratorio che si ferma</h2>
+<p class="podcast-episode-desc">Un addestramento sospeso, cinquecento miliardi di infrastruttura e un test da cinquemila righe di codice: la settimana in cui l'AI ha smesso di essere un modello.</p>
+<div class="chapter" data-mood="geo"><hr></div>
+<p>A San Francisco, a metà agosto, un laboratorio ha deciso di non addestrare. Non un guasto, non un ritardo: una scelta. Il diciotto agosto <a href="#" class="face-link" onclick="vaiFonte(event, 'Sam Altman')" title="Fonti di Sam Altman"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/sam-altman.jpg" alt=""></a>Sam Altman ha detto che OpenAI ha sospeso alcuni addestramenti di frontiera per alzare le proprie soglie di controllo e di sorveglianza. È il ventidue agosto, questo è Signal Brief, e la notizia di oggi non è un modello nuovo. È una fabbrica che si ferma per tarare i suoi strumenti di misura, mentre a poca distanza qualcun altro sta contando cinquecento miliardi di dollari da mettere nel cemento e nel rame.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>All'inizio di agosto <a href="#" class="face-link" onclick="vaiFonte(event, 'Andrej Karpathy')" title="Fonti di Andrej Karpathy"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt=""></a>Andrej Karpathy ha fatto un esperimento curioso. Ha dato a un modello un seme di racconto — l'universo del Signore degli Anelli — un budget di un milione di token e un motore grafico, e gli ha chiesto di costruirsi da solo un mondo in tre dimensioni. Stando al suo resoconto, Claude Opus 5 ha scritto circa cinquemilacinquecento righe di codice in due ore. Karpathy non l'ha raccontato come una trovata simpatica. L'ha presentato come un esame: per capire quanto vale davvero un modello, ha sostenuto, bisogna smettere di misurarlo su esercizi da pochi secondi e cominciare a chiedergli di costruire software complesso da capo.</p>
+<p>Ieri, in questo stesso spazio, il filo era che il valore si stava spostando dal modello al sistema che gli sta intorno. In una settimana quell'osservazione da architetti è diventata due cose molto più ruvide: una domanda su dove finiranno i soldi, e una decisione su quando conviene fermarsi.</p>
+<p>La domanda sui soldi ha due risposte opposte, e sono entrambe finanziate. <a href="#" class="face-link" onclick="vaiFonte(event, 'Benedict Evans')" title="Fonti di Benedict Evans"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/benedict-evans.png" alt=""></a>Benedict Evans, che di mestiere osserva le piattaforme da trent'anni, sostiene che i modelli di base diventeranno una merce come le altre, e che il valore andrà a chi ha la distribuzione, a chi costruisce applicazioni per un settore preciso, a chi sa infilare tutto questo dentro i processi di un'azienda. <a href="#" class="face-link" onclick="vaiFonte(event, 'Jensen Huang')" title="Fonti di Jensen Huang"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt=""></a>Jensen Huang dice l'esatto contrario e lo sta pagando: il calcolo è ricavo, le fabbriche di intelligenza artificiale sono infrastruttura buona da finanziare. Una delle due scommesse ha il conto capitale sbagliato, e non lo sapremo per qualche anno.</p>
+<p>È già successo. Quando i motori elettrici entrarono nelle fabbriche, per un decennio il motore fu il prodotto: si comprava quello, si discuteva di quello. Poi il motore diventò un pezzo da catalogo che costava poco, e tutto il vantaggio si spostò su chi aveva ripensato la disposizione della catena di montaggio. Evans scommette che siamo alla vigilia di quel passaggio. Huang scommette che siamo ancora nel decennio in cui conta chi costruisce i motori.</p>
+<p>Intanto, un piano più in basso, il lavoro concreto ha già smesso di aspettare la risposta. <a href="#" class="face-link" onclick="vaiFonte(event, 'Aravind Srinivas')" title="Fonti di Aravind Srinivas"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/aravind-srinivas.jpg" alt=""></a>Aravind Srinivas ha spostato la vendita di Perplexity dal modello all'ambiente in cui l'agente lavora, e il suo prodotto ne coordina fino a venti di modelli diversi, scegliendo di volta in volta il più economico che basta. <a href="#" class="face-link" onclick="vaiFonte(event, 'Nat Friedman')" title="Fonti di Nat Friedman"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/nat-friedman.jpg" alt=""></a>Nat Friedman, dal palco di una conferenza Stripe, ha detto che il vero collo di bottiglia non è più il modello ma la mancanza di palestre su misura dove addestrare gli agenti a mestieri che non siano scrivere codice. Nessuno dei due parla più di quale sia il modello migliore. Parlano di quale squadra di modelli mettere in campo.</p>
+<p>E poi c'è l'altra faccia, quella che apriva l'episodio. Altman ferma un addestramento per alzare le soglie di sorveglianza. <a href="#" class="face-link" onclick="vaiFonte(event, 'Yoshua Bengio')" title="Fonti di Yoshua Bengio"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/yoshua-bengio.jpg" alt=""></a>Yoshua Bengio propone di costruire sistemi che cerchino di capire il mondo invece di agirci dentro. Due gesti diversi che dicono la stessa cosa: la parte difficile non è più fare, è controllare quello che è stato fatto.</p>
+<p>Partiamo da qui, dalle due scommesse sul denaro.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Benedict Evans')" title="Fonti di Benedict Evans"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/benedict-evans.png" alt=""></a>Benedict Evans non costruisce niente. Scrive presentazioni, e da vent'anni sono il modo in cui una certa parte dell'industria si accorge di quello che ha sotto il naso.</p>
+<p>In queste settimane ha aggiornato la sua presentazione ricorrente sull'intelligenza artificiale e ha pubblicato una nota piuttosto tagliente su un dettaglio che quasi nessuno guarda: negli studi sui modelli mancano quasi sempre i dati di utilizzo reale. Si misura la capacità, si misura il punteggio, non si misura quanta gente usa davvero quella cosa e per farci cosa. È un'osservazione da contabile, ed è esattamente il tipo di osservazione che smonta un entusiasmo.</p>
+<p>La sua posizione, ripetuta nelle interviste di giugno e luglio e adesso più netta, è che i laboratori si stanno comportando da fornitori di infrastruttura più che da padroni di un monopolio. Il prezzo dei token scende, la spesa in impianti è enorme, e l'unica applicazione con un mercato dimostrato è la scrittura di codice. Tutto il resto, secondo lui, è ancora nella fase in cui bisogna provarlo nel mondo vero. Da qui la tesi che oggi entra come nuova nel nostro filo: i modelli di base finiranno commoditizzati, e chi guadagnerà sarà chi ha i clienti, chi conosce un settore specifico abbastanza bene da riprogettarlo, chi sa integrare l'intelligenza dentro flussi di lavoro che già esistono.</p>
+<p>C'è un corollario che mi sembra più interessante della tesi principale, e Evans lo ripete da mesi: questa ondata probabilmente allarga il mercato del software invece di sostituirlo. Non è la fine dei programmi gestionali, è l'ampliamento della quantità di cose che val la pena scrivere. Chi si aspetta una strage di aziende di software potrebbe ritrovarsi, tra cinque anni, con molte più aziende di software di adesso, ognuna più piccola e più specializzata.</p>
+<p>Il punto delicato è il tempismo. Dire che una tecnologia si commoditizza è quasi sempre giusto, prima o poi. Il problema è il poi. Chi disse negli anni Novanta che i processori sarebbero diventati un componente banale aveva ragione, ma nel frattempo Intel ha guadagnato per un decennio. Evans lo sa, e infatti non dà una data. Descrive una direzione e lascia il rischio a chi firma gli assegni.</p>
+<p>Ed è quello che, esattamente in questi giorni, sta facendo qualcun altro.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Il dieci agosto <a href="#" class="face-link" onclick="vaiFonte(event, 'Jensen Huang')" title="Fonti di Jensen Huang"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt=""></a>Jensen Huang si è presentato non davanti a una platea di ingegneri ma davanti a Wall Street, e ha annunciato uno sforzo da cinquecento miliardi di dollari per costruire infrastruttura di calcolo insieme a partner finanziari. La frase che ha usato è la più chiara che si sia sentita quest'anno: il calcolo è ricavo.</p>
+<p>Vale la pena capire cosa significa davvero. Huang non stava vendendo schede. Stava proponendo che un capannone pieno di acceleratori venga trattato come un'autostrada o una centrale: un bene che dura, che produce un flusso di cassa prevedibile, e quindi che si può finanziare con debito invece che con capitale di rischio. Per rendere la cosa credibile ha aggiunto due dettagli molto pratici: Nvidia aiuta i clienti a trovare i finanziamenti, e tiene le architetture standardizzate, in modo che se un progetto salta l'impianto possa essere passato a qualcun altro senza buttare via niente.</p>
+<p>È la logica delle ferrovie dell'Ottocento, riproposta quasi identica. Anche lì il punto non era il treno: era convincere i banchieri che i binari sarebbero rimasti utili anche se la compagnia che li aveva posati falliva. Molte compagnie fallirono davvero. I binari, quelli, ci sono ancora.</p>
+<p>Nelle sue dichiarazioni recenti Huang insiste su un altro spostamento: il momento decisivo non è più addestrare i modelli, è farli girare per milioni di persone tutti i giorni. E il limite, dice, non sono più i modelli. Sono l'energia, il capitale, la velocità con cui riesci a montare le cose.</p>
+<p>Qui la tensione con Evans diventa nitida, e non è una disputa accademica: è una divergenza su dove mettere i soldi nei prossimi cinque anni. Se ha ragione Evans, tra qualche anno il calcolo sarà abbondante e a buon mercato, e chi si sarà indebitato per costruirlo si ritroverà con margini da azienda elettrica. Se ha ragione Huang, chi avrà aspettato non troverà capacità disponibile a nessun prezzo.</p>
+<p>L'unica cosa che mi sento di dire è che le due tesi non si escludono nel tempo, solo nell'ordine. La commoditizzazione arriva sempre dopo la scarsità, mai prima. Il punto è chi sta pagando durante l'attesa.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Torniamo a Karpathy, perché il suo esperimento dice qualcosa che nessuna delle due scommesse contiene.</p>
+<p>A giugno aveva osservato una cosa quasi banale: vedendo Claude integrato dentro Slack, gli era sembrato il terzo grande cambio di forma dell'interfaccia di questi sistemi. Non più una finestra dove chiedi e ricevi, ma qualcosa che sta dentro le conversazioni di lavoro, che risponde in differita, che si comporta come un membro del gruppo. Poi, ad agosto, l'esperimento sul Signore degli Anelli, con quelle cinquemilacinquecento righe scritte in due ore senza che nessuno guardasse.</p>
+<p>Le due cose insieme compongono una tesi che entra oggi come nuova nel nostro racconto: se un modello sa costruire da solo un sistema software complesso, allora i test brevi che usiamo per misurarlo hanno smesso di dirci qualcosa. Karpathy propone di cambiare il metro. Non più quanti problemi risolve in trenta secondi, ma se riesce a portare a termine una costruzione lunga, con centinaia di decisioni che dipendono l'una dall'altra e nessuno a correggerlo per strada.</p>
+<p>È un cambio di misura che assomiglia al passaggio dall'esame orale alla tesi. Nel primo dimostri di sapere. Nella seconda dimostri di reggere.</p>
+<p>La conseguenza pratica è quella che lui descrive da mesi: l'intelligenza artificiale come uno strato di lavoro che si programma, infilato nei flussi di un'organizzazione, con lo sforzo umano che sale di un piano. Non scrivi più il codice: dirigi chi lo scrive, decidi cosa vale la pena costruire, verifichi il risultato.</p>
+<p>Ecco, la verifica. Karpathy racconta l'esperimento come una prova riuscita, e lo è. Ma qualcuno ha letto quelle cinquemilacinquecento righe? La domanda non è polemica, è il nodo di tutta la giornata. Un test che misura la capacità di costruire in autonomia misura anche, senza volerlo, quanto lavoro di controllo stiamo accumulando per noi. Ogni ora di generazione produce ore di revisione che nessuno ha ancora contato.</p>
+<p>Ed è precisamente il punto in cui due mondi che di solito non si parlano — chi scrive software e chi si occupa di sicurezza — si ritrovano nella stessa stanza.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Rimettiamo in fila le cose, per chi si è distratto. Da una parte la corsa: cinquecento miliardi di infrastruttura, agenti che coordinano venti modelli, macchine che costruiscono software da sole. Dall'altra un problema che cresce alla stessa velocità: la nostra capacità di controllare quello che esce. <a href="#" class="face-link" onclick="vaiFonte(event, 'Simon Willison')" title="Fonti di Simon Willison"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/simon-willison.jpg" alt=""></a>Simon Willison lo dice da ingegnere — il codice è diventato economico da scrivere, la revisione no. <a href="#" class="face-link" onclick="vaiFonte(event, 'Dario Amodei')" title="Fonti di Dario Amodei"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/dario-amodei.jpg" alt=""></a>Dario Amodei lo chiama crisi di fiducia. Sono la stessa frase detta in due lingue.</p>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Yoshua Bengio')" title="Fonti di Yoshua Bengio"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/yoshua-bengio.jpg" alt=""></a>Yoshua Bengio ha passato l'anno a costruire una terza risposta.</p>
+<p>A luglio ha detto pubblicamente che l'intelligenza artificiale sta correndo più veloce sia della comprensione scientifica sia della capacità dei governi di adattarsi, e ha aggiunto una cosa più scomoda: le prove di comportamenti ingannevoli nei modelli stanno aumentando, e nessuno oggi può garantire che un danno grave non avvenga. Ha co-diretto il rapporto internazionale sulla sicurezza dell'intelligenza artificiale di quest'anno, che dice in sostanza la stessa cosa con più note a piè di pagina.</p>
+<p>Ma la parte che entra oggi come nuova non è l'allarme. È la proposta tecnica. Con la sua organizzazione senza scopo di lucro, LawZero, Bengio sta lavorando a quello che chiama Scientist AI: un sistema costruito per modellare il mondo e prevedere cosa succede, senza avere obiettivi propri e senza agire. A luglio ne ha pubblicato un argomento formale di sicurezza — un documento che prova a dimostrare, non a promettere, perché un sistema del genere sarebbe più sicuro.</p>
+<p>Il gesto interessante è la separazione. Fino a oggi capire e agire erano la stessa cosa, nella stessa scatola: chiedi al modello e il modello fa. Bengio propone di dividerle e di tenerne una sola. Un sismografo non ferma il terremoto, ma è quello che ti permette di costruire case che reggono.</p>
+<p>Messa accanto a Karpathy, la proposta diventa una vera polarità, ed è la seconda grande divergenza di questa settimana. Uno vuole macchine che costruiscano da sole sistemi complessi. L'altro vuole macchine che descrivano il mondo con onestà e lascino l'azione a noi.</p>
+<p>Non credo che vincerà una delle due. Sospetto che finiremo per volerle entrambe, e che il problema vero sarà tenerle separate quando fare sarà molto più comodo che capire.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Il tredici agosto Perplexity ha aperto un solo indirizzo a cui uno sviluppatore può chiedere quattro cose diverse: cerca sul web, scaricami questa pagina, esegui questo codice, collegati a questo strumento esterno. Si chiama Agent API. Nello stesso annuncio è arrivata la data di pensionamento dei vecchi servizi di ricerca dell'azienda: il ventisette settembre.</p>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Aravind Srinivas')" title="Fonti di Aravind Srinivas"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/aravind-srinivas.jpg" alt=""></a>Aravind Srinivas, che guida Perplexity, ha spiegato con una certa franchezza cosa sta vendendo adesso, e non è un modello. È l'ambiente dove l'agente lavora. Il suo prodotto ne coordina fino a venti, di modelli, scegliendo di volta in volta quello che costa meno per il compito che ha davanti: a metà agosto ha indicato pubblicamente uno dei modelli veloci di Google come ottimo aiutante di serie B dentro un sistema che ne comanda diversi. È la fine dell'idea che si scelga un modello e ci si sposi.</p>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Nat Friedman')" title="Fonti di Nat Friedman"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/nat-friedman.jpg" alt=""></a>Nat Friedman, in una conversazione con Daniel Gross a una conferenza di Stripe rimbalzata in queste settimane, arriva allo stesso posto per un'altra strada. Dice che i modelli dovrebbero diventare la piattaforma su cui gli agenti fanno transazioni in rete, e che il collo di bottiglia non è la loro intelligenza ma la mancanza di palestre: ambienti in cui allenarli a mestieri che non siano scrivere codice. Sul programmare ci sono, quelle palestre. Su quasi tutto il resto no.</p>
+<p>Dalla stessa conversazione è uscito l'aneddoto che gira di più: un suo agente autonomo gli controlla se beve abbastanza acqua, glielo ricorda, e poi verifica con una telecamera che l'abbia fatto davvero. Fa sorridere, e nel frattempo descrive con precisione la direzione: sistemi che prendono iniziativa e controllano l'esito.</p>
+<p>Srinivas nel frattempo allarga la superficie: il suo assistente ora lavora dentro la posta elettronica, e la parte finanziaria del prodotto ha cominciato a tracciare le compravendite degli insider aziendali.</p>
+<p>Quello che mi sembra il segnale, qui, è la disinvoltura. Fino a un anno fa un'azienda si definiva dal modello che aveva. Adesso Perplexity si definisce dalla centralina che decide quale modello usare, e considera i modelli stessi componenti intercambiabili da acquistare al prezzo migliore. Se <a href="#" class="face-link" onclick="vaiFonte(event, 'Benedict Evans')" title="Fonti di Benedict Evans"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/benedict-evans.png" alt=""></a>Benedict Evans cercava una prova della sua tesi, è questa: quando un'azienda tratta i modelli come pezzi di ricambio, la commoditizzazione non è più una previsione.</p>
+<div class="chapter" data-mood="upbeat"><hr></div>
+<p>Progetti da osservare, e quest'anno le uscite raccontano il filo meglio delle dichiarazioni.</p>
+<p>Buzz, rilasciato da Block come codice aperto, mette insieme in un'unica stanza la chat del gruppo, l'archivio del codice e gli agenti che ci lavorano. La finezza è che ogni agente ha una propria identità firmata e lascia una traccia verificabile di quello che ha fatto. Nasce come strumento di lavoro, funziona come registro di responsabilità.</p>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Simon Willison')" title="Fonti di Simon Willison"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/simon-willison.jpg" alt=""></a>Simon Willison ha pubblicato la versione più corposa del suo strumento a riga di comando da quando esiste: adesso mostra il ragionamento del modello passo per passo e conserva ogni scambio in un archivio consultabile. È un coltellino svizzero per confrontare centinaia di modelli senza fidarsi di nessuno. Detto da chi sostiene che la revisione è il vero limite, non è un dettaglio.</p>
+<p>Alibaba il dodici agosto ha aperto i pesi del suo modello più grande e, accanto, una versione ridotta che gira su un portatile. Meta ha fatto qualcosa di simile con Muse Glimmer, un modello compatto rilasciato con licenza libera, pensato per lavorare senza uscire dalla macchina. Sono il contrappeso preciso alla tesi che il calcolo sia ricavo: da una parte capannoni grandi come quartieri, dall'altra qualcosa che sta in uno zaino.</p>
+<p>Grok Bot, uscito l'undici agosto in prova, dà a ogni agente un computer permanente nel cloud, credenziali per entrare negli strumenti aziendali e compiti lunghi da portare a termine, tornando solo per le approvazioni. Più agenti lavorano in parallelo, coordinati da uno che fa da capo di gabinetto.</p>
+<p>E poi la cosa piccola che potrebbe contare di più: Scott Aaronson ha reso praticabile mettere una filigrana nascosta nel testo generato, senza peggiorarne la qualità. Se regge alla prova del mondo, dà una base tecnica alla domanda che tiene insieme tutta la giornata: come faccio a sapere chi ha scritto questo.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Resterebbe da spiegare perché un'azienda che corre decide di fermarsi. Forse perché anche i motori più veloci hanno freni, e nessuno costruisce una macchina da corsa pensando prima all'acceleratore. La settimana ha detto che sappiamo costruire sempre più in fretta. Non ha ancora detto chi legge quello che abbiamo costruito. È stato Signal Brief. Alla prossima.</p></div><div class="rawmd"><a href="raw.md">Testo (markdown)</a></div></div>
+<div class="tab-panel panel" data-sb-panel="comparazione" hidden><div class="tension"><div class="axis">↗ Commoditizzazione dei modelli base</div><div class="side">Compare la tesi che i foundation model diventeranno commodity e che il valore si sposti su distribuzione, verticali e integrazione nei processi aziendali.</div></div><div class="tension"><div class="axis">↗ Orchestrazione multi-modello</div><div class="side">Il livello applicativo non usa più un solo modello ma coordina più modelli e ambienti RL specifici per dominio.</div></div><div class="tension"><div class="axis">↗ AI che modella il mondo invece di agire</div><div class="side">Proposta di sistemi non agentici orientati alla verità e alla comprensione come alternativa sicura all'azione autonoma.</div></div><div class="tension"><div class="axis">↗ Pausa volontaria sugli addestramenti frontier</div><div class="side">Un laboratorio ferma l'addestramento di frontiera per alzare le soglie di monitoraggio, trasformando la sicurezza in decisione operativa.</div></div><div class="tension"><div class="axis">↗ Nuovi benchmark: software complesso autonomo</div><div class="side">Il test di capacità proposto non sono più i benchmark brevi ma la costruzione autonoma di sistemi software complessi.</div></div><div class="tension"><div class="axis">↗ Convergenza tra sicurezza e ingegneria pratica</div><div class="side">Il campo della safety e quello dello sviluppo agentico arrivano allo stesso problema — controllare l'esito della delega — partendo da poli opposti.</div></div><div class="tension"><div class="axis">⚖ Dove si deposita il valore dello strato AI: nel calcolo o nell'applicazione</div><div class="side">Jensen Huang: il calcolo è ricavo, le fabbriche di AI sono infrastruttura investibile da 500 miliardi · Benedict Evans: i modelli di base si commoditizzano, il valore va a distribuzione, verticali e integrazione nei processi</div></div><div class="tension"><div class="axis">⚖ Che cosa deve fare l'AI davanti alla verifica: agire o comprendere</div><div class="side">Andrej Karpathy: uno strato di lavoro programmabile che costruisce software complesso in autonomia · Yoshua Bengio: sistemi che modellano il mondo con verità anziché agire</div></div><div class="tension"><div class="axis">⚖ Ritmo dello sviluppo frontier: accelerare o fermarsi per costruire controlli</div><div class="side">Sam Altman: sospendere addestramenti frontier finché non si alzano le soglie di monitoraggio · Jensen Huang: mobilitare capitale e accelerare la costruzione di capacità di calcolo</div></div><div class="tension"><div class="axis">⚖ Che cosa determina la competizione: il modello o il sistema che lo circonda</div><div class="side">François Chollet: vincono i 'panini simbolici', modello più programma, la partita è a livello di sistema · Aravind Srinivas: il vantaggio sta nell'orchestrazione commerciale multi-modello e negli ambienti RL di dominio</div></div><div class="tension"><div class="axis">⚖ Natura del deficit di fiducia: tecnico o sociale</div><div class="side">Dario Amodei: è una crisi di fiducia, non di capacità · Simon Willison: è un limite operativo concreto, la capacità di revisione non scala col volume di codice generato</div></div></div>
+<div class="tab-panel panel" data-sb-panel="segnali" hidden><section><h2>Progetti da osservare</h2><div class="tension"><div class="axis">Buzz (block/buzz)</div><div class=side>Workspace open source di Block che unisce chat, forge Git e agenti AI su protocollo Nostr, dando a ogni agente una identità crittografica e un audit trail propri. Model-agnostic via Agent Client Protocol: funziona con Claude Code, Codex e goose.</div></div><div class="tension"><div class="axis">prime-agent</div><div class=side>Harness di coding open source costruito su Recursive Language Model e Continual Harness: sottoagenti programmatici, stato IPython persistente e task autonomi a lunga durata. Il comando /refine gli permette di riscrivere pezzi del proprio harness sulla base della traiettoria appena eseguita.</div></div><div class="tension"><div class="axis">LLM 0.32 (simonw/llm)</div><div class=side>Rilascio più significativo dalla nascita del CLI di Willison: reasoning trace visibili, tool server-side, supporto OpenAI Responses e log SQLite content-addressable. È il coltellino svizzero per confrontare e verificare centinaia di modelli dalla riga di comando.</div></div><div class="tension"><div class="axis">Qwen3.8-Max / Qwen3.8-27B</div><div class=side>Alibaba ha pubblicato i pesi aperti di Qwen3.8-Max (2.4T-A95B) il 12 agosto, affiancati dalla variante 27B eseguibile in locale che è arrivata prima su Hacker News. È la release che tiene i modelli aperti in scia a quelli chiusi sull'uso agentico.</div></div><div class="tension"><div class="axis">Grok Bot</div><div class=side>"AI teammates" di xAI usciti l'11 agosto in beta: ogni bot ha un computer cloud persistente, fa login nei tool aziendali e porta a termine task lunghi tornando solo per le approvazioni. Più bot lavorano in parallelo coordinati da un bot "chief of staff".</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> Perplexity Agent API</div><div class=side>Endpoint unico e programmabile per ricerca web, fetch di URL, esecuzione di codice e connessioni MCP, lanciato il 13 agosto; gli endpoint Sonar vanno in pensione il 27 settembre. Sposta la vendita dal modello all'ambiente di esecuzione dell'agente.</div></div><div class="tension"><div class="axis">Muse Glimmer</div><div class=side>Modello multimodale Meta distillato a 30B e rilasciato in Apache 2.0, pensato per uso agentico locale: coding, analisi documenti e assistenti personali senza uscire dalla macchina. Il contraltare open della tesi "il calcolo è ricavo".</div></div><div class="tension"><div class="axis">LawZero — Scientist AI</div><div class=side>Il non profit di Bengio ha pubblicato a luglio un safety case formale per la sua "Scientist AI": un sistema che predice e modella il mondo senza agency propria. È la proposta più netta di separare comprensione da azione.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> anthropics/claude-plugins-community</div><div class=side>Registro community di plugin per Claude, che apre l'ecosistema di skill e integrazioni a contributi esterni. È il pezzo che trasforma un assistente in uno strato di lavoro programmabile dentro i flussi aziendali.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> OzBrain</div><div class=side>Cervello condiviso e decentralizzato per team di agenti: memoria e contesto comuni invece di sessioni isolate. Infrastruttura di coordinamento più che un altro modello.</div></div></section></div>
+<div class="tab-panel panel" data-sb-panel="fonti" hidden><div class="fonte" data-fonte-nome="Benedict Evans"><span class="who">Benedict Evans</span><a href="https://www.ben-evans.com/" target="_blank" rel="noopener">https://www.ben-evans.com/</a><a href="https://www.ben-evans.com/presentations" target="_blank" rel="noopener">https://www.ben-evans.com/presentations</a><a href="https://www.demandgenreport.com/industry-news/feature/b2bmx-2026-benedict-evans-explores-the-next-major-platform-shift-business-impacts-of-ai/52074/" target="_blank" rel="noopener">https://www.demandgenreport.com/industry-news/feature/b2bmx-2026-benedict-evans-explores-the-next-major-platform-shift-business-impacts-of-ai/52074/</a></div><div class="fonte" data-fonte-nome="Jensen Huang"><span class="who">Jensen Huang</span><a href="https://www.cnbc.com/2026/03/17/cnbc-exclusive-transcript-nvidia-founder-ceo-jensen-huang-speaks-with-cnbcs-jim-cramer-on-squawk-on-the-street-today.html" target="_blank" rel="noopener">https://www.cnbc.com/2026/03/17/cnbc-exclusive-transcript-nvidia-founder-ceo-jensen-huang-speaks-with-cnbcs-jim-cramer-on-squawk-on-the-street-today.html</a><a href="https://www.cnbc.com/2026/03/17/cnbc-exclusive-transcript-nvidia-founder-ceo-jensen-huang-speaks-with-cnbcs-jim-cramer-on-mad-money-today.html" target="_blank" rel="noopener">https://www.cnbc.com/2026/03/17/cnbc-exclusive-transcript-nvidia-founder-ceo-jensen-huang-speaks-with-cnbcs-jim-cramer-on-mad-money-today.html</a><a href="https://www.cnbc.com/2026/05/21/cnbc-excerpts-nvidia-ceo-jensen-huang-speaks-with-cnbcs-sara-eisen-following-release-of-nvidias-q1-results-.html" target="_blank" rel="noopener">https://www.cnbc.com/2026/05/21/cnbc-excerpts-nvidia-ceo-jensen-huang-speaks-with-cnbcs-sara-eisen-following-release-of-nvidias-q1-results-.html</a></div><div class="fonte" data-fonte-nome="Andrej Karpathy"><span class="who">Andrej Karpathy</span><a href="https://timesofindia.indiatimes.com/technology/tech-news/andrej-karpathys-lord-of-the-rings-experiment-shows-how-testing-of-ai-models-have-changed-and-what-they-lack/articleshow/132831557.cms" target="_blank" rel="noopener">https://timesofindia.indiatimes.com/technology/tech-news/andrej-karpathys-lord-of-the-rings-experiment-shows-how-testing-of-ai-models-have-changed-and-what-they-lack/articleshow/132831557.cms</a><a href="https://www.outlookbusiness.com/news/meet-andrej-karpathy-ex-openai-researcher-now-joining-ai-rival-anthropic" target="_blank" rel="noopener">https://www.outlookbusiness.com/news/meet-andrej-karpathy-ex-openai-researcher-now-joining-ai-rival-anthropic</a><a href="https://gigazine.net/gsc_news/en/20260804-ai-test-cg/" target="_blank" rel="noopener">https://gigazine.net/gsc_news/en/20260804-ai-test-cg/</a></div></div>
+</div>
+<script>function sbTab(key) {  document.querySelectorAll('.tab-panel').forEach(function (p) {    p.hidden = p.getAttribute('data-sb-panel') !== key;  });  document.querySelectorAll('#sbTabs .tab').forEach(function (b) {    b.setAttribute('aria-selected', b.dataset.tab === key ? 'true' : 'false');  });}function vaiFonte(ev, nome) {  ev.preventDefault();  sbTab('fonti');  var d = document.querySelector('[data-fonte-nome="' + nome + '"]');  if (d) d.scrollIntoView({behavior: 'smooth', block: 'center'});}</script>
+<dialog class="vplayer" id="vplayer"></dialog>
+<script>
+// player modale dei video: la miniatura apre il video al centro (disegno 2026-08-07)
+function apriVideo(src) {
+  var d = document.getElementById('vplayer');
+  d.innerHTML = '<video controls autoplay playsinline src="' + src + '"></video>';
+  d.showModal();
+  d.onclick = function (e) { if (e.target === d) d.close(); };
+  d.onclose = function () { var v = d.querySelector('video'); if (v) v.pause(); d.innerHTML = ''; };
+}
+// ascolto inline dalla lista: un episodio alla volta
+var epAudio = null, epBtn = null;
+function ascolta(btn, src) {
+  if (epBtn === btn && epAudio) {
+    if (epAudio.paused) { epAudio.play(); btn.classList.add('on'); }
+    else { epAudio.pause(); btn.classList.remove('on'); }
+    return;
+  }
+  if (epAudio) { epAudio.pause(); if (epBtn) epBtn.classList.remove('on'); }
+  epAudio = new Audio(src); epBtn = btn;
+  epAudio.play(); btn.classList.add('on');
+  epAudio.onended = function () { btn.classList.remove('on'); };
+}
+function copiaTrascrizione(btn) {
+  var t = btn.parentElement.querySelector('.transcript-body');
+  navigator.clipboard.writeText(t ? t.innerText : '').then(function () {
+    btn.textContent = 'copiata ✓';
+    setTimeout(function () { btn.textContent = 'copia il testo'; }, 1800);
+  });
+}
+</script>
+<section class="sostieni"><h3>Se ti è utile, offrimi un caffè</h3><p>Signal.Brief non ha sponsor e non vende niente. Se ti è utile, puoi contribuire — e se non ti va, ascoltalo lo stesso.</p><div class="sostieni-atti"><a class="sostieni-btn" href="https://www.paypal.com/donate/?business=SGNE3B4JZUT9S&amp;no_recurring=0&amp;item_name=Signal.Brief+non+ha+sponsor.+Se+ti+%C3%A8+utile%2C+questo+lo+tiene+acceso.&amp;currency_code=EUR" target="_blank" rel="noopener">Offrimi un caffè</a><a class="sostieni-alt" href="../segui/">Ascoltalo nella tua app →</a></div></section>
+<footer class="creator-footer">
+  <img src="/signal-brief/mike-avatar.png" alt="Michele Mondora">
+  <div class="creator-meta">
+    <span class="creator-name">it-mikesoft</span>
+    <span class="creator-tagline">working with systems, living with questions</span>
+    <span class="creator-email"><a href="mailto:michele@mondora.com">michele@mondora.com</a></span>
+    <span class="creator-legal"><a href="/signal-brief/legal/privacy/">Privacy</a> ·
+      <a href="/signal-brief/legal/">Note legali</a></span>
+  </div>
+</footer>
+<section class="tutele"><h3>Trasparenza e tutele</h3>
+<p><strong>Come nasce questo contenuto.</strong> Ricerca, sintesi editoriale, voce narrante, immagini e musica sono prodotte con sistemi di intelligenza artificiale. Non c'è una redazione umana che verifica ogni affermazione prima della pubblicazione: un controllo automatico scarta le schede giudicate inaffidabili, ma non elimina la possibilità di errori.</p>
+<p><strong>Affermazioni su persone e aziende.</strong> Quanto riportato è una sintesi di fonti pubbliche, non una dichiarazione diretta delle persone citate: le frasi non vanno intese come virgolettati né come posizioni ufficiali. Le fonti sono indicate in ogni pagina episodio — verificale prima di considerare un'informazione accertata. Se trovi un'affermazione inesatta che ti riguarda, scrivi a <a href="mailto:michele@mondora.com">michele@mondora.com</a>: viene corretta o rimossa.</p>
+<p><strong>Immagini e volti.</strong> Le immagini di scena sono generate con AI e non raffigurano fatti realmente avvenuti. Le fotografie di persone reali usate nei video provengono da Wikimedia Commons con le rispettive licenze, e sono accostate al racconto a scopo identificativo: la loro presenza non implica partecipazione, dichiarazione o approvazione da parte della persona ritratta. Su richiesta dell'interessato vengono rimosse.</p>
+<p><strong>Fonti e diritti altrui.</strong> I contenuti sono rielaborazioni originali, non riproduzioni di articoli di terzi; le testate e gli autori all'origine di una notizia sono citati e collegati. Marchi e nomi commerciali appartengono ai rispettivi titolari e sono usati a scopo descrittivo.</p>
+</section>
+</body></html>
