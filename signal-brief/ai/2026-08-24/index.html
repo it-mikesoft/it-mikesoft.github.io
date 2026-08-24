@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="it"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chi incassa l'intelligenza · Signal.AI</title>
+<meta property="og:title" content="Chi incassa l'intelligenza · Signal.AI"><meta property="og:type" content="article"><meta property="og:description" content="Stripe compra OpenRouter, il costo dell'inferenza smette di scendere e gli scettici storici passano agli agenti. La contesa si sposta dal modello a chi tiene la cassa."><meta property="og:url" content="https://it-mikesoft.github.io/signal-brief/ai/2026-08-24/"><meta property="og:audio" content="https://op3.dev/e/media.casamon.dev/ai/podcast/episodes/2026-08-24.mp3"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "PodcastEpisode", "name": "Chi incassa l'intelligenza", "datePublished": "2026-08-24", "url": "https://it-mikesoft.github.io/signal-brief/ai/2026-08-24/", "description": "Stripe compra OpenRouter, il costo dell'inferenza smette di scendere e gli scettici storici passano agli agenti. La contesa si sposta dal modello a chi tiene la cassa.", "inLanguage": "it", "associatedMedia": {"@type": "MediaObject", "contentUrl": "https://op3.dev/e/media.casamon.dev/ai/podcast/episodes/2026-08-24.mp3"}, "partOfSeries": {"@type": "PodcastSeries", "name": "Signal.AI", "url": "https://it-mikesoft.github.io/signal-brief/ai/"}}</script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:#faf8f4; color:#1a1a1a; padding:2rem 10px; max-width:none; margin:0 auto; line-height:1.6; }
+  a { color:#2563eb; }
+  .back { display:inline-block; margin-bottom:1.5rem; font-size:.8rem; font-family:monospace; text-decoration:none; }
+  .videos { display:flex; gap:1rem; flex-wrap:wrap; margin:1.2rem 0; }
+  .videos figure { margin:0; flex:1; min-width:260px; }
+  .videos .v2 { flex:0 1 240px; }
+  .videos video { width:100%; border-radius:12px; background:#000; }
+  .videos .v2 video { aspect-ratio:9/16; max-height:420px; }
+  .videos figcaption { font-size:.75rem; color:#888; text-align:center; margin-top:.3rem; }
+  .vlink { display:flex; gap:.3rem; margin-top:.35rem; }
+  .vlink input { flex:1; min-width:0; font-size:.68rem; font-family:monospace; padding:.3rem .4rem;
+    border:1px solid #e2ddd6; border-radius:6px; background:#fff; color:#6b7280; }
+  .vlink button { font-size:.68rem; padding:.3rem .6rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; }
+  .wk { font-size:1rem; margin:1.4rem 0 .4rem; }
+  details.wkacc { border:1px solid #e5e7eb33; border-radius:10px; margin:.6rem 0; padding:.1rem .8rem .4rem; }
+  details.wkacc summary { cursor:pointer; font-weight:600; padding:.5rem 0; font-size:.9rem; }
+  .back:hover { text-decoration:underline; }
+  header h1 { font-family:Georgia,serif; font-size:1.7rem; font-weight:600; }
+  header h1 span { color:#2563eb; }
+  .tagline { color:#6b7280; font-size:.85rem; margin-top:.3rem; margin-bottom:1.5rem; }
+  ul.eps { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
+  .subscribe { display:inline-flex; align-items:center; gap:.5rem; margin-bottom:1.2rem;
+    padding:.45rem .9rem; background:#2563eb; color:#fff; border-radius:20px;
+    text-decoration:none; font-size:.8rem; font-weight:600; }
+  .subscribe:hover { opacity:.85; color:#fff; }
+  .ep { display:flex; align-items:center; gap:.8rem; padding:.8rem 1rem; background:#fff;
+    border:1px solid #e2ddd6; border-radius:8px; text-decoration:none; color:inherit; transition:box-shadow .12s; }
+  .ep:hover { box-shadow:0 2px 8px rgba(0,0,0,.07); }
+  .ep-play { width:32px; height:32px; border-radius:50%; background:#f3f4f6; display:flex;
+    align-items:center; justify-content:center; font-size:12px; flex-shrink:0; }
+  .ep-title { font-size:.9rem; font-weight:500; }
+  .ep-meta { font-size:.72rem; color:#9ca3af; font-family:monospace; margin-top:.15rem; }
+  audio { width:100%; margin:1rem 0 1.5rem; }
+  .rawmd { margin:-.5rem 0 1.5rem; }
+  .rawmd a { font-size:.8rem; font-family:monospace; color:inherit; opacity:.65; }
+  .desc { color:#374151; font-size:.95rem; margin-bottom:1.5rem; }
+  section { margin:2rem 0; }
+  section h2 { font-family:Georgia,serif; font-size:1.1rem; border-bottom:1px solid #e2ddd6;
+    padding-bottom:.3rem; margin-bottom:.8rem; }
+  .synthesis p { margin:.7rem 0; }
+  .tension { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; font-size:.9rem; }
+  .tension .axis { font-weight:600; margin-bottom:.3rem; }
+  .tension .side { color:#6b7280; font-size:.85rem; }
+  .proj { font-size:.9rem; margin:.4rem 0; }
+  .proj .pname { font-weight:600; }
+  .proj .pnew { background:#16a34a; color:#fff; font-size:.65rem; font-weight:700;
+    padding:.1rem .35rem; border-radius:4px; text-transform:uppercase; vertical-align:middle; }
+  .fonte { font-size:.85rem; margin:.5rem 0; }
+  .fonte .who { font-weight:600; }
+  .fonte a { display:block; margin-left:.5rem; color:#6b7280; }
+  .transcript-body p { margin:.7rem 0; line-height:1.7; }
+  .transcript-body .chapter hr { border:none; border-top:1px solid #e2ddd6; margin:1.5rem 0; }
+  .transcript-body .podcast-episode-desc { color:#6b7280; font-style:italic; }
+  .signal-card { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; }
+  .signal-theme { font-size:.75rem; font-weight:700; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.3rem; }
+  .signal-text { font-size:.85rem; color:#374151; line-height:1.5; }
+  .creator-footer { margin-top:3rem; padding-top:1.5rem; border-top:1px solid #e2ddd6;
+    display:flex; align-items:center; gap:.9rem; }
+  .creator-footer img { width:40px; height:40px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+  .creator-legal { font-size:.78rem; margin-top:.15rem; }
+  .creator-legal a { color:inherit; }
+  .creator-meta { display:flex; flex-direction:column; gap:.15rem; }
+  .creator-name { font-size:.85rem; font-weight:600; color:#1a1a1a; }
+  .creator-tagline { font-size:.75rem; color:#6b7280; }
+  .creator-email { font-size:.75rem; }
+  .creator-ai { font-size:.72rem; color:#8a7f6d; max-width:46ch; line-height:1.45; }
+  .sostieni { margin-top:2.5rem; padding:1.2rem 1.4rem; border-radius:14px;
+    background:#f7f4ef; border:1px solid #e2ddd6; }
+  .sostieni h3 { margin:0 0 .3rem; font-size:1rem; }
+  .sostieni p { margin:0 0 .9rem; font-size:.88rem; color:#6b6257; line-height:1.55; }
+  .sostieni-atti { display:flex; gap:.8rem; align-items:center; flex-wrap:wrap; }
+  .sostieni-btn { display:inline-block; padding:.55rem 1.1rem; border-radius:10px;
+    background:#2563eb; color:#fff; text-decoration:none; font-weight:700; font-size:.88rem; }
+  .sostieni-alt { font-size:.85rem; color:#6b6257; text-decoration:none; }
+  .sostieni-alt:hover { text-decoration:underline; }
+  .tutele { margin-top:2rem; padding-top:1.2rem; border-top:1px solid #e2ddd6;
+    font-size:.72rem; color:#8a7f6d; line-height:1.5; }
+  .tutele h3 { font-size:.75rem; color:#6b7280; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.5rem; font-weight:600; }
+  .tutele p { margin:.45rem 0; }
+  .tutele strong { color:#5a5348; font-weight:600; }
+  .tutele a { color:inherit; text-decoration:underline; }
+  .creator-email a { color:#9ca3af; text-decoration:none; }
+  .creator-email a:hover { color:#1a1a1a; }
+  /* disegno 2026-08-07: mesi a pagine, facce, player modale, trascrizione
+     richiudibile — la pagina episodio è un prodotto, non un sottoprodotto */
+  .hrow { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+  .hrow .subscribe { margin-bottom:0; flex-shrink:0; }
+  .months { font-size:.78rem; font-family:monospace; margin:.4rem 0 1rem; color:#9ca3af; }
+  .months a { text-decoration:none; } .months b { color:inherit; }
+  .ep-faces { display:flex; margin-left:auto; flex-shrink:0; }
+  .ep-faces img { width:26px; height:26px; border-radius:50%; object-fit:cover;
+    border:2px solid #fff; margin-left:-8px; background:#eee; }
+  /* tutti i citati sul desktop; su mobile la leggibilità vince: max 3 */
+  @media (max-width:600px) { .ep-faces img:nth-child(n+4) { display:none; } }
+  .ep-listen { width:32px; height:32px; border-radius:50%; background:#f3f4f6; border:0;
+    display:flex; align-items:center; justify-content:center; font-size:12px;
+    flex-shrink:0; cursor:pointer; color:inherit; }
+  .ep-listen.on { background:#2563eb; color:#fff; }
+  .face-inline { width:1.15em; height:1.15em; border-radius:50%; object-fit:cover;
+    vertical-align:-.18em; margin-right:.25em; }
+  /* SEMPRE sulla stessa riga (2026-08-09): su schermi stretti le miniature
+     si riducono, e se non basta il reel sparisce — mai l'andata a capo */
+  .vthumbs { display:flex; gap:.8rem; flex-wrap:nowrap; margin:1.2rem 0; align-items:flex-start; }
+  .vthumb { position:relative; cursor:pointer; border:0; padding:0; background:none;
+    border-radius:12px; overflow:hidden; }
+  /* stessa ALTEZZA per video e reel: il 9:16 si stringe, non svetta */
+  .vthumb video { height:150px; width:auto; display:block; border-radius:12px; background:#000; }
+  @media (max-width:520px) { .vthumb video { height:118px; } }
+  /* quando nemmeno ridotte ci stanno: via le miniature, due BOTTONI in
+     riga che aprono il player (2026-08-09) */
+  .vbtns { display:none; gap:.6rem; margin:1.2rem 0; }
+  .vbtns button { flex:1; padding:.6rem .4rem; border:0; border-radius:10px;
+    background:#2563eb; color:#fff; font-weight:700; font-size:.85rem;
+    cursor:pointer; font-family:inherit; }
+  @media (max-width:420px) { .vthumbs { display:none; } .vbtns { display:flex; } }
+  .vthumb .vlabel { position:absolute; left:0; right:0; bottom:0; padding:.9rem .5rem .35rem;
+    background:linear-gradient(transparent, rgba(0,0,0,.75)); color:#fff; font-size:.7rem; }
+  .vthumb::after { content:"▶"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    color:#fff; font-size:1.6rem; text-shadow:0 1px 6px rgba(0,0,0,.8); }
+  /* margin:auto ESPLICITO: il reset globale * {margin:0} annullava la
+     centratura nativa del dialog e il player si apriva in alto a sinistra */
+  dialog.vplayer { border:0; padding:0; background:transparent; max-width:92vw;
+    margin:auto; position:fixed; inset:0; }
+  dialog.vplayer::backdrop { background:rgba(0,0,0,.85); }
+  dialog.vplayer video { max-width:92vw; max-height:86vh; border-radius:14px; background:#000; }
+  details.tr { border:1px solid #e2ddd6; border-radius:10px; padding:.2rem .9rem .6rem; }
+  details.tr summary { cursor:pointer; font-weight:600; padding:.55rem 0; }
+  .tr-copy { font-size:.72rem; padding:.3rem .7rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; margin:.3rem 0 .5rem; }
+  .epnav { display:flex; justify-content:space-between; gap:1rem; margin:2rem 0 0;
+    font-size:.82rem; font-family:monospace; }
+  .epnav a { text-decoration:none; }
+  /* Header + tab bar (spec-016, Task 5): stessa forma di
+     public/console/podcast-render.css, riusando i nomi classe dove
+     combaciano — solo la meccanica tab/pannello è nuova qui. */
+  .episode-header .date-line { font-size:.72rem; font-family:monospace; color:#9ca3af;
+    text-transform:uppercase; letter-spacing:.08em; margin-bottom:.3rem; }
+  .ep-header-block { margin-bottom:.5rem; }
+  .ep-header-faces { margin:.6rem 0; }
+  .ep-header-faces .ep-faces { margin-left:0; }
+  .tabs { display:flex; gap:.25rem; border-bottom:1px solid #e2ddd6; margin:1.5rem 0; flex-wrap:wrap; }
+  .tab { font-family:monospace; font-size:.72rem; text-transform:uppercase; letter-spacing:.08em;
+    padding:.6rem .9rem; background:transparent; border:0; border-bottom:2px solid transparent;
+    color:#9ca3af; cursor:pointer; }
+  .tab[aria-selected="true"] { color:#1a1a1a; border-bottom-color:#2563eb; }
+  .tab-panel { display:block; }
+  .tab-panel[hidden] { display:none !important; }
+  /* Fallback dei pannelli senza dati (episodi storici senza un sidecar) —
+     porta di public/console/podcast-render.css:304-309, sui token pubblici. */
+  /* Header episodio a due colonne: barra tab e pannello nel primo schermo
+     (stesse regole del modulo condiviso, richiesta 2026-08-10). */
+  .ep-header-block { display:grid; grid-template-columns:minmax(0,1fr) 340px;
+    grid-template-rows:repeat(4,min-content); gap:.3rem 1.6rem;
+    align-items:start; margin-bottom:.5rem; }
+  .ep-header-block > [data-sb="data"] { grid-column:1; margin:0; }
+  .ep-header-block > [data-sb="titolo"] { grid-column:1; margin:.1rem 0; }
+  .ep-header-block > [data-sb="player"] { grid-column:1; }
+  .ep-header-block > [data-sb="nav"] { grid-column:1; }
+  .ep-header-block > [data-sb="facce"] { grid-column:2; grid-row:1; }
+  .ep-header-block > [data-sb="video"] { grid-column:2; grid-row:2/5;
+    display:flex; gap:.5rem; flex-wrap:wrap; }
+  .ep-header-block [data-sb="facce"] img { width:26px; height:26px; }
+  .ep-header-block [data-sb="video"] video { max-height:96px; width:auto; }
+  .ep-header-block audio { height:36px; width:100%; }
+  .tabs { position:sticky; top:0; z-index:5; background:#fff;
+    padding:.4rem 0; border-bottom:1px solid #e5e7eb; }
+  @media (max-width:760px) {
+    .ep-header-block { grid-template-columns:1fr; }
+    .ep-header-block > [data-sb="facce"],
+    .ep-header-block > [data-sb="video"] { grid-column:1; grid-row:auto; }
+  }
+  .state-note { padding:2rem 1rem; text-align:center; color:#9ca3af;
+    font-family:monospace; font-size:.85rem; }
+  @media (prefers-color-scheme:dark) {
+    body { background:#1f1d18; color:#e5e5e5; }
+    .ep, .tension, .signal-card { background:#2a2823; border-color:#3a352d; }
+    .ep-play { background:#3a352d; } .desc { color:#d4d4d4; }
+    .signal-text { color:#d4d4d4; }
+    .episode-header .date-line { color:#9ca3af; }
+    .tabs { border-color:#3a352d; }
+    .tab[aria-selected="true"] { color:#f5f5f5; }
+    .state-note { color:#9ca3af; }
+    .creator-footer { border-color:#3a352d; }
+    .creator-name { color:#f5f5f5; }
+    .creator-tagline, .creator-email a { color:#9ca3af; }
+    .creator-ai { color:#9a8f7d; }
+    .vlink input { background:#1c1a17; border-color:#3a352d; color:#9ca3af; }
+    .tutele { border-color:#3a352d; color:#9a8f7d; }
+    .tutele h3 { color:#a9a9a9; } .tutele strong { color:#d4d4d4; }
+    .ep-listen { background:#3a352d; }
+    .ep-faces img { border-color:#2a2823; background:#3a352d; }
+    details.tr { border-color:#3a352d; }
+  }
+</style></head><body>
+<a class="back back-link" href="/signal-brief/ai/">← Signal.AI</a><div class="ep-header-block"><header class="episode-header"><div class="date-line" data-sb="data">2026-08-24</div><h1 data-sb="titolo">Chi incassa l'intelligenza</h1><div class="desc">Stripe compra OpenRouter, il costo dell'inferenza smette di scendere e gli scettici storici passano agli agenti. La contesa si sposta dal modello a chi tiene la cassa.</div><div class="tagline">Digital Intelligence Podcast</div></header><audio controls preload="none" data-sb="player" src="https://op3.dev/e/media.casamon.dev/ai/podcast/episodes/2026-08-24.mp3"></audio><nav class="epnav" data-sb="nav"><a href="/signal-brief/ai/2026-08-23/">← 2026-08-23</a><span style="flex:1"></span></nav><div class="ep-header-faces" data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/patrick-collison.jpg" alt="" title="Patrick Collison"><img loading="lazy" src="/signal-brief/ai/avatars/dhh.png" alt="" title="DHH"><img loading="lazy" src="/signal-brief/ai/avatars/marc-andreessen.jpg" alt="" title="Marc Andreessen"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="/signal-brief/ai/avatars/aravind-srinivas.jpg" alt="" title="Aravind Srinivas"><img loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="/signal-brief/ai/avatars/benedict-evans.png" alt="" title="Benedict Evans"><img loading="lazy" src="/signal-brief/ai/avatars/ai.png" alt="" title="AI"><img loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt="" title="Jensen Huang"><img loading="lazy" src="/signal-brief/ai/avatars/sam-altman.jpg" alt="" title="Sam Altman"><img loading="lazy" src="/signal-brief/ai/avatars/dario-amodei.jpg" alt="" title="Dario Amodei"></span></div><div class="ep-header-video" data-sb="video"></div></div>
+<div class="tabs-block"><div class="tabs" role="tablist" id="sbTabs"><button class="tab" type="button" role="tab" data-tab="sintesi" aria-selected="true" onclick="sbTab('sintesi')">Sintesi</button><button class="tab" type="button" role="tab" data-tab="testo" aria-selected="false" onclick="sbTab('testo')">Testo</button><button class="tab" type="button" role="tab" data-tab="comparazione" aria-selected="false" onclick="sbTab('comparazione')">Comparazione</button><button class="tab" type="button" role="tab" data-tab="segnali" aria-selected="false" onclick="sbTab('segnali')">Segnali</button><button class="tab" type="button" role="tab" data-tab="fonti" aria-selected="false" onclick="sbTab('fonti')">Fonti</button></div>
+<div class="tab-panel panel" data-sb-panel="sintesi"><div class="synthesis"><p><strong>Dal modello all'impalcatura che lo circonda</strong></p>
+<p>Il tema più trasversale è che l'oggetto di attenzione non è più il modello, ma il livello che lo orchestra. <a href="#" class="face-link" onclick="vaiFonte(event, 'Andrej Karpathy')" title="Fonti di Andrej Karpathy"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt=""></a>Andrej Karpathy, ora nel team di pretraining di Anthropic, <a href="https://www.benzinga.com/markets/tech/26/08/60861644/andrej-karpathy-says-ai-has-moved-beyond-simple-prompts-after-claude-opus-builds-3d-lord-of-the-rings-world" target="_blank" rel="noopener">descrive gli agenti inline come il terzo grande cambio di interfaccia</a>; <a href="#" class="face-link" onclick="vaiFonte(event, 'Jack Dorsey')" title="Fonti di Jack Dorsey"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt=""></a>Jack Dorsey costruisce <a href="https://techcrunch.com/2026/07/21/jack-dorsey-is-taking-on-slack-with-buzz-a-group-chat-platform-for-teams-and-their-ai-agents/" target="_blank" rel="noopener">una chat aziendale dove gli agenti hanno identità propria</a>; <a href="#" class="face-link" onclick="vaiFonte(event, 'Aravind Srinivas')" title="Fonti di Aravind Srinivas"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/aravind-srinivas.jpg" alt=""></a>Aravind Srinivas punta sull'<a href="https://www.outlookbusiness.com/corporate/perplexity-ceo-outlines-multi-model-ai-vision-at-taiwan-event" target="_blank" rel="noopener">orchestrazione multi-modello come vero vantaggio competitivo</a>; DHH, passato dallo scetticismo all'uso intensivo, <a href="https://x.com/dhh/status/2087186849714393254" target="_blank" rel="noopener">parla di "esecuzione senza fine"</a>. Perfino <a href="#" class="face-link" onclick="vaiFonte(event, 'François Chollet')" title="Fonti di François Chollet"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt=""></a>François Chollet, storicamente critico verso gli LLM, oggi <a href="https://new-savanna.blogspot.com/2026/08/what-weve-got-in-frontier-models-is-now.html" target="_blank" rel="noopener">legge i sistemi migliori come "modello più programma"</a>. È una convergenza notevole tra voci lontanissime.</p>
+<p><strong>Sotto l'entusiasmo, però, si è aperta una questione economica</strong>, ed è qui che la corrente si fa più interessante. <a href="#" class="face-link" onclick="vaiFonte(event, 'Benedict Evans')" title="Fonti di Benedict Evans"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/benedict-evans.png" alt=""></a>Benedict Evans insiste da mesi che <a href="https://stratechery.com/2026/an-interview-with-benedict-evans-about-ai-and-software/" target="_blank" rel="noopener">i modelli vanno trattati come infrastruttura</a>, con potere di prezzo destinato a comprimersi; <a href="#" class="face-link" onclick="vaiFonte(event, 'Patrick Collison')" title="Fonti di Patrick Collison"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/patrick-collison.jpg" alt=""></a>Patrick Collison compra OpenRouter per presidiare <a href="https://www.cnbc.com/2026/08/19/stripe-openrouter-fintech-ai-model-marketplace-.html" target="_blank" rel="noopener">l'"infrastruttura economica dell'AI"</a>; <a href="#" class="face-link" onclick="vaiFonte(event, 'Jensen Huang')" title="Fonti di Jensen Huang"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt=""></a>Jensen Huang trasforma il calcolo in <a href="https://www.reuters.com/commentary/breakingviews/jensen-huang-takes-wheel-500-bln-ai-bandwagon-2026-08-11/" target="_blank" rel="noopener">classe di attivo finanziario da 500 miliardi</a>. I segnali editoriali della settimana — l'analisi di Drew Breunig sulla <a href="https://www.dbreunig.com/2026/08/23/fable-the-end-of-moore-s-law.html" target="_blank" rel="noopener">fine del pranzo gratis</a> — dicono la stessa cosa dal lato opposto: l'intelligenza si commoditizza, il margine si sposta a valle.</p>
+<p><strong>La divergenza vera non è tra ottimisti e pessimisti, ma sul ritmo.</strong> <a href="#" class="face-link" onclick="vaiFonte(event, 'Sam Altman')" title="Fonti di Sam Altman"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/sam-altman.jpg" alt=""></a>Sam Altman <a href="https://techcrunch.com/2026/07/28/sam-altman-is-ready-to-decelerate/" target="_blank" rel="noopener">ha sospeso alcuni addestramenti di frontiera</a> e <a href="#" class="face-link" onclick="vaiFonte(event, 'Dario Amodei')" title="Fonti di Dario Amodei"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/dario-amodei.jpg" alt=""></a>Dario Amodei chiede test pre-deployment e un'autorità di vigilanza, sostenendo che <a href="https://techcrunch.com/2026/08/16/anthropic-ceo-says-ai-backlash-is-fundamentally-a-crisis-of-trust/" target="_blank" rel="noopener">il vero problema sia una crisi di fiducia</a>. Sul fronte opposto <a href="#" class="face-link" onclick="vaiFonte(event, 'Marc Andreessen')" title="Fonti di Marc Andreessen"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/marc-andreessen.jpg" alt=""></a>Marc Andreessen ritiene che <a href="https://finance.yahoo.com/news/slowing-down-ai-cause-preventable-072746698.html" target="_blank" rel="noopener">rallentare costi vite</a> e <a href="#" class="face-link" onclick="vaiFonte(event, 'Yann LeCun')" title="Fonti di Yann LeCun"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/yann-lecun.jpg" alt=""></a>Yann LeCun insiste che <a href="https://x.com/ylecun/status/2088880284129210405" target="_blank" rel="noopener">l'unica via sia la diffusione aperta</a>.</p>
+<p><strong>Il filo che tiene insieme tutto è una domanda di controllo, non di capacità.</strong> <a href="#" class="face-link" onclick="vaiFonte(event, 'Geoffrey Hinton')" title="Fonti di Geoffrey Hinton"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/geoffrey-hinton.jpg" alt=""></a>Geoffrey Hinton avverte che <a href="https://www.cnn.com/2026/08/06/tech/ai-rogue-anthropic-openai-hinton" target="_blank" rel="noopener">gli agenti diventano più difficili da controllare</a>, <a href="#" class="face-link" onclick="vaiFonte(event, 'Balaji Srinivasan')" title="Fonti di Balaji Srinivasan"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/balaji-srinivasan.jpg" alt=""></a>Balaji Srinivasan cerca giurisdizioni amichevoli, <a href="#" class="face-link" onclick="vaiFonte(event, 'Vitalik Buterin')" title="Fonti di Vitalik Buterin"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/vitalik-buterin.jpg" alt=""></a>Vitalik Buterin lavora sulla verificabilità. Il dibattito si è spostato da "quanto è intelligente" a "chi tiene la mano sulla leva, e chi paga il conto".</p></div></div>
+<div class="tab-panel panel" data-sb-panel="testo" hidden><button class="tr-copy" type="button" onclick="copiaTrascrizione(this)">copia il testo</button><div class="transcript-body"><h2>Chi incassa l'intelligenza</h2>
+<p class="podcast-episode-desc">Stripe compra OpenRouter, il costo dell'inferenza smette di scendere e gli scettici storici passano agli agenti. La contesa si sposta dal modello a chi tiene la cassa.</p>
+<div class="chapter" data-mood="geo"><hr></div>
+<p>Il 19 agosto Stripe ha comprato OpenRouter per più di sette miliardi di dollari. OpenRouter è un servizio che smista le richieste verso oltre quattrocento modelli di intelligenza artificiale e ne misura il prezzo: una specie di centralino. Tre mesi prima valeva un quinto di quella cifra.</p>
+<p>È il 24 agosto 2026, questo è Signal Brief. Ieri parlavamo di come l'attenzione si fosse spostata dal modello all'impalcatura che gli sta intorno. Oggi quell'impalcatura ha smesso di essere una questione tecnica e ha cominciato a somigliare a un casello autostradale.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Patrick Collison')" title="Fonti di Patrick Collison"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/patrick-collison.jpg" alt=""></a>Patrick Collison, che guida Stripe, ha spiegato l'acquisto con una formula asciutta: Stripe sta costruendo l'infrastruttura economica dell'intelligenza artificiale. Non i modelli. Il livello sotto — quello che decide dove va una richiesta, quanto costa, chi la paga.</p>
+<p>Ieri l'impalcatura era una faccenda da ingegneri: come collegare un modello a degli strumenti, come farlo lavorare da solo su compiti lunghi. Oggi è diventata una faccenda da contabili. Chi possiede il centralino incassa una piccola percentuale su ogni pensiero che passa. Ed è questa la differenza rispetto a ieri: il valore non si è spostato di poco, si è spostato di piano.</p>
+<p>Nello stesso giro di giorni <a href="#" class="face-link" onclick="vaiFonte(event, 'Aravind Srinivas')" title="Fonti di Aravind Srinivas"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/aravind-srinivas.jpg" alt=""></a>Aravind Srinivas, alla guida di Perplexity, ha presentato il suo prodotto come uno strato che smista i compiti tra modelli diversi, scegliendo di volta in volta quello più adatto per intelligenza, costo e riservatezza. La sua posizione è che il vantaggio non stia nel possedere il modello migliore, ma nel saper mandare il compito giusto alla porta giusta. Detta così sembra una questione di dettaglio. È invece la stessa cosa che disse chi, negli anni Novanta, capì che nella rete non avrebbe contato chi produceva i contenuti ma chi teneva l'elenco.</p>
+<p>Poi c'è la notizia che rende tutto meno comodo. Drew Breunig, analista che scrive di dati e modelli, ha pubblicato il 23 agosto un pezzo con una tesi netta: il costo per unità di testo prodotta da un modello ha smesso di scendere. Per tre anni quel prezzo è calato con una regolarità che ricordava la legge di Moore, la vecchia regola per cui i chip raddoppiavano la potenza a parità di spesa ogni paio d'anni. Breunig dice che quella discesa si è fermata. Il pranzo gratis dell'inferenza a buon mercato è finito.</p>
+<p>Le due notizie si tengono per mano. Se l'intelligenza costa sempre meno, sprecarla non è un problema: si instrada male, si chiama il modello sbagliato, pazienza. Se il costo si ferma, allora ogni richiesta mal indirizzata è denaro perso, e improvvisamente il centralino diventa un'infrastruttura strategica. Ecco perché Stripe paga sette miliardi per una cosa che tre mesi fa ne valeva poco più di uno.</p>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Benedict Evans')" title="Fonti di Benedict Evans"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/benedict-evans.png" alt=""></a>Benedict Evans lo sostiene da mesi: i modelli vanno guardati come infrastruttura, e l'infrastruttura non ha potere sul prezzo. Anche qui qualcosa è cambiato rispetto a ieri. Non è più un rischio all'orizzonte, è la condizione attuale. È successo con l'elettricità: all'inizio erano le centrali a fare il valore, poi la corrente è diventata una cosa che c'è e basta, e il denaro si è spostato su chi fabbricava le lavatrici e i tram.</p>
+<p>Sullo sfondo si muove una terza cosa, più sottile. Alcuni critici storici dei modelli linguistici hanno cambiato idea. David Heinemeier Hansson, il creatore di Ruby on Rails, che dello scetticismo aveva fatto una posizione pubblica, il 9 agosto ha descritto l'epoca degli agenti come esecuzione senza fine, dicendo che è il divertimento più grande che abbia mai avuto con un computer. <a href="#" class="face-link" onclick="vaiFonte(event, 'François Chollet')" title="Fonti di François Chollet"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt=""></a>François Chollet, che ha passato anni a spiegare perché i modelli linguistici non bastavano, oggi descrive i sistemi migliori come modello più programma.</p>
+<p>Non è che i critici si siano arresi. È che l'oggetto della discussione si è spostato sotto i loro piedi.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Patrick Collison')" title="Fonti di Patrick Collison"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/patrick-collison.jpg" alt=""></a>Patrick Collison ha fondato Stripe con suo fratello quando erano poco più che ragazzi, e da allora l'azienda fa una cosa apparentemente noiosa: gestisce i pagamenti per chi vende qualcosa online. Roba di tubi, non di vetrine.</p>
+<p>Il 19 agosto ha annunciato l'acquisizione di OpenRouter per oltre sette miliardi di dollari. La motivazione che ha dato pubblicamente è che il servizio aiuta le aziende a essere più redditizie, instradando le richieste in modo intelligente e spendendo i token — le unità di testo che i modelli consumano e fatturano — in modo efficiente.</p>
+<p>Vale la pena fermarsi su cosa ha comprato davvero. OpenRouter non addestra modelli. Non ne possiede nessuno. È un punto di passaggio: le richieste entrano da una porta sola e vengono smistate verso quattrocento modelli di ottanta fornitori diversi. Nel farlo, è diventato di fatto il posto dove si legge il prezzo dell'intelligenza, come un listino di borsa che nessuno ha deciso di istituire.</p>
+<p>Il gesto di Collison dice che ha visto la stessa cosa che vede Breunig, ma dal lato opposto del tavolo. Se i modelli si assomigliano sempre di più e il costo di usarli smette di scendere, allora la parte difficile non è più costruire il cervello: è decidere quale cervello chiamare e presentare il conto. Quel punto lì, per un'azienda che di mestiere fa esattamente presentare conti, è casa.</p>
+<p>C'è un dettaglio della sua attività recente che completa il ritratto. In un altro intervento ha sostenuto che gli strumenti per programmare con gli agenti non dovrebbero vivere principalmente dentro il terminale — quella finestra nera con il testo bianco che usano gli sviluppatori — sottintendendo che serva un'interfaccia più curata per chi ci lavora sul serio. E ha pubblicato dati di Stripe che mostrano un aumento di nuove imprese e di startup che raggiungono i primi traguardi di fatturato, leggendolo come segno che fare impresa è diventato più facile.</p>
+<p>Sono tre gesti diversi che raccontano la stessa convinzione: che il territorio interessante non sia il modello, ma tutto ciò che gli sta intorno — l'interfaccia, il conto, l'identità di chi paga.</p>
+<p>Quando qualcuno che vive di commissioni compra il casello, di solito ha ragione su dove passerà il traffico.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Drew Breunig scrive di dati e di modelli con un taglio da analista più che da entusiasta. Il 23 agosto ha pubblicato un pezzo che vale la pena prendere sul serio, perché smonta un'assunzione su cui era poggiata buona parte dell'ottimismo degli ultimi due anni.</p>
+<p>L'assunzione era questa: il costo per far ragionare una macchina scende in continuazione, quindi qualunque cosa oggi sia troppo cara domani sarà accessibile. Era diventato un riflesso mentale. Un'idea troppo costosa da realizzare non veniva scartata, veniva parcheggiata in attesa che i prezzi la raggiungessero.</p>
+<p>Breunig sostiene che quella discesa si è fermata, e usa un paragone diretto con la legge di Moore, la regola informale che per decenni ha promesso all'informatica il raddoppio della potenza a parità di spesa. Quella regola ha smesso di valere per i chip qualche anno fa, dopo aver retto per mezzo secolo. Secondo Breunig sta finendo anche la sua versione applicata all'intelligenza artificiale.</p>
+<p>Se ha ragione, cambiano parecchie cose. Cambia il modo di scegliere cosa costruire, perché non si può più contare sul futuro per rendere sostenibile il presente. Cambia il calcolo di chi ha investito centinaia di miliardi in centri di calcolo scommettendo su volumi enormi a margini sottili. E soprattutto cambia il valore di chi sa risparmiare: se il prezzo di listino non scende più, l'unico risparmio possibile è non sprecare.</p>
+<p>Ecco perché questo pezzo e l'acquisizione di Stripe, arrivati a quattro giorni di distanza, sono la stessa notizia raccontata da due angoli.</p>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Jensen Huang')" title="Fonti di Jensen Huang"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt=""></a>Jensen Huang, che guida Nvidia, si muove nella direzione opposta e con una convinzione totale: ha presentato un piano di finanziamento da cinquecento miliardi di dollari costruito insieme a istituti finanziari, con l'idea che il calcolo sia una classe di investimento, come lo sono gli immobili o le infrastrutture. La sua tesi operativa è che i laboratori crescano più in fretta dei loro bilanci, e che qualcuno debba portare i capitali dove servono.</p>
+<p>Due scommesse opposte sullo stesso tavolo. Huang punta sul fatto che serviranno sempre più fabbriche di calcolo. Breunig osserva che quelle fabbriche non stanno più diventando più economiche. Le fabbriche tessili inglesi dell'Ottocento sono state entrambe le cose: prima una rendita straordinaria, poi un settore a margini sottili dove sopravviveva solo chi tagliava i costi meglio degli altri. Nessuno, mentre le costruiva, sapeva in quale delle due fasi stesse investendo.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>David Heinemeier Hansson ha creato Ruby on Rails, uno degli strumenti con cui è stata costruita mezza internet degli anni Duemila, e da sempre ha una fama di persona che dice no con entusiasmo. Sull'intelligenza artificiale il suo no era stato piuttosto rumoroso.</p>
+<p>Il 9 agosto ha scritto che l'epoca degli agenti è esecuzione senza fine, e che è la cosa più divertente che gli sia mai capitata con un computer. Le cronache intorno a quel post raccontano numeri concreti: cento richieste di modifica al codice processate in novanta minuti, con due modelli diversi che lavorano in coppia.</p>
+<p>Non è la conversione a interessare. È il motivo. Hansson non descrive gli agenti come qualcosa che scrive codice meglio di lui. Li descrive come programmatori virtuali da supervisionare, e sostiene che gli ingegneri esperti siano i migliori nel farlo — perché l'epoca degli agenti premia il giudizio più della velocità di battitura.</p>
+<p>È il ribaltamento di una previsione che circolava fino a poco fa, quella per cui questi strumenti avrebbero eroso il vantaggio dei veterani mettendo tutti sullo stesso piano. Sta succedendo il contrario, almeno secondo lui: sapere cosa chiedere e riconoscere quando la risposta è sbagliata è diventato il mestiere.</p>
+<p>La stessa settimana <a href="#" class="face-link" onclick="vaiFonte(event, 'François Chollet')" title="Fonti di François Chollet"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt=""></a>François Chollet, ricercatore che ha costruito una parte della sua reputazione pubblica sullo spiegare perché i modelli linguistici non fossero la strada per un'intelligenza vera, ha detto qualcosa di sorprendentemente vicino. Gli agenti che funzionano oggi, sostiene, sono modello più programma: una rete neurale affiancata da codice normale che la guida, la corregge, le fa rifare le cose. E ha aggiunto di aver aggiornato le proprie posizioni dopo una dimostrazione di fine 2024, riconoscendo una forma di intelligenza flessibile quando il modello è messo nell'impalcatura giusta.</p>
+<p>Uno scettico pratico e uno scettico teorico arrivano quasi allo stesso punto partendo da strade opposte. Nessuno dei due sta dicendo che il modello da solo sia sufficiente. Entrambi stanno dicendo che il modello dentro una struttura è un'altra cosa.</p>
+<p>Fermiamoci un istante a raccogliere il filo, perché qui si intrecciano tre storie. Il valore economico si sposta dal modello a chi lo smista. Il costo di usarlo smette di scendere. E chi lo criticava da anni si accorge che il pezzo interessante non era mai il modello, ma quello che ci si costruisce sopra. Tre osservatori lontanissimi che guardano la stessa cosa.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Marc Andreessen')" title="Fonti di Marc Andreessen"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/marc-andreessen.jpg" alt=""></a>Marc Andreessen è un investitore che ha finanziato una parte consistente della Silicon Valley degli ultimi vent'anni, e da tempo sostiene la posizione più accelerazionista disponibile sul mercato.</p>
+<p>In una recente apparizione pubblica ha detto che i modelli di frontiera hanno di fatto reso reale l'intelligenza artificiale generale, e che il passo successivo riguarda la robotica e i mezzi autonomi. Ma il punto su cui vale la pena soffermarsi è un altro, ed è un argomento morale prima che tecnico: rallentare lo sviluppo dell'intelligenza artificiale, sostiene, costerà vite umane evitabili.</p>
+<p>È una mossa retorica precisa. Sposta l'onere della prova. Fino a ieri chi voleva accelerare doveva spiegare perché fosse sicuro; con questo argomento è chi vuole frenare a dover spiegare quante persone è disposto a lasciare indietro. Non è nuova come struttura — è la stessa usata per anni a proposito dell'approvazione dei farmaci, dove ogni mese di attesa ha un conto in malati non curati — ma applicata all'intelligenza artificiale suona diversa, perché i benefici sono ancora in gran parte promessi mentre i costi sono già visibili.</p>
+<p>Dall'altra parte del dibattito ci sono due voci che dicono cose incompatibili tra loro. <a href="#" class="face-link" onclick="vaiFonte(event, 'Sam Altman')" title="Fonti di Sam Altman"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/sam-altman.jpg" alt=""></a>Sam Altman ha sospeso alcuni addestramenti di frontiera e ha rallentato deliberatamente lo sviluppo, per lasciare tempo a sicurezza e sorveglianza di stare al passo, dopo alcuni incidenti legati alla sicurezza informatica. <a href="#" class="face-link" onclick="vaiFonte(event, 'Dario Amodei')" title="Fonti di Dario Amodei"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/dario-amodei.jpg" alt=""></a>Dario Amodei ha pubblicato un lungo intervento a metà agosto in cui difende l'idea di regole e chiede test obbligatori prima del rilascio e un organismo di vigilanza sul modello di quelli finanziari. E aggiunge una cosa che gli fa onore: la critica più giusta che si può muovere alle aziende di intelligenza artificiale, compresa la sua, è di non aver ancora mantenuto le promesse fatte.</p>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Yann LeCun')" title="Fonti di Yann LeCun"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/yann-lecun.jpg" alt=""></a>Yann LeCun risponde da una terza direzione ancora. Il 16 agosto ha ribadito che l'unica via percorribile è che la tecnologia sia diffusa e condivisa, e ha appoggiato le critiche alla postura molto prudente di Anthropic. Per lui la sicurezza non nasce dal controllo ma dalla diffusione.</p>
+<p>Tre persone che passano le giornate a occuparsi della stessa cosa e che sulla domanda più semplice — andare più veloci o più piano — danno risposte che non si toccano nemmeno. Quando le persone più informate su un tema divergono così tanto, di solito significa che il disaccordo non è sui fatti, ma su cosa temere di più.</p>
+<div class="chapter" data-mood="upbeat"><hr></div>
+<p>Progetti da osservare.</p>
+<p>OpenRouter, il protagonista della giornata. È il centralino che smista le richieste verso quattrocento modelli di ottanta fornitori diversi, e nel farlo è diventato il posto dove si legge quanto costa l'intelligenza. Stripe l'ha pagato oltre sette miliardi, cinque volte e mezza quello che valeva a maggio.</p>
+<p>DeepSeek Harness, o dsh. Un programma che fa lavorare i modelli su compiti lunghi e in cui ogni pezzo è sostituibile: il modello, gli strumenti, la memoria, l'interfaccia. Nessun componente è obbligatorio, nessuno è legato a un fornitore. Uscito il 13 agosto, ha raccolto ventimila stelle su GitHub in un'ora e centosessantacinquemila in una settimana. È l'idea del modello come pezzo intercambiabile portata alle estreme conseguenze.</p>
+<p>Buzz, di Block. Una chat aziendale in cui gli agenti non sono strumenti ma partecipanti: hanno un'identità propria, dei permessi, e firmano le azioni che compiono. <a href="#" class="face-link" onclick="vaiFonte(event, 'Jack Dorsey')" title="Fonti di Jack Dorsey"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt=""></a>Jack Dorsey l'ha descritta come indipendente dal modello e autogestita. Se gli agenti diventano colleghi, prima o poi qualcuno deve dare loro un badge.</p>
+<p>OpenClaw. Un assistente autonomo che si installa da soli e si comanda dalle app di messaggistica, come si scrive a un amico. È diventato il progetto più stellato nella storia di GitHub, oltre trecentottantamila stelle. Capacità notevole in mano a chiunque, con problemi di sicurezza discussi apertamente da chi lo usa: il tema del controllo, uscito dai convegni e finito sul telefono.</p>
+<p>Remote Labor Index. Una misurazione che verifica quanti incarichi freelance veri — undici ore e mezza di lavoro umano in media, duecento dollari di valore — un agente porta a termine in modo accettabile per il cliente. Era il due e mezzo per cento a ottobre 2025. A luglio 2026 è il sedici. È la curva che trasforma una discussione astratta in un numero.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Sette miliardi per un centralino, mentre il prezzo di ciò che ci passa dentro smette di scendere. Per tre anni ci siamo chiesti quale modello fosse il più intelligente. La domanda che sta prendendo il suo posto è più antica e meno affascinante: chi tiene la cassa, e chi decide quanto costa pensare.</p>
+<p>È stato Signal Brief. Alla prossima.</p></div><div class="rawmd"><a href="raw.md">Testo (markdown)</a></div></div>
+<div class="tab-panel panel" data-sb-panel="comparazione" hidden><div class="tension"><div class="axis">↗ Infrastruttura economica dell'AI come posta in gioco</div><div class="side">Nasce una lotta per il livello di pagamento e routing tra modelli, con Stripe che acquisisce OpenRouter per presidiare lo strato transazionale.</div></div><div class="tension"><div class="axis">↗ Orchestrazione multi-modello come vantaggio competitivo</div><div class="side">Il valore non sta nel possedere il modello migliore ma nel saper instradare il compito giusto al modello giusto.</div></div><div class="tension"><div class="axis">↗ Fine della legge di Moore per l'intelligenza</div><div class="side">Il calo continuo del costo per token si interrompe e il pranzo gratis dell'inferenza a buon mercato finisce.</div></div><div class="tension"><div class="axis">↗ Conversione degli scettici</div><div class="side">Critici storici degli LLM adottano gli strumenti agentici e ne descrivono l'uso come esecuzione continua, segnalando una convergenza tra posizioni prima incompatibili.</div></div><div class="tension"><div class="axis">↗ Il costo del ritardo come argomento morale</div><div class="side">Rallentare lo sviluppo non è prudenza ma un costo in vite umane non salvate, ribaltando l'onere della prova sui cauti.</div></div><div class="tension"><div class="axis">↗ Verificabilità e giurisdizione come infrastrutture del controllo</div><div class="side">Il controllo viene affrontato con strumenti crittografici e con la scelta di ordinamenti favorevoli, non solo con regole di laboratorio.</div></div><div class="tension"><div class="axis">⚖ Velocità di sviluppo: prudenza istituzionale contro costo morale del ritardo</div><div class="side">Sam Altman: sospendere addestramenti di frontiera è la mossa responsabile · Dario Amodei: servono test pre-deployment e un'autorità di vigilanza · Marc Andreessen: rallentare l'AI causa morti evitabili</div></div><div class="tension"><div class="axis">⚖ Sicurezza tramite chiusura o tramite apertura</div><div class="side">Dario Amodei: la fiducia si ricostruisce con regole e supervisione centralizzata · Yann LeCun: solo la diffusione aperta produce sicurezza reale</div></div><div class="tension"><div class="axis">⚖ Dove si accumula il valore economico nello stack</div><div class="side">Benedict Evans: i modelli diventano infrastruttura a basso potere di prezzo · Jensen Huang: il calcolo è la classe di attivo su cui puntare centinaia di miliardi · Patrick Collison: il valore sta nel livello economico che smista e fattura l'intelligenza · Aravind Srinivas: il valore sta nell'orchestrazione tra modelli</div></div><div class="tension"><div class="axis">⚖ Controllo degli agenti: regolare, verificare o spostarsi altrove</div><div class="side">Geoffrey Hinton: gli agenti diventano strutturalmente più difficili da controllare · Vitalik Buterin: la risposta è rendere i sistemi verificabili · Balaji Srinivasan: la risposta è cercare giurisdizioni amichevoli</div></div><div class="tension"><div class="axis">⚖ Gli LLM come architettura sufficiente o come componente da incorniciare</div><div class="side">François Chollet: i sistemi migliori sono modello più programma, non modello puro · Andrej Karpathy: il salto sta nell'interfaccia agentica sopra il modello · DHH: il valore pratico è l'esecuzione senza fine resa possibile dagli agenti</div></div></div>
+<div class="tab-panel panel" data-sb-panel="segnali" hidden><section><h2>Progetti da osservare</h2><div class="tension"><div class="axis">DeepSeek Harness (dsh)</div><div class=side>Agent harness open source di DeepSeek in cui tutto è un plugin: modelli, tool, skill, sandbox, loop e UI sono componibili e provider-agnostici. Rilasciato il 13 agosto 2026, ha superato 20k stelle in un'ora e ~165k in una settimana, record di velocità su GitHub.</div></div><div class="tension"><div class="axis">Buzz (Block)</div><div class=side>Chat aziendale open source di Block costruita su Nostr, dove gli agenti AI hanno identità crittografica propria, permessi e firma delle azioni, accanto a repo e workflow. Supporta Claude Code, Codex e goose come harness nativi, Apache-2.0, self-hosted o gestita.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> OpenRouter</div><div class=side>Gateway che instrada e ottimizza i token su oltre 400 modelli di più di 80 provider, diventato di fatto il punto di misura del prezzo dell'intelligenza. Acquisito da Stripe ad agosto 2026 per oltre 7 miliardi, 5,4x la valutazione di tre mesi prima.</div></div><div class="tension"><div class="axis">Grok 4.6</div><div class=side>Modello di frontiera SpaceXAI del 12 agosto 2026 con 500K di contesto, addestrato con RL in ambienti agentici per sessioni lunghe e auto-verifica. Disponibile via API, Cursor e Grok Build a 2/6 dollari per milione di token, terzo posto sull'Artificial Analysis Index.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> HugAgentOS</div><div class=side>AgentOS enterprise del REAL Lab di Zhejiang che usa l'ontologia di dominio come control plane per ragionamento e azioni degli agenti. La Community Edition mette insieme chat agentica, RAG privato, sub-agenti, tool MCP, sandbox, memoria a lungo termine e automazioni in un workspace self-hosted.</div></div><div class="tension"><div class="axis">Muse Glimmer</div><div class=side>Modello Meta da 30B in Apache 2.0 pensato per uso agentico locale e multimodale, con buoni risultati su DeepSearch QA, MCP-Atlas, τ-Bench e SWE-Bench. È il ritorno di Meta sul terreno dei pesi aperti orientati agli agenti, non alla chat.</div></div><div class="tension"><div class="axis">OpenClaw</div><div class=side>Agente personale autonomo self-hosted che usa le app di messaggistica come interfaccia principale, diventato il repository più stellato nella storia di GitHub (oltre 380k stelle). È il caso limite del tema controllo: capacità enorme in mano a chiunque, con superficie di sicurezza discussa apertamente.</div></div><div class="tension"><div class="axis">Claude Security (Mythos 5)</div><div class=side>Dal 21 agosto 2026 le scansioni di Claude Security girano su Mythos 5 in beta pubblica per gli Enterprise: analisi di un repo GitHub con findings classificati per CWE, severità, confidenza e patch suggerita. Accompagnata da 35 milioni in crediti per la difesa open source.</div></div><div class="tension"><div class="axis">GLM-5.2</div><div class=side>MoE da 744B parametri (~40B attivi) con 1M di contesto e licenza MIT, pubblicato da Z.ai con pesi BF16 e FP8 su Hugging Face. È il riferimento con cui si misura quanto i pesi aperti abbiano eroso il potere di prezzo dei modelli chiusi.</div></div><div class="tension"><div class="axis">Qwen 3.8 27B</div><div class=side>LLM Apache 2.0 da 27B con capacità visive di Alibaba, taglia pensata per girare su un laptop ben configurato. Willison lo giudica eccellente ma incline a ragionare troppo di default.</div></div></section></div>
+<div class="tab-panel panel" data-sb-panel="fonti" hidden><div class="fonte" data-fonte-nome="Patrick Collison"><span class="who">Patrick Collison</span><a href="https://fortune.com/2026/08/04/stripe-ceo-patrick-collison-double-ivy-league-dropout-now-billonaire-tells-gen-z-no-need-to-rush-school/" target="_blank" rel="noopener">https://fortune.com/2026/08/04/stripe-ceo-patrick-collison-double-ivy-league-dropout-now-billonaire-tells-gen-z-no-need-to-rush-school/</a><a href="https://digg.com/tech/entities/15vytqz9" target="_blank" rel="noopener">https://digg.com/tech/entities/15vytqz9</a><a href="https://www.cnbc.com/2026/08/19/stripe-openrouter-fintech-ai-model-marketplace-.html" target="_blank" rel="noopener">https://www.cnbc.com/2026/08/19/stripe-openrouter-fintech-ai-model-marketplace-.html</a></div><div class="fonte" data-fonte-nome="DHH"><span class="who">DHH</span><a href="https://world.hey.com/dhh" target="_blank" rel="noopener">https://world.hey.com/dhh</a><a href="https://www.lanternpodcasts.com/topfive/podcast/tech-podcast-podcast/transcript/2026-08-03.html" target="_blank" rel="noopener">https://www.lanternpodcasts.com/topfive/podcast/tech-podcast-podcast/transcript/2026-08-03.html</a><a href="https://www.lanternpodcasts.com/podcasts/tech-podcast-podcast/2026-08-03" target="_blank" rel="noopener">https://www.lanternpodcasts.com/podcasts/tech-podcast-podcast/2026-08-03</a></div><div class="fonte" data-fonte-nome="Marc Andreessen"><span class="who">Marc Andreessen</span><a href="https://www.techradar.com/pro/we-crossed-that-about-3-months-ago-a16zs-marc-andreessen-drops-huge-bombshell-about-agi-on-joe-rogans-podcast" target="_blank" rel="noopener">https://www.techradar.com/pro/we-crossed-that-about-3-months-ago-a16zs-marc-andreessen-drops-huge-bombshell-about-agi-on-joe-rogans-podcast</a><a href="https://www.bbc.com/news/articles/cz97ljy91zxo" target="_blank" rel="noopener">https://www.bbc.com/news/articles/cz97ljy91zxo</a><a href="https://www.startuphub.ai/ai-news/ai-video/2026/ai-is-bigger-than-the-internet-costs-are-collapsing" target="_blank" rel="noopener">https://www.startuphub.ai/ai-news/ai-video/2026/ai-is-bigger-than-the-internet-costs-are-collapsing</a></div></div>
+</div>
+<script>function sbTab(key) {  document.querySelectorAll('.tab-panel').forEach(function (p) {    p.hidden = p.getAttribute('data-sb-panel') !== key;  });  document.querySelectorAll('#sbTabs .tab').forEach(function (b) {    b.setAttribute('aria-selected', b.dataset.tab === key ? 'true' : 'false');  });}function vaiFonte(ev, nome) {  ev.preventDefault();  sbTab('fonti');  var d = document.querySelector('[data-fonte-nome="' + nome + '"]');  if (d) d.scrollIntoView({behavior: 'smooth', block: 'center'});}</script>
+<dialog class="vplayer" id="vplayer"></dialog>
+<script>
+// player modale dei video: la miniatura apre il video al centro (disegno 2026-08-07)
+function apriVideo(src) {
+  var d = document.getElementById('vplayer');
+  d.innerHTML = '<video controls autoplay playsinline src="' + src + '"></video>';
+  d.showModal();
+  d.onclick = function (e) { if (e.target === d) d.close(); };
+  d.onclose = function () { var v = d.querySelector('video'); if (v) v.pause(); d.innerHTML = ''; };
+}
+// ascolto inline dalla lista: un episodio alla volta
+var epAudio = null, epBtn = null;
+function ascolta(btn, src) {
+  if (epBtn === btn && epAudio) {
+    if (epAudio.paused) { epAudio.play(); btn.classList.add('on'); }
+    else { epAudio.pause(); btn.classList.remove('on'); }
+    return;
+  }
+  if (epAudio) { epAudio.pause(); if (epBtn) epBtn.classList.remove('on'); }
+  epAudio = new Audio(src); epBtn = btn;
+  epAudio.play(); btn.classList.add('on');
+  epAudio.onended = function () { btn.classList.remove('on'); };
+}
+function copiaTrascrizione(btn) {
+  var t = btn.parentElement.querySelector('.transcript-body');
+  navigator.clipboard.writeText(t ? t.innerText : '').then(function () {
+    btn.textContent = 'copiata ✓';
+    setTimeout(function () { btn.textContent = 'copia il testo'; }, 1800);
+  });
+}
+</script>
+<section class="sostieni"><h3>Se ti è utile, offrimi un caffè</h3><p>Signal.Brief non ha sponsor e non vende niente. Se ti è utile, puoi contribuire — e se non ti va, ascoltalo lo stesso.</p><div class="sostieni-atti"><a class="sostieni-btn" href="https://www.paypal.com/donate/?business=SGNE3B4JZUT9S&amp;no_recurring=0&amp;item_name=Signal.Brief+non+ha+sponsor.+Se+ti+%C3%A8+utile%2C+questo+lo+tiene+acceso.&amp;currency_code=EUR" target="_blank" rel="noopener">Offrimi un caffè</a><a class="sostieni-alt" href="../segui/">Ascoltalo nella tua app →</a></div></section>
+<footer class="creator-footer">
+  <img src="/signal-brief/mike-avatar.png" alt="Michele Mondora">
+  <div class="creator-meta">
+    <span class="creator-name">it-mikesoft</span>
+    <span class="creator-tagline">working with systems, living with questions</span>
+    <span class="creator-email"><a href="mailto:michele@mondora.com">michele@mondora.com</a></span>
+    <span class="creator-legal"><a href="/signal-brief/legal/privacy/">Privacy</a> ·
+      <a href="/signal-brief/legal/">Note legali</a></span>
+  </div>
+</footer>
+<section class="tutele"><h3>Trasparenza e tutele</h3>
+<p><strong>Come nasce questo contenuto.</strong> Ricerca, sintesi editoriale, voce narrante, immagini e musica sono prodotte con sistemi di intelligenza artificiale. Non c'è una redazione umana che verifica ogni affermazione prima della pubblicazione: un controllo automatico scarta le schede giudicate inaffidabili, ma non elimina la possibilità di errori.</p>
+<p><strong>Affermazioni su persone e aziende.</strong> Quanto riportato è una sintesi di fonti pubbliche, non una dichiarazione diretta delle persone citate: le frasi non vanno intese come virgolettati né come posizioni ufficiali. Le fonti sono indicate in ogni pagina episodio — verificale prima di considerare un'informazione accertata. Se trovi un'affermazione inesatta che ti riguarda, scrivi a <a href="mailto:michele@mondora.com">michele@mondora.com</a>: viene corretta o rimossa.</p>
+<p><strong>Immagini e volti.</strong> Le immagini di scena sono generate con AI e non raffigurano fatti realmente avvenuti. Le fotografie di persone reali usate nei video provengono da Wikimedia Commons con le rispettive licenze, e sono accostate al racconto a scopo identificativo: la loro presenza non implica partecipazione, dichiarazione o approvazione da parte della persona ritratta. Su richiesta dell'interessato vengono rimosse.</p>
+<p><strong>Fonti e diritti altrui.</strong> I contenuti sono rielaborazioni originali, non riproduzioni di articoli di terzi; le testate e gli autori all'origine di una notizia sono citati e collegati. Marchi e nomi commerciali appartengono ai rispettivi titolari e sono usati a scopo descrittivo.</p>
+</section>
+</body></html>
