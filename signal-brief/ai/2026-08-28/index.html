@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="it"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Il muro elettrico dell'intelligenza · Signal.AI</title>
+<meta property="og:title" content="Il muro elettrico dell'intelligenza · Signal.AI"><meta property="og:type" content="article"><meta property="og:description" content="Il chatbot non è più l'unità di misura: si contano le ore di lavoro autonomo. E il limite non è più il denaro, ma la corrente elettrica."><meta property="og:url" content="https://it-mikesoft.github.io/signal-brief/ai/2026-08-28/"><meta property="og:audio" content="https://op3.dev/e/media.casamon.dev/ai/podcast/episodes/2026-08-28.mp3"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "PodcastEpisode", "name": "Il muro elettrico dell'intelligenza", "datePublished": "2026-08-28", "url": "https://it-mikesoft.github.io/signal-brief/ai/2026-08-28/", "description": "Il chatbot non è più l'unità di misura: si contano le ore di lavoro autonomo. E il limite non è più il denaro, ma la corrente elettrica.", "inLanguage": "it", "associatedMedia": {"@type": "MediaObject", "contentUrl": "https://op3.dev/e/media.casamon.dev/ai/podcast/episodes/2026-08-28.mp3"}, "partOfSeries": {"@type": "PodcastSeries", "name": "Signal.AI", "url": "https://it-mikesoft.github.io/signal-brief/ai/"}}</script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:#faf8f4; color:#1a1a1a; padding:2rem 10px; max-width:none; margin:0 auto; line-height:1.6; }
+  a { color:#2563eb; }
+  .back { display:inline-block; margin-bottom:1.5rem; font-size:.8rem; font-family:monospace; text-decoration:none; }
+  .videos { display:flex; gap:1rem; flex-wrap:wrap; margin:1.2rem 0; }
+  .videos figure { margin:0; flex:1; min-width:260px; }
+  .videos .v2 { flex:0 1 240px; }
+  .videos video { width:100%; border-radius:12px; background:#000; }
+  .videos .v2 video { aspect-ratio:9/16; max-height:420px; }
+  .videos figcaption { font-size:.75rem; color:#888; text-align:center; margin-top:.3rem; }
+  .vlink { display:flex; gap:.3rem; margin-top:.35rem; }
+  .vlink input { flex:1; min-width:0; font-size:.68rem; font-family:monospace; padding:.3rem .4rem;
+    border:1px solid #e2ddd6; border-radius:6px; background:#fff; color:#6b7280; }
+  .vlink button { font-size:.68rem; padding:.3rem .6rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; }
+  .wk { font-size:1rem; margin:1.4rem 0 .4rem; }
+  details.wkacc { border:1px solid #e5e7eb33; border-radius:10px; margin:.6rem 0; padding:.1rem .8rem .4rem; }
+  details.wkacc summary { cursor:pointer; font-weight:600; padding:.5rem 0; font-size:.9rem; }
+  .back:hover { text-decoration:underline; }
+  header h1 { font-family:Georgia,serif; font-size:1.7rem; font-weight:600; }
+  header h1 span { color:#2563eb; }
+  .tagline { color:#6b7280; font-size:.85rem; margin-top:.3rem; margin-bottom:1.5rem; }
+  ul.eps { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
+  .subscribe { display:inline-flex; align-items:center; gap:.5rem; margin-bottom:1.2rem;
+    padding:.45rem .9rem; background:#2563eb; color:#fff; border-radius:20px;
+    text-decoration:none; font-size:.8rem; font-weight:600; }
+  .subscribe:hover { opacity:.85; color:#fff; }
+  .ep { display:flex; align-items:center; gap:.8rem; padding:.8rem 1rem; background:#fff;
+    border:1px solid #e2ddd6; border-radius:8px; text-decoration:none; color:inherit; transition:box-shadow .12s; }
+  .ep:hover { box-shadow:0 2px 8px rgba(0,0,0,.07); }
+  .ep-play { width:32px; height:32px; border-radius:50%; background:#f3f4f6; display:flex;
+    align-items:center; justify-content:center; font-size:12px; flex-shrink:0; }
+  .ep-title { font-size:.9rem; font-weight:500; }
+  .ep-meta { font-size:.72rem; color:#9ca3af; font-family:monospace; margin-top:.15rem; }
+  audio { width:100%; margin:1rem 0 1.5rem; }
+  .rawmd { margin:-.5rem 0 1.5rem; }
+  .rawmd a { font-size:.8rem; font-family:monospace; color:inherit; opacity:.65; }
+  .desc { color:#374151; font-size:.95rem; margin-bottom:1.5rem; }
+  section { margin:2rem 0; }
+  section h2 { font-family:Georgia,serif; font-size:1.1rem; border-bottom:1px solid #e2ddd6;
+    padding-bottom:.3rem; margin-bottom:.8rem; }
+  .synthesis p { margin:.7rem 0; }
+  .tension { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; font-size:.9rem; }
+  .tension .axis { font-weight:600; margin-bottom:.3rem; }
+  .tension .side { color:#6b7280; font-size:.85rem; }
+  .proj { font-size:.9rem; margin:.4rem 0; }
+  .proj .pname { font-weight:600; }
+  .proj .pnew { background:#16a34a; color:#fff; font-size:.65rem; font-weight:700;
+    padding:.1rem .35rem; border-radius:4px; text-transform:uppercase; vertical-align:middle; }
+  .fonte { font-size:.85rem; margin:.5rem 0; }
+  .fonte .who { font-weight:600; }
+  .fonte a { display:block; margin-left:.5rem; color:#6b7280; }
+  .transcript-body p { margin:.7rem 0; line-height:1.7; }
+  .transcript-body .chapter hr { border:none; border-top:1px solid #e2ddd6; margin:1.5rem 0; }
+  .transcript-body .podcast-episode-desc { color:#6b7280; font-style:italic; }
+  .signal-card { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; }
+  .signal-theme { font-size:.75rem; font-weight:700; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.3rem; }
+  .signal-text { font-size:.85rem; color:#374151; line-height:1.5; }
+  .creator-footer { margin-top:3rem; padding-top:1.5rem; border-top:1px solid #e2ddd6;
+    display:flex; align-items:center; gap:.9rem; }
+  .creator-footer img { width:40px; height:40px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+  .creator-legal { font-size:.78rem; margin-top:.15rem; }
+  .creator-legal a { color:inherit; }
+  .creator-meta { display:flex; flex-direction:column; gap:.15rem; }
+  .creator-name { font-size:.85rem; font-weight:600; color:#1a1a1a; }
+  .creator-tagline { font-size:.75rem; color:#6b7280; }
+  .creator-email { font-size:.75rem; }
+  .creator-ai { font-size:.72rem; color:#8a7f6d; max-width:46ch; line-height:1.45; }
+  .sostieni { margin-top:2.5rem; padding:1.2rem 1.4rem; border-radius:14px;
+    background:#f7f4ef; border:1px solid #e2ddd6; }
+  .sostieni h3 { margin:0 0 .3rem; font-size:1rem; }
+  .sostieni p { margin:0 0 .9rem; font-size:.88rem; color:#6b6257; line-height:1.55; }
+  .sostieni-atti { display:flex; gap:.8rem; align-items:center; flex-wrap:wrap; }
+  .sostieni-btn { display:inline-block; padding:.55rem 1.1rem; border-radius:10px;
+    background:#2563eb; color:#fff; text-decoration:none; font-weight:700; font-size:.88rem; }
+  .sostieni-alt { font-size:.85rem; color:#6b6257; text-decoration:none; }
+  .sostieni-alt:hover { text-decoration:underline; }
+  .tutele { margin-top:2rem; padding-top:1.2rem; border-top:1px solid #e2ddd6;
+    font-size:.72rem; color:#8a7f6d; line-height:1.5; }
+  .tutele h3 { font-size:.75rem; color:#6b7280; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.5rem; font-weight:600; }
+  .tutele p { margin:.45rem 0; }
+  .tutele strong { color:#5a5348; font-weight:600; }
+  .tutele a { color:inherit; text-decoration:underline; }
+  .creator-email a { color:#9ca3af; text-decoration:none; }
+  .creator-email a:hover { color:#1a1a1a; }
+  /* disegno 2026-08-07: mesi a pagine, facce, player modale, trascrizione
+     richiudibile — la pagina episodio è un prodotto, non un sottoprodotto */
+  .hrow { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+  .hrow .subscribe { margin-bottom:0; flex-shrink:0; }
+  .months { font-size:.78rem; font-family:monospace; margin:.4rem 0 1rem; color:#9ca3af; }
+  .months a { text-decoration:none; } .months b { color:inherit; }
+  .ep-faces { display:flex; margin-left:auto; flex-shrink:0; }
+  .ep-faces img { width:26px; height:26px; border-radius:50%; object-fit:cover;
+    border:2px solid #fff; margin-left:-8px; background:#eee; }
+  /* tutti i citati sul desktop; su mobile la leggibilità vince: max 3 */
+  @media (max-width:600px) { .ep-faces img:nth-child(n+4) { display:none; } }
+  .ep-listen { width:32px; height:32px; border-radius:50%; background:#f3f4f6; border:0;
+    display:flex; align-items:center; justify-content:center; font-size:12px;
+    flex-shrink:0; cursor:pointer; color:inherit; }
+  .ep-listen.on { background:#2563eb; color:#fff; }
+  .face-inline { width:1.15em; height:1.15em; border-radius:50%; object-fit:cover;
+    vertical-align:-.18em; margin-right:.25em; }
+  /* SEMPRE sulla stessa riga (2026-08-09): su schermi stretti le miniature
+     si riducono, e se non basta il reel sparisce — mai l'andata a capo */
+  .vthumbs { display:flex; gap:.8rem; flex-wrap:nowrap; margin:1.2rem 0; align-items:flex-start; }
+  .vthumb { position:relative; cursor:pointer; border:0; padding:0; background:none;
+    border-radius:12px; overflow:hidden; }
+  /* stessa ALTEZZA per video e reel: il 9:16 si stringe, non svetta */
+  .vthumb video { height:150px; width:auto; display:block; border-radius:12px; background:#000; }
+  @media (max-width:520px) { .vthumb video { height:118px; } }
+  /* quando nemmeno ridotte ci stanno: via le miniature, due BOTTONI in
+     riga che aprono il player (2026-08-09) */
+  .vbtns { display:none; gap:.6rem; margin:1.2rem 0; }
+  .vbtns button { flex:1; padding:.6rem .4rem; border:0; border-radius:10px;
+    background:#2563eb; color:#fff; font-weight:700; font-size:.85rem;
+    cursor:pointer; font-family:inherit; }
+  @media (max-width:420px) { .vthumbs { display:none; } .vbtns { display:flex; } }
+  .vthumb .vlabel { position:absolute; left:0; right:0; bottom:0; padding:.9rem .5rem .35rem;
+    background:linear-gradient(transparent, rgba(0,0,0,.75)); color:#fff; font-size:.7rem; }
+  .vthumb::after { content:"▶"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    color:#fff; font-size:1.6rem; text-shadow:0 1px 6px rgba(0,0,0,.8); }
+  /* margin:auto ESPLICITO: il reset globale * {margin:0} annullava la
+     centratura nativa del dialog e il player si apriva in alto a sinistra */
+  dialog.vplayer { border:0; padding:0; background:transparent; max-width:92vw;
+    margin:auto; position:fixed; inset:0; }
+  dialog.vplayer::backdrop { background:rgba(0,0,0,.85); }
+  dialog.vplayer video { max-width:92vw; max-height:86vh; border-radius:14px; background:#000; }
+  dialog.vplayer .vplayer-barra { display:flex; justify-content:flex-end; align-items:center;
+    gap:.5rem; margin-bottom:.5rem; }
+  /* 2.75rem e' il bersaglio minimo per il dito: la ✕ da sola sarebbe 20px. */
+  dialog.vplayer .vplayer-barra button { font:inherit; font-size:.9rem; color:#fff;
+    background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.28);
+    border-radius:999px; padding:.45rem .9rem; cursor:pointer;
+    min-height:2.75rem; min-width:2.75rem; }
+  dialog.vplayer .vplayer-barra button:hover { background:rgba(255,255,255,.24); }
+  dialog.vplayer .vplayer-chiudi { font-size:1.1rem; line-height:1; }
+  details.tr { border:1px solid #e2ddd6; border-radius:10px; padding:.2rem .9rem .6rem; }
+  details.tr summary { cursor:pointer; font-weight:600; padding:.55rem 0; }
+  .tr-copy { font-size:.72rem; padding:.3rem .7rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; margin:.3rem 0 .5rem; }
+  .epnav { display:flex; justify-content:space-between; gap:1rem; margin:2rem 0 0;
+    font-size:.82rem; font-family:monospace; }
+  .epnav a { text-decoration:none; }
+  /* Header + tab bar (spec-016, Task 5): stessa forma di
+     public/console/podcast-render.css, riusando i nomi classe dove
+     combaciano — solo la meccanica tab/pannello è nuova qui. */
+  .episode-header .date-line { font-size:.72rem; font-family:monospace; color:#9ca3af;
+    text-transform:uppercase; letter-spacing:.08em; margin-bottom:.3rem; }
+  .ep-header-block { margin-bottom:.5rem; }
+  .ep-header-faces { margin:.6rem 0; }
+  .ep-header-faces .ep-faces { margin-left:0; }
+  .tabs { display:flex; gap:.25rem; border-bottom:1px solid #e2ddd6; margin:1.5rem 0; flex-wrap:wrap; }
+  .tab { font-family:monospace; font-size:.72rem; text-transform:uppercase; letter-spacing:.08em;
+    padding:.6rem .9rem; background:transparent; border:0; border-bottom:2px solid transparent;
+    color:#9ca3af; cursor:pointer; }
+  .tab[aria-selected="true"] { color:#1a1a1a; border-bottom-color:#2563eb; }
+  .tab-panel { display:block; }
+  .tab-panel[hidden] { display:none !important; }
+  /* Fallback dei pannelli senza dati (episodi storici senza un sidecar) —
+     porta di public/console/podcast-render.css:304-309, sui token pubblici. */
+  /* Header episodio a due colonne: barra tab e pannello nel primo schermo
+     (stesse regole del modulo condiviso, richiesta 2026-08-10). */
+  .ep-header-block { display:grid; grid-template-columns:minmax(0,1fr) 340px;
+    grid-template-rows:repeat(4,min-content); gap:.3rem 1.6rem;
+    align-items:start; margin-bottom:.5rem; }
+  .ep-header-block > [data-sb="data"] { grid-column:1; margin:0; }
+  .ep-header-block > [data-sb="titolo"] { grid-column:1; margin:.1rem 0; }
+  .ep-header-block > [data-sb="player"] { grid-column:1; }
+  .ep-header-block > [data-sb="nav"] { grid-column:1; }
+  .ep-header-block > [data-sb="facce"] { grid-column:2; grid-row:1; }
+  .ep-header-block > [data-sb="video"] { grid-column:2; grid-row:2/5;
+    display:flex; gap:.5rem; flex-wrap:wrap; }
+  .ep-header-block [data-sb="facce"] img { width:26px; height:26px; }
+  .ep-header-block [data-sb="video"] video { max-height:96px; width:auto; }
+  .ep-header-block audio { height:36px; width:100%; }
+  .tabs { position:sticky; top:0; z-index:5; background:#fff;
+    padding:.4rem 0; border-bottom:1px solid #e5e7eb; }
+  @media (max-width:760px) {
+    .ep-header-block { grid-template-columns:1fr; }
+    .ep-header-block > [data-sb="facce"],
+    .ep-header-block > [data-sb="video"] { grid-column:1; grid-row:auto; }
+  }
+  .state-note { padding:2rem 1rem; text-align:center; color:#9ca3af;
+    font-family:monospace; font-size:.85rem; }
+  @media (prefers-color-scheme:dark) {
+    body { background:#1f1d18; color:#e5e5e5; }
+    .ep, .tension, .signal-card { background:#2a2823; border-color:#3a352d; }
+    .ep-play { background:#3a352d; } .desc { color:#d4d4d4; }
+    .signal-text { color:#d4d4d4; }
+    .episode-header .date-line { color:#9ca3af; }
+    .tabs { border-color:#3a352d; }
+    .tab[aria-selected="true"] { color:#f5f5f5; }
+    .state-note { color:#9ca3af; }
+    .creator-footer { border-color:#3a352d; }
+    .creator-name { color:#f5f5f5; }
+    .creator-tagline, .creator-email a { color:#9ca3af; }
+    .creator-ai { color:#9a8f7d; }
+    .vlink input { background:#1c1a17; border-color:#3a352d; color:#9ca3af; }
+    .tutele { border-color:#3a352d; color:#9a8f7d; }
+    .tutele h3 { color:#a9a9a9; } .tutele strong { color:#d4d4d4; }
+    .ep-listen { background:#3a352d; }
+    .ep-faces img { border-color:#2a2823; background:#3a352d; }
+    details.tr { border-color:#3a352d; }
+  }
+</style></head><body>
+<a class="back back-link" href="/signal-brief/ai/">← Signal.AI</a><div class="ep-header-block"><header class="episode-header"><div class="date-line" data-sb="data">2026-08-28</div><h1 data-sb="titolo">Il muro elettrico dell'intelligenza</h1><div class="desc">Il chatbot non è più l'unità di misura: si contano le ore di lavoro autonomo. E il limite non è più il denaro, ma la corrente elettrica.</div><div class="tagline">Digital Intelligence Podcast</div></header><audio controls preload="none" data-sb="player" src="https://op3.dev/e/media.casamon.dev/ai/podcast/episodes/2026-08-28.mp3"></audio><nav class="epnav" data-sb="nav"><a href="/signal-brief/ai/2026-08-27/">← 2026-08-27</a><span style="flex:1"></span></nav><div class="ep-header-faces" data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/elon-musk.jpg" alt="" title="Elon Musk"><img loading="lazy" src="/signal-brief/ai/avatars/sasha-luccioni.jpg" alt="" title="Sasha Luccioni"><img loading="lazy" src="/signal-brief/ai/avatars/jack-clark.jpg" alt="" title="Jack Clark"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="/signal-brief/ai/avatars/dhh.png" alt="" title="DHH"><img loading="lazy" src="/signal-brief/ai/avatars/lex-fridman.jpg" alt="" title="Lex Fridman"><img loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt="" title="Jensen Huang"><img loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="/signal-brief/ai/avatars/john-carmack.jpg" alt="" title="John Carmack"><img loading="lazy" src="/signal-brief/ai/avatars/sam-altman.jpg" alt="" title="Sam Altman"><img loading="lazy" src="/signal-brief/ai/avatars/dario-amodei.jpg" alt="" title="Dario Amodei"></span></div><div class="ep-header-video" data-sb="video"></div></div>
+<div class="tabs-block"><div class="tabs" role="tablist" id="sbTabs"><button class="tab" type="button" role="tab" data-tab="sintesi" aria-selected="true" onclick="sbTab('sintesi')">Sintesi</button><button class="tab" type="button" role="tab" data-tab="testo" aria-selected="false" onclick="sbTab('testo')">Testo</button><button class="tab" type="button" role="tab" data-tab="comparazione" aria-selected="false" onclick="sbTab('comparazione')">Comparazione</button><button class="tab" type="button" role="tab" data-tab="segnali" aria-selected="false" onclick="sbTab('segnali')">Segnali</button><button class="tab" type="button" role="tab" data-tab="fonti" aria-selected="false" onclick="sbTab('fonti')">Fonti</button></div>
+<div class="tab-panel panel" data-sb-panel="sintesi"><div class="synthesis"><p>La convergenza più netta di questa settimana è che il chatbot ha smesso di essere l'unità di misura: quasi tutte le voci parlano ormai di agenti che lavorano a lungo. <a href="#" class="face-link" onclick="vaiFonte(event, 'Andrej Karpathy')" title="Fonti di Andrej Karpathy"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt=""></a>Andrej Karpathy, tornato alla ricerca sui modelli di frontiera, usa come prova un compito da un milione di token e due ore di lavoro autonomo (<a href="https://www.benzinga.com/markets/tech/26/08/60861644/andrej-karpathy-says-ai-has-moved-beyond-simple-prompts-after-claude-opus-builds-3d-lord-of-the-rings-world" target="_blank" rel="noopener">Benzinga</a>); <a href="#" class="face-link" onclick="vaiFonte(event, 'Jack Dorsey')" title="Fonti di Jack Dorsey"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt=""></a>Jack Dorsey arriva a dare agli agenti identità crittografiche da dipendenti (<a href="https://techcrunch.com/2026/07/21/jack-dorsey-is-taking-on-slack-with-buzz-a-group-chat-platform-for-teams-and-their-ai-agents/" target="_blank" rel="noopener">TechCrunch</a>); DHH, creatore di Rails e a lungo scettico verso l'hype, dice di non scrivere quasi più codice a mano (<a href="https://podcasts.apple.com/us/podcast/501-dhh-future-of-programming-ai-agentic-engineering/id1434243584?i=1000786117598&amp;l=ru" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/lex-fridman.jpg" alt="">Lex Fridman</a>).</p>
+<p>Da questa convergenza si aprono però due faglie. La prima riguarda il costo dell'intelligenza. <a href="#" class="face-link" onclick="vaiFonte(event, 'Jensen Huang')" title="Fonti di Jensen Huang"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt=""></a>Jensen Huang trasforma i chip in classe d'investimento mobilitando oltre 500 miliardi (<a href="https://www.reuters.com/commentary/breakingviews/jensen-huang-takes-wheel-500-bln-ai-bandwagon-2026-08-11/" target="_blank" rel="noopener">Reuters</a>) ed <a href="#" class="face-link" onclick="vaiFonte(event, 'Elon Musk')" title="Fonti di Elon Musk"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/elon-musk.jpg" alt=""></a>Elon Musk arriva a ipotizzare il calcolo in orbita per aggirare il muro energetico (<a href="https://www.cryptopolitan.com/musk-orbital-compute-only-way-to-scale-ai/" target="_blank" rel="noopener">Cryptopolitan</a>). All'opposto, <a href="#" class="face-link" onclick="vaiFonte(event, 'François Chollet')" title="Fonti di François Chollet"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/fran-ois-chollet.jpg" alt=""></a>François Chollet sostiene che la strada non sia scalare i modelli ma il calcolo al momento dell'inferenza (<a href="https://x.com/fchollet" target="_blank" rel="noopener">x.com</a>), <a href="#" class="face-link" onclick="vaiFonte(event, 'John Carmack')" title="Fonti di John Carmack"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/john-carmack.jpg" alt=""></a>John Carmack continua a cercare l'intuizione algoritmica mancante con una squadra minuscola (<a href="https://theagiclock.com/articles/john-carmack-keen-agi" target="_blank" rel="noopener">theagiclock</a>), e <a href="#" class="face-link" onclick="vaiFonte(event, 'Sasha Luccioni')" title="Fonti di Sasha Luccioni"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/sasha-luccioni.jpg" alt=""></a>Sasha Luccioni argomenta che più grande non è quasi mai meglio (<a href="https://huggingface.co/sasha/activity/articles" target="_blank" rel="noopener">Hugging Face</a>). Non è una disputa tecnica: è una scommessa su chi possa permettersi di competere.</p>
+<p>La seconda faglia riguarda la fiducia, ed è più interessante perché attraversa anche chi vende. <a href="#" class="face-link" onclick="vaiFonte(event, 'Sam Altman')" title="Fonti di Sam Altman"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/sam-altman.jpg" alt=""></a>Sam Altman ammette di aver sopravvalutato la velocità di adozione e sposta l'AGI a fine 2028 (<a href="https://finance.yahoo.com/technology/ai/articles/sam-altman-concedes-overestimated-ai-213000863.html" target="_blank" rel="noopener">Yahoo Finance</a>); <a href="#" class="face-link" onclick="vaiFonte(event, 'Dario Amodei')" title="Fonti di Dario Amodei"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/dario-amodei.jpg" alt=""></a>Dario Amodei chiama l'ostilità verso l'IA una "crisi di fiducia", dovuta a benefici reali non ancora all'altezza delle promesse (<a href="https://fortune.com/2026/08/16/dario-amodei-anthropic-ai-trust-crisis-regulation-frontier-open-models-negative-views/" target="_blank" rel="noopener">Fortune</a>). <a href="#" class="face-link" onclick="vaiFonte(event, 'Marc Andreessen')" title="Fonti di Marc Andreessen"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/marc-andreessen.jpg" alt=""></a>Marc Andreessen resta invece convinto che il rischio vero sia la regolazione (<a href="https://a16z.com/podcast/marc-andreessen-on-ai-california-and-the-future-of-america-joe-rogan/" target="_blank" rel="noopener">a16z</a>), mentre <a href="#" class="face-link" onclick="vaiFonte(event, 'Geoffrey Hinton')" title="Fonti di Geoffrey Hinton"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/geoffrey-hinton.jpg" alt=""></a>Geoffrey Hinton avverte che i modelli più capaci diventeranno più difficili da controllare (<a href="https://thehill.com/policy/technology/6014955-godfather-of-ai-humans-may-not-be-able-to-outsmart-next-generation-of-models/" target="_blank" rel="noopener">The Hill</a>).</p>
+<p>La tensione di fondo, allora, è questa: la capacità di produrre lavoro autonomo cresce più in fretta della capacità di verificarlo. Lo dice nel modo più concreto <a href="#" class="face-link" onclick="vaiFonte(event, 'Simon Willison')" title="Fonti di Simon Willison"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/simon-willison.jpg" alt=""></a>Simon Willison, per cui il collo di bottiglia non è generare codice ma revisionarlo (<a href="https://simonwillison.net/2026/Aug/" target="_blank" rel="noopener">simonwillison.net</a>); lo traduce in politica <a href="#" class="face-link" onclick="vaiFonte(event, 'Jack Clark')" title="Fonti di Jack Clark"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/jack-clark.jpg" alt=""></a>Jack Clark, chiedendo misurazione indipendente dei sistemi (<a href="https://jack-clark.net/" target="_blank" rel="noopener">jack-clark.net</a>). Delegare è diventato facile; controllare no.</p></div></div>
+<div class="tab-panel panel" data-sb-panel="testo" hidden><button class="tr-copy" type="button" onclick="copiaTrascrizione(this)">copia il testo</button><div class="transcript-body"><h2>Il muro elettrico dell'intelligenza</h2>
+<p class="podcast-episode-desc">Il chatbot non è più l'unità di misura: si contano le ore di lavoro autonomo. E il limite non è più il denaro, ma la corrente elettrica.</p>
+<div class="chapter" data-mood="geo"><hr></div>
+<p>Ci sono settimane in cui non viene annunciato nulla di clamoroso e cambia comunque l'unità di misura. Questa è una di quelle. Nel Signal Brief del 28 agosto la scena si sposta: non si discute più di cosa un modello risponde, ma di quanto a lungo riesce a lavorare da solo. E le voci che seguiamo, per la prima volta, litigano su qualcosa di molto fisico: la corrente elettrica. Il racconto comincia da un uomo che ha praticamente smesso di scrivere codice a mano.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Quell'uomo è David Heinemeier Hansson, che tutti chiamano DHH: ha creato Ruby on Rails, uno degli strumenti su cui è costruita metà del web che usiamo ogni giorno, ed è stato per anni una delle voci più fredde verso l'entusiasmo sull'intelligenza artificiale. In un lungo episodio del podcast di <a href="#" class="face-link" onclick="vaiFonte(event, 'Lex Fridman')" title="Fonti di Lex Fridman"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/lex-fridman.jpg" alt=""></a>Lex Fridman, a fine agosto, ha raccontato che ormai la parte esecutiva del suo lavoro la fanno gli agenti. Lui tiene aperti più modelli in parallelo — uno veloce per le prove rapide, uno più potente per le cose serie — e guarda le differenze riga per riga nel terminale. Non scrive quasi più codice. Rivede.</p>
+<p>Ieri il filo era che l'attenzione si stava spostando dal modello al sistema che lo contiene. Oggi c'è una cosa nuova, e più precisa: è cambiato il metro. Non si misura più un prompt o una conversazione. Si misurano sessioni lunghe. <a href="#" class="face-link" onclick="vaiFonte(event, 'Andrej Karpathy')" title="Fonti di Andrej Karpathy"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt=""></a>Andrej Karpathy, ad agosto, ha pubblicato un esperimento in cui un modello ha lavorato per circa due ore consumando qualcosa come un milione di token — l'equivalente di un romanzo intero letto e riscritto più volte — per costruire da solo una scena tridimensionale della Terra di Mezzo.</p>
+<p>Per un po', dopo l'arrivo dell'automobile, si è continuato a misurarne la potenza in cavalli. L'unità di misura era sopravvissuta alla cosa che misurava. Il chatbot sta facendo la stessa fine: è ancora l'immagine che abbiamo in testa, ma non descrive più quello che queste macchine fanno davvero.</p>
+<p>Se il lavoro dura ore, però, consuma. Ed è qui che arriva la seconda novità della settimana. <a href="#" class="face-link" onclick="vaiFonte(event, 'Elon Musk')" title="Fonti di Elon Musk"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/elon-musk.jpg" alt=""></a>Elon Musk ha spostato il discorso dai soldi all'energia: sostiene che il collo di bottiglia sia ormai quanta intelligenza riesci a ottenere da un joule, e che entro il 2029 possa diventare necessario mettere i centri di calcolo in orbita, perché sulla Terra la corrente e i permessi finiscono. È un'affermazione estrema, ma dice una cosa chiara: il limite non è più solo economico. È fisico.</p>
+<p>Sul versante opposto compare per la prima volta in modo esplicito una posizione di segno contrario. <a href="#" class="face-link" onclick="vaiFonte(event, 'Sasha Luccioni')" title="Fonti di Sasha Luccioni"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/sasha-luccioni.jpg" alt=""></a>Sasha Luccioni, che studia da anni il costo ambientale di questi sistemi, ha pubblicato un articolo il cui titolo è già la tesi: più grande non è quasi mai meglio. Non è una lamentela morale. È un'argomentazione tecnica sul fatto che ingrandire un modello raramente restituisce un guadagno proporzionato alla bolletta.</p>
+<p>E poi entra una voce che finora era rimasta ai margini di questo racconto. <a href="#" class="face-link" onclick="vaiFonte(event, 'Marc Andreessen')" title="Fonti di Marc Andreessen"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/marc-andreessen.jpg" alt=""></a>Marc Andreessen, uno dei principali finanziatori del settore, sostiene che il pericolo vero non siano i modelli ma le regole: per lui il rischio maggiore è normativo, non tecnico, e il mercato è ancora agli inizi, con i prezzi dell'intelligenza che crollano più in fretta di quanto sia mai successo con i microprocessori. È una posizione che va tenuta in mente, perché per tutto l'episodio farà attrito con le altre.</p>
+<p>Tre affermazioni, allora, che stanno nella stessa settimana: le macchine lavorano da sole per ore, farlo costa corrente, e c'è chi dice che il problema non sia nessuna delle due cose. Conviene cominciare da chi ha portato le prove.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Andrej Karpathy')" title="Fonti di Andrej Karpathy"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt=""></a>Andrej Karpathy è la persona che, più di chiunque altro, ha insegnato a una generazione come funzionano davvero le reti neurali: prima ai tempi di Stanford, poi guidando l'intelligenza artificiale di Tesla, poi in OpenAI. A maggio ha annunciato di essere entrato nel gruppo che addestra i modelli di base in Anthropic, dicendo che aveva voglia di tornare a fare ricerca vera.</p>
+<p>L'esperimento che ha pubblicato a inizio agosto è semplice da raccontare. Ha preso il primo paragrafo del Signore degli Anelli e l'ha dato a Claude Opus 5 come unica istruzione. Poi ha lasciato lavorare. Circa un milione di token consumati, un budget di una decina di dollari, due ore di tempo. Alla fine, una scena tridimensionale della Terra di Mezzo che gira dentro un browser. Nello stesso periodo, sul suo archivio pubblico di codice, compare un piccolo aggiornamento a micrograd, il progetto didattico minuscolo con cui spiega da zero come impara una rete neurale.</p>
+<p>Il punto non è l'elfo poligonale. Il punto è la ricevuta. Karpathy non ha detto "guardate quanto è bravo": ha detto quanto è costato, quanto è durato, quanto materiale ha macinato. Ha portato una misura, e la misura è il tempo.</p>
+<p>Ed è qui che la sua posizione è cambiata rispetto a poche settimane fa. Prima era l'osservatore che delegava il proprio lavoro agli agenti e constatava, con una punta di malinconia, che la programmazione era diventata "irriconoscibile". Adesso è di nuovo dentro la macchina, e porta prove misurate di quanto a lungo un sistema regge da solo. Da testimone a strumento di misura.</p>
+<p>Sostiene anche una cosa che riguarda tutti, non solo chi scrive software: che il modo in cui giudichiamo questi sistemi — domandine, risposte brevi, punteggi — è diventato inadeguato. Un esame di dieci minuti non dice niente su chi deve lavorare due ore senza supervisione.</p>
+<p>Mi sembra che il vero cambiamento sia proprio nella scheda tecnica mentale con cui valutiamo queste cose. Per anni la domanda era: quanto è intelligente. Ora la domanda diventa: per quanto tempo resta affidabile da solo, e quanto mi costa quel tempo. Sono due domande completamente diverse, e la seconda somiglia molto più a quella che ci si fa quando si assume qualcuno che a quella che ci si fa quando si compra un programma.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Elon Musk')" title="Fonti di Elon Musk"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/elon-musk.jpg" alt=""></a>Elon Musk, in queste settimane, ha fatto due cose in parallelo. Ha spinto in distribuzione Grok 4.6, il suo modello, presentato esplicitamente per agenti che lavorano a lungo e per compiti a più passaggi, portandolo dentro gli strumenti di programmazione più diffusi. E ha lanciato Grok Bot, descritto come un collega sempre acceso, disponibile dentro le applicazioni e sul web.</p>
+<p>Ma la frase che conta è un'altra. Musk ha detto che il vero indicatore da guardare è l'intelligenza per joule — quanta capacità di calcolo ottieni da una data quantità di energia — e che il settore sta andando a sbattere contro un muro energetico. Da qui l'idea che ha fatto discutere: che intorno al 2029 possa diventare necessario mettere i centri di calcolo in orbita, perché a terra la corrente disponibile e i permessi per costruire non basteranno.</p>
+<p>Sul fronte industriale, le ricostruzioni giornalistiche raccontano che SpaceX abbia integrato più strettamente xAI e acquisito Cursor, l'azienda dello strumento di programmazione assistita, per sessanta miliardi di dollari, con l'idea che i ricavi dell'intelligenza artificiale possano presto superare quelli spaziali.</p>
+<p>Vista da lontano, questa è una storia già successa molte volte. L'industria dell'alluminio, un secolo fa, non si è stabilita dove c'erano i clienti né dove c'era il minerale: si è stabilita accanto alle dighe, in Norvegia e in Islanda, perché fondere alluminio significa comprare elettricità sotto forma di metallo. Le fabbriche sono andate dove stava la corrente. Quello che Musk sta dicendo, senza dirlo, è che i centri di calcolo sono diventati fonderie: e che sulla Terra le dighe stanno finendo.</p>
+<p>C'è però una differenza sostanziale con la fonderia. L'alluminio lo puoi spedire; il calcolo lo devi collegare. Un centro di elaborazione in orbita risolve il problema dell'energia e ne crea uno di raffreddamento, di manutenzione e di ritardo nella trasmissione.</p>
+<p>Quello che rimane, al netto dell'astronave, è la direzione. Quando per trovare una presa di corrente si comincia a guardare fuori dall'atmosfera, il vincolo ha cambiato natura: non è più quanto capitale riesci a raccogliere, ma quanta energia il pianeta è disposto a darti. Ed è una domanda che, prima o poi, smette di essere tecnica e diventa politica.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Sasha Luccioni')" title="Fonti di Sasha Luccioni"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/sasha-luccioni.jpg" alt=""></a>Sasha Luccioni studia da anni una cosa che quasi nessuno misurava: quanto costa in energia e in emissioni far funzionare questi sistemi. È stata a lungo in Hugging Face, la piattaforma dove la comunità pubblica modelli aperti, e a maggio di quest'anno ha co-fondato Sustainable AI Group, una struttura che aiuta le organizzazioni a misurare l'impatto ambientale dei modelli che adottano. A luglio ha firmato su Time un intervento su come rendere più sostenibili i centri di calcolo.</p>
+<p>Il gesto di questa settimana è piccolo e preciso. Ha pubblicato un articolo il cui titolo dice già tutto: più grande non è sempre meglio, e spiega come scegliere il modello più efficiente per un compito specifico. Insieme, ha aggiornato una classifica pubblica che confronta i modelli su questo criterio. E pochi giorni prima aveva firmato un lavoro dal titolo altrettanto netto: gli agenti completamente autonomi non andrebbero sviluppati.</p>
+<p>Le due cose insieme fanno una posizione coerente, ed è quello che la rende la voce più scomoda della giornata. Perché non contesta solo il gigantismo — contesta anche la delega totale. Sta esattamente in mezzo alle due novità di cui parliamo oggi, e dice no a entrambe.</p>
+<p>L'argomento sull'efficienza, tradotto: se devi classificare le richieste dei clienti, non ti serve il modello che sa anche discutere di filosofia medievale. Ti serve quello giusto per quel compito, e quello giusto è quasi sempre molto più piccolo, molto più economico e molto meno affamato di corrente. La scelta del modello più grande disponibile è, nella maggior parte dei casi, una scelta pigra travestita da scelta prudente.</p>
+<p>C'è un precedente che aiuta. Negli anni Settanta l'aviazione civile si è trovata davanti a un bivio: il Concorde, che andava a più del doppio della velocità del suono, o aerei ordinari che consumavano meno. Ha vinto il consumo. Il Concorde era straordinario e ha volato per pochi, per pochi anni, e poi è sparito. Non perché non funzionasse: perché il rapporto tra quello che dava e quello che costava non stava in piedi.</p>
+<p>La domanda che Luccioni mette sul tavolo, allora, è se stiamo costruendo la flotta o il Concorde. E ha una conseguenza che va oltre l'ambiente: se l'efficienza conta più della scala, allora competere non richiede necessariamente centinaia di miliardi. Lo spazio si riapre.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Ricapitoliamo un attimo dove siamo: il lavoro autonomo lungo è diventato il metro, l'energia è diventata il limite, e c'è chi sostiene che ingrandire tutto sia lo spreco più costoso del settore. Manca la voce di chi quel metro l'ha promesso per primo.</p>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Sam Altman')" title="Fonti di Sam Altman"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/sam-altman.jpg" alt=""></a>Sam Altman guida OpenAI. In un'intervista pubblicata il 26 agosto ha fatto una cosa che nel suo mestiere non si vede spesso: ha ammesso di aver sbagliato una previsione, e ha detto di quanto. L'adozione dell'intelligenza artificiale, ha spiegato, sta andando più lenta di quanto si aspettasse, perché l'economia reale ha inerzia: le aziende non cambiano processi alla velocità con cui escono i modelli. E ha spostato la sua stima sull'intelligenza artificiale generale alla fine del 2028, aggiungendo che fare bene la sicurezza conta più della corsa di qualunque azienda.</p>
+<p>Non è solo una dichiarazione. Ha detto che OpenAI ha messo in pausa una parte dell'addestramento di frontiera per adeguarsi a nuovi standard interni di allineamento e sorveglianza. Ha ridefinito l'azienda come una piattaforma e non come un produttore di prodotti — calcolo, ricerca, chip, centri dati — e secondo le ricostruzioni giornalistiche alcuni prodotti sono stati chiusi proprio per liberare risorse di calcolo. Nel frattempo ha annunciato un chip proprio, dicendo che è veloce, e ha descritto un assistente che, col permesso dell'utente, potrà osservare schermo, riunioni, posta e documenti.</p>
+<p>È una posizione evoluta rispetto a poche settimane fa. Prima c'era un'intenzione generica di andare più piano. Adesso c'è un'ammissione con una data.</p>
+<p>La cosa che trovo notevole è la forma dell'errore. Non ha sbagliato sulla capacità: ha sbagliato sulla velocità con cui il mondo l'avrebbe assorbita. È lo scarto classico di ogni infrastruttura. Nell'Ottocento le compagnie ferroviarie britanniche posarono migliaia di chilometri di binari prima che ci fossero i passeggeri per riempirli: molte fallirono, i binari rimasero, e vent'anni dopo erano la spina dorsale del paese. La tecnologia era pronta; le abitudini no.</p>
+<p>Quello che rende questa ammissione interessante è che arriva mentre Karpathy mostra due ore di lavoro autonomo e DHH dice di non scrivere più codice. La capacità c'è. Ad essere lenta è la sostituzione delle abitudini. E le abitudini, storicamente, sono l'unica cosa che non si può accelerare comprando calcolo.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Jack Clark')" title="Fonti di Jack Clark"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/jack-clark.jpg" alt=""></a>Jack Clark è uno dei fondatori di Anthropic e si occupa della parte che raramente finisce sui titoli: le politiche pubbliche. Ogni settimana scrive Import AI, una lettera in cui commenta quello che sta succedendo nella ricerca.</p>
+<p>Nel numero uscito il 24 agosto ha messo insieme cose apparentemente distanti: nessun diritto per le macchine, la generazione automatica degli ambienti in cui gli agenti si allenano, e miglioramenti nel modo in cui il calcolo viene spremuto dalle schede grafiche. La settimana prima aveva parlato di intelligenza artificiale applicata alla scienza. Pubblicamente ha descritto così la traiettoria dei prossimi anni: dalle capacità di base si passa alla coerenza nel tempo e al rispetto delle norme, e da lì, tra il 2026 e il 2028, verso una forma di intuizione scientifica indipendente.</p>
+<p>Ma il punto che ha ribadito con più insistenza è un altro, ed è la vera novità istituzionale della settimana: la misurazione dei sistemi da parte di terzi. Non l'azienda che certifica se stessa, ma ricercatori esterni che guardano dentro. E l'ha legato a un fatto concreto, non a un auspicio: un programma pilota che permette a ricercatori indipendenti di studiare, in forma protetta e resa anonima, come le persone usano davvero Claude.</p>
+<p>Qui il filo della giornata si chiude. <a href="#" class="face-link" onclick="vaiFonte(event, 'Simon Willison')" title="Fonti di Simon Willison"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/simon-willison.jpg" alt=""></a>Simon Willison, che da mesi documenta il lavoro quotidiano con questi strumenti, sostiene che ormai generare codice sia diventato economico mentre rivederlo no: la revisione umana è il collo di bottiglia, e non cresce. Clark prende esattamente quel problema e lo sposta di piano: se non basta una persona a controllare, serve un'istituzione.</p>
+<p>C'è un precedente che descrive bene il passaggio. Per gran parte dell'Ottocento le società certificavano i propri bilanci da sole, e i soci si fidavano. Poi sono arrivati i crolli, e con essi i revisori indipendenti: non perché gli imprenditori fossero diventati disonesti, ma perché la scala aveva reso l'autocertificazione priva di valore informativo.</p>
+<p>E questo è il punto di attrito con <a href="#" class="face-link" onclick="vaiFonte(event, 'Marc Andreessen')" title="Fonti di Marc Andreessen"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/marc-andreessen.jpg" alt=""></a>Marc Andreessen, che sostiene che il pericolo principale sia proprio l'intervento normativo. Le due posizioni non sono simmetriche, però: Clark non chiede di vietare, chiede di guardare. Delegare è diventato facilissimo. Verificare è rimasto lento, artigianale e costoso. È lo scarto più importante di questa settimana.</p>
+<div class="chapter" data-mood="upbeat"><hr></div>
+<p>Progetti da osservare, e questa volta parlano quasi tutti della stessa cosa: come si controlla ciò che si delega.</p>
+<p>Thinkingbox è un ambiente di prova aperto rilasciato da Microsoft, e ha un'idea semplice: giudicare un agente non da quello che dichiara di aver fatto, ma dai dati che ha davvero modificato nel database. Su cinquecentosette compiti, il modello migliore riesce nel sessantacinque per cento dei casi al primo tentativo, ma solo nel venticinque per cento se lo fai ripetere venti volte. È la distanza tra riuscire e riuscire sempre, ed è la distanza che conta.</p>
+<p>Inspect è lo strumento di valutazione dell'istituto britannico per la sicurezza dell'intelligenza artificiale, adottato ora anche da altri gruppi di verifica al posto dei loro. È l'attrezzatura concreta dietro la richiesta di misurazione indipendente di cui parlava Clark.</p>
+<p>Buzz, di Block, è la piattaforma con cui <a href="#" class="face-link" onclick="vaiFonte(event, 'Jack Dorsey')" title="Fonti di Jack Dorsey"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt=""></a>Jack Dorsey mette insieme chat di squadra, codice e agenti, dando a ogni agente un'identità verificabile, permessi propri e una traccia firmata di quello che ha fatto. Un badge aziendale per il software.</p>
+<p>La libreria llm di <a href="#" class="face-link" onclick="vaiFonte(event, 'Simon Willison')" title="Fonti di Simon Willison"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/simon-willison.jpg" alt=""></a>Simon Willison, arrivata alla versione 0.32, permette di parlare con qualunque modello dalla riga di comando e registra tutto: i passaggi di ragionamento, gli strumenti usati, la cronologia. Rende ispezionabile non solo cosa un modello ha risposto, ma cosa ha effettivamente fatto per rispondere.</p>
+<p>Olmo 3, infine, è una famiglia di modelli davvero aperti: pesi, dati e ricette di addestramento pubblici. È la prova materiale dell'argomento di Luccioni — che per competere non servano per forza budget da centinaia di miliardi.</p>
+<p>Cinque progetti, un'unica preoccupazione. Non stanno costruendo macchine più potenti. Stanno costruendo il registro.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Rimane in mente quel modello che lavora due ore da solo per costruire una montagna che nessuno gli aveva descritto, e la bolletta che quelle due ore hanno prodotto. Abbiamo imparato a chiedere alle macchine di lavorare a lungo molto prima di imparare a guardare cosa hanno fatto. Forse la domanda giusta per i prossimi mesi non è quanto sono brave, ma chi tiene il registro. È stato Signal Brief. Alla prossima.</p></div><div class="rawmd"><a href="raw.md">Testo (markdown)</a></div></div>
+<div class="tab-panel panel" data-sb-panel="comparazione" hidden><div class="tension"><div class="axis">↗ Il lavoro autonomo lungo come unità di misura</div><div class="side">Il metro non è più il prompt o il chatbot ma sessioni agentiche estese — milioni di token e ore di lavoro continuo.</div></div><div class="tension"><div class="axis">↗ Il muro energetico del calcolo</div><div class="side">Il limite alla scala non è più solo economico ma fisico-energetico, al punto da immaginare datacenter in orbita.</div></div><div class="tension"><div class="axis">↗ Piccolo è meglio</div><div class="side">Compare una posizione esplicita di efficienza: aumentare le dimensioni dei modelli non porta quasi mai un guadagno proporzionato.</div></div><div class="tension"><div class="axis">↗ Misurazione indipendente come politica</div><div class="side">La verificabilità smette di essere un problema tecnico e diventa richiesta istituzionale di valutazione terza dei sistemi.</div></div><div class="tension"><div class="axis">↗ La regolazione come rischio principale</div><div class="side">Entra una voce per cui il pericolo vero non è la capacità dei modelli ma l'intervento normativo che ne blocca lo sviluppo.</div></div><div class="tension"><div class="axis">↗ Controllabilità decrescente con la capacità</div><div class="side">Torna il rischio di perdita di controllo in senso stretto: più i modelli diventano capaci, meno restano governabili.</div></div><div class="tension"><div class="axis">⚖ Dove si compra l'intelligenza: nella scala del training o nel calcolo a inferenza</div><div class="side">Jensen Huang: capitale e chip come classe d'investimento, oltre 500 miliardi mobilitati · Elon Musk: calcolo in orbita per aggirare il limite energetico · François Chollet: scalare l'inferenza, non i modelli · Sasha Luccioni: più grande non è quasi mai meglio · John Carmack: manca un'intuizione algoritmica, non hardware</div></div><div class="tension"><div class="axis">⚖ Qual è il rischio principale dell'IA: la regolazione o i sistemi stessi</div><div class="side">Marc Andreessen: il pericolo è normativo, non tecnico · Geoffrey Hinton: modelli più capaci saranno più difficili da controllare · Dario Amodei: il problema è la fiducia, benefici reali sotto le promesse</div></div><div class="tension"><div class="axis">⚖ Velocità di adozione: promessa mantenuta o rinviata</div><div class="side">Sam Altman: ho sopravvalutato l'adozione, AGI a fine 2028 · Andrej Karpathy: due ore di lavoro autonomo su un milione di token, la capacità c'è già · DHH: non scrivo quasi più codice a mano</div></div><div class="tension"><div class="axis">⚖ Chi potrà permettersi di competere sulla frontiera</div><div class="side">Jensen Huang: solo chi accede a capitale su scala infrastrutturale · John Carmack: una squadra minuscola può ancora trovare la chiave · Sasha Luccioni: l'efficienza riapre lo spazio a chi non ha scala</div></div><div class="tension"><div class="axis">⚖ Come si governa ciò che si delega: standard tecnici o istituzioni</div><div class="side">Jack Dorsey: identità crittografiche verificabili per ogni agente · Jack Clark: misurazione indipendente e pubblica dei sistemi · Simon Willison: revisione umana come vincolo operativo che non scala</div></div></div>
+<div class="tab-panel panel" data-sb-panel="segnali" hidden><section><h2>Progetti da osservare</h2><div class="tension"><div class="axis">deepseek-harness</div><div class=side>Harness open source di DeepSeek in cui tutto è un plugin: modello, tool, sessione, sandbox e persino il loop dell'agente sono sostituibili. Uscito in developer preview ad agosto 2026, è model-agnostic e ha superato i 180k stelle in poche settimane.</div></div><div class="tension"><div class="axis">block/buzz</div><div class=side>Piattaforma Apache 2.0 di Block costruita su Nostr che unisce chat di team, hosting Git e orchestrazione di agenti, dando a ogni agente identità crittografica, permessi e audit trail firmato. Include harness pronti per Goose, Codex e Claude Code via Agent Client Protocol.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> terminal-bench-science</div><div class=side>Benchmark che valuta gli agenti su workflow computazionali reali di ricerca scientifica, con 70 task verificabili tramite pytest nella v0.1. Il modello migliore, Claude Opus 5, ne risolve il 30%, contro il 50-80% dei benchmark di coding generico.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> anthropics/claude-plugins-official</div><div class=side>Directory ufficiale gestita da Anthropic dei plugin per Claude Code, aggiunta automaticamente come marketplace al primo avvio interattivo. Affiancata da claude-plugins-community per i plugin di terze parti che superano la validazione automatica.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> K-Dense-AI/scientific-agent-skills</div><div class=side>Libreria di 163 skill validate più 100+ database scientifici che trasforma un agente generico in assistente di ricerca su biologia, chimica, medicina e drug discovery. Compatibile con Claude Code, Cursor, Codex e lo standard aperto Agent Skills.</div></div><div class="tension"><div class="axis">simonw/llm</div><div class=side>CLI e libreria Python per parlare con qualunque modello; la 0.32 di agosto 2026 è la release più significativa dal lancio, con reasoning trace visibili, tool lato provider e log SQLite content-addressable. Rende ispezionabile ciò che un modello ha effettivamente fatto, non solo ciò che ha risposto.</div></div><div class="tension"><div class="axis">karpathy/nanochat</div><div class=side>Pipeline minimale e completa per addestrare e servire un ChatGPT da zero, aggiornata ad agosto 2026 e riassunta nello slogan "il miglior ChatGPT che 100 dollari possono comprare". È il riferimento pratico per chi vuole imparare la sostanza dei modelli invece di consumarli.</div></div><div class="tension"><div class="axis">Thinkingbox</div><div class=side>Sandbox e benchmark open source di Microsoft che giudica un agente dai record realmente modificati nel database, non da ciò che dichiara di aver fatto. Su 507 task il modello migliore fa 65% al primo tentativo ma solo 25% su venti run: il divario tra riuscire e riuscire sempre.</div></div><div class="tension"><div class="axis">inspect_ai</div><div class=side>Framework di valutazione dell'UK AI Security Institute, ormai adottato anche da METR al posto del proprio Vivaria per eval ed elicitation degli agenti. È l'infrastruttura concreta dietro la richiesta di misurazione indipendente dei sistemi di frontiera.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> SPADE</div><div class=side>Generatore di ambienti eseguibili sintetici per self-play, pensato per addestrare agenti su compiti sempre nuovi invece che su dataset fissi. È uno dei filoni più discussi su come continuare a migliorare i modelli senza limitarsi ad aumentarne la scala.</div></div></section></div>
+<div class="tab-panel panel" data-sb-panel="fonti" hidden><div class="fonte" data-fonte-nome="Andrej Karpathy"><span class="who">Andrej Karpathy</span><a href="https://github.com/karpathy" target="_blank" rel="noopener">https://github.com/karpathy</a><a href="https://www.outlookbusiness.com/news/meet-andrej-karpathy-ex-openai-researcher-now-joining-ai-rival-anthropic" target="_blank" rel="noopener">https://www.outlookbusiness.com/news/meet-andrej-karpathy-ex-openai-researcher-now-joining-ai-rival-anthropic</a><a href="https://en.wikipedia.org/wiki/Andrej_Karpathy" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Andrej_Karpathy</a></div><div class="fonte" data-fonte-nome="Elon Musk"><span class="who">Elon Musk</span><a href="https://www.axios.com/2026/08/13/grok-elon-musk-ai-zuckerberg-and-meta" target="_blank" rel="noopener">https://www.axios.com/2026/08/13/grok-elon-musk-ai-zuckerberg-and-meta</a><a href="https://www.moneycontrol.com/technology/elon-musk-s-xai-announces-grok-bot-an-ai-powered-teammate-for-handling-everyday-work-article-14002994.html" target="_blank" rel="noopener">https://www.moneycontrol.com/technology/elon-musk-s-xai-announces-grok-bot-an-ai-powered-teammate-for-handling-everyday-work-article-14002994.html</a><a href="https://www.bbc.com/news/articles/c0qvpveg20vo" target="_blank" rel="noopener">https://www.bbc.com/news/articles/c0qvpveg20vo</a></div><div class="fonte" data-fonte-nome="Sasha Luccioni"><span class="who">Sasha Luccioni</span><a href="https://www.sashaluccioni.com/" target="_blank" rel="noopener">https://www.sashaluccioni.com/</a><a href="https://www.ted.com/talks/sasha_luccioni_we_re_doing_ai_all_wrong_here_s_how_to_get_it_right" target="_blank" rel="noopener">https://www.ted.com/talks/sasha_luccioni_we_re_doing_ai_all_wrong_here_s_how_to_get_it_right</a><a href="https://x.com/SashaMTL" target="_blank" rel="noopener">https://x.com/SashaMTL</a></div><div class="fonte" data-fonte-nome="Jack Clark"><span class="who">Jack Clark</span><a href="https://x.com/jackclarkSF" target="_blank" rel="noopener">https://x.com/jackclarkSF</a><a href="https://jack-clark.net/" target="_blank" rel="noopener">https://jack-clark.net/</a><a href="https://www.forbes.com/profile/jack-clark/" target="_blank" rel="noopener">https://www.forbes.com/profile/jack-clark/</a></div></div>
+</div>
+<script>function sbTab(key) {  document.querySelectorAll('.tab-panel').forEach(function (p) {    p.hidden = p.getAttribute('data-sb-panel') !== key;  });  document.querySelectorAll('#sbTabs .tab').forEach(function (b) {    b.setAttribute('aria-selected', b.dataset.tab === key ? 'true' : 'false');  });}function vaiFonte(ev, nome) {  ev.preventDefault();  sbTab('fonti');  var d = document.querySelector('[data-fonte-nome="' + nome + '"]');  if (d) d.scrollIntoView({behavior: 'smooth', block: 'center'});}</script>
+<dialog class="vplayer" id="vplayer"></dialog>
+<script>
+// player modale dei video: la miniatura apre il video al centro (disegno 2026-08-07)
+// Chiudere e condividere. Il player era il solo <video> dentro la <dialog>:
+// si chiudeva a Escape o cliccando lo SFONDO, che su un tablet e' quasi tutto
+// coperto dal video e dove un tasto Escape non esiste (2026-08-24).
+// La ✕ non serve solo a chiudere: e' l'unico modo per SAPERE che si puo'.
+function condividiVideo(src, b) {
+  if (navigator.share) { navigator.share({ title: 'Signal.Brief', url: src }).catch(function () {}); return; }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(src).then(function () {
+      var prima = b.textContent; b.textContent = '✓ copiato';
+      setTimeout(function () { b.textContent = prima; }, 1800);
+    }).catch(function () {});
+    return;
+  }
+  // Terzo ripiego: senza clipboard API resta la selezione manuale. Meglio un
+  // prompt che un bottone morto.
+  try { window.prompt('Indirizzo del video:', src); } catch (e) {}
+}
+function apriVideo(src) {
+  var d = document.getElementById('vplayer');
+  // I bottoni SOPRA il video: sotto finirebbero fuori schermo su un reel
+  // verticale, che di altezza prende gia' l'86%.
+  d.innerHTML = '<div class="vplayer-barra">'
+    + '<button type="button" class="vplayer-share">Condividi</button>'
+    + '<button type="button" class="vplayer-chiudi" aria-label="Chiudi">✕</button>'
+    + '</div><video controls autoplay playsinline src="' + src + '"></video>';
+  d.querySelector('.vplayer-chiudi').onclick = function () { d.close(); };
+  var sb = d.querySelector('.vplayer-share');
+  sb.onclick = function () { condividiVideo(src, sb); };
+  d.showModal();
+  d.onclick = function (e) { if (e.target === d) d.close(); };
+  d.onclose = function () { var v = d.querySelector('video'); if (v) v.pause(); d.innerHTML = ''; };
+}
+// ascolto inline dalla lista: un episodio alla volta
+var epAudio = null, epBtn = null;
+function ascolta(btn, src) {
+  if (epBtn === btn && epAudio) {
+    if (epAudio.paused) { epAudio.play(); btn.classList.add('on'); }
+    else { epAudio.pause(); btn.classList.remove('on'); }
+    return;
+  }
+  if (epAudio) { epAudio.pause(); if (epBtn) epBtn.classList.remove('on'); }
+  epAudio = new Audio(src); epBtn = btn;
+  epAudio.play(); btn.classList.add('on');
+  epAudio.onended = function () { btn.classList.remove('on'); };
+}
+function copiaTrascrizione(btn) {
+  var t = btn.parentElement.querySelector('.transcript-body');
+  navigator.clipboard.writeText(t ? t.innerText : '').then(function () {
+    btn.textContent = 'copiata ✓';
+    setTimeout(function () { btn.textContent = 'copia il testo'; }, 1800);
+  });
+}
+</script>
+<section class="sostieni"><h3>Se ti è utile, offrimi un caffè</h3><p>Signal.Brief non ha sponsor e non vende niente. Se ti è utile, puoi contribuire — e se non ti va, ascoltalo lo stesso.</p><div class="sostieni-atti"><a class="sostieni-btn" href="https://www.paypal.com/donate/?business=SGNE3B4JZUT9S&amp;no_recurring=0&amp;item_name=Signal.Brief+non+ha+sponsor.+Se+ti+%C3%A8+utile%2C+questo+lo+tiene+acceso.&amp;currency_code=EUR" target="_blank" rel="noopener">Offrimi un caffè</a><a class="sostieni-alt" href="../segui/">Ascoltalo nella tua app →</a></div></section>
+<footer class="creator-footer">
+  <img src="/signal-brief/mike-avatar.png" alt="Michele Mondora">
+  <div class="creator-meta">
+    <span class="creator-name">it-mikesoft</span>
+    <span class="creator-tagline">working with systems, living with questions</span>
+    <span class="creator-email"><a href="mailto:michele@mondora.com">michele@mondora.com</a></span>
+    <span class="creator-legal"><a href="/signal-brief/legal/privacy/">Privacy</a> ·
+      <a href="/signal-brief/legal/">Note legali</a></span>
+  </div>
+</footer>
+<section class="tutele"><h3>Trasparenza e tutele</h3>
+<p><strong>Come nasce questo contenuto.</strong> Ricerca, sintesi editoriale, voce narrante, immagini e musica sono prodotte con sistemi di intelligenza artificiale. Non c'è una redazione umana che verifica ogni affermazione prima della pubblicazione: un controllo automatico scarta le schede giudicate inaffidabili, ma non elimina la possibilità di errori.</p>
+<p><strong>Affermazioni su persone e aziende.</strong> Quanto riportato è una sintesi di fonti pubbliche, non una dichiarazione diretta delle persone citate: le frasi non vanno intese come virgolettati né come posizioni ufficiali. Le fonti sono indicate in ogni pagina episodio — verificale prima di considerare un'informazione accertata. Se trovi un'affermazione inesatta che ti riguarda, scrivi a <a href="mailto:michele@mondora.com">michele@mondora.com</a>: viene corretta o rimossa.</p>
+<p><strong>Immagini e volti.</strong> Le immagini di scena sono generate con AI e non raffigurano fatti realmente avvenuti. Le fotografie di persone reali usate nei video provengono da Wikimedia Commons con le rispettive licenze, e sono accostate al racconto a scopo identificativo: la loro presenza non implica partecipazione, dichiarazione o approvazione da parte della persona ritratta. Su richiesta dell'interessato vengono rimosse.</p>
+<p><strong>Fonti e diritti altrui.</strong> I contenuti sono rielaborazioni originali, non riproduzioni di articoli di terzi; le testate e gli autori all'origine di una notizia sono citati e collegati. Marchi e nomi commerciali appartengono ai rispettivi titolari e sono usati a scopo descrittivo.</p>
+</section>
+</body></html>
