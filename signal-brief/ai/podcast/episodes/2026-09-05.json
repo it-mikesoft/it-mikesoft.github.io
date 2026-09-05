@@ -1,0 +1,127 @@
+{
+  "date": "2026-09-05",
+  "date_short": "0509",
+  "title": "Il collo di bottiglia è la fiducia",
+  "feed_title": "0509 · Il collo di bottiglia è la fiducia",
+  "description": "Gli agenti funzionano e nessuno lo discute più. La domanda che resta aperta è chi verifica quello che producono, e quanto costa farlo.",
+  "duration_seconds": 951,
+  "word_count": 2440,
+  "mp3_url": "episodes/2026-09-05.mp3",
+  "script_url": "episodes/2026-09-05.txt",
+  "raw_url": "episodes/2026-09-05.raw.md",
+  "synthesis_url": "episodes/2026-09-05.synthesis.md",
+  "diff_url": "episodes/2026-09-05.diff.json",
+  "fonti_url": "episodes/2026-09-05.fonti.json",
+  "thinkers_mentioned": [
+    "Andrej Karpathy",
+    "Ilya Sutskever",
+    "Sasha Luccioni",
+    "Yann LeCun"
+  ],
+  "thinkers_citati": [
+    "Andrej Karpathy",
+    "DHH",
+    "Benedict Evans",
+    "Patrick Collison",
+    "Nat Friedman",
+    "Jensen Huang",
+    "Balaji Srinivasan",
+    "Paul Graham",
+    "Yann LeCun",
+    "François Chollet",
+    "Fei-Fei Li",
+    "Ilya Sutskever",
+    "Geoffrey Hinton",
+    "Sasha Luccioni",
+    "Jack Dorsey"
+  ],
+  "projects": [
+    {
+      "name": "GPT-6 Astra",
+      "url": "https://openrouter.ai/openai/gpt-6-astra",
+      "description": "Il nuovo modello di punta OpenAI, già in deployment su OpenRouter e sottoposto da Simon Willison a una comparison grid multi-livello sul reasoning rispetto alle generazioni precedenti. Altman lo presenta come salto di capacità che richiede però rilasci più lenti per stare al passo con allineamento e sicurezza.",
+      "firstSeen": "2026-08-17",
+      "isNew": false
+    },
+    {
+      "name": "deepseek-ai/deepseek-harness",
+      "url": "https://github.com/deepseek-ai/deepseek-harness",
+      "description": "Infrastruttura agentica open source (MIT) in cui tutto è un plugin: agent loop, tool registry, session log, sandboxing, permessi e telemetria sono sostituibili. Ha superato 100k stelle in meno di 48 ore, il record di crescita più veloce nella storia di GitHub.",
+      "firstSeen": "2026-08-14",
+      "isNew": false
+    },
+    {
+      "name": "OpenClaw",
+      "url": "https://github.com/openclaw/openclaw",
+      "description": "Agente autonomo open source che gira 24/7 su hardware proprio, cresciuto oltre 380k stelle in pochi mesi. Karpathy lo cita pubblicamente come esempio concreto della soglia superata dagli agenti, e la sua architettura SOUL/AGENTS/MEMORY è diventata riferimento per la delega di task.",
+      "firstSeen": "2026-08-05",
+      "isNew": false
+    },
+    {
+      "name": "NousResearch/hermes-agent",
+      "url": "https://github.com/NousResearch/hermes-agent",
+      "description": "Framework per agenti autonomi multi-step con un learning loop integrato: crea skill dall'esperienza, le affina durante l'uso e cerca nelle proprie conversazioni passate. Il repo companion hermes-agent-self-evolution usa DSPy e GEPA per ottimizzare prompt e codice in autonomia.",
+      "firstSeen": "2026-09-04",
+      "isNew": true
+    },
+    {
+      "name": "OpenRouter",
+      "url": "https://openrouter.ai/",
+      "description": "Router unico verso centinaia di modelli, acquisito da Patrick Collison che definisce i token \"la valuta centrale\" di chi costruisce con l'AI. È il punto in cui la commoditizzazione dei modelli diventa infrastruttura di pagamento e instradamento.",
+      "firstSeen": "2026-08-17",
+      "isNew": false
+    },
+    {
+      "name": "Grok 4.7",
+      "url": "https://x.ai/grok",
+      "description": "Modello xAI annunciato da Musk per metà settembre, a 2,1 trilioni di parametri (+40% su Grok 4.6) e addestrato anche su decenni di dati SpaceX per compiti ingegneristici. Nessun benchmark indipendente, model card o prezzo è ancora stato pubblicato.",
+      "firstSeen": "2026-08-02",
+      "isNew": false
+    },
+    {
+      "name": "GLM-5.2",
+      "url": "https://huggingface.co/zai-org/GLM-5.2",
+      "description": "MoE da 753B parametri (~40B attivi) con contesto da 1M token e pesi MIT su Hugging Face: il modello open-weight più forte del 2026 sul coding, con 62,1 su SWE-bench Pro e 81,0 su Terminal-Bench 2.1. Rende il coding agentico eseguibile senza dipendere da un'API che può essere spenta o geolimitata.",
+      "firstSeen": "2026-08-02",
+      "isNew": false
+    },
+    {
+      "name": "block/buzz",
+      "url": "https://github.com/block/buzz",
+      "description": "Workspace open source (Apache-2.0) su protocollo Nostr dove ogni umano e ogni agente ha una coppia di chiavi Schnorr e ogni messaggio, review o evento git è firmato crittograficamente. È la scommessa di Dorsey su collaborazione decentralizzata e identità verificabile degli agenti, con supporto a Claude Code, Codex e goose.",
+      "firstSeen": "2026-08-03",
+      "isNew": false
+    },
+    {
+      "name": "nono",
+      "url": "https://github.com/nolabs-ai/nono",
+      "description": "Runtime in Rust che confina gli agenti a livello di kernel (Landlock su Linux, Seatbelt su macOS), dando a ogni tool call una sandbox effimera con solo i file, le rotte di rete e le credenziali necessarie. Risponde direttamente al collo di bottiglia della fiducia: verificare cosa fa un agente costa più che farglielo fare.",
+      "firstSeen": "2026-08-20",
+      "isNew": false
+    },
+    {
+      "name": "Portal by Spotify",
+      "url": "https://engineering.atspotify.com/2026/9/portal-by-spotify-cut-my-claude-code-token-usage-by-90",
+      "description": "Layer di ottimizzazione del contesto che Spotify riporta ridurre del 90% il consumo di token di Claude Code. Tocca il punto economico più concreto del coding agentico: se gli agenti funzionano, il vincolo diventa quanto costa farli girare.",
+      "firstSeen": "2026-09-05",
+      "isNew": true
+    },
+    {
+      "name": "EvoMap/AutoResearch",
+      "url": "https://github.com/EvoMap/AutoResearch",
+      "description": "Automazione della ricerca scientifica con loop di feedback AI: gli agenti generano ipotesi, eseguono esperimenti e reiterano sui risultati. È la stessa direzione dell'esperimento citato da Karpathy, con centinaia di run di training esplorati da uno sciame di agenti.",
+      "firstSeen": "2026-09-05",
+      "isNew": true
+    },
+    {
+      "name": "Hugging Face Hub",
+      "url": "https://huggingface.co",
+      "description": "Acquisito da NVIDIA per 12,9 miliardi, ospita quasi 3 milioni di repository di modelli e resta il punto di distribuzione di fatto dei pesi aperti. L'operazione conferma che il valore si sta spostando dal modello all'infrastruttura che lo distribuisce.",
+      "firstSeen": "2026-08-02",
+      "isNew": false
+    }
+  ],
+  "chapter_count": 9,
+  "tono": "neutro",
+  "tono_emoji": "😐"
+}
