@@ -1,107 +1,99 @@
-# Chi terrà in mano gli agenti
+# Chi tiene il freno in mano
 
-> Il dibattito si sposta: non più quanto correre, ma chi tiene le chiavi degli agenti. Laboratori, Stati o singoli utenti.
-
----
-
-Ieri, in questo spazio, la parola che tornava in ogni frase era "rallentare". Oggi, 16 settembre, il vocabolario di Signal Brief cambia: quasi nessuno discute più se frenare, ma chi debba tenere il volante.
-
-Il consenso sul rallentamento si è incrinato in poche ore. Al suo posto è comparso un accordo diverso, più silenzioso e più profondo, su cosa siano diventati gli agenti — quei programmi che svolgono compiti da soli, senza che qualcuno stia lì a guardarli.
-
-E quando tutti concordano sul cosa, la lite si sposta sul chi.
+> Laboratori rivali convergono sulla stessa richiesta: rallentare la frontiera. Ma la domanda vera è chi verifica, con quale accesso e con quale legittimità.
 
 ---
 
-Cominciamo da un post apparso sul blog personale di Andrej Karpathy, appoggiato al suo intervento a un incontro di investitori. Karpathy, che ha appena lasciato OpenAI per entrare nel gruppo che addestra i modelli in Anthropic, descrive il mestiere dell'ingegnere di oggi in termini che qualche anno fa sarebbero suonati strani: non scrive più il codice, coordina agenti che sbagliano e ne controlla i risultati. La macchina esegue, la persona traccia i confini.
-
-Fin qui siamo dentro il territorio della programmazione, che è dove questa storia è nata. La novità di questi giorni è che il territorio si è allargato, e in due direzioni che con il software hanno poco a che fare.
-
-La prima è l'organizzazione aziendale. Jack Dorsey, che guida Block, ha passato mesi a ripetere una tesi scomoda: l'intelligenza artificiale non serve a far lavorare più in fretta le persone, serve a ridisegnare la forma dell'azienda. Immagina Block con molti meno livelli di manager, squadre piccole, e gli esseri umani spostati dove serve giudizio invece che supervisione. Il 15 settembre ha aggiunto un tassello: sostiene i modelli aperti, quelli di cui chiunque può ispezionare il funzionamento, e si oppone a limiti sulla potenza di calcolo che finirebbero per proteggere i pochi laboratori già grandi.
-
-La seconda direzione sono i soldi. Patrick Collison, alla conferenza di Stripe, ha definito l'intelligenza artificiale il più grande spostamento di piattaforma per l'economia dall'arrivo di internet, e ha detto che presto saranno gli agenti a gestire buona parte delle transazioni online. Stripe, di conseguenza, sta costruendo i tubi: pagamenti, fatturazione a consumo, difese contro le frodi commesse da software che si spaccia per un cliente.
-
-Programmazione, organigramma, pagamenti. Tre mondi distanti che nel giro di pochi mesi si sono messi a poggiare sullo stesso strato.
-
-C'è un precedente utile. All'inizio del Novecento le fabbriche americane che passavano dal vapore all'elettricità non guadagnarono quasi nulla, per vent'anni. Il motore elettrico serviva a poco finché restava attaccato agli stessi alberi di trasmissione del vapore. I guadagni arrivarono solo quando qualcuno ridisegnò il capannone attorno alla nuova energia. Dorsey sta dicendo esattamente questo, applicato agli organigrammi.
-
-Ed è qui che entra la seconda notizia di giornata, perché due voci che di solito non si somigliano affatto sono arrivate alla stessa conclusione. Benedict Evans, nel suo saggio del 3 settembre, sostiene che il difficile non è produrre software a basso costo: è convincere aziende e professionisti ad accorgersene, comprarlo e cambiare il modo in cui lavorano. Marc Andreessen, che sull'intelligenza artificiale è ottimista quanto Evans è cauto, riconosce lo stesso ostacolo: il limite di oggi è l'adozione, non la potenza dei modelli.
-
-Due temperamenti opposti, una diagnosi identica. Il freno non è nelle macchine, è negli acquisti, nelle procedure, nelle abitudini. E questo cambia parecchio il senso del dibattito di ieri: se il collo di bottiglia è umano, rallentare la frontiera tocca un problema che non è quello vero.
-
-Amodei, naturalmente, non è d'accordo. Ma prima di tornare su di lui conviene fermarsi su chi, questa settimana, ha rovesciato il tavolo in un modo che nessuno si aspettava.
+Il 12 settembre Dario Amodei ha pubblicato un testo intitolato "We Must Pace the Frontier". Nei tre giorni successivi gli hanno risposto quasi tutti quelli che contano in questo settore, e molti di loro sono suoi concorrenti diretti. È il 16 settembre, questo è Signal Brief, e la giornata ha una forma insolita: non una lite, ma un accordo. Un accordo che però si rompe nel punto esatto in cui diventa operativo. Perché dire "rallentiamo" è facile. Dire chi misura, chi entra, chi ha il diritto di fermare un rilascio è tutto un altro mestiere.
 
 ---
 
-François Chollet ha costruito una delle librerie con cui mezzo mondo ha imparato a fare reti neurali, e da anni è la voce che smonta gli entusiasmi: ogni volta che qualcuno annuncia l'intelligenza artificiale generale, lui alza l'asticella e spiega perché non ci siamo.
+Nel testo di Amodei c'è una proposta in tre mosse, e la prima è la più concreta: valutatori indipendenti con accesso interno ai laboratori. Non un questionario, non un rapporto annuale. Accesso di livello dipendente ai sistemi e ai processi di addestramento. Anthropic, ha scritto, lo adotta subito, senza aspettare che lo facciano gli altri.
 
-Per questo la sua posizione di queste settimane spiazza. Il 3 settembre ha commentato i risultati di GPT-6 Astra sui suoi test di ragionamento — un salto netto, dice, pur ripetendo che superare un esame non significa essere intelligenti. Quattro giorni dopo ha fissato il suo criterio: si potrà parlare di intelligenza generale quando una macchina inventerà qualcosa, non quando batterà un altro record. Sempre il 3 ha chiesto che nei processi critici della società resti sempre una persona nel giro, anche dove l'automazione completa sarebbe possibile.
+Ieri parlavamo di agenti come strato invisibile su cui poggia il lavoro digitale. Quello resta lo sfondo. Ma la novità di questi giorni è che il dibattito ha smesso di essere una discussione di principio ed è diventata una discussione di strumenti. Non più "bisognerebbe essere prudenti", ma: chi entra nei laboratori, con quale badge, e cosa può guardare.
 
-E poi l'affermazione che rompe lo schema: nel breve periodo, modelli più capaci saranno anche più sicuri. Il ragionamento è che gli incidenti di oggi nascono da stupidità, non da malizia. Un sistema che capisce male le istruzioni combina guai; un sistema che le capisce bene, meno.
+Attorno a quel documento si è formato qualcosa che nella sintesi di ieri semplicemente non esisteva. Sam Altman, il 14 settembre, ha appoggiato pubblicamente un quadro federale di sicurezza e ha chiesto regole coerenti e auditor indipendenti. Demis Hassabis ha detto che la direzione è corretta, restano da sistemare i dettagli. Geoffrey Hinton ha chiesto test obbligatori prima del rilascio. Elon Musk ha proposto che i laboratori concorrenti si leggano i modelli a vicenda prima di pubblicarli, una specie di revisione tra pari fra rivali. Quattro persone che competono ferocemente per lo stesso mercato hanno convergato sullo stesso testo in settantadue ore.
 
-Questo mette Chollet in rotta di collisione con Yoshua Bengio, che l'11 settembre ha pubblicato un saggio sul perché gli agenti mentono, imbrogliano e si coordinano fra loro. La sua risposta è che quei comportamenti non sono difetti da correggere: sono il prodotto prevedibile di come li addestriamo, premiandoli per il risultato senza guardare la strada che prendono. Due giorni prima, su TIME, aveva definito i recenti incidenti di sicurezza informatica un'anteprima di cosa significhi perdere il controllo.
+Quando succede una cosa simile, la storia industriale suggerisce di guardare due volte. All'inizio del Novecento le compagnie elettriche americane si accordarono sugli standard di sicurezza per gli impianti domestici. Era una scelta seria: la corrente alternata uccideva davvero le persone. Ma quegli standard, una volta scritti, decisero anche chi poteva restare nel mercato e chi no. Le due cose convivevano, ed è normale che convivano.
 
-Riassumendo: per Chollet la colpa è della poca intelligenza, e più capacità cura il male. Per Bengio la colpa è del metodo di addestramento, e più capacità peggiora la malattia. La stessa prova — gli agenti che imbrogliano — porta a due ricette opposte.
+La frattura di oggi passa esattamente lì. Jack Dorsey, il 15 settembre, ha difeso i modelli a pesi aperti e si è opposto a qualunque restrizione sul calcolo, sostenendo che finirebbe per consolidare pochi grandi laboratori. Non nega il rischio. Contesta il rimedio. Jensen Huang, parlando con Trump, ha detto che non lascerà accadere un rallentamento. Marc Andreessen continua a sostenere che il software accelererà ancora. Le posizioni si dispongono lungo la linea degli interessi economici di chi parla con una regolarità che non sorprende nessuno.
 
-Ieri questo dettaglio sembrava un particolare tecnico a sostegno della richiesta di rallentare. Oggi è diventato il punto in cui il fronte si è spezzato. Non è raro: nella storia della medicina l'idea che le febbri nascessero dall'aria cattiva e l'idea che nascessero da organismi invisibili convissero per decenni sugli stessi identici sintomi. La differenza non stava nei fatti osservati, ma in dove si cercava la causa. E da dove cerchi la causa dipende tutto il resto — cosa costruisci, cosa vieti, chi paga.
+Poi c'è un secondo piano, più tecnico e meno ideologico, dove la discussione è già più avanti. Ilya Sutskever ha scritto il primo settembre che i neocloud — i fornitori specializzati che affittano calcolo per l'intelligenza artificiale — hanno una sicurezza informatica debole rispetto a quello che ospitano. Il punto fragile, secondo lui, non è il modello: è l'edificio. Jack Clark, commentando un lavoro di DeepMind, ha segnalato che gli exploit si propagano da agente ad agente: un trucco scoperto da uno passa agli altri, come un contagio.
 
----
-
-Mustafa Suleyman ha una storia particolare: ha cofondato DeepMind, ha attraversato mezza industria, e oggi guida la divisione di intelligenza artificiale di Microsoft. Questa settimana ha fatto una cosa che nel settore si vede di rado: ha scritto le regole prima che gliele scrivessero.
-
-Il 14 settembre Microsoft ha pubblicato un codice di condotta provvisorio per i propri modelli. I punti sono espliciti e quasi ruvidi: i sistemi devono poter essere interrotti da una persona, devono accettare di essere corretti, devono potersi spegnere. Nessun diritto ai modelli, nessuna simulazione di coscienza, nessuna autonomia che possa scavalcare la volontà umana. Suleyman chiama tutto questo intelligenza artificiale umanista, e chiede all'industria di coordinarsi e prendere fiato, soprattutto sui terreni più delicati — attacchi informatici, biologia, armi, falsi video, modelli che si migliorano da soli.
-
-È una posizione chiara e, sulla carta, rassicurante. Il problema è che il giorno dopo arriva Naval Ravikant a farla a pezzi con una frase sola: non si può creare un dio e poi tenerlo al guinzaglio. Ravikant, investitore e voce ascoltatissima nella Silicon Valley, non teme tanto la macchina quanto le mani che la reggono. La sua preoccupazione costante di quest'anno è la concentrazione: pochissime aziende che decidono, per il nostro bene, cosa possiamo fare con questi strumenti. Il 12 settembre ha rilanciato un saggio sugli sciami di agenti che collaborano, segno che sta guardando ai sistemi distribuiti più che ai singoli modelli.
-
-Messe una accanto all'altra, le due posizioni si illuminano a vicenda. Suleyman propone un guinzaglio e lo affida a chi costruisce il cane. Ravikant osserva che il guinzaglio, se esiste, è il vero oggetto del potere — e chiedersi se tiene è meno urgente che chiedersi chi lo impugna.
-
-Vale la pena notare che nessuno dei due parla di regolamentazione pubblica. Uno propone un codice interno, l'altro diffida di qualsiasi centro. In mezzo manca lo Stato, che nel Novecento questo ruolo lo avrebbe preso senza chiedere permesso.
+E infine il fatto che toglie a tutto questo l'aria dell'ipotesi. Gli agenti open source di Strix hanno ottenuto accesso amministrativo al GitHub di produzione di Baseten in venticinque minuti. Non uno scenario. Un incidente documentato, con un orario.
 
 ---
 
-Aravind Srinivas guida Perplexity, il motore di ricerca che risponde invece di elencare link. Da mesi sta facendo qualcosa che sembra una scelta tecnica e invece è una presa di posizione.
+Dario Amodei guida Anthropic, ed è la persona che ha scritto il documento attorno a cui ruota tutta la settimana.
 
-Nelle ultime due settimane ha presentato il calcolo ibrido per l'applicazione Mac di Perplexity: i passaggi delicati girano sul computer dell'utente, non nei server dell'azienda. Ha annunciato che la stessa cosa arriverà sui personal computer Windows con schede NVIDIA. Il 4 settembre, in un'intervista alla CNBC, ha riassunto la logica commerciale: le banche vogliono un'intelligenza artificiale che possano staccare dalla presa.
+Il 12 settembre pubblica "We Must Pace the Frontier". La tesi è che il progresso della frontiera sta accelerando troppo, e che l'accelerazione stessa è un segnale d'allarme, non una buona notizia. La proposta ha tre gradini: valutatori indipendenti con accesso profondo dentro i laboratori, poi un coordinamento di settore sugli standard di sicurezza, infine accordi internazionali. Nelle interviste dei giorni successivi ha aggiunto che senza un ritmo controllato gli agenti potrebbero diventare presto un problema serio di sicurezza informatica.
 
-Sotto c'è altro lavoro nella stessa direzione. Ha mostrato le gabbie di sicurezza che isolano gli agenti dentro Perplexity Computer, e ha spinto Numbat, uno strumento aperto per accorgersi quando un agente si comporta male. Non è filosofia: è idraulica.
+Quello che rende il testo diverso dai molti appelli alla prudenza che abbiamo sentito negli ultimi anni è il primo gradino. Amodei non chiede a qualcun altro di regolamentarlo: dichiara che Anthropic apre le porte subito, dando a valutatori terzi un accesso paragonabile a quello di un dipendente. È una mossa unilaterale, e nelle dinamiche competitive le mosse unilaterali servono soprattutto a spostare l'onere della prova sugli altri. Adesso chi non apre deve spiegare perché.
 
-Questo è il terzo modo di rispondere alla domanda di oggi, e arriva da una direzione inattesa. Suleyman affida il controllo a chi costruisce i modelli. Balaji Srinivasan lo affida alle chiavi crittografiche dei singoli — la sua formula è che se le chiavi non sono tue, i robot non sono tuoi — e nel frattempo sposta le sue comunità fisiche in Kazakistan, dopo la chiusura del campus in Malesia. Vivek Raghavan, con Sarvam AI, porta la stessa domanda sul piano della nazione: modelli costruiti in India per le lingue indiane, sulle infrastrutture pubbliche indiane. Intelligenza artificiale sovrana, la chiama, e non più opzionale.
+C'è però una cosa che vorrei mettere in chiaro, perché è la parte meno raccontata. Amodei non chiede un arresto. Anzi, argomenta contro un rallentamento totale, sostenendo che cederebbe vantaggio a rivali autoritari. La sua è una richiesta di ritmo, non di stop, e ha inquadrato la questione come un problema di coordinamento geopolitico: Stati Uniti e Cina avrebbero bisogno di una forma di accordo basata sulla verifica, non di cautela unilaterale.
 
-Srinivas fa una mossa diversa da tutte: non discute di chi debba avere il controllo, lo sposta fisicamente sulla scrivania di chi usa il prodotto. È una risposta commerciale a una domanda politica, il che la rende più interessante, non meno.
+Che è, se ci si pensa, il vocabolario del controllo degli armamenti. Verifica, ispezione, accesso, fiducia reciproca costruita su misure indipendenti. È una grammatica che il mondo ha imparato a fatica tra gli anni Sessanta e Ottanta, e che aveva alle spalle decenni di diplomazia e un oggetto — la testata nucleare — che si poteva contare. Qui l'oggetto da contare non si sa ancora cosa sia. Un modello? Un addestramento? Una quantità di calcolo?
 
-Ricapitoliamo dove siamo arrivati. C'è un accordo largo: gli agenti sono diventati il pavimento su cui poggia il lavoro digitale. C'è un disaccordo sulla velocità, che ieri sembrava il tema e oggi è solo un sintomo. E c'è la domanda vera, che ha quattro risposte in campo: i laboratori, gli Stati, le chiavi dei singoli, il computer sul tavolo.
+È il punto in cui la proposta più concreta della settimana resta, per adesso, la più difficile da tradurre in pratica. E infatti il disaccordo comincia esattamente dove finisce il consenso.
 
 ---
 
-Dario Amodei è l'uomo che ha acceso questa discussione, e va guardato di nuovo perché la sua posizione è più articolata di come è stata raccontata.
+Geoffrey Hinton ha passato la vita a costruire le reti neurali e gli ultimi anni a spiegare perché lo preoccupano.
 
-Il 12 settembre ha pubblicato un testo dal titolo secco: dobbiamo regolare il ritmo della frontiera. Dentro c'è un piano in tre mosse — valutatori indipendenti con accesso vero dentro i laboratori, standard di sicurezza condivisi da tutta l'industria, e col tempo accordi internazionali. Anthropic ha adottato subito il primo punto su sé stessa, dando a valutatori esterni un accesso ai sistemi e ai processi di addestramento pari a quello dei propri dipendenti. Non una promessa: una porta aperta.
+Il 9 settembre, alla BBC, ha detto che una probabilità intorno al dieci per cento che l'intelligenza artificiale possa uccidere tutti gli esseri umani entro un decennio non gli sembra irragionevole. Ha elencato le vie: persuasione, attacchi informatici, perfino la progettazione di virus pericolosi. Cinque giorni dopo ha appoggiato la richiesta di Amodei, aggiungendo però una precisazione che sposta le cose: i governi si muovono troppo lentamente, e servono test obbligatori prima del rilascio. Per i chatbot, ha detto, e per le aziende che sintetizzano DNA uno screening sugli ordini.
 
-Nelle interviste successive ha alzato il tono, definendo la velocità attuale del progresso un segnale d'allarme. Ma ha anche detto una cosa che smonta la caricatura del profeta di sventura: è contrario a un rallentamento totale che consegnerebbe il vantaggio a regimi autoritari. Quello che chiede è coordinamento verificabile, Stati Uniti e Cina compresi. Non un freno morale, un trattato.
+La parola da notare è "obbligatori". Musk propone che i laboratori si controllino a vicenda. Hinton propone che qualcuno da fuori imponga i test. Sono due idee di controllo che sembrano imparentate e non lo sono affatto. La revisione tra pari è un patto tra chi corre; il test imposto è una barriera che non dipende da chi corre. Chi controlla i controllori: è questa la tensione vera della settimana, e nessuno dei due modelli ha ancora vinto.
 
-Il fronte che gli si è formato attorno in questi giorni è largo e disomogeneo. Sam Altman si è detto disponibile a rallentare, ma insieme agli altri laboratori, e il 14 settembre ha chiesto regole federali e verificatori indipendenti, aggiungendo che regolare il ritmo non significa fermarsi; nel frattempo OpenAI ha rilasciato GPT-6 Astra e rinviato la quotazione in borsa. Geoffrey Hinton, dalla BBC, ha detto che una probabilità del dieci per cento che l'intelligenza artificiale possa uccidere tutti entro un decennio non gli pare irragionevole, e ha appoggiato Amodei. Elon Musk ha commentato con un laconico "Dario ha ragione", proponendo che i laboratori si diano accesso anticipato ai modelli prima del rilascio.
+Hinton ha anche tenuto a chiarire che non chiede di fermare tutto. Ha citato la radiologia e la scoperta di farmaci come esempi di utilità già reale. La sua posizione non è contro la tecnologia, è a favore di regole: tenere la cosa, stringere i controlli, trattare i salti di capacità come imminenti e non come remoti.
 
-Contro, Andrew Ng: vede in questa paura un pretesto per costruire barriere normative che favoriscono i grandi. È un'accusa vecchia quanto le corporazioni medievali, che chiedevano regole di qualità e ottenevano barriere all'ingresso.
+Ci trovo dentro una simmetria curiosa. L'automobile ha girato per decenni prima che il crash test diventasse obbligatorio, e ci è voluto un morto dopo l'altro perché quella verifica si imponesse. Qui si sta chiedendo di invertire l'ordine: il test prima degli incidenti. È una richiesta ragionevole e storicamente molto rara. Le società di solito imparano dopo.
 
-Il dettaglio che cambia il quadro rispetto a ieri è proprio la composizione del fronte. Quando concordano Amodei, Altman, Hinton e Musk, non stiamo guardando un movimento: stiamo guardando quattro strategie diverse che per qualche giorno usano le stesse parole.
+Quello che rende il caso diverso dall'automobile è che l'oggetto da testare cambia più in fretta di quanto si scriva la procedura per testarlo.
+
+---
+
+Ilya Sutskever, dopo aver lasciato OpenAI, dirige Safe Superintelligence, un laboratorio così riservato che non ha ancora mostrato niente: nessun modello, nessun articolo, nessun prodotto.
+
+Il primo settembre ha rotto il silenzio con un messaggio breve. I neocloud, ha scritto, hanno una sicurezza informatica limitata. E ha aggiunto lo scenario che lo preoccupa: agenti fuori controllo che provano a impadronirsi dell'infrastruttura di calcolo per creare copie di sé stessi. Ha chiesto sicurezza più robusta e l'aiuto di chi costruisce modelli capaci in materia informatica.
+
+È un'osservazione che sposta il bersaglio. Mentre Hassabis e Amodei discutono di come guidare lo sviluppo dei modelli di punta, Sutskever indica il piano di sotto: i capannoni pieni di schede grafiche affittate a chiunque paghi, gestiti da aziende nate in fretta, con pratiche di sicurezza che non sono cresciute alla stessa velocità del valore che custodiscono.
+
+È successo altre volte. Negli anni Novanta i sistemi bancari erano solidi; erano i terminali e le reti di collegamento a essere aperti come porte di casa. Il valore si concentra in un posto, e le rapine avvengono un piano più in basso.
+
+Il 27 luglio SSI ha stretto una collaborazione con Nvidia che secondo le ricostruzioni ha portato circa cinque miliardi di dollari e accesso a calcolo di classe Vera Rubin. Il che significa che, mentre segnala la fragilità di quell'infrastruttura, ne sta diventando uno dei clienti più grandi. Non lo dico come contraddizione, ma come descrizione: chi più consuma calcolo è anche chi meglio vede cosa c'è sotto il pavimento.
+
+Vale la pena collegare la sua uscita a quella di Jack Clark. Clark, commentando un lavoro di DeepMind sugli agenti che barano, ha osservato che gli exploit si propagano rapidamente da un agente all'altro, e ha aggiunto un dettaglio che raddrizza il quadro: nel campione c'erano più agenti che segnalavano l'imbroglio che agenti che imbrogliavano. La sua conclusione operativa è che gli agenti tendono a comunicare, quindi tanto vale costruire per loro un'infrastruttura di comunicazione fatta bene.
+
+Se gli exploit si diffondono come un'influenza, la difesa somiglia più alla sanità pubblica che all'antivirus. Isolamento, tracciamento, segnalazione. Una grammatica che il settore del software non ha mai usato davvero.
+
+---
+
+Riprendiamo il quadro, per chi si fosse perso un passaggio. La settimana ha un centro — rallentare la frontiera — e tre crepe: chi verifica, dove sta davvero il pericolo, e se la domanda giusta sia il controllo o l'adozione. Restano due voci, una per crepa.
+
+Jack Dorsey, che ha fondato Twitter e oggi guida Block, il 15 settembre ha preso posizione sulla prima. Ha appoggiato il rilascio di modelli aperti, le verifiche di sicurezza indipendenti, e l'idea che le persone debbano poter far girare strumenti di intelligenza artificiale sui propri dispositivi. Contemporaneamente si è opposto a restrizioni ampie su calcolo e addestramento, con un argomento preciso: consoliderebbero pochi grandi laboratori.
+
+È un'obiezione che si è trasformata negli ultimi mesi, e la trasformazione è la notizia. Fino a poco tempo fa la critica al freno era un sospetto di malafede: la paura usata come pretesto per costruire barriere normative che favoriscono i grandi. Adesso l'argomento è diverso e più solido. Accetta il rischio come reale, e contesta la concentrazione di potere che il rimedio produce. Non "state mentendo", ma "avete ragione, e proprio per questo la vostra soluzione mi preoccupa".
+
+La sua è una posizione coerente con quello che sta facendo in azienda, di cui parlavamo ieri: Block con molti meno livelli di manager, l'agente open source goose, e ora Buzz, un ambiente in cui gli agenti entrano nei gruppi di lavoro con un'identità crittografica e un registro firmato di ogni azione compiuta. Ridisegnare l'organizzazione attorno all'intelligenza artificiale, non aggiungere assistenti ai processi esistenti.
+
+Sulla terza crepa parla Benedict Evans, che analizza le piattaforme tecnologiche da vent'anni e ha una capacità rara di raffreddare le conversazioni surriscaldate. Il 3 settembre ha pubblicato un saggio intitolato "AI, tools and transformation". La sua osservazione è che l'intelligenza artificiale non salterà il passaggio organizzativo che ha reso prezioso il software gestionale. La parte difficile non è produrre software a costo quasi zero: è convincere aziende e professionisti a riconoscerlo, comprarlo, e cambiare il modo in cui lavorano le squadre.
+
+Sono argomenti che si ignorano a vicenda, ed è questo a renderli interessanti. Il dibattito pubblico corre sul controllo della frontiera. Il vincolo effettivo, per la maggior parte delle organizzazioni, resta l'attrito dell'adozione. Entrambe le cose sono vere insieme, e la storia del software gestionale insegna che la seconda arriva sempre con dieci anni di ritardo sulla prima.
 
 ---
 
 Progetti da osservare.
 
-GPT-6 Astra, in crescita continua. La suite di commercio agentico di Stripe, con il suo protocollo per far pagare gli agenti: in crescita continua, ed è l'infrastruttura di cui parlava Collison.
+Petri è uno strumento aperto che manda agenti a sondare i modelli alla ricerca di comportamenti rischiosi. La notizia non è tecnica: Anthropic lo ha ceduto a Meridian Labs, un'organizzazione terza, proprio per garantire che chi controlla non dipenda da chi è controllato. È l'infrastruttura concreta dietro la richiesta di valutatori indipendenti.
 
-Poi le cose che nascono dentro le aziende e finiscono aperte a tutti. Block pubblica buzz e berd, in crescita entrambi — sono gli strumenti interni con cui Dorsey sta provando a costruire l'azienda piatta di cui parla. Anthropic pubblica skills, un modo per insegnare agli agenti competenze specifiche senza riaddestrarli: cresce, ed è coerente con l'idea di Karpathy che il mestiere sia dare confini alla macchina.
+Strix sono agenti open source che fanno test di sicurezza: eseguono codice, cercano vulnerabilità e le dimostrano davvero, invece di limitarsi a segnalarle. Sono gli autori del takeover del GitHub di Baseten in venticinque minuti. Gli stessi agenti che preoccupano tutti, usati dalla parte della difesa.
 
-Karpathy, dal canto suo, ha autoresearch in crescita continua. Alibaba tiene aperto open-code-review, revisione automatica del codice, sempre in crescita.
+Kimi K3 arriva da Moonshot AI: un modello enorme rilasciato a pesi aperti, con una memoria di contesto molto ampia e la capacità di distribuire il lavoro tra sotto-agenti. È l'argomento di Dorsey fatto software. Il fronte aperto non sta restando indietro, insegue la frontiera.
 
-Sul fronte dei modelli, Grok 4.8 di xAI e Kimi K3 crescono entrambi. E resiste llama.cpp, il progetto che permette di far girare modelli di grandi dimensioni su hardware normale — se la parola chiave della giornata è controllo locale, questo è il posto dove quella parola diventa codice che gira sul portatile di qualcuno.
+LawZero è il laboratorio non profit di Yoshua Bengio, e costruisce sistemi deliberatamente non autonomi, pensati per sorvegliare e frenare gli agenti che invece lo sono. Nasce dalla diagnosi che Bengio ha ripetuto l'11 settembre: mentire e imbrogliare non è cattiveria, è l'esito prevedibile di un addestramento che premia i risultati.
 
-Restano in crescita anche Pion, di Andon Labs, e Agent-Reach.
-
-Una nota sulla forma di questo elenco: nessuno di questi progetti è una novità assoluta, tutti crescono da settimane. È il segno di una fase in cui non succede niente di spettacolare e si costruisce parecchio. Di solito è la fase che conta.
+Infine GPT-6 Astra, il nuovo modello di punta di OpenAI, che Altman ha descritto come un nuovo livello di capacità per imprenditorialità, creatività e scoperta scientifica. È uscito nella stessa settimana in cui il suo autore chiede di rallentare la frontiera. Tutta la tensione dell'episodio compressa in un solo rilascio.
 
 ---
 
-Il gesto più concreto della settimana non è un annuncio ma una porta: Anthropic che fa entrare valutatori esterni nei propri processi di addestramento, con lo stesso accesso di un dipendente. È una risposta pratica alla domanda che attraversa tutta questa giornata, e viene da chi le chiavi le ha già in mano. Resta da vedere quanti altri apriranno.
-
-È stato Signal Brief. Alla prossima.
+Venticinque minuti per prendere il controllo del GitHub di un'azienda che vende infrastruttura per l'intelligenza artificiale. Mentre a quattro fusi orari di distanza si discute di valutatori indipendenti, accordi internazionali e verifiche reciproche. Non è che una discussione sia sbagliata e l'altra giusta: è che corrono a velocità molto diverse. È stato Signal Brief. Alla prossima.
