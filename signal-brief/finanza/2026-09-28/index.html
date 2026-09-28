@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="it"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Il tratto lungo della curva · Signal.Finance</title>
+<meta property="og:title" content="Il tratto lungo della curva · Signal.Finance"><meta property="og:type" content="article"><meta property="og:description" content="Dalio fissa una scadenza, Marks smonta i riacquisti del Tesoro, Wood legge l'inversione come progresso. Il rischio non pagato si è spostato sui Treasury lunghi."><meta property="og:url" content="https://it-mikesoft.github.io/signal-brief/finanza/2026-09-28/"><meta property="og:audio" content="https://op3.dev/e/media.casamon.dev/finanza/podcast/episodes/2026-09-28.mp3"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "PodcastEpisode", "name": "Il tratto lungo della curva", "datePublished": "2026-09-28", "url": "https://it-mikesoft.github.io/signal-brief/finanza/2026-09-28/", "description": "Dalio fissa una scadenza, Marks smonta i riacquisti del Tesoro, Wood legge l'inversione come progresso. Il rischio non pagato si è spostato sui Treasury lunghi.", "inLanguage": "it", "associatedMedia": {"@type": "MediaObject", "contentUrl": "https://op3.dev/e/media.casamon.dev/finanza/podcast/episodes/2026-09-28.mp3"}, "partOfSeries": {"@type": "PodcastSeries", "name": "Signal.Finance", "url": "https://it-mikesoft.github.io/signal-brief/finanza/"}}</script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:#faf8f4; color:#1a1a1a; padding:2rem 10px; max-width:none; margin:0 auto; line-height:1.6; }
+  a { color:#059669; }
+  .back { display:inline-block; margin-bottom:1.5rem; font-size:.8rem; font-family:monospace; text-decoration:none; }
+  .videos { display:flex; gap:1rem; flex-wrap:wrap; margin:1.2rem 0; }
+  .videos figure { margin:0; flex:1; min-width:260px; }
+  .videos .v2 { flex:0 1 240px; }
+  .videos video { width:100%; border-radius:12px; background:#000; }
+  .videos .v2 video { aspect-ratio:9/16; max-height:420px; }
+  .videos figcaption { font-size:.75rem; color:#888; text-align:center; margin-top:.3rem; }
+  .vlink { display:flex; gap:.3rem; margin-top:.35rem; }
+  .vlink input { flex:1; min-width:0; font-size:.68rem; font-family:monospace; padding:.3rem .4rem;
+    border:1px solid #e2ddd6; border-radius:6px; background:#fff; color:#6b7280; }
+  .vlink button { font-size:.68rem; padding:.3rem .6rem; border:0; border-radius:6px;
+    background:#059669; color:#fff; cursor:pointer; font-weight:600; }
+  .wk { font-size:1rem; margin:1.4rem 0 .4rem; }
+  details.wkacc { border:1px solid #e5e7eb33; border-radius:10px; margin:.6rem 0; padding:.1rem .8rem .4rem; }
+  details.wkacc summary { cursor:pointer; font-weight:600; padding:.5rem 0; font-size:.9rem; }
+  .back:hover { text-decoration:underline; }
+  header h1 { font-family:Georgia,serif; font-size:1.7rem; font-weight:600; }
+  header h1 span { color:#059669; }
+  .tagline { color:#6b7280; font-size:.85rem; margin-top:.3rem; margin-bottom:1.5rem; }
+  ul.eps { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
+  .subscribe { display:inline-flex; align-items:center; gap:.5rem; margin-bottom:1.2rem;
+    padding:.45rem .9rem; background:#059669; color:#fff; border-radius:20px;
+    text-decoration:none; font-size:.8rem; font-weight:600; }
+  .subscribe:hover { opacity:.85; color:#fff; }
+  .ep { display:flex; align-items:center; gap:.8rem; padding:.8rem 1rem; background:#fff;
+    border:1px solid #e2ddd6; border-radius:8px; text-decoration:none; color:inherit; transition:box-shadow .12s; }
+  .ep:hover { box-shadow:0 2px 8px rgba(0,0,0,.07); }
+  .ep-play { width:32px; height:32px; border-radius:50%; background:#f3f4f6; display:flex;
+    align-items:center; justify-content:center; font-size:12px; flex-shrink:0; }
+  .ep-title { font-size:.9rem; font-weight:500; }
+  .ep-meta { font-size:.72rem; color:#9ca3af; font-family:monospace; margin-top:.15rem; }
+  audio { width:100%; margin:1rem 0 1.5rem; }
+  .rawmd { margin:-.5rem 0 1.5rem; }
+  .rawmd a { font-size:.8rem; font-family:monospace; color:inherit; opacity:.65; }
+  .desc { color:#374151; font-size:.95rem; margin-bottom:1.5rem; }
+  section { margin:2rem 0; }
+  section h2 { font-family:Georgia,serif; font-size:1.1rem; border-bottom:1px solid #e2ddd6;
+    padding-bottom:.3rem; margin-bottom:.8rem; }
+  .synthesis p { margin:.7rem 0; }
+  .tension { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #059669;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; font-size:.9rem; }
+  .tension .axis { font-weight:600; margin-bottom:.3rem; }
+  .tension .side { color:#6b7280; font-size:.85rem; }
+  .proj { font-size:.9rem; margin:.4rem 0; }
+  .proj .pname { font-weight:600; }
+  .proj .pnew { background:#16a34a; color:#fff; font-size:.65rem; font-weight:700;
+    padding:.1rem .35rem; border-radius:4px; text-transform:uppercase; vertical-align:middle; }
+  .fonte { font-size:.85rem; margin:.5rem 0; }
+  .fonte .who { font-weight:600; }
+  .fonte a { display:block; margin-left:.5rem; color:#6b7280; }
+  .transcript-body p { margin:.7rem 0; line-height:1.7; }
+  .transcript-body .chapter hr { border:none; border-top:1px solid #e2ddd6; margin:1.5rem 0; }
+  .transcript-body .podcast-episode-desc { color:#6b7280; font-style:italic; }
+  .signal-card { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #059669;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; }
+  .signal-theme { font-size:.75rem; font-weight:700; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.3rem; }
+  .signal-text { font-size:.85rem; color:#374151; line-height:1.5; }
+  .creator-footer { margin-top:3rem; padding-top:1.5rem; border-top:1px solid #e2ddd6;
+    display:flex; align-items:center; gap:.9rem; }
+  .creator-footer img { width:40px; height:40px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+  .creator-legal { font-size:.78rem; margin-top:.15rem; }
+  .creator-legal a { color:inherit; }
+  .creator-meta { display:flex; flex-direction:column; gap:.15rem; }
+  .creator-name { font-size:.85rem; font-weight:600; color:#1a1a1a; }
+  .creator-tagline { font-size:.75rem; color:#6b7280; }
+  .creator-email { font-size:.75rem; }
+  .creator-ai { font-size:.72rem; color:#8a7f6d; max-width:46ch; line-height:1.45; }
+  .sostieni { margin-top:2.5rem; padding:1.2rem 1.4rem; border-radius:14px;
+    background:#f7f4ef; border:1px solid #e2ddd6; }
+  .sostieni h3 { margin:0 0 .3rem; font-size:1rem; }
+  .sostieni p { margin:0 0 .9rem; font-size:.88rem; color:#6b6257; line-height:1.55; }
+  .sostieni-atti { display:flex; gap:.8rem; align-items:center; flex-wrap:wrap; }
+  .sostieni-btn { display:inline-block; padding:.55rem 1.1rem; border-radius:10px;
+    background:#059669; color:#fff; text-decoration:none; font-weight:700; font-size:.88rem; }
+  .sostieni-alt { font-size:.85rem; color:#6b6257; text-decoration:none; }
+  .sostieni-alt:hover { text-decoration:underline; }
+  .tutele { margin-top:2rem; padding-top:1.2rem; border-top:1px solid #e2ddd6;
+    font-size:.72rem; color:#8a7f6d; line-height:1.5; }
+  .tutele h3 { font-size:.75rem; color:#6b7280; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.5rem; font-weight:600; }
+  .tutele p { margin:.45rem 0; }
+  .tutele strong { color:#5a5348; font-weight:600; }
+  .tutele a { color:inherit; text-decoration:underline; }
+  .creator-email a { color:#9ca3af; text-decoration:none; }
+  .creator-email a:hover { color:#1a1a1a; }
+  /* disegno 2026-08-07: mesi a pagine, facce, player modale, trascrizione
+     richiudibile — la pagina episodio è un prodotto, non un sottoprodotto */
+  .hrow { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+  .hrow .subscribe { margin-bottom:0; flex-shrink:0; }
+  .months { font-size:.78rem; font-family:monospace; margin:.4rem 0 1rem; color:#9ca3af; }
+  .months a { text-decoration:none; } .months b { color:inherit; }
+  .ep-faces { display:flex; margin-left:auto; flex-shrink:0; }
+  .ep-faces img { width:26px; height:26px; border-radius:50%; object-fit:cover;
+    border:2px solid #fff; margin-left:-8px; background:#eee; }
+  /* tutti i citati sul desktop; su mobile la leggibilità vince: max 3 */
+  @media (max-width:600px) { .ep-faces img:nth-child(n+4) { display:none; } }
+  .ep-listen { width:32px; height:32px; border-radius:50%; background:#f3f4f6; border:0;
+    display:flex; align-items:center; justify-content:center; font-size:12px;
+    flex-shrink:0; cursor:pointer; color:inherit; }
+  .ep-listen.on { background:#059669; color:#fff; }
+  .face-inline { width:1.15em; height:1.15em; border-radius:50%; object-fit:cover;
+    vertical-align:-.18em; margin-right:.25em; }
+  /* SEMPRE sulla stessa riga (2026-08-09): su schermi stretti le miniature
+     si riducono, e se non basta il reel sparisce — mai l'andata a capo */
+  .vthumbs { display:flex; gap:.8rem; flex-wrap:nowrap; margin:1.2rem 0; align-items:flex-start; }
+  .vthumb { position:relative; cursor:pointer; border:0; padding:0; background:none;
+    border-radius:12px; overflow:hidden; }
+  /* stessa ALTEZZA per video e reel: il 9:16 si stringe, non svetta */
+  .vthumb video { height:150px; width:auto; display:block; border-radius:12px; background:#000; }
+  @media (max-width:520px) { .vthumb video { height:118px; } }
+  /* quando nemmeno ridotte ci stanno: via le miniature, due BOTTONI in
+     riga che aprono il player (2026-08-09) */
+  .vbtns { display:none; gap:.6rem; margin:1.2rem 0; }
+  .vbtns button { flex:1; padding:.6rem .4rem; border:0; border-radius:10px;
+    background:#059669; color:#fff; font-weight:700; font-size:.85rem;
+    cursor:pointer; font-family:inherit; }
+  @media (max-width:420px) { .vthumbs { display:none; } .vbtns { display:flex; } }
+  .vthumb .vlabel { position:absolute; left:0; right:0; bottom:0; padding:.9rem .5rem .35rem;
+    background:linear-gradient(transparent, rgba(0,0,0,.75)); color:#fff; font-size:.7rem; }
+  .vthumb::after { content:"▶"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    color:#fff; font-size:1.6rem; text-shadow:0 1px 6px rgba(0,0,0,.8); }
+  /* margin:auto ESPLICITO: il reset globale * {margin:0} annullava la
+     centratura nativa del dialog e il player si apriva in alto a sinistra */
+  dialog.vplayer { border:0; padding:0; background:transparent; max-width:92vw;
+    margin:auto; position:fixed; inset:0; }
+  dialog.vplayer::backdrop { background:rgba(0,0,0,.85); }
+  dialog.vplayer video { max-width:92vw; max-height:86vh; border-radius:14px; background:#000; }
+  dialog.vplayer .vplayer-barra { display:flex; justify-content:flex-end; align-items:center;
+    gap:.5rem; margin-bottom:.5rem; }
+  /* 2.75rem e' il bersaglio minimo per il dito: la ✕ da sola sarebbe 20px. */
+  dialog.vplayer .vplayer-barra button { font:inherit; font-size:.9rem; color:#fff;
+    background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.28);
+    border-radius:999px; padding:.45rem .9rem; cursor:pointer;
+    min-height:2.75rem; min-width:2.75rem; }
+  dialog.vplayer .vplayer-barra button:hover { background:rgba(255,255,255,.24); }
+  dialog.vplayer .vplayer-chiudi { font-size:1.1rem; line-height:1; }
+  details.tr { border:1px solid #e2ddd6; border-radius:10px; padding:.2rem .9rem .6rem; }
+  details.tr summary { cursor:pointer; font-weight:600; padding:.55rem 0; }
+  .tr-copy { font-size:.72rem; padding:.3rem .7rem; border:0; border-radius:6px;
+    background:#059669; color:#fff; cursor:pointer; font-weight:600; margin:.3rem 0 .5rem; }
+  .epnav { display:flex; justify-content:space-between; gap:1rem; margin:2rem 0 0;
+    font-size:.82rem; font-family:monospace; }
+  .epnav a { text-decoration:none; }
+  /* Header + tab bar (spec-016, Task 5): stessa forma di
+     public/console/podcast-render.css, riusando i nomi classe dove
+     combaciano — solo la meccanica tab/pannello è nuova qui. */
+  .episode-header .date-line { font-size:.72rem; font-family:monospace; color:#9ca3af;
+    text-transform:uppercase; letter-spacing:.08em; margin-bottom:.3rem; }
+  .ep-header-block { margin-bottom:.5rem; }
+  .ep-header-faces { margin:.6rem 0; }
+  .ep-header-faces .ep-faces { margin-left:0; }
+  .tabs { display:flex; gap:.25rem; border-bottom:1px solid #e2ddd6; margin:1.5rem 0; flex-wrap:wrap; }
+  .tab { font-family:monospace; font-size:.72rem; text-transform:uppercase; letter-spacing:.08em;
+    padding:.6rem .9rem; background:transparent; border:0; border-bottom:2px solid transparent;
+    color:#9ca3af; cursor:pointer; }
+  .tab[aria-selected="true"] { color:#1a1a1a; border-bottom-color:#059669; }
+  .tab-panel { display:block; }
+  .tab-panel[hidden] { display:none !important; }
+  /* Fallback dei pannelli senza dati (episodi storici senza un sidecar) —
+     porta di public/console/podcast-render.css:304-309, sui token pubblici. */
+  /* Header episodio a due colonne: barra tab e pannello nel primo schermo
+     (stesse regole del modulo condiviso, richiesta 2026-08-10). */
+  .ep-header-block { display:grid; grid-template-columns:minmax(0,1fr) 340px;
+    grid-template-rows:repeat(4,min-content); gap:.3rem 1.6rem;
+    align-items:start; margin-bottom:.5rem; }
+  .ep-header-block > [data-sb="data"] { grid-column:1; margin:0; }
+  .ep-header-block > [data-sb="titolo"] { grid-column:1; margin:.1rem 0; }
+  .ep-header-block > [data-sb="player"] { grid-column:1; }
+  .ep-header-block > [data-sb="nav"] { grid-column:1; }
+  .ep-header-block > [data-sb="facce"] { grid-column:2; grid-row:1; }
+  .ep-header-block > [data-sb="video"] { grid-column:2; grid-row:2/5;
+    display:flex; gap:.5rem; flex-wrap:wrap; }
+  .ep-header-block [data-sb="facce"] img { width:26px; height:26px; }
+  .ep-header-block [data-sb="video"] video { max-height:96px; width:auto; }
+  .ep-header-block audio { height:36px; width:100%; }
+  .tabs { position:sticky; top:0; z-index:5; background:#fff;
+    padding:.4rem 0; border-bottom:1px solid #e5e7eb; }
+  @media (max-width:760px) {
+    .ep-header-block { grid-template-columns:1fr; }
+    .ep-header-block > [data-sb="facce"],
+    .ep-header-block > [data-sb="video"] { grid-column:1; grid-row:auto; }
+  }
+  .state-note { padding:2rem 1rem; text-align:center; color:#9ca3af;
+    font-family:monospace; font-size:.85rem; }
+  @media (prefers-color-scheme:dark) {
+    body { background:#1f1d18; color:#e5e5e5; }
+    .ep, .tension, .signal-card { background:#2a2823; border-color:#3a352d; }
+    .ep-play { background:#3a352d; } .desc { color:#d4d4d4; }
+    .signal-text { color:#d4d4d4; }
+    .episode-header .date-line { color:#9ca3af; }
+    .tabs { border-color:#3a352d; }
+    .tab[aria-selected="true"] { color:#f5f5f5; }
+    .state-note { color:#9ca3af; }
+    .creator-footer { border-color:#3a352d; }
+    .creator-name { color:#f5f5f5; }
+    .creator-tagline, .creator-email a { color:#9ca3af; }
+    .creator-ai { color:#9a8f7d; }
+    .vlink input { background:#1c1a17; border-color:#3a352d; color:#9ca3af; }
+    .tutele { border-color:#3a352d; color:#9a8f7d; }
+    .tutele h3 { color:#a9a9a9; } .tutele strong { color:#d4d4d4; }
+    .ep-listen { background:#3a352d; }
+    .ep-faces img { border-color:#2a2823; background:#3a352d; }
+    details.tr { border-color:#3a352d; }
+  }
+</style></head><body>
+<a class="back back-link" href="/signal-brief/finanza/">← Signal.Finance</a><div class="ep-header-block"><header class="episode-header"><div class="date-line" data-sb="data">2026-09-28</div><h1 data-sb="titolo">Il tratto lungo della curva</h1><span class="tono" data-sb="tono" title="quello che racconta e' andato male">🙁</span><div class="desc">Dalio fissa una scadenza, Marks smonta i riacquisti del Tesoro, Wood legge l'inversione come progresso. Il rischio non pagato si è spostato sui Treasury lunghi.</div><div class="tagline">Digital Intelligence Podcast</div></header><audio controls preload="none" data-sb="player" src="https://op3.dev/e/media.casamon.dev/finanza/podcast/episodes/2026-09-28.mp3"></audio><nav class="epnav" data-sb="nav"><a href="/signal-brief/finanza/2026-09-14/">← 2026-09-14</a><span style="flex:1"></span></nav><div class="ep-header-faces" data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/finanza/avatars/morgan-housel.png" alt="" title="Morgan Housel"><img loading="lazy" src="/signal-brief/finanza/avatars/ray-dalio.png" alt="" title="Ray Dalio"><img loading="lazy" src="/signal-brief/finanza/avatars/howard-marks.png" alt="" title="Howard Marks"><img loading="lazy" src="/signal-brief/finanza/avatars/peter-schiff.png" alt="" title="Peter Schiff"><img loading="lazy" src="/signal-brief/finanza/avatars/cathie-wood.png" alt="" title="Cathie Wood"><img loading="lazy" src="/signal-brief/finanza/avatars/nassim-taleb.png" alt="" title="Nassim Taleb"><img loading="lazy" src="/signal-brief/finanza/avatars/ai.png" alt="" title="AI"><img loading="lazy" src="/signal-brief/finanza/avatars/ben-felix.png" alt="" title="Ben Felix"></span></div><div class="ep-header-video" data-sb="video"></div></div>
+<div class="tabs-block"><div class="tabs" role="tablist" id="sbTabs"><button class="tab" type="button" role="tab" data-tab="sintesi" aria-selected="true" onclick="sbTab('sintesi')">Sintesi</button><button class="tab" type="button" role="tab" data-tab="testo" aria-selected="false" onclick="sbTab('testo')">Testo</button><button class="tab" type="button" role="tab" data-tab="comparazione" aria-selected="false" onclick="sbTab('comparazione')">Comparazione</button><button class="tab" type="button" role="tab" data-tab="segnali" aria-selected="false" onclick="sbTab('segnali')">Segnali</button><button class="tab" type="button" role="tab" data-tab="fonti" aria-selected="false" onclick="sbTab('fonti')">Fonti</button></div>
+<div class="tab-panel panel" data-sb-panel="sintesi"><div class="synthesis"><h2>La curva lunga come vero centro di gravità</h2>
+<p>Il punto di convergenza non è l'intelligenza artificiale, ma il tratto lungo della curva dei rendimenti. <a href="https://fortune.com/2026/09/22/ray-dalio-optimists-pessimists-both-correct-ai-calls-productivity-inequality/" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="/signal-brief/finanza/avatars/ray-dalio.png" alt="">Ray Dalio</a> fissa per la prima volta una scadenza al problema del debito americano — tre anni, più o meno due — e la motiva con un fabbisogno di rifinanziamento pari a circa il doppio delle entrate federali. <a href="https://www.oaktreecapital.com/insights/memo/shall-we-repeal-the-laws-of-economics---part-iii" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="/signal-brief/finanza/avatars/howard-marks.png" alt="">Howard Marks</a>, nel memo del 22 settembre 2026 <em>Shall We Repeal the Laws of Economics – Part III</em>, arriva allo stesso punto per una via diversa: i riacquisti di titoli lunghi del Tesoro possono comprimere i rendimenti per qualche tempo, ma non toccano deficit e offerta di carta. <a href="https://beforeitsnews.com/economy/2026/09/debate-will-gold-repaxw-the-us-dollar-peter-schiff-george-gammon-video-3172355.html" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="/signal-brief/finanza/avatars/peter-schiff.png" alt="">Peter Schiff</a> porta la stessa logica all'estremo, fino al 6% e oltre. Tre stili incompatibili, una sola conclusione: la duration sui Treasury è il rischio non pagato.</p>
+<p>Qui nasce la tensione vera, che non è tra ottimisti e pessimisti sull'IA ma tra due letture dello stesso tasso lungo. Per <a href="https://www.ark-invest.com/videos/market-commentary/september-2026-in-the-know-cathie-wood" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="/signal-brief/finanza/avatars/cathie-wood.png" alt="">Cathie Wood</a> l'inversione della curva non annuncia recessione, perché replica la Rivoluzione industriale, e l'inflazione core reale all'1,5% misurata da Truflation lascia la Fed di Warsh accomodante. Per Dalio e Marks quel tasso è invece il prezzo di una disciplina fiscale assente. La differenza è decisiva: se ha ragione Wood, il costo del capitale scende e l'IA si autofinanzia; se hanno ragione gli altri, i rendimenti in salita colpiscono esattamente chi ha più debito, cioè l'infrastruttura dei data center — il punto che <a href="https://www.cnbc.com/2026/09/27/debt-hungry-data-center-companies-increased-risk-bond-yields-spike.html" target="_blank" rel="noopener">CNBC</a> segnala il 27 settembre.</p>
+<p>Sull'IA la divergenza è di intensità, non di segno: Dalio la definisce bolla e macchina di produttività insieme, <a href="https://nassimtaleb.org/2026/02/software-bankruptcies-volatility/" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="/signal-brief/finanza/avatars/nassim-taleb.png" alt="">Nassim Taleb</a> prevede bancarotte nel software, <a href="https://podcasts.apple.com/us/podcast/the-morgan-housel-podcast/id1675310669" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="/signal-brief/finanza/avatars/morgan-housel.png" alt="">Morgan Housel</a> nell'episodio dell'11 settembre <em>AI Optimism and the Agony of Waiting</em> scommette sull'esito mediano, aziende più produttive del 20-30%.</p>
+<p>Il filo meno visibile è un altro. Dalio dice che l'IA aumenta le disuguaglianze; <a href="https://rationalreminder.libsyn.com/wealthy-people-are-hiding-in-plain-sight-ft-owen-zidar-428" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="/signal-brief/finanza/avatars/ben-felix.png" alt="">Ben Felix</a> dedica l'episodio 428 con Owen Zidar alla concentrazione patrimoniale; Housel spiega il prezzo delle case con la ricchezza azionaria, non con i salari. Tre discipline diverse descrivono lo stesso meccanismo: la distribuzione degli asset finanziari è diventata la variabile macro.</p></div></div>
+<div class="tab-panel panel" data-sb-panel="testo" hidden><button class="tr-copy" type="button" onclick="copiaTrascrizione(this)">copia il testo</button><div class="transcript-body"><h2>Il tratto lungo della curva</h2>
+<p class="podcast-episode-desc">Dalio fissa una scadenza, Marks smonta i riacquisti del Tesoro, Wood legge l'inversione come progresso. Il rischio non pagato si è spostato sui Treasury lunghi.</p>
+<div class="chapter" data-mood="geo"><hr></div>
+<p>Signal Finance, 28 settembre 2026. Per settimane la domanda era una sola: dove si nasconde il rischio dentro la scommessa sull'intelligenza artificiale. La risposta, questa settimana, cambia indirizzo. Non sta nei bilanci delle società di software né nei contratti sulla potenza di calcolo. Sta nel punto più noioso del mercato: la parte lunga della curva dei rendimenti americani. Tre investitori con metodi incompatibili ci sono arrivati nello stesso momento, per tre strade diverse. E hanno cominciato a mettere una data.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>La data la fissa <a href="#" class="face-link" onclick="vaiFonte(event, 'Ray Dalio')" title="Fonti di Ray Dalio"><img class="face-inline" loading="lazy" src="/signal-brief/finanza/avatars/ray-dalio.png" alt=""></a>Ray Dalio. In un saggio pubblicato su LinkedIn il 21 agosto e ripreso a metà settembre, colloca il punto di rottura del debito americano "fra tre anni, più o meno due". È la prima volta che allega una scadenza a un allarme che ripete da anni. Il numero che la sostiene è questo: per servire e rinnovare il proprio debito gli Stati Uniti hanno bisogno di circa undicimila miliardi di dollari all'anno, quasi il doppio delle entrate federali. La spesa supera gli incassi del quaranta per cento. La domanda di titoli di Stato non tiene il passo con l'offerta.</p>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Howard Marks')" title="Fonti di Howard Marks"><img class="face-inline" loading="lazy" src="/signal-brief/finanza/avatars/howard-marks.png" alt=""></a>Howard Marks arriva allo stesso punto da una porta completamente diversa. Nel memo del 22 settembre, terzo capitolo della serie sull'abrogazione delle leggi dell'economia, prende di mira un dettaglio tecnico: il programma di riacquisto dei titoli lunghi del Tesoro. Ammette che funzioni — i prezzi salgono, i rendimenti scendono. Ma solo per un po', perché non tocca le cause, ossia il deficit e la quantità di carta che va collocata. Verso Washington usa un'espressione che non gli è abituale: mancanza totale di disciplina fiscale.</p>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Peter Schiff')" title="Fonti di Peter Schiff"><img class="face-inline" loading="lazy" src="/signal-brief/finanza/avatars/peter-schiff.png" alt=""></a>Peter Schiff porta la stessa logica al capolinea. Per lui il mercato orso sui Treasury è al cinque per cento e proseguirà verso il sei e oltre, perché gli Stati Uniti sarebbero oggi un rischio di credito peggiore di quanto fossero nel 1980. Il Tesoro non avrebbe munizioni sufficienti per difendere la parte lunga, e alla fine dovrebbe intervenire la Fed.</p>
+<p>È lo stesso schema degli anni Settanta, quando si tentò di governare il costo del denaro con strumenti amministrativi e il mercato obbligazionario presentò comunque il conto. La differenza è che allora il problema era l'inflazione; oggi è la quantità di titoli da rifinanziare.</p>
+<p>Ma qui la storia si biforca, e la biforcazione è il vero contenuto della settimana. <a href="#" class="face-link" onclick="vaiFonte(event, 'Cathie Wood')" title="Fonti di Cathie Wood"><img class="face-inline" loading="lazy" src="/signal-brief/finanza/avatars/cathie-wood.png" alt=""></a>Cathie Wood guarda la stessa curva e non vede un avvertimento. Nel commento mensile di ARK sostiene che l'inversione replichi la dinamica della Rivoluzione industriale, quando la curva restò invertita per oltre il sessanta per cento del tempo senza annunciare recessioni. Secondo lei l'inflazione core reale misurata da Truflation è all'uno e mezzo per cento, molto sotto i dati ufficiali, il che lascerebbe accomodante la Fed guidata da Warsh.</p>
+<p>Due letture dello stesso numero. Per Wood il tasso lungo è il prezzo di una transizione tecnologica: se scende il costo del capitale, l'intelligenza artificiale si finanzia da sé. Per Dalio e Marks è il prezzo di una disciplina di bilancio che non c'è.</p>
+<p>E la differenza non è accademica, perché ha un punto di impatto preciso. Il 27 settembre CNBC ha documentato l'esposizione delle società di data center — fra le più indebitate del mercato — a un rialzo dei rendimenti. Se il tasso lungo sale, colpisce esattamente dove la leva si è concentrata: nell'infrastruttura di calcolo che dovrebbe reggere l'intero racconto sull'intelligenza artificiale.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Morgan Housel')" title="Fonti di Morgan Housel"><img class="face-inline" loading="lazy" src="/signal-brief/finanza/avatars/morgan-housel.png" alt=""></a>Morgan Housel non è un gestore, è uno scrittore che si occupa del comportamento degli investitori, e questa settimana offre l'unica posizione che non sta né con gli allarmisti né con gli entusiasti.</p>
+<p>Nell'episodio dell'11 settembre del suo podcast, dedicato all'ottimismo sull'intelligenza artificiale e all'agonia dell'attesa, osserva che le previsioni su questa tecnologia tendono sempre agli estremi: utopia o catastrofe. Lui scommette sulla parte centrale della distribuzione — aziende più produttive del venti o trenta per cento. Non una rivoluzione, non una bolla che esplode: un miglioramento significativo e noioso. E individua il rischio principale non in un crollo, ma nella frustrazione dell'attesa, cioè nel divario fra quanto si promette e quanto viene effettivamente adottato.</p>
+<p>È una collocazione precisa dentro la mappa di oggi. <a href="#" class="face-link" onclick="vaiFonte(event, 'Nassim Taleb')" title="Fonti di Nassim Taleb"><img class="face-inline" loading="lazy" src="/signal-brief/finanza/avatars/nassim-taleb.png" alt=""></a>Nassim Taleb, la cui ultima tesi finanziaria risale al febbraio scorso, sostiene che le code di rischio siano sottoprezzate in ogni settore e che l'intelligenza artificiale porterà bancarotte fra le società di software, cancellando i guadagni dei leader attuali. Dalio dice che ottimisti e pessimisti hanno ragione insieme: grande spinta alla produttività e bolla, con effetti pesanti su molte persone. Housel sta esattamente nel mezzo, e la sua posizione ha il pregio di essere quella che l'esperienza storica premia più spesso.</p>
+<p>C'è poi un secondo contributo, meno visibile ma forse più durevole. Housel propone una spiegazione trascurata per il prezzo delle case unifamiliari americane, che si è staccato dal reddito: sempre più famiglie possiedono azioni, e la domanda di immobili è spinta dalla ricchezza finanziaria, non dallo stipendio. Nella stessa settimana <a href="#" class="face-link" onclick="vaiFonte(event, 'Ben Felix')" title="Fonti di Ben Felix"><img class="face-inline" loading="lazy" src="/signal-brief/finanza/avatars/ben-felix.png" alt=""></a>Ben Felix, che nel suo podcast non prende posizioni tattiche, dedica l'episodio con l'economista di Princeton Owen Zidar alla concentrazione patrimoniale e al motivo per cui resta poco visibile. Dalio, nel video del Forum di Davos del 22 settembre, insiste sul fatto che l'intelligenza artificiale aumenti le disuguaglianze.</p>
+<p>Tre discipline lontane che descrivono lo stesso meccanismo: la distribuzione degli asset finanziari è diventata una variabile macro. Non un tema sociale accanto ai mercati, ma una delle forze che li muovono.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Sul posizionamento, il gesto più eloquente resta quello di Dalio, e non è una dichiarazione ma un'allocazione. Nei dati di inizio 2026, oltre il settantacinque per cento del portafoglio azionario americano del suo family office sta in ETF sull'oro. Non una copertura marginale: la struttura portante. Chi ritiene che il grande ciclo del debito stia entrando nella fase di svalutazione della moneta, si comporta di conseguenza.</p>
+<p>Schiff, che dell'oro fa una missione da vent'anni, legge nella stessa direzione: le banche centrali vendono dollari e titoli americani per comprare metallo, e sopra i cinquemila dollari l'oncia considera i seimila facilmente raggiungibili entro l'anno. Per lui la politicizzazione della Fed, anche solo percepita, pesa sul dollaro.</p>
+<p>Marks non parla di oro, ma la conclusione operativa del suo memo va nella stessa direzione con altri mezzi: il rischio sulla duration dei Treasury resta, e ne esce sostenuta la sua tesi degli ultimi anni — tassi strutturalmente più alti, credito e reddito fisso più interessanti di un mercato azionario caro.</p>
+<p>Wood, all'estremo opposto, si tiene sul fronte della crescita: costo dell'inferenza in calo del novantanove e nove per cento all'anno, crescita globale reale sopra il sette per cento nei prossimi tre-cinque anni, petrolio che secondo lei ha toccato il massimo — con gli Emirati a quattro milioni e centomila barili al giorno e una possibile uscita di Abu Dhabi dall'OPEC — e quindi una spinta disinflazionistica in arrivo.</p>
+<p>Chi ha ragione non si deciderà su un titolo o su un settore, ma su quel tratto di curva.</p>
+<div class="chapter" data-mood="upbeat"><hr></div>
+<p>Strumenti e risorse da osservare.</p>
+<p>Il memo di Oaktree del 22 settembre, terzo capitolo sulle leggi dell'economia, è il documento più utile della settimana: si legge in mezz'ora e spiega perché un intervento tecnico sui rendimenti non sostituisce una scelta di bilancio.</p>
+<p>L'ETF sui Treasury americani oltre i vent'anni è lo strumento che incorpora in modo più diretto il rischio di duration — quello che Dalio, Marks e Schiff considerano non remunerato. Guardarne il grafico equivale a guardare la tesi.</p>
+<p>L'ETF sull'oro fisico è invece la posizione principale del family office di Dalio: la copertura classica contro la svalutazione della moneta.</p>
+<p>Sul fronte opposto, il fondo di punta di ARK è il veicolo più esposto alla lettura ottimista della curva: deflazione da innovazione e crescita globale sopra il sette per cento.</p>
+<p>Truflation è l'indice di inflazione in tempo reale costruito su dati alternativi che Wood cita per sostenere il suo uno e mezzo per cento. Vale osservarlo proprio perché contraddice le statistiche ufficiali: se il divario si chiude, una delle due narrazioni perde il suo fondamento.</p>
+<p>Da seguire anche la lettera trimestrale di GMO sulle condizioni che potrebbero rompere la bolla dell'intelligenza artificiale, e l'analisi di CNBC sul credito delle società di data center.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Undicimila miliardi da rifinanziare ogni anno, e un'infrastruttura di calcolo costruita a leva proprio mentre quel rifinanziamento diventa più caro. Le due cose si guardano. Chi pensa che il tasso lungo sia il prezzo del progresso e chi pensa che sia il conto di anni senza disciplina hanno appuntamento nello stesso posto — e uno dei due si sbaglia. È stato Signal Finance. Alla prossima.</p></div><div class="rawmd"><a href="raw.md">Testo (markdown)</a></div></div>
+<div class="tab-panel panel" data-sb-panel="comparazione" hidden><div class="tension"><div class="axis">↗ La duration come rischio non pagato</div><div class="side">Il tratto lungo della curva dei rendimenti diventa il vero centro di gravità: rifinanziamento pari al doppio delle entrate federali, con una scadenza di tre anni più o meno due.</div></div><div class="tension"><div class="axis">↗ Inefficacia dei riacquisti del Tesoro</div><div class="side">I buyback di titoli lunghi comprimono i rendimenti per qualche tempo ma non toccano deficit e offerta di carta.</div></div><div class="tension"><div class="axis">↗ Il debito dei data center come punto di impatto</div><div class="side">Se i rendimenti salgono, il colpo arriva esattamente dove il debito è più concentrato, cioè nell'infrastruttura di calcolo.</div></div><div class="tension"><div class="axis">↗ Inversione della curva senza recessione</div><div class="side">L'inversione replica la dinamica della Rivoluzione industriale invece di annunciare una contrazione, con inflazione core reale all'1,5% e Fed accomodante.</div></div><div class="tension"><div class="axis">↗ L'esito mediano dell'IA</div><div class="side">Non bolla né rivoluzione totale, ma aziende più produttive del 20-30%: la scommessa sulla parte centrale della distribuzione.</div></div><div class="tension"><div class="axis">↗ La distribuzione degli asset come variabile macro</div><div class="side">Concentrazione patrimoniale, disuguaglianza indotta dall'IA e prezzi delle case spiegati dalla ricchezza azionaria anziché dai salari convergono sullo stesso meccanismo.</div></div><div class="tension"><div class="axis">⚖ Due letture dello stesso tasso lungo: prezzo di una transizione tecnologica o prezzo di una disciplina fiscale assente</div><div class="side">Cathie Wood: l'inversione replica la Rivoluzione industriale, il costo del capitale scende e l'IA si autofinanzia · Ray Dalio: il fabbisogno di rifinanziamento è il doppio delle entrate federali, il conto arriva entro tre anni più o meno due</div></div><div class="tension"><div class="axis">⚖ Efficacia degli strumenti tecnici del Tesoro sulla parte lunga della curva</div><div class="side">Howard Marks: i riacquisti comprimono i rendimenti solo temporaneamente, deficit e offerta restano intatti · Peter Schiff: nessuna compressione tiene, si va al 6% e oltre</div></div><div class="tension"><div class="axis">⚖ Intensità dell'esito IA: coda estrema o parte centrale della distribuzione</div><div class="side">Nassim Taleb: bancarotte nel software, il rischio sta nella coda · Morgan Housel: esito mediano, aziende più produttive del 20-30% · Ray Dalio: bolla e macchina di produttività simultaneamente</div></div><div class="tension"><div class="axis">⚖ Chi paga il conto della leva sull'infrastruttura di calcolo</div><div class="side">Cathie Wood: con tassi in discesa l'infrastruttura si finanzia da sé · Ray Dalio: rendimenti in salita colpiscono chi ha più debito, cioè i data center</div></div><div class="tension"><div class="axis">⚖ Misurazione dell'inflazione e credibilità del dato che guida la Fed</div><div class="side">Cathie Wood: il core reale è all'1,5% secondo Truflation, la Fed di Warsh può restare accomodante · Peter Schiff: la pressione sui rendimenti è strutturale e non compatibile con una Fed accomodante</div></div></div>
+<div class="tab-panel panel" data-sb-panel="segnali" hidden><section><h2>Progetti da osservare</h2><div class="tension"><div class="axis">Oaktree Memo – "Shall We Repeal the Laws of Economics – Part III"</div><div class=side>Memo del 22 settembre 2026 contro l'interventismo sui mercati e i riacquisti di titoli lunghi da parte del Tesoro USA. Secondo Marks i buyback comprimono i rendimenti solo per qualche tempo se il deficit non cambia.</div></div><div class="tension"><div class="axis">iShares 20+ Year Treasury Bond ETF (TLT)</div><div class=side>Il principale ETF sui Treasury a lunga scadenza, cioè lo strumento più diretto per esporsi al rischio di duration. Dalio, Marks e Schiff indicano proprio questo rischio come quello non remunerato.</div></div><div class="tension"><div class="axis">SPDR Gold Shares (GLD)</div><div class=side>ETF sull'oro fisico. Nei dati di inizio 2026 è la componente principale, oltre il 75%, del portafoglio azionario USA del Dalio Family Office. È la copertura classica contro la svalutazione monetaria nel grande ciclo del debito.</div></div><div class="tension"><div class="axis">Credito delle società di data center AI (CNBC)</div><div class=side>Analisi del 27 settembre sull'esposizione delle società di data center, molto indebitate, al rialzo dei rendimenti. È il punto in cui la tesi sulla curva lunga incontra quella sulla bolla IA.</div></div><div class="tension"><div class="axis">ARK Innovation ETF (ARKK)</div><div class=side>È il fondo di punta della tesi di Wood: deflazione da innovazione, costo dell'inferenza IA in crollo e crescita globale sopra il 7%. È il veicolo più esposto alla lettura "ottimista" della curva dei tassi.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> Truflation</div><div class=side>Indice dell'inflazione in tempo reale costruito su dati on-chain e alternativi. Wood lo cita per sostenere che l'inflazione core reale è all'1,5% e che la Fed di Warsh resterà accomodante.</div></div><div class="tension"><div class="axis">GMO Quarterly Letter Q2 2026 – "A Catalyst For The AI Bubble Break"</div><div class=side>La lettera trimestrale di GMO descrive le condizioni che potrebbero far scoppiare la bolla IA. Rafforza le tesi di Dalio e di Taleb su sovrainvestimento e fragilità dei leader.</div></div><div class="tension"><div class="axis">Kalshi</div><div class=side>Mercato predittivo regolamentato dalla CFTC che ha appena introdotto la leva sui contratti evento. Levine lo segue come caso di finanziarizzazione delle scommesse.</div></div><div class="tension"><div class="axis">IPO IA: grandi valutazioni, ricavi minimi (FT)</div><div class=side>Il FT documenta il divario fra valutazioni e ricavi effettivi nelle nuove quotazioni del settore IA. È un segnale concreto dell'eccesso speculativo che Dalio chiama bolla.</div></div><div class="tension"><div class="axis">Chip asiatici in calo dopo la pausa di OpenAI (Investing.com)</div><div class=side>La pausa percepita di OpenAI ha riacceso i timori di un rallentamento dell'IA e fatto scendere i titoli dei semiconduttori asiatici. Mette alla prova la tesi di Taleb sui leader di mercato "cancellati".</div></div></section></div>
+<div class="tab-panel panel" data-sb-panel="fonti" hidden><div class="fonte" data-fonte-nome="Morgan Housel"><span class="who">Morgan Housel</span><a href="https://podcasts.apple.com/us/podcast/the-morgan-housel-podcast/id1675310669" target="_blank" rel="noopener">The Psychology of Money with Morgan Housel</a><a href="https://collabfund.com/blog/authors/morgan/" target="_blank" rel="noopener">Pagina autore su Collab Fund</a></div><div class="fonte" data-fonte-nome="Ray Dalio"><span class="who">Ray Dalio</span><a href="https://fortune.com/2026/09/22/ray-dalio-optimists-pessimists-both-correct-ai-calls-productivity-inequality/" target="_blank" rel="noopener">https://fortune.com/2026/09/22/ray-dalio-optimists-pessimists-both-correct-ai-calls-productivity-inequality/</a><a href="https://247wallst.com/investing/2026/09/13/ray-dalio-says-interest-costs-are-crowding-out-everything-else-heres-his-three-year-warning/" target="_blank" rel="noopener">https://247wallst.com/investing/2026/09/13/ray-dalio-says-interest-costs-are-crowding-out-everything-else-heres-his-three-year-warning/</a><a href="https://www.fool.com/investing/2026/09/19/ray-dalio-just-explained-why-hes-cautious-on-ai-st/" target="_blank" rel="noopener">https://www.fool.com/investing/2026/09/19/ray-dalio-just-explained-why-hes-cautious-on-ai-st/</a></div></div>
+</div>
+<script>function sbTab(key) {  document.querySelectorAll('.tab-panel').forEach(function (p) {    p.hidden = p.getAttribute('data-sb-panel') !== key;  });  document.querySelectorAll('#sbTabs .tab').forEach(function (b) {    b.setAttribute('aria-selected', b.dataset.tab === key ? 'true' : 'false');  });}function vaiFonte(ev, nome) {  ev.preventDefault();  sbTab('fonti');  var d = document.querySelector('[data-fonte-nome="' + nome + '"]');  if (d) d.scrollIntoView({behavior: 'smooth', block: 'center'});}</script>
+<dialog class="vplayer" id="vplayer"></dialog>
+<script>
+// player modale dei video: la miniatura apre il video al centro (disegno 2026-08-07)
+// Chiudere e condividere. Il player era il solo <video> dentro la <dialog>:
+// si chiudeva a Escape o cliccando lo SFONDO, che su un tablet e' quasi tutto
+// coperto dal video e dove un tasto Escape non esiste (2026-08-24).
+// La ✕ non serve solo a chiudere: e' l'unico modo per SAPERE che si puo'.
+function condividiVideo(src, b) {
+  if (navigator.share) { navigator.share({ title: 'Signal.Brief', url: src }).catch(function () {}); return; }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(src).then(function () {
+      var prima = b.textContent; b.textContent = '✓ copiato';
+      setTimeout(function () { b.textContent = prima; }, 1800);
+    }).catch(function () {});
+    return;
+  }
+  // Terzo ripiego: senza clipboard API resta la selezione manuale. Meglio un
+  // prompt che un bottone morto.
+  try { window.prompt('Indirizzo del video:', src); } catch (e) {}
+}
+function apriVideo(src) {
+  var d = document.getElementById('vplayer');
+  // I bottoni SOPRA il video: sotto finirebbero fuori schermo su un reel
+  // verticale, che di altezza prende gia' l'86%.
+  d.innerHTML = '<div class="vplayer-barra">'
+    + '<button type="button" class="vplayer-share">Condividi</button>'
+    + '<button type="button" class="vplayer-chiudi" aria-label="Chiudi">✕</button>'
+    + '</div><video controls autoplay playsinline src="' + src + '"></video>';
+  d.querySelector('.vplayer-chiudi').onclick = function () { d.close(); };
+  var sb = d.querySelector('.vplayer-share');
+  sb.onclick = function () { condividiVideo(src, sb); };
+  d.showModal();
+  d.onclick = function (e) { if (e.target === d) d.close(); };
+  d.onclose = function () { var v = d.querySelector('video'); if (v) v.pause(); d.innerHTML = ''; };
+}
+// ascolto inline dalla lista: un episodio alla volta
+var epAudio = null, epBtn = null;
+function ascolta(btn, src) {
+  if (epBtn === btn && epAudio) {
+    if (epAudio.paused) { epAudio.play(); btn.classList.add('on'); }
+    else { epAudio.pause(); btn.classList.remove('on'); }
+    return;
+  }
+  if (epAudio) { epAudio.pause(); if (epBtn) epBtn.classList.remove('on'); }
+  epAudio = new Audio(src); epBtn = btn;
+  epAudio.play(); btn.classList.add('on');
+  epAudio.onended = function () { btn.classList.remove('on'); };
+}
+function copiaTrascrizione(btn) {
+  var t = btn.parentElement.querySelector('.transcript-body');
+  navigator.clipboard.writeText(t ? t.innerText : '').then(function () {
+    btn.textContent = 'copiata ✓';
+    setTimeout(function () { btn.textContent = 'copia il testo'; }, 1800);
+  });
+}
+</script>
+<section class="sostieni"><h3>Se ti è utile, offrimi un caffè</h3><p>Signal.Brief non ha sponsor e non vende niente. Se ti è utile, puoi contribuire — e se non ti va, ascoltalo lo stesso.</p><div class="sostieni-atti"><a class="sostieni-btn" href="https://www.paypal.com/donate/?business=SGNE3B4JZUT9S&amp;no_recurring=0&amp;item_name=Signal.Brief+non+ha+sponsor.+Se+ti+%C3%A8+utile%2C+questo+lo+tiene+acceso.&amp;currency_code=EUR" target="_blank" rel="noopener">Offrimi un caffè</a><a class="sostieni-alt" href="../segui/">Ascoltalo nella tua app →</a></div></section>
+<footer class="creator-footer">
+  <img src="/signal-brief/mike-avatar.png" alt="Michele Mondora">
+  <div class="creator-meta">
+    <span class="creator-name">it-mikesoft</span>
+    <span class="creator-tagline">working with systems, living with questions</span>
+    <span class="creator-email"><a href="mailto:michele@mondora.com">michele@mondora.com</a></span>
+    <span class="creator-legal"><a href="/signal-brief/legal/privacy/">Privacy</a> ·
+      <a href="/signal-brief/legal/">Note legali</a></span>
+  </div>
+</footer>
+<section class="tutele"><h3>Trasparenza e tutele</h3>
+<p><strong>Come nasce questo contenuto.</strong> Ricerca, sintesi editoriale, voce narrante, immagini e musica sono prodotte con sistemi di intelligenza artificiale. Non c'è una redazione umana che verifica ogni affermazione prima della pubblicazione: un controllo automatico scarta le schede giudicate inaffidabili, ma non elimina la possibilità di errori.</p>
+<p><strong>Affermazioni su persone e aziende.</strong> Quanto riportato è una sintesi di fonti pubbliche, non una dichiarazione diretta delle persone citate: le frasi non vanno intese come virgolettati né come posizioni ufficiali. Le fonti sono indicate in ogni pagina episodio — verificale prima di considerare un'informazione accertata. Se trovi un'affermazione inesatta che ti riguarda, scrivi a <a href="mailto:michele@mondora.com">michele@mondora.com</a>: viene corretta o rimossa.</p>
+<p><strong>Immagini e volti.</strong> Le immagini di scena sono generate con AI e non raffigurano fatti realmente avvenuti. Le fotografie di persone reali usate nei video provengono da Wikimedia Commons con le rispettive licenze, e sono accostate al racconto a scopo identificativo: la loro presenza non implica partecipazione, dichiarazione o approvazione da parte della persona ritratta. Su richiesta dell'interessato vengono rimosse.</p>
+<p><strong>Fonti e diritti altrui.</strong> I contenuti sono rielaborazioni originali, non riproduzioni di articoli di terzi; le testate e gli autori all'origine di una notizia sono citati e collegati. Marchi e nomi commerciali appartengono ai rispettivi titolari e sono usati a scopo descrittivo.</p>
+</section>
+</body></html>
