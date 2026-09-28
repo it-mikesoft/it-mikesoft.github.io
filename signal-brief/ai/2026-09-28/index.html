@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="it"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Il patto e la strada sbagliata · Signal.AI</title>
+<meta property="og:title" content="Il patto e la strada sbagliata · Signal.AI"><meta property="og:type" content="article"><meta property="og:description" content="Mentre i laboratori negoziano chi certificherà la frontiera, LeCun e Fei-Fei Li avanzano l'obiezione più scomoda: che si stia regolando la traiettoria tecnica sbagliata."><meta property="og:url" content="https://it-mikesoft.github.io/signal-brief/ai/2026-09-28/"><meta property="og:audio" content="https://op3.dev/e/media.casamon.dev/ai/podcast/episodes/2026-09-28.mp3"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "PodcastEpisode", "name": "Il patto e la strada sbagliata", "datePublished": "2026-09-28", "url": "https://it-mikesoft.github.io/signal-brief/ai/2026-09-28/", "description": "Mentre i laboratori negoziano chi certificherà la frontiera, LeCun e Fei-Fei Li avanzano l'obiezione più scomoda: che si stia regolando la traiettoria tecnica sbagliata.", "inLanguage": "it", "associatedMedia": {"@type": "MediaObject", "contentUrl": "https://op3.dev/e/media.casamon.dev/ai/podcast/episodes/2026-09-28.mp3"}, "partOfSeries": {"@type": "PodcastSeries", "name": "Signal.AI", "url": "https://it-mikesoft.github.io/signal-brief/ai/"}}</script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:#faf8f4; color:#1a1a1a; padding:2rem 10px; max-width:none; margin:0 auto; line-height:1.6; }
+  a { color:#2563eb; }
+  .back { display:inline-block; margin-bottom:1.5rem; font-size:.8rem; font-family:monospace; text-decoration:none; }
+  .videos { display:flex; gap:1rem; flex-wrap:wrap; margin:1.2rem 0; }
+  .videos figure { margin:0; flex:1; min-width:260px; }
+  .videos .v2 { flex:0 1 240px; }
+  .videos video { width:100%; border-radius:12px; background:#000; }
+  .videos .v2 video { aspect-ratio:9/16; max-height:420px; }
+  .videos figcaption { font-size:.75rem; color:#888; text-align:center; margin-top:.3rem; }
+  .vlink { display:flex; gap:.3rem; margin-top:.35rem; }
+  .vlink input { flex:1; min-width:0; font-size:.68rem; font-family:monospace; padding:.3rem .4rem;
+    border:1px solid #e2ddd6; border-radius:6px; background:#fff; color:#6b7280; }
+  .vlink button { font-size:.68rem; padding:.3rem .6rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; }
+  .wk { font-size:1rem; margin:1.4rem 0 .4rem; }
+  details.wkacc { border:1px solid #e5e7eb33; border-radius:10px; margin:.6rem 0; padding:.1rem .8rem .4rem; }
+  details.wkacc summary { cursor:pointer; font-weight:600; padding:.5rem 0; font-size:.9rem; }
+  .back:hover { text-decoration:underline; }
+  header h1 { font-family:Georgia,serif; font-size:1.7rem; font-weight:600; }
+  header h1 span { color:#2563eb; }
+  .tagline { color:#6b7280; font-size:.85rem; margin-top:.3rem; margin-bottom:1.5rem; }
+  ul.eps { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
+  .subscribe { display:inline-flex; align-items:center; gap:.5rem; margin-bottom:1.2rem;
+    padding:.45rem .9rem; background:#2563eb; color:#fff; border-radius:20px;
+    text-decoration:none; font-size:.8rem; font-weight:600; }
+  .subscribe:hover { opacity:.85; color:#fff; }
+  .ep { display:flex; align-items:center; gap:.8rem; padding:.8rem 1rem; background:#fff;
+    border:1px solid #e2ddd6; border-radius:8px; text-decoration:none; color:inherit; transition:box-shadow .12s; }
+  .ep:hover { box-shadow:0 2px 8px rgba(0,0,0,.07); }
+  .ep-play { width:32px; height:32px; border-radius:50%; background:#f3f4f6; display:flex;
+    align-items:center; justify-content:center; font-size:12px; flex-shrink:0; }
+  .ep-title { font-size:.9rem; font-weight:500; }
+  .ep-meta { font-size:.72rem; color:#9ca3af; font-family:monospace; margin-top:.15rem; }
+  audio { width:100%; margin:1rem 0 1.5rem; }
+  .rawmd { margin:-.5rem 0 1.5rem; }
+  .rawmd a { font-size:.8rem; font-family:monospace; color:inherit; opacity:.65; }
+  .desc { color:#374151; font-size:.95rem; margin-bottom:1.5rem; }
+  section { margin:2rem 0; }
+  section h2 { font-family:Georgia,serif; font-size:1.1rem; border-bottom:1px solid #e2ddd6;
+    padding-bottom:.3rem; margin-bottom:.8rem; }
+  .synthesis p { margin:.7rem 0; }
+  .tension { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; font-size:.9rem; }
+  .tension .axis { font-weight:600; margin-bottom:.3rem; }
+  .tension .side { color:#6b7280; font-size:.85rem; }
+  .proj { font-size:.9rem; margin:.4rem 0; }
+  .proj .pname { font-weight:600; }
+  .proj .pnew { background:#16a34a; color:#fff; font-size:.65rem; font-weight:700;
+    padding:.1rem .35rem; border-radius:4px; text-transform:uppercase; vertical-align:middle; }
+  .fonte { font-size:.85rem; margin:.5rem 0; }
+  .fonte .who { font-weight:600; }
+  .fonte a { display:block; margin-left:.5rem; color:#6b7280; }
+  .transcript-body p { margin:.7rem 0; line-height:1.7; }
+  .transcript-body .chapter hr { border:none; border-top:1px solid #e2ddd6; margin:1.5rem 0; }
+  .transcript-body .podcast-episode-desc { color:#6b7280; font-style:italic; }
+  .signal-card { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; }
+  .signal-theme { font-size:.75rem; font-weight:700; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.3rem; }
+  .signal-text { font-size:.85rem; color:#374151; line-height:1.5; }
+  .creator-footer { margin-top:3rem; padding-top:1.5rem; border-top:1px solid #e2ddd6;
+    display:flex; align-items:center; gap:.9rem; }
+  .creator-footer img { width:40px; height:40px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+  .creator-legal { font-size:.78rem; margin-top:.15rem; }
+  .creator-legal a { color:inherit; }
+  .creator-meta { display:flex; flex-direction:column; gap:.15rem; }
+  .creator-name { font-size:.85rem; font-weight:600; color:#1a1a1a; }
+  .creator-tagline { font-size:.75rem; color:#6b7280; }
+  .creator-email { font-size:.75rem; }
+  .creator-ai { font-size:.72rem; color:#8a7f6d; max-width:46ch; line-height:1.45; }
+  .sostieni { margin-top:2.5rem; padding:1.2rem 1.4rem; border-radius:14px;
+    background:#f7f4ef; border:1px solid #e2ddd6; }
+  .sostieni h3 { margin:0 0 .3rem; font-size:1rem; }
+  .sostieni p { margin:0 0 .9rem; font-size:.88rem; color:#6b6257; line-height:1.55; }
+  .sostieni-atti { display:flex; gap:.8rem; align-items:center; flex-wrap:wrap; }
+  .sostieni-btn { display:inline-block; padding:.55rem 1.1rem; border-radius:10px;
+    background:#2563eb; color:#fff; text-decoration:none; font-weight:700; font-size:.88rem; }
+  .sostieni-alt { font-size:.85rem; color:#6b6257; text-decoration:none; }
+  .sostieni-alt:hover { text-decoration:underline; }
+  .tutele { margin-top:2rem; padding-top:1.2rem; border-top:1px solid #e2ddd6;
+    font-size:.72rem; color:#8a7f6d; line-height:1.5; }
+  .tutele h3 { font-size:.75rem; color:#6b7280; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.5rem; font-weight:600; }
+  .tutele p { margin:.45rem 0; }
+  .tutele strong { color:#5a5348; font-weight:600; }
+  .tutele a { color:inherit; text-decoration:underline; }
+  .creator-email a { color:#9ca3af; text-decoration:none; }
+  .creator-email a:hover { color:#1a1a1a; }
+  /* disegno 2026-08-07: mesi a pagine, facce, player modale, trascrizione
+     richiudibile — la pagina episodio è un prodotto, non un sottoprodotto */
+  .hrow { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+  .hrow .subscribe { margin-bottom:0; flex-shrink:0; }
+  .months { font-size:.78rem; font-family:monospace; margin:.4rem 0 1rem; color:#9ca3af; }
+  .months a { text-decoration:none; } .months b { color:inherit; }
+  .ep-faces { display:flex; margin-left:auto; flex-shrink:0; }
+  .ep-faces img { width:26px; height:26px; border-radius:50%; object-fit:cover;
+    border:2px solid #fff; margin-left:-8px; background:#eee; }
+  /* tutti i citati sul desktop; su mobile la leggibilità vince: max 3 */
+  @media (max-width:600px) { .ep-faces img:nth-child(n+4) { display:none; } }
+  .ep-listen { width:32px; height:32px; border-radius:50%; background:#f3f4f6; border:0;
+    display:flex; align-items:center; justify-content:center; font-size:12px;
+    flex-shrink:0; cursor:pointer; color:inherit; }
+  .ep-listen.on { background:#2563eb; color:#fff; }
+  .face-inline { width:1.15em; height:1.15em; border-radius:50%; object-fit:cover;
+    vertical-align:-.18em; margin-right:.25em; }
+  /* SEMPRE sulla stessa riga (2026-08-09): su schermi stretti le miniature
+     si riducono, e se non basta il reel sparisce — mai l'andata a capo */
+  .vthumbs { display:flex; gap:.8rem; flex-wrap:nowrap; margin:1.2rem 0; align-items:flex-start; }
+  .vthumb { position:relative; cursor:pointer; border:0; padding:0; background:none;
+    border-radius:12px; overflow:hidden; }
+  /* stessa ALTEZZA per video e reel: il 9:16 si stringe, non svetta */
+  .vthumb video { height:150px; width:auto; display:block; border-radius:12px; background:#000; }
+  @media (max-width:520px) { .vthumb video { height:118px; } }
+  /* quando nemmeno ridotte ci stanno: via le miniature, due BOTTONI in
+     riga che aprono il player (2026-08-09) */
+  .vbtns { display:none; gap:.6rem; margin:1.2rem 0; }
+  .vbtns button { flex:1; padding:.6rem .4rem; border:0; border-radius:10px;
+    background:#2563eb; color:#fff; font-weight:700; font-size:.85rem;
+    cursor:pointer; font-family:inherit; }
+  @media (max-width:420px) { .vthumbs { display:none; } .vbtns { display:flex; } }
+  .vthumb .vlabel { position:absolute; left:0; right:0; bottom:0; padding:.9rem .5rem .35rem;
+    background:linear-gradient(transparent, rgba(0,0,0,.75)); color:#fff; font-size:.7rem; }
+  .vthumb::after { content:"▶"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    color:#fff; font-size:1.6rem; text-shadow:0 1px 6px rgba(0,0,0,.8); }
+  /* margin:auto ESPLICITO: il reset globale * {margin:0} annullava la
+     centratura nativa del dialog e il player si apriva in alto a sinistra */
+  dialog.vplayer { border:0; padding:0; background:transparent; max-width:92vw;
+    margin:auto; position:fixed; inset:0; }
+  dialog.vplayer::backdrop { background:rgba(0,0,0,.85); }
+  dialog.vplayer video { max-width:92vw; max-height:86vh; border-radius:14px; background:#000; }
+  dialog.vplayer .vplayer-barra { display:flex; justify-content:flex-end; align-items:center;
+    gap:.5rem; margin-bottom:.5rem; }
+  /* 2.75rem e' il bersaglio minimo per il dito: la ✕ da sola sarebbe 20px. */
+  dialog.vplayer .vplayer-barra button { font:inherit; font-size:.9rem; color:#fff;
+    background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.28);
+    border-radius:999px; padding:.45rem .9rem; cursor:pointer;
+    min-height:2.75rem; min-width:2.75rem; }
+  dialog.vplayer .vplayer-barra button:hover { background:rgba(255,255,255,.24); }
+  dialog.vplayer .vplayer-chiudi { font-size:1.1rem; line-height:1; }
+  details.tr { border:1px solid #e2ddd6; border-radius:10px; padding:.2rem .9rem .6rem; }
+  details.tr summary { cursor:pointer; font-weight:600; padding:.55rem 0; }
+  .tr-copy { font-size:.72rem; padding:.3rem .7rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; margin:.3rem 0 .5rem; }
+  .epnav { display:flex; justify-content:space-between; gap:1rem; margin:2rem 0 0;
+    font-size:.82rem; font-family:monospace; }
+  .epnav a { text-decoration:none; }
+  /* Header + tab bar (spec-016, Task 5): stessa forma di
+     public/console/podcast-render.css, riusando i nomi classe dove
+     combaciano — solo la meccanica tab/pannello è nuova qui. */
+  .episode-header .date-line { font-size:.72rem; font-family:monospace; color:#9ca3af;
+    text-transform:uppercase; letter-spacing:.08em; margin-bottom:.3rem; }
+  .ep-header-block { margin-bottom:.5rem; }
+  .ep-header-faces { margin:.6rem 0; }
+  .ep-header-faces .ep-faces { margin-left:0; }
+  .tabs { display:flex; gap:.25rem; border-bottom:1px solid #e2ddd6; margin:1.5rem 0; flex-wrap:wrap; }
+  .tab { font-family:monospace; font-size:.72rem; text-transform:uppercase; letter-spacing:.08em;
+    padding:.6rem .9rem; background:transparent; border:0; border-bottom:2px solid transparent;
+    color:#9ca3af; cursor:pointer; }
+  .tab[aria-selected="true"] { color:#1a1a1a; border-bottom-color:#2563eb; }
+  .tab-panel { display:block; }
+  .tab-panel[hidden] { display:none !important; }
+  /* Fallback dei pannelli senza dati (episodi storici senza un sidecar) —
+     porta di public/console/podcast-render.css:304-309, sui token pubblici. */
+  /* Header episodio a due colonne: barra tab e pannello nel primo schermo
+     (stesse regole del modulo condiviso, richiesta 2026-08-10). */
+  .ep-header-block { display:grid; grid-template-columns:minmax(0,1fr) 340px;
+    grid-template-rows:repeat(4,min-content); gap:.3rem 1.6rem;
+    align-items:start; margin-bottom:.5rem; }
+  .ep-header-block > [data-sb="data"] { grid-column:1; margin:0; }
+  .ep-header-block > [data-sb="titolo"] { grid-column:1; margin:.1rem 0; }
+  .ep-header-block > [data-sb="player"] { grid-column:1; }
+  .ep-header-block > [data-sb="nav"] { grid-column:1; }
+  .ep-header-block > [data-sb="facce"] { grid-column:2; grid-row:1; }
+  .ep-header-block > [data-sb="video"] { grid-column:2; grid-row:2/5;
+    display:flex; gap:.5rem; flex-wrap:wrap; }
+  .ep-header-block [data-sb="facce"] img { width:26px; height:26px; }
+  .ep-header-block [data-sb="video"] video { max-height:96px; width:auto; }
+  .ep-header-block audio { height:36px; width:100%; }
+  .tabs { position:sticky; top:0; z-index:5; background:#fff;
+    padding:.4rem 0; border-bottom:1px solid #e5e7eb; }
+  @media (max-width:760px) {
+    .ep-header-block { grid-template-columns:1fr; }
+    .ep-header-block > [data-sb="facce"],
+    .ep-header-block > [data-sb="video"] { grid-column:1; grid-row:auto; }
+  }
+  .state-note { padding:2rem 1rem; text-align:center; color:#9ca3af;
+    font-family:monospace; font-size:.85rem; }
+  @media (prefers-color-scheme:dark) {
+    body { background:#1f1d18; color:#e5e5e5; }
+    .ep, .tension, .signal-card { background:#2a2823; border-color:#3a352d; }
+    .ep-play { background:#3a352d; } .desc { color:#d4d4d4; }
+    .signal-text { color:#d4d4d4; }
+    .episode-header .date-line { color:#9ca3af; }
+    .tabs { border-color:#3a352d; }
+    .tab[aria-selected="true"] { color:#f5f5f5; }
+    .state-note { color:#9ca3af; }
+    .creator-footer { border-color:#3a352d; }
+    .creator-name { color:#f5f5f5; }
+    .creator-tagline, .creator-email a { color:#9ca3af; }
+    .creator-ai { color:#9a8f7d; }
+    .vlink input { background:#1c1a17; border-color:#3a352d; color:#9ca3af; }
+    .tutele { border-color:#3a352d; color:#9a8f7d; }
+    .tutele h3 { color:#a9a9a9; } .tutele strong { color:#d4d4d4; }
+    .ep-listen { background:#3a352d; }
+    .ep-faces img { border-color:#2a2823; background:#3a352d; }
+    details.tr { border-color:#3a352d; }
+  }
+</style></head><body>
+<a class="back back-link" href="/signal-brief/ai/">← Signal.AI</a><div class="ep-header-block"><header class="episode-header"><div class="date-line" data-sb="data">2026-09-28</div><h1 data-sb="titolo">Il patto e la strada sbagliata</h1><span class="tono" data-sb="tono" title="quello che racconta e' andato male">🙁</span><div class="desc">Mentre i laboratori negoziano chi certificherà la frontiera, LeCun e Fei-Fei Li avanzano l'obiezione più scomoda: che si stia regolando la traiettoria tecnica sbagliata.</div><div class="tagline">Digital Intelligence Podcast</div></header><audio controls preload="none" data-sb="player" src="https://op3.dev/e/media.casamon.dev/ai/podcast/episodes/2026-09-28.mp3"></audio><nav class="epnav" data-sb="nav"><a href="/signal-brief/ai/2026-09-27/">← 2026-09-27</a><span style="flex:1"></span></nav><div class="ep-header-faces" data-sb="facce"><span class="ep-faces"><img loading="lazy" src="/signal-brief/ai/avatars/vitalik-buterin.jpg" alt="" title="Vitalik Buterin"><img loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt="" title="Jensen Huang"><img loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="/signal-brief/ai/avatars/dario-amodei.jpg" alt="" title="Dario Amodei"><img loading="lazy" src="/signal-brief/ai/avatars/sam-altman.jpg" alt="" title="Sam Altman"><img loading="lazy" src="/signal-brief/ai/avatars/elon-musk.jpg" alt="" title="Elon Musk"><img loading="lazy" src="/signal-brief/ai/avatars/demis-hassabis.jpg" alt="" title="Demis Hassabis"><img loading="lazy" src="/signal-brief/ai/avatars/andrew-ng.jpg" alt="" title="Andrew Ng"><img loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="/signal-brief/ai/avatars/naval-ravikant.jpg" alt="" title="Naval Ravikant"><img loading="lazy" src="/signal-brief/ai/avatars/patrick-collison.jpg" alt="" title="Patrick Collison"><img loading="lazy" src="/signal-brief/ai/avatars/dhh.png" alt="" title="DHH"></span></div><div class="ep-header-video" data-sb="video"></div></div>
+<div class="tabs-block"><div class="tabs" role="tablist" id="sbTabs"><button class="tab" type="button" role="tab" data-tab="sintesi" aria-selected="true" onclick="sbTab('sintesi')">Sintesi</button><button class="tab" type="button" role="tab" data-tab="testo" aria-selected="false" onclick="sbTab('testo')">Testo</button><button class="tab" type="button" role="tab" data-tab="comparazione" aria-selected="false" onclick="sbTab('comparazione')">Comparazione</button><button class="tab" type="button" role="tab" data-tab="segnali" aria-selected="false" onclick="sbTab('segnali')">Segnali</button><button class="tab" type="button" role="tab" data-tab="fonti" aria-selected="false" onclick="sbTab('fonti')">Fonti</button></div>
+<div class="tab-panel panel" data-sb-panel="sintesi"><div class="synthesis"><p>Il momento è definito da un solo documento. <a href="#" class="face-link" onclick="vaiFonte(event, 'Dario Amodei')" title="Fonti di Dario Amodei"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/dario-amodei.jpg" alt=""></a>Dario Amodei ha pubblicato a metà settembre il saggio <a href="https://www.nytimes.com/2026/09/12/technology/anthropic-dario-amodei-ai-slowdown.html" target="_blank" rel="noopener">"We Must Pace the Frontier"</a>, che chiede valutatori indipendenti dentro i laboratori, coordinamento di settore e infine regole internazionali. In due settimane vi hanno aderito quasi tutti i concorrenti diretti: <a href="https://www.cnbc.com/2026/09/14/sam-altman-ai-slowdown-anthropic-amodei-musk.html" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/sam-altman.jpg" alt="">Sam Altman</a> si dichiara disposto a fermare un addestramento, <a href="https://www.cnbc.com/2026/09/15/elon-musk-ai-safety-testing.html" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/elon-musk.jpg" alt="">Elon Musk</a> propone che i rivali si revisionino a vicenda, <a href="https://www.moneycontrol.com/artificial-intelligence/google-deepmind-s-demis-hassabis-backs-amodei-s-ai-slowdown-call-direction-is-correct-article-14028768.html" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/demis-hassabis.jpg" alt="">Demis Hassabis</a> rilancia un organismo di standard. Questa convergenza va letta con cautela: non è un consenso scientifico sul rischio, è un accordo tra i pochi che già possiedono la frontiera su chi avrà il diritto di certificarla.</p>
+<p>Il rifiuto arriva da chi vende l'infrastruttura o insegna a usarla. <a href="https://www.cnbc.com/2026/09/15/nvidia-huang-ai-slowdown-antitrust.html" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt="">Jensen Huang</a> definisce nuove leggi "completamente inutili"; <a href="https://www.bloomberg.com/news/articles/2026-09-17/ai-pioneer-andrew-ng-calls-extinction-fears-science-fiction" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/andrew-ng.jpg" alt="">Andrew Ng</a> chiama le paure estintive "più fantascienza che scienza". La loro tesi è precisa: la sicurezza è un problema ingegneristico — test, sandbox, monitoraggio — e non un problema legislativo.</p>
+<p>Una terza posizione, però, cambia la domanda invece di rispondervi. <a href="https://explainx.ai/blog/jack-dorsey-open-the-frontier-pace-the-frontier-2026" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt="">Jack Dorsey</a> contrappone "open the frontier" a "pace the frontier", sospettando che la sicurezza diventi il pretesto con cui gli operatori dominanti chiudono l'accesso ai modelli. <a href="https://x.com/naval/status/2098749169712464273" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/naval-ravikant.jpg" alt="">Naval Ravikant</a> formula la scelta in termini netti — se l'IA è fuoco, tutti devono averla; se è nucleare, nessuno — e insiste che il pericolo sia la concentrazione del controllo. <a href="https://cryptoslate.com/ethereum-cofounder-vitalik-says-local-ai-is-nearly-ready-but-crypto-wallets-still-cannot-trust-it-alone/" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/vitalik-buterin.jpg" alt="">Vitalik Buterin</a> ne trae la conseguenza pratica: modelli locali sul portatile, verifica formale del software. L'asse non è velocità, è distribuzione del potere.</p>
+<p>Intanto il lavoro procede altrove. <a href="https://x.com/patrickc/status/2101296407433076738" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/patrick-collison.jpg" alt="">Patrick Collison</a> costruisce pagamenti per agenti; <a href="https://startupfortune.com/dhh-says-37signals-has-gone-pencils-down-on-writing-code-by-hand/" target="_blank" rel="noopener">DHH</a> dichiara 37signals "pencils down" sul codice scritto a mano. Mentre si negozia una moratoria verticale e mediatica, l'adozione si radica orizzontalmente nei flussi di lavoro e nelle infrastrutture di pagamento, dove nessuna pausa arriverà.</p>
+<p>Resta il dissenso più scomodo, quello architetturale. <a href="https://x.com/ylecun/status/2103543949151658369" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/yann-lecun.jpg" alt="">Yann LeCun</a> ripete che gli LLM auto-regressivi non portano all'intelligenza umana, e <a href="https://www.bloomberg.com/news/videos/2026-09-22/fei-fei-li-ai-s-future-is-about-humans-video" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/fei-fei-li.jpg" alt="">Fei-Fei Li</a> punta sui modelli di mondo. Se hanno ragione, il negoziato in corso regola una traiettoria tecnica che potrebbe non essere quella decisiva — e questo, più della contrapposizione tra acceleratori e cauti, è il punto che nessuna delle due parti sta discutendo.</p></div></div>
+<div class="tab-panel panel" data-sb-panel="testo" hidden><button class="tr-copy" type="button" onclick="copiaTrascrizione(this)">copia il testo</button><div class="transcript-body"><h2>Il patto e la strada sbagliata</h2>
+<p class="podcast-episode-desc">Mentre i laboratori negoziano chi certificherà la frontiera, LeCun e <a href="#" class="face-link" onclick="vaiFonte(event, 'Fei-Fei Li')" title="Fonti di Fei-Fei Li"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/fei-fei-li.jpg" alt=""></a>Fei-Fei Li avanzano l'obiezione più scomoda: che si stia regolando la traiettoria tecnica sbagliata.</p>
+<div class="chapter" data-mood="geo"><hr></div>
+<p>Ci sono accordi che si firmano in fretta perché tutti hanno capito la stessa cosa. E accordi che si firmano in fretta perché nessuno vuole restare fuori dalla stanza. Le due settimane appena passate somigliano al secondo caso. Signal Brief, 28 settembre 2026: la richiesta di rallentare lo sviluppo dell'intelligenza artificiale ha raccolto adesioni quasi unanimi tra i grandi laboratori, e proprio quella rapidità è diventata il problema da interpretare. Poi, verso fine settembre, sono arrivate due obiezioni che nessuno nella stanza stava considerando.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Il 25 settembre <a href="#" class="face-link" onclick="vaiFonte(event, 'Yann LeCun')" title="Fonti di Yann LeCun"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/yann-lecun.jpg" alt=""></a>Yann LeCun ha pubblicato l'ennesimo post sulla stessa idea che ripete da anni: i modelli linguistici di oggi, quelli che generano una parola dopo l'altra prevedendo la successiva, non porteranno mai a un'intelligenza paragonabile a quella umana. Mancano la comprensione del mondo fisico, la capacità di imparare in fretta una cosa nuova, la memoria, la pianificazione. Dieci giorni prima aveva presentato a una conferenza di visione artificiale una serie di lucidi con lo stesso messaggio: strumenti utilissimi, ma la strada è un'altra. Il 21 settembre è entrato nel comitato scientifico di una società che costruisce modelli per il comportamento delle cellule. <a href="#" class="face-link" onclick="vaiFonte(event, 'Fei-Fei Li')" title="Fonti di Fei-Fei Li"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/fei-fei-li.jpg" alt=""></a>Fei-Fei Li, intervistata da Bloomberg il 22, ha indicato la stessa direzione con parole diverse: i modelli di mondo, sistemi che imparano come funzionano le cose invece che come si susseguono le parole.</p>
+<p>Preso da solo, è il solito dissenso tecnico fra ricercatori. Messo accanto a quello che sta succedendo nelle stesse settimane, diventa qualcosa di più fastidioso. Perché mentre LeCun spiega che la traiettoria attuale non arriva da nessuna parte, l'intera industria sta negoziando le regole di quella traiettoria. <a href="#" class="face-link" onclick="vaiFonte(event, 'Dario Amodei')" title="Fonti di Dario Amodei"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/dario-amodei.jpg" alt=""></a>Dario Amodei chiede valutatori indipendenti dentro i laboratori. <a href="#" class="face-link" onclick="vaiFonte(event, 'Sam Altman')" title="Fonti di Sam Altman"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/sam-altman.jpg" alt=""></a>Sam Altman si dice pronto a fermare un addestramento. <a href="#" class="face-link" onclick="vaiFonte(event, 'Elon Musk')" title="Fonti di Elon Musk"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/elon-musk.jpg" alt=""></a>Elon Musk propone che i rivali si controllino a vicenda. <a href="#" class="face-link" onclick="vaiFonte(event, 'Demis Hassabis')" title="Fonti di Demis Hassabis"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/demis-hassabis.jpg" alt=""></a>Demis Hassabis rilancia un ente di standard di settore. Tutti stanno discutendo il limite di velocità di una strada che, se i due hanno ragione, non porta alla destinazione.</p>
+<p>È già successo, questo. Negli anni Settanta l'industria automobilistica americana passò un decennio a litigare sui consumi dei motori a otto cilindri mentre i giapponesi cambiavano il concetto stesso di automobile. Le regole arrivarono, puntuali e dettagliate, su una tecnologia che stava per diventare marginale.</p>
+<p>Rispetto a ieri, poi, la lettura della convergenza è cambiata. Non è più soltanto "un'adesione rapida e sorprendente". Guardata con qualche giorno di distanza, assomiglia a un accordo tra i pochi che già possiedono la frontiera su chi avrà il diritto di certificarla. Non un consenso scientifico sul rischio: una spartizione del timbro.</p>
+<p>E qui entra la terza voce, quella che cambia la domanda invece di rispondere. <a href="#" class="face-link" onclick="vaiFonte(event, 'Naval Ravikant')" title="Fonti di Naval Ravikant"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/naval-ravikant.jpg" alt=""></a>Naval Ravikant, a metà settembre, ha riformulato tutto in due immagini: se questa tecnologia è come il fuoco, allora devono averla tutti; se è come l'atomica, non deve averla nessuno. Non esiste una terza opzione onesta. E il pericolo vero, secondo lui, non è la velocità ma la concentrazione del controllo.</p>
+<p>Intanto — ed è la parte che nessuna moratoria toccherà — il lavoro quotidiano ha già assorbito tutto. <a href="#" class="face-link" onclick="vaiFonte(event, 'Patrick Collison')" title="Fonti di Patrick Collison"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/patrick-collison.jpg" alt=""></a>Patrick Collison costruisce l'infrastruttura perché gli agenti possano pagare. David Heinemeier Hansson ha dichiarato che nella sua azienda il codice non si scrive più a mano. Si negozia una pausa in verticale, sui giornali e nelle conferenze, mentre l'adozione si radica in orizzontale, nei flussi di lavoro, dove nessuno ha mai chiesto il permesso a nessuno.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Vitalik Buterin')" title="Fonti di Vitalik Buterin"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/vitalik-buterin.jpg" alt=""></a>Vitalik Buterin è il cofondatore di Ethereum, e da qualche anno si occupa più di come si progettano sistemi affidabili che di criptovalute in senso stretto. In queste due settimane è stato insolitamente attivo proprio sul tema dell'intelligenza artificiale, e con un filo coerente.</p>
+<p>Il 13 settembre ha collegato la sicurezza dell'intelligenza artificiale al disegno dei meccanismi di governo: i sistemi costruiti per tenere sotto controllo agenti umani più furbi di chi li controlla, sostiene, potrebbero valere anche per le macchine. Tre o quattro giorni dopo ha risposto a chi dice che l'arrivo di macchine capaci di attaccare i sistemi informatici renda la sicurezza una causa persa. La sua risposta è tecnica e ottimista insieme: la stessa potenza può servire ai difensori, attraverso la verifica formale — quella pratica, oggi costosissima, con cui si dimostra matematicamente che un programma fa esattamente quello che deve fare e nient'altro. Nella stessa occasione ha detto che circa il novanta per cento del suo patrimonio sta in criptovalute, che è un modo brusco di dichiarare quanto crede alla propria tesi.</p>
+<p>Il 17 settembre il passaggio più concreto: ha raccontato che sul suo portatile gira un modello aperto abbastanza buono da coprire una quota consistente delle cose che gli servono, tenendo i sistemi remoti per i casi selezionati. Il 23 ha aggiunto che nell'era degli agenti la riservatezza in rete non si ottiene più nascondendo i nomi.</p>
+<p>Il collegamento con il filo della giornata è diretto, e per questo interessante. Mentre gli altri discutono di chi avrà il diritto di certificare i modelli, Buterin propone di spostare la domanda su un piano dove i certificatori non servono: se una proprietà del software è dimostrabile, non serve nessuno che ci metta il timbro. E se il modello gira sul tuo computer, non c'è un laboratorio da ispezionare.</p>
+<p>È una posizione seducente e, va detto, molto di parte: viene da una cultura che ha passato quindici anni a cercare di sostituire le istituzioni con il codice, con risultati alterni. Ma ha il pregio di rispondere alla domanda di Ravikant sulla concentrazione del controllo con qualcosa di più di un'opinione. Un modello sul portatile è una risposta materiale.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Jensen Huang')" title="Fonti di Jensen Huang"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/jensen-huang.png" alt=""></a>Jensen Huang guida Nvidia, l'azienda che produce i processori su cui gira quasi tutta questa storia. La sua posizione, nelle ultime due settimane, si è indurita in modo netto, ed è il vero cambiamento rispetto al quadro di ieri.</p>
+<p>Fino a pochi giorni fa la sua era una linea prudente: accettava i test, rifiutava i privilegi giuridici per i laboratori. Adesso è un rifiuto frontale. Il 15 settembre, parlando alla CNBC, ha definito nuove leggi e regolamenti "completamente inutili", e ha aggiunto un sospetto preciso: che le richieste di coordinamento tra laboratori — che in altri settori si chiamerebbero cartello — servano a qualcosa di diverso dalla sicurezza. Nei giorni successivi ha alzato ancora il tono: le previsioni catastrofiche sono "irresponsabili", e la probabilità che l'intelligenza artificiale ponga fine al mondo entro il 2030 è, testualmente, zero per cento. Il 23 settembre è andato al podcast di Ezra Klein al New York Times a ripetere la stessa cosa.</p>
+<p>La tesi dietro le sue parole è più solida dei toni. La sicurezza, per Huang, è un problema di ingegneria: test, ambienti isolati in cui provare i modelli, monitoraggio continuo. Cose che si fanno in laboratorio, non in parlamento. <a href="#" class="face-link" onclick="vaiFonte(event, 'Andrew Ng')" title="Fonti di Andrew Ng"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/andrew-ng.jpg" alt=""></a>Andrew Ng, che ha insegnato a mezza industria come si addestra una rete neurale, ha detto a Bloomberg il 17 settembre la stessa cosa da un'altra angolazione: le paure di estinzione sono "più fantascienza che scienza", e non si legifera sulla fantascienza.</p>
+<p>Vale notare chi sta da che parte. Chi chiede regole vende modelli di frontiera. Chi le rifiuta vende l'infrastruttura, oppure insegna a usarla. Non è necessariamente malafede — è che ciascuno vede il problema dalla propria posizione nella catena. Quando le ferrovie americane chiesero regolamentazione federale a fine Ottocento, lo fecero anche perché le regole stabilizzavano le tariffe e tenevano fuori i nuovi entranti. La storia non dice che avessero torto sulla sicurezza. Dice che le due cose convivevano benissimo.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Ricapitolando dove siamo: da una parte chi possiede la frontiera si accorda su chi la certificherà, dall'altra chi vende le macchine dice che non serve nessuna legge, e in mezzo c'è chi sostiene che il problema vero sia chi resta fuori. Il terzo attore di questa scena è il più coerente di tutti, e ha appena messo del software dove stanno le sue parole.</p>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Jack Dorsey')" title="Fonti di Jack Dorsey"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/jack-dorsey.jpg" alt=""></a>Jack Dorsey ha fondato Twitter e oggi guida Block, l'azienda dei pagamenti. Ha pubblicato un testo intitolato "open the frontier", che è una risposta diretta e quasi parola per parola al "pace the frontier" di Amodei. La sua proposta non è l'assenza di controlli: sono pesi dei modelli rilasciati pubblicamente, valutazioni che chiunque possa rifare ottenendo lo stesso risultato, verifiche indipendenti, strumenti che girano sul computer di chi li usa. La sicurezza, sostiene, è compatibile con l'apertura. Non è compatibile con operatori dominanti che usano la parola sicurezza per proteggere un vantaggio commerciale.</p>
+<p>La parte interessante è che non si è fermato al testo. Block ha appena rilasciato Buzz, uno spazio di lavoro aperto dove persone e agenti artificiali stanno sullo stesso piano, ciascuno con la propria identità crittografica, e che funziona con qualsiasi modello. Il 23 settembre l'azienda ha aggiunto il supporto ai micropagamenti in bitcoin per gli scambi tra agenti. A febbraio, quando aveva annunciato tagli consistenti al personale, li aveva legati all'adozione interna di questi strumenti: meno persone per ogni unità di prodotto.</p>
+<p>Ed è qui che la sua posizione si fa scomoda in modo produttivo. Dorsey difende l'accesso di tutti alla tecnologia e contemporaneamente mostra, sui suoi stessi dipendenti, cosa comporta quell'accesso quando arriva davvero. Le due cose non si contraddicono — sono la stessa scommessa vista da due lati. Chi chiede di aprire la frontiera non sta promettendo un mondo più gentile. Sta dicendo che il mondo cambierà comunque, e che è meglio che cambi per tutti invece che per cinque aziende.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Andrej Karpathy')" title="Fonti di Andrej Karpathy"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/andrej-karpathy.jpg" alt=""></a>Andrej Karpathy ha lavorato a Tesla e a OpenAI, e oggi è soprattutto uno dei divulgatori più ascoltati di questo mondo. La sua settimana racconta una cosa che gli schieramenti non catturano.</p>
+<p>Ha appoggiato pubblicamente la proposta di Amodei di regolare il passo della frontiera — dice di amarla, e spera che l'industria riesca a mettersi d'accordo. Ha rilanciato il rapporto di Anthropic sugli abusi e sulle minacce pubblicato a settembre, segnalando interesse per il lavoro concreto di valutazione e prevenzione. Il 25 settembre, con il suo tipico gusto per la semplificazione, ha suggerito di smettere di discutere le sigle sull'intelligenza generale e di "togliere l'artificiale" dal nome.</p>
+<p>Ma il dettaglio che pesa di più viene da un'intervista recente, dove racconta che passa ormai lunghi tratti della giornata a esprimere intenzioni agli agenti invece che a scrivere codice. E aggiunge la frase che vale il capitolo: il collo di bottiglia non è più la potenza di calcolo, è la direzione umana.</p>
+<p>Tenetela accanto a quello che ha dichiarato Heinemeier Hansson a Rails World il 23 settembre: nella sua azienda hanno posato le matite, il codice scritto a mano è l'eccezione. E accanto a quello che racconta Collison di Stripe, dove circa il cinquantacinque per cento delle richieste di modifica al codice nasce ormai da un'istruzione data a un modello, senza rinunciare agli standard di affidabilità di un sistema che muove pagamenti.</p>
+<p>Tre persone diversissime che descrivono lo stesso spostamento. Non è una previsione, è un resoconto. Ed è per questo che la trattativa sulla pausa, per quanto seria, rischia di somigliare a una conferenza diplomatica sulle rotte commerciali convocata mentre le merci viaggiano già per un'altra strada. Karpathy è l'unico dei tre che sta con un piede in entrambe le stanze: sostiene il freno e intanto descrive un mestiere che è già cambiato. Forse è la posizione più onesta disponibile.</p>
+<div class="chapter" data-mood="upbeat"><hr></div>
+<p>Progetti da osservare.</p>
+<p>x402 riusa un codice di errore dimenticato del web — il 402, "pagamento richiesto", presente nelle specifiche da trent'anni e mai davvero usato — per permettere a un programma di pagare un servizio senza avere un account né una carta. Adesso è gestito dalla Linux Foundation, e il 23 settembre Block ci ha aggiunto i micropagamenti in bitcoin. È l'infrastruttura di cui parlavamo: gli agenti che comprano da soli.</p>
+<p>Buzz, sempre di Block, è uno spazio di lavoro aperto costruito su Nostr, dove le persone e gli agenti sono membri con gli stessi diritti, ciascuno con la propria chiave. Non è legato a nessun modello: funziona con quelli di case diverse. È la tesi di Dorsey resa software.</p>
+<p>Qwen3.8 è la prima volta che Alibaba rilascia con pesi aperti un modello della sua classe più potente. La versione piccola occupa circa diciassette gigabyte, gira su un portatile, e secondo <a href="#" class="face-link" onclick="vaiFonte(event, 'Simon Willison')" title="Fonti di Simon Willison"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/simon-willison.jpg" alt=""></a>Simon Willison si avvicina davvero alla frontiera. È esattamente il modello locale di cui parla Buterin.</p>
+<p>METR valuta i modelli di frontiera e non accetta soldi dai laboratori. Sta al centro della discussione sui valutatori indipendenti nata dal saggio di Amodei: l'idea funziona o no a seconda di quanto è credibile un ente come questo.</p>
+<p>E poi una curiosità che dice molto sul momento: llm-wiki, di Karpathy. Invece di frammentare i documenti perché un modello li ripeschi a pezzi, propone che l'agente scriva e tenga aggiornata una piccola enciclopedia in testo semplice. Cinquemila stelle in pochi giorni e decine di copie. A volte la soluzione elegante è quella che il bibliotecario avrebbe suggerito subito.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Resta quella conferenza convocata per stabilire il limite di velocità di una strada che forse non porta dove pensiamo. LeCun e <a href="#" class="face-link" onclick="vaiFonte(event, 'Fei-Fei Li')" title="Fonti di Fei-Fei Li"><img class="face-inline" loading="lazy" src="/signal-brief/ai/avatars/fei-fei-li.jpg" alt=""></a>Fei-Fei Li dicono che la destinazione è altrove; Buterin e Dorsey dicono che il problema è chi tiene le chiavi. Nessuna delle due obiezioni è stata davvero raccolta da chi sta trattando. Ed è strano, perché sono le uniche due che, se avessero ragione, renderebbero l'accordo inutile.</p>
+<p>È stato Signal Brief. Alla prossima.</p></div><div class="rawmd"><a href="raw.md">Testo (markdown)</a></div></div>
+<div class="tab-panel panel" data-sb-panel="comparazione" hidden><div class="tension"><div class="axis">↗ Il dissenso architetturale</div><div class="side">Emerge l'obiezione che la traiettoria tecnica sotto negoziato (LLM auto-regressivi) potrebbe non essere quella che porta all'intelligenza generale, rendendo il patto irrilevante.</div></div><div class="tension"><div class="axis">↗ Fuoco o nucleare</div><div class="side">La scelta viene riformulata come dilemma sulla natura della tecnologia: se è fuoco va data a tutti, se è nucleare a nessuno, ma il pericolo vero è la concentrazione del controllo.</div></div><div class="tension"><div class="axis">↗ L'adozione come fatto compiuto</div><div class="side">Mentre si negozia la pausa, il lavoro quotidiano ha già assorbito l'IA: pagamenti per agenti e codice non più scritto a mano.</div></div><div class="tension"><div class="axis">↗ Organismi di standard di settore</div><div class="side">Il consenso si struttura in proposte istituzionali concrete: un ente di standard e la revisione reciproca tra rivali.</div></div><div class="tension"><div class="axis">↗ Verifica formale come alternativa alla governance</div><div class="side">La risposta pratica al rischio non è una regola ma una proprietà dimostrabile del software che gira in locale.</div></div><div class="tension"><div class="axis">⚖ Chi ha il diritto di certificare la frontiera</div><div class="side">Dario Amodei: valutatori indipendenti dentro i laboratori, poi regole internazionali · Elon Musk: revisione reciproca tra rivali, senza autorità esterna · Demis Hassabis: un organismo di standard di settore</div></div><div class="tension"><div class="axis">⚖ La sicurezza è ingegneria o legge</div><div class="side">Jensen Huang: nuove leggi completamente inutili, servono test e monitoraggio · Andrew Ng: il rischio estintivo è fantascienza, non base per legiferare · Dario Amodei: senza coordinamento e regole internazionali la verifica non vincola nessuno</div></div><div class="tension"><div class="axis">⚖ Aprire o regolare il passo della frontiera</div><div class="side">Jack Dorsey: open the frontier, la sicurezza è il pretesto per chiudere l'accesso · Naval Ravikant: il pericolo è la concentrazione del controllo, non la velocità · Dario Amodei: il passo va regolato prima che la capacità superi la verifica</div></div><div class="tension"><div class="axis">⚖ Quale traiettoria tecnica porta all'intelligenza</div><div class="side">Yann LeCun: gli LLM auto-regressivi non ci arrivano · Fei-Fei Li: la strada sono i modelli di mondo · Dario Amodei: la frontiera attuale è già abbastanza vicina da richiedere un freno</div></div><div class="tension"><div class="axis">⚖ Negoziare la pausa contro adottare adesso</div><div class="side">David Heinemeier Hansson: 37signals pencils down, il codice a mano è finito · Patrick Collison: infrastruttura di pagamento per agenti, si costruisce e basta · Dario Amodei: serve un coordinamento che rallenti lo sviluppo della frontiera</div></div></div>
+<div class="tab-panel panel" data-sb-panel="segnali" hidden><section><h2>Progetti da osservare</h2><div class="tension"><div class="axis"><span class="pnew">nuovo</span> x402</div><div class=side>Protocollo aperto che riusa il codice HTTP 402 per far pagare API e servizi agli agenti IA, senza account né carte. Ora è gestito dalla Linux Foundation. Il 23 settembre Block ha aggiunto il supporto a Bitcoin Lightning per i micropagamenti tra agenti.</div></div><div class="tension"><div class="axis">block/buzz</div><div class=side>Spazio di lavoro open source (Apache 2.0) basato su Nostr, dove persone e agenti IA sono membri alla pari, ciascuno con la propria coppia di chiavi crittografiche. Non dipende da un modello specifico: funziona con Claude Code, Codex e goose.</div></div><div class="tension"><div class="axis">Qwen3.8 (27B e 2.4T-A95B)</div><div class=side>È la prima volta che Alibaba rilascia con pesi aperti (Apache 2.0) un modello Qwen di classe Max. Il 27B occupa circa 17 GB, gira in locale e secondo Simon Willison si avvicina alla frontiera.</div></div><div class="tension"><div class="axis">METR</div><div class=side>Organizzazione indipendente che valuta i modelli di frontiera e non accetta finanziamenti dai laboratori. È al centro del dibattito sui "valutatori integrati" nati dal saggio "We Must Pace the Frontier" di Amodei.</div></div><div class="tension"><div class="axis">OpenClaw</div><div class=side>Agente IA personale che ha creato la categoria "Claw" ed è diventato uno dei repo più stellati di GitHub. Da qui sono nate varianti come NanoClaw, IronClaw e PicoClaw. Il report di agents-radar lo segnala però come inattivo al 28 settembre 2026.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> deepfates/imp</div><div class=side>Porta DSPy (v3.3.1) su Elixir/BEAM: signature, optimizer come GEPA, loop di agenti e retrieval, con la concorrenza del modello ad attori. La v0.5 è sperimentale ed è la prima release pubblicata su Hex.</div></div><div class="tension"><div class="axis">karpathy/llm-wiki</div><div class=side>Schema di wiki persistente in Markdown che un agente LLM scrive e mantiene al posto dell'utente, come alternativa alla RAG a frammenti. Ha superato 5.000 stelle in pochi giorni e ha avuto decine di reimplementazioni.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> google/ax</div><div class=side>Orchestratore aperto di Google che fa girare in cluster carichi di agenti autonomi dentro sandbox, con un'interfaccia simile a kubectl. Pensato per miliardi di task, con isolamento di rete e controllo dei costi.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> vectorize-io/hindsight</div><div class=side>Sistema di memoria per agenti che impara dalle interazioni passate. È tra i repo che crescono di più su GitHub nella settimana.</div></div><div class="tension"><div class="axis">anthropics/skills</div><div class=side>Libreria ufficiale di Anthropic di skill riutilizzabili per agenti: istruzioni e script che un agente carica quando servono. È in trend fra i framework che rendono gli agenti pronti per la produzione.</div></div></section></div>
+<div class="tab-panel panel" data-sb-panel="fonti" hidden><div class="fonte" data-fonte-nome="Vitalik Buterin"><span class="who">Vitalik Buterin</span><a href="https://cryptoslate.com/ethereum-cofounder-vitalik-says-local-ai-is-nearly-ready-but-crypto-wallets-still-cannot-trust-it-alone/" target="_blank" rel="noopener">https://cryptoslate.com/ethereum-cofounder-vitalik-says-local-ai-is-nearly-ready-but-crypto-wallets-still-cannot-trust-it-alone/</a><a href="https://www.techflowpost.com/en-US/newsletter/136578" target="_blank" rel="noopener">https://www.techflowpost.com/en-US/newsletter/136578</a><a href="https://themarketperiodical.com/2026/09/18/vitalik-buterin-weighs-on-ai-cybersecurity-as-ethereum-tests-new-defense-tools/" target="_blank" rel="noopener">https://themarketperiodical.com/2026/09/18/vitalik-buterin-weighs-on-ai-cybersecurity-as-ethereum-tests-new-defense-tools/</a></div><div class="fonte" data-fonte-nome="Jensen Huang"><span class="who">Jensen Huang</span><a href="https://www.nytimes.com/2026/09/23/opinion/ezra-klein-podcast-jensen-huang.html" target="_blank" rel="noopener">https://www.nytimes.com/2026/09/23/opinion/ezra-klein-podcast-jensen-huang.html</a><a href="https://www.cnn.com/2026/09/25/world/video/nvidia-chips-ai-huang-anderson-vo-sot-092502aseg1-cnni-world-fast" target="_blank" rel="noopener">https://www.cnn.com/2026/09/25/world/video/nvidia-chips-ai-huang-anderson-vo-sot-092502aseg1-cnni-world-fast</a><a href="https://www.cbsnews.com/news/nvidia-ceo-jensen-huang-ai-development-fast-as-we-can/" target="_blank" rel="noopener">https://www.cbsnews.com/news/nvidia-ceo-jensen-huang-ai-development-fast-as-we-can/</a></div><div class="fonte" data-fonte-nome="Andrej Karpathy"><span class="who">Andrej Karpathy</span><a href="https://x.com/karpathy/status/2103528977583546678" target="_blank" rel="noopener">https://x.com/karpathy/status/2103528977583546678</a><a href="https://www.reuters.com/business/what-amodei-altman-musk-have-said-about-ai-risks-stoking-doom-fears-2026-09-21/" target="_blank" rel="noopener">https://www.reuters.com/business/what-amodei-altman-musk-have-said-about-ai-risks-stoking-doom-fears-2026-09-21/</a><a href="https://www.reuters.com/business/what-amodei-altman-musk-have-said-about-ai-risks-stoking-doom-fears-2026-09-14/" target="_blank" rel="noopener">https://www.reuters.com/business/what-amodei-altman-musk-have-said-about-ai-risks-stoking-doom-fears-2026-09-14/</a></div></div>
+</div>
+<script>function sbTab(key) {  document.querySelectorAll('.tab-panel').forEach(function (p) {    p.hidden = p.getAttribute('data-sb-panel') !== key;  });  document.querySelectorAll('#sbTabs .tab').forEach(function (b) {    b.setAttribute('aria-selected', b.dataset.tab === key ? 'true' : 'false');  });}function vaiFonte(ev, nome) {  ev.preventDefault();  sbTab('fonti');  var d = document.querySelector('[data-fonte-nome="' + nome + '"]');  if (d) d.scrollIntoView({behavior: 'smooth', block: 'center'});}</script>
+<dialog class="vplayer" id="vplayer"></dialog>
+<script>
+// player modale dei video: la miniatura apre il video al centro (disegno 2026-08-07)
+// Chiudere e condividere. Il player era il solo <video> dentro la <dialog>:
+// si chiudeva a Escape o cliccando lo SFONDO, che su un tablet e' quasi tutto
+// coperto dal video e dove un tasto Escape non esiste (2026-08-24).
+// La ✕ non serve solo a chiudere: e' l'unico modo per SAPERE che si puo'.
+function condividiVideo(src, b) {
+  if (navigator.share) { navigator.share({ title: 'Signal.Brief', url: src }).catch(function () {}); return; }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(src).then(function () {
+      var prima = b.textContent; b.textContent = '✓ copiato';
+      setTimeout(function () { b.textContent = prima; }, 1800);
+    }).catch(function () {});
+    return;
+  }
+  // Terzo ripiego: senza clipboard API resta la selezione manuale. Meglio un
+  // prompt che un bottone morto.
+  try { window.prompt('Indirizzo del video:', src); } catch (e) {}
+}
+function apriVideo(src) {
+  var d = document.getElementById('vplayer');
+  // I bottoni SOPRA il video: sotto finirebbero fuori schermo su un reel
+  // verticale, che di altezza prende gia' l'86%.
+  d.innerHTML = '<div class="vplayer-barra">'
+    + '<button type="button" class="vplayer-share">Condividi</button>'
+    + '<button type="button" class="vplayer-chiudi" aria-label="Chiudi">✕</button>'
+    + '</div><video controls autoplay playsinline src="' + src + '"></video>';
+  d.querySelector('.vplayer-chiudi').onclick = function () { d.close(); };
+  var sb = d.querySelector('.vplayer-share');
+  sb.onclick = function () { condividiVideo(src, sb); };
+  d.showModal();
+  d.onclick = function (e) { if (e.target === d) d.close(); };
+  d.onclose = function () { var v = d.querySelector('video'); if (v) v.pause(); d.innerHTML = ''; };
+}
+// ascolto inline dalla lista: un episodio alla volta
+var epAudio = null, epBtn = null;
+function ascolta(btn, src) {
+  if (epBtn === btn && epAudio) {
+    if (epAudio.paused) { epAudio.play(); btn.classList.add('on'); }
+    else { epAudio.pause(); btn.classList.remove('on'); }
+    return;
+  }
+  if (epAudio) { epAudio.pause(); if (epBtn) epBtn.classList.remove('on'); }
+  epAudio = new Audio(src); epBtn = btn;
+  epAudio.play(); btn.classList.add('on');
+  epAudio.onended = function () { btn.classList.remove('on'); };
+}
+function copiaTrascrizione(btn) {
+  var t = btn.parentElement.querySelector('.transcript-body');
+  navigator.clipboard.writeText(t ? t.innerText : '').then(function () {
+    btn.textContent = 'copiata ✓';
+    setTimeout(function () { btn.textContent = 'copia il testo'; }, 1800);
+  });
+}
+</script>
+<section class="sostieni"><h3>Se ti è utile, offrimi un caffè</h3><p>Signal.Brief non ha sponsor e non vende niente. Se ti è utile, puoi contribuire — e se non ti va, ascoltalo lo stesso.</p><div class="sostieni-atti"><a class="sostieni-btn" href="https://www.paypal.com/donate/?business=SGNE3B4JZUT9S&amp;no_recurring=0&amp;item_name=Signal.Brief+non+ha+sponsor.+Se+ti+%C3%A8+utile%2C+questo+lo+tiene+acceso.&amp;currency_code=EUR" target="_blank" rel="noopener">Offrimi un caffè</a><a class="sostieni-alt" href="../segui/">Ascoltalo nella tua app →</a></div></section>
+<footer class="creator-footer">
+  <img src="/signal-brief/mike-avatar.png" alt="Michele Mondora">
+  <div class="creator-meta">
+    <span class="creator-name">it-mikesoft</span>
+    <span class="creator-tagline">working with systems, living with questions</span>
+    <span class="creator-email"><a href="mailto:michele@mondora.com">michele@mondora.com</a></span>
+    <span class="creator-legal"><a href="/signal-brief/legal/privacy/">Privacy</a> ·
+      <a href="/signal-brief/legal/">Note legali</a></span>
+  </div>
+</footer>
+<section class="tutele"><h3>Trasparenza e tutele</h3>
+<p><strong>Come nasce questo contenuto.</strong> Ricerca, sintesi editoriale, voce narrante, immagini e musica sono prodotte con sistemi di intelligenza artificiale. Non c'è una redazione umana che verifica ogni affermazione prima della pubblicazione: un controllo automatico scarta le schede giudicate inaffidabili, ma non elimina la possibilità di errori.</p>
+<p><strong>Affermazioni su persone e aziende.</strong> Quanto riportato è una sintesi di fonti pubbliche, non una dichiarazione diretta delle persone citate: le frasi non vanno intese come virgolettati né come posizioni ufficiali. Le fonti sono indicate in ogni pagina episodio — verificale prima di considerare un'informazione accertata. Se trovi un'affermazione inesatta che ti riguarda, scrivi a <a href="mailto:michele@mondora.com">michele@mondora.com</a>: viene corretta o rimossa.</p>
+<p><strong>Immagini e volti.</strong> Le immagini di scena sono generate con AI e non raffigurano fatti realmente avvenuti. Le fotografie di persone reali usate nei video provengono da Wikimedia Commons con le rispettive licenze, e sono accostate al racconto a scopo identificativo: la loro presenza non implica partecipazione, dichiarazione o approvazione da parte della persona ritratta. Su richiesta dell'interessato vengono rimosse.</p>
+<p><strong>Fonti e diritti altrui.</strong> I contenuti sono rielaborazioni originali, non riproduzioni di articoli di terzi; le testate e gli autori all'origine di una notizia sono citati e collegati. Marchi e nomi commerciali appartengono ai rispettivi titolari e sono usati a scopo descrittivo.</p>
+</section>
+</body></html>
