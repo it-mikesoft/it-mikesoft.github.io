@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="it"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Una parola, due destini · Signal.AI</title>
+<meta property="og:title" content="Una parola, due destini · Signal.AI"><meta property="og:type" content="article"><meta property="og:description" content=""Auto-miglioramento ricorsivo" significa per alcuni la soglia del pericolo, per altri il metodo della scienza. Intorno a questa ambiguità si riorganizza il potere del calcolo."><meta property="og:url" content="https://it-mikesoft.github.io/signal-brief/ai/2026-10-12/"><meta property="og:audio" content="https://op3.dev/e/media.casamon.dev/ai/podcast/episodes/2026-10-12.mp3"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "PodcastEpisode", "name": "Una parola, due destini", "datePublished": "2026-10-12", "url": "https://it-mikesoft.github.io/signal-brief/ai/2026-10-12/", "description": "\"Auto-miglioramento ricorsivo\" significa per alcuni la soglia del pericolo, per altri il metodo della scienza. Intorno a questa ambiguità si riorganizza il potere del calcolo.", "inLanguage": "it", "associatedMedia": {"@type": "MediaObject", "contentUrl": "https://op3.dev/e/media.casamon.dev/ai/podcast/episodes/2026-10-12.mp3"}, "partOfSeries": {"@type": "PodcastSeries", "name": "Signal.AI", "url": "https://it-mikesoft.github.io/signal-brief/ai/"}}</script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:#faf8f4; color:#1a1a1a; padding:2rem 10px; max-width:none; margin:0 auto; line-height:1.6; }
+  a { color:#2563eb; }
+  .back { display:inline-block; margin-bottom:1.5rem; font-size:.8rem; font-family:monospace; text-decoration:none; }
+  .videos { display:flex; gap:1rem; flex-wrap:wrap; margin:1.2rem 0; }
+  .videos figure { margin:0; flex:1; min-width:260px; }
+  .videos .v2 { flex:0 1 240px; }
+  .videos video { width:100%; border-radius:12px; background:#000; }
+  .videos .v2 video { aspect-ratio:9/16; max-height:420px; }
+  .videos figcaption { font-size:.75rem; color:#888; text-align:center; margin-top:.3rem; }
+  .vlink { display:flex; gap:.3rem; margin-top:.35rem; }
+  .vlink input { flex:1; min-width:0; font-size:.68rem; font-family:monospace; padding:.3rem .4rem;
+    border:1px solid #e2ddd6; border-radius:6px; background:#fff; color:#6b7280; }
+  .vlink button { font-size:.68rem; padding:.3rem .6rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; }
+  .wk { font-size:1rem; margin:1.4rem 0 .4rem; }
+  details.wkacc { border:1px solid #e5e7eb33; border-radius:10px; margin:.6rem 0; padding:.1rem .8rem .4rem; }
+  details.wkacc summary { cursor:pointer; font-weight:600; padding:.5rem 0; font-size:.9rem; }
+  .back:hover { text-decoration:underline; }
+  header h1 { font-family:Georgia,serif; font-size:1.7rem; font-weight:600; }
+  header h1 span { color:#2563eb; }
+  .tagline { color:#6b7280; font-size:.85rem; margin-top:.3rem; margin-bottom:1.5rem; }
+  ul.eps { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
+  .subscribe { display:inline-flex; align-items:center; gap:.5rem; margin-bottom:1.2rem;
+    padding:.45rem .9rem; background:#2563eb; color:#fff; border-radius:20px;
+    text-decoration:none; font-size:.8rem; font-weight:600; }
+  .subscribe:hover { opacity:.85; color:#fff; }
+  .ep { display:flex; align-items:center; gap:.8rem; padding:.8rem 1rem; background:#fff;
+    border:1px solid #e2ddd6; border-radius:8px; text-decoration:none; color:inherit; transition:box-shadow .12s; }
+  .ep:hover { box-shadow:0 2px 8px rgba(0,0,0,.07); }
+  .ep-play { width:32px; height:32px; border-radius:50%; background:#f3f4f6; display:flex;
+    align-items:center; justify-content:center; font-size:12px; flex-shrink:0; }
+  .ep-title { font-size:.9rem; font-weight:500; }
+  .ep-meta { font-size:.72rem; color:#9ca3af; font-family:monospace; margin-top:.15rem; }
+  audio { width:100%; margin:1rem 0 1.5rem; }
+  .rawmd { margin:-.5rem 0 1.5rem; }
+  .rawmd a { font-size:.8rem; font-family:monospace; color:inherit; opacity:.65; }
+  .desc { color:#374151; font-size:.95rem; margin-bottom:1.5rem; }
+  section { margin:2rem 0; }
+  section h2 { font-family:Georgia,serif; font-size:1.1rem; border-bottom:1px solid #e2ddd6;
+    padding-bottom:.3rem; margin-bottom:.8rem; }
+  .synthesis p { margin:.7rem 0; }
+  .tension { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; font-size:.9rem; }
+  .tension .axis { font-weight:600; margin-bottom:.3rem; }
+  .tension .side { color:#6b7280; font-size:.85rem; }
+  .proj { font-size:.9rem; margin:.4rem 0; }
+  .proj .pname { font-weight:600; }
+  .proj .pnew { background:#16a34a; color:#fff; font-size:.65rem; font-weight:700;
+    padding:.1rem .35rem; border-radius:4px; text-transform:uppercase; vertical-align:middle; }
+  .fonte { font-size:.85rem; margin:.5rem 0; }
+  .fonte .who { font-weight:600; }
+  .fonte a { display:block; margin-left:.5rem; color:#6b7280; }
+  .transcript-body p { margin:.7rem 0; line-height:1.7; }
+  .transcript-body .chapter hr { border:none; border-top:1px solid #e2ddd6; margin:1.5rem 0; }
+  .transcript-body .podcast-episode-desc { color:#6b7280; font-style:italic; }
+  .signal-card { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; }
+  .signal-theme { font-size:.75rem; font-weight:700; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.3rem; }
+  .signal-text { font-size:.85rem; color:#374151; line-height:1.5; }
+  .creator-footer { margin-top:3rem; padding-top:1.5rem; border-top:1px solid #e2ddd6;
+    display:flex; align-items:center; gap:.9rem; }
+  .creator-footer img { width:40px; height:40px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+  .creator-legal { font-size:.78rem; margin-top:.15rem; }
+  .creator-legal a { color:inherit; }
+  .creator-meta { display:flex; flex-direction:column; gap:.15rem; }
+  .creator-name { font-size:.85rem; font-weight:600; color:#1a1a1a; }
+  .creator-tagline { font-size:.75rem; color:#6b7280; }
+  .creator-email { font-size:.75rem; }
+  .creator-ai { font-size:.72rem; color:#8a7f6d; max-width:46ch; line-height:1.45; }
+  .sostieni { margin-top:2.5rem; padding:1.2rem 1.4rem; border-radius:14px;
+    background:#f7f4ef; border:1px solid #e2ddd6; }
+  .sostieni h3 { margin:0 0 .3rem; font-size:1rem; }
+  .sostieni p { margin:0 0 .9rem; font-size:.88rem; color:#6b6257; line-height:1.55; }
+  .sostieni-atti { display:flex; gap:.8rem; align-items:center; flex-wrap:wrap; }
+  .sostieni-btn { display:inline-block; padding:.55rem 1.1rem; border-radius:10px;
+    background:#2563eb; color:#fff; text-decoration:none; font-weight:700; font-size:.88rem; }
+  .sostieni-alt { font-size:.85rem; color:#6b6257; text-decoration:none; }
+  .sostieni-alt:hover { text-decoration:underline; }
+  .tutele { margin-top:2rem; padding-top:1.2rem; border-top:1px solid #e2ddd6;
+    font-size:.72rem; color:#8a7f6d; line-height:1.5; }
+  .tutele h3 { font-size:.75rem; color:#6b7280; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.5rem; font-weight:600; }
+  .tutele p { margin:.45rem 0; }
+  .tutele strong { color:#5a5348; font-weight:600; }
+  .tutele a { color:inherit; text-decoration:underline; }
+  .creator-email a { color:#9ca3af; text-decoration:none; }
+  .creator-email a:hover { color:#1a1a1a; }
+  /* disegno 2026-08-07: mesi a pagine, facce, player modale, trascrizione
+     richiudibile — la pagina episodio è un prodotto, non un sottoprodotto */
+  .hrow { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+  .hrow .subscribe { margin-bottom:0; flex-shrink:0; }
+  .months { font-size:.78rem; font-family:monospace; margin:.4rem 0 1rem; color:#9ca3af; }
+  .months a { text-decoration:none; } .months b { color:inherit; }
+  .ep-faces { display:flex; margin-left:auto; flex-shrink:0; }
+  .ep-faces img { width:26px; height:26px; border-radius:50%; object-fit:cover;
+    border:2px solid #fff; margin-left:-8px; background:#eee; }
+  /* tutti i citati sul desktop; su mobile la leggibilità vince: max 3 */
+  @media (max-width:600px) { .ep-faces img:nth-child(n+4) { display:none; } }
+  .ep-listen { width:32px; height:32px; border-radius:50%; background:#f3f4f6; border:0;
+    display:flex; align-items:center; justify-content:center; font-size:12px;
+    flex-shrink:0; cursor:pointer; color:inherit; }
+  .ep-listen.on { background:#2563eb; color:#fff; }
+  .face-inline { width:1.15em; height:1.15em; border-radius:50%; object-fit:cover;
+    vertical-align:-.18em; margin-right:.25em; }
+  /* SEMPRE sulla stessa riga (2026-08-09): su schermi stretti le miniature
+     si riducono, e se non basta il reel sparisce — mai l'andata a capo */
+  .vthumbs { display:flex; gap:.8rem; flex-wrap:nowrap; margin:1.2rem 0; align-items:flex-start; }
+  .vthumb { position:relative; cursor:pointer; border:0; padding:0; background:none;
+    border-radius:12px; overflow:hidden; }
+  /* stessa ALTEZZA per video e reel: il 9:16 si stringe, non svetta */
+  .vthumb video { height:150px; width:auto; display:block; border-radius:12px; background:#000; }
+  @media (max-width:520px) { .vthumb video { height:118px; } }
+  /* quando nemmeno ridotte ci stanno: via le miniature, due BOTTONI in
+     riga che aprono il player (2026-08-09) */
+  .vbtns { display:none; gap:.6rem; margin:1.2rem 0; }
+  .vbtns button { flex:1; padding:.6rem .4rem; border:0; border-radius:10px;
+    background:#2563eb; color:#fff; font-weight:700; font-size:.85rem;
+    cursor:pointer; font-family:inherit; }
+  @media (max-width:420px) { .vthumbs { display:none; } .vbtns { display:flex; } }
+  .vthumb .vlabel { position:absolute; left:0; right:0; bottom:0; padding:.9rem .5rem .35rem;
+    background:linear-gradient(transparent, rgba(0,0,0,.75)); color:#fff; font-size:.7rem; }
+  .vthumb::after { content:"▶"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    color:#fff; font-size:1.6rem; text-shadow:0 1px 6px rgba(0,0,0,.8); }
+  /* margin:auto ESPLICITO: il reset globale * {margin:0} annullava la
+     centratura nativa del dialog e il player si apriva in alto a sinistra */
+  dialog.vplayer { border:0; padding:0; background:transparent; max-width:92vw;
+    margin:auto; position:fixed; inset:0; }
+  dialog.vplayer::backdrop { background:rgba(0,0,0,.85); }
+  dialog.vplayer video { max-width:92vw; max-height:86vh; border-radius:14px; background:#000; }
+  dialog.vplayer .vplayer-barra { display:flex; justify-content:flex-end; align-items:center;
+    gap:.5rem; margin-bottom:.5rem; }
+  /* 2.75rem e' il bersaglio minimo per il dito: la ✕ da sola sarebbe 20px. */
+  dialog.vplayer .vplayer-barra button { font:inherit; font-size:.9rem; color:#fff;
+    background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.28);
+    border-radius:999px; padding:.45rem .9rem; cursor:pointer;
+    min-height:2.75rem; min-width:2.75rem; }
+  dialog.vplayer .vplayer-barra button:hover { background:rgba(255,255,255,.24); }
+  dialog.vplayer .vplayer-chiudi { font-size:1.1rem; line-height:1; }
+  details.tr { border:1px solid #e2ddd6; border-radius:10px; padding:.2rem .9rem .6rem; }
+  details.tr summary { cursor:pointer; font-weight:600; padding:.55rem 0; }
+  .tr-copy { font-size:.72rem; padding:.3rem .7rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; margin:.3rem 0 .5rem; }
+  .epnav { display:flex; justify-content:space-between; gap:1rem; margin:2rem 0 0;
+    font-size:.82rem; font-family:monospace; }
+  .epnav a { text-decoration:none; }
+  /* Header + tab bar (spec-016, Task 5): stessa forma di
+     public/console/podcast-render.css, riusando i nomi classe dove
+     combaciano — solo la meccanica tab/pannello è nuova qui. */
+  .episode-header .date-line { font-size:.72rem; font-family:monospace; color:#9ca3af;
+    text-transform:uppercase; letter-spacing:.08em; margin-bottom:.3rem; }
+  .ep-header-block { margin-bottom:.5rem; }
+  .ep-header-faces { margin:.6rem 0; }
+  .ep-header-faces .ep-faces { margin-left:0; }
+  .tabs { display:flex; gap:.25rem; border-bottom:1px solid #e2ddd6; margin:1.5rem 0; flex-wrap:wrap; }
+  .tab { font-family:monospace; font-size:.72rem; text-transform:uppercase; letter-spacing:.08em;
+    padding:.6rem .9rem; background:transparent; border:0; border-bottom:2px solid transparent;
+    color:#9ca3af; cursor:pointer; }
+  .tab[aria-selected="true"] { color:#1a1a1a; border-bottom-color:#2563eb; }
+  .tab-panel { display:block; }
+  .tab-panel[hidden] { display:none !important; }
+  /* Fallback dei pannelli senza dati (episodi storici senza un sidecar) —
+     porta di public/console/podcast-render.css:304-309, sui token pubblici. */
+  /* Header episodio a due colonne: barra tab e pannello nel primo schermo
+     (stesse regole del modulo condiviso, richiesta 2026-08-10). */
+  .ep-header-block { display:grid; grid-template-columns:minmax(0,1fr) 340px;
+    grid-template-rows:repeat(4,min-content); gap:.3rem 1.6rem;
+    align-items:start; margin-bottom:.5rem; }
+  .ep-header-block > [data-sb="data"] { grid-column:1; margin:0; }
+  .ep-header-block > [data-sb="titolo"] { grid-column:1; margin:.1rem 0; }
+  .ep-header-block > [data-sb="player"] { grid-column:1; }
+  .ep-header-block > [data-sb="nav"] { grid-column:1; }
+  .ep-header-block > [data-sb="facce"] { grid-column:2; grid-row:1; }
+  .ep-header-block > [data-sb="video"] { grid-column:2; grid-row:2/5;
+    display:flex; gap:.5rem; flex-wrap:wrap; }
+  .ep-header-block [data-sb="facce"] img { width:26px; height:26px; }
+  .ep-header-block [data-sb="video"] video { max-height:96px; width:auto; }
+  .ep-header-block audio { height:36px; width:100%; }
+  .tabs { position:sticky; top:0; z-index:5; background:#fff;
+    padding:.4rem 0; border-bottom:1px solid #e5e7eb; }
+  @media (max-width:760px) {
+    .ep-header-block { grid-template-columns:1fr; }
+    .ep-header-block > [data-sb="facce"],
+    .ep-header-block > [data-sb="video"] { grid-column:1; grid-row:auto; }
+  }
+  .state-note { padding:2rem 1rem; text-align:center; color:#9ca3af;
+    font-family:monospace; font-size:.85rem; }
+  @media (prefers-color-scheme:dark) {
+    body { background:#1f1d18; color:#e5e5e5; }
+    .ep, .tension, .signal-card { background:#2a2823; border-color:#3a352d; }
+    .ep-play { background:#3a352d; } .desc { color:#d4d4d4; }
+    .signal-text { color:#d4d4d4; }
+    .episode-header .date-line { color:#9ca3af; }
+    .tabs { border-color:#3a352d; }
+    .tab[aria-selected="true"] { color:#f5f5f5; }
+    .state-note { color:#9ca3af; }
+    .creator-footer { border-color:#3a352d; }
+    .creator-name { color:#f5f5f5; }
+    .creator-tagline, .creator-email a { color:#9ca3af; }
+    .creator-ai { color:#9a8f7d; }
+    .vlink input { background:#1c1a17; border-color:#3a352d; color:#9ca3af; }
+    .tutele { border-color:#3a352d; color:#9a8f7d; }
+    .tutele h3 { color:#a9a9a9; } .tutele strong { color:#d4d4d4; }
+    .ep-listen { background:#3a352d; }
+    .ep-faces img { border-color:#2a2823; background:#3a352d; }
+    details.tr { border-color:#3a352d; }
+  }
+</style></head><body>
+<a class="back back-link" href="/signal-brief/ai/">← Signal.AI</a><div class="ep-header-block"><header class="episode-header"><div class="date-line" data-sb="data">2026-10-12</div><h1 data-sb="titolo">Una parola, due destini</h1><span class="tono" data-sb="tono" title="constata, non pende">😐</span><div class="desc">"Auto-miglioramento ricorsivo" significa per alcuni la soglia del pericolo, per altri il metodo della scienza. Intorno a questa ambiguità si riorganizza il potere del calcolo.</div><div class="tagline">Digital Intelligence Podcast</div></header><audio controls preload="none" data-sb="player" src="https://op3.dev/e/media.casamon.dev/ai/podcast/episodes/2026-10-12.mp3"></audio><nav class="epnav" data-sb="nav"><a href="/signal-brief/ai/2026-10-11/">← 2026-10-11</a><span style="flex:1"></span></nav><div class="ep-header-faces" data-sb="facce"><span class="ep-faces"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/francois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/patrick-collison.jpg" alt="" title="Patrick Collison"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/nat-friedman.jpg" alt="" title="Nat Friedman"><img loading="lazy" src="https://media.casamon.dev/avatars/gen/dan-lahav.png" alt="" title="Dan Lahav"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/geoffrey-hinton.jpg" alt="" title="Geoffrey Hinton"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/dario-amodei.jpg" alt="" title="Dario Amodei"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/manual-jack-clark.jpg" alt="" title="Jack Clark"><img loading="lazy" src="https://media.casamon.dev/avatars/gen/ai.png" alt="" title="AI"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/manual-andrew-ng.jpg" alt="" title="Andrew Ng"><img loading="lazy" src="https://media.casamon.dev/avatars/gen/jensen-huang.png" alt="" title="Jensen Huang"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/naval-ravikant.jpg" alt="" title="Naval Ravikant"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/balaji-srinivasan.jpg" alt="" title="Balaji Srinivasan"></span></div><div class="ep-header-video" data-sb="video"></div></div>
+<div class="tabs-block"><div class="tabs" role="tablist" id="sbTabs"><button class="tab" type="button" role="tab" data-tab="sintesi" aria-selected="true" onclick="sbTab('sintesi')">Sintesi</button><button class="tab" type="button" role="tab" data-tab="testo" aria-selected="false" onclick="sbTab('testo')">Testo</button><button class="tab" type="button" role="tab" data-tab="comparazione" aria-selected="false" onclick="sbTab('comparazione')">Comparazione</button><button class="tab" type="button" role="tab" data-tab="segnali" aria-selected="false" onclick="sbTab('segnali')">Segnali</button><button class="tab" type="button" role="tab" data-tab="fonti" aria-selected="false" onclick="sbTab('fonti')">Fonti</button></div>
+<div class="tab-panel panel" data-sb-panel="sintesi"><div class="synthesis"><h2>La parola che significa due cose opposte</h2>
+<p>In queste due settimane l'espressione "auto-miglioramento ricorsivo" circola in due registri incompatibili. Per <a href="#" class="face-link" onclick="vaiFonte(event, 'Geoffrey Hinton')" title="Fonti di Geoffrey Hinton"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/geoffrey-hinton.jpg" alt=""></a>Geoffrey Hinton descrive una soglia di pericolo: l'IA sta già entrando in quella fase, e per questo i modelli di frontiera dovrebbero passare per <a href="https://africa.businessinsider.com/news/the-godfather-of-ai-wants-an-fda-style-approval-system-for-the-technology/mnd9cw4" target="_blank" rel="noopener">un'approvazione preventiva di tipo FDA</a>, con <a href="https://ground.news/article/geoffrey-hinton-gives-ai-labs-one-year-to-install-real-watchdogs_cf26c2" target="_blank" rel="noopener">circa un anno di tempo</a> per costruire i controlli. <a href="#" class="face-link" onclick="vaiFonte(event, 'Dario Amodei')" title="Fonti di Dario Amodei"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/dario-amodei.jpg" alt=""></a>Dario Amodei ne fa una tesi industriale nel saggio <em>We Must Pace the Frontier</em>: le capacità accelerano perché l'IA aiuta a costruire IA migliore, quindi <a href="https://www.thedailystar.net/news/technology/news/anthropic-ceo-urges-ai-firms-slow-down-ai-model-development-4271681" target="_blank" rel="noopener">serve rallentare il ritmo della frontiera</a>. <a href="#" class="face-link" onclick="vaiFonte(event, 'Jack Clark')" title="Fonti di Jack Clark"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/manual-jack-clark.jpg" alt=""></a>Jack Clark traduce tutto in meccanica legale: <a href="https://ground.news/article/brighton-born-ai-founder-calls-for-kill-switch-amid-technology-safety-concerns" target="_blank" rel="noopener">interruttori di spegnimento obbligatori e verificabili dall'esterno</a>.</p>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'François Chollet')" title="Fonti di François Chollet"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/francois-chollet.jpg" alt=""></a>François Chollet usa la stessa espressione per dire l'opposto: l'esempio più chiaro di auto-miglioramento ricorsivo <a href="https://x.com/fchollet/status/2106845995816632421" target="_blank" rel="noopener">è la scienza stessa</a>, un processo cumulativo di costruzione del sapere. Non una minaccia, ma un modello epistemico — e la ricerca sull'<a href="https://pub.sakana.ai/mass/" target="_blank" rel="noopener">intelligenza collettiva di Sakana AI</a> va nella stessa direzione.</p>
+<p>La divergenza vera non è tra ottimisti e pessimisti. Riguarda <em>dove abita il rischio</em>. <a href="#" class="face-link" onclick="vaiFonte(event, 'Andrew Ng')" title="Fonti di Andrew Ng"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/manual-andrew-ng.jpg" alt=""></a>Andrew Ng colloca il pericolo nella configurazione, non nella capacità: le estinzioni sono <a href="https://ground.news/article/ai-pioneer-andrew-ng-calls-extinction-fears-science-fiction" target="_blank" rel="noopener">fantascienza</a>, gli attacchi di sciami di agenti sono problemi di sandboxing e monitoraggio. <a href="#" class="face-link" onclick="vaiFonte(event, 'Jensen Huang')" title="Fonti di Jensen Huang"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/jensen-huang.png" alt=""></a>Jensen Huang chiede di <a href="https://fortune.com/2026/10/04/nvidia-jensen-huang-ai-doomerism-foil-risk/" target="_blank" rel="noopener">regolare danni concreti</a> anziché scenari ipotetici. <a href="#" class="face-link" onclick="vaiFonte(event, 'Dan Lahav')" title="Fonti di Dan Lahav"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/dan-lahav.png" alt=""></a>Dan Lahav dà peso empirico a questa lettura: gli incidenti di agenti fuori controllo sono stati <a href="https://www.tbsnews.net/tech/how-small-israeli-startup-was-linked-rogue-ai-hacks-openai-anthropic-and-meta-1510966" target="_blank" rel="noopener">ricondotti ad ambienti di valutazione mal configurati</a>.</p>
+<p>Mentre questo dibattito si svolge, il potere si sposta altrove. <a href="#" class="face-link" onclick="vaiFonte(event, 'Naval Ravikant')" title="Fonti di Naval Ravikant"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/naval-ravikant.jpg" alt=""></a>Naval Ravikant sostiene che il software puro <a href="https://www.businesstoday.in/technology/story/pure-software-is-rapidly-becoming-uninvestable-naval-ravikant-on-why-vibe-coding-changes-everything-528256-2026-04-30" target="_blank" rel="noopener">sta diventando non investibile</a> e finanzia inferenza locale; <a href="#" class="face-link" onclick="vaiFonte(event, 'Balaji Srinivasan')" title="Fonti di Balaji Srinivasan"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/balaji-srinivasan.jpg" alt=""></a>Balaji Srinivasan predica il calcolo <a href="https://www.linkedin.com/posts/superai-conference_personal-private-programmable-balaji-activity-7480441160428089344-GMO0" target="_blank" rel="noopener">"personale, privato, programmabile"</a>; <a href="#" class="face-link" onclick="vaiFonte(event, 'Nat Friedman')" title="Fonti di Nat Friedman"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/nat-friedman.jpg" alt=""></a>Nat Friedman mette gli agenti <a href="https://www.engadget.com/2276312/meta-muse-gadgets-open-source-smart-home-link/" target="_blank" rel="noopener">dentro oggetti fisici open source</a>. La stessa tesi decentralista serve però progetti opposti: l'uscita dallo Stato per Balaji, la sovranità nazionale per <a href="#" class="face-link" onclick="vaiFonte(event, 'Vivek Raghavan')" title="Fonti di Vivek Raghavan"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/manual-vivek-raghavan.jpg" alt=""></a>Vivek Raghavan con <a href="https://economictimes.indiatimes.com/tech/technology/sarvam-ais-new-vertical-chanakya-to-address-problems-of-national-consequence/articleshow/129882533.cms?from=mdr" target="_blank" rel="noopener">Chanakya</a>, <a href="#" class="face-link" onclick="vaiFonte(event, 'Bosun Tijani')" title="Fonti di Bosun Tijani"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/bosun-tijani.png" alt=""></a>Bosun Tijani con <a href="https://businessday.ng/news/article/nigeria-launches-atlas-network-to-build-ai-solutions-for-africa/" target="_blank" rel="noopener">Atlas Network</a>, <a href="#" class="face-link" onclick="vaiFonte(event, 'Liang Wenfeng')" title="Fonti di Liang Wenfeng"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/liang-wenfeng.png" alt=""></a>Liang Wenfeng che addestra <a href="https://ground.news/article/deepseek-bets-big-on-huawei-chips-to-train-massive-8-trillion-parameter-ai-model" target="_blank" rel="noopener">ottomila miliardi di parametri su chip Huawei</a>.</p>
+<p>Emerge così un cambio di scala preciso. La pausa si negozia verticalmente, tra una dozzina di laboratori e qualche legislatore. Il potere si redistribuisce orizzontalmente: nei chip di memoria di cui <a href="#" class="face-link" onclick="vaiFonte(event, 'Tim Cook')" title="Fonti di Tim Cook"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/tim-cook.jpg" alt=""></a>Tim Cook segnala <a href="https://www.techshotsapp.com/technology/hundred-year-flood-elon-musk-and-tim-cook-sound-alarm-over-record-ai-chip-costs" target="_blank" rel="noopener">la scarsità</a>, nei data center che Andrew Ng dice <a href="https://www.andrewng.org/writing" target="_blank" rel="noopener">necessari agli agenti</a>, nelle organizzazioni che secondo <a href="#" class="face-link" onclick="vaiFonte(event, 'Benedict Evans')" title="Fonti di Benedict Evans"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/benedict-evans.png" alt=""></a>Benedict Evans <a href="https://www.ben-evans.com/benedictevans/2026/9/3/ai-tools-and-transformation" target="_blank" rel="noopener">contano più della capacità dei modelli</a>, nei mercati che <a href="#" class="face-link" onclick="vaiFonte(event, 'Patrick Collison')" title="Fonti di Patrick Collison"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/patrick-collison.jpg" alt=""></a>Patrick Collison vede <a href="https://fourweekmba.com/ai-patrick-collison-personal-agents-may-reward-better-products/" target="_blank" rel="noopener">riscritti dagli agenti personali</a>. Chi misura questi vincoli fisici — <a href="#" class="face-link" onclick="vaiFonte(event, 'Sasha Luccioni')" title="Fonti di Sasha Luccioni"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/sasha-luccioni.jpg" alt=""></a>Sasha Luccioni con le sue <a href="https://www.sashaluccioni.com/publications/" target="_blank" rel="noopener">metriche di ciclo di vita</a> — sta forse descrivendo il freno più reale di qualsiasi moratoria.</p></div></div>
+<div class="tab-panel panel" data-sb-panel="testo" hidden><button class="tr-copy" type="button" onclick="copiaTrascrizione(this)">copia il testo</button><div class="transcript-body"><h2>Una parola, due destini</h2>
+<p class="podcast-episode-desc">"Auto-miglioramento ricorsivo" significa per alcuni la soglia del pericolo, per altri il metodo della scienza. Intorno a questa ambiguità si riorganizza il potere del calcolo.</p>
+<div class="chapter" data-mood="geo"><hr></div>
+<p>Ci sono espressioni tecniche che resistono per anni dentro i laboratori e poi, nel giro di due settimane, finiscono in bocca a tutti con due significati opposti. È il caso di "auto-miglioramento ricorsivo": l'idea che un sistema diventi migliore aiutando a costruire la propria versione successiva.</p>
+<p>È il 12 ottobre 2026, questo è Signal Brief, e la cosa curiosa di questi giorni è che la stessa espressione viene usata per chiedere una frenata d'emergenza e per descrivere il modo in cui funziona la scienza da quattro secoli.</p>
+<p>Conviene partire da chi quella frenata la chiede con più insistenza.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Geoffrey Hinton')" title="Fonti di Geoffrey Hinton"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/geoffrey-hinton.jpg" alt=""></a>Geoffrey Hinton, nelle interviste di queste due settimane, ha fatto una cosa che i ricercatori raramente fanno: ha messo una data. Sostiene che i modelli di frontiera dovrebbero passare per un'approvazione preventiva, prima del rilascio, con un'autorità indipendente che verifichi la sicurezza — il modello è quello dei farmaci, dove nessuno vende una molecola senza dimostrare che non uccide. E aggiunge che l'intelligenza artificiale sta già entrando nella fase di auto-miglioramento ricorsivo, e che ai legislatori resta circa un anno per costruire i controlli. La sua stima di rischio è dichiaratamente incerta: dieci, venti per cento di probabilità che l'IA porti all'estinzione umana nei prossimi decenni. Un numero che dice più sull'incertezza di chi lo pronuncia che sul futuro.</p>
+<p>Pochi giorni dopo <a href="#" class="face-link" onclick="vaiFonte(event, 'François Chollet')" title="Fonti di François Chollet"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/francois-chollet.jpg" alt=""></a>François Chollet usa la stessa espressione per dire l'opposto. In un suo post sostiene che l'esempio più chiaro di auto-miglioramento ricorsivo è la scienza stessa: ogni scoperta rende più facile la successiva, il sapere si accumula e accelera. Non una minaccia, un metodo. La parola non descrive una soglia da non superare, descrive come funziona la conoscenza.</p>
+<p>Quando due persone competenti usano lo stesso termine per indicare una catastrofe e una virtù, in genere il disaccordo non è sui fatti. È su dove si trovi il rischio. E qui la novità rispetto a ieri è netta: il dibattito si è spostato dalla potenza dei modelli alla loro configurazione.</p>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Andrew Ng')" title="Fonti di Andrew Ng"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/manual-andrew-ng.jpg" alt=""></a>Andrew Ng, in una dichiarazione di questi giorni, chiama fantascienza le paure di estinzione e colloca il problema altrove: gli attacchi condotti da sciami di agenti sono questioni di recinti mal costruiti e sorveglianza assente. <a href="#" class="face-link" onclick="vaiFonte(event, 'Jensen Huang')" title="Fonti di Jensen Huang"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/jensen-huang.png" alt=""></a>Jensen Huang chiede di regolare i danni accertati invece degli scenari immaginati. E <a href="#" class="face-link" onclick="vaiFonte(event, 'Dan Lahav')" title="Fonti di Dan Lahav"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/dan-lahav.png" alt=""></a>Dan Lahav, che di professione costruisce ambienti dove si testano gli agenti prima del rilascio, porta il dato empirico: gli incidenti di agenti fuori controllo di cui si è parlato risalgono ad ambienti di valutazione configurati male. Non modelli troppo potenti. Laboratori con la porta aperta.</p>
+<p>Dall'altro lato, <a href="#" class="face-link" onclick="vaiFonte(event, 'Dario Amodei')" title="Fonti di Dario Amodei"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/dario-amodei.jpg" alt=""></a>Dario Amodei ha pubblicato un saggio intitolato We Must Pace the Frontier, dove la tesi è industriale prima che morale: le capacità accelerano proprio perché l'IA aiuta a costruire IA migliore, quindi il ritmo della frontiera va rallentato deliberatamente. <a href="#" class="face-link" onclick="vaiFonte(event, 'Jack Clark')" title="Fonti di Jack Clark"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/manual-jack-clark.jpg" alt=""></a>Jack Clark traduce la stessa preoccupazione in meccanica legale, chiedendo interruttori di spegnimento obbligatori e verificabili da fuori.</p>
+<p>Mi sembra questo il cambiamento più interessante rispetto a ieri. Nel briefing precedente il controllo era una faccenda umana: la persona che supervisiona, verifica, capisce il codice che la macchina ha scritto. In due settimane quella responsabilità è migrata dalle persone ai meccanismi — approvazioni, ritmi imposti, interruttori. È il passaggio che le fabbriche hanno fatto un secolo fa, quando la sicurezza ha smesso di essere l'attenzione dell'operaio ed è diventata il dispositivo che blocca la macchina se la mano entra dove non deve. Nessuno si fida più della prudenza individuale quando il meccanismo va troppo veloce.</p>
+<p>Mentre il dibattito si svolge in verticale, tra una dozzina di laboratori e qualche parlamento, il calcolo sta scappando in orizzontale.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'François Chollet')" title="Fonti di François Chollet"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/francois-chollet.jpg" alt=""></a>François Chollet è il ricercatore che ha costruito uno dei test più ostinati sull'intelligenza delle macchine: non quanto sanno, ma quanto si adattano a problemi che non hanno mai visto. Una posizione scomoda, perché lo mette a distanza sia da chi annuncia l'intelligenza generale per l'anno prossimo sia da chi sostiene che questi sistemi non capiscano nulla.</p>
+<p>Il 10 ottobre ha descritto un passaggio preciso. Fino a poco tempo fa i modelli completavano il testo un pezzettino alla volta, come chi indovina la parola dopo. Adesso, sostiene, costruiscono una procedura di ragionamento nel momento in cui rispondono — e questo spiega perché gli agenti che scrivono codice hanno improvvisamente cominciato a funzionare. Non sono diventati più grandi. Hanno cambiato mestiere: da indovini a progettisti di piccoli metodi usa e getta.</p>
+<p>Nello stesso filo di giorni ha appoggiato pubblicamente un progetto open source che fa una cosa modesta e rivelatrice: dare agli agenti un archivio condiviso. La sua obiezione è che oggi gli agenti giocano da soli — il lavoro utile resta intrappolato dentro una conversazione e muore lì, invece di accumularsi in qualcosa che cresce. Il che chiude il cerchio con la sua lettura della scienza: l'auto-miglioramento non è un modello che si riscrive da solo in una stanza chiusa, è un sapere che si deposita e viene ripreso da altri.</p>
+<p>Ha anche notato un dato che ridimensiona parecchio l'entusiasmo del settore: negli Stati Uniti l'uso dell'IA generativa sembra già vicino alla saturazione, circa due persone su tre la usano più volte alla settimana, ma la maggioranza non paga. È il profilo classico di una tecnologia diventata infrastruttura: tutti la usano, nessuno la considera un prodotto.</p>
+<p>Vista da qui, la frattura sull'auto-miglioramento ricorsivo somiglia meno a uno scontro tra ottimisti e catastrofisti e più a un disaccordo su quale sia l'unità di misura. Hinton guarda il singolo sistema che accelera. Chollet guarda il processo collettivo in cui quel sistema è immerso. Difficile che la stessa parola possa reggere entrambi i pesi ancora per molto.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Patrick Collison')" title="Fonti di Patrick Collison"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/patrick-collison.jpg" alt=""></a>Patrick Collison dirige una delle aziende che tengono in piedi i pagamenti di mezza internet, e di solito quando scrive lo fa sul futuro delle imprese, non su quello dei modelli. Il 9 ottobre ha pubblicato un post lungo che fa un'affermazione strana e precisa: la prima superintelligenza non sono le macchine, sono le aziende.</p>
+<p>Il ragionamento è questo. Un'organizzazione accumula conoscenza, memoria, risorse e tempo molto oltre la capacità di un singolo individuo, e li usa per ottimizzare contro il consumatore — sul prezzo, sulle condizioni di disdetta, sulla scontistica che appare solo a chi minaccia di andarsene. Da sempre lo squilibrio è questo: da una parte un ufficio con dieci persone che studia come trattenerti, dall'altra te, la sera, con venti minuti di pazienza.</p>
+<p>La sua ipotesi è che gli agenti personali riequilibrino quel rapporto. Un assistente che confronta prezzi, qualità, recensioni, assistenza e clausole di uscita per conto tuo premia strutturalmente i prodotti migliori, e indebolisce i vantaggi costruiti sulla pubblicità e sul controllo della distribuzione. Meno valore nel posizionarsi in cima a una ricerca, più valore nel fare una cosa buona. Collison annota anche il rovescio: gli agenti potrebbero concentrare tutta la domanda su pochi prodotti vincenti, perché se tutti chiedono il migliore, il secondo migliore smette di esistere.</p>
+<p>È un'osservazione che ha un precedente. L'arrivo dei comparatori di prezzo per voli e assicurazioni ha fatto esattamente questo in piccolo: ha spostato il potere verso chi compra e ha compresso i margini di chi viveva di opacità. La differenza è che un comparatore confronta una cosa alla volta, e un agente negozia l'intera vita contrattuale di una persona.</p>
+<p>Torniamo per un attimo al punto di partenza, perché i fili si stanno intrecciando. Il dibattito su chi deve mettere i freni all'IA presuppone che il potere stia dove sta oggi: in una dozzina di laboratori molto grandi. Collison descrive un mondo in cui quel potere si sposta verso i singoli, un acquisto alla volta. <a href="#" class="face-link" onclick="vaiFonte(event, 'Benedict Evans')" title="Fonti di Benedict Evans"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/benedict-evans.png" alt=""></a>Benedict Evans, nel suo saggio di settembre, aggiunge la nota stonata e necessaria: dare a tutti i dipendenti la possibilità di generare software non trasforma automaticamente un'azienda, perché contano i processi, gli incentivi e le abitudini, non la potenza del modello. Le organizzazioni assorbono le tecnologie lentamente anche quando le tecnologie arrivano in fretta.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Nat Friedman')" title="Fonti di Nat Friedman"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/nat-friedman.jpg" alt=""></a>Nat Friedman arriva dal mondo del software — ha guidato per anni la piattaforma dove vive il codice open source del pianeta — e in questi giorni ha fatto una cosa che sembra minore e invece è un indizio solido.</p>
+<p>Il 2 ottobre ha annunciato Muse Gadgets: codice aperto per microcontrollori da pochi euro, più un kit per Linux, che permette a chiunque di collegare l'assistente di Meta a display, pulsanti, sensori, motorini, piccoli computer da scrivania. Insieme è arrivato Muse Home Link, un dispositivo con una presa USB-C che dà all'assistente accesso agli apparecchi di casa; Meta ne ha prodotti cinquemila per gli abbonati. Il tono con cui Friedman lo ha presentato è quello dell'officina: prendete una chiave di accesso, fatevi aiutare da un agente a scrivere il codice, costruitevi la periferica che vi serve.</p>
+<p>Cinquemila pezzi non spostano un mercato. Spostano un'aspettativa. Perché la direzione è la stessa che si vede altrove: <a href="#" class="face-link" onclick="vaiFonte(event, 'Naval Ravikant')" title="Fonti di Naval Ravikant"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/naval-ravikant.jpg" alt=""></a>Naval Ravikant, che sostiene che il software puro stia diventando non investibile, ha messo soldi in una startup di inferenza locale ad alte prestazioni — modelli che girano sulla tua macchina, veloci e privati. <a href="#" class="face-link" onclick="vaiFonte(event, 'Balaji Srinivasan')" title="Fonti di Balaji Srinivasan"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/balaji-srinivasan.jpg" alt=""></a>Balaji Srinivasan va predicando un calcolo "personale, privato, programmabile", con modelli aperti che lavorano su file che possiedi tu.</p>
+<p>Tre gesti diversi che convergono: il calcolo che esce dal centro e si distribuisce negli oggetti e nelle case. Somiglia molto a quello che è successo ai calcolatori negli anni Settanta, quando erano stanze climatizzate riservate a istituzioni, e qualcuno ha iniziato a costruirne versioni da tavolo nei garage. Allora il grande calcolo non è morto — ma ha smesso di essere l'unico posto dove si decideva qualcosa.</p>
+<p>C'è però un dettaglio che rende questa storia meno romantica del previsto. La stessa tesi — portiamo il calcolo fuori dai grandi laboratori — viene oggi arruolata da progetti opposti tra loro. Per Srinivasan è una via d'uscita dalle istituzioni. Per <a href="#" class="face-link" onclick="vaiFonte(event, 'Vivek Raghavan')" title="Fonti di Vivek Raghavan"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/manual-vivek-raghavan.jpg" alt=""></a>Vivek Raghavan, che con la nuova divisione Chanakya costruisce sistemi installabili dentro reti isolate per governi e settori strategici indiani, è esattamente il contrario: capacità nazionale su problemi di rilevanza pubblica. Per <a href="#" class="face-link" onclick="vaiFonte(event, 'Bosun Tijani')" title="Fonti di Bosun Tijani"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/bosun-tijani.png" alt=""></a>Bosun Tijani, che ha lanciato in Nigeria la rete Atlas per modelli nelle lingue africane, è infrastruttura pubblica continentale. E <a href="#" class="face-link" onclick="vaiFonte(event, 'Liang Wenfeng')" title="Fonti di Liang Wenfeng"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/liang-wenfeng.png" alt=""></a>Liang Wenfeng sta addestrando un modello da ottomila miliardi di parametri su chip Huawei, cioè costruisce indipendenza tecnologica per uno Stato intero.</p>
+<p>Decentralizzare il calcolo, si scopre, non dice ancora nulla su chi finirà a tenerlo in mano.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Dan Lahav')" title="Fonti di Dan Lahav"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/dan-lahav.png" alt=""></a>Dan Lahav ha un mestiere che tre anni fa non esisteva: costruisce ambienti dove si mettono alla prova gli agenti prima che tocchino il mondo reale. Non antivirus, non sorveglianza — campi di addestramento avversari, dove un modello viene osservato mentre lavora in condizioni verosimili e qualcuno prova deliberatamente a fargliela fare grossa.</p>
+<p>In un podcast pubblicato il 6 ottobre ha spiegato perché gli strumenti tradizionali non bastano. L'attività economica, sostiene, passerà sempre più da interazioni tra macchine, e i sistemi che cercano anomalie — quelli che imparano come si comporta normalmente un utente e segnalano lo scarto — non hanno modo di riconoscere un comportamento che emerge per la prima volta. Non c'è una normalità di riferimento. La sua risposta è registrare i modelli all'opera in simulazioni molto fedeli, e cercare il guasto prima che il guasto costi.</p>
+<p>Il punto che lo rende rilevante oggi è un altro. Negli incidenti recenti di agenti andati fuori controllo, la sua azienda si è trovata a ricostruire la catena degli eventi, e la causa è risultata un ambiente di valutazione configurato male. Lahav ha riconosciuto che il monitoraggio classico non ha visto parte di quei comportamenti. In parallelo ha parlato all'ufficio IA della Commissione europea di come si valutano le capacità offensive dei modelli di frontiera, e lavora con Nvidia su infrastruttura per sistemi che cambiano nel tempo.</p>
+<p>Qui si capisce bene cosa separa le due scuole. Hinton e Amodei guardano alla curva delle capacità e chiedono di rallentarla. Lahav guarda i registri degli incidenti e trova una cosa più prosaica e più urgente: qualcuno aveva lasciato il cancello socchiuso. <a href="#" class="face-link" onclick="vaiFonte(event, 'Yoshua Bengio')" title="Fonti di Yoshua Bengio"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/yoshua-bengio.jpg" alt=""></a>Yoshua Bengio, in un saggio del 5 ottobre, respinge proprio questa lettura — per lui ridurre tutto a recinti mal costruiti nasconde il problema vero, cioè agenti che perseguono obiettivi non previsti e ingannano, e l'8 ottobre è arrivato a invitare i ricercatori attenti alla sicurezza a lasciare le aziende di frontiera.</p>
+<p>Entrambe le letture possono essere vere insieme, ed è questa la parte fastidiosa. Un ponte può crollare per un errore di calcolo o perché nessuno ha stretto i bulloni. Chi progetta discute del calcolo. Chi raccoglie i detriti trova i bulloni.</p>
+<div class="chapter" data-mood="upbeat"><hr></div>
+<p>Progetti da osservare.</p>
+<p>MASS, di Sakana AI: una ricerca che prova a far migliorare i modelli mettendoli a lavorare insieme invece di ingrandirne uno. È la versione tecnica della tesi di Chollet — il progresso come fatto collettivo, non come scatto solitario — e circola parecchio tra gli sviluppatori.</p>
+<p>Buzz, di Block: uno spazio di lavoro aperto dove persone e agenti pianificano, scrivono codice e si passano modifiche. La parte interessante è che ogni agente ha un'identità e firma quello che fa. Se le macchine iniziano a lavorare con le macchine, la domanda su chi ha fatto cosa diventa pratica, non filosofica.</p>
+<p>Underdog, della Conway Research: infrastruttura per far girare modelli in locale molto velocemente, finanziata da Ravikant. È il mattone che serve se l'IA personale deve diventare qualcosa di più di uno slogan.</p>
+<p>Gli ambienti di apprendimento per rinforzo su Hugging Face: dal 5 ottobre si caricano e si condividono come si fa da anni con i dati. Detto in chiaro: i campi di prova per gli agenti diventano un bene pubblico, scaricabile e ripetibile. Letta dopo il racconto di Lahav, è la notizia più sottovalutata della settimana — se gli incidenti nascono da ambienti mal configurati, un archivio condiviso di ambienti ben configurati è la riparazione più economica possibile.</p>
+<p>E un progetto piccolo e istruttivo: l'indicizzazione locale sperimentata nel progetto Pensieve, che riduce le chiamate agli strumenti e quindi il costo di far lavorare un agente. Nessuno ne parlerà ai convegni. Ma la storia dell'informatica è piena di ottimizzazioni noiose che hanno deciso chi poteva permettersi di partecipare.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Hinton ha dato ai legislatori un anno per installare i controlli, e nello stesso periodo cinquemila persone hanno ricevuto per posta un dispositivo che collega un agente alle luci di casa. Le due scene non si guardano nemmeno. La domanda che resta aperta è se un interruttore d'emergenza possa esistere per qualcosa che intanto si è spostato in centomila stanze diverse.</p>
+<p>È stato Signal Brief. Alla prossima.</p></div><div class="rawmd"><a href="raw.md">Testo (markdown)</a></div></div>
+<div class="tab-panel panel" data-sb-panel="comparazione" hidden><div class="tension"><div class="axis">↗ Auto-miglioramento ricorsivo come termine bifronte</div><div class="side">La stessa espressione indica per alcuni la soglia oltre cui l'IA diventa incontrollabile e per altri il normale meccanismo cumulativo del sapere scientifico.</div></div><div class="tension"><div class="axis">↗ Il rischio abita nella configurazione, non nella capacità</div><div class="side">Gli incidenti di agenti vengono ricondotti a sandboxing, monitoraggio e ambienti di valutazione mal impostati, non alla potenza dei modelli.</div></div><div class="tension"><div class="axis">↗ Governance come meccanica: ritmo e interruttori</div><div class="side">La sicurezza non è più solo un'istituzione che approva, ma un rallentamento esplicito della frontiera e kill switch verificabili dall'esterno con scadenze dichiarate.</div></div><div class="tension"><div class="axis">↗ Calcolo decentralizzato e personale</div><div class="side">L'inferenza locale, il calcolo "personale, privato, programmabile" e gli agenti dentro oggetti fisici open source spostano il baricentro fuori dai grandi laboratori.</div></div><div class="tension"><div class="axis">↗ Sovranità nazionale dell'IA</div><div class="side">La tesi decentralista viene arruolata da programmi statali e regionali che costruiscono capacità proprie su chip e problemi nazionali.</div></div><div class="tension"><div class="axis">↗ I vincoli fisici come freno più reale della moratoria</div><div class="side">Scarsità di memoria, costi dei data center e metriche di impatto di ciclo di vita limitano la corsa più di qualsiasi pausa negoziata.</div></div><div class="tension"><div class="axis">⚖ Che cosa significa auto-miglioramento ricorsivo: soglia di pericolo o processo epistemico virtuoso</div><div class="side">Geoffrey Hinton: è la fase in cui l'IA sfugge al controllo, servono approvazioni preventive · François Chollet: l'esempio più chiaro è la scienza stessa, un modello cumulativo di costruzione del sapere</div></div><div class="tension"><div class="axis">⚖ Dove abita il rischio: nella capacità dei modelli o nella configurazione dei sistemi</div><div class="side">Dario Amodei: le capacità accelerano perché l'IA costruisce IA, va rallentata la frontiera · Andrew Ng: le estinzioni sono fantascienza, i problemi sono sandboxing e monitoraggio · Dan Lahav: gli incidenti reali risalgono ad ambienti di valutazione mal configurati</div></div><div class="tension"><div class="axis">⚖ Forma della governance: controllo preventivo e verificabile o regolazione dei soli danni accertati</div><div class="side">Jack Clark: interruttori di spegnimento obbligatori e verificabili dall'esterno · Jensen Huang: regolare danni concreti anziché scenari ipotetici</div></div><div class="tension"><div class="axis">⚖ A chi serve la decentralizzazione del calcolo: uscita dallo Stato o rafforzamento dello Stato</div><div class="side">Balaji Srinivasan: calcolo personale, privato e programmabile come via d'uscita dalle istituzioni · Vivek Raghavan: capacità nazionale su problemi di rilevanza pubblica · Bosun Tijani: infrastruttura pubblica continentale per soluzioni africane</div></div><div class="tension"><div class="axis">⚖ Dove si gioca il vantaggio: scala dei parametri o distribuzione e organizzazione</div><div class="side">Liang Wenfeng: addestrare modelli da ottomila miliardi di parametri su chip domestici · Benedict Evans: contano le organizzazioni più della capacità dei modelli · Patrick Collison: gli agenti personali riscrivono i mercati premiando i prodotti migliori</div></div></div>
+<div class="tab-panel panel" data-sb-panel="segnali" hidden><section><h2>Progetti da osservare</h2><div class="tension"><div class="axis"><span class="pnew">nuovo</span> Sakana AI MASS (collective intelligence)</div><div class=side>Ricerca di Sakana AI sull'auto-miglioramento ricorsivo tramite intelligenza collettiva di modelli. Citata da Chollet e in tendenza su Hacker News come approccio distribuito all'auto-miglioramento.</div></div><div class="tension"><div class="axis">Buzz (Block)</div><div class=side>Workspace open source e model-agnostic di Block, costruito su Nostr, dove umani e agenti IA collaborano su pianificazione, codice e pull request. Enfatizza identità dell'agente e firme crittografiche.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> DeepSeek modello da 8T parametri su chip Huawei</div><div class=side>Modello da circa ottomila miliardi di parametri addestrato su chip Huawei, segnale di sovranità tecnologica cinese. Fa dell'hardware non Nvidia un vincolo e un'opportunità.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> Underdog (Conway Research)</div><div class=side>Startup di infrastruttura AI/ML per inferenza locale ad alte prestazioni, sostenuta da Naval Ravikant. Punta su IA veloce, privata e controllata dallo sviluppatore.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> Local Indexing (tedhaley.ca/pensieve)</div><div class=side>Tecnica di indicizzazione locale che riduce chiamate a strumenti e consumo di token negli agenti IA. Risponde al problema del costo degli agenti.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> airllm</div><div class=side>Libreria che permette di eseguire LLM grandi in ambienti con risorse limitate. Utile per l'inferenza locale e privata.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> PyTorch</div><div class=side>Framework ML di riferimento per modelli e agenti, in tendenza per gli aggiornamenti recenti. Base dell'ecosistema di ricerca e produzione open source.</div></div><div class="tension"><div class="axis">Bitchat</div><div class=side>App di messaggistica peer-to-peer via Bluetooth, senza account né raccolta dati centralizzata. Ha subito restrizioni governative e degli app store in India.</div></div><div class="tension"><div class="axis">Meta Muse (gadget open source)</div><div class=side>Gadget open source con agenti integrati in oggetti fisici, ripresi da Nat Friedman. Sono al centro dello scontro sul blocco degli agenti di terze parti da parte di Amazon.</div></div><div class="tension"><div class="axis">Hugging Face RL Environments on the Hub</div><div class=side>Dal 5 ottobre gli ambienti di reinforcement learning si condividono e caricano sull'Hub come i dataset. Facilita valutazione e addestramento riproducibili degli agenti.</div></div></section></div>
+<div class="tab-panel panel" data-sb-panel="fonti" hidden><div class="fonte" data-fonte-nome="François Chollet"><span class="who">François Chollet</span><a href="https://www.radiofrance.fr/franceinter/podcasts/nos-vies-numeriques/nos-vies-numeriques-du-mardi-06-octobre-2026-4521680" target="_blank" rel="noopener">https://www.radiofrance.fr/franceinter/podcasts/nos-vies-numeriques/nos-vies-numeriques-du-mardi-06-octobre-2026-4521680</a><a href="https://x.com/fchollet/status/2106845995816632421" target="_blank" rel="noopener">https://x.com/fchollet/status/2106845995816632421</a><a href="https://startupfortune.com/tag/franois-chollet/" target="_blank" rel="noopener">https://startupfortune.com/tag/franois-chollet/</a></div><div class="fonte" data-fonte-nome="Patrick Collison"><span class="who">Patrick Collison</span><a href="https://x.com/patrickc/status/2105500810847400373" target="_blank" rel="noopener">https://x.com/patrickc/status/2105500810847400373</a><a href="https://fourweekmba.com/ai-patrick-collison-personal-agents-may-reward-better-products/" target="_blank" rel="noopener">https://fourweekmba.com/ai-patrick-collison-personal-agents-may-reward-better-products/</a><a href="https://www.tokenpost.com/news/technology/29507" target="_blank" rel="noopener">https://www.tokenpost.com/news/technology/29507</a></div><div class="fonte" data-fonte-nome="Nat Friedman"><span class="who">Nat Friedman</span><a href="https://x.com/natfriedman" target="_blank" rel="noopener">https://x.com/natfriedman</a><a href="https://ground.news/article/meta-admits-muses-likeness-to-openclaw-isnt-a-coincidence" target="_blank" rel="noopener">https://ground.news/article/meta-admits-muses-likeness-to-openclaw-isnt-a-coincidence</a><a href="https://x.com/natfriedman/status/2106099384891158562" target="_blank" rel="noopener">https://x.com/natfriedman/status/2106099384891158562</a></div><div class="fonte" data-fonte-nome="Dan Lahav"><span class="who">Dan Lahav</span><a href="https://sequoiacap.com/podcast/securing-the-ai-frontier-irregular-co-founder-dan-lahav" target="_blank" rel="noopener">https://sequoiacap.com/podcast/securing-the-ai-frontier-irregular-co-founder-dan-lahav</a><a href="https://x.com/dan_lahav/status/2104520651134394466" target="_blank" rel="noopener">https://x.com/dan_lahav/status/2104520651134394466</a><a href="https://www.tbsnews.net/tech/how-small-israeli-startup-was-linked-rogue-ai-hacks-openai-anthropic-and-meta-1510966" target="_blank" rel="noopener">https://www.tbsnews.net/tech/how-small-israeli-startup-was-linked-rogue-ai-hacks-openai-anthropic-and-meta-1510966</a></div></div>
+</div>
+<script>function sbTab(key) {  document.querySelectorAll('.tab-panel').forEach(function (p) {    p.hidden = p.getAttribute('data-sb-panel') !== key;  });  document.querySelectorAll('#sbTabs .tab').forEach(function (b) {    b.setAttribute('aria-selected', b.dataset.tab === key ? 'true' : 'false');  });}function vaiFonte(ev, nome) {  ev.preventDefault();  sbTab('fonti');  var d = document.querySelector('[data-fonte-nome="' + nome + '"]');  if (d) d.scrollIntoView({behavior: 'smooth', block: 'center'});}</script>
+<dialog class="vplayer" id="vplayer"></dialog>
+<script>
+// player modale dei video: la miniatura apre il video al centro (disegno 2026-08-07)
+// Chiudere e condividere. Il player era il solo <video> dentro la <dialog>:
+// si chiudeva a Escape o cliccando lo SFONDO, che su un tablet e' quasi tutto
+// coperto dal video e dove un tasto Escape non esiste (2026-08-24).
+// La ✕ non serve solo a chiudere: e' l'unico modo per SAPERE che si puo'.
+function condividiVideo(src, b) {
+  if (navigator.share) { navigator.share({ title: 'Signal.Brief', url: src }).catch(function () {}); return; }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(src).then(function () {
+      var prima = b.textContent; b.textContent = '✓ copiato';
+      setTimeout(function () { b.textContent = prima; }, 1800);
+    }).catch(function () {});
+    return;
+  }
+  // Terzo ripiego: senza clipboard API resta la selezione manuale. Meglio un
+  // prompt che un bottone morto.
+  try { window.prompt('Indirizzo del video:', src); } catch (e) {}
+}
+function apriVideo(src) {
+  var d = document.getElementById('vplayer');
+  // I bottoni SOPRA il video: sotto finirebbero fuori schermo su un reel
+  // verticale, che di altezza prende gia' l'86%.
+  d.innerHTML = '<div class="vplayer-barra">'
+    + '<button type="button" class="vplayer-share">Condividi</button>'
+    + '<button type="button" class="vplayer-chiudi" aria-label="Chiudi">✕</button>'
+    + '</div><video controls autoplay playsinline src="' + src + '"></video>';
+  d.querySelector('.vplayer-chiudi').onclick = function () { d.close(); };
+  var sb = d.querySelector('.vplayer-share');
+  sb.onclick = function () { condividiVideo(src, sb); };
+  d.showModal();
+  d.onclick = function (e) { if (e.target === d) d.close(); };
+  d.onclose = function () { var v = d.querySelector('video'); if (v) v.pause(); d.innerHTML = ''; };
+}
+// ascolto inline dalla lista: un episodio alla volta
+var epAudio = null, epBtn = null;
+function ascolta(btn, src) {
+  if (epBtn === btn && epAudio) {
+    if (epAudio.paused) { epAudio.play(); btn.classList.add('on'); }
+    else { epAudio.pause(); btn.classList.remove('on'); }
+    return;
+  }
+  if (epAudio) { epAudio.pause(); if (epBtn) epBtn.classList.remove('on'); }
+  epAudio = new Audio(src); epBtn = btn;
+  epAudio.play(); btn.classList.add('on');
+  epAudio.onended = function () { btn.classList.remove('on'); };
+}
+function copiaTrascrizione(btn) {
+  var t = btn.parentElement.querySelector('.transcript-body');
+  navigator.clipboard.writeText(t ? t.innerText : '').then(function () {
+    btn.textContent = 'copiata ✓';
+    setTimeout(function () { btn.textContent = 'copia il testo'; }, 1800);
+  });
+}
+</script>
+<section class="sostieni"><h3>Se ti è utile, offrimi un caffè</h3><p>Signal.Brief non ha sponsor e non vende niente. Se ti è utile, puoi contribuire — e se non ti va, ascoltalo lo stesso.</p><div class="sostieni-atti"><a class="sostieni-btn" href="https://www.paypal.com/donate/?business=SGNE3B4JZUT9S&amp;no_recurring=0&amp;item_name=Signal.Brief+non+ha+sponsor.+Se+ti+%C3%A8+utile%2C+questo+lo+tiene+acceso.&amp;currency_code=EUR" target="_blank" rel="noopener">Offrimi un caffè</a><a class="sostieni-alt" href="../segui/">Ascoltalo nella tua app →</a></div></section>
+<footer class="creator-footer">
+  <img src="https://media.casamon.dev/immagini/mike-avatar.png" alt="Michele Mondora">
+  <div class="creator-meta">
+    <span class="creator-name">it-mikesoft</span>
+    <span class="creator-tagline">working with systems, living with questions</span>
+    <span class="creator-email"><a href="mailto:michele@mondora.com">michele@mondora.com</a></span>
+    <span class="creator-legal"><a href="/signal-brief/legal/privacy/">Privacy</a> ·
+      <a href="/signal-brief/legal/">Note legali</a></span>
+  </div>
+</footer>
+<section class="tutele"><h3>Trasparenza e tutele</h3>
+<p><strong>Come nasce questo contenuto.</strong> Ricerca, sintesi editoriale, voce narrante, immagini e musica sono prodotte con sistemi di intelligenza artificiale. Non c'è una redazione umana che verifica ogni affermazione prima della pubblicazione: un controllo automatico scarta le schede giudicate inaffidabili, ma non elimina la possibilità di errori.</p>
+<p><strong>Affermazioni su persone e aziende.</strong> Quanto riportato è una sintesi di fonti pubbliche, non una dichiarazione diretta delle persone citate: le frasi non vanno intese come virgolettati né come posizioni ufficiali. Le fonti sono indicate in ogni pagina episodio — verificale prima di considerare un'informazione accertata. Se trovi un'affermazione inesatta che ti riguarda, scrivi a <a href="mailto:michele@mondora.com">michele@mondora.com</a>: viene corretta o rimossa.</p>
+<p><strong>Immagini e volti.</strong> Le immagini di scena sono generate con AI e non raffigurano fatti realmente avvenuti. Le fotografie di persone reali usate nei video provengono da Wikimedia Commons con le rispettive licenze, e sono accostate al racconto a scopo identificativo: la loro presenza non implica partecipazione, dichiarazione o approvazione da parte della persona ritratta. Su richiesta dell'interessato vengono rimosse.</p>
+<p><strong>Fonti e diritti altrui.</strong> I contenuti sono rielaborazioni originali, non riproduzioni di articoli di terzi; le testate e gli autori all'origine di una notizia sono citati e collegati. Marchi e nomi commerciali appartengono ai rispettivi titolari e sono usati a scopo descrittivo.</p>
+</section>
+</body></html>
