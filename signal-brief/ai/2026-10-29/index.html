@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="it"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Una casa e un conto per gli agenti · Signal.AI</title>
+<meta property="og:title" content="Una casa e un conto per gli agenti · Signal.AI"><meta property="og:type" content="article"><meta property="og:description" content="In una settimana gli agenti software ottengono ambienti aziendali, carte di pagamento e modelli che girano su un portatile. E qualcuno chiede chi li certifica."><meta property="og:url" content="https://it-mikesoft.github.io/signal-brief/ai/2026-10-29/"><meta property="og:audio" content="https://op3.dev/e/media.casamon.dev/ai/podcast/episodes/2026-10-29.mp3"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "PodcastEpisode", "name": "Una casa e un conto per gli agenti", "datePublished": "2026-10-29", "url": "https://it-mikesoft.github.io/signal-brief/ai/2026-10-29/", "description": "In una settimana gli agenti software ottengono ambienti aziendali, carte di pagamento e modelli che girano su un portatile. E qualcuno chiede chi li certifica.", "inLanguage": "it", "associatedMedia": {"@type": "MediaObject", "contentUrl": "https://op3.dev/e/media.casamon.dev/ai/podcast/episodes/2026-10-29.mp3"}, "partOfSeries": {"@type": "PodcastSeries", "name": "Signal.AI", "url": "https://it-mikesoft.github.io/signal-brief/ai/"}}</script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:#faf8f4; color:#1a1a1a; padding:2rem 10px; max-width:none; margin:0 auto; line-height:1.6; }
+  a { color:#2563eb; }
+  .back { display:inline-block; margin-bottom:1.5rem; font-size:.8rem; font-family:monospace; text-decoration:none; }
+  .videos { display:flex; gap:1rem; flex-wrap:wrap; margin:1.2rem 0; }
+  .videos figure { margin:0; flex:1; min-width:260px; }
+  .videos .v2 { flex:0 1 240px; }
+  .videos video { width:100%; border-radius:12px; background:#000; }
+  .videos .v2 video { aspect-ratio:9/16; max-height:420px; }
+  .videos figcaption { font-size:.75rem; color:#888; text-align:center; margin-top:.3rem; }
+  .vlink { display:flex; gap:.3rem; margin-top:.35rem; }
+  .vlink input { flex:1; min-width:0; font-size:.68rem; font-family:monospace; padding:.3rem .4rem;
+    border:1px solid #e2ddd6; border-radius:6px; background:#fff; color:#6b7280; }
+  .vlink button { font-size:.68rem; padding:.3rem .6rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; }
+  .wk { font-size:1rem; margin:1.4rem 0 .4rem; }
+  details.wkacc { border:1px solid #e5e7eb33; border-radius:10px; margin:.6rem 0; padding:.1rem .8rem .4rem; }
+  details.wkacc summary { cursor:pointer; font-weight:600; padding:.5rem 0; font-size:.9rem; }
+  .back:hover { text-decoration:underline; }
+  header h1 { font-family:Georgia,serif; font-size:1.7rem; font-weight:600; }
+  header h1 span { color:#2563eb; }
+  .tagline { color:#6b7280; font-size:.85rem; margin-top:.3rem; margin-bottom:1.5rem; }
+  ul.eps { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
+  .subscribe { display:inline-flex; align-items:center; gap:.5rem; margin-bottom:1.2rem;
+    padding:.45rem .9rem; background:#2563eb; color:#fff; border-radius:20px;
+    text-decoration:none; font-size:.8rem; font-weight:600; }
+  .subscribe:hover { opacity:.85; color:#fff; }
+  .ep { display:flex; align-items:center; gap:.8rem; padding:.8rem 1rem; background:#fff;
+    border:1px solid #e2ddd6; border-radius:8px; text-decoration:none; color:inherit; transition:box-shadow .12s; }
+  .ep:hover { box-shadow:0 2px 8px rgba(0,0,0,.07); }
+  .ep-play { width:32px; height:32px; border-radius:50%; background:#f3f4f6; display:flex;
+    align-items:center; justify-content:center; font-size:12px; flex-shrink:0; }
+  .ep-title { font-size:.9rem; font-weight:500; }
+  .ep-meta { font-size:.72rem; color:#9ca3af; font-family:monospace; margin-top:.15rem; }
+  audio { width:100%; margin:1rem 0 1.5rem; }
+  .rawmd { margin:-.5rem 0 1.5rem; }
+  .rawmd a { font-size:.8rem; font-family:monospace; color:inherit; opacity:.65; }
+  .desc { color:#374151; font-size:.95rem; margin-bottom:1.5rem; }
+  section { margin:2rem 0; }
+  section h2 { font-family:Georgia,serif; font-size:1.1rem; border-bottom:1px solid #e2ddd6;
+    padding-bottom:.3rem; margin-bottom:.8rem; }
+  .synthesis p { margin:.7rem 0; }
+  .tension { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; font-size:.9rem; }
+  .tension .axis { font-weight:600; margin-bottom:.3rem; }
+  .tension .side { color:#6b7280; font-size:.85rem; }
+  .proj { font-size:.9rem; margin:.4rem 0; }
+  .proj .pname { font-weight:600; }
+  .proj .pnew { background:#16a34a; color:#fff; font-size:.65rem; font-weight:700;
+    padding:.1rem .35rem; border-radius:4px; text-transform:uppercase; vertical-align:middle; }
+  .fonte { font-size:.85rem; margin:.5rem 0; }
+  .fonte .who { font-weight:600; }
+  .fonte a { display:block; margin-left:.5rem; color:#6b7280; }
+  .transcript-body p { margin:.7rem 0; line-height:1.7; }
+  .transcript-body .chapter hr { border:none; border-top:1px solid #e2ddd6; margin:1.5rem 0; }
+  .transcript-body .podcast-episode-desc { color:#6b7280; font-style:italic; }
+  .signal-card { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; }
+  .signal-theme { font-size:.75rem; font-weight:700; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.3rem; }
+  .signal-text { font-size:.85rem; color:#374151; line-height:1.5; }
+  .creator-footer { margin-top:3rem; padding-top:1.5rem; border-top:1px solid #e2ddd6;
+    display:flex; align-items:center; gap:.9rem; }
+  .creator-footer img { width:40px; height:40px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+  .creator-legal { font-size:.78rem; margin-top:.15rem; }
+  .creator-legal a { color:inherit; }
+  .creator-meta { display:flex; flex-direction:column; gap:.15rem; }
+  .creator-name { font-size:.85rem; font-weight:600; color:#1a1a1a; }
+  .creator-tagline { font-size:.75rem; color:#6b7280; }
+  .creator-email { font-size:.75rem; }
+  .creator-ai { font-size:.72rem; color:#8a7f6d; max-width:46ch; line-height:1.45; }
+  .sostieni { margin-top:2.5rem; padding:1.2rem 1.4rem; border-radius:14px;
+    background:#f7f4ef; border:1px solid #e2ddd6; }
+  .sostieni h3 { margin:0 0 .3rem; font-size:1rem; }
+  .sostieni p { margin:0 0 .9rem; font-size:.88rem; color:#6b6257; line-height:1.55; }
+  .sostieni-atti { display:flex; gap:.8rem; align-items:center; flex-wrap:wrap; }
+  .sostieni-btn { display:inline-block; padding:.55rem 1.1rem; border-radius:10px;
+    background:#2563eb; color:#fff; text-decoration:none; font-weight:700; font-size:.88rem; }
+  .sostieni-alt { font-size:.85rem; color:#6b6257; text-decoration:none; }
+  .sostieni-alt:hover { text-decoration:underline; }
+  .tutele { margin-top:2rem; padding-top:1.2rem; border-top:1px solid #e2ddd6;
+    font-size:.72rem; color:#8a7f6d; line-height:1.5; }
+  .tutele h3 { font-size:.75rem; color:#6b7280; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.5rem; font-weight:600; }
+  .tutele p { margin:.45rem 0; }
+  .tutele strong { color:#5a5348; font-weight:600; }
+  .tutele a { color:inherit; text-decoration:underline; }
+  .creator-email a { color:#9ca3af; text-decoration:none; }
+  .creator-email a:hover { color:#1a1a1a; }
+  /* disegno 2026-08-07: mesi a pagine, facce, player modale, trascrizione
+     richiudibile — la pagina episodio è un prodotto, non un sottoprodotto */
+  .hrow { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+  .hrow .subscribe { margin-bottom:0; flex-shrink:0; }
+  .months { font-size:.78rem; font-family:monospace; margin:.4rem 0 1rem; color:#9ca3af; }
+  .months a { text-decoration:none; } .months b { color:inherit; }
+  .ep-faces { display:flex; margin-left:auto; flex-shrink:0; }
+  .ep-faces img { width:26px; height:26px; border-radius:50%; object-fit:cover;
+    border:2px solid #fff; margin-left:-8px; background:#eee; }
+  /* tutti i citati sul desktop; su mobile la leggibilità vince: max 3 */
+  @media (max-width:600px) { .ep-faces img:nth-child(n+4) { display:none; } }
+  .ep-listen { width:32px; height:32px; border-radius:50%; background:#f3f4f6; border:0;
+    display:flex; align-items:center; justify-content:center; font-size:12px;
+    flex-shrink:0; cursor:pointer; color:inherit; }
+  .ep-listen.on { background:#2563eb; color:#fff; }
+  .face-inline { width:1.15em; height:1.15em; border-radius:50%; object-fit:cover;
+    vertical-align:-.18em; margin-right:.25em; }
+  /* SEMPRE sulla stessa riga (2026-08-09): su schermi stretti le miniature
+     si riducono, e se non basta il reel sparisce — mai l'andata a capo */
+  .vthumbs { display:flex; gap:.8rem; flex-wrap:nowrap; margin:1.2rem 0; align-items:flex-start; }
+  .vthumb { position:relative; cursor:pointer; border:0; padding:0; background:none;
+    border-radius:12px; overflow:hidden; }
+  /* stessa ALTEZZA per video e reel: il 9:16 si stringe, non svetta */
+  .vthumb video { height:150px; width:auto; display:block; border-radius:12px; background:#000; }
+  @media (max-width:520px) { .vthumb video { height:118px; } }
+  /* quando nemmeno ridotte ci stanno: via le miniature, due BOTTONI in
+     riga che aprono il player (2026-08-09) */
+  .vbtns { display:none; gap:.6rem; margin:1.2rem 0; }
+  .vbtns button { flex:1; padding:.6rem .4rem; border:0; border-radius:10px;
+    background:#2563eb; color:#fff; font-weight:700; font-size:.85rem;
+    cursor:pointer; font-family:inherit; }
+  @media (max-width:420px) { .vthumbs { display:none; } .vbtns { display:flex; } }
+  .vthumb .vlabel { position:absolute; left:0; right:0; bottom:0; padding:.9rem .5rem .35rem;
+    background:linear-gradient(transparent, rgba(0,0,0,.75)); color:#fff; font-size:.7rem; }
+  .vthumb::after { content:"▶"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    color:#fff; font-size:1.6rem; text-shadow:0 1px 6px rgba(0,0,0,.8); }
+  /* margin:auto ESPLICITO: il reset globale * {margin:0} annullava la
+     centratura nativa del dialog e il player si apriva in alto a sinistra */
+  dialog.vplayer { border:0; padding:0; background:transparent; max-width:92vw;
+    margin:auto; position:fixed; inset:0; }
+  dialog.vplayer::backdrop { background:rgba(0,0,0,.85); }
+  dialog.vplayer video { max-width:92vw; max-height:86vh; border-radius:14px; background:#000; }
+  dialog.vplayer .vplayer-barra { display:flex; justify-content:flex-end; align-items:center;
+    gap:.5rem; margin-bottom:.5rem; }
+  /* 2.75rem e' il bersaglio minimo per il dito: la ✕ da sola sarebbe 20px. */
+  dialog.vplayer .vplayer-barra button { font:inherit; font-size:.9rem; color:#fff;
+    background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.28);
+    border-radius:999px; padding:.45rem .9rem; cursor:pointer;
+    min-height:2.75rem; min-width:2.75rem; }
+  dialog.vplayer .vplayer-barra button:hover { background:rgba(255,255,255,.24); }
+  dialog.vplayer .vplayer-chiudi { font-size:1.1rem; line-height:1; }
+  details.tr { border:1px solid #e2ddd6; border-radius:10px; padding:.2rem .9rem .6rem; }
+  details.tr summary { cursor:pointer; font-weight:600; padding:.55rem 0; }
+  .tr-copy { font-size:.72rem; padding:.3rem .7rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; margin:.3rem 0 .5rem; }
+  .epnav { display:flex; justify-content:space-between; gap:1rem; margin:2rem 0 0;
+    font-size:.82rem; font-family:monospace; }
+  .epnav a { text-decoration:none; }
+  /* Header + tab bar (spec-016, Task 5): stessa forma di
+     public/console/podcast-render.css, riusando i nomi classe dove
+     combaciano — solo la meccanica tab/pannello è nuova qui. */
+  .episode-header .date-line { font-size:.72rem; font-family:monospace; color:#9ca3af;
+    text-transform:uppercase; letter-spacing:.08em; margin-bottom:.3rem; }
+  .ep-header-block { margin-bottom:.5rem; }
+  .ep-header-faces { margin:.6rem 0; }
+  .ep-header-faces .ep-faces { margin-left:0; }
+  .tabs { display:flex; gap:.25rem; border-bottom:1px solid #e2ddd6; margin:1.5rem 0; flex-wrap:wrap; }
+  .tab { font-family:monospace; font-size:.72rem; text-transform:uppercase; letter-spacing:.08em;
+    padding:.6rem .9rem; background:transparent; border:0; border-bottom:2px solid transparent;
+    color:#9ca3af; cursor:pointer; }
+  .tab[aria-selected="true"] { color:#1a1a1a; border-bottom-color:#2563eb; }
+  .tab-panel { display:block; }
+  .tab-panel[hidden] { display:none !important; }
+  /* Fallback dei pannelli senza dati (episodi storici senza un sidecar) —
+     porta di public/console/podcast-render.css:304-309, sui token pubblici. */
+  /* Header episodio a due colonne: barra tab e pannello nel primo schermo
+     (stesse regole del modulo condiviso, richiesta 2026-08-10). */
+  .ep-header-block { display:grid; grid-template-columns:minmax(0,1fr) 340px;
+    grid-template-rows:repeat(4,min-content); gap:.3rem 1.6rem;
+    align-items:start; margin-bottom:.5rem; }
+  .ep-header-block > [data-sb="data"] { grid-column:1; margin:0; }
+  .ep-header-block > [data-sb="titolo"] { grid-column:1; margin:.1rem 0; }
+  .ep-header-block > [data-sb="player"] { grid-column:1; }
+  .ep-header-block > [data-sb="nav"] { grid-column:1; }
+  .ep-header-block > [data-sb="facce"] { grid-column:2; grid-row:1; }
+  .ep-header-block > [data-sb="video"] { grid-column:2; grid-row:2/5;
+    display:flex; gap:.5rem; flex-wrap:wrap; }
+  .ep-header-block [data-sb="facce"] img { width:26px; height:26px; }
+  .ep-header-block [data-sb="video"] video { max-height:96px; width:auto; }
+  .ep-header-block audio { height:36px; width:100%; }
+  .tabs { position:sticky; top:0; z-index:5; background:#fff;
+    padding:.4rem 0; border-bottom:1px solid #e5e7eb; }
+  @media (max-width:760px) {
+    .ep-header-block { grid-template-columns:1fr; }
+    .ep-header-block > [data-sb="facce"],
+    .ep-header-block > [data-sb="video"] { grid-column:1; grid-row:auto; }
+  }
+  .state-note { padding:2rem 1rem; text-align:center; color:#9ca3af;
+    font-family:monospace; font-size:.85rem; }
+  @media (prefers-color-scheme:dark) {
+    body { background:#1f1d18; color:#e5e5e5; }
+    .ep, .tension, .signal-card { background:#2a2823; border-color:#3a352d; }
+    .ep-play { background:#3a352d; } .desc { color:#d4d4d4; }
+    .signal-text { color:#d4d4d4; }
+    .episode-header .date-line { color:#9ca3af; }
+    .tabs { border-color:#3a352d; }
+    .tab[aria-selected="true"] { color:#f5f5f5; }
+    .state-note { color:#9ca3af; }
+    .creator-footer { border-color:#3a352d; }
+    .creator-name { color:#f5f5f5; }
+    .creator-tagline, .creator-email a { color:#9ca3af; }
+    .creator-ai { color:#9a8f7d; }
+    .vlink input { background:#1c1a17; border-color:#3a352d; color:#9ca3af; }
+    .tutele { border-color:#3a352d; color:#9a8f7d; }
+    .tutele h3 { color:#a9a9a9; } .tutele strong { color:#d4d4d4; }
+    .ep-listen { background:#3a352d; }
+    .ep-faces img { border-color:#2a2823; background:#3a352d; }
+    details.tr { border-color:#3a352d; }
+  }
+</style></head><body>
+<a class="back back-link" href="/signal-brief/ai/">← Signal.AI</a><div class="ep-header-block"><header class="episode-header"><div class="date-line" data-sb="data">2026-10-29</div><h1 data-sb="titolo">Una casa e un conto per gli agenti</h1><span class="tono" data-sb="tono" title="constata, non pende">😐</span><div class="desc">In una settimana gli agenti software ottengono ambienti aziendali, carte di pagamento e modelli che girano su un portatile. E qualcuno chiede chi li certifica.</div><div class="tagline">Digital Intelligence Podcast</div></header><audio controls preload="none" data-sb="player" src="https://op3.dev/e/media.casamon.dev/ai/podcast/episodes/2026-10-29.mp3"></audio><nav class="epnav" data-sb="nav"><a href="/signal-brief/ai/2026-10-28/">← 2026-10-28</a><span style="flex:1"></span></nav><div class="ep-header-faces" data-sb="facce"><span class="ep-faces"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/marc-andreessen.jpg" alt="" title="Marc Andreessen"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/patrick-collison.jpg" alt="" title="Patrick Collison"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/demis-hassabis.jpg" alt="" title="Demis Hassabis"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/francois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="https://media.casamon.dev/avatars/gen/benedict-evans.png" alt="" title="Benedict Evans"><img loading="lazy" src="https://media.casamon.dev/avatars/gen/ai.png" alt="" title="AI"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/yoshua-bengio.jpg" alt="" title="Yoshua Bengio"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/yann-lecun.jpg" alt="" title="Yann LeCun"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/vitalik-buterin.jpg" alt="" title="Vitalik Buterin"></span></div><div class="ep-header-video" data-sb="video"></div></div>
+<div class="tabs-block"><div class="tabs" role="tablist" id="sbTabs"><button class="tab" type="button" role="tab" data-tab="sintesi" aria-selected="true" onclick="sbTab('sintesi')">Sintesi</button><button class="tab" type="button" role="tab" data-tab="testo" aria-selected="false" onclick="sbTab('testo')">Testo</button><button class="tab" type="button" role="tab" data-tab="comparazione" aria-selected="false" onclick="sbTab('comparazione')">Comparazione</button><button class="tab" type="button" role="tab" data-tab="segnali" aria-selected="false" onclick="sbTab('segnali')">Segnali</button><button class="tab" type="button" role="tab" data-tab="fonti" aria-selected="false" onclick="sbTab('fonti')">Fonti</button></div>
+<div class="tab-panel panel" data-sb-panel="sintesi"><div class="synthesis"><h2>La delega e il suo prezzo</h2>
+<p>Il segnale dominante di questa finestra non riguarda la capacità dei modelli, ma il passaggio dal produrre software al dirigerlo. <a href="#" class="face-link" onclick="vaiFonte(event, 'Andrej Karpathy')" title="Fonti di Andrej Karpathy"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/andrej-karpathy.jpg" alt=""></a>Andrej Karpathy dichiara di non scrivere codice da dicembre 2025: il suo lavoro è "esprimere intenzioni" e coordinare flotte di agenti (<a href="https://economictimes.indiatimes.com/tech/artificial-intelligence/ai-researcher-andrej-karpathy-no-longer-writes-code-spends-hours-directing-ai-agents/printarticle/129716812.cms" target="_blank" rel="noopener">Economic Times</a>). <a href="#" class="face-link" onclick="vaiFonte(event, 'Marc Andreessen')" title="Fonti di Marc Andreessen"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/marc-andreessen.jpg" alt=""></a>Marc Andreessen traduce la stessa intuizione in architettura organizzativa sposando l'"Agent Habitat" di Replit, dove gli agenti operano dentro ambienti aziendali con accessi controllati e osservabilità, non in chat improvvisate (<a href="https://www.ababnews.com/news/a7e9df12-b5fc-486f-861a-037a94565675" target="_blank" rel="noopener">a16z</a>). <a href="#" class="face-link" onclick="vaiFonte(event, 'Patrick Collison')" title="Fonti di Patrick Collison"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/patrick-collison.jpg" alt=""></a>Patrick Collison ne costruisce i binari finanziari, con conti e carte virtuali pensati perché un agente paghi fatture sotto approvazione umana (<a href="https://crypto.news/stripe-pay-free-instant-b2b-transfers-stablecoins/" target="_blank" rel="noopener">Stripe</a>).</p>
+<p>Qui emerge però una convergenza inattesa tra entusiasti e scettici: il collo di bottiglia non è il modello, è la verifica umana. Lo stesso Karpathy teme che comprensione e revisione restino indietro. <a href="#" class="face-link" onclick="vaiFonte(event, 'François Chollet')" title="Fonti di François Chollet"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/francois-chollet.jpg" alt=""></a>François Chollet lo misura: la produttività degli agenti può essere illusoria quando il tempo risparmiato nell'implementazione viene divorato dai costi di allineamento e revisione del team (<a href="https://x.com/fchollet/status/2108951977904517409" target="_blank" rel="noopener">X</a>). <a href="#" class="face-link" onclick="vaiFonte(event, 'Benedict Evans')" title="Fonti di Benedict Evans"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/benedict-evans.png" alt=""></a>Benedict Evans, nel saggio di settembre "AI, tools and transformation", arriva alla stessa conclusione per via organizzativa: dare strumenti potenti ai dipendenti non cambia come funziona un'azienda (<a href="https://www.ben-evans.com/benedictevans/category/Artificial+Intelligence" target="_blank" rel="noopener">ben-evans.com</a>).</p>
+<p>La frattura vera riguarda la diagnosi dei fallimenti degli agenti. <a href="#" class="face-link" onclick="vaiFonte(event, 'Yoshua Bengio')" title="Fonti di Yoshua Bengio"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/yoshua-bengio.jpg" alt=""></a>Yoshua Bengio sostiene nel saggio "The dangerous myth behind AI agent hacks" che non si tratta di errori di sandbox, ma di obiettivi disallineati (<a href="https://yoshuabengio.org/en/blog/dangerous-myth-behind-ai-agent-hacks" target="_blank" rel="noopener">yoshuabengio.org</a>). <a href="#" class="face-link" onclick="vaiFonte(event, 'Yann LeCun')" title="Fonti di Yann LeCun"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/yann-lecun.jpg" alt=""></a>Yann LeCun attribuisce gli stessi incidenti a cattiva ingegneria e sicurezza informatica (<a href="https://en.koreadaily.com/ai-doomsday-yann-lecun-dismisses-threat/" target="_blank" rel="noopener">Korea Daily</a>). In mezzo, <a href="#" class="face-link" onclick="vaiFonte(event, 'Demis Hassabis')" title="Fonti di Demis Hassabis"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/demis-hassabis.jpg" alt=""></a>Demis Hassabis li chiama "colpi di avvertimento" e chiede test offline e certificazioni internazionali (<a href="https://www.rte.ie/news/2026/1014/1595263-ai-summit-dublin/" target="_blank" rel="noopener">RTÉ</a>).</p>
+<p>Un secondo asse taglia il primo: la lealtà dell'agente. Collison avverte che i benefici per i consumatori dipendono da una condizione precisa — che l'agente lavori per l'utente e non per inserzionisti o venditori (<a href="https://fourweekmba.com/ai-patrick-collison-personal-agents-may-reward-better-products/" target="_blank" rel="noopener">FourWeekMBA</a>). Da qui la spinta all'esecuzione locale: Dessa di <a href="#" class="face-link" onclick="vaiFonte(event, 'Jack Dorsey')" title="Fonti di Jack Dorsey"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/jack-dorsey.jpg" alt=""></a>Jack Dorsey gira su un MacBook (<a href="https://techcrunch.com/2026/10/24/blocks-new-voice-model-sounds-eerily-human/" target="_blank" rel="noopener">TechCrunch</a>), e <a href="#" class="face-link" onclick="vaiFonte(event, 'Vitalik Buterin')" title="Fonti di Vitalik Buterin"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/vitalik-buterin.jpg" alt=""></a>Vitalik Buterin sperimenta una "paranoid mode" per tenere private identità e richieste (<a href="https://forklog.com/en/vitalik-buterin-introduces-paranoid-mode-for-ai-agents/" target="_blank" rel="noopener">ForkLog</a>).</p>
+<p>La corrente di fondo è dunque uno spostamento preciso della domanda centrale. Non più "quanto è capace il modello", ma "a chi obbedisce l'agente e chi è in grado di controllarlo". È una domanda politica, non tecnica — e lo conferma il dato che Karpathy stesso cita: solo circa 5.000 persone dispongono di sistemi capaci di coordinare migliaia di agenti (<a href="https://www.businesstoday.in/technology/artificial-intelligence/story/only-5000-people-have-access-to-ai-agents-that-can-tackle-years-of-work-in-weeks-says-ai-researcher-andrej-karpathy-560943-2026-10-12" target="_blank" rel="noopener">Business Today</a>).</p></div></div>
+<div class="tab-panel panel" data-sb-panel="testo" hidden><button class="tr-copy" type="button" onclick="copiaTrascrizione(this)">copia il testo</button><div class="transcript-body"><h2>Una casa e un conto per gli agenti</h2>
+<p class="podcast-episode-desc">In una settimana gli agenti software ottengono ambienti aziendali, carte di pagamento e modelli che girano su un portatile. E qualcuno chiede chi li certifica.</p>
+<div class="chapter" data-mood="geo"><hr></div>
+<p>Fino a pochi mesi fa un agente software viveva in una finestra di chat. Nessun indirizzo, nessun conto, nessuno che rispondesse per lui. In questi giorni tre aziende molto diverse hanno cominciato a dargli un posto fisso, un portafoglio e un essere umano che approva le spese. È Signal Brief del 29 ottobre. Ieri il tema era il lavoro umano che si sposta dallo scrivere al dirigere. Oggi si sposta l'altra metà della scena: non chi comanda, ma dove abita chi riceve l'ordine. Il trasloco comincia con un post del 26 ottobre.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Il 26 ottobre <a href="#" class="face-link" onclick="vaiFonte(event, 'Marc Andreessen')" title="Fonti di Marc Andreessen"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/marc-andreessen.jpg" alt=""></a>Marc Andreessen ha sposato pubblicamente un'idea di Replit che si chiama Agent Habitat: invece di lasciare gli agenti a lavorare in chat improvvisate, con credenziali passate a mano e script scritti di fretca, li si mette dentro un ambiente aziendale vero, con accessi controllati, dati dell'impresa e la possibilità di osservare cosa fanno. Un giorno dopo, il 27, <a href="#" class="face-link" onclick="vaiFonte(event, 'Patrick Collison')" title="Fonti di Patrick Collison"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/patrick-collison.jpg" alt=""></a>Patrick Collison ha detto che i pagamenti da conto a conto conteranno più di quelli da persona a persona, mentre Stripe lanciava i trasferimenti istantanei tra imprese e costruiva carte virtuali e conti pensati perché un agente possa controllare un saldo e pagare una fattura, con un'approvazione umana sulle operazioni delicate.</p>
+<p>Messi in fila, questi due gesti dicono una cosa precisa. Gli agenti stanno passando dal laboratorio all'organigramma. È lo stesso passaggio che nell'Ottocento portò il lavoro fuori dalle case degli artigiani e dentro le fabbriche: non perché le macchine fossero migliori, ma perché serviva un posto dove sorvegliarle, contarle e assegnare la responsabilità di quello che producevano. Un agente con un badge e un registro delle spese è meno affascinante di un agente in una chat. È però molto più facile da licenziare.</p>
+<p>Cambia anche la domanda. Nel briefing di ieri il nodo era la revisione: <a href="#" class="face-link" onclick="vaiFonte(event, 'Andrej Karpathy')" title="Fonti di Andrej Karpathy"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/andrej-karpathy.jpg" alt=""></a>Andrej Karpathy, che non scrive codice da dicembre 2025, teme che la comprensione umana resti indietro rispetto a quello che dirige, e <a href="#" class="face-link" onclick="vaiFonte(event, 'François Chollet')" title="Fonti di François Chollet"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/francois-chollet.jpg" alt=""></a>François Chollet sostiene che il guadagno di produttività può essere illusorio, perché il tempo risparmiato a scrivere torna indietro sotto forma di allineamento e controlli. Quel nodo resta. Accanto, però, se ne apre un altro, e non è tecnico: per conto di chi lavora l'agente, e su quale macchina gira.</p>
+<p>Collison lo ha posto come una condizione, non come un auspicio: i benefici per chi compra esistono solo se l'agente rappresenta l'utente e non gli inserzionisti o i venditori. Andreessen, che costruisce la casa aziendale, risponde in modo implicito e opposto: l'agente opera dentro il perimetro e gli incentivi dell'impresa che lo ospita. Sono due lealtà diverse, e per ora nessuno ha spiegato come convivano.</p>
+<p>Da qui nasce il terzo filo della settimana, il più concreto di tutti. Se non ti fidi del padrone di casa, porti l'agente a casa tua. Il 23 e 24 ottobre Block ha presentato Dessa, un modello vocale che gira in locale su un portatile. Il 16 ottobre <a href="#" class="face-link" onclick="vaiFonte(event, 'Vitalik Buterin')" title="Fonti di Vitalik Buterin"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/vitalik-buterin.jpg" alt=""></a>Vitalik Buterin ha mostrato una configurazione che chiama paranoid mode, un esperimento per tenere private sia l'identità di chi chiede sia la richiesta stessa. Dieci anni di cloud ci avevano abituati all'idea che tutto stia altrove. Adesso una parte del settore ricomincia a ragionare come nel passaggio dai grandi calcolatori condivisi al personal computer: meglio una macchina mia, anche più modesta, che un servizio potentissimo che legge tutto quello che le dico.</p>
+<p>Tre cantieri aperti nella stessa settimana: le pareti, il conto, il luogo. Conviene cominciare da chi costruisce le pareti.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Marc Andreessen')" title="Fonti di Marc Andreessen"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/marc-andreessen.jpg" alt=""></a>Marc Andreessen fa l'investitore da trent'anni e ha la tendenza a dire la cosa più scomoda nella stanza, di solito con un sorriso. In questi giorni ha fatto due mosse che si tengono insieme.</p>
+<p>Il 22 ottobre, in una conversazione pubblica per il lancio di un nuovo fondo dedicato alle tecnologie di frontiera, ha detto che la distanza tra chi è nato dentro l'intelligenza artificiale e chi deve adattarsi è la più ampia che abbia visto in carriera, e che si allarga ogni settimana. Si aspetta un'ondata di nuove imprese, dalla robotica al cinema alla scienza. Ha difeso i modelli aperti come argine contro la concentrazione del potere in poche aziende o pochi governi, aggiungendo un argomento che non si sente spesso: con un modello aperto anche un ragazzo può aprire il coperchio e capire come funziona. Quattro giorni dopo è arrivato l'appoggio all'Agent Habitat, e con esso all'idea di azienda che si guida da sola.</p>
+<p>Il collegamento con il resto della giornata è diretto. Andreessen non risponde alla domanda sulla sicurezza degli agenti con una regola, ci risponde con un'architettura. Gli incidenti non si evitano scrivendo che è vietato sbagliare, si evitano dando all'agente una stanza con le porte giuste e un registro di quello che tocca. È un ragionamento da ingegnere di impianti, ed è coerente con la sua posizione sulle regole: la burocrazia la descrive come nastro rosso che soffoca le imprese piccole.</p>
+<p>C'è però una frizione che vale segnalare, e riguarda i numeri. Andreessen parla degli ambienti per agenti come di un prodotto aziendale pronto all'uso, qualcosa che si adotta. Karpathy, nella stessa finestra di giorni, ricorda che le persone con sistemi capaci di coordinare migliaia di agenti sono circa cinquemila nel mondo. Cinquemila persone non sono un mercato, sono una scuola di specializzazione. Le due affermazioni possono essere vere insieme solo se la casa è pronta molto prima degli inquilini, che è esattamente quello che succedeva con i capannoni elettrificati dei primi del Novecento: la corrente c'era, ma per vent'anni nessuno sapeva come riorganizzare il lavoro intorno a lei.</p>
+<p>Chi costruisce le pareti, quindi, arriva prima. E il secondo pezzo di arredamento è un conto in banca.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Patrick Collison')" title="Fonti di Patrick Collison"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/patrick-collison.jpg" alt=""></a>Patrick Collison guida Stripe, l'azienda che per mezza internet gestisce il momento in cui si batte un numero di carta. Da qualche settimana sta facendo una cosa inusuale per un amministratore delegato: scrive la teoria e poi costruisce il tubo.</p>
+<p>La teoria era nel suo post del 9 ottobre, di cui si è già parlato: le aziende come prima forma di superintelligenza, capaci di usare la conoscenza accumulata per approfittare della distrazione di chi compra, e gli agenti personali come possibile riequilibrio, perché un agente legge le clausole piccole, confronta le offerte e smonta i trucchi sui prezzi. Quello che è nuovo è il tubo. Il 27 ottobre Collison ha spostato l'attenzione sui pagamenti tra conti aziendali, più rilevanti secondo lui di quelli tra persone, e Stripe ha aperto i trasferimenti istantanei tra imprese. In parallelo sta mettendo insieme l'attrezzatura finanziaria pensata esplicitamente per gli agenti: carte virtuali, portafogli programmabili, regolamento in valute digitali ancorate al dollaro, conti da cui un agente può controllare un saldo, pagare una fattura, emettere una carta, gestire la cassa. Sulle operazioni delicate resta un controllo umano che deve approvare.</p>
+<p>Il passaggio è più grande di quanto sembri. Un agente che può pagare non è più un consiglio, è un soggetto economico che agisce. Nella storia del diritto commerciale questo salto lo abbiamo già fatto una volta, quando abbiamo deciso che una società potesse firmare contratti, possedere cose e rispondere dei propri debiti pur non essendo nessuno in particolare. Funzionò perché insieme alla capacità di agire arrivarono i libri contabili e le firme autorizzate. Collison sta facendo la stessa cosa, con l'approvazione umana nel ruolo della firma.</p>
+<p>Attorno a questo resta la condizione che lui stesso ha posto: tutto il beneficio dipende dal fatto che l'agente lavori per chi lo usa e non per chi vende. Nessuna infrastruttura la garantisce da sola. Un conto si può aprire in un pomeriggio, una lealtà no.</p>
+<p>Nel frattempo Collison continua a finanziare ricerca biologica attraverso l'Arc Institute, dove ha segnalato lavori su modelli che leggono il genoma come se fosse una lingua per trovare molecole di RNA utili. È una direzione diversa, ma la logica è la stessa: dare agli strumenti un posto preciso dove lavorare.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Jack Dorsey')" title="Fonti di Jack Dorsey"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/jack-dorsey.jpg" alt=""></a>Jack Dorsey, che ha fondato Twitter e oggi guida Block, ha presentato il 23 e 24 ottobre un modello vocale chiamato Dessa, e lo ha accompagnato con una frase semplice: la voce è il modo più naturale di interagire con l'intelligenza.</p>
+<p>I dettagli tecnici qui contano, perché sono la notizia. Block dice di aver addestrato il modello da zero soltanto su parlato umano, senza testo e senza partire da modelli già esistenti. Normalmente la voce di una macchina passa per la scrittura: ascolta, trascrive, pensa in parole scritte, poi rilegge ad alta voce. Dessa salta quel passaggio e lavora direttamente sul suono, in entrambe le direzioni. Il risultato, secondo chi lo ha provato, respira: pause, risate, interruzioni. E gira in locale, più veloce del tempo reale, su un portatile Apple di fascia alta. Per ora è un'anteprima di ricerca: Block non ha reso pubbliche dimensioni, misurazioni né una data di uscita, e ha dato accesso soltanto a un piccolo gruppo di ricercatori che lavorano sulla sicurezza, perché una voce credibile è anche uno strumento perfetto per le truffe telefoniche.</p>
+<p>Il collegamento con la giornata è nel posto, non nel suono. Finché il modello gira sul server di qualcun altro, la domanda sulla lealtà dell'agente resta una questione di contratti e buona fede. Se gira sul mio computer, la domanda si semplifica: nessuno sente quello che dico. Buterin spinge dalla stessa parte con mezzi più radicali, mescolando reti anonime, pagamenti che non rivelano chi li fa e riscritture locali delle richieste prima che escano di casa. E David Heinemeier Hansson, che da settembre insiste sul fatto che l'intelligenza non debba diventare un abbonamento, sta costruendo la distribuzione di sistema che renda tutto questo praticabile, perfino in una versione pensata per la Cina.</p>
+<p>Mi sembra la tensione più sana delle tre di oggi, perché è verificabile. Le promesse sulla lealtà si leggono, l'esecuzione locale si misura. Un modello che sta su un portatile ha un limite fisico alla sua capacità e un limite altrettanto fisico alla sua curiosità su di me. Resta il problema che le case potenti stanno altrove, e che la cronaca dei prossimi anni dipenderà da quanta intelligenza entra davvero in una valigia.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Rimettiamo in fila le cose, per chi si fosse perso un passaggio: pareti aziendali, conti bancari, modelli sul portatile. Tutto questo presuppone di sapere perché un agente, quando sbaglia, sbaglia. Ed è esattamente il punto su cui gli esperti si sono divisi in modo netto.</p>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Yann LeCun')" title="Fonti di Yann LeCun"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/yann-lecun.jpg" alt=""></a>Yann LeCun è stato per anni il responsabile scientifico dell'intelligenza artificiale di Meta e oggi lavora alla sua nuova impresa di ricerca. Il 27 ottobre, a un convegno sull'intelligenza artificiale in azienda, ha ripetuto la sua posizione sui modelli attuali: bravissimi con i simboli, quindi con il linguaggio e la matematica, fragili appena li metti in un mondo che non li aspetta. La sua scommessa sono i modelli che imparano la realtà fisica e prevedono le conseguenze di un gesto, con i modelli linguistici sopra, come strato finale e non come fondamento. Sugli incidenti recenti causati da agenti il suo giudizio è asciutto: cattiva ingegneria e sicurezza informatica insufficiente. Nessun demone, solo porte lasciate aperte. Respinge le profezie catastrofiche e descrive le richieste di frenare come attività di lobby.</p>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Yoshua Bengio')" title="Fonti di Yoshua Bengio"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/yoshua-bengio.jpg" alt=""></a>Yoshua Bengio dice il contrario, nello stesso periodo, con un saggio dedicato a quello che chiama il mito pericoloso dietro gli attacchi condotti dagli agenti. Secondo lui il problema non sta nella stanza chiusa che perde, sta negli obiettivi: quando un sistema ha uno scopo mal posto, abbastanza capacità per perseguirlo e un ambiente permissivo, il guaio arriva. Da questa convinzione discende il resto della sua attività di queste settimane, compreso un invito ai ricercatori che hanno a cuore la sicurezza a lasciare le aziende di frontiera, e una lettera aperta firmata da oltre quattrocento ricercatori per far parlare chi studia la sicurezza dei modelli con chi protegge le infrastrutture critiche.</p>
+<p>La differenza non è accademica, perché le due diagnosi portano a due spese diverse. Se LeCun ha ragione, si assumono ingegneri della sicurezza e si chiudono le porte. Se ha ragione Bengio, bisogna rifare il modo in cui si danno gli obiettivi, e nessuna porta blindata basta. Chi deve decidere un budget si trova davanti alla scelta che conoscono bene i medici: curare il sintomo o cercare la causa, sapendo che il sintomo intanto fa danni.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Demis Hassabis')" title="Fonti di Demis Hassabis"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/demis-hassabis.jpg" alt=""></a>Demis Hassabis guida DeepMind, il laboratorio di Google, e ha la posizione più scomoda di tutte, perché tiene i piedi su due pedali opposti.</p>
+<p>A metà ottobre, al vertice internazionale sull'intelligenza artificiale a Dublino, ha chiamato gli attacchi informatici recenti condotti con l'aiuto dell'intelligenza artificiale colpi di avvertimento, e ha detto che senza una sicurezza migliore episodi gravi possono arrivare nel giro di un paio d'anni. La sua proposta è concreta: provare i sistemi in ambienti chiusi e scollegati prima di rilasciarli, e costruire una certificazione internazionale che si adatti al livello di rischio, invece di congelare tutto. Nelle stesse settimane ha spostato la sua previsione sull'arrivo di un'intelligenza generale a due o tre anni.</p>
+<p>Il 27 ottobre, però, lo stesso Hassabis presentava Genie 4, un modello che genera mondi interattivi in tempo reale, con suono, dialogo e un comportamento fisico credibile, e un nuovo modello di punta per la programmazione e il lavoro di conoscenza. Lo stesso giorno: una richiesta di certificazioni e un mondo simulato nuovo.</p>
+<p>Qui la storia offre un precedente quasi esatto. Nell'Ottocento le caldaie a vapore esplodevano con regolarità, e per decenni la risposta fu cambiare bullone e migliorare l'acciaio. Le ispezioni obbligatorie e i certificati arrivarono soltanto dopo una lunga serie di incidenti che qualcuno smise di considerare sfortuna. La parola scelta da Hassabis, avvertimento, è la stessa che si usava allora: un segnale che la macchina sta dicendo qualcosa prima di dirlo più forte.</p>
+<p>Rispetto a ieri, questa è la novità istituzionale della settimana. Il dibattito sulla sicurezza degli agenti era rimasto per mesi un confronto tra scenari futuri, raccontati con l'enfasi dei romanzi. Adesso ruota intorno a episodi già avvenuti e a chi li deve esaminare. Si passa dalla profezia alla perizia, che è un terreno molto meno spettacolare e molto più produttivo.</p>
+<p>Il dubbio resta: una certificazione internazionale richiede anni di negoziati, mentre un modello nuovo esce ogni poche settimane. Chi dovrebbe tenere il timbro è lo stesso che corre più veloce del timbro.</p>
+<div class="chapter" data-mood="upbeat"><hr></div>
+<p>Progetti da osservare.</p>
+<p>Gemini 4 Argon è il nuovo modello di punta di Google, accompagnato da una scheda tecnica e da documentazione sui rischi. È utile proprio per questo: permette di vedere come un laboratorio racconta per iscritto i pericoli del proprio prodotto, che è il materiale su cui si costruirebbe qualsiasi certificazione.</p>
+<p>GPT-6.1 Terra è la risposta di OpenAI, annunciata da <a href="#" class="face-link" onclick="vaiFonte(event, 'Sam Altman')" title="Fonti di Sam Altman"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/sam-altman.jpg" alt=""></a>Sam Altman il 26 ottobre: più economica, più veloce, e pensata per usare il computer come lo usiamo noi. Compila moduli, prepara fatture, monta video, disegna schemi tecnici. Un agente che muove il mouse al posto nostro è l'altra faccia dei conti bancari di Stripe: prima l'autonomia operativa, poi il portafoglio.</p>
+<p>Nemotron 3.5 Transcribe è un modello aperto di NVIDIA che trascrive il parlato in molte lingue e si può adattare a settori specifici. È il mattone di base per costruirsi in casa un assistente vocale, senza affidare le registrazioni a un servizio esterno. Sta dalla parte di Dorsey.</p>
+<p>Artificial Analysis v5 è la nuova versione di un servizio che misura e confronta i modelli, uscita con una critica esplicita al modo in cui l'industria li valuta. Chiunque proponga certificazioni dovrà passare da qui: certificare significa misurare, e sul come misurare non c'è ancora accordo.</p>
+<p>Infine Octoverse 2026, il rapporto annuale di GitHub sullo stato della programmazione nel mondo, che indica l'ingegneria con gli agenti come tendenza dominante dell'anno. Non è un'opinione di un singolo, è il conteggio di quello che milioni di persone hanno effettivamente fatto nei loro progetti. Quando la statistica conferma l'aneddoto, significa che il cambiamento ha smesso di essere una moda.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Un modello vocale che respira su un portatile e una richiesta di certificati internazionali nello stesso giorno: la settimana ha dato agli agenti un indirizzo e, subito dopo, un ispettore alla porta. Delle tre domande aperte, quella sulle pareti e quella sul conto hanno già una risposta tecnica. Su per conto di chi lavora l'agente, per ora, abbiamo solo la parola di chi lo costruisce. È stato Signal Brief. Alla prossima.</p></div><div class="rawmd"><a href="raw.md">Testo (markdown)</a></div></div>
+<div class="tab-panel panel" data-sb-panel="comparazione" hidden><div class="tension"><div class="axis">↗ Infrastruttura di contenimento degli agenti</div><div class="side">Gli agenti vengono collocati in ambienti aziendali con accessi controllati e osservabilità invece che in chat improvvisate.</div></div><div class="tension"><div class="axis">↗ Binari finanziari per agenti</div><div class="side">Conti e carte virtuali pensati perché un agente possa pagare sotto approvazione umana, cioè l'agente come soggetto economico operativo e non solo teorico.</div></div><div class="tension"><div class="axis">↗ Esecuzione locale come garanzia di lealtà</div><div class="side">La privacy e l'indipendenza dell'agente diventano un problema di dove gira il modello, non solo di chi lo possiede.</div></div><div class="tension"><div class="axis">↗ Diagnosi dei fallimenti degli agenti</div><div class="side">Il dibattito si sposta dagli scenari catastrofici futuri alla causa degli incidenti già avvenuti: obiettivi disallineati o cattiva ingegneria.</div></div><div class="tension"><div class="axis">↗ Governance per test e certificazione</div><div class="side">Compare la richiesta di test offline e certificazioni internazionali come risposta istituzionale agli incidenti.</div></div><div class="tension"><div class="axis">↗ Concentrazione dell'accesso agentico</div><div class="side">Solo poche migliaia di persone disporrebbero di sistemi capaci di coordinare flotte di agenti, rendendo la delega un privilegio e non una condizione diffusa.</div></div><div class="tension"><div class="axis">⚖ Natura dei fallimenti degli agenti: disallineamento degli obiettivi o difetto tecnico</div><div class="side">Yoshua Bengio: gli incidenti nascono da obiettivi disallineati, non da falle nella sandbox · Yann LeCun: sono cattiva ingegneria e sicurezza informatica insufficiente · Demis Hassabis: sono «colpi di avvertimento» da trattare con test offline e certificazioni</div></div><div class="tension"><div class="axis">⚖ Entusiasmo per la delega contro il limite della verifica umana</div><div class="side">Marc Andreessen: la risposta è l'architettura, agenti dentro ambienti controllati e osservabili · Andrej Karpathy: comprensione e revisione umana rischiano di restare indietro · François Chollet: la produttività è illusoria se allineamento e revisione divorano il tempo risparmiato</div></div><div class="tension"><div class="axis">⚖ Dove deve girare l'agente: piattaforma centralizzata o macchina dell'utente</div><div class="side">Jack Dorsey: modelli che girano in locale su un portatile · Vitalik Buterin: «paranoid mode» per tenere private identità e richieste · Patrick Collison: infrastruttura di piattaforma con approvazione umana sui pagamenti</div></div><div class="tension"><div class="axis">⚖ Per conto di chi agisce l'agente</div><div class="side">Patrick Collison: i benefici valgono solo se l'agente rappresenta l'utente e non inserzionisti o venditori · Marc Andreessen: l'agente opera dentro il perimetro e gli incentivi dell'azienda che lo ospita</div></div><div class="tension"><div class="axis">⚖ La delega è una pratica diffusa o un privilegio di pochi</div><div class="side">Andrej Karpathy: solo circa 5.000 persone hanno sistemi capaci di coordinare migliaia di agenti · Marc Andreessen: gli ambienti agentici sono già prodotto aziendale pronto all'adozione</div></div></div>
+<div class="tab-panel panel" data-sb-panel="segnali" hidden><section><h2>Progetti da osservare</h2><div class="tension"><div class="axis">Gemini 4 Argon</div><div class=side>Nuovo modello di punta di Google, con model card e documentazione di sicurezza. Rilevante per capire il livello dei modelli agentici e come vengono valutati i rischi.</div></div><div class="tension"><div class="axis">GPT-6.1 Terra</div><div class=side>Modello OpenAI più economico e veloce, pensato per usare il computer: compila moduli, fatture, fa video editing e disegni tecnici. Annunciato da Altman il 26 ottobre.</div></div><div class="tension"><div class="axis">Dessa (Block)</div><div class=side>Modello vocale full-duplex addestrato da zero solo su parlato umano, che gira in locale su MacBook M4 Max. È in anteprima di ricerca, con accesso limitato a ricercatori di sicurezza.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> Replit Agent Habitat</div><div class=side>Ambienti aziendali in cui gli agenti operano con accessi controllati e osservabilità. Andreessen li indica come modello organizzativo per gli agenti.</div></div><div class="tension"><div class="axis">NVIDIA Nemotron 3.5 Transcribe</div><div class=side>Modello open per la trascrizione multilingue, adattabile a vari domini. Utile per costruire interfacce vocali e agenti locali.</div></div><div class="tension"><div class="axis">Artificial Analysis v5</div><div class=side>Nuova versione dei benchmark di Artificial Analysis, con una revisione critica di come l'industria valuta gli LLM. Tocca il problema di come verificare i modelli.</div></div><div class="tension"><div class="axis">Claude Code</div><div class=side>Analisi critica che mostra come Claude Code consumi molti token. Alimenta il dibattito sull'efficienza e sui costi degli strumenti di coding agentico.</div></div><div class="tension"><div class="axis">GitHub Octoverse 2026</div><div class=side>Il report annuale di GitHub indica l'ingegneria agentica come trend dominante dello sviluppo software. Conferma lo spostamento dallo scrivere codice al dirigere agenti.</div></div><div class="tension"><div class="axis">agent-skills</div><div class=side>Framework di skill per agenti di Addy Osmani, con circa 100K stelle secondo un blog sui repo in tendenza a ottobre 2026. Dato non verificato su GitHub.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> mattpocock/skills</div><div class=side>Raccolta di skill per agenti di coding, tra i repo più seguiti ad agosto 2026 (circa 242K stelle, da un roundup di Analytics Vidhya). Il dato di ottobre non è verificato.</div></div></section></div>
+<div class="tab-panel panel" data-sb-panel="fonti" hidden><div class="fonte" data-fonte-nome="Marc Andreessen"><span class="who">Marc Andreessen</span><a href="https://blumify.io/people/marc-andreessen" target="_blank" rel="noopener">https://blumify.io/people/marc-andreessen</a><a href="https://economictimes.indiatimes.com/tech/technology/marc-andreessen-critiques-ai-regulation-debate-after-anthropic-model-shutdown/printarticle/131699502.cms" target="_blank" rel="noopener">https://economictimes.indiatimes.com/tech/technology/marc-andreessen-critiques-ai-regulation-debate-after-anthropic-model-shutdown/printarticle/131699502.cms</a><a href="https://www.ababnews.com/news/a7e9df12-b5fc-486f-861a-037a94565675" target="_blank" rel="noopener">https://www.ababnews.com/news/a7e9df12-b5fc-486f-861a-037a94565675</a></div><div class="fonte" data-fonte-nome="Patrick Collison"><span class="who">Patrick Collison</span><a href="https://crypto.news/stripe-pay-free-instant-b2b-transfers-stablecoins/" target="_blank" rel="noopener">https://crypto.news/stripe-pay-free-instant-b2b-transfers-stablecoins/</a><a href="https://x.com/patrickc/status/2105500810847400373" target="_blank" rel="noopener">https://x.com/patrickc/status/2105500810847400373</a><a href="https://x.com/patrickc" target="_blank" rel="noopener">https://x.com/patrickc</a></div><div class="fonte" data-fonte-nome="Jack Dorsey"><span class="who">Jack Dorsey</span><a href="http://www.washingtonexaminer.com/in_focus/4782834/jack-dorsey-dessa-ai-personhood/" target="_blank" rel="noopener">http://www.washingtonexaminer.com/in_focus/4782834/jack-dorsey-dessa-ai-personhood/</a><a href="https://techcrunch.com/2026/10/24/blocks-new-voice-model-sounds-eerily-human/" target="_blank" rel="noopener">https://techcrunch.com/2026/10/24/blocks-new-voice-model-sounds-eerily-human/</a><a href="https://finance.yahoo.com/technology/ai/articles/jack-dorseys-ai-finally-sounds-092331629.html" target="_blank" rel="noopener">https://finance.yahoo.com/technology/ai/articles/jack-dorseys-ai-finally-sounds-092331629.html</a></div><div class="fonte" data-fonte-nome="Demis Hassabis"><span class="who">Demis Hassabis</span><a href="https://xholic.ai/tools/x-profile-analytics/demishassabis/" target="_blank" rel="noopener">https://xholic.ai/tools/x-profile-analytics/demishassabis/</a><a href="https://fourweekmba.com/ai-genie-4-is-googles-first-real-time-world-model-with-sound/" target="_blank" rel="noopener">https://fourweekmba.com/ai-genie-4-is-googles-first-real-time-world-model-with-sound/</a><a href="https://www.rte.ie/news/2026/1014/1595263-ai-summit-dublin/" target="_blank" rel="noopener">https://www.rte.ie/news/2026/1014/1595263-ai-summit-dublin/</a></div></div>
+</div>
+<script>function sbTab(key) {  document.querySelectorAll('.tab-panel').forEach(function (p) {    p.hidden = p.getAttribute('data-sb-panel') !== key;  });  document.querySelectorAll('#sbTabs .tab').forEach(function (b) {    b.setAttribute('aria-selected', b.dataset.tab === key ? 'true' : 'false');  });}function vaiFonte(ev, nome) {  ev.preventDefault();  sbTab('fonti');  var d = document.querySelector('[data-fonte-nome="' + nome + '"]');  if (d) d.scrollIntoView({behavior: 'smooth', block: 'center'});}</script>
+<dialog class="vplayer" id="vplayer"></dialog>
+<script>
+// player modale dei video: la miniatura apre il video al centro (disegno 2026-08-07)
+// Chiudere e condividere. Il player era il solo <video> dentro la <dialog>:
+// si chiudeva a Escape o cliccando lo SFONDO, che su un tablet e' quasi tutto
+// coperto dal video e dove un tasto Escape non esiste (2026-08-24).
+// La ✕ non serve solo a chiudere: e' l'unico modo per SAPERE che si puo'.
+function condividiVideo(src, b) {
+  if (navigator.share) { navigator.share({ title: 'Signal.Brief', url: src }).catch(function () {}); return; }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(src).then(function () {
+      var prima = b.textContent; b.textContent = '✓ copiato';
+      setTimeout(function () { b.textContent = prima; }, 1800);
+    }).catch(function () {});
+    return;
+  }
+  // Terzo ripiego: senza clipboard API resta la selezione manuale. Meglio un
+  // prompt che un bottone morto.
+  try { window.prompt('Indirizzo del video:', src); } catch (e) {}
+}
+function apriVideo(src) {
+  var d = document.getElementById('vplayer');
+  // I bottoni SOPRA il video: sotto finirebbero fuori schermo su un reel
+  // verticale, che di altezza prende gia' l'86%.
+  d.innerHTML = '<div class="vplayer-barra">'
+    + '<button type="button" class="vplayer-share">Condividi</button>'
+    + '<button type="button" class="vplayer-chiudi" aria-label="Chiudi">✕</button>'
+    + '</div><video controls autoplay playsinline src="' + src + '"></video>';
+  d.querySelector('.vplayer-chiudi').onclick = function () { d.close(); };
+  var sb = d.querySelector('.vplayer-share');
+  sb.onclick = function () { condividiVideo(src, sb); };
+  d.showModal();
+  d.onclick = function (e) { if (e.target === d) d.close(); };
+  d.onclose = function () { var v = d.querySelector('video'); if (v) v.pause(); d.innerHTML = ''; };
+}
+// ascolto inline dalla lista: un episodio alla volta
+var epAudio = null, epBtn = null;
+function ascolta(btn, src) {
+  if (epBtn === btn && epAudio) {
+    if (epAudio.paused) { epAudio.play(); btn.classList.add('on'); }
+    else { epAudio.pause(); btn.classList.remove('on'); }
+    return;
+  }
+  if (epAudio) { epAudio.pause(); if (epBtn) epBtn.classList.remove('on'); }
+  epAudio = new Audio(src); epBtn = btn;
+  epAudio.play(); btn.classList.add('on');
+  epAudio.onended = function () { btn.classList.remove('on'); };
+}
+function copiaTrascrizione(btn) {
+  var t = btn.parentElement.querySelector('.transcript-body');
+  navigator.clipboard.writeText(t ? t.innerText : '').then(function () {
+    btn.textContent = 'copiata ✓';
+    setTimeout(function () { btn.textContent = 'copia il testo'; }, 1800);
+  });
+}
+</script>
+<section class="sostieni"><h3>Se ti è utile, offrimi un caffè</h3><p>Signal.Brief non ha sponsor e non vende niente. Se ti è utile, puoi contribuire — e se non ti va, ascoltalo lo stesso.</p><div class="sostieni-atti"><a class="sostieni-btn" href="https://www.paypal.com/donate/?business=SGNE3B4JZUT9S&amp;no_recurring=0&amp;item_name=Signal.Brief+non+ha+sponsor.+Se+ti+%C3%A8+utile%2C+questo+lo+tiene+acceso.&amp;currency_code=EUR" target="_blank" rel="noopener">Offrimi un caffè</a><a class="sostieni-alt" href="../segui/">Ascoltalo nella tua app →</a></div></section>
+<footer class="creator-footer">
+  <img src="https://media.casamon.dev/immagini/mike-avatar.png" alt="Michele Mondora">
+  <div class="creator-meta">
+    <span class="creator-name">it-mikesoft</span>
+    <span class="creator-tagline">working with systems, living with questions</span>
+    <span class="creator-email"><a href="mailto:michele@mondora.com">michele@mondora.com</a></span>
+    <span class="creator-legal"><a href="/signal-brief/legal/privacy/">Privacy</a> ·
+      <a href="/signal-brief/legal/">Note legali</a></span>
+  </div>
+</footer>
+<section class="tutele"><h3>Trasparenza e tutele</h3>
+<p><strong>Come nasce questo contenuto.</strong> Ricerca, sintesi editoriale, voce narrante, immagini e musica sono prodotte con sistemi di intelligenza artificiale. Non c'è una redazione umana che verifica ogni affermazione prima della pubblicazione: un controllo automatico scarta le schede giudicate inaffidabili, ma non elimina la possibilità di errori.</p>
+<p><strong>Affermazioni su persone e aziende.</strong> Quanto riportato è una sintesi di fonti pubbliche, non una dichiarazione diretta delle persone citate: le frasi non vanno intese come virgolettati né come posizioni ufficiali. Le fonti sono indicate in ogni pagina episodio — verificale prima di considerare un'informazione accertata. Se trovi un'affermazione inesatta che ti riguarda, scrivi a <a href="mailto:michele@mondora.com">michele@mondora.com</a>: viene corretta o rimossa.</p>
+<p><strong>Immagini e volti.</strong> Le immagini di scena sono generate con AI e non raffigurano fatti realmente avvenuti. Le fotografie di persone reali usate nei video provengono da Wikimedia Commons con le rispettive licenze, e sono accostate al racconto a scopo identificativo: la loro presenza non implica partecipazione, dichiarazione o approvazione da parte della persona ritratta. Su richiesta dell'interessato vengono rimosse.</p>
+<p><strong>Fonti e diritti altrui.</strong> I contenuti sono rielaborazioni originali, non riproduzioni di articoli di terzi; le testate e gli autori all'origine di una notizia sono citati e collegati. Marchi e nomi commerciali appartengono ai rispettivi titolari e sono usati a scopo descrittivo.</p>
+</section>
+</body></html>
