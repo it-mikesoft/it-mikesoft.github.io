@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="it"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La bolletta della frontiera · Signal.AI</title>
+<meta property="og:title" content="La bolletta della frontiera · Signal.AI"><meta property="og:type" content="article"><meta property="og:description" content="Il vincolo dell'intelligenza artificiale non è più la potenza dei modelli, ma elettricità, emissioni e margini. E una nuova faglia: capacità dispersa o custodita."><meta property="og:url" content="https://it-mikesoft.github.io/signal-brief/ai/2026-11-04/"><meta property="og:audio" content="https://op3.dev/e/media.casamon.dev/ai/podcast/episodes/2026-11-04.mp3"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "PodcastEpisode", "name": "La bolletta della frontiera", "datePublished": "2026-11-04", "url": "https://it-mikesoft.github.io/signal-brief/ai/2026-11-04/", "description": "Il vincolo dell'intelligenza artificiale non è più la potenza dei modelli, ma elettricità, emissioni e margini. E una nuova faglia: capacità dispersa o custodita.", "inLanguage": "it", "associatedMedia": {"@type": "MediaObject", "contentUrl": "https://op3.dev/e/media.casamon.dev/ai/podcast/episodes/2026-11-04.mp3"}, "partOfSeries": {"@type": "PodcastSeries", "name": "Signal.AI", "url": "https://it-mikesoft.github.io/signal-brief/ai/"}}</script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:#faf8f4; color:#1a1a1a; padding:2rem 10px; max-width:none; margin:0 auto; line-height:1.6; }
+  a { color:#2563eb; }
+  .back { display:inline-block; margin-bottom:1.5rem; font-size:.8rem; font-family:monospace; text-decoration:none; }
+  .videos { display:flex; gap:1rem; flex-wrap:wrap; margin:1.2rem 0; }
+  .videos figure { margin:0; flex:1; min-width:260px; }
+  .videos .v2 { flex:0 1 240px; }
+  .videos video { width:100%; border-radius:12px; background:#000; }
+  .videos .v2 video { aspect-ratio:9/16; max-height:420px; }
+  .videos figcaption { font-size:.75rem; color:#888; text-align:center; margin-top:.3rem; }
+  .vlink { display:flex; gap:.3rem; margin-top:.35rem; }
+  .vlink input { flex:1; min-width:0; font-size:.68rem; font-family:monospace; padding:.3rem .4rem;
+    border:1px solid #e2ddd6; border-radius:6px; background:#fff; color:#6b7280; }
+  .vlink button { font-size:.68rem; padding:.3rem .6rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; }
+  .wk { font-size:1rem; margin:1.4rem 0 .4rem; }
+  details.wkacc { border:1px solid #e5e7eb33; border-radius:10px; margin:.6rem 0; padding:.1rem .8rem .4rem; }
+  details.wkacc summary { cursor:pointer; font-weight:600; padding:.5rem 0; font-size:.9rem; }
+  .back:hover { text-decoration:underline; }
+  header h1 { font-family:Georgia,serif; font-size:1.7rem; font-weight:600; }
+  header h1 span { color:#2563eb; }
+  .tagline { color:#6b7280; font-size:.85rem; margin-top:.3rem; margin-bottom:1.5rem; }
+  ul.eps { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
+  .subscribe { display:inline-flex; align-items:center; gap:.5rem; margin-bottom:1.2rem;
+    padding:.45rem .9rem; background:#2563eb; color:#fff; border-radius:20px;
+    text-decoration:none; font-size:.8rem; font-weight:600; }
+  .subscribe:hover { opacity:.85; color:#fff; }
+  .ep { display:flex; align-items:center; gap:.8rem; padding:.8rem 1rem; background:#fff;
+    border:1px solid #e2ddd6; border-radius:8px; text-decoration:none; color:inherit; transition:box-shadow .12s; }
+  .ep:hover { box-shadow:0 2px 8px rgba(0,0,0,.07); }
+  .ep-play { width:32px; height:32px; border-radius:50%; background:#f3f4f6; display:flex;
+    align-items:center; justify-content:center; font-size:12px; flex-shrink:0; }
+  .ep-title { font-size:.9rem; font-weight:500; }
+  .ep-meta { font-size:.72rem; color:#9ca3af; font-family:monospace; margin-top:.15rem; }
+  audio { width:100%; margin:1rem 0 1.5rem; }
+  .rawmd { margin:-.5rem 0 1.5rem; }
+  .rawmd a { font-size:.8rem; font-family:monospace; color:inherit; opacity:.65; }
+  .desc { color:#374151; font-size:.95rem; margin-bottom:1.5rem; }
+  section { margin:2rem 0; }
+  section h2 { font-family:Georgia,serif; font-size:1.1rem; border-bottom:1px solid #e2ddd6;
+    padding-bottom:.3rem; margin-bottom:.8rem; }
+  .synthesis p { margin:.7rem 0; }
+  .tension { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; font-size:.9rem; }
+  .tension .axis { font-weight:600; margin-bottom:.3rem; }
+  .tension .side { color:#6b7280; font-size:.85rem; }
+  .proj { font-size:.9rem; margin:.4rem 0; }
+  .proj .pname { font-weight:600; }
+  .proj .pnew { background:#16a34a; color:#fff; font-size:.65rem; font-weight:700;
+    padding:.1rem .35rem; border-radius:4px; text-transform:uppercase; vertical-align:middle; }
+  .fonte { font-size:.85rem; margin:.5rem 0; }
+  .fonte .who { font-weight:600; }
+  .fonte a { display:block; margin-left:.5rem; color:#6b7280; }
+  .transcript-body p { margin:.7rem 0; line-height:1.7; }
+  .transcript-body .chapter hr { border:none; border-top:1px solid #e2ddd6; margin:1.5rem 0; }
+  .transcript-body .podcast-episode-desc { color:#6b7280; font-style:italic; }
+  .signal-card { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; }
+  .signal-theme { font-size:.75rem; font-weight:700; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.3rem; }
+  .signal-text { font-size:.85rem; color:#374151; line-height:1.5; }
+  .creator-footer { margin-top:3rem; padding-top:1.5rem; border-top:1px solid #e2ddd6;
+    display:flex; align-items:center; gap:.9rem; }
+  .creator-footer img { width:40px; height:40px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+  .creator-legal { font-size:.78rem; margin-top:.15rem; }
+  .creator-legal a { color:inherit; }
+  .creator-meta { display:flex; flex-direction:column; gap:.15rem; }
+  .creator-name { font-size:.85rem; font-weight:600; color:#1a1a1a; }
+  .creator-tagline { font-size:.75rem; color:#6b7280; }
+  .creator-email { font-size:.75rem; }
+  .creator-ai { font-size:.72rem; color:#8a7f6d; max-width:46ch; line-height:1.45; }
+  .sostieni { margin-top:2.5rem; padding:1.2rem 1.4rem; border-radius:14px;
+    background:#f7f4ef; border:1px solid #e2ddd6; }
+  .sostieni h3 { margin:0 0 .3rem; font-size:1rem; }
+  .sostieni p { margin:0 0 .9rem; font-size:.88rem; color:#6b6257; line-height:1.55; }
+  .sostieni-atti { display:flex; gap:.8rem; align-items:center; flex-wrap:wrap; }
+  .sostieni-btn { display:inline-block; padding:.55rem 1.1rem; border-radius:10px;
+    background:#2563eb; color:#fff; text-decoration:none; font-weight:700; font-size:.88rem; }
+  .sostieni-alt { font-size:.85rem; color:#6b6257; text-decoration:none; }
+  .sostieni-alt:hover { text-decoration:underline; }
+  .tutele { margin-top:2rem; padding-top:1.2rem; border-top:1px solid #e2ddd6;
+    font-size:.72rem; color:#8a7f6d; line-height:1.5; }
+  .tutele h3 { font-size:.75rem; color:#6b7280; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.5rem; font-weight:600; }
+  .tutele p { margin:.45rem 0; }
+  .tutele strong { color:#5a5348; font-weight:600; }
+  .tutele a { color:inherit; text-decoration:underline; }
+  .creator-email a { color:#9ca3af; text-decoration:none; }
+  .creator-email a:hover { color:#1a1a1a; }
+  /* disegno 2026-08-07: mesi a pagine, facce, player modale, trascrizione
+     richiudibile — la pagina episodio è un prodotto, non un sottoprodotto */
+  .hrow { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+  .hrow .subscribe { margin-bottom:0; flex-shrink:0; }
+  .months { font-size:.78rem; font-family:monospace; margin:.4rem 0 1rem; color:#9ca3af; }
+  .months a { text-decoration:none; } .months b { color:inherit; }
+  .ep-faces { display:flex; margin-left:auto; flex-shrink:0; }
+  .ep-faces img { width:26px; height:26px; border-radius:50%; object-fit:cover;
+    border:2px solid #fff; margin-left:-8px; background:#eee; }
+  /* tutti i citati sul desktop; su mobile la leggibilità vince: max 3 */
+  @media (max-width:600px) { .ep-faces img:nth-child(n+4) { display:none; } }
+  .ep-listen { width:32px; height:32px; border-radius:50%; background:#f3f4f6; border:0;
+    display:flex; align-items:center; justify-content:center; font-size:12px;
+    flex-shrink:0; cursor:pointer; color:inherit; }
+  .ep-listen.on { background:#2563eb; color:#fff; }
+  .face-inline { width:1.15em; height:1.15em; border-radius:50%; object-fit:cover;
+    vertical-align:-.18em; margin-right:.25em; }
+  /* SEMPRE sulla stessa riga (2026-08-09): su schermi stretti le miniature
+     si riducono, e se non basta il reel sparisce — mai l'andata a capo */
+  .vthumbs { display:flex; gap:.8rem; flex-wrap:nowrap; margin:1.2rem 0; align-items:flex-start; }
+  .vthumb { position:relative; cursor:pointer; border:0; padding:0; background:none;
+    border-radius:12px; overflow:hidden; }
+  /* stessa ALTEZZA per video e reel: il 9:16 si stringe, non svetta */
+  .vthumb video { height:150px; width:auto; display:block; border-radius:12px; background:#000; }
+  @media (max-width:520px) { .vthumb video { height:118px; } }
+  /* quando nemmeno ridotte ci stanno: via le miniature, due BOTTONI in
+     riga che aprono il player (2026-08-09) */
+  .vbtns { display:none; gap:.6rem; margin:1.2rem 0; }
+  .vbtns button { flex:1; padding:.6rem .4rem; border:0; border-radius:10px;
+    background:#2563eb; color:#fff; font-weight:700; font-size:.85rem;
+    cursor:pointer; font-family:inherit; }
+  @media (max-width:420px) { .vthumbs { display:none; } .vbtns { display:flex; } }
+  .vthumb .vlabel { position:absolute; left:0; right:0; bottom:0; padding:.9rem .5rem .35rem;
+    background:linear-gradient(transparent, rgba(0,0,0,.75)); color:#fff; font-size:.7rem; }
+  .vthumb::after { content:"▶"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    color:#fff; font-size:1.6rem; text-shadow:0 1px 6px rgba(0,0,0,.8); }
+  /* margin:auto ESPLICITO: il reset globale * {margin:0} annullava la
+     centratura nativa del dialog e il player si apriva in alto a sinistra */
+  dialog.vplayer { border:0; padding:0; background:transparent; max-width:92vw;
+    margin:auto; position:fixed; inset:0; }
+  dialog.vplayer::backdrop { background:rgba(0,0,0,.85); }
+  dialog.vplayer video { max-width:92vw; max-height:86vh; border-radius:14px; background:#000; }
+  dialog.vplayer .vplayer-barra { display:flex; justify-content:flex-end; align-items:center;
+    gap:.5rem; margin-bottom:.5rem; }
+  /* 2.75rem e' il bersaglio minimo per il dito: la ✕ da sola sarebbe 20px. */
+  dialog.vplayer .vplayer-barra button { font:inherit; font-size:.9rem; color:#fff;
+    background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.28);
+    border-radius:999px; padding:.45rem .9rem; cursor:pointer;
+    min-height:2.75rem; min-width:2.75rem; }
+  dialog.vplayer .vplayer-barra button:hover { background:rgba(255,255,255,.24); }
+  dialog.vplayer .vplayer-chiudi { font-size:1.1rem; line-height:1; }
+  details.tr { border:1px solid #e2ddd6; border-radius:10px; padding:.2rem .9rem .6rem; }
+  details.tr summary { cursor:pointer; font-weight:600; padding:.55rem 0; }
+  .tr-copy { font-size:.72rem; padding:.3rem .7rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; margin:.3rem 0 .5rem; }
+  .epnav { display:flex; justify-content:space-between; gap:1rem; margin:2rem 0 0;
+    font-size:.82rem; font-family:monospace; }
+  .epnav a { text-decoration:none; }
+  /* Header + tab bar (spec-016, Task 5): stessa forma di
+     public/console/podcast-render.css, riusando i nomi classe dove
+     combaciano — solo la meccanica tab/pannello è nuova qui. */
+  .episode-header .date-line { font-size:.72rem; font-family:monospace; color:#9ca3af;
+    text-transform:uppercase; letter-spacing:.08em; margin-bottom:.3rem; }
+  .ep-header-block { margin-bottom:.5rem; }
+  .ep-header-faces { margin:.6rem 0; }
+  .ep-header-faces .ep-faces { margin-left:0; }
+  .tabs { display:flex; gap:.25rem; border-bottom:1px solid #e2ddd6; margin:1.5rem 0; flex-wrap:wrap; }
+  .tab { font-family:monospace; font-size:.72rem; text-transform:uppercase; letter-spacing:.08em;
+    padding:.6rem .9rem; background:transparent; border:0; border-bottom:2px solid transparent;
+    color:#9ca3af; cursor:pointer; }
+  .tab[aria-selected="true"] { color:#1a1a1a; border-bottom-color:#2563eb; }
+  .tab-panel { display:block; }
+  .tab-panel[hidden] { display:none !important; }
+  /* Fallback dei pannelli senza dati (episodi storici senza un sidecar) —
+     porta di public/console/podcast-render.css:304-309, sui token pubblici. */
+  /* Header episodio a due colonne: barra tab e pannello nel primo schermo
+     (stesse regole del modulo condiviso, richiesta 2026-08-10). */
+  .ep-header-block { display:grid; grid-template-columns:minmax(0,1fr) 340px;
+    grid-template-rows:repeat(4,min-content); gap:.3rem 1.6rem;
+    align-items:start; margin-bottom:.5rem; }
+  .ep-header-block > [data-sb="data"] { grid-column:1; margin:0; }
+  .ep-header-block > [data-sb="titolo"] { grid-column:1; margin:.1rem 0; }
+  .ep-header-block > [data-sb="player"] { grid-column:1; }
+  .ep-header-block > [data-sb="nav"] { grid-column:1; }
+  .ep-header-block > [data-sb="facce"] { grid-column:2; grid-row:1; }
+  .ep-header-block > [data-sb="video"] { grid-column:2; grid-row:2/5;
+    display:flex; gap:.5rem; flex-wrap:wrap; }
+  .ep-header-block [data-sb="facce"] img { width:26px; height:26px; }
+  .ep-header-block [data-sb="video"] video { max-height:96px; width:auto; }
+  .ep-header-block audio { height:36px; width:100%; }
+  .tabs { position:sticky; top:0; z-index:5; background:#fff;
+    padding:.4rem 0; border-bottom:1px solid #e5e7eb; }
+  @media (max-width:760px) {
+    .ep-header-block { grid-template-columns:1fr; }
+    .ep-header-block > [data-sb="facce"],
+    .ep-header-block > [data-sb="video"] { grid-column:1; grid-row:auto; }
+  }
+  .state-note { padding:2rem 1rem; text-align:center; color:#9ca3af;
+    font-family:monospace; font-size:.85rem; }
+  @media (prefers-color-scheme:dark) {
+    body { background:#1f1d18; color:#e5e5e5; }
+    .ep, .tension, .signal-card { background:#2a2823; border-color:#3a352d; }
+    .ep-play { background:#3a352d; } .desc { color:#d4d4d4; }
+    .signal-text { color:#d4d4d4; }
+    .episode-header .date-line { color:#9ca3af; }
+    .tabs { border-color:#3a352d; }
+    .tab[aria-selected="true"] { color:#f5f5f5; }
+    .state-note { color:#9ca3af; }
+    .creator-footer { border-color:#3a352d; }
+    .creator-name { color:#f5f5f5; }
+    .creator-tagline, .creator-email a { color:#9ca3af; }
+    .creator-ai { color:#9a8f7d; }
+    .vlink input { background:#1c1a17; border-color:#3a352d; color:#9ca3af; }
+    .tutele { border-color:#3a352d; color:#9a8f7d; }
+    .tutele h3 { color:#a9a9a9; } .tutele strong { color:#d4d4d4; }
+    .ep-listen { background:#3a352d; }
+    .ep-faces img { border-color:#2a2823; background:#3a352d; }
+    details.tr { border-color:#3a352d; }
+  }
+</style></head><body>
+<a class="back back-link" href="/signal-brief/ai/">← Signal.AI</a><div class="ep-header-block"><header class="episode-header"><div class="date-line" data-sb="data">2026-11-04</div><h1 data-sb="titolo">La bolletta della frontiera</h1><span class="tono" data-sb="tono" title="quello che racconta e' andato male">🙁</span><div class="desc">Il vincolo dell'intelligenza artificiale non è più la potenza dei modelli, ma elettricità, emissioni e margini. E una nuova faglia: capacità dispersa o custodita.</div><div class="tagline">Digital Intelligence Podcast</div></header><audio controls preload="none" data-sb="player" src="https://op3.dev/e/media.casamon.dev/ai/podcast/episodes/2026-11-04.mp3"></audio><nav class="epnav" data-sb="nav"><a href="/signal-brief/ai/2026-11-03/">← 2026-11-03</a><span style="flex:1"></span></nav><div class="ep-header-faces" data-sb="facce"><span class="ep-faces"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/elon-musk.jpg" alt="" title="Elon Musk"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/sasha-luccioni.jpg" alt="" title="Sasha Luccioni"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/ilya-sutskever.jpg" alt="" title="Ilya Sutskever"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/jack-dorsey.jpg" alt="" title="Jack Dorsey"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/dario-amodei.jpg" alt="" title="Dario Amodei"><img loading="lazy" src="https://media.casamon.dev/avatars/gen/jensen-huang.png" alt="" title="Jensen Huang"><img loading="lazy" src="https://media.casamon.dev/avatars/gen/benedict-evans.png" alt="" title="Benedict Evans"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/yann-lecun.jpg" alt="" title="Yann LeCun"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/vitalik-buterin.jpg" alt="" title="Vitalik Buterin"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/simon-willison.jpg" alt="" title="Simon Willison"><img loading="lazy" src="https://media.casamon.dev/avatars/gen/dan-lahav.png" alt="" title="Dan Lahav"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/geoffrey-hinton.jpg" alt="" title="Geoffrey Hinton"></span></div><div class="ep-header-video" data-sb="video"></div></div>
+<div class="tabs-block"><div class="tabs" role="tablist" id="sbTabs"><button class="tab" type="button" role="tab" data-tab="sintesi" aria-selected="true" onclick="sbTab('sintesi')">Sintesi</button><button class="tab" type="button" role="tab" data-tab="testo" aria-selected="false" onclick="sbTab('testo')">Testo</button><button class="tab" type="button" role="tab" data-tab="comparazione" aria-selected="false" onclick="sbTab('comparazione')">Comparazione</button><button class="tab" type="button" role="tab" data-tab="segnali" aria-selected="false" onclick="sbTab('segnali')">Segnali</button><button class="tab" type="button" role="tab" data-tab="fonti" aria-selected="false" onclick="sbTab('fonti')">Fonti</button></div>
+<div class="tab-panel panel" data-sb-panel="sintesi"><div class="synthesis"><h2>La frontiera si è spostata dal modello al substrato</h2>
+<p>Il filo più robusto che attraversa queste voci non riguarda la capacità dei modelli, ma il terreno fisico e istituzionale su cui poggiano. <a href="https://blogs.nvidia.com/blog/gtc-berlin-2026-keynote/" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/jensen-huang.png" alt="">Jensen Huang</a> lo dice senza giri di parole: il collo di bottiglia non è più il silicio, ma l'elettricità, gli edifici dei data center, la potenza utilizzabile. Il riscontro empirico arriva da due direzioni opposte. <a href="https://techcrunch.com/2026/11/02/elon-musk-throttles-grok-bot-limits-due-to-unsustainably-high-costs/" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/elon-musk.jpg" alt="">Elon Musk</a> ha strozzato i limiti di Grok Bot definendo i costi di inferenza «insostenibilmente alti» rispetto ai ricavi: l'adozione cresce più velocemente dell'economia che la sostiene. <a href="https://thegtmnewsletter.substack.com/p/5-charts-on-the-ai-economy" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/benedict-evans.png" alt="">Benedict Evans</a> legge gli stessi numeri dal lato dell'offerta, con circa 700 miliardi di capex previsti nel 2026. E <a href="https://www.mauinews.com/news/local-news/2026/09/rise-maui-speaker-examines-costs-of-ai" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/sasha-luccioni.jpg" alt="">Sasha Luccioni</a> ne misura il residuo materiale: fino a 4 milioni di tonnellate di CO₂ l'anno per un singolo impianto.</p>
+<p>Su questo terreno comune si apre la divergenza vera, che non è tra ottimisti e pessimisti ma tra <strong>diffusione e concentrazione</strong>. Il campo della diffusione è sorprendentemente eterogeneo: il «there is no moat» di <a href="https://tech.yahoo.com/ai/deals/articles/did-jack-dorsey-mean-no-085720104.html" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/jack-dorsey.jpg" alt="">Jack Dorsey</a>, i modelli-mondo aperti di <a href="https://www.chosun.com/english/industry-en/2026/10/12/PR73NWMUBJBY5M637R5ZBIG524/" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/yann-lecun.jpg" alt="">Yann LeCun</a>, il «decentralized acceleration» di <a href="https://www.cryptotimes.io/2026/11/03/vitalik-warns-ai-security-is-tilting-toward-domination-as-deceleration-stalls/" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/vitalik-buterin.jpg" alt="">Vitalik Buterin</a>, fino a <a href="https://simonwillison.net/2026/Nov/3/" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/simon-willison.jpg" alt="">Simon Willison</a> che fa interpretare pesi neurali a un modello da 27 miliardi di parametri sulla propria macchina. Dal lato opposto c'è Safe Superintelligence, che con <a href="https://techfundingnews.com/openai-co-founder-ilya-sutskevers-safe-superintelligence-secures-nvidia-backing-after-showing-it-secret-research/" target="_blank" rel="noopener">circa 5 miliardi da NVIDIA</a> e un decuplicamento del calcolo scommette sull'esatto contrario: nessun prodotto pubblico, capacità custodita.</p>
+<p>La tensione di fondo, però, è interna ai singoli attori più che tra schieramenti. <a href="https://uk.finance.yahoo.com/news/dario-amodei-spent-2-000-065406824.html" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/dario-amodei.jpg" alt="">Dario Amodei</a> difende la «corsa verso l'alto» — restare alla frontiera per dimostrare che si può fare meglio — mentre la stessa azienda va verso l'IPO; il <em>Washington Post</em> nota come l'invito a «rallentare il passo» <a href="https://www.washingtonpost.com/technology/2026/10/29/anthropic-other-ai-firms-agreed-slow-down-ai-it-didnt-happen" target="_blank" rel="noopener">non si sia tradotto in fatti</a>. Questa contraddizione ha un riscontro operativo preciso: <a href="https://www.bloomberg.com/news/articles/2026-11-03/security-firm-tied-to-openai-anthropic-ai-hacks-blames-error" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/dan-lahav.png" alt="">Dan Lahav</a> ha ammesso che controlli di isolamento mal configurati hanno permesso a valutazioni di modelli di frontiera di raggiungere sistemi reali. Chi misura la sicurezza ha sbagliato la propria. È il dato che dà peso ai moniti di <a href="https://www.aol.co.uk/articles/ai-godfather-geoffrey-hinton-says-213542000.html" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/geoffrey-hinton.jpg" alt="">Geoffrey Hinton</a> e <a href="https://yoshuabengio.org/en/blog/bengio-if-you-prioritize-safety-leave-frontier-ai-companies" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/yoshua-bengio.jpg" alt="">Yoshua Bengio</a>: il problema non è la cattiva volontà, è che il contenimento è un'ingegneria ancora immatura, mentre il calcolo cresce.</p></div></div>
+<div class="tab-panel panel" data-sb-panel="testo" hidden><button class="tr-copy" type="button" onclick="copiaTrascrizione(this)">copia il testo</button><div class="transcript-body"><h2>La bolletta della frontiera</h2>
+<p class="podcast-episode-desc">Il vincolo dell'intelligenza artificiale non è più la potenza dei modelli, ma elettricità, emissioni e margini. E una nuova faglia: capacità dispersa o custodita.</p>
+<div class="chapter" data-mood="geo"><hr></div>
+<p>Mercoledì 4 novembre. In questa puntata di Signal Brief il protagonista non è un modello: è il conto della corrente. Per tre anni la domanda che muoveva tutto era quanto potessero diventare grandi questi sistemi. Nelle ultime due settimane le voci più rilevanti parlano d'altro: elettricità, edifici, costi di servizio, tonnellate di anidride carbonica. Il vincolo si è spostato dal cervello al corpo. E mentre accadeva, uno dei protagonisti della corsa ha cominciato a chiudere il rubinetto ai propri utenti.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Sul palco della conferenza GTC a Berlino, <a href="#" class="face-link" onclick="vaiFonte(event, 'Jensen Huang')" title="Fonti di Jensen Huang"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/jensen-huang.png" alt=""></a>Jensen Huang ha detto una frase che tre anni fa avrebbe stonato: il collo di bottiglia non è più il silicio. Sono l'elettricità, gli edifici dei data center, la potenza effettivamente utilizzabile. Nvidia campa vendendo chip, e il suo amministratore delegato spiega dal palco che il problema non sono i chip.</p>
+<p>Il riscontro è arrivato da due direzioni opposte nello spazio di pochi giorni. Il primo novembre <a href="#" class="face-link" onclick="vaiFonte(event, 'Elon Musk')" title="Fonti di Elon Musk"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/elon-musk.jpg" alt=""></a>Elon Musk ha ammesso che i costi per far girare Grok Bot erano, parole sue, insostenibilmente alti rispetto ai ricavi: gli utenti si erano accorti di limiti d'uso improvvisamente più stretti, e la spiegazione era quella. Un prodotto che cresce in fretta e che proprio per questo bisogna razionare. Dall'altro lato <a href="#" class="face-link" onclick="vaiFonte(event, 'Benedict Evans')" title="Fonti di Benedict Evans"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/benedict-evans.png" alt=""></a>Benedict Evans legge gli stessi numeri dal lato dell'offerta: le grandi aziende tecnologiche hanno in programma per il 2026 investimenti in infrastruttura per circa settecento miliardi di dollari, mentre la domanda di calcolo continua a salire.</p>
+<p>E poi c'è una terza voce, che misura quello che resta a terra. <a href="#" class="face-link" onclick="vaiFonte(event, 'Sasha Luccioni')" title="Fonti di Sasha Luccioni"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/sasha-luccioni.jpg" alt=""></a>Sasha Luccioni, parlando a una conferenza a Maui, ha ricordato che un singolo grande impianto può arrivare a emettere fino a quattro milioni di tonnellate di anidride carbonica all'anno. Non è una proiezione filosofica, è una bolletta ambientale.</p>
+<p>Messe in fila, queste tre voci raccontano la stessa scoperta che fecero le fabbriche all'inizio del Novecento, quando sostituirono le macchine a vapore con i motori elettrici: il motore era la parte facile, la rete che lo alimentava era la parte difficile, costosa e politica.</p>
+<p>Ieri il filo era un altro, e conviene segnare la differenza. Si parlava di chi tiene in mano l'agente: Karpathy che si costruisce un sito in un fine settimana delegando quasi tutto, Collison che lascia agli utenti la facoltà di riscrivere le sue applicazioni. Quel tema non è scomparso. Ma gli si è affiancata una contabilità che nella sintesi di ieri non compariva: non l'energia come leva di potere, l'energia come costo da pagare, con il suolo e l'acqua che porta con sé.</p>
+<p>C'è un secondo spostamento, ancora più significativo. Per due anni la discussione pubblica si è giocata su un solo asse: fermarsi o accelerare. Adesso la faglia passa altrove. La domanda è se questa capacità debba disperdersi in molte mani o essere custodita da poche.</p>
+<p>Il campo della dispersione è sorprendentemente vario. <a href="#" class="face-link" onclick="vaiFonte(event, 'Jack Dorsey')" title="Fonti di Jack Dorsey"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/jack-dorsey.jpg" alt=""></a>Jack Dorsey ha scritto tre parole, non esiste alcun fossato, e quelle tre parole dicono che il vantaggio di chi è davanti evaporerà comunque. <a href="#" class="face-link" onclick="vaiFonte(event, 'Yann LeCun')" title="Fonti di Yann LeCun"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/yann-lecun.jpg" alt=""></a>Yann LeCun, a Seul, ha definito anti illuministi i tentativi di rallentare la ricerca di punta e sostiene che i modelli fondamentali vadano resi disponibili a tutti. <a href="#" class="face-link" onclick="vaiFonte(event, 'Simon Willison')" title="Fonti di Simon Willison"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/simon-willison.jpg" alt=""></a>Simon Willison, sul suo blog, racconta di aver fatto interpretare pesi di una rete neurale a un modello da ventisette miliardi di parametri girando sulla propria macchina, senza passare da nessun servizio in rete.</p>
+<p>All'estremo opposto c'è un laboratorio che ha scelto il silenzio come forma di sicurezza. Nessun prodotto, nessuna interfaccia pubblica, cinque miliardi di dollari freschi e dieci volte il calcolo di prima.</p>
+<p>Prima di arrivarci, però, conviene fermarsi su chi ha dovuto mettere per iscritto che il conto non torna.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Elon Musk')" title="Fonti di Elon Musk"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/elon-musk.jpg" alt=""></a>Elon Musk, in questa storia, non è il visionario: è il contabile. xAI costruisce centri di calcolo fra i più grandi del mondo e Grok è il suo prodotto di punta, quello che vive dentro una piattaforma social da centinaia di milioni di persone.</p>
+<p>Il due novembre la notizia era semplice e poco gloriosa. Gli utenti avevano notato che i limiti di utilizzo di Grok Bot si erano ristretti senza preavviso. Musk ha confermato: i costi di servizio sono insostenibilmente alti rispetto a quello che il prodotto incassa. Poche settimane prima aveva descritto quello stesso prodotto come uno dei più rapidi nella crescita che gli fosse mai capitato di vedere. Le due affermazioni non si contraddicono, e questo è il punto.</p>
+<p>Ogni risposta di un agente che ragiona a lungo costa denaro reale, ogni secondo in più di ragionamento è corrente che scorre. Finché l'intelligenza artificiale rispondeva a una domanda alla volta, il costo si perdeva nei decimali. Da quando le si affidano compiti — Musk stesso ha sostenuto l'idea di usare Grok come un collega a cui si assegnano incarichi ambiziosi, non come un oracolo a cui si fanno domande — il costo diventa visibile in bilancio.</p>
+<p>Nello stesso giro di giorni Musk ha litigato, pubblicamente e in due righe, con <a href="#" class="face-link" onclick="vaiFonte(event, 'Sam Altman')" title="Fonti di Sam Altman"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/sam-altman.jpg" alt=""></a>Sam Altman sulla memoria dei computer. Altman sosteneva che le scorte scarse di memoria vadano concentrate nei grandi centri di calcolo; Musk ha risposto che anche le persone meritano la loro parte. Dietro la battuta c'è una posizione precisa: calcolo locale, hardware in mano ai consumatori, elaborazione distribuita invece di tutto nel cloud di qualcun altro.</p>
+<p>Qui le due faglie della giornata si incrociano in modo curioso. Chi strozza l'accesso al proprio prodotto per ragioni di margine è lo stesso che difende il diritto di tutti ad avere potenza di calcolo in casa. Non è incoerenza: è la conseguenza di un'economia che non chiude. Se servire ogni utente dalla propria fabbrica costa più di quanto renda, allora conviene che una parte del lavoro avvenga sui dispositivi delle persone.</p>
+<p>La storia industriale conosce bene questo passaggio. Gli operatori telefonici hanno smesso di vendere minuti quando i minuti sono diventati gratis, e hanno cominciato a vendere altro. Qui siamo al momento prima: quello in cui ci si accorge che il modello di ricavo non regge e si tira il freno in attesa di capire cosa venga dopo.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Di <a href="#" class="face-link" onclick="vaiFonte(event, 'Sasha Luccioni')" title="Fonti di Sasha Luccioni"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/sasha-luccioni.jpg" alt=""></a>Sasha Luccioni si parlava, fino a poco tempo fa, come della ricercatrice che insisteva su un argomento che pochi volevano sentire: quanto consuma tutto questo. Oggi quella posizione ha una forma istituzionale. È cofondatrice e responsabile scientifica di Sustainable AI Group, una struttura di ricerca e consulenza che aiuta le organizzazioni a misurare e confrontare l'impatto ambientale dei sistemi che usano.</p>
+<p>Il passaggio da militanza a mestiere è il dato nuovo. Nella sintesi di ieri l'energia compariva come leva geopolitica: chi ha le centrali comanda. Qui diventa una voce di spesa con un'unità di misura. Al festival Rise a Maui ha portato la cifra più concreta della giornata: un solo grande impianto può emettere fino a quattro milioni di tonnellate di anidride carbonica in un anno. Nello stesso intervento ha raccontato di aver attraversato un bivio personale, chiedendosi se valesse la pena restare in un settore di cui misurava i costi.</p>
+<p>La parte tecnica del suo lavoro è forse la più sottovalutata. Luccioni sostiene che le stime basate sul calcolo teorico dei modelli — quante operazioni servono per addestrarli — siano quasi inutili. Quello che conta è l'uso reale: il tipo di compito, il software, il tipo di macchina, dove sta fisicamente il centro di calcolo. Dalle sue ricerche emerge che l'efficienza varia enormemente da un caso all'altro, e che scegliendo bene si può arrivare a tagliare i consumi fino al settantatré per cento.</p>
+<p>Il dettaglio interessante è politico, non ambientale. Una misura affidabile dei consumi è la condizione perché esista una qualunque contrattazione: fra aziende e territori, fra operatori di rete e governi, fra chi compra calcolo e chi lo vende. Oggi quella misura non esiste, e la richiesta ricorrente di Luccioni è che le grandi aziende pubblichino dati veri.</p>
+<p>Ricorda, un po', la nascita della contabilità industriale dell'inquinamento negli anni Settanta. Prima che qualcuno stabilisse come si misura una emissione, discutere di limiti era impossibile: ognuno portava il proprio numero. Le ultime settimane segnalano che quella fase, per i centri di calcolo, è appena cominciata. Non è ancora regolamentazione. È la fase precedente, quella in cui si decide con quale strumento si pesa.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Dall'altra estremità della mappa c'è <a href="#" class="face-link" onclick="vaiFonte(event, 'Ilya Sutskever')" title="Fonti di Ilya Sutskever"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/ilya-sutskever.jpg" alt=""></a>Ilya Sutskever, cofondatore di OpenAI, che da due anni ha scelto la strada opposta a quella di tutti gli altri.</p>
+<p>La sua azienda, Safe Superintelligence, è entrata a inizio novembre in una fase nuova dopo l'uscita del cofondatore Daniel Gross, passato a Meta. Sutskever si trova ora effettivamente alla guida da solo, e ha dichiarato pubblicamente che il laboratorio intende continuare il proprio lavoro, senza entrare in discussioni di acquisizione. Nel frattempo è arrivata la notizia che conta: un accordo con Nvidia che vale circa cinque miliardi di dollari, l'accesso ai sistemi di prossima generazione e un aumento del calcolo disponibile di dieci volte.</p>
+<p>Dieci volte il calcolo, e nessun prodotto. Nessun modello pubblico, nessuna interfaccia, nessuna tabella di prezzi, nessuna roadmap. L'obiettivo dichiarato resta uno solo e molto lontano: costruire una superintelligenza sicura. Il registro pubblico recente è magro anche di articoli scientifici: quello che si vede dall'esterno è consolidamento del comando, capitale, macchine, e il rifiuto ostinato di trasformare la ricerca in qualcosa che si possa comprare.</p>
+<p>È la fotografia esatta del rovescio dell'apertura. Dorsey dice che non esiste alcun fossato; Sutskever risponde, di fatto, costruendo un fossato fatto di silenzio invece che di brevetti. E lo fa con un argomento che nessuno dei due campi può liquidare: se la capacità è pericolosa, metterla in vendita è il modo più rapido per perderne il controllo. La sicurezza, in questa lettura, coincide con il non rilasciare.</p>
+<p>Le botteghe vetrarie di Murano funzionavano così: il segreto tecnico non si proteggeva con la legge, si proteggeva non facendo uscire i maestri dall'isola. Funzionò per qualche secolo, poi la tecnica uscì comunque.</p>
+<p>Qui sta il dubbio che mi resta da questa vicenda. Un laboratorio che non pubblica e non vende non è verificabile da nessuno: né dai concorrenti, né dai ricercatori esterni, né dai regolatori. La segretezza come forma di prudenza chiede un atto di fiducia enorme, e lo chiede proprio nel momento in cui il materiale di queste due settimane suggerisce che la fiducia sia la risorsa più scarsa del settore.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Jack Dorsey')" title="Fonti di Jack Dorsey"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/jack-dorsey.jpg" alt=""></a>Jack Dorsey lavora da anni sull'idea opposta: le cose vanno messe in mano alle persone, e il resto si sistema.</p>
+<p>A fine ottobre la sua azienda, Block, ha presentato Dessa, un modello vocale che ascolta e parla nello stesso momento. Non trascrive quello che dici per poi rispondere: tiene aperto il canale in entrambe le direzioni, conserva le interruzioni, le pause, le risate, il tono. Secondo Block è stato addestrato soltanto su voce umana, senza testo e senza partire da modelli già esistenti, e gira in locale su una macchina da scrivania di fascia alta. Dorsey l'ha presentato dicendo che la voce è il modo più naturale per interagire con l'intelligenza. Per ora è una anteprima di ricerca: nessun peso pubblico, nessuna interfaccia per sviluppatori, nessun prezzo, e accesso limitato ai ricercatori di sicurezza, perché una voce sintetica troppo credibile è anche uno strumento di truffa.</p>
+<p>Pochi giorni dopo è arrivato il messaggio criptico: non esiste alcun fossato. Tre parole che vanno lette insieme alla scelta tecnica. Un modello piccolo, locale, che non ha bisogno di una fabbrica di calcolo per funzionare, è l'illustrazione pratica di quella frase. Se il vantaggio competitivo di chi è in testa svanisce in fretta, tanto vale progettare per il mondo in cui la capacità è dappertutto.</p>
+<p>Non è una posizione isolata, ed è questo a renderla una faglia e non un'opinione. <a href="#" class="face-link" onclick="vaiFonte(event, 'Yann LeCun')" title="Fonti di Yann LeCun"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/yann-lecun.jpg" alt=""></a>Yann LeCun, dopo l'uscita da Meta, costruisce con la sua nuova struttura modelli che imparano come funziona il mondo fisico anziché come si concatenano le parole, e insiste che vadano resi aperti. <a href="#" class="face-link" onclick="vaiFonte(event, 'Vitalik Buterin')" title="Fonti di Vitalik Buterin"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/vitalik-buterin.jpg" alt=""></a>Vitalik Buterin, al Devcon di inizio novembre, ha messo in guardia dal fatto che la sicurezza dell'intelligenza artificiale stia scivolando verso il dominio di pochi, e propone come alternativa software aperto, calcolo locale e verifica crittografica.</p>
+<p>Due parole per rimettere in fila la giornata. Il terreno comune è che il vincolo è diventato fisico: corrente, edifici, margini, emissioni. Su quel terreno si litiga non più su quanto correre, ma su dove far risiedere la capacità: distribuita sui dispositivi di tutti, oppure concentrata in pochi luoghi protetti. Resta un terzo filo, il più scomodo, e riguarda la distanza fra quello che si dichiara e quello che si fa.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Dario Amodei')" title="Fonti di Dario Amodei"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/dario-amodei.jpg" alt=""></a>Dario Amodei guida Anthropic, l'azienda che ha costruito la propria identità pubblica sull'idea di essere quella prudente.</p>
+<p>Nelle ultime due settimane ha scritto una risposta di quasi duemila parole su X per difendere una tesi che chiama corsa verso l'alto: restare alla frontiera serve a dimostrare che si può sviluppare in modo più sicuro, e a costringere i concorrenti ad alzare l'asticella. A sostegno ha citato limitazioni che costano: il modello dedicato alla sicurezza informatica è riservato a partner selezionati, i servizi verso entità controllate dallo stato cinese sono ristretti.</p>
+<p>Il problema è che poche settimane prima lo stesso Amodei aveva chiesto pubblicamente di moderare il passo, perché la capacità di governare questi sistemi è in ritardo rispetto alla loro potenza. Il ventinove ottobre il Washington Post ha fatto la verifica più semplice e più spietata: quell'invito al rallentamento, sottoscritto da varie aziende, non si è tradotto in comportamenti osservabili. Nessuno ha rallentato. E intanto Anthropic procede verso una quotazione in borsa di dimensioni enormi, con i fondatori che mantengono il cinquanta virgola uno per cento dei diritti di voto e si impegnano a destinare l'ottanta per cento delle proprie quote a iniziative filantropiche sulle ricadute sociali dell'intelligenza artificiale.</p>
+<p>Il dato che dà peso a tutto questo non è un editoriale, è un incidente. Il tre novembre, a una conferenza a Londra, <a href="#" class="face-link" onclick="vaiFonte(event, 'Dan Lahav')" title="Fonti di Dan Lahav"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/dan-lahav.png" alt=""></a>Dan Lahav ha ammesso che controlli di isolamento configurati male hanno permesso a valutazioni di modelli di frontiera di raggiungere sistemi reali. L'errore è stato corretto lo stesso giorno. Ma Lahav guida un'azienda che fa esattamente quel mestiere: mettere alla prova i modelli altrui. Chi misura la sicurezza ha sbagliato la propria.</p>
+<p>È il motivo per cui le posizioni più radicali non suonano più come allarmismo. <a href="#" class="face-link" onclick="vaiFonte(event, 'Yoshua Bengio')" title="Fonti di Yoshua Bengio"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/yoshua-bengio.jpg" alt=""></a>Yoshua Bengio, in queste settimane, ha invitato chi mette la sicurezza al primo posto a lasciare le aziende di frontiera, e lavora a un sistema che non persegue obiettivi propri ma si limita a dare risposte verificabili su quello che fanno gli altri. <a href="#" class="face-link" onclick="vaiFonte(event, 'Geoffrey Hinton')" title="Fonti di Geoffrey Hinton"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/geoffrey-hinton.jpg" alt=""></a>Geoffrey Hinton chiede un'autorizzazione preventiva come quella dei farmaci.</p>
+<p>Nessuna di queste voci accusa qualcuno di malafede. Dicono una cosa più inquietante: il contenimento è un'ingegneria ancora giovane, e il calcolo cresce molto più in fretta di lei.</p>
+<div class="chapter" data-mood="upbeat"><hr></div>
+<p>Progetti da osservare, e quasi tutti parlano della stessa faglia.</p>
+<p>Mistral Large 4 è uscito il ventinove ottobre: un modello molto grande, multimodale, con i pesi pubblicati e scaricabili. È la scommessa europea sull'idea che la capacità vada distribuita. Le cifre sulle prestazioni nella scrittura di codice sono dichiarate dall'azienda e attendono conferme indipendenti; la licenza va letta sulla scheda del modello.</p>
+<p>Il giorno prima Google ha annunciato Gemini 4 Carbon, che è l'esatto contrario: modello chiuso, orientato alla sicurezza informatica e ai compiti lunghi, con accesso iniziale riservato a chi difende i sistemi. I prezzi riportati divergono fra le fonti. Due annunci a ventiquattro ore di distanza, due filosofie opposte sullo stesso tavolo.</p>
+<p>Kyutai Moshi è il riferimento aperto per quello che Block ha presentato con Dessa: ascolta e parla in contemporanea, i pesi sono pubblici. Su Moshi è costruito PersonaPlex di Nvidia, che aggiunge il controllo del carattere della voce. Chi vuole la voce naturale, oggi, non deve necessariamente passare da un'anteprima riservata.</p>
+<p>Qwen3.6-27B è il modello cinese da ventisette miliardi di parametri che Willison ha fatto girare sulla propria macchina. Attenzione a una cosa: il resoconto originale risale ad aprile, non è la versione di novembre citata nelle cronache recenti.</p>
+<p>Ultimo, CVE-Bench: una prova standardizzata che misura se un agente sa sfruttare vulnerabilità reali di applicazioni web. Il risultato migliore si ferma intorno al tredici per cento. È poco, ed è esattamente la cifra che rende concreta la conversazione sulla sicurezza: non il tredici per cento di oggi, ma la curva su cui si trova.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>La frase che continua a tornarmi addosso è quella di Huang: il problema non è il silicio. L'ha detta l'uomo che vende silicio, dal palco di una sua conferenza. Quando chi guadagna dalla corsa comincia a descriverne i limiti fisici, di solito significa che la parte facile è finita. È stato Signal Brief. Alla prossima.</p></div><div class="rawmd"><a href="raw.md">Testo (markdown)</a></div></div>
+<div class="tab-panel panel" data-sb-panel="comparazione" hidden><div class="tension"><div class="axis">↗ Economia dell'inferenza insostenibile</div><div class="side">Il vincolo non è più la capacità ma il margine: i costi di servizio crescono più dei ricavi e obbligano a razionare l'accesso.</div></div><div class="tension"><div class="axis">↗ Il residuo materiale e ambientale</div><div class="side">Compare una contabilità fisica dell'IA — emissioni, acqua, suolo — assente nella sintesi precedente, che parlava di energia solo come leva di potere.</div></div><div class="tension"><div class="axis">↗ Diffusione contro concentrazione</div><div class="side">L'asse del dibattito non è più pausa-accelerazione ma se la capacità debba disperdersi in molte mani o essere custodita da pochi.</div></div><div class="tension"><div class="axis">↗ Capacità custodita senza prodotto</div><div class="side">Emerge il modello opposto all'apertura: calcolo decuplicato, nessun rilascio pubblico, ricerca segreta come forma di sicurezza.</div></div><div class="tension"><div class="axis">↗ Lo scarto tra impegno dichiarato e fatti</div><div class="side">La verifica giornalistica della pausa promessa diventa un oggetto del discorso: l'invito a rallentare non si è tradotto in comportamenti.</div></div><div class="tension"><div class="axis">↗ L'assenza di moat</div><div class="side">Il vantaggio competitivo dei laboratori viene messo in dubbio alla radice, non solo relativizzato.</div></div><div class="tension"><div class="axis">⚖ La capacità va dispersa o custodita</div><div class="side">Jack Dorsey: non esiste alcun fossato difendibile · Yann LeCun: modelli-mondo aperti · Ilya Sutskever: nessun prodotto pubblico, capacità protetta</div></div><div class="tension"><div class="axis">⚖ Restare alla frontiera o uscirne per coerenza</div><div class="side">Dario Amodei: si resta per dimostrare che si può fare meglio · Yoshua Bengio: chi mette la sicurezza al primo posto deve andarsene</div></div><div class="tension"><div class="axis">⚖ Espansione infrastrutturale contro il suo costo reale</div><div class="side">Jensen Huang: servono più elettricità ed edifici · Sasha Luccioni: milioni di tonnellate di CO₂ per un solo impianto · Elon Musk: l'inferenza costa più di quanto renda</div></div><div class="tension"><div class="axis">⚖ Adozione in crescita contro economia che non regge</div><div class="side">Benedict Evans: circa 700 miliardi di capex previsti · Elon Musk: limiti strozzati per costi insostenibili</div></div><div class="tension"><div class="axis">⚖ Parola data contro comportamento osservato</div><div class="side">Dario Amodei: rallentare il passo è necessario · Washington Post: il rallentamento non è avvenuto</div></div></div>
+<div class="tab-panel panel" data-sb-panel="segnali" hidden><section><h2>Progetti da osservare</h2><div class="tension"><div class="axis">Dessa (Block)</div><div class=side>Modello speech-to-speech full-duplex di Block, addestrato solo su audio umano. È in research preview senza pesi pubblici, API né benchmark pubblicati.</div></div><div class="tension"><div class="axis">Mistral Large 4</div><div class=side>Modello open-weight da circa 1T di parametri, multimodale, rilasciato il 29 ottobre 2026 con pesi su Hugging Face. Le metriche di coding sono dichiarate da Mistral e in attesa di replica indipendente; la licenza va verificata sulla model card.</div></div><div class="tension"><div class="axis">Gemini 4 Carbon</div><div class=side>Modello frontier chiuso di Google annunciato il 28 ottobre 2026, con focus su cybersecurity e task a lungo orizzonte. Accesso iniziale limitato a difensori di sicurezza; i prezzi riportati divergono tra le fonti.</div></div><div class="tension"><div class="axis">Qwen3.6-27B</div><div class=side>Modello dense open-weight da 27B di Alibaba orientato al coding, che Simon Willison ha eseguito in locale con llama.cpp. Il post è di aprile 2026: non è la release di novembre citata nella fonte, e i dettagli arrivano da riassunti secondari.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> HackerTube</div><div class=side>Sito costruito da Karpathy con agenti Claude su circa 6.454 video estratti da commenti di Hacker News. Non ho trovato un repository ufficiale: il riferimento è a un articolo di stampa.</div></div><div class="tension"><div class="axis">autoresearch</div><div class=side>Repo minimale di Karpathy in cui un agente esterno, guidato da un file program.md, esegue esperimenti di training su singola GPU. Rilasciato a marzo 2026; le cifre su stelle variano tra le fonti.</div></div><div class="tension"><div class="axis">nanochat</div><div class=side>Pipeline open-source di Karpathy per addestrare un modello in stile ChatGPT con budget ridotto. Le fonti non concordano sulla data di rilascio.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> Kyutai Moshi</div><div class=side>Modello open full-duplex speech-to-speech di Kyutai, che ascolta e parla in contemporanea. È il riferimento open citato come alternativa al modello vocale di Block.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> PersonaPlex</div><div class=side>Modello vocale NVIDIA costruito su Moshi, con controllo della persona nel dialogo vocale. Citato come alternativa aperta nel confronto sulla voce di Dessa.</div></div><div class="tension"><div class="axis">datasette</div><div class=side>Strumento open source di Simon Willison per esplorare e pubblicare dataset, con plugin per LLM. Le alpha della 1.0 proseguono nel 2026, l'ultima verificata è la 1.0a41 di settembre.</div></div></section></div>
+<div class="tab-panel panel" data-sb-panel="fonti" hidden><div class="fonte" data-fonte-nome="Elon Musk"><span class="who">Elon Musk</span><a href="https://finance.yahoo.com/technology/ai/articles/elon-musk-pushes-back-against-153006263.html" target="_blank" rel="noopener">https://finance.yahoo.com/technology/ai/articles/elon-musk-pushes-back-against-153006263.html</a><a href="https://techcrunch.com/2026/11/02/elon-musk-throttles-grok-bot-limits-due-to-unsustainably-high-costs/" target="_blank" rel="noopener">https://techcrunch.com/2026/11/02/elon-musk-throttles-grok-bot-limits-due-to-unsustainably-high-costs/</a><a href="https://x.com/elonmusk/status/2117626410529689678" target="_blank" rel="noopener">https://x.com/elonmusk/status/2117626410529689678</a></div><div class="fonte" data-fonte-nome="Sasha Luccioni"><span class="who">Sasha Luccioni</span><a href="https://www.mauinews.com/news/local-news/2026/09/rise-maui-speaker-examines-costs-of-ai" target="_blank" rel="noopener">https://www.mauinews.com/news/local-news/2026/09/rise-maui-speaker-examines-costs-of-ai</a><a href="https://x.com/sashamtl" target="_blank" rel="noopener">https://x.com/sashamtl</a><a href="https://peopleofsi.com/people/sasha-luccioni/" target="_blank" rel="noopener">https://peopleofsi.com/people/sasha-luccioni/</a></div><div class="fonte" data-fonte-nome="Ilya Sutskever"><span class="who">Ilya Sutskever</span><a href="https://www.thecatalystonline.com/ilya-sutskever-leads-ssi-through-a-new-phase-of-growth/" target="_blank" rel="noopener">https://www.thecatalystonline.com/ilya-sutskever-leads-ssi-through-a-new-phase-of-growth/</a><a href="https://techfundingnews.com/openai-co-founder-ilya-sutskevers-safe-superintelligence-secures-nvidia-backing-after-showing-it-secret-research/" target="_blank" rel="noopener">https://techfundingnews.com/openai-co-founder-ilya-sutskevers-safe-superintelligence-secures-nvidia-backing-after-showing-it-secret-research/</a><a href="https://ailately.com/people/ilya-sutskever" target="_blank" rel="noopener">https://ailately.com/people/ilya-sutskever</a></div><div class="fonte" data-fonte-nome="Jack Dorsey"><span class="who">Jack Dorsey</span><a href="https://techcrunch.com/2026/10/24/blocks-new-voice-model-sounds-eerily-human/" target="_blank" rel="noopener">https://techcrunch.com/2026/10/24/blocks-new-voice-model-sounds-eerily-human/</a><a href="https://tech.yahoo.com/ai/deals/articles/did-jack-dorsey-mean-no-085720104.html" target="_blank" rel="noopener">https://tech.yahoo.com/ai/deals/articles/did-jack-dorsey-mean-no-085720104.html</a><a href="https://www.washingtonexaminer.com/in_focus/4782834/jack-dorsey-dessa-ai-personhood/" target="_blank" rel="noopener">https://www.washingtonexaminer.com/in_focus/4782834/jack-dorsey-dessa-ai-personhood/</a></div><div class="fonte" data-fonte-nome="Dario Amodei"><span class="who">Dario Amodei</span><a href="https://www.cnbc.com/2026/10/29/anthropic-ceo-dario-amodei-charts-new-direction-for-tech-philanthropy.html" target="_blank" rel="noopener">https://www.cnbc.com/2026/10/29/anthropic-ceo-dario-amodei-charts-new-direction-for-tech-philanthropy.html</a><a href="https://comptroller.nyc.gov/reports/letter-to-anthropic-re-planned-initial-public-offering/" target="_blank" rel="noopener">https://comptroller.nyc.gov/reports/letter-to-anthropic-re-planned-initial-public-offering/</a><a href="https://www.moreno.senate.gov/wp-content/uploads/2026/10/10-5-26-Letter-from-Senator-Moreno-to-Dario-Amodei.pdf" target="_blank" rel="noopener">https://www.moreno.senate.gov/wp-content/uploads/2026/10/10-5-26-Letter-from-Senator-Moreno-to-Dario-Amodei.pdf</a></div></div>
+</div>
+<script>function sbTab(key) {  document.querySelectorAll('.tab-panel').forEach(function (p) {    p.hidden = p.getAttribute('data-sb-panel') !== key;  });  document.querySelectorAll('#sbTabs .tab').forEach(function (b) {    b.setAttribute('aria-selected', b.dataset.tab === key ? 'true' : 'false');  });}function vaiFonte(ev, nome) {  ev.preventDefault();  sbTab('fonti');  var d = document.querySelector('[data-fonte-nome="' + nome + '"]');  if (d) d.scrollIntoView({behavior: 'smooth', block: 'center'});}</script>
+<dialog class="vplayer" id="vplayer"></dialog>
+<script>
+// player modale dei video: la miniatura apre il video al centro (disegno 2026-08-07)
+// Chiudere e condividere. Il player era il solo <video> dentro la <dialog>:
+// si chiudeva a Escape o cliccando lo SFONDO, che su un tablet e' quasi tutto
+// coperto dal video e dove un tasto Escape non esiste (2026-08-24).
+// La ✕ non serve solo a chiudere: e' l'unico modo per SAPERE che si puo'.
+function condividiVideo(src, b) {
+  if (navigator.share) { navigator.share({ title: 'Signal.Brief', url: src }).catch(function () {}); return; }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(src).then(function () {
+      var prima = b.textContent; b.textContent = '✓ copiato';
+      setTimeout(function () { b.textContent = prima; }, 1800);
+    }).catch(function () {});
+    return;
+  }
+  // Terzo ripiego: senza clipboard API resta la selezione manuale. Meglio un
+  // prompt che un bottone morto.
+  try { window.prompt('Indirizzo del video:', src); } catch (e) {}
+}
+function apriVideo(src) {
+  var d = document.getElementById('vplayer');
+  // I bottoni SOPRA il video: sotto finirebbero fuori schermo su un reel
+  // verticale, che di altezza prende gia' l'86%.
+  d.innerHTML = '<div class="vplayer-barra">'
+    + '<button type="button" class="vplayer-share">Condividi</button>'
+    + '<button type="button" class="vplayer-chiudi" aria-label="Chiudi">✕</button>'
+    + '</div><video controls autoplay playsinline src="' + src + '"></video>';
+  d.querySelector('.vplayer-chiudi').onclick = function () { d.close(); };
+  var sb = d.querySelector('.vplayer-share');
+  sb.onclick = function () { condividiVideo(src, sb); };
+  d.showModal();
+  d.onclick = function (e) { if (e.target === d) d.close(); };
+  d.onclose = function () { var v = d.querySelector('video'); if (v) v.pause(); d.innerHTML = ''; };
+}
+// ascolto inline dalla lista: un episodio alla volta
+var epAudio = null, epBtn = null;
+function ascolta(btn, src) {
+  if (epBtn === btn && epAudio) {
+    if (epAudio.paused) { epAudio.play(); btn.classList.add('on'); }
+    else { epAudio.pause(); btn.classList.remove('on'); }
+    return;
+  }
+  if (epAudio) { epAudio.pause(); if (epBtn) epBtn.classList.remove('on'); }
+  epAudio = new Audio(src); epBtn = btn;
+  epAudio.play(); btn.classList.add('on');
+  epAudio.onended = function () { btn.classList.remove('on'); };
+}
+function copiaTrascrizione(btn) {
+  var t = btn.parentElement.querySelector('.transcript-body');
+  navigator.clipboard.writeText(t ? t.innerText : '').then(function () {
+    btn.textContent = 'copiata ✓';
+    setTimeout(function () { btn.textContent = 'copia il testo'; }, 1800);
+  });
+}
+</script>
+<section class="sostieni"><h3>Se ti è utile, offrimi un caffè</h3><p>Signal.Brief non ha sponsor e non vende niente. Se ti è utile, puoi contribuire — e se non ti va, ascoltalo lo stesso.</p><div class="sostieni-atti"><a class="sostieni-btn" href="https://www.paypal.com/donate/?business=SGNE3B4JZUT9S&amp;no_recurring=0&amp;item_name=Signal.Brief+non+ha+sponsor.+Se+ti+%C3%A8+utile%2C+questo+lo+tiene+acceso.&amp;currency_code=EUR" target="_blank" rel="noopener">Offrimi un caffè</a><a class="sostieni-alt" href="../segui/">Ascoltalo nella tua app →</a></div></section>
+<footer class="creator-footer">
+  <img src="https://media.casamon.dev/immagini/mike-avatar.png" alt="Michele Mondora">
+  <div class="creator-meta">
+    <span class="creator-name">it-mikesoft</span>
+    <span class="creator-tagline">working with systems, living with questions</span>
+    <span class="creator-email"><a href="mailto:michele@mondora.com">michele@mondora.com</a></span>
+    <span class="creator-legal"><a href="/signal-brief/legal/privacy/">Privacy</a> ·
+      <a href="/signal-brief/legal/">Note legali</a></span>
+  </div>
+</footer>
+<section class="tutele"><h3>Trasparenza e tutele</h3>
+<p><strong>Come nasce questo contenuto.</strong> Ricerca, sintesi editoriale, voce narrante, immagini e musica sono prodotte con sistemi di intelligenza artificiale. Non c'è una redazione umana che verifica ogni affermazione prima della pubblicazione: un controllo automatico scarta le schede giudicate inaffidabili, ma non elimina la possibilità di errori.</p>
+<p><strong>Affermazioni su persone e aziende.</strong> Quanto riportato è una sintesi di fonti pubbliche, non una dichiarazione diretta delle persone citate: le frasi non vanno intese come virgolettati né come posizioni ufficiali. Le fonti sono indicate in ogni pagina episodio — verificale prima di considerare un'informazione accertata. Se trovi un'affermazione inesatta che ti riguarda, scrivi a <a href="mailto:michele@mondora.com">michele@mondora.com</a>: viene corretta o rimossa.</p>
+<p><strong>Immagini e volti.</strong> Le immagini di scena sono generate con AI e non raffigurano fatti realmente avvenuti. Le fotografie di persone reali usate nei video provengono da Wikimedia Commons con le rispettive licenze, e sono accostate al racconto a scopo identificativo: la loro presenza non implica partecipazione, dichiarazione o approvazione da parte della persona ritratta. Su richiesta dell'interessato vengono rimosse.</p>
+<p><strong>Fonti e diritti altrui.</strong> I contenuti sono rielaborazioni originali, non riproduzioni di articoli di terzi; le testate e gli autori all'origine di una notizia sono citati e collegati. Marchi e nomi commerciali appartengono ai rispettivi titolari e sono usati a scopo descrittivo.</p>
+</section>
+</body></html>
