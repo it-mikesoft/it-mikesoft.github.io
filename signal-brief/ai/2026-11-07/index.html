@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="it"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Il prezzo della fiducia · Signal.AI</title>
+<meta property="og:title" content="Il prezzo della fiducia · Signal.AI"><meta property="og:type" content="article"><meta property="og:description" content="Costruire software non costa quasi più nulla. Fidarsi di quello che viene costruito, invece, è diventata la voce di spesa più pesante."><meta property="og:url" content="https://it-mikesoft.github.io/signal-brief/ai/2026-11-07/"><meta property="og:audio" content="https://op3.dev/e/media.casamon.dev/ai/podcast/episodes/2026-11-07.mp3"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "PodcastEpisode", "name": "Il prezzo della fiducia", "datePublished": "2026-11-07", "url": "https://it-mikesoft.github.io/signal-brief/ai/2026-11-07/", "description": "Costruire software non costa quasi più nulla. Fidarsi di quello che viene costruito, invece, è diventata la voce di spesa più pesante.", "inLanguage": "it", "associatedMedia": {"@type": "MediaObject", "contentUrl": "https://op3.dev/e/media.casamon.dev/ai/podcast/episodes/2026-11-07.mp3"}, "partOfSeries": {"@type": "PodcastSeries", "name": "Signal.AI", "url": "https://it-mikesoft.github.io/signal-brief/ai/"}}</script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:#faf8f4; color:#1a1a1a; padding:2rem 10px; max-width:none; margin:0 auto; line-height:1.6; }
+  a { color:#2563eb; }
+  .back { display:inline-block; margin-bottom:1.5rem; font-size:.8rem; font-family:monospace; text-decoration:none; }
+  .videos { display:flex; gap:1rem; flex-wrap:wrap; margin:1.2rem 0; }
+  .videos figure { margin:0; flex:1; min-width:260px; }
+  .videos .v2 { flex:0 1 240px; }
+  .videos video { width:100%; border-radius:12px; background:#000; }
+  .videos .v2 video { aspect-ratio:9/16; max-height:420px; }
+  .videos figcaption { font-size:.75rem; color:#888; text-align:center; margin-top:.3rem; }
+  .vlink { display:flex; gap:.3rem; margin-top:.35rem; }
+  .vlink input { flex:1; min-width:0; font-size:.68rem; font-family:monospace; padding:.3rem .4rem;
+    border:1px solid #e2ddd6; border-radius:6px; background:#fff; color:#6b7280; }
+  .vlink button { font-size:.68rem; padding:.3rem .6rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; }
+  .wk { font-size:1rem; margin:1.4rem 0 .4rem; }
+  details.wkacc { border:1px solid #e5e7eb33; border-radius:10px; margin:.6rem 0; padding:.1rem .8rem .4rem; }
+  details.wkacc summary { cursor:pointer; font-weight:600; padding:.5rem 0; font-size:.9rem; }
+  .back:hover { text-decoration:underline; }
+  header h1 { font-family:Georgia,serif; font-size:1.7rem; font-weight:600; }
+  header h1 span { color:#2563eb; }
+  .tagline { color:#6b7280; font-size:.85rem; margin-top:.3rem; margin-bottom:1.5rem; }
+  ul.eps { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
+  .subscribe { display:inline-flex; align-items:center; gap:.5rem; margin-bottom:1.2rem;
+    padding:.45rem .9rem; background:#2563eb; color:#fff; border-radius:20px;
+    text-decoration:none; font-size:.8rem; font-weight:600; }
+  .subscribe:hover { opacity:.85; color:#fff; }
+  .ep { display:flex; align-items:center; gap:.8rem; padding:.8rem 1rem; background:#fff;
+    border:1px solid #e2ddd6; border-radius:8px; text-decoration:none; color:inherit; transition:box-shadow .12s; }
+  .ep:hover { box-shadow:0 2px 8px rgba(0,0,0,.07); }
+  .ep-play { width:32px; height:32px; border-radius:50%; background:#f3f4f6; display:flex;
+    align-items:center; justify-content:center; font-size:12px; flex-shrink:0; }
+  .ep-title { font-size:.9rem; font-weight:500; }
+  .ep-meta { font-size:.72rem; color:#9ca3af; font-family:monospace; margin-top:.15rem; }
+  audio { width:100%; margin:1rem 0 1.5rem; }
+  .rawmd { margin:-.5rem 0 1.5rem; }
+  .rawmd a { font-size:.8rem; font-family:monospace; color:inherit; opacity:.65; }
+  .desc { color:#374151; font-size:.95rem; margin-bottom:1.5rem; }
+  section { margin:2rem 0; }
+  section h2 { font-family:Georgia,serif; font-size:1.1rem; border-bottom:1px solid #e2ddd6;
+    padding-bottom:.3rem; margin-bottom:.8rem; }
+  .synthesis p { margin:.7rem 0; }
+  .tension { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; font-size:.9rem; }
+  .tension .axis { font-weight:600; margin-bottom:.3rem; }
+  .tension .side { color:#6b7280; font-size:.85rem; }
+  .proj { font-size:.9rem; margin:.4rem 0; }
+  .proj .pname { font-weight:600; }
+  .proj .pnew { background:#16a34a; color:#fff; font-size:.65rem; font-weight:700;
+    padding:.1rem .35rem; border-radius:4px; text-transform:uppercase; vertical-align:middle; }
+  .fonte { font-size:.85rem; margin:.5rem 0; }
+  .fonte .who { font-weight:600; }
+  .fonte a { display:block; margin-left:.5rem; color:#6b7280; }
+  .transcript-body p { margin:.7rem 0; line-height:1.7; }
+  .transcript-body .chapter hr { border:none; border-top:1px solid #e2ddd6; margin:1.5rem 0; }
+  .transcript-body .podcast-episode-desc { color:#6b7280; font-style:italic; }
+  .signal-card { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; }
+  .signal-theme { font-size:.75rem; font-weight:700; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.3rem; }
+  .signal-text { font-size:.85rem; color:#374151; line-height:1.5; }
+  .creator-footer { margin-top:3rem; padding-top:1.5rem; border-top:1px solid #e2ddd6;
+    display:flex; align-items:center; gap:.9rem; }
+  .creator-footer img { width:40px; height:40px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+  .creator-legal { font-size:.78rem; margin-top:.15rem; }
+  .creator-legal a { color:inherit; }
+  .creator-meta { display:flex; flex-direction:column; gap:.15rem; }
+  .creator-name { font-size:.85rem; font-weight:600; color:#1a1a1a; }
+  .creator-tagline { font-size:.75rem; color:#6b7280; }
+  .creator-email { font-size:.75rem; }
+  .creator-ai { font-size:.72rem; color:#8a7f6d; max-width:46ch; line-height:1.45; }
+  .sostieni { margin-top:2.5rem; padding:1.2rem 1.4rem; border-radius:14px;
+    background:#f7f4ef; border:1px solid #e2ddd6; }
+  .sostieni h3 { margin:0 0 .3rem; font-size:1rem; }
+  .sostieni p { margin:0 0 .9rem; font-size:.88rem; color:#6b6257; line-height:1.55; }
+  .sostieni-atti { display:flex; gap:.8rem; align-items:center; flex-wrap:wrap; }
+  .sostieni-btn { display:inline-block; padding:.55rem 1.1rem; border-radius:10px;
+    background:#2563eb; color:#fff; text-decoration:none; font-weight:700; font-size:.88rem; }
+  .sostieni-alt { font-size:.85rem; color:#6b6257; text-decoration:none; }
+  .sostieni-alt:hover { text-decoration:underline; }
+  .tutele { margin-top:2rem; padding-top:1.2rem; border-top:1px solid #e2ddd6;
+    font-size:.72rem; color:#8a7f6d; line-height:1.5; }
+  .tutele h3 { font-size:.75rem; color:#6b7280; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.5rem; font-weight:600; }
+  .tutele p { margin:.45rem 0; }
+  .tutele strong { color:#5a5348; font-weight:600; }
+  .tutele a { color:inherit; text-decoration:underline; }
+  .creator-email a { color:#9ca3af; text-decoration:none; }
+  .creator-email a:hover { color:#1a1a1a; }
+  /* disegno 2026-08-07: mesi a pagine, facce, player modale, trascrizione
+     richiudibile — la pagina episodio è un prodotto, non un sottoprodotto */
+  .hrow { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+  .hrow .subscribe { margin-bottom:0; flex-shrink:0; }
+  .months { font-size:.78rem; font-family:monospace; margin:.4rem 0 1rem; color:#9ca3af; }
+  .months a { text-decoration:none; } .months b { color:inherit; }
+  .ep-faces { display:flex; margin-left:auto; flex-shrink:0; }
+  .ep-faces img { width:26px; height:26px; border-radius:50%; object-fit:cover;
+    border:2px solid #fff; margin-left:-8px; background:#eee; }
+  /* tutti i citati sul desktop; su mobile la leggibilità vince: max 3 */
+  @media (max-width:600px) { .ep-faces img:nth-child(n+4) { display:none; } }
+  .ep-listen { width:32px; height:32px; border-radius:50%; background:#f3f4f6; border:0;
+    display:flex; align-items:center; justify-content:center; font-size:12px;
+    flex-shrink:0; cursor:pointer; color:inherit; }
+  .ep-listen.on { background:#2563eb; color:#fff; }
+  .face-inline { width:1.15em; height:1.15em; border-radius:50%; object-fit:cover;
+    vertical-align:-.18em; margin-right:.25em; }
+  /* SEMPRE sulla stessa riga (2026-08-09): su schermi stretti le miniature
+     si riducono, e se non basta il reel sparisce — mai l'andata a capo */
+  .vthumbs { display:flex; gap:.8rem; flex-wrap:nowrap; margin:1.2rem 0; align-items:flex-start; }
+  .vthumb { position:relative; cursor:pointer; border:0; padding:0; background:none;
+    border-radius:12px; overflow:hidden; }
+  /* stessa ALTEZZA per video e reel: il 9:16 si stringe, non svetta */
+  .vthumb video { height:150px; width:auto; display:block; border-radius:12px; background:#000; }
+  @media (max-width:520px) { .vthumb video { height:118px; } }
+  /* quando nemmeno ridotte ci stanno: via le miniature, due BOTTONI in
+     riga che aprono il player (2026-08-09) */
+  .vbtns { display:none; gap:.6rem; margin:1.2rem 0; }
+  .vbtns button { flex:1; padding:.6rem .4rem; border:0; border-radius:10px;
+    background:#2563eb; color:#fff; font-weight:700; font-size:.85rem;
+    cursor:pointer; font-family:inherit; }
+  @media (max-width:420px) { .vthumbs { display:none; } .vbtns { display:flex; } }
+  .vthumb .vlabel { position:absolute; left:0; right:0; bottom:0; padding:.9rem .5rem .35rem;
+    background:linear-gradient(transparent, rgba(0,0,0,.75)); color:#fff; font-size:.7rem; }
+  .vthumb::after { content:"▶"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    color:#fff; font-size:1.6rem; text-shadow:0 1px 6px rgba(0,0,0,.8); }
+  /* margin:auto ESPLICITO: il reset globale * {margin:0} annullava la
+     centratura nativa del dialog e il player si apriva in alto a sinistra */
+  dialog.vplayer { border:0; padding:0; background:transparent; max-width:92vw;
+    margin:auto; position:fixed; inset:0; }
+  dialog.vplayer::backdrop { background:rgba(0,0,0,.85); }
+  dialog.vplayer video { max-width:92vw; max-height:86vh; border-radius:14px; background:#000; }
+  dialog.vplayer .vplayer-barra { display:flex; justify-content:flex-end; align-items:center;
+    gap:.5rem; margin-bottom:.5rem; }
+  /* 2.75rem e' il bersaglio minimo per il dito: la ✕ da sola sarebbe 20px. */
+  dialog.vplayer .vplayer-barra button { font:inherit; font-size:.9rem; color:#fff;
+    background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.28);
+    border-radius:999px; padding:.45rem .9rem; cursor:pointer;
+    min-height:2.75rem; min-width:2.75rem; }
+  dialog.vplayer .vplayer-barra button:hover { background:rgba(255,255,255,.24); }
+  dialog.vplayer .vplayer-chiudi { font-size:1.1rem; line-height:1; }
+  details.tr { border:1px solid #e2ddd6; border-radius:10px; padding:.2rem .9rem .6rem; }
+  details.tr summary { cursor:pointer; font-weight:600; padding:.55rem 0; }
+  .tr-copy { font-size:.72rem; padding:.3rem .7rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; margin:.3rem 0 .5rem; }
+  .epnav { display:flex; justify-content:space-between; gap:1rem; margin:2rem 0 0;
+    font-size:.82rem; font-family:monospace; }
+  .epnav a { text-decoration:none; }
+  /* Header + tab bar (spec-016, Task 5): stessa forma di
+     public/console/podcast-render.css, riusando i nomi classe dove
+     combaciano — solo la meccanica tab/pannello è nuova qui. */
+  .episode-header .date-line { font-size:.72rem; font-family:monospace; color:#9ca3af;
+    text-transform:uppercase; letter-spacing:.08em; margin-bottom:.3rem; }
+  .ep-header-block { margin-bottom:.5rem; }
+  .ep-header-faces { margin:.6rem 0; }
+  .ep-header-faces .ep-faces { margin-left:0; }
+  .tabs { display:flex; gap:.25rem; border-bottom:1px solid #e2ddd6; margin:1.5rem 0; flex-wrap:wrap; }
+  .tab { font-family:monospace; font-size:.72rem; text-transform:uppercase; letter-spacing:.08em;
+    padding:.6rem .9rem; background:transparent; border:0; border-bottom:2px solid transparent;
+    color:#9ca3af; cursor:pointer; }
+  .tab[aria-selected="true"] { color:#1a1a1a; border-bottom-color:#2563eb; }
+  .tab-panel { display:block; }
+  .tab-panel[hidden] { display:none !important; }
+  /* Fallback dei pannelli senza dati (episodi storici senza un sidecar) —
+     porta di public/console/podcast-render.css:304-309, sui token pubblici. */
+  /* Header episodio a due colonne: barra tab e pannello nel primo schermo
+     (stesse regole del modulo condiviso, richiesta 2026-08-10). */
+  .ep-header-block { display:grid; grid-template-columns:minmax(0,1fr) 340px;
+    grid-template-rows:repeat(4,min-content); gap:.3rem 1.6rem;
+    align-items:start; margin-bottom:.5rem; }
+  .ep-header-block > [data-sb="data"] { grid-column:1; margin:0; }
+  .ep-header-block > [data-sb="titolo"] { grid-column:1; margin:.1rem 0; }
+  .ep-header-block > [data-sb="player"] { grid-column:1; }
+  .ep-header-block > [data-sb="nav"] { grid-column:1; }
+  .ep-header-block > [data-sb="facce"] { grid-column:2; grid-row:1; }
+  .ep-header-block > [data-sb="video"] { grid-column:2; grid-row:2/5;
+    display:flex; gap:.5rem; flex-wrap:wrap; }
+  .ep-header-block [data-sb="facce"] img { width:26px; height:26px; }
+  .ep-header-block [data-sb="video"] video { max-height:96px; width:auto; }
+  .ep-header-block audio { height:36px; width:100%; }
+  .tabs { position:sticky; top:0; z-index:5; background:#fff;
+    padding:.4rem 0; border-bottom:1px solid #e5e7eb; }
+  @media (max-width:760px) {
+    .ep-header-block { grid-template-columns:1fr; }
+    .ep-header-block > [data-sb="facce"],
+    .ep-header-block > [data-sb="video"] { grid-column:1; grid-row:auto; }
+  }
+  .state-note { padding:2rem 1rem; text-align:center; color:#9ca3af;
+    font-family:monospace; font-size:.85rem; }
+  @media (prefers-color-scheme:dark) {
+    body { background:#1f1d18; color:#e5e5e5; }
+    .ep, .tension, .signal-card { background:#2a2823; border-color:#3a352d; }
+    .ep-play { background:#3a352d; } .desc { color:#d4d4d4; }
+    .signal-text { color:#d4d4d4; }
+    .episode-header .date-line { color:#9ca3af; }
+    .tabs { border-color:#3a352d; }
+    .tab[aria-selected="true"] { color:#f5f5f5; }
+    .state-note { color:#9ca3af; }
+    .creator-footer { border-color:#3a352d; }
+    .creator-name { color:#f5f5f5; }
+    .creator-tagline, .creator-email a { color:#9ca3af; }
+    .creator-ai { color:#9a8f7d; }
+    .vlink input { background:#1c1a17; border-color:#3a352d; color:#9ca3af; }
+    .tutele { border-color:#3a352d; color:#9a8f7d; }
+    .tutele h3 { color:#a9a9a9; } .tutele strong { color:#d4d4d4; }
+    .ep-listen { background:#3a352d; }
+    .ep-faces img { border-color:#2a2823; background:#3a352d; }
+    details.tr { border-color:#3a352d; }
+  }
+</style></head><body>
+<a class="back back-link" href="/signal-brief/ai/">← Signal.AI</a><div class="ep-header-block"><header class="episode-header"><div class="date-line" data-sb="data">2026-11-07</div><h1 data-sb="titolo">Il prezzo della fiducia</h1><span class="tono" data-sb="tono" title="quello che racconta e' andato male">🙁</span><div class="desc">Costruire software non costa quasi più nulla. Fidarsi di quello che viene costruito, invece, è diventata la voce di spesa più pesante.</div><div class="tagline">Digital Intelligence Podcast</div></header><audio controls preload="none" data-sb="player" src="https://op3.dev/e/media.casamon.dev/ai/podcast/episodes/2026-11-07.mp3"></audio><nav class="epnav" data-sb="nav"><a href="/signal-brief/ai/2026-11-06/">← 2026-11-06</a><span style="flex:1"></span></nav><div class="ep-header-faces" data-sb="facce"><span class="ep-faces"><img loading="lazy" src="https://media.casamon.dev/avatars/gen/dhh.png" alt="" title="DHH"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/geoffrey-hinton.jpg" alt="" title="Geoffrey Hinton"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/vitalik-buterin.jpg" alt="" title="Vitalik Buterin"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/patrick-collison.jpg" alt="" title="Patrick Collison"><img loading="lazy" src="https://media.casamon.dev/avatars/gen/ai.png" alt="" title="AI"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/naval-ravikant.jpg" alt="" title="Naval Ravikant"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/elon-musk.jpg" alt="" title="Elon Musk"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/francois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/simon-willison.jpg" alt="" title="Simon Willison"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/sam-altman.jpg" alt="" title="Sam Altman"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/demis-hassabis.jpg" alt="" title="Demis Hassabis"></span></div><div class="ep-header-video" data-sb="video"></div></div>
+<div class="tabs-block"><div class="tabs" role="tablist" id="sbTabs"><button class="tab" type="button" role="tab" data-tab="sintesi" aria-selected="true" onclick="sbTab('sintesi')">Sintesi</button><button class="tab" type="button" role="tab" data-tab="testo" aria-selected="false" onclick="sbTab('testo')">Testo</button><button class="tab" type="button" role="tab" data-tab="comparazione" aria-selected="false" onclick="sbTab('comparazione')">Comparazione</button><button class="tab" type="button" role="tab" data-tab="segnali" aria-selected="false" onclick="sbTab('segnali')">Segnali</button><button class="tab" type="button" role="tab" data-tab="fonti" aria-selected="false" onclick="sbTab('fonti')">Fonti</button></div>
+<div class="tab-panel panel" data-sb-panel="sintesi"><div class="synthesis"><h2>La settimana in cui il software è diventato gratis e la fiducia carissima</h2>
+<p>Il segnale più compatto non è un modello, è un metodo: l'agente che costruisce. <a href="#" class="face-link" onclick="vaiFonte(event, 'Andrej Karpathy')" title="Fonti di Andrej Karpathy"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/andrej-karpathy.jpg" alt=""></a>Andrej Karpathy ha distillato 43 milioni di commenti di Hacker News in <a href="https://www.businesstoday.in/technology/news/story/tired-of-youtube-recommendations-andrej-karpathy-builds-hackertube-with-6454-videos-to-explore-565171-2026-11-02?referral=yes&amp;t_source=recengine&amp;t_medium=web&amp;t_content=footerstrip-2&amp;t_psl=False" target="_blank" rel="noopener">HackerTube in circa due ore</a>, facendo svolgere all'agente filtraggio, deploy e hardening. <a href="#" class="face-link" onclick="vaiFonte(event, 'Patrick Collison')" title="Fonti di Patrick Collison"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/patrick-collison.jpg" alt=""></a>Patrick Collison ha aggiunto alle sue app una <a href="https://x.com/patrickc/status/2116636967517798672" target="_blank" rel="noopener">casella «improvements» che lascia all'agente il compito di riscriverle su richiesta dell'utente</a>: un utente ha ottenuto 150 modifiche in pochi giorni. DHH definisce <a href="https://www.businessinsider.com/ruby-rails-creator-dhh-ai-cantankerous-coders-people-skills-2026-11" target="_blank" rel="noopener">«AI psychosis»</a> la pretesa di rivedere ogni riga, e <a href="#" class="face-link" onclick="vaiFonte(event, 'Naval Ravikant')" title="Fonti di Naval Ravikant"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/naval-ravikant.jpg" alt=""></a>Naval Ravikant ne trae la conseguenza finanziaria: il <a href="https://www.businesstoday.in/technology/story/pure-software-is-rapidly-becoming-uninvestable-naval-ravikant-on-why-vibe-coding-changes-everything-528256-2026-04-30" target="_blank" rel="noopener">«puro software» diventa non investibile</a>.</p>
+<p>Qui però il coro si incrina, e su un punto molto concreto: il conto. <a href="#" class="face-link" onclick="vaiFonte(event, 'Elon Musk')" title="Fonti di Elon Musk"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/elon-musk.jpg" alt=""></a>Elon Musk ha strozzato Grok Bot perché i <a href="https://techcrunch.com/2026/11/02/elon-musk-throttles-grok-bot-limits-due-to-unsustainably-high-costs/" target="_blank" rel="noopener">costi di inferenza sono «insostenibili rispetto ai ricavi»</a>; <a href="#" class="face-link" onclick="vaiFonte(event, 'François Chollet')" title="Fonti di François Chollet"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/francois-chollet.jpg" alt=""></a>François Chollet avverte che gli agenti producono <a href="https://xholic.ai/tools/x-profile-analytics/fchollet/" target="_blank" rel="noopener">ROI negativo quando coordinamento e revisione costano più del codice risparmiato</a>; <a href="#" class="face-link" onclick="vaiFonte(event, 'Simon Willison')" title="Fonti di Simon Willison"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/simon-willison.jpg" alt=""></a>Simon Willison rilancia il giudizio di <a href="https://simonwillison.net/2026/Nov/6/nilay-patel/" target="_blank" rel="noopener">Nilay Patel: i prodotti IA non valgono ancora quello che costano</a>. La scarsità, scacciata dal software, rientra dalla porta dell'hardware — da cui la lite sulla <a href="https://www.pcmag.com/news/ram-altman-openais-ceo-tries-to-defuse-controversial-memory-comments" target="_blank" rel="noopener">RAM tra <img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/sam-altman.jpg" alt="">Sam Altman e Musk</a>.</p>
+<p>La frattura più interessante è però sul rimedio, non sulla diagnosi. Tutti puntano allo stesso oggetto — l'agente autonomo come superficie d'attacco: <a href="#" class="face-link" onclick="vaiFonte(event, 'Demis Hassabis')" title="Fonti di Demis Hassabis"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/demis-hassabis.jpg" alt=""></a>Demis Hassabis parla di <a href="https://www.aa.com.tr/en/europe/deepmind-co-founder-warns-ai-hacking-incidents-are-early-warning-shots-/4088701" target="_blank" rel="noopener">«colpi di avvertimento»</a>, <a href="#" class="face-link" onclick="vaiFonte(event, 'Dan Lahav')" title="Fonti di Dan Lahav"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/dan-lahav.png" alt=""></a>Dan Lahav lo misura su <a href="https://www.irregular.com/research" target="_blank" rel="noopener">benchmark offensivi</a>, <a href="#" class="face-link" onclick="vaiFonte(event, 'Vitalik Buterin')" title="Fonti di Vitalik Buterin"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/vitalik-buterin.jpg" alt=""></a>Vitalik Buterin a Devcon 8 teme <a href="https://www.cryptotimes.io/2026/11/03/vitalik-warns-ai-security-is-tilting-toward-domination-as-deceleration-stalls/" target="_blank" rel="noopener">attacchi inediti alla crittografia</a>. Ma <a href="#" class="face-link" onclick="vaiFonte(event, 'Geoffrey Hinton')" title="Fonti di Geoffrey Hinton"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/geoffrey-hinton.jpg" alt=""></a>Geoffrey Hinton chiede un <a href="https://aiweekly.co/alerts/hinton-warns-humanity-may-have-been-better-off-without-ai" target="_blank" rel="noopener">regolatore indipendente in stile FDA</a>, cioè un guardiano al centro; <a href="#" class="face-link" onclick="vaiFonte(event, 'Marc Andreessen')" title="Fonti di Marc Andreessen"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/marc-andreessen.jpg" alt=""></a>Marc Andreessen e Buterin rispondono che l'antidoto alla concentrazione è <a href="https://xanguard.tech/track/pmarca/" target="_blank" rel="noopener">l'open source</a> e la decentralizzazione difensiva. Stessa paura del potere concentrato, prescrizioni opposte: un cancello in più, o nessun cancello. <a href="#" class="face-link" onclick="vaiFonte(event, 'Yoshua Bengio')" title="Fonti di Yoshua Bengio"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/yoshua-bengio.jpg" alt=""></a>Yoshua Bengio tenta una terza via costruendo con <a href="https://yoshuabengio.org/en/blog" target="_blank" rel="noopener">LawZero lo strumento verificabile</a> invece della norma.</p>
+<p>La corrente di fondo è dunque uno spostamento preciso del valore. Mentre produrre software crolla di prezzo, eseguirlo e fidarsi di esso diventa la voce di spesa dominante. Perciò il potere migra dove i modelli non arrivano: distribuzione e dati, come sostiene <a href="https://rdltr.app/people/benedict-evans" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/benedict-evans.png" alt="">Benedict Evans</a>; architetture alternative, come il <a href="https://x.com/ylecun/status/2116977821088096276" target="_blank" rel="noopener">JEPA di <img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/yann-lecun.jpg" alt="">Yann LeCun</a>; e infrastruttura nazionale, dalla <a href="https://www.vanguardngr.com/2026/11/fg-laying-solid-ai-foundation-for-businesses-to-thrive-tijan/" target="_blank" rel="noopener">fibra di <img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/bosun-tijani.png" alt="">Bosun Tijani</a> al timore di <a href="#" class="face-link" onclick="vaiFonte(event, 'Vivek Raghavan')" title="Fonti di Vivek Raghavan"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/manual-vivek-raghavan.jpg" alt=""></a>Vivek Raghavan di una <a href="https://www.newsbytesapp.com/news/science/vivek-raghavan-warns-india-risks-digital-colony-from-foreign-ai/tldr" target="_blank" rel="noopener">«colonia digitale»</a>.</p></div></div>
+<div class="tab-panel panel" data-sb-panel="testo" hidden><button class="tr-copy" type="button" onclick="copiaTrascrizione(this)">copia il testo</button><div class="transcript-body"><h2>Il prezzo della fiducia</h2>
+<p class="podcast-episode-desc">Costruire software non costa quasi più nulla. Fidarsi di quello che viene costruito, invece, è diventata la voce di spesa più pesante.</p>
+<div class="chapter" data-mood="geo"><hr></div>
+<p>Sabato 7 novembre. Questa settimana, su Signal Brief, il punto di osservazione si sposta di qualche grado — e il movimento è piccolo ma netto.</p>
+<p>Fino a ieri il tema era il modello che diventa infrastruttura: Srinivas che lancia agenti capaci di accettare obiettivi, Huang che chiama gli agenti la prossima piattaforma di calcolo. Tutto vero, tutto confermato. Ma adesso la domanda non è più se gli agenti funzionano. È quanto costa credergli.</p>
+<p>Il luogo dove questa domanda si è manifestata nel modo più concreto non è un consiglio di amministrazione. È il computer di casa di <a href="#" class="face-link" onclick="vaiFonte(event, 'Andrej Karpathy')" title="Fonti di Andrej Karpathy"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/andrej-karpathy.jpg" alt=""></a>Andrej Karpathy, un pomeriggio di inizio novembre.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Il 31 ottobre Karpathy ha pubblicato HackerTube: un sito in stile YouTube costruito a partire da circa quarantatré milioni di commenti di Hacker News, da cui sono stati estratti seimilaquattrocentocinquantaquattro video raccomandati più volte, divisi in centocinquanta temi. Il dato interessante non è il sito. È il resoconto che Karpathy ne ha fatto: Claude Opus 5.5 e Claude Code hanno svolto quasi tutto in circa due ore — filtraggio dei dati, scrittura del codice, pubblicazione online, messa in sicurezza, ottimizzazione. A mano sono rimaste tre cose: la chiave di accesso alle interfacce, il server, il dominio.</p>
+<p>Due ore. Non per un prototipo: per un servizio funzionante, pubblico, difeso.</p>
+<p>Il giorno prima, il 30 ottobre, <a href="#" class="face-link" onclick="vaiFonte(event, 'Patrick Collison')" title="Fonti di Patrick Collison"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/patrick-collison.jpg" alt=""></a>Patrick Collison aveva raccontato una cosa parallela. Alle piccole applicazioni che si scrive da solo ha aggiunto una casella chiamata «improvements»: chi la usa scrive lì cosa vorrebbe, e un agente esegue la modifica. Un utente ha ottenuto centocinquanta cambiamenti in pochi giorni. Collison la chiama «liquid software», software liquido, e ammette di non avere risposte sulla sicurezza né sulla manutenzione. Il confine fra usare un programma e scriverlo si è semplicemente sciolto.</p>
+<p>Da questi due gesti <a href="#" class="face-link" onclick="vaiFonte(event, 'Naval Ravikant')" title="Fonti di Naval Ravikant"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/naval-ravikant.jpg" alt=""></a>Naval Ravikant trae la conseguenza che interessa chi muove capitali: il «puro software» sta diventando rapidamente non investibile. Se un'idea espressa in italiano o in inglese diventa un'applicazione funzionante in una serata, quella categoria perde il suo valore come oggetto di investimento. Il denaro, secondo lui, si sposta altrove — hardware, effetti di rete, modelli di base, attività legate al mondo fisico.</p>
+<p>È una dinamica già vista, e vale collocarla. Alla fine dell'Ottocento, quando l'energia elettrica sostituì l'albero di trasmissione a vapore nelle fabbriche, il valore non rimase nel motore: si trasferì all'organizzazione del lavoro intorno al motore. La macchina diventò banale, il modo di usarla diventò tutto.</p>
+<p>Qui però la storia si complica, e si complica sul conto. Il primo novembre <a href="#" class="face-link" onclick="vaiFonte(event, 'Elon Musk')" title="Fonti di Elon Musk"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/elon-musk.jpg" alt=""></a>Elon Musk ha ridotto i limiti d'uso di Grok Bot, il suo agente che lavora dentro un computer virtuale, dichiarando che i costi per far girare il servizio sono insostenibili rispetto ai ricavi. Ottocentomila utenti paganti alla settimana, e il bilancio non torna: un agente che apre finestre e clicca consuma molto più di una conversazione. <a href="#" class="face-link" onclick="vaiFonte(event, 'François Chollet')" title="Fonti di François Chollet"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/francois-chollet.jpg" alt=""></a>François Chollet mette il principio in una frase che vale più di molte analisi: gli agenti producono un ritorno negativo quando coordinarli e rivederli costa più del codice che fanno risparmiare. <a href="#" class="face-link" onclick="vaiFonte(event, 'Simon Willison')" title="Fonti di Simon Willison"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/simon-willison.jpg" alt=""></a>Simon Willison, che passa le giornate a costruire strumenti per far lavorare questi sistemi, rilancia il giudizio di Nilay Patel: i prodotti di intelligenza artificiale non valgono ancora quello che costano.</p>
+<p>E la scarsità, cacciata dal software, rientra dalla finestra dell'hardware. La settimana ha prodotto una lite pubblica sulla memoria dei computer tra <a href="#" class="face-link" onclick="vaiFonte(event, 'Sam Altman')" title="Fonti di Sam Altman"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/sam-altman.jpg" alt=""></a>Sam Altman ed <a href="#" class="face-link" onclick="vaiFonte(event, 'Elon Musk')" title="Fonti di Elon Musk"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/elon-musk.jpg" alt=""></a>Elon Musk — Altman a sostenere che la memoria scarsa vada concentrata nei centri di calcolo, Musk a rispondere che la gente ha diritto alla propria. Una discussione che dieci anni fa sarebbe sembrata da appassionati di componenti, diventata questione politica.</p>
+<p>Il software è gratis. Fidarsi del software è carissimo. È questa la frase che tiene insieme la giornata.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>David Heinemeier Hansson è l'autore di Rails, il sistema con cui per vent'anni si è scritta buona parte dei siti del mondo, e per vent'anni è stato la voce della tradizione: convenzioni solide, mestiere, diffidenza verso le mode. Questa settimana ha preso quella reputazione e l'ha usata per dire la cosa opposta di quello che ci si aspetterebbe.</p>
+<p>Fra fine ottobre e i primi di novembre ha definito «AI psychosis» — psicosi da intelligenza artificiale — tre posizioni che oggi considera indifendibili: che questa tecnologia sia solo un attrezzo come gli altri, che sia un pappagallo statistico, e che richieda una revisione umana riga per riga. L'ultima è quella che conta. Rivedere ogni riga, per Hansson, non è prudenza: è una forma di rifiuto travestito da rigore.</p>
+<p>Il suo lavoro attuale è Omarchy, un sistema operativo basato su Linux pensato per un mondo in cui gli agenti usano il computer al posto nostro. Nelle ultime settimane lo ha portato su tablet, televisori, nuovo hardware ARM; ha aggiunto modelli locali che diagnosticano i problemi senza connessione, una funzione di dettatura, e ha allargato lo staff a tempo pieno. Ha annunciato Basecamp per Claude e dichiarato di aver consegnato modifiche a Omarchy scritte da un agente.</p>
+<p>Questa posizione va messa esattamente contro quella di Chollet, perché il disaccordo è pulito. Per Hansson la revisione è zavorra psicologica. Per Chollet la revisione è il costo che determina se l'operazione ha senso o distrugge valore. Non discutono su cosa sanno fare le macchine: discutono su quanto possiamo permetterci di controllarle.</p>
+<p>Ed è un disaccordo che somiglia a uno vecchio. Quando i compilatori sostituirono la scrittura a mano del codice macchina, una generazione di programmatori pretese di leggere l'output del compilatore per verificarlo. Avevano ragione, per un po'. Poi smisero — non perché il compilatore fosse diventato infallibile, ma perché il costo di quella verifica superò il valore degli errori che trovava. Il punto discusso oggi è se siamo già a quel momento, o se ci manca ancora un pezzo di strada. Hansson dice che ci siamo. Chollet dice che dipende da cosa stai costruendo. Nessuno dei due ha i dati per chiudere la questione, e questo è il dato più onesto della settimana.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Geoffrey Hinton')" title="Fonti di Geoffrey Hinton"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/geoffrey-hinton.jpg" alt=""></a>Geoffrey Hinton ha passato cinquant'anni a costruire le reti neurali e gli ultimi tre a spiegare perché lo preoccupano. Nelle interviste pubblicate fra il 3 e il 6 novembre ha alzato il tono in modo notevole: ha detto che l'umanità potrebbe essere stata meglio senza questa tecnologia, pur precisando di non essere uniformemente pessimista e di vedere ancora un futuro possibile di abbondanza.</p>
+<p>La sua previsione è precisa e per questo scomoda: un incidente di scala Chernobyl legato all'intelligenza artificiale — un attacco che fermi la produzione di energia, o un blocco finanziario di una settimana — entro quest'anno o il prossimo.</p>
+<p>La proposta che ne deriva è istituzionale. I modelli di frontiera dovrebbero ottenere un'approvazione prima del rilascio da un regolatore indipendente, costruito come l'agenzia che negli Stati Uniti autorizza i farmaci, con l'onere a chi sviluppa di dimostrare con numeri che i benefici superano i danni. Ha chiesto responsabilità legale per i danni causati, e ha criticato la concentrazione di potere nelle mani di poche aziende americane, nominando Altman, Musk e Zuckerberg come custodi di cui non si fida.</p>
+<p>Qui si apre la frattura più interessante di questa settimana, e non riguarda la diagnosi — riguarda il rimedio. Perché su cosa fa paura c'è un accordo largo: l'agente autonomo come superficie d'attacco. <a href="#" class="face-link" onclick="vaiFonte(event, 'Demis Hassabis')" title="Fonti di Demis Hassabis"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/demis-hassabis.jpg" alt=""></a>Demis Hassabis, parlando a Dublino, ha chiamato gli incidenti di attacco informatico guidati dall'intelligenza artificiale «colpi di avvertimento», e ha chiesto test isolati dalla rete, pratiche di contenimento prese in prestito da biologia e sicurezza nucleare, dieci volte più investimenti in sicurezza. <a href="#" class="face-link" onclick="vaiFonte(event, 'Dan Lahav')" title="Fonti di Dan Lahav"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/dan-lahav.png" alt=""></a>Dan Lahav lo misura: il 5 novembre la sua Irregular ha pubblicato la valutazione di GPT-6 Cyber, che ha risolto tutti gli undici scenari di un banco di prova offensivo e novanta compiti su duecentottantotto del più difficile, fallendo soltanto contro bersagli completamente irrobustiti.</p>
+<p>Stessa paura, prescrizioni opposte. <a href="#" class="face-link" onclick="vaiFonte(event, 'Marc Andreessen')" title="Fonti di Marc Andreessen"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/marc-andreessen.jpg" alt=""></a>Marc Andreessen sostiene che l'antidoto alla concentrazione sia il codice aperto — lasciare che ragazzi e costruttori indipendenti imparino, invece di lasciare la capacità a una manciata di aziende. <a href="#" class="face-link" onclick="vaiFonte(event, 'Vitalik Buterin')" title="Fonti di Vitalik Buterin"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/vitalik-buterin.jpg" alt=""></a>Vitalik Buterin, a Devcon 8 il 3 novembre, parla di accelerazione difensiva decentralizzata. Un cancello in più, o nessun cancello: la stessa diagnosi produce due architetture politiche incompatibili.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Vitalik Buterin')" title="Fonti di Vitalik Buterin"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/vitalik-buterin.jpg" alt=""></a>Vitalik Buterin merita una scena sua, perché il 3 novembre ha aperto Devcon 8 con un argomento che non si era ancora sentito formulare così.</p>
+<p>La sua preoccupazione non è che l'intelligenza artificiale scriva codice malevolo. È che comprima decenni di progresso matematico in pochi anni e trovi, strada facendo, attacchi sconosciuti alla crittografia su cui si regge tutto: curve ellittiche, accoppiamenti, reticoli. Nessuna rottura di questo tipo è nota oggi. Ma se arrivasse, non sarebbe un problema di sicurezza: sarebbe un problema esistenziale per Ethereum e per Bitcoin. Ha aggiunto che le assunzioni di base stanno già cedendo: le vulnerabilità nel software si trovano più in fretta, i dispositivi connessi possono sorvegliare chi li usa, le piattaforme sociali si fanno sommergere dai programmi automatici.</p>
+<p>La sua risposta è coerente con tutto quello che ha costruito: non rallentare, ma rendere verificabile. Codice aperto, hardware formalmente controllabile, prove crittografiche, meno punti in cui bisogna fidarsi di qualcuno. In pratica preferisce far girare i modelli sulla propria macchina; e quando serve un modello di frontiera, che sia un modello locale a ripulire la richiesta e a limitare l'autorità di quello remoto. Ha mostrato una configurazione che chiama «modalità paranoica», costruita su Tor e sulla riscrittura locale delle richieste.</p>
+<p>Vale collegare questo a Hinton, perché la distanza fra i due non è di temperamento ma di luogo. Hinton vuole mettere il controllo prima: un'autorità che autorizza. Buterin vuole metterlo dopo e distribuito: tanti piccoli strumenti che rendono inutile fidarsi. È la vecchia differenza fra la licenza e il contrappeso — fra chi costruisce un'autorità sanitaria e chi costruisce reti idriche indipendenti. Nessuna delle due ha mai funzionato da sola, storicamente.</p>
+<p>E <a href="#" class="face-link" onclick="vaiFonte(event, 'Yoshua Bengio')" title="Fonti di Yoshua Bengio"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/yoshua-bengio.jpg" alt=""></a>Yoshua Bengio sta provando una terza strada, che non è nessuna delle due: non la norma e non la rete, ma lo strumento. Alla conferenza di Berlino ha chiesto linee rosse convalidate da soggetti indipendenti; con la sua organizzazione LawZero sta costruendo Scientist AI, un sistema progettato senza obiettivi propri, pensato per stimare quanto un altro sistema stia ingannando. Un verificatore tecnico invece di un ispettore. Ha anche proposto che le potenze medie — Corea del Sud, Canada, Europa — mettano insieme risorse invece di dipendere da poche aziende americane.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Teniamo presente dove siamo: produrre software è crollato di prezzo, fidarsi di quello che viene prodotto è la nuova spesa, e intorno a questa spesa si stanno formando tre scuole — chi regola, chi distribuisce, chi verifica. Manca una voce, quella di chi guarda dove va il denaro.</p>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Benedict Evans')" title="Fonti di Benedict Evans"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/benedict-evans.png" alt=""></a>Benedict Evans è l'analista che da quindici anni spiega i cambi di piattaforma a chi deve decidere. Il suo ultimo saggio documentato è del 3 settembre, «AI, tools and transformation», e la cosa notevole è che argomenta contro l'entusiasmo che abbiamo raccontato all'inizio: non crede che tutti si costruiranno il proprio software a richiesta. La sua posizione è più sobria — questa tecnologia allargherà i prodotti esistenti e creerà applicazioni verticali precise, ma il collo di bottiglia non è la capacità dei modelli: è il cambiamento organizzativo.</p>
+<p>È un'osservazione che val la pena tenere accanto a Karpathy e Collison. Loro due dimostrano cosa è possibile. Evans ricorda quanto lentamente il possibile diventa normale. Entrambi hanno ragione, su scale temporali diverse — e la distanza fra le due è esattamente dove si perdono i soldi.</p>
+<p>La sua tesi di fondo per quest'anno è che i modelli di base stanno diventando infrastruttura di consumo, come l'energia elettrica o la banda: il valore durevole si sposta sulle applicazioni, sull'integrazione nei processi, sui dati di proprietà e soprattutto sulla distribuzione. Che è il motivo per cui la discussione su chi possiede le infrastrutture è diventata geopolitica. <a href="#" class="face-link" onclick="vaiFonte(event, 'Bosun Tijani')" title="Fonti di Bosun Tijani"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/bosun-tijani.png" alt=""></a>Bosun Tijani, in Nigeria, sta costruendo novantamila chilometri di fibra ad accesso aperto con due miliardi di dollari dichiarati, capacità di calcolo condivisa per i ricercatori, un modello linguistico pubblico per yoruba, hausa, igbo, ibibio e inglese nigeriano. <a href="#" class="face-link" onclick="vaiFonte(event, 'Vivek Raghavan')" title="Fonti di Vivek Raghavan"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/manual-vivek-raghavan.jpg" alt=""></a>Vivek Raghavan, in India, avverte che dipendere da modelli stranieri rischia di ridurre il paese a «colonia digitale», e con Sarvam costruisce modelli, sistemi vocali e infrastruttura senza dipendenze esterne.</p>
+<p>Mentre a Berlino e in California si discute di come rendere sicura questa tecnologia, a Lagos e a Bangalore si discute di chi la possiede. Sono due conversazioni diverse, e per ora si parlano poco.</p>
+<div class="chapter" data-mood="upbeat"><hr></div>
+<p>Progetti da osservare.</p>
+<p>HackerTube è il sito di Karpathy: quarantatré milioni di commenti di Hacker News distillati in seimilaquattrocentocinquantaquattro video, centocinquanta temi. Nato il 31 ottobre, senza un archivio pubblico del codice. È meno un prodotto che una dimostrazione: un'irritazione personale trasformata in servizio pubblico in un pomeriggio.</p>
+<p>Claude Code è l'agente di programmazione di Anthropic con cui Karpathy l'ha costruito. Interessa qui per una ragione sola: è il riferimento concreto del passaggio dallo scrivere codice al dirigere chi lo scrive.</p>
+<p>Scientist AI è il progetto di LawZero di Bengio. Non è un agente: è un guardiano, pensato per stimare con una probabilità quanto un altro sistema stia mentendo. Di apertura del codice ci sono annunci, non un rilascio verificato. Se funzionasse, sarebbe la prima risposta tecnica alla domanda sulla fiducia di cui abbiamo parlato tutta la puntata.</p>
+<p>Dessa è il modello vocale di Block presentato il 23 ottobre: parla e ascolta insieme, addestrato su conversazioni umane per riprodurre pause, emozioni, risate, ritmo naturale. Secondo le fonti gira su hardware di consumo, ma per ora è accessibile soltanto a ricercatori sulla sicurezza. <a href="#" class="face-link" onclick="vaiFonte(event, 'Jack Dorsey')" title="Fonti di Jack Dorsey"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/jack-dorsey.jpg" alt=""></a>Jack Dorsey, nei giorni successivi, ha scritto «there is no moat» — non c'è fossato — senza chiarire se parlasse dei modelli di frontiera o del software in generale.</p>
+<p>Cosmos 3 è il modello del mondo di NVIDIA a pesi aperti, in versione Super da sessantaquattro miliardi di parametri e Nano da quindici: gestisce testo, immagini, video, suono e azioni. Serve alle macchine che devono muoversi nello spazio, non chiacchierare.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Due ore per costruire un sito difeso, e ottocentomila abbonati che costano più di quanto rendono. La settimana si tiene insieme in questa sproporzione: la parte difficile è diventata facile, e la parte facile — decidere se fidarsi — è diventata la più cara. Forse non è un problema tecnico. Forse stiamo imparando, come già capitò con i compilatori, quanto controllo possiamo permetterci di lasciare andare.</p>
+<p>È stato Signal Brief. Alla prossima.</p></div><div class="rawmd"><a href="raw.md">Testo (markdown)</a></div></div>
+<div class="tab-panel panel" data-sb-panel="comparazione" hidden><div class="tension"><div class="axis">↗ L'agente che costruisce da solo</div><div class="side">Il segnale non è più la capacità del modello ma il metodo: filtraggio, deploy e hardening affidati interamente all'agente, con progetti completi in ore.</div></div><div class="tension"><div class="axis">↗ Software come bene non investibile</div><div class="side">Se produrre codice costa quasi nulla, il «puro software» perde valore economico come categoria di investimento.</div></div><div class="tension"><div class="axis">↗ L'utente finale riscrive il prodotto</div><div class="side">Una casella «improvements» trasforma la richiesta dell'utente in modifica eseguita, sciogliendo il confine fra uso e sviluppo.</div></div><div class="tension"><div class="axis">↗ La scarsità rientra dall'hardware</div><div class="side">Scacciata dal software, la scarsità ricompare su memoria e capacità fisica, fino alla lite pubblica sulla RAM.</div></div><div class="tension"><div class="axis">↗ ROI negativo del coordinamento agentico</div><div class="side">Quando revisione e orchestrazione costano più del codice risparmiato, l'agente distrugge valore invece di crearlo.</div></div><div class="tension"><div class="axis">↗ Colpi di avvertimento già arrivati</div><div class="side">Gli incidenti di hacking assistito dall'IA vengono letti come segnali anticipatori e non come scenari ipotetici.</div></div><div class="tension"><div class="axis">⚖ Fidarsi dell'output o verificarlo: la revisione è zavorra o unica difesa?</div><div class="side">DHH: rivedere ogni riga è «AI psychosis» · François Chollet: senza revisione il coordinamento costa più del codice risparmiato</div></div><div class="tension"><div class="axis">⚖ Il rimedio alla concentrazione del potere: un cancello in più o nessun cancello</div><div class="side">Geoffrey Hinton: serve un guardiano centrale in stile FDA · Marc Andreessen: l'antidoto è l'open source e la decentralizzazione difensiva</div></div><div class="tension"><div class="axis">⚖ Norma o strumento: come si rende sicura l'IA</div><div class="side">Geoffrey Hinton: con la regolazione indipendente · Yoshua Bengio: costruendo con LawZero un verificatore tecnico</div></div><div class="tension"><div class="axis">⚖ Software gratuito contro hardware scarso: dove si sposta il collo di bottiglia</div><div class="side">Naval Ravikant: il puro software diventa non investibile · Sam Altman: la contesa vera è sulla memoria e sulla capacità fisica</div></div><div class="tension"><div class="axis">⚖ Chi deve possedere l'infrastruttura: lo Stato o la rete aperta</div><div class="side">Vivek Raghavan: senza infrastruttura propria si diventa «colonia digitale» · Vitalik Buterin: la difesa sta nella decentralizzazione, non nel confine nazionale</div></div></div>
+<div class="tab-panel panel" data-sb-panel="segnali" hidden><section><h2>Progetti da osservare</h2><div class="tension"><div class="axis">Claude Code</div><div class=side>Agente di programmazione di Anthropic, usato da Karpathy per costruire HackerTube quasi per intero in circa due ore. È il riferimento pratico del passaggio da scrivere codice a dirigere agenti.</div></div><div class="tension"><div class="axis">HackerTube</div><div class=side>Sito in stile YouTube costruito da circa 43 milioni di commenti di Hacker News, con 6.454 video suddivisi in 150 temi. Lanciato il 31 ottobre 2026; non risulta un repository pubblico.</div></div><div class="tension"><div class="axis">Cosmos 3</div><div class=side>Modello del mondo multimodale open-weight di NVIDIA per la IA fisica, in versioni Super (64,6 miliardi di parametri) e Nano (15,7 miliardi). Gestisce testo, immagini, video, audio e azioni.</div></div><div class="tension"><div class="axis">Dessa</div><div class=side>Modello speech-to-speech full-duplex di Block, addestrato su conversazioni umane per riprodurre pause, emozioni e ritmo. Secondo le fonti gira in locale ma è limitato a ricercatori sulla sicurezza.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> Scientist AI (LawZero)</div><div class=side>Progetto non agentico di LawZero, pensato come guardrail che stima probabilisticamente l'inganno dei sistemi IA. Ad oggi sono annunciati piani di open-source, non un rilascio verificato.</div></div><div class="tension"><div class="axis">Grok Bot</div><div class=side>Agente di Grok con workflow su computer virtuale, molto costoso in inferenza. Musk ne ha ridotto i limiti d'uso per costi insostenibili rispetto ai ricavi.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> Hightouch LLM judges</div><div class=side>Uso di LLM come giudici per ottimizzare il rapporto accuratezza-costo nella risoluzione delle identità. Rende scalabili le dashboard IA sui dati di marketing.</div></div><div class="tension"><div class="axis">Interconnects Open Models Dashboard</div><div class=side>Dashboard di Nathan Lambert che traccia download giornalieri e modelli derivati di 48 famiglie di modelli aperti. Il Relative Adoption Metric misura se un nuovo modello diventerà un riferimento dell'ecosistema.</div></div><div class="tension"><div class="axis">hermes-agent</div><div class=side>Framework di agente di Nous Research che si adatta all'utente. È comparso nella classifica settimanale di Trendshift di giugno 2026, dato più vecchio di questa finestra.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> last30days-skill</div><div class=side>Skill per agenti che raccoglie informazioni degli ultimi 30 giorni su un tema. È nella top 10 di Trendshift di giugno 2026, dato più vecchio di questa finestra.</div></div></section></div>
+<div class="tab-panel panel" data-sb-panel="fonti" hidden><div class="fonte" data-fonte-nome="DHH"><span class="who">DHH</span><a href="https://world.hey.com/dhh" target="_blank" rel="noopener">https://world.hey.com/dhh</a><a href="https://www.businessinsider.com/ruby-rails-creator-dhh-ai-cantankerous-coders-people-skills-2026-11" target="_blank" rel="noopener">https://www.businessinsider.com/ruby-rails-creator-dhh-ai-cantankerous-coders-people-skills-2026-11</a><a href="https://thoughteconomics.com/david-heinemeier-hansson/" target="_blank" rel="noopener">https://thoughteconomics.com/david-heinemeier-hansson/</a></div><div class="fonte" data-fonte-nome="Geoffrey Hinton"><span class="who">Geoffrey Hinton</span><a href="https://www.zmescience.com/future/the-godfather-of-ai-says-its-hurtling-out-of-control-and-a-kill-switch-wont-save-us/" target="_blank" rel="noopener">https://www.zmescience.com/future/the-godfather-of-ai-says-its-hurtling-out-of-control-and-a-kill-switch-wont-save-us/</a><a href="https://aiweekly.co/alerts/hinton-warns-humanity-may-have-been-better-off-without-ai" target="_blank" rel="noopener">https://aiweekly.co/alerts/hinton-warns-humanity-may-have-been-better-off-without-ai</a><a href="https://www.tomsguide.com/ai/we-would-have-been-better-off-never-developing-it-the-godfather-of-ai-warns-we-may-regret-creating-ai" target="_blank" rel="noopener">https://www.tomsguide.com/ai/we-would-have-been-better-off-never-developing-it-the-godfather-of-ai-warns-we-may-regret-creating-ai</a></div><div class="fonte" data-fonte-nome="Vitalik Buterin"><span class="who">Vitalik Buterin</span><a href="https://tech.yahoo.com/ai/articles/vitalik-buterin-opens-devcon-8-100000388.html" target="_blank" rel="noopener">https://tech.yahoo.com/ai/articles/vitalik-buterin-opens-devcon-8-100000388.html</a><a href="https://coinmarketcap.com/academy/article/vitalik-buterin-ai-domination" target="_blank" rel="noopener">https://coinmarketcap.com/academy/article/vitalik-buterin-ai-domination</a><a href="https://www.cryptotimes.io/2026/11/03/vitalik-warns-ai-security-is-tilting-toward-domination-as-deceleration-stalls/" target="_blank" rel="noopener">https://www.cryptotimes.io/2026/11/03/vitalik-warns-ai-security-is-tilting-toward-domination-as-deceleration-stalls/</a></div></div>
+</div>
+<script>function sbTab(key) {  document.querySelectorAll('.tab-panel').forEach(function (p) {    p.hidden = p.getAttribute('data-sb-panel') !== key;  });  document.querySelectorAll('#sbTabs .tab').forEach(function (b) {    b.setAttribute('aria-selected', b.dataset.tab === key ? 'true' : 'false');  });}function vaiFonte(ev, nome) {  ev.preventDefault();  sbTab('fonti');  var d = document.querySelector('[data-fonte-nome="' + nome + '"]');  if (d) d.scrollIntoView({behavior: 'smooth', block: 'center'});}</script>
+<dialog class="vplayer" id="vplayer"></dialog>
+<script>
+// player modale dei video: la miniatura apre il video al centro (disegno 2026-08-07)
+// Chiudere e condividere. Il player era il solo <video> dentro la <dialog>:
+// si chiudeva a Escape o cliccando lo SFONDO, che su un tablet e' quasi tutto
+// coperto dal video e dove un tasto Escape non esiste (2026-08-24).
+// La ✕ non serve solo a chiudere: e' l'unico modo per SAPERE che si puo'.
+function condividiVideo(src, b) {
+  if (navigator.share) { navigator.share({ title: 'Signal.Brief', url: src }).catch(function () {}); return; }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(src).then(function () {
+      var prima = b.textContent; b.textContent = '✓ copiato';
+      setTimeout(function () { b.textContent = prima; }, 1800);
+    }).catch(function () {});
+    return;
+  }
+  // Terzo ripiego: senza clipboard API resta la selezione manuale. Meglio un
+  // prompt che un bottone morto.
+  try { window.prompt('Indirizzo del video:', src); } catch (e) {}
+}
+function apriVideo(src) {
+  var d = document.getElementById('vplayer');
+  // I bottoni SOPRA il video: sotto finirebbero fuori schermo su un reel
+  // verticale, che di altezza prende gia' l'86%.
+  d.innerHTML = '<div class="vplayer-barra">'
+    + '<button type="button" class="vplayer-share">Condividi</button>'
+    + '<button type="button" class="vplayer-chiudi" aria-label="Chiudi">✕</button>'
+    + '</div><video controls autoplay playsinline src="' + src + '"></video>';
+  d.querySelector('.vplayer-chiudi').onclick = function () { d.close(); };
+  var sb = d.querySelector('.vplayer-share');
+  sb.onclick = function () { condividiVideo(src, sb); };
+  d.showModal();
+  d.onclick = function (e) { if (e.target === d) d.close(); };
+  d.onclose = function () { var v = d.querySelector('video'); if (v) v.pause(); d.innerHTML = ''; };
+}
+// ascolto inline dalla lista: un episodio alla volta
+var epAudio = null, epBtn = null;
+function ascolta(btn, src) {
+  if (epBtn === btn && epAudio) {
+    if (epAudio.paused) { epAudio.play(); btn.classList.add('on'); }
+    else { epAudio.pause(); btn.classList.remove('on'); }
+    return;
+  }
+  if (epAudio) { epAudio.pause(); if (epBtn) epBtn.classList.remove('on'); }
+  epAudio = new Audio(src); epBtn = btn;
+  epAudio.play(); btn.classList.add('on');
+  epAudio.onended = function () { btn.classList.remove('on'); };
+}
+function copiaTrascrizione(btn) {
+  var t = btn.parentElement.querySelector('.transcript-body');
+  navigator.clipboard.writeText(t ? t.innerText : '').then(function () {
+    btn.textContent = 'copiata ✓';
+    setTimeout(function () { btn.textContent = 'copia il testo'; }, 1800);
+  });
+}
+</script>
+<section class="sostieni"><h3>Se ti è utile, offrimi un caffè</h3><p>Signal.Brief non ha sponsor e non vende niente. Se ti è utile, puoi contribuire — e se non ti va, ascoltalo lo stesso.</p><div class="sostieni-atti"><a class="sostieni-btn" href="https://www.paypal.com/donate/?business=SGNE3B4JZUT9S&amp;no_recurring=0&amp;item_name=Signal.Brief+non+ha+sponsor.+Se+ti+%C3%A8+utile%2C+questo+lo+tiene+acceso.&amp;currency_code=EUR" target="_blank" rel="noopener">Offrimi un caffè</a><a class="sostieni-alt" href="../segui/">Ascoltalo nella tua app →</a></div></section>
+<footer class="creator-footer">
+  <img src="https://media.casamon.dev/immagini/mike-avatar.png" alt="Michele Mondora">
+  <div class="creator-meta">
+    <span class="creator-name">it-mikesoft</span>
+    <span class="creator-tagline">working with systems, living with questions</span>
+    <span class="creator-email"><a href="mailto:michele@mondora.com">michele@mondora.com</a></span>
+    <span class="creator-legal"><a href="/signal-brief/legal/privacy/">Privacy</a> ·
+      <a href="/signal-brief/legal/">Note legali</a></span>
+  </div>
+</footer>
+<section class="tutele"><h3>Trasparenza e tutele</h3>
+<p><strong>Come nasce questo contenuto.</strong> Ricerca, sintesi editoriale, voce narrante, immagini e musica sono prodotte con sistemi di intelligenza artificiale. Non c'è una redazione umana che verifica ogni affermazione prima della pubblicazione: un controllo automatico scarta le schede giudicate inaffidabili, ma non elimina la possibilità di errori.</p>
+<p><strong>Affermazioni su persone e aziende.</strong> Quanto riportato è una sintesi di fonti pubbliche, non una dichiarazione diretta delle persone citate: le frasi non vanno intese come virgolettati né come posizioni ufficiali. Le fonti sono indicate in ogni pagina episodio — verificale prima di considerare un'informazione accertata. Se trovi un'affermazione inesatta che ti riguarda, scrivi a <a href="mailto:michele@mondora.com">michele@mondora.com</a>: viene corretta o rimossa.</p>
+<p><strong>Immagini e volti.</strong> Le immagini di scena sono generate con AI e non raffigurano fatti realmente avvenuti. Le fotografie di persone reali usate nei video provengono da Wikimedia Commons con le rispettive licenze, e sono accostate al racconto a scopo identificativo: la loro presenza non implica partecipazione, dichiarazione o approvazione da parte della persona ritratta. Su richiesta dell'interessato vengono rimosse.</p>
+<p><strong>Fonti e diritti altrui.</strong> I contenuti sono rielaborazioni originali, non riproduzioni di articoli di terzi; le testate e gli autori all'origine di una notizia sono citati e collegati. Marchi e nomi commerciali appartengono ai rispettivi titolari e sono usati a scopo descrittivo.</p>
+</section>
+</body></html>
