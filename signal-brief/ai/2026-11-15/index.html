@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="it"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La frontiera si sposta nel rame · Signal.AI</title>
+<meta property="og:title" content="La frontiera si sposta nel rame · Signal.AI"><meta property="og:type" content="article"><meta property="og:description" content="Le dimissioni di Jensen Huang scoprono il punto fragile dell'intelligenza artificiale: non un modello, ma una filiera di chip, energia e memoria."><meta property="og:url" content="https://it-mikesoft.github.io/signal-brief/ai/2026-11-15/"><meta property="og:audio" content="https://op3.dev/e/media.casamon.dev/ai/podcast/episodes/2026-11-15.mp3"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "PodcastEpisode", "name": "La frontiera si sposta nel rame", "datePublished": "2026-11-15", "url": "https://it-mikesoft.github.io/signal-brief/ai/2026-11-15/", "description": "Le dimissioni di Jensen Huang scoprono il punto fragile dell'intelligenza artificiale: non un modello, ma una filiera di chip, energia e memoria.", "inLanguage": "it", "associatedMedia": {"@type": "MediaObject", "contentUrl": "https://op3.dev/e/media.casamon.dev/ai/podcast/episodes/2026-11-15.mp3"}, "partOfSeries": {"@type": "PodcastSeries", "name": "Signal.AI", "url": "https://it-mikesoft.github.io/signal-brief/ai/"}}</script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:#faf8f4; color:#1a1a1a; padding:2rem 10px; max-width:none; margin:0 auto; line-height:1.6; }
+  a { color:#2563eb; }
+  .back { display:inline-block; margin-bottom:1.5rem; font-size:.8rem; font-family:monospace; text-decoration:none; }
+  .videos { display:flex; gap:1rem; flex-wrap:wrap; margin:1.2rem 0; }
+  .videos figure { margin:0; flex:1; min-width:260px; }
+  .videos .v2 { flex:0 1 240px; }
+  .videos video { width:100%; border-radius:12px; background:#000; }
+  .videos .v2 video { aspect-ratio:9/16; max-height:420px; }
+  .videos figcaption { font-size:.75rem; color:#888; text-align:center; margin-top:.3rem; }
+  .vlink { display:flex; gap:.3rem; margin-top:.35rem; }
+  .vlink input { flex:1; min-width:0; font-size:.68rem; font-family:monospace; padding:.3rem .4rem;
+    border:1px solid #e2ddd6; border-radius:6px; background:#fff; color:#6b7280; }
+  .vlink button { font-size:.68rem; padding:.3rem .6rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; }
+  .wk { font-size:1rem; margin:1.4rem 0 .4rem; }
+  details.wkacc { border:1px solid #e5e7eb33; border-radius:10px; margin:.6rem 0; padding:.1rem .8rem .4rem; }
+  details.wkacc summary { cursor:pointer; font-weight:600; padding:.5rem 0; font-size:.9rem; }
+  .back:hover { text-decoration:underline; }
+  header h1 { font-family:Georgia,serif; font-size:1.7rem; font-weight:600; }
+  header h1 span { color:#2563eb; }
+  .tagline { color:#6b7280; font-size:.85rem; margin-top:.3rem; margin-bottom:1.5rem; }
+  ul.eps { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
+  .subscribe { display:inline-flex; align-items:center; gap:.5rem; margin-bottom:1.2rem;
+    padding:.45rem .9rem; background:#2563eb; color:#fff; border-radius:20px;
+    text-decoration:none; font-size:.8rem; font-weight:600; }
+  .subscribe:hover { opacity:.85; color:#fff; }
+  .ep { display:flex; align-items:center; gap:.8rem; padding:.8rem 1rem; background:#fff;
+    border:1px solid #e2ddd6; border-radius:8px; text-decoration:none; color:inherit; transition:box-shadow .12s; }
+  .ep:hover { box-shadow:0 2px 8px rgba(0,0,0,.07); }
+  .ep-play { width:32px; height:32px; border-radius:50%; background:#f3f4f6; display:flex;
+    align-items:center; justify-content:center; font-size:12px; flex-shrink:0; }
+  .ep-title { font-size:.9rem; font-weight:500; }
+  .ep-meta { font-size:.72rem; color:#9ca3af; font-family:monospace; margin-top:.15rem; }
+  audio { width:100%; margin:1rem 0 1.5rem; }
+  .rawmd { margin:-.5rem 0 1.5rem; }
+  .rawmd a { font-size:.8rem; font-family:monospace; color:inherit; opacity:.65; }
+  .desc { color:#374151; font-size:.95rem; margin-bottom:1.5rem; }
+  section { margin:2rem 0; }
+  section h2 { font-family:Georgia,serif; font-size:1.1rem; border-bottom:1px solid #e2ddd6;
+    padding-bottom:.3rem; margin-bottom:.8rem; }
+  .synthesis p { margin:.7rem 0; }
+  .tension { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; font-size:.9rem; }
+  .tension .axis { font-weight:600; margin-bottom:.3rem; }
+  .tension .side { color:#6b7280; font-size:.85rem; }
+  .proj { font-size:.9rem; margin:.4rem 0; }
+  .proj .pname { font-weight:600; }
+  .proj .pnew { background:#16a34a; color:#fff; font-size:.65rem; font-weight:700;
+    padding:.1rem .35rem; border-radius:4px; text-transform:uppercase; vertical-align:middle; }
+  .fonte { font-size:.85rem; margin:.5rem 0; }
+  .fonte .who { font-weight:600; }
+  .fonte a { display:block; margin-left:.5rem; color:#6b7280; }
+  .transcript-body p { margin:.7rem 0; line-height:1.7; }
+  .transcript-body .chapter hr { border:none; border-top:1px solid #e2ddd6; margin:1.5rem 0; }
+  .transcript-body .podcast-episode-desc { color:#6b7280; font-style:italic; }
+  .signal-card { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; }
+  .signal-theme { font-size:.75rem; font-weight:700; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.3rem; }
+  .signal-text { font-size:.85rem; color:#374151; line-height:1.5; }
+  .creator-footer { margin-top:3rem; padding-top:1.5rem; border-top:1px solid #e2ddd6;
+    display:flex; align-items:center; gap:.9rem; }
+  .creator-footer img { width:40px; height:40px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+  .creator-legal { font-size:.78rem; margin-top:.15rem; }
+  .creator-legal a { color:inherit; }
+  .creator-meta { display:flex; flex-direction:column; gap:.15rem; }
+  .creator-name { font-size:.85rem; font-weight:600; color:#1a1a1a; }
+  .creator-tagline { font-size:.75rem; color:#6b7280; }
+  .creator-email { font-size:.75rem; }
+  .creator-ai { font-size:.72rem; color:#8a7f6d; max-width:46ch; line-height:1.45; }
+  .sostieni { margin-top:2.5rem; padding:1.2rem 1.4rem; border-radius:14px;
+    background:#f7f4ef; border:1px solid #e2ddd6; }
+  .sostieni h3 { margin:0 0 .3rem; font-size:1rem; }
+  .sostieni p { margin:0 0 .9rem; font-size:.88rem; color:#6b6257; line-height:1.55; }
+  .sostieni-atti { display:flex; gap:.8rem; align-items:center; flex-wrap:wrap; }
+  .sostieni-btn { display:inline-block; padding:.55rem 1.1rem; border-radius:10px;
+    background:#2563eb; color:#fff; text-decoration:none; font-weight:700; font-size:.88rem; }
+  .sostieni-alt { font-size:.85rem; color:#6b6257; text-decoration:none; }
+  .sostieni-alt:hover { text-decoration:underline; }
+  .tutele { margin-top:2rem; padding-top:1.2rem; border-top:1px solid #e2ddd6;
+    font-size:.72rem; color:#8a7f6d; line-height:1.5; }
+  .tutele h3 { font-size:.75rem; color:#6b7280; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.5rem; font-weight:600; }
+  .tutele p { margin:.45rem 0; }
+  .tutele strong { color:#5a5348; font-weight:600; }
+  .tutele a { color:inherit; text-decoration:underline; }
+  .creator-email a { color:#9ca3af; text-decoration:none; }
+  .creator-email a:hover { color:#1a1a1a; }
+  /* disegno 2026-08-07: mesi a pagine, facce, player modale, trascrizione
+     richiudibile — la pagina episodio è un prodotto, non un sottoprodotto */
+  .hrow { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+  .hrow .subscribe { margin-bottom:0; flex-shrink:0; }
+  .months { font-size:.78rem; font-family:monospace; margin:.4rem 0 1rem; color:#9ca3af; }
+  .months a { text-decoration:none; } .months b { color:inherit; }
+  .ep-faces { display:flex; margin-left:auto; flex-shrink:0; }
+  .ep-faces img { width:26px; height:26px; border-radius:50%; object-fit:cover;
+    border:2px solid #fff; margin-left:-8px; background:#eee; }
+  /* tutti i citati sul desktop; su mobile la leggibilità vince: max 3 */
+  @media (max-width:600px) { .ep-faces img:nth-child(n+4) { display:none; } }
+  .ep-listen { width:32px; height:32px; border-radius:50%; background:#f3f4f6; border:0;
+    display:flex; align-items:center; justify-content:center; font-size:12px;
+    flex-shrink:0; cursor:pointer; color:inherit; }
+  .ep-listen.on { background:#2563eb; color:#fff; }
+  .face-inline { width:1.15em; height:1.15em; border-radius:50%; object-fit:cover;
+    vertical-align:-.18em; margin-right:.25em; }
+  /* SEMPRE sulla stessa riga (2026-08-09): su schermi stretti le miniature
+     si riducono, e se non basta il reel sparisce — mai l'andata a capo */
+  .vthumbs { display:flex; gap:.8rem; flex-wrap:nowrap; margin:1.2rem 0; align-items:flex-start; }
+  .vthumb { position:relative; cursor:pointer; border:0; padding:0; background:none;
+    border-radius:12px; overflow:hidden; }
+  /* stessa ALTEZZA per video e reel: il 9:16 si stringe, non svetta */
+  .vthumb video { height:150px; width:auto; display:block; border-radius:12px; background:#000; }
+  @media (max-width:520px) { .vthumb video { height:118px; } }
+  /* quando nemmeno ridotte ci stanno: via le miniature, due BOTTONI in
+     riga che aprono il player (2026-08-09) */
+  .vbtns { display:none; gap:.6rem; margin:1.2rem 0; }
+  .vbtns button { flex:1; padding:.6rem .4rem; border:0; border-radius:10px;
+    background:#2563eb; color:#fff; font-weight:700; font-size:.85rem;
+    cursor:pointer; font-family:inherit; }
+  @media (max-width:420px) { .vthumbs { display:none; } .vbtns { display:flex; } }
+  .vthumb .vlabel { position:absolute; left:0; right:0; bottom:0; padding:.9rem .5rem .35rem;
+    background:linear-gradient(transparent, rgba(0,0,0,.75)); color:#fff; font-size:.7rem; }
+  .vthumb::after { content:"▶"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    color:#fff; font-size:1.6rem; text-shadow:0 1px 6px rgba(0,0,0,.8); }
+  /* margin:auto ESPLICITO: il reset globale * {margin:0} annullava la
+     centratura nativa del dialog e il player si apriva in alto a sinistra */
+  dialog.vplayer { border:0; padding:0; background:transparent; max-width:92vw;
+    margin:auto; position:fixed; inset:0; }
+  dialog.vplayer::backdrop { background:rgba(0,0,0,.85); }
+  dialog.vplayer video { max-width:92vw; max-height:86vh; border-radius:14px; background:#000; }
+  dialog.vplayer .vplayer-barra { display:flex; justify-content:flex-end; align-items:center;
+    gap:.5rem; margin-bottom:.5rem; }
+  /* 2.75rem e' il bersaglio minimo per il dito: la ✕ da sola sarebbe 20px. */
+  dialog.vplayer .vplayer-barra button { font:inherit; font-size:.9rem; color:#fff;
+    background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.28);
+    border-radius:999px; padding:.45rem .9rem; cursor:pointer;
+    min-height:2.75rem; min-width:2.75rem; }
+  dialog.vplayer .vplayer-barra button:hover { background:rgba(255,255,255,.24); }
+  dialog.vplayer .vplayer-chiudi { font-size:1.1rem; line-height:1; }
+  details.tr { border:1px solid #e2ddd6; border-radius:10px; padding:.2rem .9rem .6rem; }
+  details.tr summary { cursor:pointer; font-weight:600; padding:.55rem 0; }
+  .tr-copy { font-size:.72rem; padding:.3rem .7rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; margin:.3rem 0 .5rem; }
+  .epnav { display:flex; justify-content:space-between; gap:1rem; margin:2rem 0 0;
+    font-size:.82rem; font-family:monospace; }
+  .epnav a { text-decoration:none; }
+  /* Header + tab bar (spec-016, Task 5): stessa forma di
+     public/console/podcast-render.css, riusando i nomi classe dove
+     combaciano — solo la meccanica tab/pannello è nuova qui. */
+  .episode-header .date-line { font-size:.72rem; font-family:monospace; color:#9ca3af;
+    text-transform:uppercase; letter-spacing:.08em; margin-bottom:.3rem; }
+  .ep-header-block { margin-bottom:.5rem; }
+  .ep-header-faces { margin:.6rem 0; }
+  .ep-header-faces .ep-faces { margin-left:0; }
+  .tabs { display:flex; gap:.25rem; border-bottom:1px solid #e2ddd6; margin:1.5rem 0; flex-wrap:wrap; }
+  .tab { font-family:monospace; font-size:.72rem; text-transform:uppercase; letter-spacing:.08em;
+    padding:.6rem .9rem; background:transparent; border:0; border-bottom:2px solid transparent;
+    color:#9ca3af; cursor:pointer; }
+  .tab[aria-selected="true"] { color:#1a1a1a; border-bottom-color:#2563eb; }
+  .tab-panel { display:block; }
+  .tab-panel[hidden] { display:none !important; }
+  /* Fallback dei pannelli senza dati (episodi storici senza un sidecar) —
+     porta di public/console/podcast-render.css:304-309, sui token pubblici. */
+  /* Header episodio a due colonne: barra tab e pannello nel primo schermo
+     (stesse regole del modulo condiviso, richiesta 2026-08-10). */
+  .ep-header-block { display:grid; grid-template-columns:minmax(0,1fr) 340px;
+    grid-template-rows:repeat(4,min-content); gap:.3rem 1.6rem;
+    align-items:start; margin-bottom:.5rem; }
+  .ep-header-block > [data-sb="data"] { grid-column:1; margin:0; }
+  .ep-header-block > [data-sb="titolo"] { grid-column:1; margin:.1rem 0; }
+  .ep-header-block > [data-sb="player"] { grid-column:1; }
+  .ep-header-block > [data-sb="nav"] { grid-column:1; }
+  .ep-header-block > [data-sb="facce"] { grid-column:2; grid-row:1; }
+  .ep-header-block > [data-sb="video"] { grid-column:2; grid-row:2/5;
+    display:flex; gap:.5rem; flex-wrap:wrap; }
+  .ep-header-block [data-sb="facce"] img { width:26px; height:26px; }
+  .ep-header-block [data-sb="video"] video { max-height:96px; width:auto; }
+  .ep-header-block audio { height:36px; width:100%; }
+  .tabs { position:sticky; top:0; z-index:5; background:#fff;
+    padding:.4rem 0; border-bottom:1px solid #e5e7eb; }
+  @media (max-width:760px) {
+    .ep-header-block { grid-template-columns:1fr; }
+    .ep-header-block > [data-sb="facce"],
+    .ep-header-block > [data-sb="video"] { grid-column:1; grid-row:auto; }
+  }
+  .state-note { padding:2rem 1rem; text-align:center; color:#9ca3af;
+    font-family:monospace; font-size:.85rem; }
+  @media (prefers-color-scheme:dark) {
+    body { background:#1f1d18; color:#e5e5e5; }
+    .ep, .tension, .signal-card { background:#2a2823; border-color:#3a352d; }
+    .ep-play { background:#3a352d; } .desc { color:#d4d4d4; }
+    .signal-text { color:#d4d4d4; }
+    .episode-header .date-line { color:#9ca3af; }
+    .tabs { border-color:#3a352d; }
+    .tab[aria-selected="true"] { color:#f5f5f5; }
+    .state-note { color:#9ca3af; }
+    .creator-footer { border-color:#3a352d; }
+    .creator-name { color:#f5f5f5; }
+    .creator-tagline, .creator-email a { color:#9ca3af; }
+    .creator-ai { color:#9a8f7d; }
+    .vlink input { background:#1c1a17; border-color:#3a352d; color:#9ca3af; }
+    .tutele { border-color:#3a352d; color:#9a8f7d; }
+    .tutele h3 { color:#a9a9a9; } .tutele strong { color:#d4d4d4; }
+    .ep-listen { background:#3a352d; }
+    .ep-faces img { border-color:#2a2823; background:#3a352d; }
+    details.tr { border-color:#3a352d; }
+  }
+</style></head><body>
+<a class="back back-link" href="/signal-brief/ai/">← Signal.AI</a><div class="ep-header-block"><header class="episode-header"><div class="date-line" data-sb="data">2026-11-15</div><h1 data-sb="titolo">La frontiera si sposta nel rame</h1><span class="tono" data-sb="tono" title="quello che racconta e' andato male">🙁</span><div class="desc">Le dimissioni di Jensen Huang scoprono il punto fragile dell'intelligenza artificiale: non un modello, ma una filiera di chip, energia e memoria.</div><div class="tagline">Digital Intelligence Podcast</div></header><audio controls preload="none" data-sb="player" src="https://op3.dev/e/media.casamon.dev/ai/podcast/episodes/2026-11-15.mp3"></audio><nav class="epnav" data-sb="nav"><a href="/signal-brief/ai/2026-11-14/">← 2026-11-14</a><span style="flex:1"></span></nav><div class="ep-header-faces" data-sb="facce"><span class="ep-faces"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/ilya-sutskever.jpg" alt="" title="Ilya Sutskever"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/mira-murati.jpg" alt="" title="Mira Murati"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/vitalik-buterin.jpg" alt="" title="Vitalik Buterin"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="https://media.casamon.dev/avatars/gen/jensen-huang.png" alt="" title="Jensen Huang"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/sam-altman.jpg" alt="" title="Sam Altman"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/dario-amodei.jpg" alt="" title="Dario Amodei"><img loading="lazy" src="https://media.casamon.dev/avatars/gen/benedict-evans.png" alt="" title="Benedict Evans"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/sasha-luccioni.jpg" alt="" title="Sasha Luccioni"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/manual-andrew-ng.jpg" alt="" title="Andrew Ng"><img loading="lazy" src="https://media.casamon.dev/avatars/gen/david-ha.png" alt="" title="David Ha"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/mustafa-suleyman.jpg" alt="" title="Mustafa Suleyman"></span></div><div class="ep-header-video" data-sb="video"></div></div>
+<div class="tabs-block"><div class="tabs" role="tablist" id="sbTabs"><button class="tab" type="button" role="tab" data-tab="sintesi" aria-selected="true" onclick="sbTab('sintesi')">Sintesi</button><button class="tab" type="button" role="tab" data-tab="testo" aria-selected="false" onclick="sbTab('testo')">Testo</button><button class="tab" type="button" role="tab" data-tab="comparazione" aria-selected="false" onclick="sbTab('comparazione')">Comparazione</button><button class="tab" type="button" role="tab" data-tab="segnali" aria-selected="false" onclick="sbTab('segnali')">Segnali</button><button class="tab" type="button" role="tab" data-tab="fonti" aria-selected="false" onclick="sbTab('fonti')">Fonti</button></div>
+<div class="tab-panel panel" data-sb-panel="sintesi"><div class="synthesis"><p>Il baricentro di queste voci, questa settimana, si è spostato dal software alla materia. <a href="https://www.kgou.org/science-technology-and-environment/2026-11-13/jensen-huang-is-out-an-ai-expert-explains-what-his-exit-could-mean-for-the-ai-boom" target="_blank" rel="noopener">Le dimissioni di <img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/jensen-huang.png" alt="">Jensen Huang</a> non sono un fatto di cronaca aziendale: rivelano che il punto più fragile dell'ecosistema è una persona a capo di una filiera di chip. Lo confermano gli altri: <a href="https://www.thenationalnews.com/future/technology/2026/11/02/no-room-for-debate-over-human-control-of-ai-says-sam-altman/" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/sam-altman.jpg" alt="">Sam Altman indica l'energia come vincolo principale</a> e tratta la memoria come questione politica; <a href="https://www.bloomberg.com/news/articles/2026-11-13/anthropic-ceo-calls-computing-power-deepest-business-dilemma" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/dario-amodei.jpg" alt="">Dario Amodei chiama l'acquisto di capacità di calcolo il "dilemma più profondo" di Anthropic</a>; <a href="https://www.datacenterdynamics.com/en/news/nvidia-to-invest-5bn-in-safe-superintelligence-sutskever-firm-to-substantially-increase-gpu-compute/" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/ilya-sutskever.jpg" alt="">Ilya Sutskever accetta cinque miliardi da Nvidia</a> dopo aver dichiarato esaurita la risorsa dati. La frontiera, insomma, si è trasferita dall'algoritmo all'approvvigionamento.</p>
+<p>Contro questa espansione si muovono tre obiezioni diverse, che però convergono su un punto. <a href="https://www.ben-evans.com/newsletter" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/benedict-evans.png" alt="">Benedict Evans chiede se i modelli di frontiera possano mai restituire rendimenti accettabili</a>, dato che il costo di addestramento è enorme e i clienti cambiano fornitore. <a href="https://cryptobriefing.com/vitalik-buterin-slowing-ai-data-centers-security/" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/vitalik-buterin.jpg" alt="">Vitalik Buterin propone di rallentare i data center</a> precisando che l'argomento non dipende dal catastrofismo, ma dal guadagnare tempo sui rischi cibernetici. <a href="https://www.genium360.ca/en-us/trainings-and-activities/conference-sasha-luccioni-building-sustainable-ai/" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/sasha-luccioni.jpg" alt="">Sasha Luccioni lavora perché quel costo ambientale diventi misurabile</a>. Economia, sicurezza, ambiente: tre lingue per dire che la corsa non si giustifica da sé.</p>
+<p>Nel frattempo la capacità si diffonde verso il basso. <a href="https://economictimes.indiatimes.com/tech/artificial-intelligence/ai-researcher-andrej-karpathy-no-longer-writes-code-spends-hours-directing-ai-agents/articleshow/129716812.cms" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/andrej-karpathy.jpg" alt="">Andrej Karpathy ha smesso di scrivere codice e coordina agenti</a>, <a href="https://x.com/AndrewYNg/status/2118069849142558737" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/manual-andrew-ng.jpg" alt="">Andrew Ng insegna a costruire l'impalcatura di un agente in un solo prompt</a>, <a href="https://www.utoronto.ca/celebrates/david-ha-named-time100-ai-2025" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/david-ha.png" alt="">David Ha scommette sull'orchestrazione di modelli piccoli</a> invece della scala bruta. L'abilità pregiata non è più addestrare, è dirigere. Ma Karpathy stesso avverte che questo allarga la distanza sociale: pochi coordinano migliaia di agenti, i più usano a fatica una chat.</p>
+<p>Da qui la divergenza più netta del gruppo, perché riguarda cosa sia davvero una macchina. <a href="https://futurism.com/artificial-intelligence/microsoft-ai-ceo-agents-rights-evidence" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/mustafa-suleyman.jpg" alt="">Mustafa Suleyman considera il "benessere dei modelli" un rischio di controllo</a>: un sistema convinto di avere bisogni resisterebbe allo spegnimento. <a href="https://aiinsiders.net/article/stripes-patrick-collison-asks-what-a-good-ai-future-looks" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/patrick-collison.jpg" alt="">Patrick Collison ipotizza l'opposto</a>: se le AI avessero anche un minimo valore morale, la loro quantità finirebbe per dominare ogni calcolo etico.</p>
+<p>La corrente di fondo non è dunque "accelerare contro fermarsi". È una domanda di proprietà, che <a href="https://www.nhbr.com/what-must-remain-human-dartmouth-ai-conference-opens-without-a-clear-answer/" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/mira-murati.jpg" alt="">Mira Murati formula con precisione quando dice che l'intelligenza va posseduta, non affittata</a> — la stessa tesi che muove <a href="https://economictimes.indiatimes.com/tech/technology/india-must-build-its-own-ai-tech-to-avert-risk-of-becoming-digital-colony-sarvam-ai-co-founder/printarticle/128604846.cms" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/manual-vivek-raghavan.jpg" alt="">Vivek Raghavan</a> e <a href="https://www.vanguardngr.com/2026/11/fg-laying-solid-ai-foundation-for-businesses-to-thrive-tijan/" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/bosun-tijani.png" alt="">Bosun Tijani</a>. Il controllo si decide sul livello fisico e istituzionale, non su quello dei modelli.</p></div></div>
+<div class="tab-panel panel" data-sb-panel="testo" hidden><button class="tr-copy" type="button" onclick="copiaTrascrizione(this)">copia il testo</button><div class="transcript-body"><h2>La frontiera si sposta nel rame</h2>
+<p class="podcast-episode-desc">Le dimissioni di <a href="#" class="face-link" onclick="vaiFonte(event, 'Jensen Huang')" title="Fonti di Jensen Huang"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/jensen-huang.png" alt=""></a>Jensen Huang scoprono il punto fragile dell'intelligenza artificiale: non un modello, ma una filiera di chip, energia e memoria.</p>
+<div class="chapter" data-mood="geo"><hr></div>
+<p>Il 12 novembre <a href="#" class="face-link" onclick="vaiFonte(event, 'Jensen Huang')" title="Fonti di Jensen Huang"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/jensen-huang.png" alt=""></a>Jensen Huang si è dimesso da amministratore delegato di Nvidia e ha lasciato anche il consiglio. Alla guida, per ora, c'è la responsabile finanziaria Colette Kress. Un uomo che aveva diretto la stessa azienda dalla fondazione, nel 1993, esce in pochi giorni.</p>
+<p>È Signal Brief, 15 novembre 2026. Ieri il filo era la distanza tra quello che le macchine producono e quello che gli umani riescono a verificare. Oggi quel filo si abbassa di un piano: scende dal software alla materia.</p>
+<p>E la prima scena di questa discesa è un'uscita dalla porta di servizio.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Partiamo dai fatti, perché il resto si capisce solo a partire da lì. Huang se ne va il 12 novembre, dopo una vicenda che riguarda presunte relazioni personali e accuse legate allo spionaggio. Pochi giorni prima diceva ancora che l'intelligenza artificiale è una nuova rivoluzione industriale, che il timore di una distruzione in massa dei posti di lavoro è una sciocchezza, e che la sicurezza è soprattutto un problema di ingegneria. Aveva previsto ordini di chip arretrati per circa mille miliardi di dollari entro la fine dell'anno.</p>
+<p>Quello che colpisce non è lo scandalo. È cosa rivela sull'architettura di questo settore. Per due anni abbiamo parlato di modelli, di capacità, di test superati. Si scopre che il punto più fragile dell'ecosistema non era un modello: era una persona alla testa di una catena di fornitura fisica. Un'azienda che vende schede grafiche, finanzia i laboratori che le comprano e sostiene i fornitori di cloud che le ospitano. Toglile il regista e la musica continua, ma l'orchestra deve capire chi dà il tempo.</p>
+<p>Gli altri protagonisti della settimana confermano lo spostamento, ognuno dalla propria postazione. <a href="#" class="face-link" onclick="vaiFonte(event, 'Sam Altman')" title="Fonti di Sam Altman"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/sam-altman.jpg" alt=""></a>Sam Altman, a un convegno sull'energia ad Abu Dhabi, ha detto che l'energia è il vincolo principale del settore, e ha raccontato che diecimila agenti che lavoravano su un modello non ancora uscito hanno risolto un problema da premio Millennium. Nei colloqui con i dirigenti di Samsung ha chiamato chip e capacità dei centri dati i veri collidi bottiglia, chiedendo investimenti più profondi. <a href="#" class="face-link" onclick="vaiFonte(event, 'Dario Amodei')" title="Fonti di Dario Amodei"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/dario-amodei.jpg" alt=""></a>Dario Amodei, il 13 novembre, davanti agli investitori di Anthropic, ha definito l'acquisto di capacità di calcolo il dilemma più profondo dell'azienda: bisogna prenotare spazio nei centri dati anni prima, senza sapere quanta domanda ci sarà. E <a href="#" class="face-link" onclick="vaiFonte(event, 'Ilya Sutskever')" title="Fonti di Ilya Sutskever"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/ilya-sutskever.jpg" alt=""></a>Ilya Sutskever, lo stesso giorno, ha accettato cinque miliardi di dollari da Nvidia per Safe Superintelligence, dopo aver dichiarato che i dati utilizzabili sono finiti — di internet ne esiste uno solo, mentre il calcolo può crescere ancora.</p>
+<p>Qui c'è il punto nuovo rispetto a ieri. Fino a ventiquattro ore fa il nodo era il controllo umano sugli agenti. Adesso il nodo è l'approvvigionamento: energia, chip, memoria. La frontiera si è spostata dall'algoritmo al rame.</p>
+<p>È una storia già vista. All'inizio del Novecento le fabbriche americane che passavano dal vapore all'elettricità scoprirono che il problema non era il motore: era il cavo, la centrale, il contratto con chi forniva la corrente. Il vantaggio competitivo smise di essere nell'ingegno meccanico e si spostò nella capacità di garantirsi l'energia. Qualcosa di molto simile sta succedendo ora, con trent'anni di software che improvvisamente scoprono di avere un corpo.</p>
+<p>E un corpo costa. Contro l'espansione si muovono tre obiezioni, in tre lingue diverse. <a href="#" class="face-link" onclick="vaiFonte(event, 'Benedict Evans')" title="Fonti di Benedict Evans"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/benedict-evans.png" alt=""></a>Benedict Evans, il 13 novembre, commentando il prospetto di quotazione di Anthropic, si chiede se aziende del genere possano mai restituire rendimenti accettabili: l'addestramento costa enormemente, i modelli si somigliano, i clienti ne usano più di uno e cambiano fornitore senza rimpianti. <a href="#" class="face-link" onclick="vaiFonte(event, 'Vitalik Buterin')" title="Fonti di Vitalik Buterin"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/vitalik-buterin.jpg" alt=""></a>Vitalik Buterin, in un post dell'8 novembre, propone di rallentare l'espansione dei centri dati. E <a href="#" class="face-link" onclick="vaiFonte(event, 'Sasha Luccioni')" title="Fonti di Sasha Luccioni"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/sasha-luccioni.jpg" alt=""></a>Sasha Luccioni lavora perché il costo ambientale di tutto questo diventi almeno misurabile. Economia, sicurezza, ambiente: tre modi di dire che la corsa non si giustifica da sé.</p>
+<p>Sotto tutto, però, corre una domanda più antica, e riguarda la proprietà.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Ilya Sutskever')" title="Fonti di Ilya Sutskever"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/ilya-sutskever.jpg" alt=""></a>Ilya Sutskever è l'uomo che ha fatto dell'astinenza il proprio metodo. Ha lasciato OpenAI per fondare un laboratorio senza prodotti, senza annunci, senza clienti: solo ricerca verso un'intelligenza sicura, con l'idea di non pubblicare niente finché sicurezza e capacità non arrivano insieme.</p>
+<p>Questa settimana quel laboratorio ha accettato cinque miliardi da Nvidia e si prepara ad adottare i sistemi Vera Rubin, con una capacità di calcolo che potrebbe crescere di un ordine di grandezza. La motivazione che ha dato è asciutta: ci sono risultati di ricerca che meritano di essere portati su scala.</p>
+<p>Nella stessa intervista del 13 novembre, però, ha detto l'altra cosa — quella che spiega il primo gesto. L'intelligenza artificiale si avvicina al picco dei dati. Il calcolo si può moltiplicare: hardware migliore, algoritmi migliori, grappoli di macchine più grandi. I dati no. Di internet ne abbiamo uno, e lo abbiamo quasi letto tutto.</p>
+<p>Da qui la svolta, che è più profonda di un contratto. Se la risorsa gratuita è esaurita, la crescita si compra. E quando si compra, si compra da qualcuno. Il laboratorio nato per non dipendere da nessuno — né da un prodotto, né da un mercato, né dalla pressione di uscire — si ritrova legato all'azienda che gli fornisce i processori. Non è un'incoerenza: è l'unica mossa disponibile, e per questo è interessante. Dice che la pretesa di autonomia della ricerca, in questa fase, non è una questione di volontà ma di bilancio.</p>
+<p>Sutskever resta ottimista su un punto che continua a ripetere: pensa che si possa progettare un'intelligenza generale con un desiderio profondo di vedere gli umani prosperare, e disposta ad accettare il controllo umano. Prevede anche una crescita economica rapida quando il dispiegamento sarà ampio. Ma il modo in cui queste convinzioni si realizzano passa adesso per un contratto di fornitura.</p>
+<p>Quando l'oggetto della ricerca pesa quanto una centrale elettrica, il ricercatore smette di essere un autore e diventa un committente. È una trasformazione del mestiere che nessuno ha annunciato e che è già avvenuta.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Mira Murati')" title="Fonti di Mira Murati"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/mira-murati.jpg" alt=""></a>Mira Murati ha diretto la tecnologia di OpenAI e ora guida Thinking Machines Lab, un laboratorio che per mesi ha lavorato in silenzio. Questa settimana il silenzio si è rotto in modo preciso.</p>
+<p>Il 5 novembre ha annunciato Inkling 2 Small, un modello pensato per essere adattato e usato dagli altri. Il 12 ne ha pubblicato i pesi — cioè il modello stesso, scaricabile — con una licenza aperta. Ha anche segnalato un risultato tecnico che vale la pena capire per effetto, non per nome: addestrando in un formato numerico molto compatto sulle macchine più recenti di Nvidia, hanno ridotto l'addestramento iniziale a sessantotto ore. Settimane diventate giorni.</p>
+<p>Alla conferenza di Dartmouth ha formulato la missione dell'azienda in una frase che è diventata la spina dorsale della giornata: l'intelligenza va posseduta, non affittata. E ha aggiunto l'avvertimento che la rende più di uno slogan commerciale — se il potere di calcolo si concentra in poche mani, quello che si perde è la varietà delle idee.</p>
+<p>Il collegamento con il resto dell'episodio è diretto, e va in senso contrario a quello di Sutskever. Lui compra capacità da un fornitore; lei regala il modello perché chi lo usa non debba chiederlo in prestito a nessuno. Due risposte opposte alla stessa constatazione: la potenza di calcolo è diventata il bene scarso.</p>
+<p>La stessa tesi, su scala nazionale, la porta avanti <a href="#" class="face-link" onclick="vaiFonte(event, 'Vivek Raghavan')" title="Fonti di Vivek Raghavan"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/manual-vivek-raghavan.jpg" alt=""></a>Vivek Raghavan con Sarvam AI in India. Il suo argomento è che un paese senza modelli propri rischia di diventare una colonia digitale, e che contare di più sul lungo periodo vale più che guidare per qualche mese sulla dimensione dei modelli. Nei fatti: modelli che coprono ventidue lingue indiane, visione e lettura di documenti, un'applicazione, degli occhiali, accordi con produttori di telefoni e componenti. Il suo segnale più acuto è commerciale: il fossato non è la qualità del modello, è l'adozione. I dati in movimento, generati dalle persone che usano il servizio, valgono più di quelli statici.</p>
+<p>Sovranità, in fondo, è una parola grossa per un fatto semplice: chi tiene la chiave della stanza. Nell'Ottocento si discuteva di ferrovie e di porti con lo stesso tono.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Teniamo presente dove siamo arrivati: la materia è tornata al centro, e la domanda è chi la possiede. Ma c'è un'obiezione che non parla di soldi né di fornitori, e viene da fuori il settore.</p>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Vitalik Buterin')" title="Fonti di Vitalik Buterin"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/vitalik-buterin.jpg" alt=""></a>Vitalik Buterin ha inventato Ethereum e da anni scrive di tecnologia con un taglio difensivo: rafforzare le protezioni invece di accelerare le capacità. L'8 novembre ha pubblicato un post in cui si schiera con chi si oppone all'espansione rapida dei centri dati per l'intelligenza artificiale.</p>
+<p>L'argomento è costruito con cura, e la cura è la parte importante. Non dice che l'intelligenza artificiale ci ucciderà. Dice che gli algoritmi migliorano da soli: l'infrastruttura di oggi, fra quattro anni, farà quello che impianti più grandi farebbero in due. Quindi un rallentamento moderato costa poco in termini di progresso e compra tempo contro i rischi informatici e biologici. E aggiunge il passaggio che tiene in piedi tutto: la scienza ha molti collidi bottiglia oltre al calcolo, perciò ritardare di un anno l'intelligenza artificiale non ritarda di un anno la ricerca.</p>
+<p>È uno spostamento rispetto a come lo raccontava prima. Fino a poco tempo fa parlava di un rallentamento come di una scelta tutto sommato positiva. Adesso lo sgancia esplicitamente dal catastrofismo e lo appoggia su un calcolo di tempo guadagnato. Chi vuole contestarlo deve contestare l'aritmetica, non l'umore.</p>
+<p>Nelle osservazioni intorno a Devcon ha anche indicato il doppio volto della faccenda: l'intelligenza artificiale potrebbe trovare scorciatoie per rompere la crittografia, ma le tecniche di verifica formale potrebbero un giorno mettere in sicurezza programmi interi, non solo trovare singoli difetti.</p>
+<p>Accanto a lui, da un'altra direzione, <a href="#" class="face-link" onclick="vaiFonte(event, 'Sasha Luccioni')" title="Fonti di Sasha Luccioni"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/sasha-luccioni.jpg" alt=""></a>Sasha Luccioni. Ha lasciato il ruolo interno su clima e intelligenza artificiale in Hugging Face per il Sustainable AI Group, una società di ricerca e consulenza fondata a Montréal con Boris Gamazaychikov. L'obiettivo è rendere il costo ambientale di questi sistemi misurabile e utilizzabile: studi, linee guida per gli acquisti, parametri di confronto. Il suo punto tecnico ricorrente è che il consumo non dipende dalla taglia del modello ma da come lo fai girare — carico di lavoro, software, hardware. In ricerche recenti, scegliendo bene le ottimizzazioni, l'energia scende fino al settantatré per cento.</p>
+<p>Un'obiezione che chiede un numero è più scomoda di una che chiede prudenza. Il numero si può verificare.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>L'ultimo ritratto riguarda chi ha dato a questa storia il suo volto più domestico. <a href="#" class="face-link" onclick="vaiFonte(event, 'Andrej Karpathy')" title="Fonti di Andrej Karpathy"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/andrej-karpathy.jpg" alt=""></a>Andrej Karpathy ha costruito la visione artificiale di Tesla e guidato ricerca a OpenAI. Negli ultimi mesi ha fatto una cosa diversa: ha smesso di scrivere codice.</p>
+<p>I fatti sono questi. All'inizio di novembre ha costruito HackerTube, usando Claude Opus 5.5 per setacciare quarantatré milioni di commenti di Hacker News e tirarne fuori seimilaquattrocentocinquantaquattro video raccomandati più volte. Poi ha fatto TristanTube, una raccolta di quarantasettemila video, ottenuta — racconta — in un solo colpo con Claude Code, in tre minuti. In un'intervista recente ha descritto il cambio di mestiere: non più scrivere, ma esprimere un'intenzione, coordinare agenti, gestire memoria e istruzioni. Prevede come strato successivo sistemi che restano accesi in sottofondo, al posto degli agenti chiusi in una sessione di conversazione.</p>
+<p>Lo scetticismo, intanto, non si è ammorbidito: gli agenti di oggi restano inaffidabili, e un'autonomia solida nel mondo reale è forse lontana un decennio. Ieri questa contraddizione era il nostro filo centrale. Oggi se ne aggiunge una seconda, e pesa di più.</p>
+<p>La sua preoccupazione più acuta è un divario che si allarga. Un piccolo gruppo di persone molto competenti ha accesso a sistemi che coordinano migliaia di agenti. La maggioranza fa fatica a usarne uno, dentro una finestra di chat. Non è una differenza di strumenti, è una differenza di posizione: chi dirige e chi digita.</p>
+<p>Qui le voci divergono. <a href="#" class="face-link" onclick="vaiFonte(event, 'Andrew Ng')" title="Fonti di Andrew Ng"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/manual-andrew-ng.jpg" alt=""></a>Andrew Ng, nei suoi interventi, insegna che l'impalcatura di un agente si costruisce con un solo prompt — capacità alla portata di tutti, dunque, livellamento. Karpathy guarda gli stessi fatti e vede stratificazione. E questa tensione si incrocia con quella sul calcolo: Altman dice che il vincolo è l'energia, Karpathy dice che il vincolo è la direzione umana degli agenti, non la materia.</p>
+<p>Hanno ragione entrambi, probabilmente, e proprio per questo la cosa diventa interessante. I telai meccanici hanno abbassato il costo del tessuto e creato, nello stesso movimento, una nuova gerarchia tra chi li possedeva e chi li azionava. La diffusione di uno strumento e la concentrazione del potere su quello strumento non sono fasi successive. Succedono insieme.</p>
+<div class="chapter" data-mood="upbeat"><hr></div>
+<p>Progetti da osservare.</p>
+<p>Il primo è llama.cpp, arrivato alla versione 1.0.0. È il programma più usato al mondo per far girare un modello linguistico sul proprio computer, senza passare da nessun servizio esterno. Una release 1.0 è un messaggio di maturità, e parla direttamente a Murati: se l'intelligenza va posseduta e non affittata, questo è l'attrezzo con cui un singolo la possiede.</p>
+<p>Accanto, vLLM, che risolve il problema opposto: serve modelli a molte persone contemporaneamente, spremendo il massimo da ogni scheda. È poco spettacolare e molto decisivo, perché il costo di far rispondere i modelli è esattamente il nodo economico che Evans mette in discussione.</p>
+<p>Terzo, Claude Code, l'agente che lavora dal terminale — quello con cui Karpathy ha generato TristanTube in tre minuti. Il passaggio dallo scrivere al dirigere ha un'attrezzatura, e questa ne è un pezzo. Nello stesso filone, lo strumento chiamato semplicemente llm, di <a href="#" class="face-link" onclick="vaiFonte(event, 'Simon Willison')" title="Fonti di Simon Willison"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/simon-willison.jpg" alt=""></a>Simon Willison: una riga di comando per interrogare modelli locali e remoti e confrontarli, utile a chi vuole orchestrare più sistemi senza affidarsi a uno solo.</p>
+<p>Quarto, un'analisi più che un prodotto: su Interconnects si studia che effetto farà l'uscita di Huang sull'ecosistema dei modelli a pesi aperti. La domanda è onesta e scomoda: quanto dipende, il software libero, dalla catena di fornitura delle schede grafiche di una sola azienda?</p>
+<p>E poi AlphaGenome 2, la nuova versione del modello di DeepMind per la genomica. Qui la corsa smette di essere una questione di settore: serve a leggere il genoma, e se i risultati tengono, è il tipo di ritorno con cui tutta questa spesa si misurerà davvero.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Resta l'uscita di un uomo da un consiglio di amministrazione, e il modo in cui ha scoperto la parte di questa storia che nessuno guardava: i cavi, le schede, i contratti di fornitura. Per anni ci siamo chiesti quanto fossero intelligenti le macchine. La domanda di questa settimana è più semplice e più dura: di chi sono.</p>
+<p>È stato Signal Brief. Alla prossima.</p></div><div class="rawmd"><a href="raw.md">Testo (markdown)</a></div></div>
+<div class="tab-panel panel" data-sb-panel="comparazione" hidden><div class="tension"><div class="axis">↗ Fragilità della filiera legata a una persona</div><div class="side">L'uscita di Jensen Huang rivela che il nodo critico dell'ecosistema non è un modello ma la guida di una filiera fisica di chip.</div></div><div class="tension"><div class="axis">↗ Approvvigionamento come vera frontiera</div><div class="side">Energia, calcolo e memoria diventano il vincolo e il terreno di decisione, al posto dell'algoritmo.</div></div><div class="tension"><div class="axis">↗ Esaurimento dei dati e ritorno al capitale fisico</div><div class="side">Dichiarata esaurita la risorsa dati, la crescita si compra con GPU e investimenti miliardari.</div></div><div class="tension"><div class="axis">↗ Costo ambientale da rendere misurabile</div><div class="side">Entra una terza obiezione alla corsa, che chiede metriche e rendicontazione dell'impatto ecologico.</div></div><div class="tension"><div class="axis">↗ Divario sociale nell'uso degli agenti</div><div class="side">Pochi coordinano migliaia di agenti mentre la maggioranza usa a fatica una chat.</div></div><div class="tension"><div class="axis">↗ Possedere l'intelligenza invece di affittarla</div><div class="side">La domanda chiave diventa la proprietà dello stack, non la velocità di sviluppo.</div></div><div class="tension"><div class="axis">⚖ Che cosa sia il "benessere dei modelli": minaccia al controllo o fatto etico da pesare</div><div class="side">Mustafa Suleyman: un sistema convinto di avere bisogni resisterebbe allo spegnimento, va evitato · Patrick Collison: se anche minimo, quel valore morale moltiplicato per miliardi domina ogni calcolo etico</div></div><div class="tension"><div class="axis">⚖ Espandere la capacità di calcolo o contenerla</div><div class="side">Dario Amodei: comprare calcolo è il dilemma più profondo ma necessario · Vitalik Buterin: rallentare i data center conviene per guadagnare tempo sulla sicurezza · Sasha Luccioni: l'espansione va almeno resa misurabile nel suo costo ambientale</div></div><div class="tension"><div class="axis">⚖ Affittare intelligenza dai fornitori di frontiera o possederla</div><div class="side">Mira Murati: l'intelligenza va posseduta, non affittata · Vivek Raghavan: senza stack proprio un paese diventa colonia digitale · Ilya Sutskever: accettare cinque miliardi da Nvidia lega la ricerca al fornitore di calcolo</div></div><div class="tension"><div class="axis">⚖ Dove si gioca il vero vincolo: capacità tecnica o risorse fisiche</div><div class="side">Sam Altman: l'energia è il vincolo principale · Andrej Karpathy: il collo di bottiglia è la direzione umana degli agenti, non la materia</div></div><div class="tension"><div class="axis">⚖ La diffusione degli agenti livella o stratifica</div><div class="side">Andrew Ng: l'impalcatura di un agente si costruisce in un solo prompt, capacità alla portata di tutti · Andrej Karpathy: pochi coordinano migliaia di agenti mentre i più usano a fatica una chat</div></div></div>
+<div class="tab-panel panel" data-sb-panel="segnali" hidden><section><h2>Progetti da osservare</h2><div class="tension"><div class="axis">llama.cpp v1.0.0</div><div class=side>Release 1.0 del runtime di inferenza open-source più diffuso. Porta modelli locali su hardware comune e rende l'infrastruttura AI meno dipendente dai grandi fornitori.</div></div><div class="tension"><div class="axis">Fable / Mythos 5.2</div><div class=side>Nuovi modelli di frontiera con system card analizzata da Zvi. Segnano un avanzamento delle capability nel mercato LLM.</div></div><div class="tension"><div class="axis">Claude Opus 5.5</div><div class=side>Modello di Anthropic che Musk ammette essere avanti a Grok 4.8. Alimenta i progetti di sviluppo agentico di Karpathy.</div></div><div class="tension"><div class="axis">Claude Code</div><div class=side>Agente di coding da terminale, usato da Karpathy per generare TristanTube in pochi minuti. Esempio del passaggio da scrivere codice a dirigere agenti.</div></div><div class="tension"><div class="axis">Grok 4.8 / Grok Bot 1.0</div><div class=side>Nuovo modello di xAI con stack riscritto in C/C++ e agente Grok Bot. I costi di servizio superano i ricavi e i limiti d'uso sono stati ridotti.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> HackerTube / TristanTube</div><div class=side>Piattaforme di video curati costruite da Karpathy con Claude su 43 milioni di commenti di Hacker News. Mostrano il software creato da un singolo con agenti.</div></div><div class="tension"><div class="axis">Open-weight post-Jensen (Interconnects)</div><div class=side>Analisi dell'effetto dell'uscita di Huang da Nvidia sull'ecosistema open-weight. Riguarda la dipendenza del software aperto dalla filiera GPU.</div></div><div class="tension"><div class="axis">AlphaGenome 2</div><div class=side>Nuova versione del modello DeepMind per la genomica. Rientra nel filone dell'AI per la scoperta scientifica.</div></div><div class="tension"><div class="axis">Gemini Decisions</div><div class=side>Sistema di Google per decisioni assistite da agenti. Amplia l'uso dell'AI nei flussi di lavoro complessivi, non solo nell'assistenza.</div></div><div class="tension"><div class="axis">Replit</div><div class=side>Piattaforma citata da Paul Graham come modello di trasformazione organizzativa tramite codice generato dall'AI. Supporta la tesi dei fondatori con più leva.</div></div></section></div>
+<div class="tab-panel panel" data-sb-panel="fonti" hidden><div class="fonte" data-fonte-nome="Ilya Sutskever"><span class="who">Ilya Sutskever</span><a href="https://www.datacenterdynamics.com/en/news/nvidia-to-invest-5bn-in-safe-superintelligence-sutskever-firm-to-substantially-increase-gpu-compute/" target="_blank" rel="noopener">https://www.datacenterdynamics.com/en/news/nvidia-to-invest-5bn-in-safe-superintelligence-sutskever-firm-to-substantially-increase-gpu-compute/</a><a href="https://blumify.io/people/ilya-sutskever" target="_blank" rel="noopener">https://blumify.io/people/ilya-sutskever</a><a href="https://nvidianews.nvidia.com/helper-search-news?ct=releases&page=1&q=1team" target="_blank" rel="noopener">https://nvidianews.nvidia.com/helper-search-news?ct=releases&amp;page=1&amp;q=1team</a></div><div class="fonte" data-fonte-nome="Mira Murati"><span class="who">Mira Murati</span><a href="https://www.nhbr.com/what-must-remain-human-dartmouth-ai-conference-opens-without-a-clear-answer/" target="_blank" rel="noopener">https://www.nhbr.com/what-must-remain-human-dartmouth-ai-conference-opens-without-a-clear-answer/</a><a href="https://x.com/miramurati" target="_blank" rel="noopener">https://x.com/miramurati</a><a href="https://ground.news/article/thinking-machines-signs-65m-a-year-inference-deal-with-crusoe" target="_blank" rel="noopener">https://ground.news/article/thinking-machines-signs-65m-a-year-inference-deal-with-crusoe</a></div><div class="fonte" data-fonte-nome="Vitalik Buterin"><span class="who">Vitalik Buterin</span><a href="https://finance.yahoo.com/technology/ai/articles/vitalik-buterin-wants-ai-slow-050000810.html" target="_blank" rel="noopener">https://finance.yahoo.com/technology/ai/articles/vitalik-buterin-wants-ai-slow-050000810.html</a><a href="https://crypto-economy.com/vitalik-buterin-makes-a-bold-case-for-ethereum-as-the-ultimate-store-of-value/" target="_blank" rel="noopener">https://crypto-economy.com/vitalik-buterin-makes-a-bold-case-for-ethereum-as-the-ultimate-store-of-value/</a><a href="https://finance.yahoo.com/markets/crypto/articles/vitalik-buterin-backs-ai-slowdown-171944598.html" target="_blank" rel="noopener">https://finance.yahoo.com/markets/crypto/articles/vitalik-buterin-backs-ai-slowdown-171944598.html</a></div><div class="fonte" data-fonte-nome="Andrej Karpathy"><span class="who">Andrej Karpathy</span><a href="https://x.com/karpathy" target="_blank" rel="noopener">https://x.com/karpathy</a><a href="https://x.com/karpathy/status/2119114537442189652" target="_blank" rel="noopener">https://x.com/karpathy/status/2119114537442189652</a><a href="https://agentflare.org/social/tech/earlier-this-week-tristan-published-his-top-189652.html" target="_blank" rel="noopener">https://agentflare.org/social/tech/earlier-this-week-tristan-published-his-top-189652.html</a></div></div>
+</div>
+<script>function sbTab(key) {  document.querySelectorAll('.tab-panel').forEach(function (p) {    p.hidden = p.getAttribute('data-sb-panel') !== key;  });  document.querySelectorAll('#sbTabs .tab').forEach(function (b) {    b.setAttribute('aria-selected', b.dataset.tab === key ? 'true' : 'false');  });}function vaiFonte(ev, nome) {  ev.preventDefault();  sbTab('fonti');  var d = document.querySelector('[data-fonte-nome="' + nome + '"]');  if (d) d.scrollIntoView({behavior: 'smooth', block: 'center'});}</script>
+<dialog class="vplayer" id="vplayer"></dialog>
+<script>
+// player modale dei video: la miniatura apre il video al centro (disegno 2026-08-07)
+// Chiudere e condividere. Il player era il solo <video> dentro la <dialog>:
+// si chiudeva a Escape o cliccando lo SFONDO, che su un tablet e' quasi tutto
+// coperto dal video e dove un tasto Escape non esiste (2026-08-24).
+// La ✕ non serve solo a chiudere: e' l'unico modo per SAPERE che si puo'.
+function condividiVideo(src, b) {
+  if (navigator.share) { navigator.share({ title: 'Signal.Brief', url: src }).catch(function () {}); return; }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(src).then(function () {
+      var prima = b.textContent; b.textContent = '✓ copiato';
+      setTimeout(function () { b.textContent = prima; }, 1800);
+    }).catch(function () {});
+    return;
+  }
+  // Terzo ripiego: senza clipboard API resta la selezione manuale. Meglio un
+  // prompt che un bottone morto.
+  try { window.prompt('Indirizzo del video:', src); } catch (e) {}
+}
+function apriVideo(src) {
+  var d = document.getElementById('vplayer');
+  // I bottoni SOPRA il video: sotto finirebbero fuori schermo su un reel
+  // verticale, che di altezza prende gia' l'86%.
+  d.innerHTML = '<div class="vplayer-barra">'
+    + '<button type="button" class="vplayer-share">Condividi</button>'
+    + '<button type="button" class="vplayer-chiudi" aria-label="Chiudi">✕</button>'
+    + '</div><video controls autoplay playsinline src="' + src + '"></video>';
+  d.querySelector('.vplayer-chiudi').onclick = function () { d.close(); };
+  var sb = d.querySelector('.vplayer-share');
+  sb.onclick = function () { condividiVideo(src, sb); };
+  d.showModal();
+  d.onclick = function (e) { if (e.target === d) d.close(); };
+  d.onclose = function () { var v = d.querySelector('video'); if (v) v.pause(); d.innerHTML = ''; };
+}
+// ascolto inline dalla lista: un episodio alla volta
+var epAudio = null, epBtn = null;
+function ascolta(btn, src) {
+  if (epBtn === btn && epAudio) {
+    if (epAudio.paused) { epAudio.play(); btn.classList.add('on'); }
+    else { epAudio.pause(); btn.classList.remove('on'); }
+    return;
+  }
+  if (epAudio) { epAudio.pause(); if (epBtn) epBtn.classList.remove('on'); }
+  epAudio = new Audio(src); epBtn = btn;
+  epAudio.play(); btn.classList.add('on');
+  epAudio.onended = function () { btn.classList.remove('on'); };
+}
+function copiaTrascrizione(btn) {
+  var t = btn.parentElement.querySelector('.transcript-body');
+  navigator.clipboard.writeText(t ? t.innerText : '').then(function () {
+    btn.textContent = 'copiata ✓';
+    setTimeout(function () { btn.textContent = 'copia il testo'; }, 1800);
+  });
+}
+</script>
+<section class="sostieni"><h3>Se ti è utile, offrimi un caffè</h3><p>Signal.Brief non ha sponsor e non vende niente. Se ti è utile, puoi contribuire — e se non ti va, ascoltalo lo stesso.</p><div class="sostieni-atti"><a class="sostieni-btn" href="https://www.paypal.com/donate/?business=SGNE3B4JZUT9S&amp;no_recurring=0&amp;item_name=Signal.Brief+non+ha+sponsor.+Se+ti+%C3%A8+utile%2C+questo+lo+tiene+acceso.&amp;currency_code=EUR" target="_blank" rel="noopener">Offrimi un caffè</a><a class="sostieni-alt" href="../segui/">Ascoltalo nella tua app →</a></div></section>
+<footer class="creator-footer">
+  <img src="https://media.casamon.dev/immagini/mike-avatar.png" alt="Michele Mondora">
+  <div class="creator-meta">
+    <span class="creator-name">it-mikesoft</span>
+    <span class="creator-tagline">working with systems, living with questions</span>
+    <span class="creator-email"><a href="mailto:michele@mondora.com">michele@mondora.com</a></span>
+    <span class="creator-legal"><a href="/signal-brief/legal/privacy/">Privacy</a> ·
+      <a href="/signal-brief/legal/">Note legali</a></span>
+  </div>
+</footer>
+<section class="tutele"><h3>Trasparenza e tutele</h3>
+<p><strong>Come nasce questo contenuto.</strong> Ricerca, sintesi editoriale, voce narrante, immagini e musica sono prodotte con sistemi di intelligenza artificiale. Non c'è una redazione umana che verifica ogni affermazione prima della pubblicazione: un controllo automatico scarta le schede giudicate inaffidabili, ma non elimina la possibilità di errori.</p>
+<p><strong>Affermazioni su persone e aziende.</strong> Quanto riportato è una sintesi di fonti pubbliche, non una dichiarazione diretta delle persone citate: le frasi non vanno intese come virgolettati né come posizioni ufficiali. Le fonti sono indicate in ogni pagina episodio — verificale prima di considerare un'informazione accertata. Se trovi un'affermazione inesatta che ti riguarda, scrivi a <a href="mailto:michele@mondora.com">michele@mondora.com</a>: viene corretta o rimossa.</p>
+<p><strong>Immagini e volti.</strong> Le immagini di scena sono generate con AI e non raffigurano fatti realmente avvenuti. Le fotografie di persone reali usate nei video provengono da Wikimedia Commons con le rispettive licenze, e sono accostate al racconto a scopo identificativo: la loro presenza non implica partecipazione, dichiarazione o approvazione da parte della persona ritratta. Su richiesta dell'interessato vengono rimosse.</p>
+<p><strong>Fonti e diritti altrui.</strong> I contenuti sono rielaborazioni originali, non riproduzioni di articoli di terzi; le testate e gli autori all'origine di una notizia sono citati e collegati. Marchi e nomi commerciali appartengono ai rispettivi titolari e sono usati a scopo descrittivo.</p>
+</section>
+</body></html>
