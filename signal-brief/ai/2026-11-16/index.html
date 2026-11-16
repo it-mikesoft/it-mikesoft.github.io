@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="it"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Due ore per un prodotto · Signal.AI</title>
+<meta property="og:title" content="Due ore per un prodotto · Signal.AI"><meta property="og:type" content="article"><meta property="og:description" content="Gli agenti smettono di essere strumenti e diventano forza di lavoro, con il bilancio come metro di giudizio. Intanto LeCun e Hinton spostano la discussione su terreni diversi."><meta property="og:url" content="https://it-mikesoft.github.io/signal-brief/ai/2026-11-16/"><meta property="og:audio" content="https://op3.dev/e/media.casamon.dev/ai/podcast/episodes/2026-11-16.mp3"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "PodcastEpisode", "name": "Due ore per un prodotto", "datePublished": "2026-11-16", "url": "https://it-mikesoft.github.io/signal-brief/ai/2026-11-16/", "description": "Gli agenti smettono di essere strumenti e diventano forza di lavoro, con il bilancio come metro di giudizio. Intanto LeCun e Hinton spostano la discussione su terreni diversi.", "inLanguage": "it", "associatedMedia": {"@type": "MediaObject", "contentUrl": "https://op3.dev/e/media.casamon.dev/ai/podcast/episodes/2026-11-16.mp3"}, "partOfSeries": {"@type": "PodcastSeries", "name": "Signal.AI", "url": "https://it-mikesoft.github.io/signal-brief/ai/"}}</script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:#faf8f4; color:#1a1a1a; padding:2rem 10px; max-width:none; margin:0 auto; line-height:1.6; }
+  a { color:#2563eb; }
+  .back { display:inline-block; margin-bottom:1.5rem; font-size:.8rem; font-family:monospace; text-decoration:none; }
+  .videos { display:flex; gap:1rem; flex-wrap:wrap; margin:1.2rem 0; }
+  .videos figure { margin:0; flex:1; min-width:260px; }
+  .videos .v2 { flex:0 1 240px; }
+  .videos video { width:100%; border-radius:12px; background:#000; }
+  .videos .v2 video { aspect-ratio:9/16; max-height:420px; }
+  .videos figcaption { font-size:.75rem; color:#888; text-align:center; margin-top:.3rem; }
+  .vlink { display:flex; gap:.3rem; margin-top:.35rem; }
+  .vlink input { flex:1; min-width:0; font-size:.68rem; font-family:monospace; padding:.3rem .4rem;
+    border:1px solid #e2ddd6; border-radius:6px; background:#fff; color:#6b7280; }
+  .vlink button { font-size:.68rem; padding:.3rem .6rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; }
+  .wk { font-size:1rem; margin:1.4rem 0 .4rem; }
+  details.wkacc { border:1px solid #e5e7eb33; border-radius:10px; margin:.6rem 0; padding:.1rem .8rem .4rem; }
+  details.wkacc summary { cursor:pointer; font-weight:600; padding:.5rem 0; font-size:.9rem; }
+  .back:hover { text-decoration:underline; }
+  header h1 { font-family:Georgia,serif; font-size:1.7rem; font-weight:600; }
+  header h1 span { color:#2563eb; }
+  .tagline { color:#6b7280; font-size:.85rem; margin-top:.3rem; margin-bottom:1.5rem; }
+  ul.eps { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
+  .subscribe { display:inline-flex; align-items:center; gap:.5rem; margin-bottom:1.2rem;
+    padding:.45rem .9rem; background:#2563eb; color:#fff; border-radius:20px;
+    text-decoration:none; font-size:.8rem; font-weight:600; }
+  .subscribe:hover { opacity:.85; color:#fff; }
+  .ep { display:flex; align-items:center; gap:.8rem; padding:.8rem 1rem; background:#fff;
+    border:1px solid #e2ddd6; border-radius:8px; text-decoration:none; color:inherit; transition:box-shadow .12s; }
+  .ep:hover { box-shadow:0 2px 8px rgba(0,0,0,.07); }
+  .ep-play { width:32px; height:32px; border-radius:50%; background:#f3f4f6; display:flex;
+    align-items:center; justify-content:center; font-size:12px; flex-shrink:0; }
+  .ep-title { font-size:.9rem; font-weight:500; }
+  .ep-meta { font-size:.72rem; color:#9ca3af; font-family:monospace; margin-top:.15rem; }
+  audio { width:100%; margin:1rem 0 1.5rem; }
+  .rawmd { margin:-.5rem 0 1.5rem; }
+  .rawmd a { font-size:.8rem; font-family:monospace; color:inherit; opacity:.65; }
+  .desc { color:#374151; font-size:.95rem; margin-bottom:1.5rem; }
+  section { margin:2rem 0; }
+  section h2 { font-family:Georgia,serif; font-size:1.1rem; border-bottom:1px solid #e2ddd6;
+    padding-bottom:.3rem; margin-bottom:.8rem; }
+  .synthesis p { margin:.7rem 0; }
+  .tension { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; font-size:.9rem; }
+  .tension .axis { font-weight:600; margin-bottom:.3rem; }
+  .tension .side { color:#6b7280; font-size:.85rem; }
+  .proj { font-size:.9rem; margin:.4rem 0; }
+  .proj .pname { font-weight:600; }
+  .proj .pnew { background:#16a34a; color:#fff; font-size:.65rem; font-weight:700;
+    padding:.1rem .35rem; border-radius:4px; text-transform:uppercase; vertical-align:middle; }
+  .fonte { font-size:.85rem; margin:.5rem 0; }
+  .fonte .who { font-weight:600; }
+  .fonte a { display:block; margin-left:.5rem; color:#6b7280; }
+  .transcript-body p { margin:.7rem 0; line-height:1.7; }
+  .transcript-body .chapter hr { border:none; border-top:1px solid #e2ddd6; margin:1.5rem 0; }
+  .transcript-body .podcast-episode-desc { color:#6b7280; font-style:italic; }
+  .signal-card { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; }
+  .signal-theme { font-size:.75rem; font-weight:700; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.3rem; }
+  .signal-text { font-size:.85rem; color:#374151; line-height:1.5; }
+  .creator-footer { margin-top:3rem; padding-top:1.5rem; border-top:1px solid #e2ddd6;
+    display:flex; align-items:center; gap:.9rem; }
+  .creator-footer img { width:40px; height:40px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+  .creator-legal { font-size:.78rem; margin-top:.15rem; }
+  .creator-legal a { color:inherit; }
+  .creator-meta { display:flex; flex-direction:column; gap:.15rem; }
+  .creator-name { font-size:.85rem; font-weight:600; color:#1a1a1a; }
+  .creator-tagline { font-size:.75rem; color:#6b7280; }
+  .creator-email { font-size:.75rem; }
+  .creator-ai { font-size:.72rem; color:#8a7f6d; max-width:46ch; line-height:1.45; }
+  .sostieni { margin-top:2.5rem; padding:1.2rem 1.4rem; border-radius:14px;
+    background:#f7f4ef; border:1px solid #e2ddd6; }
+  .sostieni h3 { margin:0 0 .3rem; font-size:1rem; }
+  .sostieni p { margin:0 0 .9rem; font-size:.88rem; color:#6b6257; line-height:1.55; }
+  .sostieni-atti { display:flex; gap:.8rem; align-items:center; flex-wrap:wrap; }
+  .sostieni-btn { display:inline-block; padding:.55rem 1.1rem; border-radius:10px;
+    background:#2563eb; color:#fff; text-decoration:none; font-weight:700; font-size:.88rem; }
+  .sostieni-alt { font-size:.85rem; color:#6b6257; text-decoration:none; }
+  .sostieni-alt:hover { text-decoration:underline; }
+  .tutele { margin-top:2rem; padding-top:1.2rem; border-top:1px solid #e2ddd6;
+    font-size:.72rem; color:#8a7f6d; line-height:1.5; }
+  .tutele h3 { font-size:.75rem; color:#6b7280; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.5rem; font-weight:600; }
+  .tutele p { margin:.45rem 0; }
+  .tutele strong { color:#5a5348; font-weight:600; }
+  .tutele a { color:inherit; text-decoration:underline; }
+  .creator-email a { color:#9ca3af; text-decoration:none; }
+  .creator-email a:hover { color:#1a1a1a; }
+  /* disegno 2026-08-07: mesi a pagine, facce, player modale, trascrizione
+     richiudibile — la pagina episodio è un prodotto, non un sottoprodotto */
+  .hrow { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+  .hrow .subscribe { margin-bottom:0; flex-shrink:0; }
+  .months { font-size:.78rem; font-family:monospace; margin:.4rem 0 1rem; color:#9ca3af; }
+  .months a { text-decoration:none; } .months b { color:inherit; }
+  .ep-faces { display:flex; margin-left:auto; flex-shrink:0; }
+  .ep-faces img { width:26px; height:26px; border-radius:50%; object-fit:cover;
+    border:2px solid #fff; margin-left:-8px; background:#eee; }
+  /* tutti i citati sul desktop; su mobile la leggibilità vince: max 3 */
+  @media (max-width:600px) { .ep-faces img:nth-child(n+4) { display:none; } }
+  .ep-listen { width:32px; height:32px; border-radius:50%; background:#f3f4f6; border:0;
+    display:flex; align-items:center; justify-content:center; font-size:12px;
+    flex-shrink:0; cursor:pointer; color:inherit; }
+  .ep-listen.on { background:#2563eb; color:#fff; }
+  .face-inline { width:1.15em; height:1.15em; border-radius:50%; object-fit:cover;
+    vertical-align:-.18em; margin-right:.25em; }
+  /* SEMPRE sulla stessa riga (2026-08-09): su schermi stretti le miniature
+     si riducono, e se non basta il reel sparisce — mai l'andata a capo */
+  .vthumbs { display:flex; gap:.8rem; flex-wrap:nowrap; margin:1.2rem 0; align-items:flex-start; }
+  .vthumb { position:relative; cursor:pointer; border:0; padding:0; background:none;
+    border-radius:12px; overflow:hidden; }
+  /* stessa ALTEZZA per video e reel: il 9:16 si stringe, non svetta */
+  .vthumb video { height:150px; width:auto; display:block; border-radius:12px; background:#000; }
+  @media (max-width:520px) { .vthumb video { height:118px; } }
+  /* quando nemmeno ridotte ci stanno: via le miniature, due BOTTONI in
+     riga che aprono il player (2026-08-09) */
+  .vbtns { display:none; gap:.6rem; margin:1.2rem 0; }
+  .vbtns button { flex:1; padding:.6rem .4rem; border:0; border-radius:10px;
+    background:#2563eb; color:#fff; font-weight:700; font-size:.85rem;
+    cursor:pointer; font-family:inherit; }
+  @media (max-width:420px) { .vthumbs { display:none; } .vbtns { display:flex; } }
+  .vthumb .vlabel { position:absolute; left:0; right:0; bottom:0; padding:.9rem .5rem .35rem;
+    background:linear-gradient(transparent, rgba(0,0,0,.75)); color:#fff; font-size:.7rem; }
+  .vthumb::after { content:"▶"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    color:#fff; font-size:1.6rem; text-shadow:0 1px 6px rgba(0,0,0,.8); }
+  /* margin:auto ESPLICITO: il reset globale * {margin:0} annullava la
+     centratura nativa del dialog e il player si apriva in alto a sinistra */
+  dialog.vplayer { border:0; padding:0; background:transparent; max-width:92vw;
+    margin:auto; position:fixed; inset:0; }
+  dialog.vplayer::backdrop { background:rgba(0,0,0,.85); }
+  dialog.vplayer video { max-width:92vw; max-height:86vh; border-radius:14px; background:#000; }
+  dialog.vplayer .vplayer-barra { display:flex; justify-content:flex-end; align-items:center;
+    gap:.5rem; margin-bottom:.5rem; }
+  /* 2.75rem e' il bersaglio minimo per il dito: la ✕ da sola sarebbe 20px. */
+  dialog.vplayer .vplayer-barra button { font:inherit; font-size:.9rem; color:#fff;
+    background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.28);
+    border-radius:999px; padding:.45rem .9rem; cursor:pointer;
+    min-height:2.75rem; min-width:2.75rem; }
+  dialog.vplayer .vplayer-barra button:hover { background:rgba(255,255,255,.24); }
+  dialog.vplayer .vplayer-chiudi { font-size:1.1rem; line-height:1; }
+  details.tr { border:1px solid #e2ddd6; border-radius:10px; padding:.2rem .9rem .6rem; }
+  details.tr summary { cursor:pointer; font-weight:600; padding:.55rem 0; }
+  .tr-copy { font-size:.72rem; padding:.3rem .7rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; margin:.3rem 0 .5rem; }
+  .epnav { display:flex; justify-content:space-between; gap:1rem; margin:2rem 0 0;
+    font-size:.82rem; font-family:monospace; }
+  .epnav a { text-decoration:none; }
+  /* Header + tab bar (spec-016, Task 5): stessa forma di
+     public/console/podcast-render.css, riusando i nomi classe dove
+     combaciano — solo la meccanica tab/pannello è nuova qui. */
+  .episode-header .date-line { font-size:.72rem; font-family:monospace; color:#9ca3af;
+    text-transform:uppercase; letter-spacing:.08em; margin-bottom:.3rem; }
+  .ep-header-block { margin-bottom:.5rem; }
+  .ep-header-faces { margin:.6rem 0; }
+  .ep-header-faces .ep-faces { margin-left:0; }
+  .tabs { display:flex; gap:.25rem; border-bottom:1px solid #e2ddd6; margin:1.5rem 0; flex-wrap:wrap; }
+  .tab { font-family:monospace; font-size:.72rem; text-transform:uppercase; letter-spacing:.08em;
+    padding:.6rem .9rem; background:transparent; border:0; border-bottom:2px solid transparent;
+    color:#9ca3af; cursor:pointer; }
+  .tab[aria-selected="true"] { color:#1a1a1a; border-bottom-color:#2563eb; }
+  .tab-panel { display:block; }
+  .tab-panel[hidden] { display:none !important; }
+  /* Fallback dei pannelli senza dati (episodi storici senza un sidecar) —
+     porta di public/console/podcast-render.css:304-309, sui token pubblici. */
+  /* Header episodio a due colonne: barra tab e pannello nel primo schermo
+     (stesse regole del modulo condiviso, richiesta 2026-08-10). */
+  .ep-header-block { display:grid; grid-template-columns:minmax(0,1fr) 340px;
+    grid-template-rows:repeat(4,min-content); gap:.3rem 1.6rem;
+    align-items:start; margin-bottom:.5rem; }
+  .ep-header-block > [data-sb="data"] { grid-column:1; margin:0; }
+  .ep-header-block > [data-sb="titolo"] { grid-column:1; margin:.1rem 0; }
+  .ep-header-block > [data-sb="player"] { grid-column:1; }
+  .ep-header-block > [data-sb="nav"] { grid-column:1; }
+  .ep-header-block > [data-sb="facce"] { grid-column:2; grid-row:1; }
+  .ep-header-block > [data-sb="video"] { grid-column:2; grid-row:2/5;
+    display:flex; gap:.5rem; flex-wrap:wrap; }
+  .ep-header-block [data-sb="facce"] img { width:26px; height:26px; }
+  .ep-header-block [data-sb="video"] video { max-height:96px; width:auto; }
+  .ep-header-block audio { height:36px; width:100%; }
+  .tabs { position:sticky; top:0; z-index:5; background:#fff;
+    padding:.4rem 0; border-bottom:1px solid #e5e7eb; }
+  @media (max-width:760px) {
+    .ep-header-block { grid-template-columns:1fr; }
+    .ep-header-block > [data-sb="facce"],
+    .ep-header-block > [data-sb="video"] { grid-column:1; grid-row:auto; }
+  }
+  .state-note { padding:2rem 1rem; text-align:center; color:#9ca3af;
+    font-family:monospace; font-size:.85rem; }
+  @media (prefers-color-scheme:dark) {
+    body { background:#1f1d18; color:#e5e5e5; }
+    .ep, .tension, .signal-card { background:#2a2823; border-color:#3a352d; }
+    .ep-play { background:#3a352d; } .desc { color:#d4d4d4; }
+    .signal-text { color:#d4d4d4; }
+    .episode-header .date-line { color:#9ca3af; }
+    .tabs { border-color:#3a352d; }
+    .tab[aria-selected="true"] { color:#f5f5f5; }
+    .state-note { color:#9ca3af; }
+    .creator-footer { border-color:#3a352d; }
+    .creator-name { color:#f5f5f5; }
+    .creator-tagline, .creator-email a { color:#9ca3af; }
+    .creator-ai { color:#9a8f7d; }
+    .vlink input { background:#1c1a17; border-color:#3a352d; color:#9ca3af; }
+    .tutele { border-color:#3a352d; color:#9a8f7d; }
+    .tutele h3 { color:#a9a9a9; } .tutele strong { color:#d4d4d4; }
+    .ep-listen { background:#3a352d; }
+    .ep-faces img { border-color:#2a2823; background:#3a352d; }
+    details.tr { border-color:#3a352d; }
+  }
+</style></head><body>
+<a class="back back-link" href="/signal-brief/ai/">← Signal.AI</a><div class="ep-header-block"><header class="episode-header"><div class="date-line" data-sb="data">2026-11-16</div><h1 data-sb="titolo">Due ore per un prodotto</h1><span class="tono" data-sb="tono" title="constata, non pende">😐</span><div class="desc">Gli agenti smettono di essere strumenti e diventano forza di lavoro, con il bilancio come metro di giudizio. Intanto LeCun e Hinton spostano la discussione su terreni diversi.</div><div class="tagline">Digital Intelligence Podcast</div></header><audio controls preload="none" data-sb="player" src="https://op3.dev/e/media.casamon.dev/ai/podcast/episodes/2026-11-16.mp3"></audio><nav class="epnav" data-sb="nav"><a href="/signal-brief/ai/2026-11-15/">← 2026-11-15</a><span style="flex:1"></span></nav><div class="ep-header-faces" data-sb="facce"><span class="ep-faces"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/aravind-srinivas.jpg" alt="" title="Aravind Srinivas"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/yann-lecun.jpg" alt="" title="Yann LeCun"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/geoffrey-hinton.jpg" alt="" title="Geoffrey Hinton"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/francois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/ilya-sutskever.jpg" alt="" title="Ilya Sutskever"><img loading="lazy" src="https://media.casamon.dev/avatars/gen/ai.png" alt="" title="AI"><img loading="lazy" src="https://media.casamon.dev/avatars/gen/benedict-evans.png" alt="" title="Benedict Evans"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/vitalik-buterin.jpg" alt="" title="Vitalik Buterin"><img loading="lazy" src="https://media.casamon.dev/avatars/gen/bosun-tijani.png" alt="" title="Bosun Tijani"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/manual-vivek-raghavan.jpg" alt="" title="Vivek Raghavan"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/patrick-collison.jpg" alt="" title="Patrick Collison"></span></div><div class="ep-header-video" data-sb="video"></div></div>
+<div class="tabs-block"><div class="tabs" role="tablist" id="sbTabs"><button class="tab" type="button" role="tab" data-tab="sintesi" aria-selected="true" onclick="sbTab('sintesi')">Sintesi</button><button class="tab" type="button" role="tab" data-tab="testo" aria-selected="false" onclick="sbTab('testo')">Testo</button><button class="tab" type="button" role="tab" data-tab="comparazione" aria-selected="false" onclick="sbTab('comparazione')">Comparazione</button><button class="tab" type="button" role="tab" data-tab="segnali" aria-selected="false" onclick="sbTab('segnali')">Segnali</button><button class="tab" type="button" role="tab" data-tab="fonti" aria-selected="false" onclick="sbTab('fonti')">Fonti</button></div>
+<div class="tab-panel panel" data-sb-panel="sintesi"><div class="synthesis"><p>Il segnale più uniforme di queste settimane non riguarda i modelli ma gli agenti come forza di lavoro. <a href="https://x.com/karpathy/status/2119114537442189652" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/andrej-karpathy.jpg" alt="">Andrej Karpathy</a> racconta di aver costruito HackerTube in due ore delegando analisi, codice e deploy a un agente; l'implicazione è che il software ambizioso diventa un progetto da fine settimana. <a href="https://x.com/AravSrinivas/status/2118388416245330096" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/aravind-srinivas.jpg" alt="">Aravind Srinivas</a> porta la stessa logica in azienda con Perplexity Teammates, dove ogni persona dirige molti agenti anziché usarne uno. <a href="https://x.com/fchollet/status/2119201339020648849" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/francois-chollet.jpg" alt="">François Chollet</a> ne trae la conseguenza economica: agenti che gestiscono SaaS acquisiti, con il conto profitti e perdite come metrica di valutazione.</p>
+<p>Qui però si apre la prima frattura, ed è metodologica. Mentre l'industria scala, i ricercatori negano che scalare basti: <a href="https://onlinelibrary.wiley.com/doi/10.1002/aaai.70110" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/yann-lecun.jpg" alt="">Yann LeCun</a> sostiene che la previsione dei token non produce intelligenza del mondo fisico e punta sui world models; <a href="https://blumify.io/people/ilya-sutskever" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/ilya-sutskever.jpg" alt="">Ilya Sutskever</a> descrive i dati come "il combustibile fossile" dell'AI, cioè una risorsa finita; <a href="https://stratechery.com/2026/an-interview-with-benedict-evans-about-ai-and-software/" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/benedict-evans.png" alt="">Benedict Evans</a> osserva che l'adozione è larga ma superficiale mentre la spesa infrastrutturale supera la cassa generata. Tre diagnosi diverse, una conclusione comune: la curva attuale non si prolunga per inerzia.</p>
+<p>La seconda frattura è politica e riguarda dove risiede il potere. <a href="https://coinmarketcap.com/academy/article/vitalik-buterin-says-ai-compute-slowdown-is-net-good" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/vitalik-buterin.jpg" alt="">Vitalik Buterin</a> giudica "netto positivo" rallentare il calcolo iperscalare, perché il progresso algoritmico compenserebbe il ritardo guadagnando tempo per le difese. All'opposto, <a href="https://www.vanguardngr.com/2026/11/fg-laying-solid-ai-foundation-for-businesses-to-thrive-tijan/" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/bosun-tijani.png" alt="">Bosun Tijani</a> e <a href="https://economictimes.indiatimes.com/ai/ai-summit/india-must-build-its-own-ai-tech-to-avert-risk-of-becoming-digital-colony-sarvam-ai-co-founder/printarticle/128604846.cms" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/manual-vivek-raghavan.jpg" alt="">Vivek Raghavan</a> non chiedono freni ma fondazioni proprie — fibra, calcolo condiviso, modelli in lingue locali — per non diventare "colonie digitali".</p>
+<p>Resta il vuoto che <a href="https://x.com/patrickc" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/patrick-collison.jpg" alt="">Patrick Collison</a> nomina con onestà insolita l'8 novembre: la visione positiva dell'AI è ancora slogan — abbondanza, medicina migliore — senza risposte su cosa facciano gli umani e chi allochi le risorse. Due voci lo confermano da lati opposti: <a href="https://futurism.com/artificial-intelligence/microsoft-ai-ceo-agents-rights-evidence" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/mustafa-suleyman.jpg" alt="">Mustafa Suleyman</a> nega qualsiasi coscienza delle macchine e vuole fermarsi se emergesse, <a href="https://futurism.com/artificial-intelligence/nobel-scientist-geoffrey-hinton-ai-conscious-toast" target="_blank" rel="noopener"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/geoffrey-hinton.jpg" alt="">Geoffrey Hinton</a> la considera già plausibile. La corrente di fondo è dunque uno sfasamento preciso: la capacità viene industrializzata e messa a bilancio, mentre la domanda su cosa serva resta senza titolari.</p></div></div>
+<div class="tab-panel panel" data-sb-panel="testo" hidden><button class="tr-copy" type="button" onclick="copiaTrascrizione(this)">copia il testo</button><div class="transcript-body"><h2>Due ore per un prodotto</h2>
+<p class="podcast-episode-desc">Gli agenti smettono di essere strumenti e diventano forza di lavoro, con il bilancio come metro di giudizio. Intanto LeCun e Hinton spostano la discussione su terreni diversi.</p>
+<div class="chapter" data-mood="geo"><hr></div>
+<p>Due ore di lavoro e un prodotto finito, online. È il primo novembre, <a href="#" class="face-link" onclick="vaiFonte(event, 'Andrej Karpathy')" title="Fonti di Andrej Karpathy"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/andrej-karpathy.jpg" alt=""></a>Andrej Karpathy pubblica HackerTube, un'alternativa a YouTube ricavata da quarantatré milioni di commenti di Hacker News. Non l'ha scritta riga per riga: analisi, codice e pubblicazione sono stati delegati a un agente. Questo è Signal Brief, è il 16 novembre. Ieri il discorso stava nella materia: chip, energia, una filiera che dipende da poche persone. Oggi si sposta dentro gli uffici, dove gli agenti cominciano a comparire nelle squadre di lavoro e nei conti di fine mese.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Il 5 novembre, quattro giorni dopo HackerTube, Perplexity ha messo in commercio una funzione che si chiama Teammates. Il nome dice già tutto: non assistenti da interrogare, ma agenti che inseguono un obiettivo nel tempo, con memoria, accesso ai file, ai progetti, alle conversazioni interne dell'azienda. Si occupano di smistare le segnalazioni di errori, fare controlli di qualità, sorvegliare la sicurezza, preparare analisi, gestire test commerciali. <a href="#" class="face-link" onclick="vaiFonte(event, 'Aravind Srinivas')" title="Fonti di Aravind Srinivas"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/aravind-srinivas.jpg" alt=""></a>Aravind Srinivas, che ha fondato l'azienda, la descrive come un cambio di forma dell'impresa: ogni persona non usa un agente, ne dirige molti.</p>
+<p>Qui sta la novità rispetto a ieri. Fino alla settimana scorsa la domanda era chi controlla i chip e chi paga l'energia. Adesso la domanda si è spostata di un gradino: che cosa fanno questi agenti tutto il giorno, e come si scrive il loro contributo in un bilancio. <a href="#" class="face-link" onclick="vaiFonte(event, 'François Chollet')" title="Fonti di François Chollet"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/francois-chollet.jpg" alt=""></a>François Chollet ha portato il ragionamento fino in fondo, sostenendo l'idea di aziende autonome: agenti che gestiscono prodotti software comprati o abbandonati, con il conto profitti e perdite al posto dei test di valutazione. Non più quanti esercizi risolve un modello, ma quanto guadagna l'impresa che amministra.</p>
+<p>È un passaggio che somiglia a quello che accadde nelle fabbriche quando l'elettricità sostituì il vapore. Per anni i motori elettrici vennero montati dove prima stava la caldaia, e la produttività si mosse poco. Cambiò davvero quando qualcuno capì che l'elettricità permetteva di ridisegnare l'officina, perché ogni macchina poteva avere il suo motore. Il guadagno non venne dalla nuova energia, venne dalla nuova pianta. Quello che Srinivas sta provando a fare è esattamente questo: non infilare un agente nel vecchio organigramma, ma riscrivere l'organigramma.</p>
+<p>Mentre l'industria industrializza, però, i ricercatori negano che la strada attuale porti dove si crede. <a href="#" class="face-link" onclick="vaiFonte(event, 'Yann LeCun')" title="Fonti di Yann LeCun"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/yann-lecun.jpg" alt=""></a>Yann LeCun ha pubblicato un articolo su AI Magazine in cui sostiene che prevedere la parola successiva non produce intelligenza del mondo fisico: servono sistemi che imparino com'è fatto l'ambiente e cosa succede quando lo si tocca. <a href="#" class="face-link" onclick="vaiFonte(event, 'Ilya Sutskever')" title="Fonti di Ilya Sutskever"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/ilya-sutskever.jpg" alt=""></a>Ilya Sutskever, in un'intervista del 13 novembre, ha chiamato i dati il combustibile fossile dell'intelligenza artificiale, una risorsa che finisce. E <a href="#" class="face-link" onclick="vaiFonte(event, 'Benedict Evans')" title="Fonti di Benedict Evans"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/benedict-evans.png" alt=""></a>Benedict Evans, in una presentazione del 12 novembre, ha mostrato che l'uso dell'AI è larghissimo ma sottile, mentre la spesa in infrastrutture ha superato la cassa che quelle aziende producono. Tre diagnosi che non si assomigliano, con una conseguenza identica: la curva di oggi non si prolunga per inerzia.</p>
+<p>C'è poi il vuoto che <a href="#" class="face-link" onclick="vaiFonte(event, 'Patrick Collison')" title="Fonti di Patrick Collison"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/patrick-collison.jpg" alt=""></a>Patrick Collison ha nominato l'8 novembre con una franchezza rara: la visione positiva di tutto questo è ancora fatta di slogan, abbondanza e medicina migliore, senza risposte su cosa facciano gli esseri umani e chi distribuisca le risorse. Due voci lo confermano da lati opposti del campo, e sono la coppia più interessante della settimana. <a href="#" class="face-link" onclick="vaiFonte(event, 'Mustafa Suleyman')" title="Fonti di Mustafa Suleyman"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/mustafa-suleyman.jpg" alt=""></a>Mustafa Suleyman nega che le macchine abbiano una vita interiore e dice che se ne comparisse traccia bisognerebbe fermarsi. <a href="#" class="face-link" onclick="vaiFonte(event, 'Geoffrey Hinton')" title="Fonti di Geoffrey Hinton"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/geoffrey-hinton.jpg" alt=""></a>Geoffrey Hinton considera quella vita interiore già plausibile oggi.</p>
+<p>Lo sfasamento è preciso e vale la pena tenerlo in testa per i prossimi venti minuti: la capacità viene messa a bilancio con precisione contabile, mentre la domanda su cosa serva tutto questo resta senza nessuno che la firmi.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Karpathy è uno di quelli che scrive in pubblico mentre lavora, e per questo i suoi post vengono letti come bollettini dall'interno del mestiere. Negli ultimi anni ha raccontato come si addestrano i modelli; in questi giorni racconta come si costruiscono cose con i modelli, che è una faccenda diversa.</p>
+<p>HackerTube, pubblicato il primo novembre, nasce da un'idea semplice. Hacker News è un sito dove programmatori e curiosi si scambiano link da quasi vent'anni. Karpathy ha preso quarantatré milioni di commenti, ha estratto i video raccomandati più volte dalle persone, e ne ha ricavato un catalogo: poco più di seimilaquattrocento titoli, distribuiti su circa centocinquanta argomenti. Il lavoro, dice, è stato fatto quasi tutto da Claude Opus 5.5, che ha svolto l'analisi, scritto il codice, pubblicato il sito e poi messo a punto prestazioni e sicurezza. Tempo complessivo, circa due ore.</p>
+<p>Il 7 novembre ha replicato con un secondo sito, TristanTube: i canali consigliati da Tristan Harris trasformati in un catalogo da quarantasettemila video, con una modalità che somiglia a un televisore accesso. Questa volta, racconta, il lavoro è venuto fuori al primo tentativo, in tre minuti. Nello stesso periodo ha segnalato AlphaXiv, un sito per leggere e discutere articoli scientifici, come buon erede di un progetto che lui aveva chiuso anni prima perché mantenerlo costava troppa fatica.</p>
+<p>Questi tre gesti, messi in fila, dicono una cosa sola. La parte difficile non è più scrivere il software, e nemmeno tenerlo in piedi: è decidere cosa valga la pena costruire. In entrambi i siti la materia prima sono raccomandazioni fatte da esseri umani veri, non liste ottimizzate per trattenere l'attenzione. Una scelta di gusto, che nessun agente avrebbe preso al posto suo.</p>
+<p>E qui si apre la frizione più netta della settimana, perché Karpathy e Sutskever stanno guardando lo stesso oggetto da due stanze diverse. Per Karpathy, con gli strumenti di oggi un progetto ambizioso si chiude tra il caffè del mattino e il pranzo. Per Sutskever la benzina che fa funzionare quegli strumenti è una risorsa finita, accumulata da internet in trent'anni e non rinnovabile. Può darsi che abbiano ragione entrambi: l'abbondanza che si vede a valle e la scarsità che si annuncia a monte sono compatibili, come lo erano nei primi anni del petrolio a buon mercato.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Srinivas guida Perplexity, l'azienda che ha costruito un motore di ricerca basato sui modelli linguistici e che da un paio d'anni insegue Google su un terreno molto scomodo. Il 5 novembre ha però fatto qualcosa che con la ricerca ha poco a che vedere.</p>
+<p>Teammates, come dicevo, sono agenti che lavorano a obiettivi lunghi invece di rispondere a domande corte. Il dettaglio che rende la scena concreta non è l'annuncio, sono i numeri interni che ha diffuso. Dentro Perplexity, la persona mediana riceve oggi sette volte più ore di lavoro da agenti rispetto a settembre. Una persona su cinque supera le quaranta ore settimanali di lavoro svolto da agenti al suo servizio. E una parte del lavoro tecnico è ormai organizzata come un dialogo tra agenti, con il sistema di versioni del codice che fa da registro: chi ha fatto cosa, quando, con quale risultato.</p>
+<p>Il passaggio da notare è l'unità di misura. Ore di agente. È la stessa grammatica con cui un'azienda ha sempre contato i turni, le giornate uomo, le ore di macchina. Quando una cosa nuova entra nella contabilità con l'unità di misura della cosa vecchia, significa che è stata assorbita: ha smesso di essere un esperimento ed è diventata un fattore di produzione. Succedeva con le ore di calcolo dei grandi elaboratori negli anni Sessanta, quando i reparti si prenotavano il tempo del centro di calcolo come oggi si prenota una sala riunioni.</p>
+<p>Da lì il salto a Chollet è breve. Se le ore di agente si contano, il risultato si può mettere accanto al costo, e a quel punto il metro di giudizio non è più un test ma un bilancio. Srinivas ha anche rilanciato una tesi scomoda per mezza industria del software: un agente generale potrebbe rendere inutili molti programmi specializzati, e nella sua azienda uno strumento acquistato da un fornitore è già stato sostituito così.</p>
+<p>Mi sembra che il punto delicato sia proprio questo entusiasmo contabile. Contare le ore di agente è facile; capire se quelle ore producono qualcosa che un cliente paga è un'altra operazione, e nessuno dei numeri diffusi questa settimana la riguarda. È la differenza tra misurare quanto gira un motore e misurare quanta strada hai fatto.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>LeCun è stato per anni il responsabile scientifico dell'intelligenza artificiale in Meta, e ha condiviso un premio Turing per il lavoro che ha reso possibili i modelli di oggi. Da qualche settimana la sua posizione è cambiata, e lui stesso ha chiarito in pubblico che dopo il 2018, nonostante il titolo, lavorava sostanzialmente da ricercatore singolo.</p>
+<p>L'uscita di questi giorni è un articolo su AI Magazine, la rivista dell'associazione americana di intelligenza artificiale. L'argomento è secco: imparare a indovinare la parola successiva in una frase non porterà mai a capire come si comporta il mondo fisico. Quello che serve, scrive, sono sistemi che si costruiscano una rappresentazione dell'ambiente, che prevedano cosa succede se agiscono in un modo invece che in un altro, che abbiano obiettivi dichiarati e sappiano pianificare. In una conferenza a Singapore ha insistito sull'imparare guardando video, sui piani organizzati per livelli, e ha invitato i ricercatori ad allontanarsi dai modelli generativi e dall'apprendimento per rinforzo. Nel frattempo ha una nuova azienda, AMI Labs, che costruisce esattamente quel tipo di sistemi per la robotica.</p>
+<p>Il paragone che aiuta a collocare la discussione viene dalla storia del volo. Per decenni chi voleva volare ha provato a copiare il battito delle ali degli uccelli, perché era la cosa che si vedeva. Il volo arrivò quando qualcuno smise di imitare il movimento e studiò la portanza, cioè perché un'ala sta su. LeCun dice che i modelli linguistici di oggi stanno battendo le ali molto bene: producono testo che somiglia al pensiero, e questo non dimostra che ci sia pensiero.</p>
+<p>La frizione con il resto della giornata è evidente. Mentre Chollet sostiene che un agente può già amministrare un'azienda e giudicarsi dai profitti, LeCun sostiene che quei sistemi non sanno cosa succede se spingi un bicchiere sul bordo di un tavolo. Le due affermazioni possono convivere, perché amministrare un'impresa di software è un lavoro fatto quasi solo di testo e numeri, mentre il mondo fisico è un'altra cosa.</p>
+<p>Resta da vedere quanto durerà questa convivenza. Perché le aziende che oggi mettono gli agenti in organico lo fanno sulla base di una fiducia implicita: che la strada attuale continui a migliorare. Se LeCun ha ragione, quella fiducia va rinegoziata proprio mentre i contratti si firmano.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Hinton ha ottant'anni, un premio Nobel per la fisica ricevuto nel 2024, e un ruolo che si è scelto da solo dopo aver lasciato Google: quello di chi avverte. In novembre ha tenuto il ciclo di conferenze che porta il suo nome, e il contenuto è cambiato rispetto agli anni scorsi.</p>
+<p>Fino a poco tempo fa diceva che una intelligenza superiore all'umana era lontana almeno un decennio. Adesso dice che sembra molto vicina, e che non abbiamo idea di come si tenga sotto controllo un sistema più intelligente di noi. Ha parlato di un rischio concreto di catastrofe o di perdita di controllo entro circa tre anni, ha citato colleghi con tempi ancora più corti, e ha definito insufficienti i metodi con cui oggi si cerca di allineare i modelli ai nostri desideri, quelli basati sulle correzioni fornite da valutatori umani. In una trasmissione televisiva ha chiesto cooperazione tra Stati Uniti e Cina. E ha aggiunto, con un certo gusto per il paradosso, di fidarsi più di <a href="#" class="face-link" onclick="vaiFonte(event, 'Jensen Huang')" title="Fonti di Jensen Huang"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/jensen-huang.png" alt=""></a>Jensen Huang che dei capi delle grandi aziende di software.</p>
+<p>Il passaggio più scomodo è però l'altro: Hinton sostiene che questi sistemi potrebbero già avere una forma di esperienza soggettiva, e che quindi in futuro potrebbero meritare considerazione morale. La sua conclusione pratica è che convenga costruire macchine a cui noi importiamo, invece di macchine che ci obbediscono per convenienza.</p>
+<p>Dall'altra sponda, <a href="#" class="face-link" onclick="vaiFonte(event, 'Mustafa Suleyman')" title="Fonti di Mustafa Suleyman"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/mustafa-suleyman.jpg" alt=""></a>Mustafa Suleyman dice il contrario con la stessa fermezza. I modelli attuali non hanno nessuna vita interiore, nessuno dovrebbe provare a costruirne una, e se emergessero prove di coscienza lo sviluppo andrebbe sospeso. Ha anche descritto un fenomeno che chiama psicosi da intelligenza artificiale: utenti che trattano un programma come una creatura sensibile o come una divinità, e che finiranno per chiedere diritti per le macchine, indebolendo il controllo umano. Nel frattempo la sua divisione in Microsoft spinge prodotti molto terreni, come un sistema di trascrizione che in una settimana ha superato gli otto milioni e mezzo di usi.</p>
+<p>Questa discussione ha un precedente preciso. Nell'Ottocento si è litigato per decenni sul dolore degli animali, e la questione non si è chiusa con un esperimento: si è chiusa con leggi, quando è diventato socialmente insostenibile sostenere che un cavallo non sentisse niente. Mi sembra che qui succederà lo stesso. La domanda sulla coscienza delle macchine non verrà risolta da un laboratorio, verrà decisa da quanti sono gli umani che si comportano come se la risposta fosse sì.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Rimettiamo in fila la giornata, per chi si è distratto a un semaforo: gli agenti entrano in azienda come forza di lavoro, il bilancio diventa il metro con cui si giudicano, e nel frattempo due ricercatori dicono che la strada tecnica è sbagliata e che la questione morale è aperta. Manca l'ultimo tassello, quello dei soldi.</p>
+<p>Lo tiene in mano <a href="#" class="face-link" onclick="vaiFonte(event, 'Benedict Evans')" title="Fonti di Benedict Evans"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/benedict-evans.png" alt=""></a>Benedict Evans, che da anni fa un mestiere raro: spiegare le tecnologie nuove con il linguaggio di chi deve decidere se metterci dei capitali. Il 12 novembre ha presentato il suo quadro aggiornato, e l'impianto è prudente. L'intelligenza artificiale è un cambio di piattaforma ancora nella fase incerta, quella in cui si trovavano internet e il telefono cellulare ai primi passi. L'adozione è ampia ma sottile: tanti la usano, pochi ci appoggiano qualcosa di importante. Intanto la spesa in centri di calcolo delle grandi aziende corre verso i settecento miliardi di dollari l'anno.</p>
+<p>Due cose, secondo lui, sono cambiate davvero. La prima è che esiste un mercato chiaro e solido: scrivere software con l'aiuto dei modelli. È esattamente la scena da cui è partito questo episodio. La seconda è meno allegra: quella spesa ha superato la cassa che le aziende generano da sole, e questo le spinge verso debito, affitti di capacità, strumenti finanziari. Quando un settore comincia a finanziare la crescita così, entrano in scena creditori che fanno domande diverse da quelle degli azionisti.</p>
+<p>Evans dubita anche che modelli facilmente scambiabili tra loro possano mantenere prezzi alti: la scarsità di oggi potrebbe non sopravvivere all'arrivo di nuova capacità. E segnala un rischio preciso nei finanziamenti ai nuovi operatori di calcolo: le schede grafiche vengono date in garanzia come se fossero immobili, ma se la domanda si raffredda falliscono tutti insieme e quelle garanzie valgono poco nello stesso momento.</p>
+<p>Il precedente è la fibra ottica di fine anni Novanta. Ne fu posata molta più di quanta servisse, parecchie società che l'avevano messa sotto terra andarono a gambe all'aria, e la fibra rimase lì, utilissima, in mano a proprietari diversi e pagata una frazione del costo. Dall'interno la fotografia è coerente: <a href="#" class="face-link" onclick="vaiFonte(event, 'Dario Amodei')" title="Fonti di Dario Amodei"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/dario-amodei.jpg" alt=""></a>Dario Amodei, che il 13 novembre ha parlato a un evento di JPMorgan, ha definito l'acquisto di capacità di calcolo il dilemma più profondo della sua azienda, perché comprarne poca frena i modelli e comprarne troppa la mette in difficoltà.</p>
+<p>Il bilancio, dunque, taglia da due parti. È la metrica con cui Chollet vuole giudicare gli agenti, ed è anche il luogo dove si vedrà per primo se questa storia regge.</p>
+<div class="chapter" data-mood="upbeat"><hr></div>
+<p>Progetti da osservare.</p>
+<p>Claude Code è l'agente che lavora dalla riga di comando, quella finestra nera che i programmatori tengono aperta tutto il giorno. È lo strumento con cui Karpathy ha tirato su il suo secondo sito in tre minuti, ed è diventato il riferimento per quel software da fine settimana di cui parlavamo all'inizio.</p>
+<p>Llama punto c punto p, il programma che permette di far girare un modello linguistico direttamente sul proprio computer, è arrivato alla versione uno punto zero. È una di quelle notizie apparentemente tecniche con un significato politico: significa che l'inferenza casalinga, senza connessione e senza che niente esca da casa, è ufficialmente roba stabile. Mentre si discute di settecento miliardi di spesa, una parte del mondo cammina sull'altro piede.</p>
+<p>Chrome DevTools MCP è un ponte che permette a un agente di guardare dentro il browser mentre una pagina funziona male, per capire cosa non va. Piccolo, poco spettacolare, e indispensabile se gli agenti devono davvero lavorare da soli: chi ripara qualcosa deve poterla ispezionare.</p>
+<p>Grok 4.8, il modello di xAI, ha finito l'addestramento di base ed è nella fase in cui viene affinato con il riscontro sui propri tentativi. Arriverà agli utenti gradualmente, ed è interessante per l'ammissione che lo accompagna: <a href="#" class="face-link" onclick="vaiFonte(event, 'Elon Musk')" title="Fonti di Elon Musk"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/elon-musk.jpg" alt=""></a>Elon Musk riconosce che resterà dietro al modello di Anthropic, rimandando il confronto alla versione successiva. Rare, le classifiche dichiarate dai concorrenti stessi.</p>
+<p>AlphaXiv, infine, è un posto dove leggere e discutere articoli scientifici con altre persone, invece di scaricarli in solitudine. È quello che Karpathy ha indicato come erede del suo vecchio progetto chiuso per stanchezza da manutenzione. Un dettaglio che somiglia a tutto il resto della giornata: la parte faticosa della conoscenza non è produrla, è tenerla in ordine.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Resta quella sequenza di due ore: un'idea al mattino, un sito pubblicato prima di pranzo, nessuna riga scritta a mano. Hinton, nello stesso mese, si chiede se dentro quegli strumenti ci sia qualcuno. Sono due conversazioni che non si parlano, e procedono alla stessa velocità. È stato Signal Brief. Alla prossima.</p></div><div class="rawmd"><a href="raw.md">Testo (markdown)</a></div></div>
+<div class="tab-panel panel" data-sb-panel="comparazione" hidden><div class="tension"><div class="axis">↗ Agenti come forza di lavoro</div><div class="side">Gli agenti non sono più strumenti da dirigere ma unità produttive che costruiscono software intero e si misurano a conto economico.</div></div><div class="tension"><div class="axis">↗ World models contro previsione dei token</div><div class="side">La critica metodologica si sposta sull'architettura stessa: prevedere token non genera comprensione del mondo fisico.</div></div><div class="tension"><div class="axis">↗ Il P&amp;L come metrica di valutazione dell'AI</div><div class="side">Il valore di un agente si giudica dal profitto di un'azienda che gestisce, non da benchmark o capacità.</div></div><div class="tension"><div class="axis">↗ Adozione larga ma superficiale</div><div class="side">L'uso dell'AI si è diffuso senza profondità, mentre la spesa infrastrutturale eccede la cassa generata.</div></div><div class="tension"><div class="axis">↗ Coscienza delle macchine come questione aperta</div><div class="side">Non più solo rischio di controllo: entra in campo la tesi che la coscienza artificiale sia già plausibile.</div></div><div class="tension"><div class="axis">↗ Il vuoto della visione positiva</div><div class="side">Manca una risposta su cosa facciano gli umani e chi allochi le risorse: l'ottimismo resta slogan.</div></div><div class="tension"><div class="axis">⚖ Basta scalare o serve un'altra architettura</div><div class="side">François Chollet: agenti già scalabili fino a gestire aziende acquisite · Yann LeCun: la previsione dei token non produce intelligenza del mondo fisico, servono world models</div></div><div class="tension"><div class="axis">⚖ Le macchine possono essere coscienti</div><div class="side">Mustafa Suleyman: nessuna coscienza, e se emergesse va fermata · Geoffrey Hinton: la coscienza artificiale è già plausibile</div></div><div class="tension"><div class="axis">⚖ Frenare il calcolo o costruire capacità propria</div><div class="side">Vitalik Buterin: rallentare il calcolo iperscalare è netto positivo · Bosun Tijani: non freni ma fondazioni nazionali, fibra e calcolo condiviso</div></div><div class="tension"><div class="axis">⚖ L'economia dell'AI regge la spesa</div><div class="side">Aravind Srinivas: agenti come dipendenti moltiplicano la produttività aziendale · Benedict Evans: adozione superficiale e infrastruttura che costa più della cassa generata</div></div><div class="tension"><div class="axis">⚖ La frontiera è un problema di risorse o di metodo</div><div class="side">Ilya Sutskever: i dati sono una risorsa finita, il combustibile fossile dell'AI · Andrej Karpathy: con gli strumenti attuali un progetto ambizioso si chiude in due ore</div></div></div>
+<div class="tab-panel panel" data-sb-panel="segnali" hidden><section><h2>Progetti da osservare</h2><div class="tension"><div class="axis">HackerTube</div><div class=side>Alternativa a YouTube di Karpathy, costruita da 43 milioni di commenti di Hacker News: 6.454 video raccomandati su circa 150 argomenti. Analisi, codice e deploy sono stati delegati a Claude Opus 5.5 in circa due ore.</div></div><div class="tension"><div class="axis">Claude Opus 5.5</div><div class=side>Modello di frontiera di Anthropic, usato da Karpathy come agente di coding e definito 'masterpiece' da Musk. Fa da riferimento competitivo per Grok 4.8.</div></div><div class="tension"><div class="axis">Claude Code</div><div class=side>Agente di coding da terminale, usato da Karpathy per realizzare TristanTube in pochi minuti. È lo strumento di riferimento per il software da fine settimana.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> Perplexity Teammates</div><div class=side>Funzione di Perplexity in cui ogni persona dirige molti agenti anziché usarne uno solo. Porta il modello degli agenti come forza lavoro dentro l'azienda.</div></div><div class="tension"><div class="axis">llama.cpp v1.0.0</div><div class=side>Release stabile del runtime LLM locale. Abilita inferenza offline e privacy-first su hardware consumer.</div></div><div class="tension"><div class="axis">datasette-apps</div><div class=side>App HTML/JS in sandbox che interrogano direttamente il database SQL (versione 0.4a0). Utile per dashboard interattive di intelligence.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> chrome-devtools-mcp</div><div class=side>Server MCP per i DevTools di Chrome: permette agli agenti di fare debugging e monitoring del browser in tempo reale.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> stitch-skills</div><div class=side>Composizione modulare di skill per agenti, di Google Labs. Propone un'architettura per agenti polifunzionali.</div></div><div class="tension"><div class="axis">Grok 4.8</div><div class=side>Modello xAI che ha completato il pretraining ed è in fase di reinforcement learning, con rollout graduale agli utenti Bot. Musk ammette che resterà dietro Opus 5.5 e prevede che Grok 5 lo superi.</div></div><div class="tension"><div class="axis">XYBench</div><div class=side>Benchmark strutturato di AI2 per valutare sistemi intelligenti. Serve come metrica di quality assurance per pipeline e dashboard.</div></div></section></div>
+<div class="tab-panel panel" data-sb-panel="fonti" hidden><div class="fonte" data-fonte-nome="Andrej Karpathy"><span class="who">Andrej Karpathy</span><a href="https://x.com/karpathy" target="_blank" rel="noopener">https://x.com/karpathy</a><a href="https://x.com/karpathy/status/2119114537442189652" target="_blank" rel="noopener">https://x.com/karpathy/status/2119114537442189652</a><a href="https://x.com/karpathy/status/2116979365242429721" target="_blank" rel="noopener">https://x.com/karpathy/status/2116979365242429721</a></div><div class="fonte" data-fonte-nome="Aravind Srinivas"><span class="who">Aravind Srinivas</span><a href="https://www.linkedin.com/in/aravindsrinivas1" target="_blank" rel="noopener">https://www.linkedin.com/in/aravindsrinivas1</a><a href="https://www.linkedin.com/in/aravind-srinivas-16051987" target="_blank" rel="noopener">https://www.linkedin.com/in/aravind-srinivas-16051987</a><a href="https://x.com/AravSrinivas/status/2118388416245330096" target="_blank" rel="noopener">https://x.com/AravSrinivas/status/2118388416245330096</a></div><div class="fonte" data-fonte-nome="Yann LeCun"><span class="who">Yann LeCun</span><a href="https://onlinelibrary.wiley.com/doi/10.1002/aaai.70110" target="_blank" rel="noopener">https://onlinelibrary.wiley.com/doi/10.1002/aaai.70110</a><a href="https://www.ntu.edu.sg/computing/news-events/news/detail/are-world-models-the-future-of-ai--insights-from-distinguished-speaker-yann-lecun-and-ccds-faculty" target="_blank" rel="noopener">https://www.ntu.edu.sg/computing/news-events/news/detail/are-world-models-the-future-of-ai--insights-from-distinguished-speaker-yann-lecun-and-ccds-faculty</a><a href="https://radical.vc/articles/inside-the-2026-radical-ai-founders-masterclass/" target="_blank" rel="noopener">https://radical.vc/articles/inside-the-2026-radical-ai-founders-masterclass/</a></div><div class="fonte" data-fonte-nome="Geoffrey Hinton"><span class="who">Geoffrey Hinton</span><a href="https://blumify.io/people/geoffrey-hinton" target="_blank" rel="noopener">https://blumify.io/people/geoffrey-hinton</a><a href="https://video.wgbh.org/video/geoffrey-hinton-biumi2/" target="_blank" rel="noopener">https://video.wgbh.org/video/geoffrey-hinton-biumi2/</a><a href="https://x.com/geoffreyhinton" target="_blank" rel="noopener">https://x.com/geoffreyhinton</a></div></div>
+</div>
+<script>function sbTab(key) {  document.querySelectorAll('.tab-panel').forEach(function (p) {    p.hidden = p.getAttribute('data-sb-panel') !== key;  });  document.querySelectorAll('#sbTabs .tab').forEach(function (b) {    b.setAttribute('aria-selected', b.dataset.tab === key ? 'true' : 'false');  });}function vaiFonte(ev, nome) {  ev.preventDefault();  sbTab('fonti');  var d = document.querySelector('[data-fonte-nome="' + nome + '"]');  if (d) d.scrollIntoView({behavior: 'smooth', block: 'center'});}</script>
+<dialog class="vplayer" id="vplayer"></dialog>
+<script>
+// player modale dei video: la miniatura apre il video al centro (disegno 2026-08-07)
+// Chiudere e condividere. Il player era il solo <video> dentro la <dialog>:
+// si chiudeva a Escape o cliccando lo SFONDO, che su un tablet e' quasi tutto
+// coperto dal video e dove un tasto Escape non esiste (2026-08-24).
+// La ✕ non serve solo a chiudere: e' l'unico modo per SAPERE che si puo'.
+function condividiVideo(src, b) {
+  if (navigator.share) { navigator.share({ title: 'Signal.Brief', url: src }).catch(function () {}); return; }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(src).then(function () {
+      var prima = b.textContent; b.textContent = '✓ copiato';
+      setTimeout(function () { b.textContent = prima; }, 1800);
+    }).catch(function () {});
+    return;
+  }
+  // Terzo ripiego: senza clipboard API resta la selezione manuale. Meglio un
+  // prompt che un bottone morto.
+  try { window.prompt('Indirizzo del video:', src); } catch (e) {}
+}
+function apriVideo(src) {
+  var d = document.getElementById('vplayer');
+  // I bottoni SOPRA il video: sotto finirebbero fuori schermo su un reel
+  // verticale, che di altezza prende gia' l'86%.
+  d.innerHTML = '<div class="vplayer-barra">'
+    + '<button type="button" class="vplayer-share">Condividi</button>'
+    + '<button type="button" class="vplayer-chiudi" aria-label="Chiudi">✕</button>'
+    + '</div><video controls autoplay playsinline src="' + src + '"></video>';
+  d.querySelector('.vplayer-chiudi').onclick = function () { d.close(); };
+  var sb = d.querySelector('.vplayer-share');
+  sb.onclick = function () { condividiVideo(src, sb); };
+  d.showModal();
+  d.onclick = function (e) { if (e.target === d) d.close(); };
+  d.onclose = function () { var v = d.querySelector('video'); if (v) v.pause(); d.innerHTML = ''; };
+}
+// ascolto inline dalla lista: un episodio alla volta
+var epAudio = null, epBtn = null;
+function ascolta(btn, src) {
+  if (epBtn === btn && epAudio) {
+    if (epAudio.paused) { epAudio.play(); btn.classList.add('on'); }
+    else { epAudio.pause(); btn.classList.remove('on'); }
+    return;
+  }
+  if (epAudio) { epAudio.pause(); if (epBtn) epBtn.classList.remove('on'); }
+  epAudio = new Audio(src); epBtn = btn;
+  epAudio.play(); btn.classList.add('on');
+  epAudio.onended = function () { btn.classList.remove('on'); };
+}
+function copiaTrascrizione(btn) {
+  var t = btn.parentElement.querySelector('.transcript-body');
+  navigator.clipboard.writeText(t ? t.innerText : '').then(function () {
+    btn.textContent = 'copiata ✓';
+    setTimeout(function () { btn.textContent = 'copia il testo'; }, 1800);
+  });
+}
+</script>
+<section class="sostieni"><h3>Se ti è utile, offrimi un caffè</h3><p>Signal.Brief non ha sponsor e non vende niente. Se ti è utile, puoi contribuire — e se non ti va, ascoltalo lo stesso.</p><div class="sostieni-atti"><a class="sostieni-btn" href="https://www.paypal.com/donate/?business=SGNE3B4JZUT9S&amp;no_recurring=0&amp;item_name=Signal.Brief+non+ha+sponsor.+Se+ti+%C3%A8+utile%2C+questo+lo+tiene+acceso.&amp;currency_code=EUR" target="_blank" rel="noopener">Offrimi un caffè</a><a class="sostieni-alt" href="../segui/">Ascoltalo nella tua app →</a></div></section>
+<footer class="creator-footer">
+  <img src="https://media.casamon.dev/immagini/mike-avatar.png" alt="Michele Mondora">
+  <div class="creator-meta">
+    <span class="creator-name">it-mikesoft</span>
+    <span class="creator-tagline">working with systems, living with questions</span>
+    <span class="creator-email"><a href="mailto:michele@mondora.com">michele@mondora.com</a></span>
+    <span class="creator-legal"><a href="/signal-brief/legal/privacy/">Privacy</a> ·
+      <a href="/signal-brief/legal/">Note legali</a></span>
+  </div>
+</footer>
+<section class="tutele"><h3>Trasparenza e tutele</h3>
+<p><strong>Come nasce questo contenuto.</strong> Ricerca, sintesi editoriale, voce narrante, immagini e musica sono prodotte con sistemi di intelligenza artificiale. Non c'è una redazione umana che verifica ogni affermazione prima della pubblicazione: un controllo automatico scarta le schede giudicate inaffidabili, ma non elimina la possibilità di errori.</p>
+<p><strong>Affermazioni su persone e aziende.</strong> Quanto riportato è una sintesi di fonti pubbliche, non una dichiarazione diretta delle persone citate: le frasi non vanno intese come virgolettati né come posizioni ufficiali. Le fonti sono indicate in ogni pagina episodio — verificale prima di considerare un'informazione accertata. Se trovi un'affermazione inesatta che ti riguarda, scrivi a <a href="mailto:michele@mondora.com">michele@mondora.com</a>: viene corretta o rimossa.</p>
+<p><strong>Immagini e volti.</strong> Le immagini di scena sono generate con AI e non raffigurano fatti realmente avvenuti. Le fotografie di persone reali usate nei video provengono da Wikimedia Commons con le rispettive licenze, e sono accostate al racconto a scopo identificativo: la loro presenza non implica partecipazione, dichiarazione o approvazione da parte della persona ritratta. Su richiesta dell'interessato vengono rimosse.</p>
+<p><strong>Fonti e diritti altrui.</strong> I contenuti sono rielaborazioni originali, non riproduzioni di articoli di terzi; le testate e gli autori all'origine di una notizia sono citati e collegati. Marchi e nomi commerciali appartengono ai rispettivi titolari e sono usati a scopo descrittivo.</p>
+</section>
+</body></html>
