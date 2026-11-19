@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="it"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quattro mappe dello stesso ostacolo · Signal.AI</title>
+<meta property="og:title" content="Quattro mappe dello stesso ostacolo · Signal.AI"><meta property="og:type" content="article"><meta property="og:description" content="Amodei, Evans, Andreessen, Chollet e Ng indicano quattro limiti incompatibili alla corsa dell'AI. E mentre discutono, DeepSeek raziona le conversazioni lunghe."><meta property="og:url" content="https://it-mikesoft.github.io/signal-brief/ai/2026-11-19/"><meta property="og:audio" content="https://op3.dev/e/media.casamon.dev/ai/podcast/episodes/2026-11-19.mp3"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "PodcastEpisode", "name": "Quattro mappe dello stesso ostacolo", "datePublished": "2026-11-19", "url": "https://it-mikesoft.github.io/signal-brief/ai/2026-11-19/", "description": "Amodei, Evans, Andreessen, Chollet e Ng indicano quattro limiti incompatibili alla corsa dell'AI. E mentre discutono, DeepSeek raziona le conversazioni lunghe.", "inLanguage": "it", "associatedMedia": {"@type": "MediaObject", "contentUrl": "https://op3.dev/e/media.casamon.dev/ai/podcast/episodes/2026-11-19.mp3"}, "partOfSeries": {"@type": "PodcastSeries", "name": "Signal.AI", "url": "https://it-mikesoft.github.io/signal-brief/ai/"}}</script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:#faf8f4; color:#1a1a1a; padding:2rem 10px; max-width:none; margin:0 auto; line-height:1.6; }
+  a { color:#2563eb; }
+  .back { display:inline-block; margin-bottom:1.5rem; font-size:.8rem; font-family:monospace; text-decoration:none; }
+  .videos { display:flex; gap:1rem; flex-wrap:wrap; margin:1.2rem 0; }
+  .videos figure { margin:0; flex:1; min-width:260px; }
+  .videos .v2 { flex:0 1 240px; }
+  .videos video { width:100%; border-radius:12px; background:#000; }
+  .videos .v2 video { aspect-ratio:9/16; max-height:420px; }
+  .videos figcaption { font-size:.75rem; color:#888; text-align:center; margin-top:.3rem; }
+  .vlink { display:flex; gap:.3rem; margin-top:.35rem; }
+  .vlink input { flex:1; min-width:0; font-size:.68rem; font-family:monospace; padding:.3rem .4rem;
+    border:1px solid #e2ddd6; border-radius:6px; background:#fff; color:#6b7280; }
+  .vlink button { font-size:.68rem; padding:.3rem .6rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; }
+  .wk { font-size:1rem; margin:1.4rem 0 .4rem; }
+  details.wkacc { border:1px solid #e5e7eb33; border-radius:10px; margin:.6rem 0; padding:.1rem .8rem .4rem; }
+  details.wkacc summary { cursor:pointer; font-weight:600; padding:.5rem 0; font-size:.9rem; }
+  .back:hover { text-decoration:underline; }
+  header h1 { font-family:Georgia,serif; font-size:1.7rem; font-weight:600; }
+  header h1 span { color:#2563eb; }
+  .tagline { color:#6b7280; font-size:.85rem; margin-top:.3rem; margin-bottom:1.5rem; }
+  ul.eps { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
+  .subscribe { display:inline-flex; align-items:center; gap:.5rem; margin-bottom:1.2rem;
+    padding:.45rem .9rem; background:#2563eb; color:#fff; border-radius:20px;
+    text-decoration:none; font-size:.8rem; font-weight:600; }
+  .subscribe:hover { opacity:.85; color:#fff; }
+  .ep { display:flex; align-items:center; gap:.8rem; padding:.8rem 1rem; background:#fff;
+    border:1px solid #e2ddd6; border-radius:8px; text-decoration:none; color:inherit; transition:box-shadow .12s; }
+  .ep:hover { box-shadow:0 2px 8px rgba(0,0,0,.07); }
+  .ep-play { width:32px; height:32px; border-radius:50%; background:#f3f4f6; display:flex;
+    align-items:center; justify-content:center; font-size:12px; flex-shrink:0; }
+  .ep-title { font-size:.9rem; font-weight:500; }
+  .ep-meta { font-size:.72rem; color:#9ca3af; font-family:monospace; margin-top:.15rem; }
+  audio { width:100%; margin:1rem 0 1.5rem; }
+  .rawmd { margin:-.5rem 0 1.5rem; }
+  .rawmd a { font-size:.8rem; font-family:monospace; color:inherit; opacity:.65; }
+  .desc { color:#374151; font-size:.95rem; margin-bottom:1.5rem; }
+  section { margin:2rem 0; }
+  section h2 { font-family:Georgia,serif; font-size:1.1rem; border-bottom:1px solid #e2ddd6;
+    padding-bottom:.3rem; margin-bottom:.8rem; }
+  .synthesis p { margin:.7rem 0; }
+  .tension { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; font-size:.9rem; }
+  .tension .axis { font-weight:600; margin-bottom:.3rem; }
+  .tension .side { color:#6b7280; font-size:.85rem; }
+  .proj { font-size:.9rem; margin:.4rem 0; }
+  .proj .pname { font-weight:600; }
+  .proj .pnew { background:#16a34a; color:#fff; font-size:.65rem; font-weight:700;
+    padding:.1rem .35rem; border-radius:4px; text-transform:uppercase; vertical-align:middle; }
+  .fonte { font-size:.85rem; margin:.5rem 0; }
+  .fonte .who { font-weight:600; }
+  .fonte a { display:block; margin-left:.5rem; color:#6b7280; }
+  .transcript-body p { margin:.7rem 0; line-height:1.7; }
+  .transcript-body .chapter hr { border:none; border-top:1px solid #e2ddd6; margin:1.5rem 0; }
+  .transcript-body .podcast-episode-desc { color:#6b7280; font-style:italic; }
+  .signal-card { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; }
+  .signal-theme { font-size:.75rem; font-weight:700; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.3rem; }
+  .signal-text { font-size:.85rem; color:#374151; line-height:1.5; }
+  .creator-footer { margin-top:3rem; padding-top:1.5rem; border-top:1px solid #e2ddd6;
+    display:flex; align-items:center; gap:.9rem; }
+  .creator-footer img { width:40px; height:40px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+  .creator-legal { font-size:.78rem; margin-top:.15rem; }
+  .creator-legal a { color:inherit; }
+  .creator-meta { display:flex; flex-direction:column; gap:.15rem; }
+  .creator-name { font-size:.85rem; font-weight:600; color:#1a1a1a; }
+  .creator-tagline { font-size:.75rem; color:#6b7280; }
+  .creator-email { font-size:.75rem; }
+  .creator-ai { font-size:.72rem; color:#8a7f6d; max-width:46ch; line-height:1.45; }
+  .sostieni { margin-top:2.5rem; padding:1.2rem 1.4rem; border-radius:14px;
+    background:#f7f4ef; border:1px solid #e2ddd6; }
+  .sostieni h3 { margin:0 0 .3rem; font-size:1rem; }
+  .sostieni p { margin:0 0 .9rem; font-size:.88rem; color:#6b6257; line-height:1.55; }
+  .sostieni-atti { display:flex; gap:.8rem; align-items:center; flex-wrap:wrap; }
+  .sostieni-btn { display:inline-block; padding:.55rem 1.1rem; border-radius:10px;
+    background:#2563eb; color:#fff; text-decoration:none; font-weight:700; font-size:.88rem; }
+  .sostieni-alt { font-size:.85rem; color:#6b6257; text-decoration:none; }
+  .sostieni-alt:hover { text-decoration:underline; }
+  .tutele { margin-top:2rem; padding-top:1.2rem; border-top:1px solid #e2ddd6;
+    font-size:.72rem; color:#8a7f6d; line-height:1.5; }
+  .tutele h3 { font-size:.75rem; color:#6b7280; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.5rem; font-weight:600; }
+  .tutele p { margin:.45rem 0; }
+  .tutele strong { color:#5a5348; font-weight:600; }
+  .tutele a { color:inherit; text-decoration:underline; }
+  .creator-email a { color:#9ca3af; text-decoration:none; }
+  .creator-email a:hover { color:#1a1a1a; }
+  /* disegno 2026-08-07: mesi a pagine, facce, player modale, trascrizione
+     richiudibile — la pagina episodio è un prodotto, non un sottoprodotto */
+  .hrow { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+  .hrow .subscribe { margin-bottom:0; flex-shrink:0; }
+  .months { font-size:.78rem; font-family:monospace; margin:.4rem 0 1rem; color:#9ca3af; }
+  .months a { text-decoration:none; } .months b { color:inherit; }
+  .ep-faces { display:flex; margin-left:auto; flex-shrink:0; }
+  .ep-faces img { width:26px; height:26px; border-radius:50%; object-fit:cover;
+    border:2px solid #fff; margin-left:-8px; background:#eee; }
+  /* tutti i citati sul desktop; su mobile la leggibilità vince: max 3 */
+  @media (max-width:600px) { .ep-faces img:nth-child(n+4) { display:none; } }
+  .ep-listen { width:32px; height:32px; border-radius:50%; background:#f3f4f6; border:0;
+    display:flex; align-items:center; justify-content:center; font-size:12px;
+    flex-shrink:0; cursor:pointer; color:inherit; }
+  .ep-listen.on { background:#2563eb; color:#fff; }
+  .face-inline { width:1.15em; height:1.15em; border-radius:50%; object-fit:cover;
+    vertical-align:-.18em; margin-right:.25em; }
+  /* SEMPRE sulla stessa riga (2026-08-09): su schermi stretti le miniature
+     si riducono, e se non basta il reel sparisce — mai l'andata a capo */
+  .vthumbs { display:flex; gap:.8rem; flex-wrap:nowrap; margin:1.2rem 0; align-items:flex-start; }
+  .vthumb { position:relative; cursor:pointer; border:0; padding:0; background:none;
+    border-radius:12px; overflow:hidden; }
+  /* stessa ALTEZZA per video e reel: il 9:16 si stringe, non svetta */
+  .vthumb video { height:150px; width:auto; display:block; border-radius:12px; background:#000; }
+  @media (max-width:520px) { .vthumb video { height:118px; } }
+  /* quando nemmeno ridotte ci stanno: via le miniature, due BOTTONI in
+     riga che aprono il player (2026-08-09) */
+  .vbtns { display:none; gap:.6rem; margin:1.2rem 0; }
+  .vbtns button { flex:1; padding:.6rem .4rem; border:0; border-radius:10px;
+    background:#2563eb; color:#fff; font-weight:700; font-size:.85rem;
+    cursor:pointer; font-family:inherit; }
+  @media (max-width:420px) { .vthumbs { display:none; } .vbtns { display:flex; } }
+  .vthumb .vlabel { position:absolute; left:0; right:0; bottom:0; padding:.9rem .5rem .35rem;
+    background:linear-gradient(transparent, rgba(0,0,0,.75)); color:#fff; font-size:.7rem; }
+  .vthumb::after { content:"▶"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    color:#fff; font-size:1.6rem; text-shadow:0 1px 6px rgba(0,0,0,.8); }
+  /* margin:auto ESPLICITO: il reset globale * {margin:0} annullava la
+     centratura nativa del dialog e il player si apriva in alto a sinistra */
+  dialog.vplayer { border:0; padding:0; background:transparent; max-width:92vw;
+    margin:auto; position:fixed; inset:0; }
+  dialog.vplayer::backdrop { background:rgba(0,0,0,.85); }
+  dialog.vplayer video { max-width:92vw; max-height:86vh; border-radius:14px; background:#000; }
+  dialog.vplayer .vplayer-barra { display:flex; justify-content:flex-end; align-items:center;
+    gap:.5rem; margin-bottom:.5rem; }
+  /* 2.75rem e' il bersaglio minimo per il dito: la ✕ da sola sarebbe 20px. */
+  dialog.vplayer .vplayer-barra button { font:inherit; font-size:.9rem; color:#fff;
+    background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.28);
+    border-radius:999px; padding:.45rem .9rem; cursor:pointer;
+    min-height:2.75rem; min-width:2.75rem; }
+  dialog.vplayer .vplayer-barra button:hover { background:rgba(255,255,255,.24); }
+  dialog.vplayer .vplayer-chiudi { font-size:1.1rem; line-height:1; }
+  details.tr { border:1px solid #e2ddd6; border-radius:10px; padding:.2rem .9rem .6rem; }
+  details.tr summary { cursor:pointer; font-weight:600; padding:.55rem 0; }
+  .tr-copy { font-size:.72rem; padding:.3rem .7rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; margin:.3rem 0 .5rem; }
+  .epnav { display:flex; justify-content:space-between; gap:1rem; margin:2rem 0 0;
+    font-size:.82rem; font-family:monospace; }
+  .epnav a { text-decoration:none; }
+  /* Header + tab bar (spec-016, Task 5): stessa forma di
+     public/console/podcast-render.css, riusando i nomi classe dove
+     combaciano — solo la meccanica tab/pannello è nuova qui. */
+  .episode-header .date-line { font-size:.72rem; font-family:monospace; color:#9ca3af;
+    text-transform:uppercase; letter-spacing:.08em; margin-bottom:.3rem; }
+  .ep-header-block { margin-bottom:.5rem; }
+  .ep-header-faces { margin:.6rem 0; }
+  .ep-header-faces .ep-faces { margin-left:0; }
+  .tabs { display:flex; gap:.25rem; border-bottom:1px solid #e2ddd6; margin:1.5rem 0; flex-wrap:wrap; }
+  .tab { font-family:monospace; font-size:.72rem; text-transform:uppercase; letter-spacing:.08em;
+    padding:.6rem .9rem; background:transparent; border:0; border-bottom:2px solid transparent;
+    color:#9ca3af; cursor:pointer; }
+  .tab[aria-selected="true"] { color:#1a1a1a; border-bottom-color:#2563eb; }
+  .tab-panel { display:block; }
+  .tab-panel[hidden] { display:none !important; }
+  /* Fallback dei pannelli senza dati (episodi storici senza un sidecar) —
+     porta di public/console/podcast-render.css:304-309, sui token pubblici. */
+  /* Header episodio a due colonne: barra tab e pannello nel primo schermo
+     (stesse regole del modulo condiviso, richiesta 2026-08-10). */
+  .ep-header-block { display:grid; grid-template-columns:minmax(0,1fr) 340px;
+    grid-template-rows:repeat(4,min-content); gap:.3rem 1.6rem;
+    align-items:start; margin-bottom:.5rem; }
+  .ep-header-block > [data-sb="data"] { grid-column:1; margin:0; }
+  .ep-header-block > [data-sb="titolo"] { grid-column:1; margin:.1rem 0; }
+  .ep-header-block > [data-sb="player"] { grid-column:1; }
+  .ep-header-block > [data-sb="nav"] { grid-column:1; }
+  .ep-header-block > [data-sb="facce"] { grid-column:2; grid-row:1; }
+  .ep-header-block > [data-sb="video"] { grid-column:2; grid-row:2/5;
+    display:flex; gap:.5rem; flex-wrap:wrap; }
+  .ep-header-block [data-sb="facce"] img { width:26px; height:26px; }
+  .ep-header-block [data-sb="video"] video { max-height:96px; width:auto; }
+  .ep-header-block audio { height:36px; width:100%; }
+  .tabs { position:sticky; top:0; z-index:5; background:#fff;
+    padding:.4rem 0; border-bottom:1px solid #e5e7eb; }
+  @media (max-width:760px) {
+    .ep-header-block { grid-template-columns:1fr; }
+    .ep-header-block > [data-sb="facce"],
+    .ep-header-block > [data-sb="video"] { grid-column:1; grid-row:auto; }
+  }
+  .state-note { padding:2rem 1rem; text-align:center; color:#9ca3af;
+    font-family:monospace; font-size:.85rem; }
+  @media (prefers-color-scheme:dark) {
+    body { background:#1f1d18; color:#e5e5e5; }
+    .ep, .tension, .signal-card { background:#2a2823; border-color:#3a352d; }
+    .ep-play { background:#3a352d; } .desc { color:#d4d4d4; }
+    .signal-text { color:#d4d4d4; }
+    .episode-header .date-line { color:#9ca3af; }
+    .tabs { border-color:#3a352d; }
+    .tab[aria-selected="true"] { color:#f5f5f5; }
+    .state-note { color:#9ca3af; }
+    .creator-footer { border-color:#3a352d; }
+    .creator-name { color:#f5f5f5; }
+    .creator-tagline, .creator-email a { color:#9ca3af; }
+    .creator-ai { color:#9a8f7d; }
+    .vlink input { background:#1c1a17; border-color:#3a352d; color:#9ca3af; }
+    .tutele { border-color:#3a352d; color:#9a8f7d; }
+    .tutele h3 { color:#a9a9a9; } .tutele strong { color:#d4d4d4; }
+    .ep-listen { background:#3a352d; }
+    .ep-faces img { border-color:#2a2823; background:#3a352d; }
+    details.tr { border-color:#3a352d; }
+  }
+</style></head><body>
+<a class="back back-link" href="/signal-brief/ai/">← Signal.AI</a><div class="ep-header-block"><header class="episode-header"><div class="date-line" data-sb="data">2026-11-19</div><h1 data-sb="titolo">Quattro mappe dello stesso ostacolo</h1><span class="tono" data-sb="tono" title=""></span><div class="desc">Amodei, Evans, Andreessen, Chollet e Ng indicano quattro limiti incompatibili alla corsa dell'AI. E mentre discutono, DeepSeek raziona le conversazioni lunghe.</div><div class="tagline">Digital Intelligence Podcast</div></header><audio controls preload="none" data-sb="player" src="https://op3.dev/e/media.casamon.dev/ai/podcast/episodes/2026-11-19.mp3"></audio><nav class="epnav" data-sb="nav"><a href="/signal-brief/ai/2026-11-18/">← 2026-11-18</a><span style="flex:1"></span></nav><div class="ep-header-faces" data-sb="facce"><span class="ep-faces"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/ilya-sutskever.jpg" alt="" title="Ilya Sutskever"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/manual-vivek-raghavan.jpg" alt="" title="Vivek Raghavan"><img loading="lazy" src="https://media.casamon.dev/avatars/gen/ai.png" alt="" title="AI"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/dario-amodei.jpg" alt="" title="Dario Amodei"><img loading="lazy" src="https://media.casamon.dev/avatars/gen/liang-wenfeng.png" alt="" title="Liang Wenfeng"><img loading="lazy" src="https://media.casamon.dev/avatars/gen/benedict-evans.png" alt="" title="Benedict Evans"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/marc-andreessen.jpg" alt="" title="Marc Andreessen"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/francois-chollet.jpg" alt="" title="François Chollet"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/manual-andrew-ng.jpg" alt="" title="Andrew Ng"><img loading="lazy" src="https://media.casamon.dev/avatars/gen/bosun-tijani.png" alt="" title="Bosun Tijani"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/yoshua-bengio.jpg" alt="" title="Yoshua Bengio"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/sam-altman.jpg" alt="" title="Sam Altman"></span></div><div class="ep-header-video" data-sb="video"></div></div>
+<div class="tabs-block"><div class="tabs" role="tablist" id="sbTabs"><button class="tab" type="button" role="tab" data-tab="sintesi" aria-selected="true" onclick="sbTab('sintesi')">Sintesi</button><button class="tab" type="button" role="tab" data-tab="testo" aria-selected="false" onclick="sbTab('testo')">Testo</button><button class="tab" type="button" role="tab" data-tab="comparazione" aria-selected="false" onclick="sbTab('comparazione')">Comparazione</button><button class="tab" type="button" role="tab" data-tab="segnali" aria-selected="false" onclick="sbTab('segnali')">Segnali</button><button class="tab" type="button" role="tab" data-tab="fonti" aria-selected="false" onclick="sbTab('fonti')">Fonti</button></div>
+<div class="tab-panel panel" data-sb-panel="sintesi"><div class="synthesis"><p>Il filo che lega queste voci non è la domanda se l'AI funzioni, ma dove si trovi il vero collo di bottiglia. Ed è qui che le risposte divergono in modo rivelatore. <a href="#" class="face-link" onclick="vaiFonte(event, 'Dario Amodei')" title="Fonti di Dario Amodei"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/dario-amodei.jpg" alt=""></a>Dario Amodei lo colloca nel calcolo, che definisce il "dilemma industriale più profondo" di Anthropic: comprare poco frena la ricerca, comprare troppo espone finanziariamente (<a href="https://www.bloomberg.com/news/articles/2026-11-13/anthropic-ceo-calls-computing-power-deepest-business-dilemma" target="_blank" rel="noopener">Bloomberg, 13 nov</a>). <a href="#" class="face-link" onclick="vaiFonte(event, 'Liang Wenfeng')" title="Fonti di Liang Wenfeng"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/liang-wenfeng.png" alt=""></a>Liang Wenfeng ne subisce la versione più dura, con DeepSeek costretta a limitare le conversazioni lunghe per carenza di capacità. <a href="#" class="face-link" onclick="vaiFonte(event, 'Ilya Sutskever')" title="Fonti di Ilya Sutskever"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/ilya-sutskever.jpg" alt=""></a>Ilya Sutskever risponde concentrando capitale, con la <a href="https://investor.nvidia.com/news/press-release-details/2026/Ilya-Sutskevers-Safe-Superintelligence-Inc--and-NVIDIA-Announce-Long-Term-Strategic-Partnership/" target="_blank" rel="noopener">partnership NVIDIA</a> che decuplica il suo compute.</p>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Benedict Evans')" title="Fonti di Benedict Evans"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/benedict-evans.png" alt=""></a>Benedict Evans sposta però il problema di un passo indietro: il limite non è il silicio ma il credito, perché il capex degli hyperscaler cresce più del loro flusso di cassa e trasforma la <a href="https://behindthebalancesheet.substack.com/p/who-gets-rich-from-ai" target="_blank" rel="noopener">fiducia degli investitori</a> nel vero vincolo della costruzione. <a href="#" class="face-link" onclick="vaiFonte(event, 'Marc Andreessen')" title="Fonti di Marc Andreessen"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/marc-andreessen.jpg" alt=""></a>Marc Andreessen lo colloca altrove ancora, nelle <a href="https://fortune.com/2026/11/17/andreessen-fed-task-force-ai-productivity-baumol-cost-disease-warsh/" target="_blank" rel="noopener">istituzioni e nella regolazione</a>: la capacità tecnica esiste, l'adozione no. <a href="#" class="face-link" onclick="vaiFonte(event, 'François Chollet')" title="Fonti di François Chollet"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/francois-chollet.jpg" alt=""></a>François Chollet lo mette nei metodi di generalizzazione, <a href="#" class="face-link" onclick="vaiFonte(event, 'Andrew Ng')" title="Fonti di Andrew Ng"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/manual-andrew-ng.jpg" alt=""></a>Andrew Ng nel giudizio su cosa valga costruire. Quattro diagnosi incompatibili dello stesso rallentamento.</p>
+<p>Un secondo tema converge dove meno te lo aspetti. <a href="#" class="face-link" onclick="vaiFonte(event, 'Vivek Raghavan')" title="Fonti di Vivek Raghavan"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/manual-vivek-raghavan.jpg" alt=""></a>Vivek Raghavan avverte che l'India rischia di diventare una <a href="https://www.business-standard.com/technology/artificial-intelligence/foreign-ai-models-can-turn-india-into-a-digital-colony-sarvam-co-founder-126111701153_1.html" target="_blank" rel="noopener">"colonia digitale"</a> esportando dati e importando intelligenza; <a href="#" class="face-link" onclick="vaiFonte(event, 'Bosun Tijani')" title="Fonti di Bosun Tijani"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/bosun-tijani.png" alt=""></a>Bosun Tijani costruisce le <a href="https://www.vanguardngr.com/2026/11/fg-laying-solid-ai-foundation-for-businesses-to-thrive-tijan/" target="_blank" rel="noopener">fondamenta nigeriane</a> come infrastruttura pubblica; <a href="#" class="face-link" onclick="vaiFonte(event, 'Yoshua Bengio')" title="Fonti di Yoshua Bengio"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/yoshua-bengio.jpg" alt=""></a>Yoshua Bengio <a href="https://www.politico.eu/article/ai-yoshua-bengio-implore-europe-build-frontier-models/" target="_blank" rel="noopener">chiede all'Europa</a> modelli propri. Sicurezzisti e acceleratori si ritrovano sulla stessa richiesta: che il potere di calcolo non resti in poche mani.</p>
+<p>La frattura vera riguarda cosa resti all'umano. <a href="#" class="face-link" onclick="vaiFonte(event, 'Sam Altman')" title="Fonti di Sam Altman"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/sam-altman.jpg" alt=""></a>Sam Altman rifiuta esplicitamente l'idea di un <a href="https://techcrunch.com/2026/11/18/sam-altman-warns-against-a-future-where-ai-not-humans-calls-the-shots/" target="_blank" rel="noopener">"passaggio di consegne"</a> decisionale alle macchine. <a href="#" class="face-link" onclick="vaiFonte(event, 'Patrick Collison')" title="Fonti di Patrick Collison"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/patrick-collison.jpg" alt=""></a>Patrick Collison va oltre, osservando che malattie curate e abbondanza sono <a href="https://x.com/patrickc/status/2119489695277269348" target="_blank" rel="noopener">solo "ingredienti"</a>, non una visione di come funzioneranno lavoro e agency. <a href="#" class="face-link" onclick="vaiFonte(event, 'Vitalik Buterin')" title="Fonti di Vitalik Buterin"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/vitalik-buterin.jpg" alt=""></a>Vitalik Buterin traduce il dubbio in aritmetica: un <a href="https://finance.yahoo.com/technology/ai/articles/vitalik-buterin-wants-ai-slow-050000810.html" target="_blank" rel="noopener">anno di rallentamento</a> costerebbe poco e darebbe tempo per irrobustire cybersicurezza e biosicurezza.</p>
+<p>Emerge così una corrente precisa: non ottimisti contro catastrofisti — Andreessen prevede che entrambi resteranno delusi — ma due metriche rivali di progresso. Una conta capacità e ricavi; l'altra conta quanto controllo resti distribuito tra persone, Stati e istituzioni.</p></div></div>
+<div class="tab-panel panel" data-sb-panel="testo" hidden><button class="tr-copy" type="button" onclick="copiaTrascrizione(this)">copia il testo</button><div class="transcript-body"><h2>Quattro mappe dello stesso ostacolo</h2>
+<p class="podcast-episode-desc">Amodei, Evans, Andreessen, Chollet e Ng indicano quattro limiti incompatibili alla corsa dell'AI. E mentre discutono, DeepSeek raziona le conversazioni lunghe.</p>
+<div class="chapter" data-mood="geo"><hr></div>
+<p>Il 13 novembre, davanti a una platea di banchieri di JPMorgan, <a href="#" class="face-link" onclick="vaiFonte(event, 'Dario Amodei')" title="Fonti di Dario Amodei"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/dario-amodei.jpg" alt=""></a>Dario Amodei ha definito il calcolo il dilemma industriale più profondo di Anthropic. Comprare poche schede grafiche rallenta la ricerca. Comprarne troppe espone l'azienda sul piano finanziario. Non c'è una terza via.</p>
+<p>È il 19 novembre, questo è Signal Brief, e la domanda di ieri — se la scala dei modelli abbia ancora benzina — oggi si è spostata di un gradino. Nessuno discute più se funzioni. Si discute dove si fermi. E qui le risposte si sfaldano in modo istruttivo.</p>
+<p>Cinque voci, cinque ostacoli diversi. Conviene guardarli uno per uno.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Partiamo dal fatto più concreto della settimana, quello che si vede senza bisogno di interpretarlo: DeepSeek ha limitato le conversazioni lunghe e la dimensione degli input, dichiarando apertamente di non avere capacità di calcolo sufficiente. Non un documento riservato, non una stima di analisti. Un servizio che si restringe sotto le dita di chi lo usa.</p>
+<p>Fino a ieri la scarsità di calcolo era una voce di bilancio, una cifra in un comunicato trimestrale. Adesso è una frase che appare sullo schermo quando provi a incollare un testo troppo lungo. <a href="#" class="face-link" onclick="vaiFonte(event, 'Liang Wenfeng')" title="Fonti di Liang Wenfeng"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/liang-wenfeng.png" alt=""></a>Liang Wenfeng sosteneva da tempo che il collo di bottiglia fosse il calcolo e non gli algoritmi: ora la sua tesi ha una dimostrazione che qualunque utente può toccare. Nel frattempo DeepSeek si è impegnata su almeno centosessantamila chip Huawei Ascend per un cluster di addestramento, mentre il prossimo modello di ragionamento uscirà probabilmente prima su hardware Nvidia. Si compra per non doversi più fermare.</p>
+<p>Amodei descrive lo stesso muro dall'altro lato, quello di chi ha i soldi per comprare e non sa quanto comprare. L'operazione di borsa che Anthropic prepara serve, nelle sue parole, a bloccare impegni enormi di calcolo senza bruciare liquidità. È la logica delle ferrovie dell'Ottocento: la rotaia costa prima che il treno porti un passeggero, e chi posa pochi chilometri resta tagliato fuori, chi ne posa troppi finisce in amministrazione controllata. Nessuno sapeva in anticipo quale delle due cose stesse facendo.</p>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Benedict Evans')" title="Fonti di Benedict Evans"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/benedict-evans.png" alt=""></a>Benedict Evans sposta il problema un gradino più indietro, e per me è lo spostamento più interessante della giornata. Nella sua presentazione di novembre e nelle interviste di questi giorni osserva che le grandi aziende del cloud stanno spendendo in infrastruttura più di quanto generino di cassa. Quindi si indebitano, affittano, si rivolgono ai mercati. Il vincolo vero non è il silicio: è la fiducia degli investitori. Finché quella tiene, si costruisce. Quando si incrina, i cantieri si fermano anche con le fabbriche di chip a pieno regime. Ieri questo era un dato contabile tra tanti. Oggi Evans lo promuove a limite fisico della costruzione.</p>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Marc Andreessen')" title="Fonti di Marc Andreessen"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/marc-andreessen.jpg" alt=""></a>Marc Andreessen, parlando il 16 novembre a una conferenza della Federal Reserve dedicata all'AI, ne indica un altro ancora. Secondo lui ottimisti e catastrofisti resteranno entrambi delusi, perché quello che frena non è la capacità tecnica ma l'assorbimento: istituzioni, regolamenti, costi che non scendono nei servizi dove serve molta manodopera. Cita il nucleare civile come precedente — una tecnologia matura fermata non dalla fisica ma dalle scelte politiche. Le scelte di policy, sostiene, conteranno più di quello che l'AI sa fare.</p>
+<p>E restano due diagnosi più sottili. <a href="#" class="face-link" onclick="vaiFonte(event, 'François Chollet')" title="Fonti di François Chollet"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/francois-chollet.jpg" alt=""></a>François Chollet continua a ripetere che calcolo e dati sono moltiplicatori, non sostituti di metodi che generalizzino meglio. <a href="#" class="face-link" onclick="vaiFonte(event, 'Andrew Ng')" title="Fonti di Andrew Ng"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/manual-andrew-ng.jpg" alt=""></a>Andrew Ng mette il limite in un posto dove nessun data center aiuta: il giudizio su cosa valga la pena costruire.</p>
+<p>Quattro, cinque mappe dello stesso ostacolo, disegnate da persone che hanno accesso agli stessi numeri. Quando chi costruisce non concorda su dove sia il muro, significa che il muro non l'ha ancora toccato nessuno.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Ilya Sutskever')" title="Fonti di Ilya Sutskever"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/ilya-sutskever.jpg" alt=""></a>Ilya Sutskever è l'uomo che ha guidato la ricerca di OpenAI e che poi ha fondato un laboratorio che non vende nulla: Safe Superintelligence, nessun prodotto, nessuna demo, solo ricerca.</p>
+<p>Questa settimana ha fatto una cosa che vale la pena raccontare per intero. Il laboratorio ha annunciato una collaborazione di lungo periodo con NVIDIA, che include l'accesso ai sistemi Vera Rubin e che dovrebbe moltiplicare per dieci la sua capacità di calcolo. L'investimento di NVIDIA viene stimato intorno ai cinque miliardi di dollari. La motivazione pubblica di Sutskever è di una sobrietà che colpisce in un settore di annunci gonfiati: dice di avere ricerca che merita di essere scalata. Non un prodotto in arrivo. Un risultato interno.</p>
+<p>Il punto che rende la scena quasi paradossale è che poche settimane fa la stessa persona parlava di "peak data", la fine dei guadagni facili ottenuti ingrandendo i dataset. Era il teorico del limite. Adesso è l'attore della concentrazione: decuplica il proprio calcolo mentre sostiene che ingrandire gli addestramenti non basta più. Non è una contraddizione, se si guarda bene. È la posizione di chi pensa di avere un'idea nuova e vuole la potenza per verificarla. Però il gesto, visto da fuori, resta quello di chi raccoglie capitale, hardware e persone in un unico punto.</p>
+<p>Nel frattempo Sutskever ha preso la guida piena del laboratorio dopo che il cofondatore Daniel Gross è passato a Meta, e ha liquidato pubblicamente le voci su un'acquisizione: la squadra, dice, vuole portare a termine il proprio lavoro. In un'intervista recente ha aggiunto che i sistemi futuri saranno davvero capaci di agire e ragionare, e che potrebbero diventare imprevedibili.</p>
+<p>Qui si apre la tensione che percorre tutta la giornata. Concentrare o distribuire. Sutskever risponde concentrando: pochi poli, molto profondi. Ed è esattamente il movimento che altri, dall'India alla Nigeria all'Europa, stanno cercando di contrastare. La storia industriale conosce bene questa biforcazione — l'elettricità nacque con centraline private dentro ogni fabbrica e finì in reti nazionali, mentre il calcolo sta facendo il percorso inverso. Torna nelle mani di pochi proprietari di centrali.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Vivek Raghavan')" title="Fonti di Vivek Raghavan"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/manual-vivek-raghavan.jpg" alt=""></a>Vivek Raghavan è uno dei fondatori di Sarvam AI, l'azienda indiana che costruisce modelli pensati per le lingue del subcontinente. Al Bengaluru Tech Summit ha usato un'espressione che è difficile dimenticare: l'India rischia di diventare una colonia digitale, esportando dati e importando intelligenza.</p>
+<p>Ha aggiunto un corollario scomodo per chi misura il successo tecnologico in numeri di utenti: il fatto che in India si usi molto ChatGPT non è una prova di leadership nell'AI. È una prova del contrario. La sua ricetta è possedere tutta la filiera — modelli, capacità di cloud, schede grafiche, dati, applicazioni — invece di affittare capacità da fornitori stranieri. E ha ammesso che è probabilmente un progetto da un decennio.</p>
+<p>Sul lato prodotto, Sarvam sta andando in una direzione precisa: modelli nativi nelle lingue indiane, pensati prima per la voce che per la tastiera, a costi bassissimi e per numeri enormi di persone. Raghavan indica due vincoli di adozione che hanno poco a che fare con i parametri: la lingua in cui uno preferisce parlare e quanto può permettersi di spendere. Dopo un modello da centocinque miliardi di parametri, l'azienda punterebbe a un sistema da mille miliardi, orientato a programmazione, sicurezza informatica, biomolecole e manifattura avanzata.</p>
+<p>La stessa partita si gioca a Lagos con strumenti da ministero. <a href="#" class="face-link" onclick="vaiFonte(event, 'Bosun Tijani')" title="Fonti di Bosun Tijani"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/bosun-tijani.png" alt=""></a>Bosun Tijani, al summit dell'Oxford Global Think Tank, ha elencato cinque prerequisiti per un Paese che voglia contare nell'AI: connettività, calcolo e dati, dati affidabili, competenze e ricerca, istituzioni. La sua divisione del lavoro è esplicita: il governo posa le fondamenta, imprese e startup ci costruiscono sopra prodotti e posti di lavoro. Le fondamenta, in concreto, sono novantamila chilometri di fibra ad accesso aperto, capacità di calcolo condivisa, un obiettivo di tre milioni di persone con competenze tecniche e un modello linguistico pubblico nelle principali lingue nigeriane. In agricoltura il programma NAIRS usa l'AI per riconoscere le malattie del pomodoro; sul fronte scuola, una strategia nazionale per la tecnologia educativa e infrastrutture dati per circa quaranta milioni di studenti.</p>
+<p>La cosa notevole è chi si ritrova d'accordo. <a href="#" class="face-link" onclick="vaiFonte(event, 'Yoshua Bengio')" title="Fonti di Yoshua Bengio"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/yoshua-bengio.jpg" alt=""></a>Yoshua Bengio, che da mesi chiede freni e cautela, ha esortato l'Europa a costruire modelli di frontiera propri invece di dipendere da sistemi americani o cinesi. Chi vuole accelerare e chi vuole rallentare arrivano alla stessa richiesta da strade opposte: che il calcolo non resti in poche mani.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p>Ricapitoliamo dove siamo arrivati. Un ostacolo su cui nessuno concorda, e una corsa a non restare dalla parte sbagliata di chi possiede le centrali di calcolo. Ma c'è una terza domanda, e questa settimana è diventata la più ruvida: cosa resta in mano agli umani.</p>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Sam Altman')" title="Fonti di Sam Altman"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/sam-altman.jpg" alt=""></a>Sam Altman l'ha affrontata di petto. Il 18 novembre, al DealBook Summit, ha sostenuto che gli esseri umani devono mantenere il controllo del futuro dell'AI e ha respinto in modo esplicito un'idea che circola nella Silicon Valley: il "passaggio di consegne", l'idea di cedere gradualmente le decisioni alle macchine. Ha aggiunto che la competizione attuale richiede più prudenza, non meno, e ha descritto gli ultimi mesi come un periodo insolitamente difficile per OpenAI e per il settore.</p>
+<p>Vale soffermarsi su chi lo dice. Il giorno prima, il 17 novembre, Altman aveva annunciato GPT-6.2 nelle versioni Sol e Astra, rivendicando capacità elevate e un consumo di risorse contenuto — in particolare la modalità ultrarapida di Sol — ammettendo però che i modelli devono ancora diventare più piacevoli e affidabili da usare. Quindi: pubblica il modello il lunedì e il martedì mette in guardia contro la delega alle macchine. La stessa persona, la stessa settimana.</p>
+<p>Questa è la novità rispetto a ieri. Finora la richiesta di tenere le decisioni in mano alle persone arrivava dai critici esterni, dai regolatori, dagli accademici. Ora arriva da chi costruisce i modelli, e questo cambia il peso della frase.</p>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Patrick Collison')" title="Fonti di Patrick Collison"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/patrick-collison.jpg" alt=""></a>Patrick Collison, in un post dell'8 novembre, va più a fondo e rende la posizione di Altman insufficiente. Osserva che le promesse abituali — malattie curate, abbondanza — sono soltanto ingredienti, non una visione di come funzioneranno lavoro, scarsità e capacità delle persone di decidere della propria vita. Dichiarare che il comando resta umano non dice nulla su cosa farà quell'umano tutto il giorno. Collison, che pure dentro Stripe racconta di agenti che individuano compiti, scrivono funzionalità, correggono errori e pubblicano con poca supervisione, e di circa il cinquantacinque per cento delle modifiche al codice che nascono da un comando scritto a parole, si porta dietro una domanda che nessun grafico di produttività scioglie: come se la cava una persona quando il suo lavoro diventa superfluo.</p>
+<p>Resta una terza posizione, la più fredda. <a href="#" class="face-link" onclick="vaiFonte(event, 'Vitalik Buterin')" title="Fonti di Vitalik Buterin"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/vitalik-buterin.jpg" alt=""></a>Vitalik Buterin ha appoggiato i movimenti contro i nuovi data center con un'argomentazione aritmetica: i miglioramenti negli algoritmi permetterebbero all'infrastruttura di oggi di ottenere in quattro anni quello che una costruzione più aggressiva otterrebbe in due. Un anno di rallentamento, quindi, costerebbe poco e comprerebbe tempo per irrobustire la sicurezza informatica e quella biologica. Non è un freno ideologico. È un calcolo di convenienza, e per questo è più difficile da liquidare.</p>
+<div class="chapter" data-mood="upbeat"><hr></div>
+<p>Progetti da osservare.</p>
+<p>Si parte da tre modelli usciti quasi insieme, e la cosa interessante è proprio la sovrapposizione. GPT-6.2 Sol e Astra di OpenAI, annunciati il 17 novembre, puntano su velocità ed efficienza. Claude Opus 5.5 di Anthropic è oggi il riferimento per scrivere codice e far lavorare agenti — <a href="#" class="face-link" onclick="vaiFonte(event, 'Elon Musk')" title="Fonti di Elon Musk"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/elon-musk.jpg" alt=""></a>Elon Musk l'ha definito un capolavoro, e supera il suo stesso Grok 4.8. Fable 5.2 viene descritto come il nuovo bazooka tra i modelli disponibili. Tre settimane fa la frontiera era un'altra. Il ritmo con cui si riscrive la classifica è esso stesso un dato.</p>
+<p>HackerTube è l'esempio più leggibile di dove stiano andando gli strumenti. <a href="#" class="face-link" onclick="vaiFonte(event, 'Andrej Karpathy')" title="Fonti di Andrej Karpathy"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/andrej-karpathy.jpg" alt=""></a>Andrej Karpathy ha costruito in un fine settimana, con Claude Code, un sistema che consiglia video partendo da quarantatré milioni di commenti di Hacker News. Pochi giorni dopo ne ha fatto un secondo, TristanTube, quarantasettemila video, in tre minuti. È la stessa storia di ieri, vista da più lontano: settimane di sviluppo compresse in ore.</p>
+<p>Dal versante opposto arriva lo streaming degli esperti, una tecnica che permette di far girare un modello da centottanta miliardi di parametri con trentadue gigabyte di memoria. Mentre Sutskever decuplica un data center, qualcuno abbassa la soglia d'ingresso di un ordine di grandezza. Entrambe le cose sono vere nello stesso momento.</p>
+<p>Infine due strumenti che parlano di fiducia. SkillEvaluator di NVIDIA serve a misurare in modo verificabile cosa un agente sappia davvero fare, invece di crederci sulla parola. E l'analisi di <a href="#" class="face-link" onclick="vaiFonte(event, 'Simon Willison')" title="Fonti di Simon Willison"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/simon-willison.jpg" alt=""></a>Simon Willison sulle sandbox esterne affronta il problema di tenere gli agenti che scrivono codice dentro recinti isolati — la condizione pratica perché entrino in produzione da qualche parte che conti.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Alla fine la scena che tiene insieme la giornata è la più modesta: un utente di DeepSeek che incolla un testo troppo lungo e riceve un rifiuto. Mentre a Bengaluru si parla di colonie digitali e a New York di passaggi di consegne, il limite si è già manifestato nel posto più banale. Forse i muri si riconoscono sempre così, da un gesto che non riesce.</p>
+<p>È stato Signal Brief. Alla prossima.</p></div><div class="rawmd"><a href="raw.md">Testo (markdown)</a></div></div>
+<div class="tab-panel panel" data-sb-panel="comparazione" hidden><div class="tension"><div class="axis">↗ Il collo di bottiglia come posta in gioco</div><div class="side">La domanda non è più se la scala funzioni ma dove sia il limite, e le diagnosi sono quattro e incompatibili: calcolo, credito, istituzioni, metodi.</div></div><div class="tension"><div class="axis">↗ Scarsità già visibile all'utente</div><div class="side">Il vincolo di capacità non è più solo contabile: si traduce in servizio degradato, con DeepSeek costretta a limitare le conversazioni lunghe.</div></div><div class="tension"><div class="axis">↗ Adozione e regolazione come freno reale</div><div class="side">La capacità tecnica esisterebbe già, ciò che manca è l'assorbimento istituzionale ed economico (malattia dei costi, regolazione).</div></div><div class="tension"><div class="axis">↗ Rifiuto del passaggio di consegne</div><div class="side">Compare una posizione esplicita contro la delega decisionale alle macchine, formulata da chi costruisce i modelli stessi.</div></div><div class="tension"><div class="axis">↗ Rallentamento come scelta a basso costo</div><div class="side">Il ritardo deliberato viene quantificato come opzione economica conveniente per irrobustire cyber e biosicurezza, non come freno ideologico.</div></div><div class="tension"><div class="axis">↗ Sovranità come cantiere pubblico</div><div class="side">Alla denuncia si sostituisce la costruzione: infrastruttura AI statale in Nigeria e richiesta di modelli di frontiera europei.</div></div><div class="tension"><div class="axis">⚖ Dove si trova il limite dello sviluppo AI</div><div class="side">Dario Amodei: è il calcolo, con un dilemma di acquisto senza uscita · Benedict Evans: è il credito e la fiducia degli investitori, non il silicio · Marc Andreessen: sono istituzioni e regolazione, l'adozione non la capacità · François Chollet: sono i metodi di generalizzazione · Andrew Ng: è il giudizio su cosa valga la pena costruire</div></div><div class="tension"><div class="axis">⚖ Concentrare o distribuire il potere di calcolo</div><div class="side">Ilya Sutskever: concentrare capitale e compute in pochi poli di frontiera · Vivek Raghavan: distribuire, o i Paesi diventano colonie digitali · Bosun Tijani: distribuire costruendo infrastruttura pubblica nazionale</div></div><div class="tension"><div class="axis">⚖ Il tempo è una risorsa da bruciare o da comprare</div><div class="side">Ilya Sutskever: accelerare moltiplicando per dieci la capacità · Vitalik Buterin: un anno di rallentamento costa poco e ripaga in sicurezza</div></div><div class="tension"><div class="axis">⚖ Cosa resta in mano agli umani</div><div class="side">Sam Altman: le decisioni devono restare alle persone, non alle macchine · Patrick Collison: dichiararlo non basta, manca un modello di lavoro e agency</div></div><div class="tension"><div class="axis">⚖ Quale metrica misura il progresso</div><div class="side">Dario Amodei: capacità dei modelli e sostenibilità dei ricavi · Yoshua Bengio: quanto controllo resta distribuito tra Stati e istituzioni</div></div></div>
+<div class="tab-panel panel" data-sb-panel="segnali" hidden><section><h2>Progetti da osservare</h2><div class="tension"><div class="axis">Fable 5.2</div><div class=side>Nuovo modello di frontiera che Zvi definisce il nuovo "bazooka" tra i modelli disponibili. Ridefinisce il confronto con Opus 5.5 e GPT-6.2 sul piano delle capacità.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> GPT-6.2 Sol / Astra</div><div class=side>Nuovi modelli OpenAI annunciati il 17 novembre, con la modalità "ultrafast" di Sol e alta efficienza in token. Altman ammette che usabilità e affidabilità vanno ancora migliorate.</div></div><div class="tension"><div class="axis">Claude Opus 5.5</div><div class=side>Modello Anthropic che Musk definisce un "masterpiece" e che oggi supera Grok 4.8. È il riferimento del momento per coding e agenti.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> Builderlab / Buzz</div><div class=side>Piattaforma enterprise che espone l'infrastruttura AI interna di Block, costruita su Buzz, workspace open source dove persone, software e agenti collaborano. Punta a un'azienda AI-native con meno livelli di management.</div></div><div class="tension"><div class="axis">HackerTube</div><div class=side>Raccomandatore di video alternativo costruito da Karpathy in un weekend con Claude Code, a partire da 43 milioni di commenti di Hacker News. Mostra come i modelli comprimano settimane di sviluppo in ore.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> NVIDIA/SkillEvaluator</div><div class=side>Repository per valutare le capacità di agenti e modelli AI. Utile per misurare in modo verificabile ciò che gli agenti sanno fare.</div></div><div class="tension"><div class="axis">DaisyRose-27B</div><div class=side>Modello da 27B presentato con un post-training molto efficiente. Sposta in avanti la frontiera dell'efficienza di addestramento.</div></div><div class="tension"><div class="axis">External sandboxes for coding agents</div><div class=side>Analisi di Simon Willison sull'isolamento degli agenti di codice in sandbox esterne. Affronta un problema di sicurezza chiave per portarli in produzione.</div></div><div class="tension"><div class="axis">Import AI 481: AI sub-contractors e wet lab per AI</div><div class=side>Numero di Import AI su agenti che subappaltano compiti, laboratori fisici per l'AI e comportamenti di subterfugio nello sviluppo. Indica dove vanno i paradigmi emergenti di agenti e ricerca.</div></div><div class="tension"><div class="axis">Previous-Token Prediction LLM Inversion</div><div class=side>Paper che ricostruisce i prompt a partire dagli output tramite predizione del token precedente. Ha implicazioni per sicurezza, privacy e interpretabilità.</div></div></section></div>
+<div class="tab-panel panel" data-sb-panel="fonti" hidden><div class="fonte" data-fonte-nome="Ilya Sutskever"><span class="who">Ilya Sutskever</span><a href="https://investor.nvidia.com/news/press-release-details/2026/Ilya-Sutskevers-Safe-Superintelligence-Inc--and-NVIDIA-Announce-Long-Term-Strategic-Partnership/" target="_blank" rel="noopener">https://investor.nvidia.com/news/press-release-details/2026/Ilya-Sutskevers-Safe-Superintelligence-Inc--and-NVIDIA-Announce-Long-Term-Strategic-Partnership/</a><a href="https://www.datacenterdynamics.com/en/news/nvidia-to-invest-5bn-in-safe-superintelligence-sutskever-firm-to-substantially-increase-gpu-compute/" target="_blank" rel="noopener">https://www.datacenterdynamics.com/en/news/nvidia-to-invest-5bn-in-safe-superintelligence-sutskever-firm-to-substantially-increase-gpu-compute/</a><a href="https://economictimes.indiatimes.com/tech/artificial-intelligence/sutskever-to-lead-safe-superintelligence-after-meta-poaches-ceo-gross-in-ai-talent-war/articleshow/122233534.cms" target="_blank" rel="noopener">https://economictimes.indiatimes.com/tech/artificial-intelligence/sutskever-to-lead-safe-superintelligence-after-meta-poaches-ceo-gross-in-ai-talent-war/articleshow/122233534.cms</a></div><div class="fonte" data-fonte-nome="Vivek Raghavan"><span class="who">Vivek Raghavan</span><a href="https://www.linkedin.com/in/vivek-raghavan-16005424" target="_blank" rel="noopener">https://www.linkedin.com/in/vivek-raghavan-16005424</a><a href="https://en.wikipedia.org/wiki/Vivek_Raghavan" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Vivek_Raghavan</a><a href="https://www.alphaxiv.org/@vivek-raghavan" target="_blank" rel="noopener">https://www.alphaxiv.org/@vivek-raghavan</a></div></div>
+</div>
+<script>function sbTab(key) {  document.querySelectorAll('.tab-panel').forEach(function (p) {    p.hidden = p.getAttribute('data-sb-panel') !== key;  });  document.querySelectorAll('#sbTabs .tab').forEach(function (b) {    b.setAttribute('aria-selected', b.dataset.tab === key ? 'true' : 'false');  });}function vaiFonte(ev, nome) {  ev.preventDefault();  sbTab('fonti');  var d = document.querySelector('[data-fonte-nome="' + nome + '"]');  if (d) d.scrollIntoView({behavior: 'smooth', block: 'center'});}</script>
+<dialog class="vplayer" id="vplayer"></dialog>
+<script>
+// player modale dei video: la miniatura apre il video al centro (disegno 2026-08-07)
+// Chiudere e condividere. Il player era il solo <video> dentro la <dialog>:
+// si chiudeva a Escape o cliccando lo SFONDO, che su un tablet e' quasi tutto
+// coperto dal video e dove un tasto Escape non esiste (2026-08-24).
+// La ✕ non serve solo a chiudere: e' l'unico modo per SAPERE che si puo'.
+function condividiVideo(src, b) {
+  if (navigator.share) { navigator.share({ title: 'Signal.Brief', url: src }).catch(function () {}); return; }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(src).then(function () {
+      var prima = b.textContent; b.textContent = '✓ copiato';
+      setTimeout(function () { b.textContent = prima; }, 1800);
+    }).catch(function () {});
+    return;
+  }
+  // Terzo ripiego: senza clipboard API resta la selezione manuale. Meglio un
+  // prompt che un bottone morto.
+  try { window.prompt('Indirizzo del video:', src); } catch (e) {}
+}
+function apriVideo(src) {
+  var d = document.getElementById('vplayer');
+  // I bottoni SOPRA il video: sotto finirebbero fuori schermo su un reel
+  // verticale, che di altezza prende gia' l'86%.
+  d.innerHTML = '<div class="vplayer-barra">'
+    + '<button type="button" class="vplayer-share">Condividi</button>'
+    + '<button type="button" class="vplayer-chiudi" aria-label="Chiudi">✕</button>'
+    + '</div><video controls autoplay playsinline src="' + src + '"></video>';
+  d.querySelector('.vplayer-chiudi').onclick = function () { d.close(); };
+  var sb = d.querySelector('.vplayer-share');
+  sb.onclick = function () { condividiVideo(src, sb); };
+  d.showModal();
+  d.onclick = function (e) { if (e.target === d) d.close(); };
+  d.onclose = function () { var v = d.querySelector('video'); if (v) v.pause(); d.innerHTML = ''; };
+}
+// ascolto inline dalla lista: un episodio alla volta
+var epAudio = null, epBtn = null;
+function ascolta(btn, src) {
+  if (epBtn === btn && epAudio) {
+    if (epAudio.paused) { epAudio.play(); btn.classList.add('on'); }
+    else { epAudio.pause(); btn.classList.remove('on'); }
+    return;
+  }
+  if (epAudio) { epAudio.pause(); if (epBtn) epBtn.classList.remove('on'); }
+  epAudio = new Audio(src); epBtn = btn;
+  epAudio.play(); btn.classList.add('on');
+  epAudio.onended = function () { btn.classList.remove('on'); };
+}
+function copiaTrascrizione(btn) {
+  var t = btn.parentElement.querySelector('.transcript-body');
+  navigator.clipboard.writeText(t ? t.innerText : '').then(function () {
+    btn.textContent = 'copiata ✓';
+    setTimeout(function () { btn.textContent = 'copia il testo'; }, 1800);
+  });
+}
+</script>
+<section class="sostieni"><h3>Se ti è utile, offrimi un caffè</h3><p>Signal.Brief non ha sponsor e non vende niente. Se ti è utile, puoi contribuire — e se non ti va, ascoltalo lo stesso.</p><div class="sostieni-atti"><a class="sostieni-btn" href="https://www.paypal.com/donate/?business=SGNE3B4JZUT9S&amp;no_recurring=0&amp;item_name=Signal.Brief+non+ha+sponsor.+Se+ti+%C3%A8+utile%2C+questo+lo+tiene+acceso.&amp;currency_code=EUR" target="_blank" rel="noopener">Offrimi un caffè</a><a class="sostieni-alt" href="../segui/">Ascoltalo nella tua app →</a></div></section>
+<footer class="creator-footer">
+  <img src="https://media.casamon.dev/immagini/mike-avatar.png" alt="Michele Mondora">
+  <div class="creator-meta">
+    <span class="creator-name">it-mikesoft</span>
+    <span class="creator-tagline">working with systems, living with questions</span>
+    <span class="creator-email"><a href="mailto:michele@mondora.com">michele@mondora.com</a></span>
+    <span class="creator-legal"><a href="/signal-brief/legal/privacy/">Privacy</a> ·
+      <a href="/signal-brief/legal/">Note legali</a></span>
+  </div>
+</footer>
+<section class="tutele"><h3>Trasparenza e tutele</h3>
+<p><strong>Come nasce questo contenuto.</strong> Ricerca, sintesi editoriale, voce narrante, immagini e musica sono prodotte con sistemi di intelligenza artificiale. Non c'è una redazione umana che verifica ogni affermazione prima della pubblicazione: un controllo automatico scarta le schede giudicate inaffidabili, ma non elimina la possibilità di errori.</p>
+<p><strong>Affermazioni su persone e aziende.</strong> Quanto riportato è una sintesi di fonti pubbliche, non una dichiarazione diretta delle persone citate: le frasi non vanno intese come virgolettati né come posizioni ufficiali. Le fonti sono indicate in ogni pagina episodio — verificale prima di considerare un'informazione accertata. Se trovi un'affermazione inesatta che ti riguarda, scrivi a <a href="mailto:michele@mondora.com">michele@mondora.com</a>: viene corretta o rimossa.</p>
+<p><strong>Immagini e volti.</strong> Le immagini di scena sono generate con AI e non raffigurano fatti realmente avvenuti. Le fotografie di persone reali usate nei video provengono da Wikimedia Commons con le rispettive licenze, e sono accostate al racconto a scopo identificativo: la loro presenza non implica partecipazione, dichiarazione o approvazione da parte della persona ritratta. Su richiesta dell'interessato vengono rimosse.</p>
+<p><strong>Fonti e diritti altrui.</strong> I contenuti sono rielaborazioni originali, non riproduzioni di articoli di terzi; le testate e gli autori all'origine di una notizia sono citati e collegati. Marchi e nomi commerciali appartengono ai rispettivi titolari e sono usati a scopo descrittivo.</p>
+</section>
+</body></html>
