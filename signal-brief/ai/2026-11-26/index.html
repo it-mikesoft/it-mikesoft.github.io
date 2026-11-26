@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="it"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quello che la macchina può controllare · Signal.AI</title>
+<meta property="og:title" content="Quello che la macchina può controllare · Signal.AI"><meta property="og:type" content="article"><meta property="og:description" content="Codice e matematica corrono perché il modello verifica da sé. Dove la verifica manca, tutto resta fermo. Il criterio che divide in due il mondo dell'intelligenza artificiale."><meta property="og:url" content="https://it-mikesoft.github.io/signal-brief/ai/2026-11-26/"><meta property="og:audio" content="https://op3.dev/e/media.casamon.dev/ai/podcast/episodes/2026-11-26.mp3"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "PodcastEpisode", "name": "Quello che la macchina può controllare", "datePublished": "2026-11-26", "url": "https://it-mikesoft.github.io/signal-brief/ai/2026-11-26/", "description": "Codice e matematica corrono perché il modello verifica da sé. Dove la verifica manca, tutto resta fermo. Il criterio che divide in due il mondo dell'intelligenza artificiale.", "inLanguage": "it", "associatedMedia": {"@type": "MediaObject", "contentUrl": "https://op3.dev/e/media.casamon.dev/ai/podcast/episodes/2026-11-26.mp3"}, "partOfSeries": {"@type": "PodcastSeries", "name": "Signal.AI", "url": "https://it-mikesoft.github.io/signal-brief/ai/"}}</script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:#faf8f4; color:#1a1a1a; padding:2rem 10px; max-width:none; margin:0 auto; line-height:1.6; }
+  a { color:#2563eb; }
+  .back { display:inline-block; margin-bottom:1.5rem; font-size:.8rem; font-family:monospace; text-decoration:none; }
+  .videos { display:flex; gap:1rem; flex-wrap:wrap; margin:1.2rem 0; }
+  .videos figure { margin:0; flex:1; min-width:260px; }
+  .videos .v2 { flex:0 1 240px; }
+  .videos video { width:100%; border-radius:12px; background:#000; }
+  .videos .v2 video { aspect-ratio:9/16; max-height:420px; }
+  .videos figcaption { font-size:.75rem; color:#888; text-align:center; margin-top:.3rem; }
+  .vlink { display:flex; gap:.3rem; margin-top:.35rem; }
+  .vlink input { flex:1; min-width:0; font-size:.68rem; font-family:monospace; padding:.3rem .4rem;
+    border:1px solid #e2ddd6; border-radius:6px; background:#fff; color:#6b7280; }
+  .vlink button { font-size:.68rem; padding:.3rem .6rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; }
+  .wk { font-size:1rem; margin:1.4rem 0 .4rem; }
+  details.wkacc { border:1px solid #e5e7eb33; border-radius:10px; margin:.6rem 0; padding:.1rem .8rem .4rem; }
+  details.wkacc summary { cursor:pointer; font-weight:600; padding:.5rem 0; font-size:.9rem; }
+  .back:hover { text-decoration:underline; }
+  header h1 { font-family:Georgia,serif; font-size:1.7rem; font-weight:600; }
+  header h1 span { color:#2563eb; }
+  .tagline { color:#6b7280; font-size:.85rem; margin-top:.3rem; margin-bottom:1.5rem; }
+  ul.eps { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
+  .subscribe { display:inline-flex; align-items:center; gap:.5rem; margin-bottom:1.2rem;
+    padding:.45rem .9rem; background:#2563eb; color:#fff; border-radius:20px;
+    text-decoration:none; font-size:.8rem; font-weight:600; }
+  .subscribe:hover { opacity:.85; color:#fff; }
+  .ep { display:flex; align-items:center; gap:.8rem; padding:.8rem 1rem; background:#fff;
+    border:1px solid #e2ddd6; border-radius:8px; text-decoration:none; color:inherit; transition:box-shadow .12s; }
+  .ep:hover { box-shadow:0 2px 8px rgba(0,0,0,.07); }
+  .ep-play { width:32px; height:32px; border-radius:50%; background:#f3f4f6; display:flex;
+    align-items:center; justify-content:center; font-size:12px; flex-shrink:0; }
+  .ep-title { font-size:.9rem; font-weight:500; }
+  .ep-meta { font-size:.72rem; color:#9ca3af; font-family:monospace; margin-top:.15rem; }
+  audio { width:100%; margin:1rem 0 1.5rem; }
+  .rawmd { margin:-.5rem 0 1.5rem; }
+  .rawmd a { font-size:.8rem; font-family:monospace; color:inherit; opacity:.65; }
+  .desc { color:#374151; font-size:.95rem; margin-bottom:1.5rem; }
+  section { margin:2rem 0; }
+  section h2 { font-family:Georgia,serif; font-size:1.1rem; border-bottom:1px solid #e2ddd6;
+    padding-bottom:.3rem; margin-bottom:.8rem; }
+  .synthesis p { margin:.7rem 0; }
+  .tension { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; font-size:.9rem; }
+  .tension .axis { font-weight:600; margin-bottom:.3rem; }
+  .tension .side { color:#6b7280; font-size:.85rem; }
+  .proj { font-size:.9rem; margin:.4rem 0; }
+  .proj .pname { font-weight:600; }
+  .proj .pnew { background:#16a34a; color:#fff; font-size:.65rem; font-weight:700;
+    padding:.1rem .35rem; border-radius:4px; text-transform:uppercase; vertical-align:middle; }
+  .fonte { font-size:.85rem; margin:.5rem 0; }
+  .fonte .who { font-weight:600; }
+  .fonte a { display:block; margin-left:.5rem; color:#6b7280; }
+  .transcript-body p { margin:.7rem 0; line-height:1.7; }
+  .transcript-body .chapter hr { border:none; border-top:1px solid #e2ddd6; margin:1.5rem 0; }
+  .transcript-body .podcast-episode-desc { color:#6b7280; font-style:italic; }
+  .signal-card { background:#fff; border:1px solid #e2ddd6; border-left:3px solid #2563eb;
+    border-radius:6px; padding:.7rem .9rem; margin:.5rem 0; }
+  .signal-theme { font-size:.75rem; font-weight:700; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.3rem; }
+  .signal-text { font-size:.85rem; color:#374151; line-height:1.5; }
+  .creator-footer { margin-top:3rem; padding-top:1.5rem; border-top:1px solid #e2ddd6;
+    display:flex; align-items:center; gap:.9rem; }
+  .creator-footer img { width:40px; height:40px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+  .creator-legal { font-size:.78rem; margin-top:.15rem; }
+  .creator-legal a { color:inherit; }
+  .creator-meta { display:flex; flex-direction:column; gap:.15rem; }
+  .creator-name { font-size:.85rem; font-weight:600; color:#1a1a1a; }
+  .creator-tagline { font-size:.75rem; color:#6b7280; }
+  .creator-email { font-size:.75rem; }
+  .creator-ai { font-size:.72rem; color:#8a7f6d; max-width:46ch; line-height:1.45; }
+  .sostieni { margin-top:2.5rem; padding:1.2rem 1.4rem; border-radius:14px;
+    background:#f7f4ef; border:1px solid #e2ddd6; }
+  .sostieni h3 { margin:0 0 .3rem; font-size:1rem; }
+  .sostieni p { margin:0 0 .9rem; font-size:.88rem; color:#6b6257; line-height:1.55; }
+  .sostieni-atti { display:flex; gap:.8rem; align-items:center; flex-wrap:wrap; }
+  .sostieni-btn { display:inline-block; padding:.55rem 1.1rem; border-radius:10px;
+    background:#2563eb; color:#fff; text-decoration:none; font-weight:700; font-size:.88rem; }
+  .sostieni-alt { font-size:.85rem; color:#6b6257; text-decoration:none; }
+  .sostieni-alt:hover { text-decoration:underline; }
+  .tutele { margin-top:2rem; padding-top:1.2rem; border-top:1px solid #e2ddd6;
+    font-size:.72rem; color:#8a7f6d; line-height:1.5; }
+  .tutele h3 { font-size:.75rem; color:#6b7280; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:.5rem; font-weight:600; }
+  .tutele p { margin:.45rem 0; }
+  .tutele strong { color:#5a5348; font-weight:600; }
+  .tutele a { color:inherit; text-decoration:underline; }
+  .creator-email a { color:#9ca3af; text-decoration:none; }
+  .creator-email a:hover { color:#1a1a1a; }
+  /* disegno 2026-08-07: mesi a pagine, facce, player modale, trascrizione
+     richiudibile — la pagina episodio è un prodotto, non un sottoprodotto */
+  .hrow { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+  .hrow .subscribe { margin-bottom:0; flex-shrink:0; }
+  .months { font-size:.78rem; font-family:monospace; margin:.4rem 0 1rem; color:#9ca3af; }
+  .months a { text-decoration:none; } .months b { color:inherit; }
+  .ep-faces { display:flex; margin-left:auto; flex-shrink:0; }
+  .ep-faces img { width:26px; height:26px; border-radius:50%; object-fit:cover;
+    border:2px solid #fff; margin-left:-8px; background:#eee; }
+  /* tutti i citati sul desktop; su mobile la leggibilità vince: max 3 */
+  @media (max-width:600px) { .ep-faces img:nth-child(n+4) { display:none; } }
+  .ep-listen { width:32px; height:32px; border-radius:50%; background:#f3f4f6; border:0;
+    display:flex; align-items:center; justify-content:center; font-size:12px;
+    flex-shrink:0; cursor:pointer; color:inherit; }
+  .ep-listen.on { background:#2563eb; color:#fff; }
+  .face-inline { width:1.15em; height:1.15em; border-radius:50%; object-fit:cover;
+    vertical-align:-.18em; margin-right:.25em; }
+  /* SEMPRE sulla stessa riga (2026-08-09): su schermi stretti le miniature
+     si riducono, e se non basta il reel sparisce — mai l'andata a capo */
+  .vthumbs { display:flex; gap:.8rem; flex-wrap:nowrap; margin:1.2rem 0; align-items:flex-start; }
+  .vthumb { position:relative; cursor:pointer; border:0; padding:0; background:none;
+    border-radius:12px; overflow:hidden; }
+  /* stessa ALTEZZA per video e reel: il 9:16 si stringe, non svetta */
+  .vthumb video { height:150px; width:auto; display:block; border-radius:12px; background:#000; }
+  @media (max-width:520px) { .vthumb video { height:118px; } }
+  /* quando nemmeno ridotte ci stanno: via le miniature, due BOTTONI in
+     riga che aprono il player (2026-08-09) */
+  .vbtns { display:none; gap:.6rem; margin:1.2rem 0; }
+  .vbtns button { flex:1; padding:.6rem .4rem; border:0; border-radius:10px;
+    background:#2563eb; color:#fff; font-weight:700; font-size:.85rem;
+    cursor:pointer; font-family:inherit; }
+  @media (max-width:420px) { .vthumbs { display:none; } .vbtns { display:flex; } }
+  .vthumb .vlabel { position:absolute; left:0; right:0; bottom:0; padding:.9rem .5rem .35rem;
+    background:linear-gradient(transparent, rgba(0,0,0,.75)); color:#fff; font-size:.7rem; }
+  .vthumb::after { content:"▶"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    color:#fff; font-size:1.6rem; text-shadow:0 1px 6px rgba(0,0,0,.8); }
+  /* margin:auto ESPLICITO: il reset globale * {margin:0} annullava la
+     centratura nativa del dialog e il player si apriva in alto a sinistra */
+  dialog.vplayer { border:0; padding:0; background:transparent; max-width:92vw;
+    margin:auto; position:fixed; inset:0; }
+  dialog.vplayer::backdrop { background:rgba(0,0,0,.85); }
+  dialog.vplayer video { max-width:92vw; max-height:86vh; border-radius:14px; background:#000; }
+  dialog.vplayer .vplayer-barra { display:flex; justify-content:flex-end; align-items:center;
+    gap:.5rem; margin-bottom:.5rem; }
+  /* 2.75rem e' il bersaglio minimo per il dito: la ✕ da sola sarebbe 20px. */
+  dialog.vplayer .vplayer-barra button { font:inherit; font-size:.9rem; color:#fff;
+    background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.28);
+    border-radius:999px; padding:.45rem .9rem; cursor:pointer;
+    min-height:2.75rem; min-width:2.75rem; }
+  dialog.vplayer .vplayer-barra button:hover { background:rgba(255,255,255,.24); }
+  dialog.vplayer .vplayer-chiudi { font-size:1.1rem; line-height:1; }
+  details.tr { border:1px solid #e2ddd6; border-radius:10px; padding:.2rem .9rem .6rem; }
+  details.tr summary { cursor:pointer; font-weight:600; padding:.55rem 0; }
+  .tr-copy { font-size:.72rem; padding:.3rem .7rem; border:0; border-radius:6px;
+    background:#2563eb; color:#fff; cursor:pointer; font-weight:600; margin:.3rem 0 .5rem; }
+  .epnav { display:flex; justify-content:space-between; gap:1rem; margin:2rem 0 0;
+    font-size:.82rem; font-family:monospace; }
+  .epnav a { text-decoration:none; }
+  /* Header + tab bar (spec-016, Task 5): stessa forma di
+     public/console/podcast-render.css, riusando i nomi classe dove
+     combaciano — solo la meccanica tab/pannello è nuova qui. */
+  .episode-header .date-line { font-size:.72rem; font-family:monospace; color:#9ca3af;
+    text-transform:uppercase; letter-spacing:.08em; margin-bottom:.3rem; }
+  .ep-header-block { margin-bottom:.5rem; }
+  .ep-header-faces { margin:.6rem 0; }
+  .ep-header-faces .ep-faces { margin-left:0; }
+  .tabs { display:flex; gap:.25rem; border-bottom:1px solid #e2ddd6; margin:1.5rem 0; flex-wrap:wrap; }
+  .tab { font-family:monospace; font-size:.72rem; text-transform:uppercase; letter-spacing:.08em;
+    padding:.6rem .9rem; background:transparent; border:0; border-bottom:2px solid transparent;
+    color:#9ca3af; cursor:pointer; }
+  .tab[aria-selected="true"] { color:#1a1a1a; border-bottom-color:#2563eb; }
+  .tab-panel { display:block; }
+  .tab-panel[hidden] { display:none !important; }
+  /* Fallback dei pannelli senza dati (episodi storici senza un sidecar) —
+     porta di public/console/podcast-render.css:304-309, sui token pubblici. */
+  /* Header episodio a due colonne: barra tab e pannello nel primo schermo
+     (stesse regole del modulo condiviso, richiesta 2026-08-10). */
+  .ep-header-block { display:grid; grid-template-columns:minmax(0,1fr) 340px;
+    grid-template-rows:repeat(4,min-content); gap:.3rem 1.6rem;
+    align-items:start; margin-bottom:.5rem; }
+  .ep-header-block > [data-sb="data"] { grid-column:1; margin:0; }
+  .ep-header-block > [data-sb="titolo"] { grid-column:1; margin:.1rem 0; }
+  .ep-header-block > [data-sb="player"] { grid-column:1; }
+  .ep-header-block > [data-sb="nav"] { grid-column:1; }
+  .ep-header-block > [data-sb="facce"] { grid-column:2; grid-row:1; }
+  .ep-header-block > [data-sb="video"] { grid-column:2; grid-row:2/5;
+    display:flex; gap:.5rem; flex-wrap:wrap; }
+  .ep-header-block [data-sb="facce"] img { width:26px; height:26px; }
+  .ep-header-block [data-sb="video"] video { max-height:96px; width:auto; }
+  .ep-header-block audio { height:36px; width:100%; }
+  .tabs { position:sticky; top:0; z-index:5; background:#fff;
+    padding:.4rem 0; border-bottom:1px solid #e5e7eb; }
+  @media (max-width:760px) {
+    .ep-header-block { grid-template-columns:1fr; }
+    .ep-header-block > [data-sb="facce"],
+    .ep-header-block > [data-sb="video"] { grid-column:1; grid-row:auto; }
+  }
+  .state-note { padding:2rem 1rem; text-align:center; color:#9ca3af;
+    font-family:monospace; font-size:.85rem; }
+  @media (prefers-color-scheme:dark) {
+    body { background:#1f1d18; color:#e5e5e5; }
+    .ep, .tension, .signal-card { background:#2a2823; border-color:#3a352d; }
+    .ep-play { background:#3a352d; } .desc { color:#d4d4d4; }
+    .signal-text { color:#d4d4d4; }
+    .episode-header .date-line { color:#9ca3af; }
+    .tabs { border-color:#3a352d; }
+    .tab[aria-selected="true"] { color:#f5f5f5; }
+    .state-note { color:#9ca3af; }
+    .creator-footer { border-color:#3a352d; }
+    .creator-name { color:#f5f5f5; }
+    .creator-tagline, .creator-email a { color:#9ca3af; }
+    .creator-ai { color:#9a8f7d; }
+    .vlink input { background:#1c1a17; border-color:#3a352d; color:#9ca3af; }
+    .tutele { border-color:#3a352d; color:#9a8f7d; }
+    .tutele h3 { color:#a9a9a9; } .tutele strong { color:#d4d4d4; }
+    .ep-listen { background:#3a352d; }
+    .ep-faces img { border-color:#2a2823; background:#3a352d; }
+    details.tr { border-color:#3a352d; }
+  }
+</style></head><body>
+<a class="back back-link" href="/signal-brief/ai/">← Signal.AI</a><div class="ep-header-block"><header class="episode-header"><div class="date-line" data-sb="data">2026-11-26</div><h1 data-sb="titolo">Quello che la macchina può controllare</h1><span class="tono" data-sb="tono" title="quello che racconta e' andato bene">🙂</span><div class="desc">Codice e matematica corrono perché il modello verifica da sé. Dove la verifica manca, tutto resta fermo. Il criterio che divide in due il mondo dell'intelligenza artificiale.</div><div class="tagline">Digital Intelligence Podcast</div></header><audio controls preload="none" data-sb="player" src="https://op3.dev/e/media.casamon.dev/ai/podcast/episodes/2026-11-26.mp3"></audio><nav class="epnav" data-sb="nav"><a href="/signal-brief/ai/2026-11-25/">← 2026-11-25</a><span style="flex:1"></span></nav><div class="ep-header-faces" data-sb="facce"><span class="ep-faces"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/yann-lecun.jpg" alt="" title="Yann LeCun"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/john-carmack.jpg" alt="" title="John Carmack"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/vitalik-buterin.jpg" alt="" title="Vitalik Buterin"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/mustafa-suleyman.jpg" alt="" title="Mustafa Suleyman"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/andrej-karpathy.jpg" alt="" title="Andrej Karpathy"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/balaji-srinivasan.jpg" alt="" title="Balaji Srinivasan"><img loading="lazy" src="https://media.casamon.dev/avatars/gen/ai.png" alt="" title="AI"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/marc-andreessen.jpg" alt="" title="Marc Andreessen"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/yoshua-bengio.jpg" alt="" title="Yoshua Bengio"><img loading="lazy" src="https://media.casamon.dev/avatars/photo/geoffrey-hinton.jpg" alt="" title="Geoffrey Hinton"><img loading="lazy" src="https://media.casamon.dev/avatars/gen/benedict-evans.png" alt="" title="Benedict Evans"></span></div><div class="ep-header-video" data-sb="video"></div></div>
+<div class="tabs-block"><div class="tabs" role="tablist" id="sbTabs"><button class="tab" type="button" role="tab" data-tab="sintesi" aria-selected="true" onclick="sbTab('sintesi')">Sintesi</button><button class="tab" type="button" role="tab" data-tab="testo" aria-selected="false" onclick="sbTab('testo')">Testo</button><button class="tab" type="button" role="tab" data-tab="comparazione" aria-selected="false" onclick="sbTab('comparazione')">Comparazione</button><button class="tab" type="button" role="tab" data-tab="segnali" aria-selected="false" onclick="sbTab('segnali')">Segnali</button><button class="tab" type="button" role="tab" data-tab="fonti" aria-selected="false" onclick="sbTab('fonti')">Fonti</button></div>
+<div class="tab-panel panel" data-sb-panel="sintesi"><div class="synthesis"><p>Il filo che tiene insieme queste voci non è l'ottimismo né la paura, ma la <strong>verifica</strong>: ciò che una macchina può controllare da sola accelera, tutto il resto resta fermo.</p>
+<p>Il primo segnale arriva da chi usa gli agenti come fabbrica di software. <a href="#" class="face-link" onclick="vaiFonte(event, 'Andrej Karpathy')" title="Fonti di Andrej Karpathy"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/andrej-karpathy.jpg" alt=""></a>Andrej Karpathy racconta che Claude Opus 5.5 ha costruito una mappa interattiva degli Stati Uniti in sette ore e 45.000 righe di codice, integrando 31 dataset pubblici (<a href="https://x.com/karpathy/status/2125779541952246039" target="_blank" rel="noopener">post su X, novembre 2026</a>). L'implicazione è un cambio di mestiere: l'umano specifica obiettivi e verifica risultati, la macchina fornisce la resistenza implementativa. <a href="#" class="face-link" onclick="vaiFonte(event, 'Balaji Srinivasan')" title="Fonti di Balaji Srinivasan"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/balaji-srinivasan.jpg" alt=""></a>Balaji Srinivasan osserva lo stesso fenomeno in un agente che carica autonomamente codice su GitHub (<a href="https://x.com/balajis/status/2125469102856913176" target="_blank" rel="noopener">post su X</a>). Qui però si apre la prima frattura. <a href="#" class="face-link" onclick="vaiFonte(event, 'John Carmack')" title="Fonti di John Carmack"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/john-carmack.jpg" alt=""></a>John Carmack, nel suo intervento del 29 ottobre, avverte che generare interi sistemi da zero perderà su velocità, sicurezza ed efficienza, e propone di addestrare gli agenti a produrre <em>blocchi riutilizzabili</em> (<a href="https://x.com/ID_AA_Carmack/status/2115917666955497608" target="_blank" rel="noopener">post su X</a>). Tradotto: il collo di bottiglia si sposta dalla generazione all'architettura.</p>
+<p>Perché proprio codice e matematica corrono? La risposta più nitida è di <a href="#" class="face-link" onclick="vaiFonte(event, 'Yann LeCun')" title="Fonti di Yann LeCun"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/yann-lecun.jpg" alt=""></a>Yann LeCun: sono domini anomali, dove il modello può generare ipotesi e verificarle da sé tramite dimostrazione o esecuzione (<a href="https://x.com/ylecun/status/2123139413740003555" target="_blank" rel="noopener">post su X</a>). È la stessa logica che spinge <a href="#" class="face-link" onclick="vaiFonte(event, 'Vitalik Buterin')" title="Fonti di Vitalik Buterin"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/vitalik-buterin.jpg" alt=""></a>Vitalik Buterin a vedere nella verifica formale assistita dall'AI la via per una "lean Ethereum", cioè un protocollo più semplice e dimostrabilmente sicuro. E spiega lo stallo opposto: LeCun nota il 22 novembre che non esistono né guida autonoma di livello 5 né robot pari a un bambino (<a href="https://x.com/ylecun/status/2124605292402946483" target="_blank" rel="noopener">post su X</a>). <a href="#" class="face-link" onclick="vaiFonte(event, 'Marc Andreessen')" title="Fonti di Marc Andreessen"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/marc-andreessen.jpg" alt=""></a>Marc Andreessen ne offre la versione economica, parlando di settori "bloccati" — sanità, istruzione, diritto — dove i costi cresceranno comunque (<a href="https://www.axios.com/2026/11/17/ai-ai-fed-economic-growth-andreessen" target="_blank" rel="noopener">Axios, 17 novembre</a>).</p>
+<p>Da qui la tensione decisiva, che riguarda l'orologio. <a href="#" class="face-link" onclick="vaiFonte(event, 'Mustafa Suleyman')" title="Fonti di Mustafa Suleyman"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/mustafa-suleyman.jpg" alt=""></a>Mustafa Suleyman scrive che l'AI "sta attraversando una soglia" e che allineamento e sicurezza sono "l'unica cosa che conta" (<a href="https://x.com/mustafasuleyman/status/2125446171909136630" target="_blank" rel="noopener">post su X, 25 novembre</a>); <a href="#" class="face-link" onclick="vaiFonte(event, 'Yoshua Bengio')" title="Fonti di Yoshua Bengio"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/yoshua-bengio.jpg" alt=""></a>Yoshua Bengio e <a href="#" class="face-link" onclick="vaiFonte(event, 'Geoffrey Hinton')" title="Fonti di Geoffrey Hinton"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/geoffrey-hinton.jpg" alt=""></a>Geoffrey Hinton misurano in anni. <a href="#" class="face-link" onclick="vaiFonte(event, 'Benedict Evans')" title="Fonti di Benedict Evans"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/benedict-evans.png" alt=""></a>Benedict Evans, da osservatore esterno, insiste invece che "è ancora molto presto". Nessuno nega le capacità: si litiga su quanto tempo resti per costruirne le garanzie.</p></div></div>
+<div class="tab-panel panel" data-sb-panel="testo" hidden><button class="tr-copy" type="button" onclick="copiaTrascrizione(this)">copia il testo</button><div class="transcript-body"><h2>Quello che la macchina può controllare</h2>
+<p class="podcast-episode-desc">Codice e matematica corrono perché il modello verifica da sé. Dove la verifica manca, tutto resta fermo. Il criterio che divide in due il mondo dell'intelligenza artificiale.</p>
+<div class="chapter" data-mood="geo"><hr></div>
+<p>Ci sono giornate in cui le voci più diverse finiscono per dire la stessa cosa senza accorgersene. Oggi, 26 novembre, in questa puntata di Signal Brief ne abbiamo una.</p>
+<p>Da una parte un informatico francese che da anni ripete che i modelli linguistici non sono intelligenti. Dall'altra un programmatore di videogiochi diventato ingegnere di intelligenza artificiale. Dall'altra ancora il fondatore di Ethereum. Tre mondi senza punti di contatto.</p>
+<p>E però stanno indicando tutti lo stesso spartiacque: la differenza tra le cose che una macchina può controllare da sola e tutte le altre.</p>
+<p>Si comincia da una mappa degli Stati Uniti costruita in sette ore.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Andrej Karpathy')" title="Fonti di Andrej Karpathy"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/andrej-karpathy.jpg" alt=""></a>Andrej Karpathy ha pubblicato su X, in questi giorni di novembre, il resoconto di un lavoro che non ha fatto lui. Ha chiesto a Claude Opus 5.5 una mappa interattiva degli Stati Uniti, in stile Civilization, e il modello l'ha costruita: sette ore di lavoro, quarantacinquemila righe di codice, trentun archivi pubblici di dati messi insieme — censimento, lavoro, energia, meteo, geologia, difesa, trasporti.</p>
+<p>Ieri parlavamo del suo HackerTube, quarantatré milioni di commenti filtrati in poche ore. Quello sembrava un bel trucco. Questo è un'altra cosa: è un mestiere che cambia di mano. Karpathy definisce un obiettivo e controlla il risultato; tutta la fatica di mezzo — cercare i dati, capirne il formato, scrivere il codice che li tiene insieme — la assorbe la macchina. <a href="#" class="face-link" onclick="vaiFonte(event, 'Balaji Srinivasan')" title="Fonti di Balaji Srinivasan"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/balaji-srinivasan.jpg" alt=""></a>Balaji Srinivasan, nelle stesse ore, segnalava un agente che carica da solo il proprio codice su GitHub mentre il suo proprietario si occupa d'altro.</p>
+<p>Qui però si apre la prima crepa, ed è una crepa tecnica, non filosofica. Il 29 ottobre <a href="#" class="face-link" onclick="vaiFonte(event, 'John Carmack')" title="Fonti di John Carmack"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/john-carmack.jpg" alt=""></a>John Carmack aveva avvertito che generare interi sistemi da zero è una strada che perde: perde su velocità, perde su sicurezza, perde su efficienza. La sua proposta è addestrare gli agenti non solo a completare il compito, ma a produrre pezzi riutilizzabili, una specie di cassetta degli attrezzi pensata per le macchine. È la differenza tra fondere ogni volta un motore intero e avere bulloni standard: l'industria automobilistica ha fatto quel passaggio negli anni Dieci del Novecento, e non fu un dettaglio, fu la ragione per cui la Ford T costava poco. Il collo di bottiglia, dice in sostanza Carmack, non è più scrivere codice. È comporlo.</p>
+<p>Ma la domanda vera è un'altra: perché proprio il codice? Perché la matematica? <a href="#" class="face-link" onclick="vaiFonte(event, 'Yann LeCun')" title="Fonti di Yann LeCun"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/yann-lecun.jpg" alt=""></a>Yann LeCun ha dato la risposta più nitida, e viene da uno dei critici più severi dei modelli di oggi. Codice e matematica, scrive, sono domini anomali: il modello può proporre un'ipotesi e poi verificarla da sé, eseguendo il programma o controllando la dimostrazione. Il controllo è dentro il dominio. Non serve il mondo.</p>
+<p>Il 22 novembre LeCun ha mostrato il rovescio della medaglia: non esiste la guida autonoma di livello cinque, non esiste un robot che se la cavi come un bambino di tre anni. Nessuna quantità di parole insegna a prendere un bicchiere senza farlo cadere, perché lì il giudice non è una riga di codice che gira, è la realtà, che risponde lenta e una volta sola.</p>
+<p>Ed è lo stesso criterio, letto al contrario, che <a href="#" class="face-link" onclick="vaiFonte(event, 'Vitalik Buterin')" title="Fonti di Vitalik Buterin"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/vitalik-buterin.jpg" alt=""></a>Vitalik Buterin sta usando per Ethereum. Se l'intelligenza artificiale sa dimostrare che un pezzo di programma fa quello che promette, allora si può buttare via la complessità accumulata per prudenza e tenere un protocollo più magro — la sua espressione è "lean Ethereum". La verifica non è più un costo. Diventa la leva.</p>
+<p>Quindi la mappa di Karpathy, i blocchi di Carmack e l'Ethereum snello di Buterin non sono tre notizie. Sono tre facce di una sola frase: accelera ciò che si può controllare in automatico. Tutto il resto aspetta.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Yann LeCun')" title="Fonti di Yann LeCun"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/yann-lecun.jpg" alt=""></a>Yann LeCun è lo scienziato che ha vinto il premio Turing per le reti neurali e che oggi passa buona parte del suo tempo a spiegare che quelle stesse reti, nella forma dei modelli linguistici, non pensano. Una posizione scomoda: lo mette contro quasi tutti.</p>
+<p>La settimana scorsa però ha fatto qualcosa di diverso dal solito. Invece di dire cosa manca ai modelli, ha spiegato perché in alcuni campi funzionano benissimo. Matematica e programmazione sono eccezioni, scrive, perché il modello può generare ipotesi e verificarle automaticamente, con una dimostrazione o con un'esecuzione. È un'osservazione quasi tecnica, buttata in un post, e vale più di molti saggi: non dice che il modello è intelligente, dice che in quei due campi non ha bisogno di esserlo. Gli basta provare e controllare, tante volte, in fretta.</p>
+<p>Poi il 22 novembre il contrappeso. Mentre si parla di superintelligenza, ha osservato, non abbiamo né automobili che guidano da sole senza nessuno a bordo né robot all'altezza di un bambino non addestrato. Il suo bersaglio dichiarato resta la comprensione del mondo fisico, quella cosa che un bambino assorbe guardando cadere gli oggetti e che nessun testo riesce a trasmettere.</p>
+<p>Fin qui il LeCun che conosciamo. La differenza rispetto alle settimane passate è nel ruolo che sta assumendo. Prima era l'antagonista nel dibattito sul rischio — quello che accusa <a href="#" class="face-link" onclick="vaiFonte(event, 'Dario Amodei')" title="Fonti di Dario Amodei"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/dario-amodei.jpg" alt=""></a>Dario Amodei di usare la sicurezza come argomento per tenere i modelli chiusi, e che liquida i calcoli di probabilità di estinzione come fatalismo inutile. Adesso è diventato il teorico di un'asimmetria che riguarda tutti: il motivo per cui alcune cose corrono e altre no.</p>
+<p>Per chi deve decidere dove investire, è una bussola più utile di qualunque previsione sulla data della superintelligenza. La domanda da fare non è quanto è potente il modello. È: in questo lavoro, chi controlla il risultato, e quanto costa farlo? Se la risposta è "la macchina, gratis", si corre. Se è "un essere umano, con tempo e giudizio", si cammina.</p>
+<p>Curioso che la spiegazione più chiara dell'accelerazione in corso venga da chi sostiene che la strada attuale non porta all'intelligenza. Capita spesso, in realtà: chi guarda una tecnologia dall'esterno ne vede i confini meglio di chi la costruisce.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'John Carmack')" title="Fonti di John Carmack"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/john-carmack.jpg" alt=""></a>John Carmack è il programmatore che ha scritto i motori grafici di Doom e Quake, cioè l'uomo che ha insegnato ai computer degli anni Novanta a disegnare mondi tridimensionali con quasi niente. Da qualche anno lavora su intelligenza artificiale generale, e conserva un'ossessione che viene da quel mestiere: ogni ciclo di calcolo deve servire a qualcosa.</p>
+<p>La sua tesi più sostanziosa del momento è del 29 ottobre, e va letta tenendo a mente la mappa di Karpathy. Gli agenti, scrive, prima o poi scriveranno interi sistemi software da zero — ma quella strada perderà su velocità, prestazioni, sicurezza ed efficienza di calcolo. La proposta è addestrarli non solo sul risultato finale, ma a produrre e migliorare blocchi riutilizzabili: una libreria standard pensata per le macchine, che all'inizio somiglierà a codice umano scritto con eleganza.</p>
+<p>Vale la pena fermarsi su cosa significa. La programmazione degli ultimi cinquant'anni è stata una storia di pezzi condivisi: si scrive una funzione una volta, la usano in diecimila. Il vantaggio non è solo la fatica risparmiata, è che quel pezzo viene esaminato da molti occhi, e i suoi difetti vengono trovati. Un agente che rigenera tutto da capo ogni volta butta via quella memoria collettiva. Produce software che nessuno ha mai letto, e che nessuno rileggerà.</p>
+<p>Il 23 novembre Carmack è tornato a farsi sentire su un tema diverso: il reintegro di <a href="#" class="face-link" onclick="vaiFonte(event, 'Jensen Huang')" title="Fonti di Jensen Huang"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/jensen-huang.png" alt=""></a>Jensen Huang alla guida di Nvidia, avvenuto il giorno prima. Indebolire Nvidia, ha sostenuto, sarebbe stato autodistruttivo dal punto di vista sociale e tecnologico, e Huang resta di gran lunga la persona giusta per quel ruolo — pur con riserve sul personaggio. Un'uscita su cui si può discutere, ma coerente: Carmack guarda alle infrastrutture come guarda al codice, chiedendosi cosa regge il peso.</p>
+<p>E la sua obiezione si incastra esattamente col criterio di LeCun. Una dimostrazione matematica si verifica una volta e vale per sempre. Un sistema software generato per intero si verifica male, perché nessuno sa dove guardare. La macchina può controllare se il programma gira. Non può controllare se è una buona idea.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Vitalik Buterin')" title="Fonti di Vitalik Buterin"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/vitalik-buterin.jpg" alt=""></a>Vitalik Buterin ha fondato Ethereum a diciannove anni e da allora fa un lavoro insolito: dirige l'evoluzione di un sistema che vale centinaia di miliardi e che non può permettersi un errore, perché i soldi che ci stanno sopra non si possono richiamare indietro.</p>
+<p>Nelle ultime due settimane ha messo insieme due cose che normalmente stanno in stanze separate. La prima: l'intelligenza artificiale applicata alla verifica formale — quella disciplina in cui si dimostra, con la stessa severità di un teorema, che un programma fa esattamente ciò che dichiara. Secondo Buterin, l'intelligenza artificiale, unita alle prove a conoscenza zero, apre la strada a una "lean Ethereum": un protocollo più semplice, in cui le tecniche avanzate non restano confinate nelle applicazioni ma scendono nel cuore del sistema. È il contrario dell'intuizione comune. Di solito un sistema che invecchia si gonfia di strati difensivi; se sai dimostrare le proprietà, puoi togliere invece di aggiungere.</p>
+<p>La seconda cosa, nelle stesse settimane, è il rovescio. Buterin ha appoggiato l'idea di rallentare l'espansione dei grandi centri di calcolo, e il motivo non è che consideri la superintelligenza inevitabile: è che serve tempo per rafforzare le difese informatiche e biologiche prima che le capacità superino le protezioni. Ha anche avvertito, parlando a Devcon, che l'intelligenza artificiale potrebbe comprimere decenni di progresso matematico in pochi anni, e che la matematica compressa potrebbe arrivare proprio sulle curve ellittiche su cui si regge la crittografia di Ethereum e di Bitcoin.</p>
+<p>La stessa macchina che gli serve per dimostrare che il sistema è sicuro è la macchina che potrebbe romperlo. Il suo nome per questa postura è d/acc, accelerazione decentralizzata difensiva: correre, ma sul versante delle difese, con software aperto, hardware controllabile, modelli che girano in locale.</p>
+<p>Ricapitoliamo dove siamo arrivati. LeCun spiega perché codice e matematica corrono: lì la macchina si controlla da sola. Carmack avverte che correre non basta, serve un'architettura. Buterin prende il criterio della verifica e lo trasforma in strategia: se so dimostrare, posso semplificare. Tre voci, una sola idea con tre facce.</p>
+<p>Manca la domanda che le riguarda tutte, ed è una domanda sull'orologio.</p>
+<div class="chapter" data-mood="tech"><hr></div>
+<p><a href="#" class="face-link" onclick="vaiFonte(event, 'Mustafa Suleyman')" title="Fonti di Mustafa Suleyman"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/mustafa-suleyman.jpg" alt=""></a>Mustafa Suleyman guida l'intelligenza artificiale di Microsoft, ed è un dirigente che ha due mani occupate in direzioni opposte. Con una spinge il prodotto: a Ignite ha presentato sei modelli specializzati — programmazione, sicurezza informatica, immagini, voce, trascrizione — e l'azienda sostiene che quello dedicato al codice si avvicina ai migliori sul mercato a un costo molto più basso. Con l'altra, il 25 novembre, ha scritto che l'intelligenza artificiale sta attraversando una soglia e che il lavoro su sicurezza e allineamento è l'unica cosa che conta.</p>
+<p>Qualche settimana fa sembrava una contraddizione: nervoso ma senza rallentare di un passo. Oggi suona diversamente. In un'intervista recente ha spiegato il motivo del nervosismo con una precisione che prima mancava: i modelli stanno migliorando altri modelli, generano dati di addestramento, testano sistemi, trovano difetti. Ha definito gli ultimi tre mesi uno spartiacque e ha chiamato il miglioramento ricorsivo una capacità decisamente pericolosa. "Sono davvero, davvero nervoso", ha detto.</p>
+<p>Letta col filo di oggi, la frase cambia peso. Un modello che migliora un altro modello è un caso di verifica automatica: la macchina giudica il proprio prodotto, come con il codice e la matematica. Lo stesso meccanismo che fa correre il mestiere di Karpathy, applicato alla costruzione dell'intelligenza stessa. Non stupisce che chi lo vede da dentro si preoccupi.</p>
+<p>Sulla durata del tempo disponibile, però, non c'è accordo. <a href="#" class="face-link" onclick="vaiFonte(event, 'Yoshua Bengio')" title="Fonti di Yoshua Bengio"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/yoshua-bengio.jpg" alt=""></a>Yoshua Bengio, in un'intervista alla CBS del 24 novembre, dice che il settore corre verso pericoli enormi e misura la finestra in anni; con LawZero sta costruendo sistemi pensati per essere affidabili invece che competitivi. <a href="#" class="face-link" onclick="vaiFonte(event, 'Geoffrey Hinton')" title="Fonti di Geoffrey Hinton"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/geoffrey-hinton.jpg" alt=""></a>Geoffrey Hinton chiede un'autorità indipendente, in stile agenzia del farmaco, che pretenda prove di beneficio prima dell'uscita di un modello. <a href="#" class="face-link" onclick="vaiFonte(event, 'Benedict Evans')" title="Fonti di Benedict Evans"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/gen/benedict-evans.png" alt=""></a>Benedict Evans, che osserva da fuori e ha appena sostituito la sua presentazione di maggio con una nuova di ottantasei pagine intitolata "AI Questions", ripete che è ancora molto presto, che l'adozione è larga ma sottile, e che in molte aziende l'intelligenza artificiale viene aggiunta senza cambiare un solo processo.</p>
+<p>Nessuno di loro nega le capacità. Litigano sull'orologio. E la versione economica di quel litigio la dà <a href="#" class="face-link" onclick="vaiFonte(event, 'Marc Andreessen')" title="Fonti di Marc Andreessen"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/marc-andreessen.jpg" alt=""></a>Marc Andreessen, che alla conferenza della Federal Reserve del 16 e 17 novembre ha previsto che utopisti e catastrofisti resteranno entrambi delusi: alcuni settori correranno con prezzi in calo, altri — sanità, istruzione, casa, diritto, pubblica amministrazione — resteranno bloccati e più costosi di prima. Sono esattamente i mestieri dove il risultato lo giudica un essere umano.</p>
+<div class="chapter" data-mood="upbeat"><hr></div>
+<p>Progetti da osservare.</p>
+<p>Lean 4 è un programma in cui si scrivono dimostrazioni matematiche in una forma che il computer può controllare riga per riga. Esiste da anni, nell'angolo tranquillo della logica. Adesso è diventato il giudice: è lo strumento con cui si verifica quello che i modelli producono, ed è la base tecnica della "lean Ethereum" di Buterin.</p>
+<p>Il caso di questi giorni è proprio lì. È circolato il resoconto di una dimostrazione legata all'ipotesi di Riemann ottenuta lavorando con Claude — l'ipotesi di Riemann è il problema aperto più famoso della matematica, una congettura del 1859 sulla distribuzione dei numeri primi. Accanto al resoconto è apparso grh-lean, una versione molto più breve della verifica formale della stessa dimostrazione, attribuita ad Anthropic. Le due cose vanno lette insieme: l'una è il ragionamento, l'altra è il controllo. Senza la seconda, la prima è un annuncio.</p>
+<p>Claude Code è l'agente da terminale che Karpathy ha usato per HackerTube, per TristanTube e per la mappa dei trentun archivi di dati. Non è un suggeritore di righe di codice: è il braccio che fa il lavoro mentre qualcuno guarda.</p>
+<p>OpenCode fa un mestiere simile, con codice aperto. <a href="#" class="face-link" onclick="vaiFonte(event, 'Paul Graham')" title="Fonti di Paul Graham"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/manual-paul-graham.jpg" alt=""></a>Paul Graham ha rilanciato un post di Jay Air, secondo cui la sua versione Go avrebbe raggiunto cinquanta milioni di dollari di ricavi annui. Un numero che, se tiene, dice quanto in fretta questo strumento sia passato da curiosità a mercato.</p>
+<p>E poi Import AI 482, la rassegna di <a href="#" class="face-link" onclick="vaiFonte(event, 'Jack Clark')" title="Fonti di Jack Clark"><img class="face-inline" loading="lazy" src="https://media.casamon.dev/avatars/photo/manual-jack-clark.jpg" alt=""></a>Jack Clark, che questa settimana raccoglie benchmark sui kernel Huawei, rilevamento di droni in volo e un test scientifico preparato da un laboratorio nazionale. Serve come promemoria geografico: la ricerca accelera anche dove non stiamo guardando.</p>
+<div class="chapter" data-mood="soft"><hr></div>
+<p>Resta quella mappa degli Stati Uniti, trentun archivi di dati cuciti insieme in una notte da qualcosa che non ha mai visto gli Stati Uniti. Funziona perché si può controllare se funziona.</p>
+<p>Il mestiere che vale, da qui in avanti, forse è un altro: saper dire cosa conta come risposta giusta. Finché quella frase la scriviamo noi, decidiamo noi dove corre la macchina.</p>
+<p>È stato Signal Brief. Alla prossima.</p></div><div class="rawmd"><a href="raw.md">Testo (markdown)</a></div></div>
+<div class="tab-panel panel" data-sb-panel="comparazione" hidden><div class="tension"><div class="axis">↗ La verifica come discriminante</div><div class="side">Il criterio che separa i domini in accelerazione da quelli fermi non è la potenza del modello ma la possibilità che la macchina controlli da sola il proprio output.</div></div><div class="tension"><div class="axis">↗ Il collo di bottiglia architetturale</div><div class="side">Generare interi sistemi da zero è un vicolo cieco su velocità, sicurezza ed efficienza: il problema si sposta dalla produzione di codice alla sua composizione in blocchi riutilizzabili.</div></div><div class="tension"><div class="axis">↗ Verifica formale come strategia di protocollo</div><div class="side">L'AI che dimostra proprietà diventa la leva per semplificare un protocollo e renderlo dimostrabilmente sicuro ("lean Ethereum").</div></div><div class="tension"><div class="axis">↗ Il divario dell'incarnato</div><div class="side">Dove non c'è verifica automatica — guida autonoma di livello 5, robotica, buon senso di un bambino — non c'è alcun progresso paragonabile a codice e matematica.</div></div><div class="tension"><div class="axis">↗ Nuovo mestiere umano: specificare e verificare</div><div class="side">L'umano definisce obiettivi e controlla i risultati, mentre la macchina assorbe la resistenza implementativa.</div></div><div class="tension"><div class="axis">↗ Il tempo residuo come vera posta in gioco</div><div class="side">La discussione non è più se le capacità arriveranno, ma quanti anni restano per costruire le garanzie.</div></div><div class="tension"><div class="axis">⚖ Generare tutto da zero o comporre blocchi riutilizzabili</div><div class="side">Andrej Karpathy: un agente produce in poche ore un sistema completo e funzionante · John Carmack: la generazione integrale perde su velocità, sicurezza ed efficienza, servono blocchi riutilizzabili</div></div><div class="tension"><div class="axis">⚖ Quanto tempo resta per costruire le garanzie</div><div class="side">Mustafa Suleyman: stiamo attraversando una soglia, allineamento e sicurezza sono l'unica cosa che conta · Benedict Evans: è ancora molto presto · Yoshua Bengio: la finestra si misura in anni</div></div><div class="tension"><div class="axis">⚖ Domini verificabili contro domini senza verifica automatica</div><div class="side">Yann LeCun: codice e matematica corrono perché il modello verifica da sé · Yann LeCun: niente guida di livello 5 né robot pari a un bambino dove la verifica manca</div></div><div class="tension"><div class="axis">⚖ Accelerazione tecnica contro blocco economico</div><div class="side">Balaji Srinivasan: gli agenti già operano in autonomia sulle piattaforme di sviluppo · Marc Andreessen: sanità, istruzione e diritto restano bloccati e più costosi</div></div><div class="tension"><div class="axis">⚖ L'AI come fonte di rischio o come strumento di garanzia</div><div class="side">Mustafa Suleyman: la capacità avanza oltre una soglia critica e va messa in sicurezza · Vitalik Buterin: la verifica formale assistita dall'AI rende i sistemi più semplici e dimostrabilmente sicuri</div></div></div>
+<div class="tab-panel panel" data-sb-panel="segnali" hidden><section><h2>Progetti da osservare</h2><div class="tension"><div class="axis">GPT-6.2 Astra / Sol</div><div class=side>Nuova famiglia di modelli OpenAI, con system card che documenta capacità e limiti. Un caso di studio mostra Astra risolvere un mistero storico con ragionamento multimodale autonomo.</div></div><div class="tension"><div class="axis">Claude + Alpöge: dimostrazione dell'ipotesi di Riemann</div><div class=side>Resoconto di una dimostrazione matematica ottenuta con Claude, segnalata come salto nel ragionamento matematico degli LLM. Va letta insieme alla verifica formale, che ne è il controllo.</div></div><div class="tension"><div class="axis"><span class="pnew">nuovo</span> grh-lean</div><div class=side>Versione molto più breve della verifica formale in Lean di una dimostrazione legata a Riemann, attribuita ad Anthropic. Mostra come la verifica automatica controlli il ragionamento dell'AI.</div></div><div class="tension"><div class="axis">Claude Code</div><div class=side>Agente di coding da terminale di Anthropic. Karpathy lo ha usato per HackerTube, TristanTube e la mappa degli Stati Uniti con 31 dataset.</div></div><div class="tension"><div class="axis">Lean 4</div><div class=side>Proof assistant e linguaggio per la verifica formale. È la base della "lean Ethereum" di Buterin e dei controlli sulle dimostrazioni generate dagli LLM.</div></div><div class="tension"><div class="axis">Import AI 482: benchmark Huawei sui kernel</div><div class=side>Raccoglie benchmark sui kernel Huawei, rilevamento di droni in volo e un benchmark scientifico di un laboratorio nazionale. Indica l'accelerazione della ricerca AI fuori dagli Stati Uniti.</div></div><div class="tension"><div class="axis">Goose</div><div class=side>Agente AI open source di Block, citato da Dorsey tra gli strumenti aperti dell'azienda. Fa da base ai flussi di lavoro agentici interni.</div></div><div class="tension"><div class="axis">Builderlab (Block)</div><div class=side>Piattaforma gestita in cui dipendenti, agenti e software aziendale collaborano. Block l'ha costruita per sé prima di aprirla al mercato.</div></div><div class="tension"><div class="axis">OpenCode</div><div class=side>Agente di coding open source da terminale. Paul Graham ha rilanciato la notizia che OpenCode Go ha raggiunto 50 milioni di dollari di ricavi annui.</div></div><div class="tension"><div class="axis">Bitchat</div><div class=side>App di messaggistica decentralizzata via Bluetooth, promossa da Dorsey. È stata vietata in Cina e l'India ha ordinato la rimozione del repository da GitHub.</div></div></section></div>
+<div class="tab-panel panel" data-sb-panel="fonti" hidden><div class="fonte" data-fonte-nome="Yann LeCun"><span class="who">Yann LeCun</span><a href="https://x.com/ylecun/status/2121995284196602013" target="_blank" rel="noopener">https://x.com/ylecun/status/2121995284196602013</a><a href="https://x.com/ylecun/status/2124605292402946483" target="_blank" rel="noopener">https://x.com/ylecun/status/2124605292402946483</a><a href="https://x.com/ylecun/status/2124550037912920090" target="_blank" rel="noopener">https://x.com/ylecun/status/2124550037912920090</a></div><div class="fonte" data-fonte-nome="John Carmack"><span class="who">John Carmack</span><a href="https://x.com/ID_AA_Carmack/status/2124967153376067963" target="_blank" rel="noopener">https://x.com/ID_AA_Carmack/status/2124967153376067963</a><a href="https://x.com/ID_AA_Carmack" target="_blank" rel="noopener">https://x.com/ID_AA_Carmack</a><a href="https://x.com/ID_AA_Carmack/status/2115917666955497608" target="_blank" rel="noopener">https://x.com/ID_AA_Carmack/status/2115917666955497608</a></div><div class="fonte" data-fonte-nome="Vitalik Buterin"><span class="who">Vitalik Buterin</span><a href="https://x.com/VitalikButerin" target="_blank" rel="noopener">https://x.com/VitalikButerin</a><a href="https://blumify.io/people/vitalik-buterin" target="_blank" rel="noopener">https://blumify.io/people/vitalik-buterin</a><a href="https://en.coinotag.com/vitalik-buterin-ai-could-crack-ethereum-cryptography-devcon-8" target="_blank" rel="noopener">https://en.coinotag.com/vitalik-buterin-ai-could-crack-ethereum-cryptography-devcon-8</a></div><div class="fonte" data-fonte-nome="Mustafa Suleyman"><span class="who">Mustafa Suleyman</span><a href="https://x.com/mustafasuleyman/status/2125446171909136630" target="_blank" rel="noopener">https://x.com/mustafasuleyman/status/2125446171909136630</a><a href="https://x.com/mustafasuleyman/status/2124979399229673498" target="_blank" rel="noopener">https://x.com/mustafasuleyman/status/2124979399229673498</a><a href="https://www.advanceintelligence.ai/story/2026-11-24-26" target="_blank" rel="noopener">https://www.advanceintelligence.ai/story/2026-11-24-26</a></div></div>
+</div>
+<script>function sbTab(key) {  document.querySelectorAll('.tab-panel').forEach(function (p) {    p.hidden = p.getAttribute('data-sb-panel') !== key;  });  document.querySelectorAll('#sbTabs .tab').forEach(function (b) {    b.setAttribute('aria-selected', b.dataset.tab === key ? 'true' : 'false');  });}function vaiFonte(ev, nome) {  ev.preventDefault();  sbTab('fonti');  var d = document.querySelector('[data-fonte-nome="' + nome + '"]');  if (d) d.scrollIntoView({behavior: 'smooth', block: 'center'});}</script>
+<dialog class="vplayer" id="vplayer"></dialog>
+<script>
+// player modale dei video: la miniatura apre il video al centro (disegno 2026-08-07)
+// Chiudere e condividere. Il player era il solo <video> dentro la <dialog>:
+// si chiudeva a Escape o cliccando lo SFONDO, che su un tablet e' quasi tutto
+// coperto dal video e dove un tasto Escape non esiste (2026-08-24).
+// La ✕ non serve solo a chiudere: e' l'unico modo per SAPERE che si puo'.
+function condividiVideo(src, b) {
+  if (navigator.share) { navigator.share({ title: 'Signal.Brief', url: src }).catch(function () {}); return; }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(src).then(function () {
+      var prima = b.textContent; b.textContent = '✓ copiato';
+      setTimeout(function () { b.textContent = prima; }, 1800);
+    }).catch(function () {});
+    return;
+  }
+  // Terzo ripiego: senza clipboard API resta la selezione manuale. Meglio un
+  // prompt che un bottone morto.
+  try { window.prompt('Indirizzo del video:', src); } catch (e) {}
+}
+function apriVideo(src) {
+  var d = document.getElementById('vplayer');
+  // I bottoni SOPRA il video: sotto finirebbero fuori schermo su un reel
+  // verticale, che di altezza prende gia' l'86%.
+  d.innerHTML = '<div class="vplayer-barra">'
+    + '<button type="button" class="vplayer-share">Condividi</button>'
+    + '<button type="button" class="vplayer-chiudi" aria-label="Chiudi">✕</button>'
+    + '</div><video controls autoplay playsinline src="' + src + '"></video>';
+  d.querySelector('.vplayer-chiudi').onclick = function () { d.close(); };
+  var sb = d.querySelector('.vplayer-share');
+  sb.onclick = function () { condividiVideo(src, sb); };
+  d.showModal();
+  d.onclick = function (e) { if (e.target === d) d.close(); };
+  d.onclose = function () { var v = d.querySelector('video'); if (v) v.pause(); d.innerHTML = ''; };
+}
+// ascolto inline dalla lista: un episodio alla volta
+var epAudio = null, epBtn = null;
+function ascolta(btn, src) {
+  if (epBtn === btn && epAudio) {
+    if (epAudio.paused) { epAudio.play(); btn.classList.add('on'); }
+    else { epAudio.pause(); btn.classList.remove('on'); }
+    return;
+  }
+  if (epAudio) { epAudio.pause(); if (epBtn) epBtn.classList.remove('on'); }
+  epAudio = new Audio(src); epBtn = btn;
+  epAudio.play(); btn.classList.add('on');
+  epAudio.onended = function () { btn.classList.remove('on'); };
+}
+function copiaTrascrizione(btn) {
+  var t = btn.parentElement.querySelector('.transcript-body');
+  navigator.clipboard.writeText(t ? t.innerText : '').then(function () {
+    btn.textContent = 'copiata ✓';
+    setTimeout(function () { btn.textContent = 'copia il testo'; }, 1800);
+  });
+}
+</script>
+<section class="sostieni"><h3>Se ti è utile, offrimi un caffè</h3><p>Signal.Brief non ha sponsor e non vende niente. Se ti è utile, puoi contribuire — e se non ti va, ascoltalo lo stesso.</p><div class="sostieni-atti"><a class="sostieni-btn" href="https://www.paypal.com/donate/?business=SGNE3B4JZUT9S&amp;no_recurring=0&amp;item_name=Signal.Brief+non+ha+sponsor.+Se+ti+%C3%A8+utile%2C+questo+lo+tiene+acceso.&amp;currency_code=EUR" target="_blank" rel="noopener">Offrimi un caffè</a><a class="sostieni-alt" href="../segui/">Ascoltalo nella tua app →</a></div></section>
+<footer class="creator-footer">
+  <img src="https://media.casamon.dev/immagini/mike-avatar.png" alt="Michele Mondora">
+  <div class="creator-meta">
+    <span class="creator-name">it-mikesoft</span>
+    <span class="creator-tagline">working with systems, living with questions</span>
+    <span class="creator-email"><a href="mailto:michele@mondora.com">michele@mondora.com</a></span>
+    <span class="creator-legal"><a href="/signal-brief/legal/privacy/">Privacy</a> ·
+      <a href="/signal-brief/legal/">Note legali</a></span>
+  </div>
+</footer>
+<section class="tutele"><h3>Trasparenza e tutele</h3>
+<p><strong>Come nasce questo contenuto.</strong> Ricerca, sintesi editoriale, voce narrante, immagini e musica sono prodotte con sistemi di intelligenza artificiale. Non c'è una redazione umana che verifica ogni affermazione prima della pubblicazione: un controllo automatico scarta le schede giudicate inaffidabili, ma non elimina la possibilità di errori.</p>
+<p><strong>Affermazioni su persone e aziende.</strong> Quanto riportato è una sintesi di fonti pubbliche, non una dichiarazione diretta delle persone citate: le frasi non vanno intese come virgolettati né come posizioni ufficiali. Le fonti sono indicate in ogni pagina episodio — verificale prima di considerare un'informazione accertata. Se trovi un'affermazione inesatta che ti riguarda, scrivi a <a href="mailto:michele@mondora.com">michele@mondora.com</a>: viene corretta o rimossa.</p>
+<p><strong>Immagini e volti.</strong> Le immagini di scena sono generate con AI e non raffigurano fatti realmente avvenuti. Le fotografie di persone reali usate nei video provengono da Wikimedia Commons con le rispettive licenze, e sono accostate al racconto a scopo identificativo: la loro presenza non implica partecipazione, dichiarazione o approvazione da parte della persona ritratta. Su richiesta dell'interessato vengono rimosse.</p>
+<p><strong>Fonti e diritti altrui.</strong> I contenuti sono rielaborazioni originali, non riproduzioni di articoli di terzi; le testate e gli autori all'origine di una notizia sono citati e collegati. Marchi e nomi commerciali appartengono ai rispettivi titolari e sono usati a scopo descrittivo.</p>
+</section>
+</body></html>
